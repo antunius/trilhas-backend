@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre além glossário: qual afirmação está certa?",
+      "q": "O que o nível Staff cobra além do cartão do teorema?",
       "o": [
-        "Staff cobra células, consistência real, blast radius — além do card CAP.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Staff cobra fatia isolada, modelo de consistência e raio de explosão, além do cartão do teorema.",
+        "Staff para no cartão do teorema: o resto é detalhe de operação.",
+        "Decorar o teorema é o que separa Staff dos outros níveis.",
+        "Fatia isolada e raio de explosão são assunto de nível júnior."
       ],
       "a": 0,
-      "w": "Aula staff.",
+      "w": "Recitar o teorema sem fatia, quórum e pager ainda é nível pleno.",
       "t": "além glossário"
     },
     {
-      "q": "Qual frase sobre além glossário está certa?",
+      "q": "Recitar o teorema basta para Staff?",
       "o": [
-        "Staff cobra células, consistência real, blast radius — além do card CAP.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Staff para no cartão do teorema: o resto é detalhe de operação.",
+        "Decorar o teorema é o que separa Staff dos outros níveis.",
+        "Fatia isolada e raio de explosão são assunto de nível júnior.",
+        "Staff cobra fatia isolada, modelo de consistência e raio de explosão, além do cartão do teorema."
       ],
-      "a": 0,
-      "w": "Aula staff.",
+      "a": 3,
+      "w": "Recitar o teorema sem fatia, quórum e pager ainda é nível pleno.",
       "t": "além glossário"
     },
     {
-      "q": "Além glossário — o que acontece de verdade?",
+      "q": "Fatia isolada e raio de explosão são assunto de júnior?",
       "o": [
-        "Staff cobra células, consistência real, blast radius — além do card CAP.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Staff para no cartão do teorema: o resto é detalhe de operação.",
+        "Decorar o teorema é o que separa Staff dos outros níveis.",
+        "Fatia isolada e raio de explosão são assunto de nível júnior.",
+        "Staff cobra fatia isolada, modelo de consistência e raio de explosão, além do cartão do teorema."
       ],
-      "a": 0,
-      "w": "Aula staff.",
+      "a": 3,
+      "w": "Recitar o teorema sem fatia, quórum e pager ainda é nível pleno.",
       "t": "além glossário"
     },
     {
-      "q": "Marque a leitura correta (além glossário).",
+      "q": "O que separa Staff de pleno, nesta aula?",
       "o": [
-        "Staff cobra células, consistência real, blast radius — além do card CAP.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Fatia isolada e raio de explosão são assunto de nível júnior.",
+        "Staff cobra fatia isolada, modelo de consistência e raio de explosão, além do cartão do teorema.",
+        "Staff para no cartão do teorema: o resto é detalhe de operação.",
+        "Decorar o teorema é o que separa Staff dos outros níveis."
       ],
-      "a": 0,
-      "w": "Aula staff.",
+      "a": 1,
+      "w": "Recitar o teorema sem fatia, quórum e pager ainda é nível pleno.",
       "t": "além glossário"
     },
     {
-      "q": "Corrija o mito sobre além glossário.",
+      "q": "Decorar o teorema é suficiente?",
       "o": [
-        "Staff cobra células, consistência real, blast radius — além do card CAP.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Decorar o teorema é o que separa Staff dos outros níveis.",
+        "Fatia isolada e raio de explosão são assunto de nível júnior.",
+        "Staff cobra fatia isolada, modelo de consistência e raio de explosão, além do cartão do teorema.",
+        "Staff para no cartão do teorema: o resto é detalhe de operação."
       ],
-      "a": 0,
-      "w": "Aula staff.",
+      "a": 2,
+      "w": "Recitar o teorema sem fatia, quórum e pager ainda é nível pleno.",
       "t": "além glossário"
     },
     {
-      "q": "No caderno, a respeito de além glossário: qual vale?",
+      "q": "Staff para no cartão do teorema?",
       "o": [
-        "Staff cobra células, consistência real, blast radius — além do card CAP.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Fatia isolada e raio de explosão são assunto de nível júnior.",
+        "Staff cobra fatia isolada, modelo de consistência e raio de explosão, além do cartão do teorema.",
+        "Staff para no cartão do teorema: o resto é detalhe de operação.",
+        "Decorar o teorema é o que separa Staff dos outros níveis."
       ],
-      "a": 0,
-      "w": "Aula staff.",
+      "a": 1,
+      "w": "Recitar o teorema sem fatia, quórum e pager ainda é nível pleno.",
       "t": "além glossário"
     },
     {
-      "q": "Se perguntarem além glossário na mesa, qual frase é a verdadeira?",
+      "q": "Que três coisas a mesa de Staff cobra?",
       "o": [
-        "Staff cobra células, consistência real, blast radius — além do card CAP.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Fatia isolada e raio de explosão são assunto de nível júnior.",
+        "Staff cobra fatia isolada, modelo de consistência e raio de explosão, além do cartão do teorema.",
+        "Staff para no cartão do teorema: o resto é detalhe de operação.",
+        "Decorar o teorema é o que separa Staff dos outros níveis."
       ],
-      "a": 0,
-      "w": "Aula staff.",
+      "a": 1,
+      "w": "Recitar o teorema sem fatia, quórum e pager ainda é nível pleno.",
       "t": "além glossário"
     },
     {
-      "q": "Sobre células: qual afirmação está certa?",
+      "q": "O que fatiar em células isola?",
       "o": [
-        "Célula isola blast radius. Falha de uma não leva o planeta.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Fatiar em células é o mesmo que subir mais réplicas do serviço.",
+        "Raio de explosão não muda com a forma de fatiar o sistema.",
+        "Fatiar em células isola o raio de explosão: um deploy ruim derruba uma fatia.",
+        "Falha de uma célula leva o sistema inteiro; o isolamento é mito."
       ],
-      "a": 0,
-      "w": "Multi-tenant perigoso.",
+      "a": 2,
+      "w": "Cada célula tem os próprios processos, banco e cache. Não é subir mais réplicas.",
       "t": "células"
     },
     {
-      "q": "Qual frase sobre células está certa?",
+      "q": "O que cada célula tem de próprio?",
       "o": [
-        "Célula isola blast radius. Falha de uma não leva o planeta.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Raio de explosão não muda com a forma de fatiar o sistema.",
+        "Fatiar em células isola o raio de explosão: um deploy ruim derruba uma fatia.",
+        "Falha de uma célula leva o sistema inteiro; o isolamento é mito.",
+        "Fatiar em células é o mesmo que subir mais réplicas do serviço."
       ],
-      "a": 0,
-      "w": "Multi-tenant perigoso.",
+      "a": 1,
+      "w": "Cada célula tem os próprios processos, banco e cache. Não é subir mais réplicas.",
       "t": "células"
     },
     {
-      "q": "Células — o que acontece de verdade?",
+      "q": "Fatiar em células é subir mais réplicas?",
       "o": [
-        "Célula isola blast radius. Falha de uma não leva o planeta.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Raio de explosão não muda com a forma de fatiar o sistema.",
+        "Fatiar em células isola o raio de explosão: um deploy ruim derruba uma fatia.",
+        "Falha de uma célula leva o sistema inteiro; o isolamento é mito.",
+        "Fatiar em células é o mesmo que subir mais réplicas do serviço."
       ],
-      "a": 0,
-      "w": "Multi-tenant perigoso.",
+      "a": 1,
+      "w": "Cada célula tem os próprios processos, banco e cache. Não é subir mais réplicas.",
       "t": "células"
     },
     {
-      "q": "Marque a leitura correta (células).",
+      "q": "Um deploy ruim derruba o quê, com células?",
       "o": [
-        "Célula isola blast radius. Falha de uma não leva o planeta.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Fatiar em células é o mesmo que subir mais réplicas do serviço.",
+        "Raio de explosão não muda com a forma de fatiar o sistema.",
+        "Fatiar em células isola o raio de explosão: um deploy ruim derruba uma fatia.",
+        "Falha de uma célula leva o sistema inteiro; o isolamento é mito."
       ],
-      "a": 0,
-      "w": "Multi-tenant perigoso.",
+      "a": 2,
+      "w": "Cada célula tem os próprios processos, banco e cache. Não é subir mais réplicas.",
       "t": "células"
     },
     {
-      "q": "Corrija o mito sobre células.",
+      "q": "Falha de uma célula leva o sistema inteiro?",
       "o": [
-        "Célula isola blast radius. Falha de uma não leva o planeta.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Falha de uma célula leva o sistema inteiro; o isolamento é mito.",
+        "Fatiar em células é o mesmo que subir mais réplicas do serviço.",
+        "Raio de explosão não muda com a forma de fatiar o sistema.",
+        "Fatiar em células isola o raio de explosão: um deploy ruim derruba uma fatia."
       ],
-      "a": 0,
-      "w": "Multi-tenant perigoso.",
+      "a": 3,
+      "w": "Cada célula tem os próprios processos, banco e cache. Não é subir mais réplicas.",
       "t": "células"
     },
     {
-      "q": "No caderno, a respeito de células: qual vale?",
+      "q": "O raio de explosão muda com a forma de fatiar?",
       "o": [
-        "Célula isola blast radius. Falha de uma não leva o planeta.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Fatiar em células isola o raio de explosão: um deploy ruim derruba uma fatia.",
+        "Falha de uma célula leva o sistema inteiro; o isolamento é mito.",
+        "Fatiar em células é o mesmo que subir mais réplicas do serviço.",
+        "Raio de explosão não muda com a forma de fatiar o sistema."
       ],
       "a": 0,
-      "w": "Multi-tenant perigoso.",
+      "w": "Cada célula tem os próprios processos, banco e cache. Não é subir mais réplicas.",
       "t": "células"
     },
     {
-      "q": "Se perguntarem células na mesa, qual frase é a verdadeira?",
+      "q": "Como limitar o dano de um deploy ruim?",
       "o": [
-        "Célula isola blast radius. Falha de uma não leva o planeta.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Fatiar em células isola o raio de explosão: um deploy ruim derruba uma fatia.",
+        "Falha de uma célula leva o sistema inteiro; o isolamento é mito.",
+        "Fatiar em células é o mesmo que subir mais réplicas do serviço.",
+        "Raio de explosão não muda com a forma de fatiar o sistema."
       ],
       "a": 0,
-      "w": "Multi-tenant perigoso.",
+      "w": "Cada célula tem os próprios processos, banco e cache. Não é subir mais réplicas.",
       "t": "células"
     },
     {
-      "q": "Sobre quorum: qual afirmação está certa?",
+      "q": "Quando a leitura cruza a escrita?",
       "o": [
-        "Quorum: W+R > N. Latência vs consistência no dia bom.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O número de cópias lidas não influencia o que a leitura enxerga.",
+        "Com leitura mais escrita maior que o total de cópias, a leitura cruza a escrita.",
+        "Com leitura mais escrita menor que o total de cópias a leitura já cruza a escrita.",
+        "Escrever em todas as cópias é mais seguro e mais rápido."
       ],
-      "a": 0,
-      "w": "PACELC aplicado.",
+      "a": 1,
+      "w": "Três cópias, escreve em duas, lê de duas. Escrever em todas é mais seguro e mais lento.",
       "t": "quorum"
     },
     {
-      "q": "Qual frase sobre quorum está certa?",
+      "q": "Três cópias: em quantas escrever e de quantas ler?",
       "o": [
-        "Quorum: W+R > N. Latência vs consistência no dia bom.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O número de cópias lidas não influencia o que a leitura enxerga.",
+        "Com leitura mais escrita maior que o total de cópias, a leitura cruza a escrita.",
+        "Com leitura mais escrita menor que o total de cópias a leitura já cruza a escrita.",
+        "Escrever em todas as cópias é mais seguro e mais rápido."
       ],
-      "a": 0,
-      "w": "PACELC aplicado.",
+      "a": 1,
+      "w": "Três cópias, escreve em duas, lê de duas. Escrever em todas é mais seguro e mais lento.",
       "t": "quorum"
     },
     {
-      "q": "Quorum — o que acontece de verdade?",
+      "q": "Escrever em todas as cópias é mais rápido?",
       "o": [
-        "Quorum: W+R > N. Latência vs consistência no dia bom.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Com leitura mais escrita maior que o total de cópias, a leitura cruza a escrita.",
+        "Com leitura mais escrita menor que o total de cópias a leitura já cruza a escrita.",
+        "Escrever em todas as cópias é mais seguro e mais rápido.",
+        "O número de cópias lidas não influencia o que a leitura enxerga."
       ],
       "a": 0,
-      "w": "PACELC aplicado.",
+      "w": "Três cópias, escreve em duas, lê de duas. Escrever em todas é mais seguro e mais lento.",
       "t": "quorum"
     },
     {
-      "q": "Marque a leitura correta (quorum).",
+      "q": "O número de cópias lidas influencia o que você enxerga?",
       "o": [
-        "Quorum: W+R > N. Latência vs consistência no dia bom.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Escrever em todas as cópias é mais seguro e mais rápido.",
+        "O número de cópias lidas não influencia o que a leitura enxerga.",
+        "Com leitura mais escrita maior que o total de cópias, a leitura cruza a escrita.",
+        "Com leitura mais escrita menor que o total de cópias a leitura já cruza a escrita."
       ],
-      "a": 0,
-      "w": "PACELC aplicado.",
+      "a": 2,
+      "w": "Três cópias, escreve em duas, lê de duas. Escrever em todas é mais seguro e mais lento.",
       "t": "quorum"
     },
     {
-      "q": "Corrija o mito sobre quorum.",
+      "q": "Que soma garante a interseção entre leitura e escrita?",
       "o": [
-        "Quorum: W+R > N. Latência vs consistência no dia bom.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Escrever em todas as cópias é mais seguro e mais rápido.",
+        "O número de cópias lidas não influencia o que a leitura enxerga.",
+        "Com leitura mais escrita maior que o total de cópias, a leitura cruza a escrita.",
+        "Com leitura mais escrita menor que o total de cópias a leitura já cruza a escrita."
       ],
-      "a": 0,
-      "w": "PACELC aplicado.",
+      "a": 2,
+      "w": "Três cópias, escreve em duas, lê de duas. Escrever em todas é mais seguro e mais lento.",
       "t": "quorum"
     },
     {
-      "q": "No caderno, a respeito de quorum: qual vale?",
+      "q": "Escrever em todas é mais seguro? E o custo?",
       "o": [
-        "Quorum: W+R > N. Latência vs consistência no dia bom.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Com leitura mais escrita maior que o total de cópias, a leitura cruza a escrita.",
+        "Com leitura mais escrita menor que o total de cópias a leitura já cruza a escrita.",
+        "Escrever em todas as cópias é mais seguro e mais rápido.",
+        "O número de cópias lidas não influencia o que a leitura enxerga."
       ],
       "a": 0,
-      "w": "PACELC aplicado.",
+      "w": "Três cópias, escreve em duas, lê de duas. Escrever em todas é mais seguro e mais lento.",
       "t": "quorum"
     },
     {
-      "q": "Se perguntarem quorum na mesa, qual frase é a verdadeira?",
+      "q": "Você lê de uma cópia só. O que pode acontecer?",
       "o": [
-        "Quorum: W+R > N. Latência vs consistência no dia bom.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O número de cópias lidas não influencia o que a leitura enxerga.",
+        "Com leitura mais escrita maior que o total de cópias, a leitura cruza a escrita.",
+        "Com leitura mais escrita menor que o total de cópias a leitura já cruza a escrita.",
+        "Escrever em todas as cópias é mais seguro e mais rápido."
       ],
-      "a": 0,
-      "w": "PACELC aplicado.",
+      "a": 1,
+      "w": "Três cópias, escreve em duas, lê de duas. Escrever em todas é mais seguro e mais lento.",
       "t": "quorum"
     },
     {
-      "q": "Sobre budget: qual afirmação está certa?",
+      "q": "Quem participa da conversa sobre o error budget?",
       "o": [
-        "Error budget é conversa de produto, não só Grafana.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O error budget não muda a prioridade do que o produto entrega.",
+        "O error budget é conversa de produto: com error budget o produto arrisca, sem error budget congela.",
+        "O error budget é assunto exclusivo do painel de monitoramento.",
+        "Com error budget intacto o time deve congelar as entregas por precaução."
       ],
-      "a": 0,
-      "w": "SRE.",
+      "a": 1,
+      "w": "É negociação com quem prioriza, não um gráfico que alguém olha de vez em quando.",
       "t": "budget"
     },
     {
-      "q": "Qual frase sobre budget está certa?",
+      "q": "Com error budget intacto, o produto arrisca ou congela?",
       "o": [
-        "Error budget é conversa de produto, não só Grafana.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O error budget é assunto exclusivo do painel de monitoramento.",
+        "Com error budget intacto o time deve congelar as entregas por precaução.",
+        "O error budget não muda a prioridade do que o produto entrega.",
+        "O error budget é conversa de produto: com error budget o produto arrisca, sem error budget congela."
       ],
-      "a": 0,
-      "w": "SRE.",
+      "a": 3,
+      "w": "É negociação com quem prioriza, não um gráfico que alguém olha de vez em quando.",
       "t": "budget"
     },
     {
-      "q": "Budget — o que acontece de verdade?",
+      "q": "Sem error budget, o que acontece com as entregas?",
       "o": [
-        "Error budget é conversa de produto, não só Grafana.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O error budget não muda a prioridade do que o produto entrega.",
+        "O error budget é conversa de produto: com error budget o produto arrisca, sem error budget congela.",
+        "O error budget é assunto exclusivo do painel de monitoramento.",
+        "Com error budget intacto o time deve congelar as entregas por precaução."
       ],
-      "a": 0,
-      "w": "SRE.",
+      "a": 1,
+      "w": "É negociação com quem prioriza, não um gráfico que alguém olha de vez em quando.",
       "t": "budget"
     },
     {
-      "q": "Marque a leitura correta (budget).",
+      "q": "O error budget é só um painel?",
       "o": [
-        "Error budget é conversa de produto, não só Grafana.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O error budget é assunto exclusivo do painel de monitoramento.",
+        "Com error budget intacto o time deve congelar as entregas por precaução.",
+        "O error budget não muda a prioridade do que o produto entrega.",
+        "O error budget é conversa de produto: com error budget o produto arrisca, sem error budget congela."
       ],
-      "a": 0,
-      "w": "SRE.",
+      "a": 3,
+      "w": "É negociação com quem prioriza, não um gráfico que alguém olha de vez em quando.",
       "t": "budget"
     },
     {
-      "q": "Corrija o mito sobre budget.",
+      "q": "O error budget muda a prioridade do produto?",
       "o": [
-        "Error budget é conversa de produto, não só Grafana.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Com error budget intacto o time deve congelar as entregas por precaução.",
+        "O error budget não muda a prioridade do que o produto entrega.",
+        "O error budget é conversa de produto: com error budget o produto arrisca, sem error budget congela.",
+        "O error budget é assunto exclusivo do painel de monitoramento."
       ],
-      "a": 0,
-      "w": "SRE.",
+      "a": 2,
+      "w": "É negociação com quem prioriza, não um gráfico que alguém olha de vez em quando.",
       "t": "budget"
     },
     {
-      "q": "No caderno, a respeito de budget: qual vale?",
+      "q": "Com error budget intacto o time deve congelar?",
       "o": [
-        "Error budget é conversa de produto, não só Grafana.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Com error budget intacto o time deve congelar as entregas por precaução.",
+        "O error budget não muda a prioridade do que o produto entrega.",
+        "O error budget é conversa de produto: com error budget o produto arrisca, sem error budget congela.",
+        "O error budget é assunto exclusivo do painel de monitoramento."
       ],
-      "a": 0,
-      "w": "SRE.",
+      "a": 2,
+      "w": "É negociação com quem prioriza, não um gráfico que alguém olha de vez em quando.",
       "t": "budget"
     },
     {
-      "q": "Se perguntarem budget na mesa, qual frase é a verdadeira?",
+      "q": "Como o error budget entra na priorização?",
       "o": [
-        "Error budget é conversa de produto, não só Grafana.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O error budget é assunto exclusivo do painel de monitoramento.",
+        "Com error budget intacto o time deve congelar as entregas por precaução.",
+        "O error budget não muda a prioridade do que o produto entrega.",
+        "O error budget é conversa de produto: com error budget o produto arrisca, sem error budget congela."
       ],
-      "a": 0,
-      "w": "SRE.",
+      "a": 3,
+      "w": "É negociação com quem prioriza, não um gráfico que alguém olha de vez em quando.",
       "t": "budget"
     },
     {
-      "q": "Sobre capacidade: qual afirmação está certa?",
+      "q": "O que compõe capacidade, no nível Staff?",
       "o": [
-        "Capacidade com envelope e headroom, não “sobe HPA”.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Capacidade é subir o autoescalador até o gráfico ficar verde.",
+        "Margem de sobra é desperdício: dimensione para o pico exato.",
+        "O envelope de volume não ajuda a dimensionar capacidade.",
+        "Capacidade é envelope mais margem de sobra, não “sobe o autoescalador”."
       ],
-      "a": 0,
-      "w": "Estimativa.",
+      "a": 3,
+      "w": "Cinquenta mil escritas por segundo de 500 bytes dá uns 2 gigabytes por minuto. Cabe no disco?",
       "t": "capacidade"
     },
     {
-      "q": "Qual frase sobre capacidade está certa?",
+      "q": "Subir o autoescalador é resposta de capacidade?",
       "o": [
-        "Capacidade com envelope e headroom, não “sobe HPA”.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Capacidade é subir o autoescalador até o gráfico ficar verde.",
+        "Margem de sobra é desperdício: dimensione para o pico exato.",
+        "O envelope de volume não ajuda a dimensionar capacidade.",
+        "Capacidade é envelope mais margem de sobra, não “sobe o autoescalador”."
       ],
-      "a": 0,
-      "w": "Estimativa.",
+      "a": 3,
+      "w": "Cinquenta mil escritas por segundo de 500 bytes dá uns 2 gigabytes por minuto. Cabe no disco?",
       "t": "capacidade"
     },
     {
-      "q": "Capacidade — o que acontece de verdade?",
+      "q": "Para que serve a margem de sobra?",
       "o": [
-        "Capacidade com envelope e headroom, não “sobe HPA”.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Margem de sobra é desperdício: dimensione para o pico exato.",
+        "O envelope de volume não ajuda a dimensionar capacidade.",
+        "Capacidade é envelope mais margem de sobra, não “sobe o autoescalador”.",
+        "Capacidade é subir o autoescalador até o gráfico ficar verde."
       ],
-      "a": 0,
-      "w": "Estimativa.",
+      "a": 2,
+      "w": "Cinquenta mil escritas por segundo de 500 bytes dá uns 2 gigabytes por minuto. Cabe no disco?",
       "t": "capacidade"
     },
     {
-      "q": "Marque a leitura correta (capacidade).",
+      "q": "Cinquenta mil escritas de 500 bytes por segundo dá quanto por minuto?",
       "o": [
-        "Capacidade com envelope e headroom, não “sobe HPA”.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Capacidade é subir o autoescalador até o gráfico ficar verde.",
+        "Margem de sobra é desperdício: dimensione para o pico exato.",
+        "O envelope de volume não ajuda a dimensionar capacidade.",
+        "Capacidade é envelope mais margem de sobra, não “sobe o autoescalador”."
       ],
-      "a": 0,
-      "w": "Estimativa.",
+      "a": 3,
+      "w": "Cinquenta mil escritas por segundo de 500 bytes dá uns 2 gigabytes por minuto. Cabe no disco?",
       "t": "capacidade"
     },
     {
-      "q": "Corrija o mito sobre capacidade.",
+      "q": "Margem de sobra é desperdício?",
       "o": [
-        "Capacidade com envelope e headroom, não “sobe HPA”.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Capacidade é subir o autoescalador até o gráfico ficar verde.",
+        "Margem de sobra é desperdício: dimensione para o pico exato.",
+        "O envelope de volume não ajuda a dimensionar capacidade.",
+        "Capacidade é envelope mais margem de sobra, não “sobe o autoescalador”."
       ],
-      "a": 0,
-      "w": "Estimativa.",
+      "a": 3,
+      "w": "Cinquenta mil escritas por segundo de 500 bytes dá uns 2 gigabytes por minuto. Cabe no disco?",
       "t": "capacidade"
     },
     {
-      "q": "No caderno, a respeito de capacidade: qual vale?",
+      "q": "O envelope de volume ajuda a dimensionar?",
       "o": [
-        "Capacidade com envelope e headroom, não “sobe HPA”.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O envelope de volume não ajuda a dimensionar capacidade.",
+        "Capacidade é envelope mais margem de sobra, não “sobe o autoescalador”.",
+        "Capacidade é subir o autoescalador até o gráfico ficar verde.",
+        "Margem de sobra é desperdício: dimensione para o pico exato."
       ],
-      "a": 0,
-      "w": "Estimativa.",
+      "a": 1,
+      "w": "Cinquenta mil escritas por segundo de 500 bytes dá uns 2 gigabytes por minuto. Cabe no disco?",
       "t": "capacidade"
     },
     {
-      "q": "Se perguntarem capacidade na mesa, qual frase é a verdadeira?",
+      "q": "Como você prova que a ingestão cabe?",
       "o": [
-        "Capacidade com envelope e headroom, não “sobe HPA”.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O envelope de volume não ajuda a dimensionar capacidade.",
+        "Capacidade é envelope mais margem de sobra, não “sobe o autoescalador”.",
+        "Capacidade é subir o autoescalador até o gráfico ficar verde.",
+        "Margem de sobra é desperdício: dimensione para o pico exato."
       ],
-      "a": 0,
-      "w": "Estimativa.",
+      "a": 1,
+      "w": "Cinquenta mil escritas por segundo de 500 bytes dá uns 2 gigabytes por minuto. Cabe no disco?",
       "t": "capacidade"
     },
     {
-      "q": "Sobre multi-região: qual afirmação está certa?",
+      "q": "O que mais de uma região traz de custo?",
       "o": [
-        "Multi-região: conflito, lag, RPO. Não é checkbox.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Mais de uma região é checkbox: liga e a disponibilidade sobe.",
+        "Duas regiões escrevendo o mesmo saldo não geram conflito.",
+        "Escolher a escrita mais recente resolve qualquer conflito de saldo.",
+        "Mais de uma região traz conflito, lag e janela de perda: não é checkbox."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 3,
+      "w": "Duas regiões escrevendo saldo sem protocolo é cérebro dividido com cara de disponibilidade.",
       "t": "multi-região"
     },
     {
-      "q": "Qual frase sobre multi-região está certa?",
+      "q": "Mais de uma região é checkbox?",
       "o": [
-        "Multi-região: conflito, lag, RPO. Não é checkbox.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Mais de uma região é checkbox: liga e a disponibilidade sobe.",
+        "Duas regiões escrevendo o mesmo saldo não geram conflito.",
+        "Escolher a escrita mais recente resolve qualquer conflito de saldo.",
+        "Mais de uma região traz conflito, lag e janela de perda: não é checkbox."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 3,
+      "w": "Duas regiões escrevendo saldo sem protocolo é cérebro dividido com cara de disponibilidade.",
       "t": "multi-região"
     },
     {
-      "q": "Multi-região — o que acontece de verdade?",
+      "q": "Duas regiões escrevendo o mesmo saldo: o que acontece?",
       "o": [
-        "Multi-região: conflito, lag, RPO. Não é checkbox.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Mais de uma região traz conflito, lag e janela de perda: não é checkbox.",
+        "Mais de uma região é checkbox: liga e a disponibilidade sobe.",
+        "Duas regiões escrevendo o mesmo saldo não geram conflito.",
+        "Escolher a escrita mais recente resolve qualquer conflito de saldo."
       ],
       "a": 0,
-      "w": "Cara de reverter.",
+      "w": "Duas regiões escrevendo saldo sem protocolo é cérebro dividido com cara de disponibilidade.",
       "t": "multi-região"
     },
     {
-      "q": "Marque a leitura correta (multi-região).",
+      "q": "Escolher a escrita mais recente resolve conflito de saldo?",
       "o": [
-        "Multi-região: conflito, lag, RPO. Não é checkbox.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Mais de uma região é checkbox: liga e a disponibilidade sobe.",
+        "Duas regiões escrevendo o mesmo saldo não geram conflito.",
+        "Escolher a escrita mais recente resolve qualquer conflito de saldo.",
+        "Mais de uma região traz conflito, lag e janela de perda: não é checkbox."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 3,
+      "w": "Duas regiões escrevendo saldo sem protocolo é cérebro dividido com cara de disponibilidade.",
       "t": "multi-região"
     },
     {
-      "q": "Corrija o mito sobre multi-região.",
+      "q": "O que é cérebro dividido, nesta aula?",
       "o": [
-        "Multi-região: conflito, lag, RPO. Não é checkbox.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Escolher a escrita mais recente resolve qualquer conflito de saldo.",
+        "Mais de uma região traz conflito, lag e janela de perda: não é checkbox.",
+        "Mais de uma região é checkbox: liga e a disponibilidade sobe.",
+        "Duas regiões escrevendo o mesmo saldo não geram conflito."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 1,
+      "w": "Duas regiões escrevendo saldo sem protocolo é cérebro dividido com cara de disponibilidade.",
       "t": "multi-região"
     },
     {
-      "q": "No caderno, a respeito de multi-região: qual vale?",
+      "q": "Duas regiões escrevendo o mesmo saldo geram conflito?",
       "o": [
-        "Multi-região: conflito, lag, RPO. Não é checkbox.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Duas regiões escrevendo o mesmo saldo não geram conflito.",
+        "Escolher a escrita mais recente resolve qualquer conflito de saldo.",
+        "Mais de uma região traz conflito, lag e janela de perda: não é checkbox.",
+        "Mais de uma região é checkbox: liga e a disponibilidade sobe."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 2,
+      "w": "Duas regiões escrevendo saldo sem protocolo é cérebro dividido com cara de disponibilidade.",
       "t": "multi-região"
     },
     {
-      "q": "Se perguntarem multi-região na mesa, qual frase é a verdadeira?",
+      "q": "Antes da segunda região, o que o desenho precisa nomear?",
       "o": [
-        "Multi-região: conflito, lag, RPO. Não é checkbox.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Duas regiões escrevendo o mesmo saldo não geram conflito.",
+        "Escolher a escrita mais recente resolve qualquer conflito de saldo.",
+        "Mais de uma região traz conflito, lag e janela de perda: não é checkbox.",
+        "Mais de uma região é checkbox: liga e a disponibilidade sobe."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 2,
+      "w": "Duas regiões escrevendo saldo sem protocolo é cérebro dividido com cara de disponibilidade.",
       "t": "multi-região"
     },
     {
-      "q": "Sobre blast: qual afirmação está certa?",
+      "q": "O que um deploy ruim consegue quebrar, nesta aula?",
       "o": [
-        "Blast radius: o que um deploy ruim pode quebrar?",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Raio de explosão é a pergunta: o que um deploy ruim consegue quebrar?",
+        "Raio de explosão é a quantidade de serviços que o sistema tem.",
+        "Raio de explosão não depende do desenho, só da qualidade do código.",
+        "Um deploy ruim sempre quebra o sistema inteiro, independente do desenho."
       ],
       "a": 0,
-      "w": "Feature flag, célula.",
+      "w": "A resposta é o desenho: chave de habilitação, fatia isolada, implantação gradual.",
       "t": "blast"
     },
     {
-      "q": "Qual frase sobre blast está certa?",
+      "q": "O que limita o raio de explosão?",
       "o": [
-        "Blast radius: o que um deploy ruim pode quebrar?",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Raio de explosão é a quantidade de serviços que o sistema tem.",
+        "Raio de explosão não depende do desenho, só da qualidade do código.",
+        "Um deploy ruim sempre quebra o sistema inteiro, independente do desenho.",
+        "Raio de explosão é a pergunta: o que um deploy ruim consegue quebrar?"
       ],
-      "a": 0,
-      "w": "Feature flag, célula.",
+      "a": 3,
+      "w": "A resposta é o desenho: chave de habilitação, fatia isolada, implantação gradual.",
       "t": "blast"
     },
     {
-      "q": "Blast — o que acontece de verdade?",
+      "q": "Raio de explosão é a quantidade de serviços?",
       "o": [
-        "Blast radius: o que um deploy ruim pode quebrar?",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Um deploy ruim sempre quebra o sistema inteiro, independente do desenho.",
+        "Raio de explosão é a pergunta: o que um deploy ruim consegue quebrar?",
+        "Raio de explosão é a quantidade de serviços que o sistema tem.",
+        "Raio de explosão não depende do desenho, só da qualidade do código."
       ],
-      "a": 0,
-      "w": "Feature flag, célula.",
+      "a": 1,
+      "w": "A resposta é o desenho: chave de habilitação, fatia isolada, implantação gradual.",
       "t": "blast"
     },
     {
-      "q": "Marque a leitura correta (blast).",
+      "q": "Um deploy ruim sempre quebra tudo?",
       "o": [
-        "Blast radius: o que um deploy ruim pode quebrar?",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Um deploy ruim sempre quebra o sistema inteiro, independente do desenho.",
+        "Raio de explosão é a pergunta: o que um deploy ruim consegue quebrar?",
+        "Raio de explosão é a quantidade de serviços que o sistema tem.",
+        "Raio de explosão não depende do desenho, só da qualidade do código."
       ],
-      "a": 0,
-      "w": "Feature flag, célula.",
+      "a": 1,
+      "w": "A resposta é o desenho: chave de habilitação, fatia isolada, implantação gradual.",
       "t": "blast"
     },
     {
-      "q": "Corrija o mito sobre blast.",
+      "q": "O raio de explosão depende do desenho?",
       "o": [
-        "Blast radius: o que um deploy ruim pode quebrar?",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Um deploy ruim sempre quebra o sistema inteiro, independente do desenho.",
+        "Raio de explosão é a pergunta: o que um deploy ruim consegue quebrar?",
+        "Raio de explosão é a quantidade de serviços que o sistema tem.",
+        "Raio de explosão não depende do desenho, só da qualidade do código."
       ],
-      "a": 0,
-      "w": "Feature flag, célula.",
+      "a": 1,
+      "w": "A resposta é o desenho: chave de habilitação, fatia isolada, implantação gradual.",
       "t": "blast"
     },
     {
-      "q": "No caderno, a respeito de blast: qual vale?",
+      "q": "Que mecanismos reduzem o raio de explosão?",
       "o": [
-        "Blast radius: o que um deploy ruim pode quebrar?",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Um deploy ruim sempre quebra o sistema inteiro, independente do desenho.",
+        "Raio de explosão é a pergunta: o que um deploy ruim consegue quebrar?",
+        "Raio de explosão é a quantidade de serviços que o sistema tem.",
+        "Raio de explosão não depende do desenho, só da qualidade do código."
       ],
-      "a": 0,
-      "w": "Feature flag, célula.",
+      "a": 1,
+      "w": "A resposta é o desenho: chave de habilitação, fatia isolada, implantação gradual.",
       "t": "blast"
     },
     {
-      "q": "Se perguntarem blast na mesa, qual frase é a verdadeira?",
+      "q": "Como responder “o que um deploy ruim quebra”?",
       "o": [
-        "Blast radius: o que um deploy ruim pode quebrar?",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Raio de explosão não depende do desenho, só da qualidade do código.",
+        "Um deploy ruim sempre quebra o sistema inteiro, independente do desenho.",
+        "Raio de explosão é a pergunta: o que um deploy ruim consegue quebrar?",
+        "Raio de explosão é a quantidade de serviços que o sistema tem."
       ],
-      "a": 0,
-      "w": "Feature flag, célula.",
+      "a": 2,
+      "w": "A resposta é o desenho: chave de habilitação, fatia isolada, implantação gradual.",
       "t": "blast"
     },
     {
-      "q": "Sobre consistência real: qual afirmação está certa?",
+      "q": "O que nomear sobre consistência na mesa?",
       "o": [
-        "Fale em sessões, monotonic reads, lost update — não só CAP.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O cliente não observa diferença entre os modelos de consistência.",
+        "Só existe um modelo de consistência acima de eventual.",
+        "Nomeie o que o cliente pode assumir: eu vejo o que gravei, ordem de causa, ou só convergência.",
+        "Dizer “eventual” já encerra a conversa sobre consistência."
       ],
-      "a": 0,
-      "w": "Aula.",
+      "a": 2,
+      "w": "Eventual é o começo da conversa, não o fim. Diga o que o cliente observa.",
       "t": "consistência real"
     },
     {
-      "q": "Qual frase sobre consistência real está certa?",
+      "q": "Dizer “eventual” encerra a conversa?",
       "o": [
-        "Fale em sessões, monotonic reads, lost update — não só CAP.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Dizer “eventual” já encerra a conversa sobre consistência.",
+        "O cliente não observa diferença entre os modelos de consistência.",
+        "Só existe um modelo de consistência acima de eventual.",
+        "Nomeie o que o cliente pode assumir: eu vejo o que gravei, ordem de causa, ou só convergência."
       ],
-      "a": 0,
-      "w": "Aula.",
+      "a": 3,
+      "w": "Eventual é o começo da conversa, não o fim. Diga o que o cliente observa.",
       "t": "consistência real"
     },
     {
-      "q": "Consistência real — o que acontece de verdade?",
+      "q": "O que significa “eu vejo o que gravei”?",
       "o": [
-        "Fale em sessões, monotonic reads, lost update — não só CAP.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O cliente não observa diferença entre os modelos de consistência.",
+        "Só existe um modelo de consistência acima de eventual.",
+        "Nomeie o que o cliente pode assumir: eu vejo o que gravei, ordem de causa, ou só convergência.",
+        "Dizer “eventual” já encerra a conversa sobre consistência."
       ],
-      "a": 0,
-      "w": "Aula.",
+      "a": 2,
+      "w": "Eventual é o começo da conversa, não o fim. Diga o que o cliente observa.",
       "t": "consistência real"
     },
     {
-      "q": "Marque a leitura correta (consistência real).",
+      "q": "O cliente observa diferença entre os modelos?",
       "o": [
-        "Fale em sessões, monotonic reads, lost update — não só CAP.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Só existe um modelo de consistência acima de eventual.",
+        "Nomeie o que o cliente pode assumir: eu vejo o que gravei, ordem de causa, ou só convergência.",
+        "Dizer “eventual” já encerra a conversa sobre consistência.",
+        "O cliente não observa diferença entre os modelos de consistência."
       ],
-      "a": 0,
-      "w": "Aula.",
+      "a": 1,
+      "w": "Eventual é o começo da conversa, não o fim. Diga o que o cliente observa.",
       "t": "consistência real"
     },
     {
-      "q": "Corrija o mito sobre consistência real.",
+      "q": "Que modelos existem acima de eventual?",
       "o": [
-        "Fale em sessões, monotonic reads, lost update — não só CAP.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Dizer “eventual” já encerra a conversa sobre consistência.",
+        "O cliente não observa diferença entre os modelos de consistência.",
+        "Só existe um modelo de consistência acima de eventual.",
+        "Nomeie o que o cliente pode assumir: eu vejo o que gravei, ordem de causa, ou só convergência."
       ],
-      "a": 0,
-      "w": "Aula.",
+      "a": 3,
+      "w": "Eventual é o começo da conversa, não o fim. Diga o que o cliente observa.",
       "t": "consistência real"
     },
     {
-      "q": "No caderno, a respeito de consistência real: qual vale?",
+      "q": "Eventual é o começo ou o fim da conversa?",
       "o": [
-        "Fale em sessões, monotonic reads, lost update — não só CAP.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Dizer “eventual” já encerra a conversa sobre consistência.",
+        "O cliente não observa diferença entre os modelos de consistência.",
+        "Só existe um modelo de consistência acima de eventual.",
+        "Nomeie o que o cliente pode assumir: eu vejo o que gravei, ordem de causa, ou só convergência."
       ],
-      "a": 0,
-      "w": "Aula.",
+      "a": 3,
+      "w": "Eventual é o começo da conversa, não o fim. Diga o que o cliente observa.",
       "t": "consistência real"
     },
     {
-      "q": "Se perguntarem consistência real na mesa, qual frase é a verdadeira?",
+      "q": "Qual a garantia que preserva a ordem de causa?",
       "o": [
-        "Fale em sessões, monotonic reads, lost update — não só CAP.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O cliente não observa diferença entre os modelos de consistência.",
+        "Só existe um modelo de consistência acima de eventual.",
+        "Nomeie o que o cliente pode assumir: eu vejo o que gravei, ordem de causa, ou só convergência.",
+        "Dizer “eventual” já encerra a conversa sobre consistência."
       ],
-      "a": 0,
-      "w": "Aula.",
+      "a": 2,
+      "w": "Eventual é o começo da conversa, não o fim. Diga o que o cliente observa.",
       "t": "consistência real"
     },
     {
-      "q": "Sobre feed staff: qual afirmação está certa?",
+      "q": "No feed em escala, um jeito só de espalhar resolve?",
       "o": [
-        "Feed em escala: fan-out híbrido, cache, backfill.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "No feed em escala, o fan-out pode ser misto e o usuário popular fica isolado.",
+        "No feed em escala um jeito único de espalhar resolve todos os casos.",
+        "O usuário popular deve receber o mesmo tratamento dos outros.",
+        "Misturar as duas formas de fan-out é sempre pior que escolher uma."
       ],
       "a": 0,
-      "w": "Walkthrough reservas/feed.",
+      "w": "Espalhar na escrita para a maioria, na leitura para quem tem muitos seguidores.",
       "t": "feed staff"
     },
     {
-      "q": "Qual frase sobre feed staff está certa?",
+      "q": "O que fazer com o usuário popular?",
       "o": [
-        "Feed em escala: fan-out híbrido, cache, backfill.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Misturar as duas formas de fan-out é sempre pior que escolher uma.",
+        "No feed em escala, o fan-out pode ser misto e o usuário popular fica isolado.",
+        "No feed em escala um jeito único de espalhar resolve todos os casos.",
+        "O usuário popular deve receber o mesmo tratamento dos outros."
       ],
-      "a": 0,
-      "w": "Walkthrough reservas/feed.",
+      "a": 1,
+      "w": "Espalhar na escrita para a maioria, na leitura para quem tem muitos seguidores.",
       "t": "feed staff"
     },
     {
-      "q": "Feed staff — o que acontece de verdade?",
+      "q": "Como o fan-out misto funciona?",
       "o": [
-        "Feed em escala: fan-out híbrido, cache, backfill.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "No feed em escala, o fan-out pode ser misto e o usuário popular fica isolado.",
+        "No feed em escala um jeito único de espalhar resolve todos os casos.",
+        "O usuário popular deve receber o mesmo tratamento dos outros.",
+        "Misturar as duas formas de fan-out é sempre pior que escolher uma."
       ],
       "a": 0,
-      "w": "Walkthrough reservas/feed.",
+      "w": "Espalhar na escrita para a maioria, na leitura para quem tem muitos seguidores.",
       "t": "feed staff"
     },
     {
-      "q": "Marque a leitura correta (feed staff).",
+      "q": "O usuário popular recebe o mesmo tratamento?",
       "o": [
-        "Feed em escala: fan-out híbrido, cache, backfill.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "No feed em escala um jeito único de espalhar resolve todos os casos.",
+        "O usuário popular deve receber o mesmo tratamento dos outros.",
+        "Misturar as duas formas de fan-out é sempre pior que escolher uma.",
+        "No feed em escala, o fan-out pode ser misto e o usuário popular fica isolado."
       ],
-      "a": 0,
-      "w": "Walkthrough reservas/feed.",
+      "a": 3,
+      "w": "Espalhar na escrita para a maioria, na leitura para quem tem muitos seguidores.",
       "t": "feed staff"
     },
     {
-      "q": "Corrija o mito sobre feed staff.",
+      "q": "Misturar as duas formas é sempre pior?",
       "o": [
-        "Feed em escala: fan-out híbrido, cache, backfill.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "No feed em escala um jeito único de espalhar resolve todos os casos.",
+        "O usuário popular deve receber o mesmo tratamento dos outros.",
+        "Misturar as duas formas de fan-out é sempre pior que escolher uma.",
+        "No feed em escala, o fan-out pode ser misto e o usuário popular fica isolado."
       ],
-      "a": 0,
-      "w": "Walkthrough reservas/feed.",
+      "a": 3,
+      "w": "Espalhar na escrita para a maioria, na leitura para quem tem muitos seguidores.",
       "t": "feed staff"
     },
     {
-      "q": "No caderno, a respeito de feed staff: qual vale?",
+      "q": "Quem tem muitos seguidores entra em qual caminho?",
       "o": [
-        "Feed em escala: fan-out híbrido, cache, backfill.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Misturar as duas formas de fan-out é sempre pior que escolher uma.",
+        "No feed em escala, o fan-out pode ser misto e o usuário popular fica isolado.",
+        "No feed em escala um jeito único de espalhar resolve todos os casos.",
+        "O usuário popular deve receber o mesmo tratamento dos outros."
       ],
-      "a": 0,
-      "w": "Walkthrough reservas/feed.",
+      "a": 1,
+      "w": "Espalhar na escrita para a maioria, na leitura para quem tem muitos seguidores.",
       "t": "feed staff"
     },
     {
-      "q": "Se perguntarem feed staff na mesa, qual frase é a verdadeira?",
+      "q": "Por que o feed em escala não cabe num padrão único?",
       "o": [
-        "Feed em escala: fan-out híbrido, cache, backfill.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "No feed em escala um jeito único de espalhar resolve todos os casos.",
+        "O usuário popular deve receber o mesmo tratamento dos outros.",
+        "Misturar as duas formas de fan-out é sempre pior que escolher uma.",
+        "No feed em escala, o fan-out pode ser misto e o usuário popular fica isolado."
       ],
-      "a": 0,
-      "w": "Walkthrough reservas/feed.",
+      "a": 3,
+      "w": "Espalhar na escrita para a maioria, na leitura para quem tem muitos seguidores.",
       "t": "feed staff"
     },
     {
-      "q": "Sobre noves: qual afirmação está certa?",
+      "q": "Quanto custa cada nove a mais?",
       "o": [
-        "Três noves vs quatro: custo exponencial. Vale a pena?",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cada nove a mais custa uma ordem de grandeza de engenharia, não um passo linear.",
+        "Cada nove a mais custa o mesmo que o anterior: o custo é linear.",
+        "Quatro noves se prometem com um banco único sem problema.",
+        "A diferença entre três e quatro noves é irrelevante na prática."
       ],
       "a": 0,
-      "w": "Staff/SRE.",
+      "w": "99% dá umas 7 horas fora por mês; 99,9% dá 43 minutos; 99,99% dá 4 minutos.",
       "t": "noves"
     },
     {
-      "q": "Qual frase sobre noves está certa?",
+      "q": "99,9% dá quantos minutos fora por mês?",
       "o": [
-        "Três noves vs quatro: custo exponencial. Vale a pena?",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cada nove a mais custa uma ordem de grandeza de engenharia, não um passo linear.",
+        "Cada nove a mais custa o mesmo que o anterior: o custo é linear.",
+        "Quatro noves se prometem com um banco único sem problema.",
+        "A diferença entre três e quatro noves é irrelevante na prática."
       ],
       "a": 0,
-      "w": "Staff/SRE.",
+      "w": "99% dá umas 7 horas fora por mês; 99,9% dá 43 minutos; 99,99% dá 4 minutos.",
       "t": "noves"
     },
     {
-      "q": "Noves — o que acontece de verdade?",
+      "q": "O custo dos noves é linear?",
       "o": [
-        "Três noves vs quatro: custo exponencial. Vale a pena?",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Quatro noves se prometem com um banco único sem problema.",
+        "A diferença entre três e quatro noves é irrelevante na prática.",
+        "Cada nove a mais custa uma ordem de grandeza de engenharia, não um passo linear.",
+        "Cada nove a mais custa o mesmo que o anterior: o custo é linear."
       ],
-      "a": 0,
-      "w": "Staff/SRE.",
+      "a": 2,
+      "w": "99% dá umas 7 horas fora por mês; 99,9% dá 43 minutos; 99,99% dá 4 minutos.",
       "t": "noves"
     },
     {
-      "q": "Marque a leitura correta (noves).",
+      "q": "Quatro noves com um banco único: promete?",
       "o": [
-        "Três noves vs quatro: custo exponencial. Vale a pena?",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Cada nove a mais custa uma ordem de grandeza de engenharia, não um passo linear.",
+        "Cada nove a mais custa o mesmo que o anterior: o custo é linear.",
+        "Quatro noves se prometem com um banco único sem problema.",
+        "A diferença entre três e quatro noves é irrelevante na prática."
       ],
       "a": 0,
-      "w": "Staff/SRE.",
+      "w": "99% dá umas 7 horas fora por mês; 99,9% dá 43 minutos; 99,99% dá 4 minutos.",
       "t": "noves"
     },
     {
-      "q": "Corrija o mito sobre noves.",
+      "q": "A diferença entre três e quatro noves importa?",
       "o": [
-        "Três noves vs quatro: custo exponencial. Vale a pena?",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Cada nove a mais custa o mesmo que o anterior: o custo é linear.",
+        "Quatro noves se prometem com um banco único sem problema.",
+        "A diferença entre três e quatro noves é irrelevante na prática.",
+        "Cada nove a mais custa uma ordem de grandeza de engenharia, não um passo linear."
       ],
-      "a": 0,
-      "w": "Staff/SRE.",
+      "a": 3,
+      "w": "99% dá umas 7 horas fora por mês; 99,9% dá 43 minutos; 99,99% dá 4 minutos.",
       "t": "noves"
     },
     {
-      "q": "No caderno, a respeito de noves: qual vale?",
+      "q": "99,99% dá quantos minutos fora por mês?",
       "o": [
-        "Três noves vs quatro: custo exponencial. Vale a pena?",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Cada nove a mais custa o mesmo que o anterior: o custo é linear.",
+        "Quatro noves se prometem com um banco único sem problema.",
+        "A diferença entre três e quatro noves é irrelevante na prática.",
+        "Cada nove a mais custa uma ordem de grandeza de engenharia, não um passo linear."
       ],
-      "a": 0,
-      "w": "Staff/SRE.",
+      "a": 3,
+      "w": "99% dá umas 7 horas fora por mês; 99,9% dá 43 minutos; 99,99% dá 4 minutos.",
       "t": "noves"
     },
     {
-      "q": "Se perguntarem noves na mesa, qual frase é a verdadeira?",
+      "q": "Por que subir um nove é ordem de grandeza?",
       "o": [
-        "Três noves vs quatro: custo exponencial. Vale a pena?",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Quatro noves se prometem com um banco único sem problema.",
+        "A diferença entre três e quatro noves é irrelevante na prática.",
+        "Cada nove a mais custa uma ordem de grandeza de engenharia, não um passo linear.",
+        "Cada nove a mais custa o mesmo que o anterior: o custo é linear."
       ],
-      "a": 0,
-      "w": "Staff/SRE.",
+      "a": 2,
+      "w": "99% dá umas 7 horas fora por mês; 99,9% dá 43 minutos; 99,99% dá 4 minutos.",
       "t": "noves"
     },
     {
-      "q": "Sobre rate limit: qual afirmação está certa?",
+      "q": "Onde o rate limit fica?",
       "o": [
-        "Rate limit nas bordas protege o núcleo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Rate limit vai nas bordas, para proteger o núcleo.",
+        "Rate limit vai no núcleo, onde o processamento acontece.",
+        "Limitar na borda deixa o núcleo mais exposto que antes.",
+        "O lugar do rate limit não muda a proteção do núcleo."
       ],
       "a": 0,
-      "w": "Catálogo.",
+      "w": "Limitar no miolo já é tarde: a carga chegou. A borda é onde você segura.",
       "t": "rate limit"
     },
     {
-      "q": "Qual frase sobre rate limit está certa?",
+      "q": "Limitar no miolo protege o núcleo?",
       "o": [
-        "Rate limit nas bordas protege o núcleo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Rate limit vai nas bordas, para proteger o núcleo.",
+        "Rate limit vai no núcleo, onde o processamento acontece.",
+        "Limitar na borda deixa o núcleo mais exposto que antes.",
+        "O lugar do rate limit não muda a proteção do núcleo."
       ],
       "a": 0,
-      "w": "Catálogo.",
+      "w": "Limitar no miolo já é tarde: a carga chegou. A borda é onde você segura.",
       "t": "rate limit"
     },
     {
-      "q": "Rate limit — o que acontece de verdade?",
+      "q": "O lugar do limite muda a proteção?",
       "o": [
-        "Rate limit nas bordas protege o núcleo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O lugar do rate limit não muda a proteção do núcleo.",
+        "Rate limit vai nas bordas, para proteger o núcleo.",
+        "Rate limit vai no núcleo, onde o processamento acontece.",
+        "Limitar na borda deixa o núcleo mais exposto que antes."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Limitar no miolo já é tarde: a carga chegou. A borda é onde você segura.",
       "t": "rate limit"
     },
     {
-      "q": "Marque a leitura correta (rate limit).",
+      "q": "Por que a borda é o lugar do limite?",
       "o": [
-        "Rate limit nas bordas protege o núcleo.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Rate limit vai nas bordas, para proteger o núcleo.",
+        "Rate limit vai no núcleo, onde o processamento acontece.",
+        "Limitar na borda deixa o núcleo mais exposto que antes.",
+        "O lugar do rate limit não muda a proteção do núcleo."
       ],
       "a": 0,
-      "w": "Catálogo.",
+      "w": "Limitar no miolo já é tarde: a carga chegou. A borda é onde você segura.",
       "t": "rate limit"
     },
     {
-      "q": "Corrija o mito sobre rate limit.",
+      "q": "Limitar na borda expõe mais o núcleo?",
       "o": [
-        "Rate limit nas bordas protege o núcleo.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Rate limit vai no núcleo, onde o processamento acontece.",
+        "Limitar na borda deixa o núcleo mais exposto que antes.",
+        "O lugar do rate limit não muda a proteção do núcleo.",
+        "Rate limit vai nas bordas, para proteger o núcleo."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 3,
+      "w": "Limitar no miolo já é tarde: a carga chegou. A borda é onde você segura.",
       "t": "rate limit"
     },
     {
-      "q": "No caderno, a respeito de rate limit: qual vale?",
+      "q": "A carga já chegou ao miolo. Limitar ali resolve?",
       "o": [
-        "Rate limit nas bordas protege o núcleo.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Limitar na borda deixa o núcleo mais exposto que antes.",
+        "O lugar do rate limit não muda a proteção do núcleo.",
+        "Rate limit vai nas bordas, para proteger o núcleo.",
+        "Rate limit vai no núcleo, onde o processamento acontece."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 2,
+      "w": "Limitar no miolo já é tarde: a carga chegou. A borda é onde você segura.",
       "t": "rate limit"
     },
     {
-      "q": "Se perguntarem rate limit na mesa, qual frase é a verdadeira?",
+      "q": "Que camada segura o excesso de chamadas?",
       "o": [
-        "Rate limit nas bordas protege o núcleo.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Rate limit vai nas bordas, para proteger o núcleo.",
+        "Rate limit vai no núcleo, onde o processamento acontece.",
+        "Limitar na borda deixa o núcleo mais exposto que antes.",
+        "O lugar do rate limit não muda a proteção do núcleo."
       ],
       "a": 0,
-      "w": "Catálogo.",
+      "w": "Limitar no miolo já é tarde: a carga chegou. A borda é onde você segura.",
       "t": "rate limit"
     },
     {
-      "q": "Sobre LSM: qual afirmação está certa?",
+      "q": "O que as estruturas de storage trocam entre si?",
       "o": [
-        "LSM vs B-tree: write/read trade no storage.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "As estruturas de storage têm exatamente o mesmo trade.",
+        "A estrutura que favorece escrita sequencial não paga nada depois.",
+        "A escolha da estrutura de storage não depende do acesso.",
+        "Estruturas de storage diferentes trocam custo de escrita por custo de leitura."
       ],
-      "a": 0,
-      "w": "Catálogo storage.",
+      "a": 3,
+      "w": "Uma favorece busca pontual transacional; a outra favorece escrita sequencial, e paga compactação.",
       "t": "LSM"
     },
     {
-      "q": "Qual frase sobre LSM está certa?",
+      "q": "Qual estrutura favorece busca pontual transacional?",
       "o": [
-        "LSM vs B-tree: write/read trade no storage.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A estrutura que favorece escrita sequencial não paga nada depois.",
+        "A escolha da estrutura de storage não depende do acesso.",
+        "Estruturas de storage diferentes trocam custo de escrita por custo de leitura.",
+        "As estruturas de storage têm exatamente o mesmo trade."
       ],
-      "a": 0,
-      "w": "Catálogo storage.",
+      "a": 2,
+      "w": "Uma favorece busca pontual transacional; a outra favorece escrita sequencial, e paga compactação.",
       "t": "LSM"
     },
     {
-      "q": "LSM — o que acontece de verdade?",
+      "q": "Qual estrutura favorece escrita sequencial?",
       "o": [
-        "LSM vs B-tree: write/read trade no storage.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "As estruturas de storage têm exatamente o mesmo trade.",
+        "A estrutura que favorece escrita sequencial não paga nada depois.",
+        "A escolha da estrutura de storage não depende do acesso.",
+        "Estruturas de storage diferentes trocam custo de escrita por custo de leitura."
       ],
-      "a": 0,
-      "w": "Catálogo storage.",
+      "a": 3,
+      "w": "Uma favorece busca pontual transacional; a outra favorece escrita sequencial, e paga compactação.",
       "t": "LSM"
     },
     {
-      "q": "Marque a leitura correta (LSM).",
+      "q": "As duas estruturas têm o mesmo trade?",
       "o": [
-        "LSM vs B-tree: write/read trade no storage.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "As estruturas de storage têm exatamente o mesmo trade.",
+        "A estrutura que favorece escrita sequencial não paga nada depois.",
+        "A escolha da estrutura de storage não depende do acesso.",
+        "Estruturas de storage diferentes trocam custo de escrita por custo de leitura."
       ],
-      "a": 0,
-      "w": "Catálogo storage.",
+      "a": 3,
+      "w": "Uma favorece busca pontual transacional; a outra favorece escrita sequencial, e paga compactação.",
       "t": "LSM"
     },
     {
-      "q": "Corrija o mito sobre LSM.",
+      "q": "O que a estrutura de escrita sequencial paga depois?",
       "o": [
-        "LSM vs B-tree: write/read trade no storage.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Estruturas de storage diferentes trocam custo de escrita por custo de leitura.",
+        "As estruturas de storage têm exatamente o mesmo trade.",
+        "A estrutura que favorece escrita sequencial não paga nada depois.",
+        "A escolha da estrutura de storage não depende do acesso."
       ],
       "a": 0,
-      "w": "Catálogo storage.",
+      "w": "Uma favorece busca pontual transacional; a outra favorece escrita sequencial, e paga compactação.",
       "t": "LSM"
     },
     {
-      "q": "No caderno, a respeito de LSM: qual vale?",
+      "q": "A escolha depende do padrão de acesso?",
       "o": [
-        "LSM vs B-tree: write/read trade no storage.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A escolha da estrutura de storage não depende do acesso.",
+        "Estruturas de storage diferentes trocam custo de escrita por custo de leitura.",
+        "As estruturas de storage têm exatamente o mesmo trade.",
+        "A estrutura que favorece escrita sequencial não paga nada depois."
       ],
-      "a": 0,
-      "w": "Catálogo storage.",
+      "a": 1,
+      "w": "Uma favorece busca pontual transacional; a outra favorece escrita sequencial, e paga compactação.",
       "t": "LSM"
     },
     {
-      "q": "Se perguntarem LSM na mesa, qual frase é a verdadeira?",
+      "q": "Como ligar storage ao acesso?",
       "o": [
-        "LSM vs B-tree: write/read trade no storage.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A escolha da estrutura de storage não depende do acesso.",
+        "Estruturas de storage diferentes trocam custo de escrita por custo de leitura.",
+        "As estruturas de storage têm exatamente o mesmo trade.",
+        "A estrutura que favorece escrita sequencial não paga nada depois."
       ],
-      "a": 0,
-      "w": "Catálogo storage.",
+      "a": 1,
+      "w": "Uma favorece busca pontual transacional; a outra favorece escrita sequencial, e paga compactação.",
       "t": "LSM"
     },
     {
-      "q": "Sobre não recitar: qual afirmação está certa?",
+      "q": "Recitar o teorema demonstra nível Staff?",
       "o": [
-        "Recitar PACELC sem o desenho do produto não é Staff.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Recitar o teorema sem o desenho do produto não é nível Staff.",
+        "Recitar o teorema com precisão já demonstra nível Staff.",
+        "O desenho do produto não precisa aparecer na discussão de consistência.",
+        "Aplicar o modelo ao sistema é passo opcional depois de citar o teorema."
       ],
       "a": 0,
-      "w": "Julgamento.",
+      "w": "A mesa quer o modelo aplicado ao seu sistema, com fatia, pager e número.",
       "t": "não recitar"
     },
     {
-      "q": "Qual frase sobre não recitar está certa?",
+      "q": "O que a mesa quer além do teorema?",
       "o": [
-        "Recitar PACELC sem o desenho do produto não é Staff.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O desenho do produto não precisa aparecer na discussão de consistência.",
+        "Aplicar o modelo ao sistema é passo opcional depois de citar o teorema.",
+        "Recitar o teorema sem o desenho do produto não é nível Staff.",
+        "Recitar o teorema com precisão já demonstra nível Staff."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 2,
+      "w": "A mesa quer o modelo aplicado ao seu sistema, com fatia, pager e número.",
       "t": "não recitar"
     },
     {
-      "q": "Não recitar — o que acontece de verdade?",
+      "q": "O desenho do produto entra na discussão de consistência?",
       "o": [
-        "Recitar PACELC sem o desenho do produto não é Staff.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Recitar o teorema sem o desenho do produto não é nível Staff.",
+        "Recitar o teorema com precisão já demonstra nível Staff.",
+        "O desenho do produto não precisa aparecer na discussão de consistência.",
+        "Aplicar o modelo ao sistema é passo opcional depois de citar o teorema."
       ],
       "a": 0,
-      "w": "Julgamento.",
+      "w": "A mesa quer o modelo aplicado ao seu sistema, com fatia, pager e número.",
       "t": "não recitar"
     },
     {
-      "q": "Marque a leitura correta (não recitar).",
+      "q": "Aplicar o modelo ao sistema é opcional?",
       "o": [
-        "Recitar PACELC sem o desenho do produto não é Staff.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Recitar o teorema sem o desenho do produto não é nível Staff.",
+        "Recitar o teorema com precisão já demonstra nível Staff.",
+        "O desenho do produto não precisa aparecer na discussão de consistência.",
+        "Aplicar o modelo ao sistema é passo opcional depois de citar o teorema."
       ],
       "a": 0,
-      "w": "Julgamento.",
+      "w": "A mesa quer o modelo aplicado ao seu sistema, com fatia, pager e número.",
       "t": "não recitar"
     },
     {
-      "q": "Corrija o mito sobre não recitar.",
+      "q": "O que falta quando alguém só cita o teorema?",
       "o": [
-        "Recitar PACELC sem o desenho do produto não é Staff.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Aplicar o modelo ao sistema é passo opcional depois de citar o teorema.",
+        "Recitar o teorema sem o desenho do produto não é nível Staff.",
+        "Recitar o teorema com precisão já demonstra nível Staff.",
+        "O desenho do produto não precisa aparecer na discussão de consistência."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 1,
+      "w": "A mesa quer o modelo aplicado ao seu sistema, com fatia, pager e número.",
       "t": "não recitar"
     },
     {
-      "q": "No caderno, a respeito de não recitar: qual vale?",
+      "q": "Citar o teorema com precisão basta?",
       "o": [
-        "Recitar PACELC sem o desenho do produto não é Staff.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O desenho do produto não precisa aparecer na discussão de consistência.",
+        "Aplicar o modelo ao sistema é passo opcional depois de citar o teorema.",
+        "Recitar o teorema sem o desenho do produto não é nível Staff.",
+        "Recitar o teorema com precisão já demonstra nível Staff."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 2,
+      "w": "A mesa quer o modelo aplicado ao seu sistema, com fatia, pager e número.",
       "t": "não recitar"
     },
     {
-      "q": "Se perguntarem não recitar na mesa, qual frase é a verdadeira?",
+      "q": "Como o teorema vira argumento de Staff?",
       "o": [
-        "Recitar PACELC sem o desenho do produto não é Staff.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O desenho do produto não precisa aparecer na discussão de consistência.",
+        "Aplicar o modelo ao sistema é passo opcional depois de citar o teorema.",
+        "Recitar o teorema sem o desenho do produto não é nível Staff.",
+        "Recitar o teorema com precisão já demonstra nível Staff."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 2,
+      "w": "A mesa quer o modelo aplicado ao seu sistema, com fatia, pager e número.",
       "t": "não recitar"
     },
     {
-      "q": "Sobre oncall: qual afirmação está certa?",
+      "q": "Com quem quem desenha conversa?",
       "o": [
-        "Quem desenha opera. Staff pergunta o pager.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O pager é assunto de operação, fora da discussão de desenho.",
+        "O desenho não tem consequência para quem opera.",
+        "Quem desenha pergunta quem acorda com o pager.",
+        "Quem desenha não precisa falar com quem opera o sistema."
       ],
-      "a": 0,
-      "w": "Lead também.",
+      "a": 2,
+      "w": "O desenho tem consequência de operação. Quem opera precisa estar na conversa.",
       "t": "oncall"
     },
     {
-      "q": "Qual frase sobre oncall está certa?",
+      "q": "O pager entra na discussão de desenho?",
       "o": [
-        "Quem desenha opera. Staff pergunta o pager.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O pager é assunto de operação, fora da discussão de desenho.",
+        "O desenho não tem consequência para quem opera.",
+        "Quem desenha pergunta quem acorda com o pager.",
+        "Quem desenha não precisa falar com quem opera o sistema."
       ],
-      "a": 0,
-      "w": "Lead também.",
+      "a": 2,
+      "w": "O desenho tem consequência de operação. Quem opera precisa estar na conversa.",
       "t": "oncall"
     },
     {
-      "q": "Oncall — o que acontece de verdade?",
+      "q": "O desenho tem consequência para quem opera?",
       "o": [
-        "Quem desenha opera. Staff pergunta o pager.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Quem desenha não precisa falar com quem opera o sistema.",
+        "O pager é assunto de operação, fora da discussão de desenho.",
+        "O desenho não tem consequência para quem opera.",
+        "Quem desenha pergunta quem acorda com o pager."
       ],
-      "a": 0,
-      "w": "Lead também.",
+      "a": 3,
+      "w": "O desenho tem consequência de operação. Quem opera precisa estar na conversa.",
       "t": "oncall"
     },
     {
-      "q": "Marque a leitura correta (oncall).",
+      "q": "Quem precisa estar na conversa sobre o desenho?",
       "o": [
-        "Quem desenha opera. Staff pergunta o pager.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O pager é assunto de operação, fora da discussão de desenho.",
+        "O desenho não tem consequência para quem opera.",
+        "Quem desenha pergunta quem acorda com o pager.",
+        "Quem desenha não precisa falar com quem opera o sistema."
       ],
-      "a": 0,
-      "w": "Lead também.",
+      "a": 2,
+      "w": "O desenho tem consequência de operação. Quem opera precisa estar na conversa.",
       "t": "oncall"
     },
     {
-      "q": "Corrija o mito sobre oncall.",
+      "q": "Quem desenha pode ignorar quem opera?",
       "o": [
-        "Quem desenha opera. Staff pergunta o pager.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O desenho não tem consequência para quem opera.",
+        "Quem desenha pergunta quem acorda com o pager.",
+        "Quem desenha não precisa falar com quem opera o sistema.",
+        "O pager é assunto de operação, fora da discussão de desenho."
       ],
-      "a": 0,
-      "w": "Lead também.",
+      "a": 1,
+      "w": "O desenho tem consequência de operação. Quem opera precisa estar na conversa.",
       "t": "oncall"
     },
     {
-      "q": "No caderno, a respeito de oncall: qual vale?",
+      "q": "Por que o pager importa no desenho?",
       "o": [
-        "Quem desenha opera. Staff pergunta o pager.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Quem desenha não precisa falar com quem opera o sistema.",
+        "O pager é assunto de operação, fora da discussão de desenho.",
+        "O desenho não tem consequência para quem opera.",
+        "Quem desenha pergunta quem acorda com o pager."
       ],
-      "a": 0,
-      "w": "Lead também.",
+      "a": 3,
+      "w": "O desenho tem consequência de operação. Quem opera precisa estar na conversa.",
       "t": "oncall"
     },
     {
-      "q": "Se perguntarem oncall na mesa, qual frase é a verdadeira?",
+      "q": "O que ligar entre desenho e operação?",
       "o": [
-        "Quem desenha opera. Staff pergunta o pager.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Quem desenha pergunta quem acorda com o pager.",
+        "Quem desenha não precisa falar com quem opera o sistema.",
+        "O pager é assunto de operação, fora da discussão de desenho.",
+        "O desenho não tem consequência para quem opera."
       ],
       "a": 0,
-      "w": "Lead também.",
+      "w": "O desenho tem consequência de operação. Quem opera precisa estar na conversa.",
       "t": "oncall"
     },
     {
-      "q": "Sobre clássica: qual afirmação está certa?",
+      "q": "O que as aulas anteriores cobrem?",
       "o": [
-        "Os temas anteriores cobrem a entrevista clássica; daqui para baixo é o extra.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "As aulas anteriores não cobrem a entrevista clássica: só esta cobre.",
+        "Esta aula repete o conteúdo das aulas anteriores com outros nomes.",
+        "Documento de decisão e comitê já foram cobertos nas aulas anteriores.",
+        "As aulas anteriores cobrem a entrevista clássica; esta é o extra de Staff."
       ],
-      "a": 0,
-      "w": "Intro staff.",
+      "a": 3,
+      "w": "Aqui entram documento de decisão, comitê e fatiar o sistema para milhões de pessoas.",
       "t": "clássica"
     },
     {
-      "q": "Qual frase sobre clássica está certa?",
+      "q": "O que esta aula acrescenta?",
       "o": [
-        "Os temas anteriores cobrem a entrevista clássica; daqui para baixo é o extra.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Esta aula repete o conteúdo das aulas anteriores com outros nomes.",
+        "Documento de decisão e comitê já foram cobertos nas aulas anteriores.",
+        "As aulas anteriores cobrem a entrevista clássica; esta é o extra de Staff.",
+        "As aulas anteriores não cobrem a entrevista clássica: só esta cobre."
       ],
-      "a": 0,
-      "w": "Intro staff.",
+      "a": 2,
+      "w": "Aqui entram documento de decisão, comitê e fatiar o sistema para milhões de pessoas.",
       "t": "clássica"
     },
     {
-      "q": "Clássica — o que acontece de verdade?",
+      "q": "Esta aula repete as anteriores?",
       "o": [
-        "Os temas anteriores cobrem a entrevista clássica; daqui para baixo é o extra.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "As aulas anteriores cobrem a entrevista clássica; esta é o extra de Staff.",
+        "As aulas anteriores não cobrem a entrevista clássica: só esta cobre.",
+        "Esta aula repete o conteúdo das aulas anteriores com outros nomes.",
+        "Documento de decisão e comitê já foram cobertos nas aulas anteriores."
       ],
       "a": 0,
-      "w": "Intro staff.",
+      "w": "Aqui entram documento de decisão, comitê e fatiar o sistema para milhões de pessoas.",
       "t": "clássica"
     },
     {
-      "q": "Marque a leitura correta (clássica).",
+      "q": "Que rituais entram só aqui?",
       "o": [
-        "Os temas anteriores cobrem a entrevista clássica; daqui para baixo é o extra.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "As aulas anteriores cobrem a entrevista clássica; esta é o extra de Staff.",
+        "As aulas anteriores não cobrem a entrevista clássica: só esta cobre.",
+        "Esta aula repete o conteúdo das aulas anteriores com outros nomes.",
+        "Documento de decisão e comitê já foram cobertos nas aulas anteriores."
       ],
       "a": 0,
-      "w": "Intro staff.",
+      "w": "Aqui entram documento de decisão, comitê e fatiar o sistema para milhões de pessoas.",
       "t": "clássica"
     },
     {
-      "q": "Corrija o mito sobre clássica.",
+      "q": "As aulas anteriores cobrem a entrevista clássica?",
       "o": [
-        "Os temas anteriores cobrem a entrevista clássica; daqui para baixo é o extra.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "As aulas anteriores cobrem a entrevista clássica; esta é o extra de Staff.",
+        "As aulas anteriores não cobrem a entrevista clássica: só esta cobre.",
+        "Esta aula repete o conteúdo das aulas anteriores com outros nomes.",
+        "Documento de decisão e comitê já foram cobertos nas aulas anteriores."
       ],
       "a": 0,
-      "w": "Intro staff.",
+      "w": "Aqui entram documento de decisão, comitê e fatiar o sistema para milhões de pessoas.",
       "t": "clássica"
     },
     {
-      "q": "No caderno, a respeito de clássica: qual vale?",
+      "q": "Documento de decisão já apareceu antes?",
       "o": [
-        "Os temas anteriores cobrem a entrevista clássica; daqui para baixo é o extra.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "As aulas anteriores cobrem a entrevista clássica; esta é o extra de Staff.",
+        "As aulas anteriores não cobrem a entrevista clássica: só esta cobre.",
+        "Esta aula repete o conteúdo das aulas anteriores com outros nomes.",
+        "Documento de decisão e comitê já foram cobertos nas aulas anteriores."
       ],
       "a": 0,
-      "w": "Intro staff.",
+      "w": "Aqui entram documento de decisão, comitê e fatiar o sistema para milhões de pessoas.",
       "t": "clássica"
     },
     {
-      "q": "Se perguntarem clássica na mesa, qual frase é a verdadeira?",
+      "q": "Qual o papel desta aula na trilha?",
       "o": [
-        "Os temas anteriores cobrem a entrevista clássica; daqui para baixo é o extra.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Esta aula repete o conteúdo das aulas anteriores com outros nomes.",
+        "Documento de decisão e comitê já foram cobertos nas aulas anteriores.",
+        "As aulas anteriores cobrem a entrevista clássica; esta é o extra de Staff.",
+        "As aulas anteriores não cobrem a entrevista clássica: só esta cobre."
       ],
-      "a": 0,
-      "w": "Intro staff.",
+      "a": 2,
+      "w": "Aqui entram documento de decisão, comitê e fatiar o sistema para milhões de pessoas.",
       "t": "clássica"
     }
   ]

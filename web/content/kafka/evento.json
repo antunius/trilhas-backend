@@ -1,0 +1,94 @@
+{
+  "beats": [
+    {
+      "id": "dois-leitores",
+      "kind": "cena",
+      "kicker": "Mesmo fato",
+      "title": "PedidoCriado não é mensagem para o João.",
+      "body": "<p>O checkout anuncia: o pedido 99 foi criado. Total 8000 centavos. Cupom <code>BLACK</code>.</p><p>Faturamento cobra o cartão. Analytics conta a conversão. Os dois leem a <strong>mesma linha</strong>. Nenhum dos dois estava no POST do cliente.</p>"
+    },
+    {
+      "id": "envelope",
+      "kind": "explicar",
+      "title": "O envelope. O broker não lê o JSON por você.",
+      "html": "<p>Bytes no log. Quem interpreta é o consumidor — com schema, não com fé.</p><table><thead><tr><th>Campo</th><th>Papel</th></tr></thead><tbody><tr><td><code>key</code></td><td>Escolhe a partição. Mesma key → mesma partição → ordem daquela entidade.</td></tr><tr><td><code>value</code></td><td>O que aconteceu. JSON, Avro, Protobuf.</td></tr><tr><td><code>timestamp</code></td><td>Quando o fato foi registrado. Não escolhe partição.</td></tr><tr><td><code>headers</code></td><td>Tipo, correlação, tracing. Não é a key.</td></tr><tr><td><code>offset</code></td><td>Número da linha <em>naquela</em> partição. O líder carimba. Quem escreve não escolhe.</td></tr><tr><td><code>partition</code></td><td>Em qual partição a linha caiu.</td></tr></tbody></table><p>No lab o value é um record. O <code>eventId</code> estável é o que a inbox usa para não cobrar duas vezes.</p><pre class=\"code\">public record PedidoCriado(\n    String eventId,\n    String pedidoId,\n    int totalCentavos,\n    String cupom) {}  // cupom opcional</pre><p><code>PedidoCriado.java</code>. Offset não substitui idempotência de negócio.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Fato paga contrato. Comando paga acoplamento.",
+      "ganha": "Quem produziu não espera quem reagiu. Faturamento e analytics no mesmo PedidoCriado. Replay do passado. Payload com estado suficiente: ninguém faz GET no checkout.",
+      "paga": "Comando no tópico (“cubra o cartão”) devolve o destinatário. Notificação só com ID devolve o GET. Envelope gordo vira schema. Evento não se edita: o pedido mudou? Outro fato — PedidoCancelado.",
+      "quando": [
+        "A coisa já aconteceu e mais de um time precisa saber",
+        "O clique do cliente não pode esperar o faturamento",
+        "O value se basta para o efeito (cobrar, contar, baixar estoque)"
+      ],
+      "quandoNao": [
+        "O usuário espera a resposta na cara — frete, saldo, assento",
+        "Você está pedindo o futuro (“faz X”) em vez de anunciar o passado",
+        "GET /pedidos/99 passando por Kafka no meio — isso continua HTTP"
+      ]
+    },
+    {
+      "id": "fato-ou-ordem",
+      "kind": "escolha",
+      "kicker": "Pedido 99 · agora",
+      "prompt": "O checkout acabou de gravar o pedido 99. Como o resto da empresa fica sabendo — sem virar um HTTP disfarçado?",
+      "options": [
+        {
+          "id": "pedido-criado",
+          "label": "Publica PedidoCriado: o que já aconteceu, sem nomear o faturamento",
+          "verdict": "bom",
+          "why": "Fato do passado. Faturamento e analytics se inscrevem. O checkout não conhece ninguém."
+        },
+        {
+          "id": "cobre-cartao",
+          "label": "Publica CobreEsteCartao no tópico do faturamento",
+          "verdict": "ruim",
+          "why": "Isso é comando. Você pediu o futuro e cravou o destinatário no nome. Caiu o faturamento, o checkout ainda está acoplado."
+        },
+        {
+          "id": "updated",
+          "label": "Publica PedidoUpdated. Quem ler adivinha o que mudou",
+          "verdict": "ruim",
+          "why": "O consumidor vira detetive. Nomeie o fato: PedidoCriado, PedidoCancelado. Não um blob genérico."
+        }
+      ]
+    },
+    {
+      "id": "notificacao",
+      "kind": "escolha",
+      "prompt": "O value do PedidoCriado leva o quê — para o faturamento não ligar de volta no checkout?",
+      "options": [
+        {
+          "id": "so-id",
+          "label": "Só pedidoId. Quem ler faz GET /pedidos/99",
+          "verdict": "meio",
+          "why": "Notificação. Barato de publicar. No pico o checkout vira API dos consumidores. O fato não se basta."
+        },
+        {
+          "id": "estado",
+          "label": "Estado suficiente: pedidoId, totalCentavos, cupom, eventId",
+          "verdict": "bom",
+          "why": "State transfer. Faturamento cobra com o que está no envelope. Analytics também. Ninguém depende do checkout estar no ar."
+        },
+        {
+          "id": "entidade",
+          "label": "A linha inteira do Postgres, inclusive campos internos",
+          "verdict": "ruim",
+          "why": "Isso não é fato, é dump. O contrato engorda a cada partição nova. Consumidor antigo quebra."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Evento é fato do passado. Comando pede o futuro. PedidoUpdated genérico faz o consumidor adivinhar.",
+        "Notificação só com ID devolve o GET. State transfer carrega o que o efeito precisa.",
+        "O broker guarda o envelope. Quem cobra o cartão é o consumidor — com eventId na inbox."
+      ]
+    }
+  ]
+}

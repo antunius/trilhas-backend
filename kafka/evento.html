@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>evento — Kafka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../trilhas.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="crumb"><a href="../index.html">Trilhas</a> · <a href="index.html">Kafka</a></p>
+      <div class="eyebrow">Trilha 4 · Kafka</div>
+      <h1>evento</h1>
+      <p class="lede"></p>
+    </header>
+    <nav class="toc" aria-label="Índice"><a href="index.html">Início</a>
+      <a href="modelo-mental.html">Modelo mental</a>
+      <a href="evento.html">Evento</a>
+      <a href="topico.html">Tópico</a>
+      <a href="particao.html">Partição</a>
+      <a href="offset.html">Offset</a>
+      <a href="key.html">Key</a>
+      <a href="broker.html">Broker</a>
+      <a href="isr.html">ISR</a>
+      <a href="produtor.html">Produtor</a>
+      <a href="consumidor.html">Consumidor</a>
+      <a href="rebalance.html">Rebalance</a>
+      <a href="retencao.html">Retenção</a>
+      <a href="garantias.html">Garantias</a>
+      <a href="operacao.html">Operação</a>
+      <a href="schema.html">Schema Registry</a>
+      <a href="outbox.html">Outbox</a>
+      <a href="spring.html">Spring Kafka</a>
+      <a href="sintese.html">Síntese</a>
+      <a href="tech-lead.html">Tech Lead</a>
+      <a href="simulador.html">Simulador</a></nav>
+    <section class="week">
+<article class="term" id="evento">
+        <div class="tag">Vocabulário</div>
+        <h3>Evento (também chamado de mensagem ou record)</h3>
+        <p class="analogy">Analogia: uma nota no caderno que diz “isso já aconteceu”, nunca “por favor faça isso”.</p>
+        <p>
+          Um evento é um <strong>fato do passado</strong>, imutável.
+          Exemplos bons: <code>PedidoCriado</code>, <code>PagamentoAprovado</code>,
+          <code>ItemAdicionadoAoCarrinho</code>.
+        </p>
+        <p>No Kafka, o envelope técnico tem no mínimo:</p>
+        <table>
+          <thead>
+            <tr><th>Campo</th><th>Papel, em português</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>key</td><td>Decide em qual coluna (partição) a linha cai. Mesma key → mesma coluna → ordem daquela entidade.</td></tr>
+            <tr><td>value</td><td>O conteúdo: o que aconteceu. JSON, Avro, Protobuf…</td></tr>
+            <tr><td>timestamp</td><td>Quando o fato foi registrado.</td></tr>
+            <tr><td>headers</td><td>Etiquetas laterais: tipo do evento, correlação, tracing.</td></tr>
+            <tr><td>offset</td><td>Número da linha <em>naquela coluna</em>. Quem escreve não escolhe: o servidor carimba.</td></tr>
+            <tr><td>partition</td><td>Em qual coluna a linha caiu.</td></tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>Para que serve.</strong> Separar quem produz o fato de quem reage.
+          O serviço de pedidos não precisa conhecer faturamento, estoque e analytics.
+          Ele só anuncia: “um pedido foi criado”.
+        </p>
+        <div class="warn">
+          <strong>Não é um comando nem um HTTP.</strong>
+          Evento descreve o passado. Comando pede o futuro (“cobre este cartão”).
+          Se o tópico vira “para o faturamento fazer X”, você reacoplou todo mundo.
+          Outro erro: publicar <code>PedidoUpdated</code> genérico. O consumidor precisa adivinhar o que mudou.
+          Nomeie o fato: <code>PedidoCriado</code>, <code>PedidoCancelado</code>.
+        </div>
+        <p><strong>Na prática.</strong> O payload do lab é um record Java (JSON Schema no Registry):</p>
+<pre class="code">public record PedidoCriado(
+    String eventId,
+    String pedidoId,
+    int totalCentavos,
+    String cupom) {}  // cupom opcional</pre>
+        <p class="lab-ref"><strong>No lab.</strong> <code>PedidoCriado.java</code>. O <code>eventId</code> estável é o que a inbox da aula de garantias usa para não cobrar duas vezes.</p>
+      </article>
+</section>
+
+    <footer>Trilha Kafka por tema.</footer>
+  </div>
+</body>
+</html>

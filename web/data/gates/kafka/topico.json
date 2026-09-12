@@ -1,1262 +1,1262 @@
 {
   "questions": [
     {
-      "q": "Sobre nome: qual afirmação está certa?",
+      "q": "O que é um tópico, na prática?",
+      "o": [
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro."
+      ],
+      "a": 1,
+      "w": "Não é um processo nem uma fila na RAM do broker.",
+      "t": "nome"
+    },
+    {
+      "q": "O que é um tópico, na prática — verdade ou mito?",
+      "o": [
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições)."
+      ],
+      "a": 3,
+      "w": "Não é um processo nem uma fila na RAM do broker.",
+      "t": "nome"
+    },
+    {
+      "q": "O que é um tópico, na prática — o que acontece de verdade?",
+      "o": [
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "Tópico anônimo está ok; o contrato é o group.id."
+      ],
+      "a": 1,
+      "w": "Não é um processo nem uma fila na RAM do broker.",
+      "t": "nome"
+    },
+    {
+      "q": "Na prática: O que é um tópico, na prática?",
+      "o": [
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória."
+      ],
+      "a": 2,
+      "w": "Não é um processo nem uma fila na RAM do broker.",
+      "t": "nome"
+    },
+    {
+      "q": "O que é um tópico, na prática — como funciona?",
       "o": [
         "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar."
       ],
       "a": 0,
       "w": "Não é um processo nem uma fila na RAM do broker.",
       "t": "nome"
     },
     {
-      "q": "Qual frase sobre nome está certa?",
+      "q": "Se perguntarem: O que é um tópico, na prática?",
       "o": [
-        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições)."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não é um processo nem uma fila na RAM do broker.",
       "t": "nome"
     },
     {
-      "q": "Nome — o que acontece de verdade?",
+      "q": "O que é um tópico, na prática — o que vale aqui?",
       "o": [
-        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições)."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não é um processo nem uma fila na RAM do broker.",
       "t": "nome"
     },
     {
-      "q": "Marque a leitura correta (nome).",
+      "q": "Como nomear o tópico: pelo fato ou pelo time que consome?",
       "o": [
-        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Nomeie o tópico pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro."
       ],
-      "a": 0,
-      "w": "Não é um processo nem uma fila na RAM do broker.",
-      "t": "nome"
-    },
-    {
-      "q": "Corrija o mito sobre nome.",
-      "o": [
-        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Não é um processo nem uma fila na RAM do broker.",
-      "t": "nome"
-    },
-    {
-      "q": "No caderno, a respeito de nome: qual vale?",
-      "o": [
-        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Não é um processo nem uma fila na RAM do broker.",
-      "t": "nome"
-    },
-    {
-      "q": "Se perguntarem nome na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Tópico é um nome no cluster que aponta para um conjunto de logs (partições).",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Não é um processo nem uma fila na RAM do broker.",
-      "t": "nome"
-    },
-    {
-      "q": "Sobre contrato: qual afirmação está certa?",
-      "o": [
-        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Quem se importa se inscreve. O tópico é o contrato.",
+      "a": 2,
+      "w": "Quem se importa se inscreve. Destinatário no nome reacopla todo mundo.",
       "t": "contrato"
     },
     {
-      "q": "Qual frase sobre contrato está certa?",
+      "q": "Por que fila-do-faturamento é um mau nome de tópico?",
       "o": [
-        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Nomeie o tópico pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro."
       ],
-      "a": 0,
-      "w": "Quem se importa se inscreve. O tópico é o contrato.",
+      "a": 2,
+      "w": "Quem se importa se inscreve. Destinatário no nome reacopla todo mundo.",
       "t": "contrato"
     },
     {
-      "q": "Contrato — o que acontece de verdade?",
+      "q": "pedidos.criados vs fila-do-faturamento: qual é o contrato?",
       "o": [
-        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Nomeie o tópico pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento)."
       ],
-      "a": 0,
-      "w": "Quem se importa se inscreve. O tópico é o contrato.",
+      "a": 3,
+      "w": "Quem se importa se inscreve. Destinatário no nome reacopla todo mundo.",
       "t": "contrato"
     },
     {
-      "q": "Marque a leitura correta (contrato).",
+      "q": "Se o analytics também quiser o mesmo fato, o que o nome do tópico precisa permitir?",
       "o": [
-        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Nomeie o tópico pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "O nome do tópico deve ser o do microsserviço produtor."
       ],
-      "a": 0,
-      "w": "Quem se importa se inscreve. O tópico é o contrato.",
+      "a": 1,
+      "w": "Quem se importa se inscreve. Destinatário no nome reacopla todo mundo.",
       "t": "contrato"
     },
     {
-      "q": "Corrija o mito sobre contrato.",
+      "q": "O tópico é contrato de fato ou caixa de correio de um time?",
       "o": [
-        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Nomeie o tópico pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro."
       ],
-      "a": 0,
-      "w": "Quem se importa se inscreve. O tópico é o contrato.",
+      "a": 2,
+      "w": "Quem se importa se inscreve. Destinatário no nome reacopla todo mundo.",
       "t": "contrato"
     },
     {
-      "q": "No caderno, a respeito de contrato: qual vale?",
+      "q": "Quem se inscreve quando o nome é o fato, não o destinatário?",
       "o": [
-        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Nomeie o tópico pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id."
       ],
       "a": 0,
-      "w": "Quem se importa se inscreve. O tópico é o contrato.",
+      "w": "Quem se importa se inscreve. Destinatário no nome reacopla todo mundo.",
       "t": "contrato"
     },
     {
-      "q": "Se perguntarem contrato na mesa, qual frase é a verdadeira?",
+      "q": "O que o nome do tópico deve responder: o que aconteceu ou para quem?",
       "o": [
-        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Nomeie o tópico pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento)."
       ],
-      "a": 0,
-      "w": "Quem se importa se inscreve. O tópico é o contrato.",
+      "a": 3,
+      "w": "Quem se importa se inscreve. Destinatário no nome reacopla todo mundo.",
       "t": "contrato"
     },
     {
-      "q": "Sobre auto-create: qual afirmação está certa?",
+      "q": "Por que auto-create de tópico em produção é perigoso?",
       "o": [
         "Auto-create em produção esconde o contrato e costuma nascer com 1 partição.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico."
       ],
       "a": 0,
-      "w": "No lab AUTO_CREATE está false de propósito.",
+      "w": "AUTO_CREATE false força o tópico nomeado com N decidido.",
       "t": "auto-create"
     },
     {
-      "q": "Qual frase sobre auto-create está certa?",
+      "q": "Por que auto-create de tópico em produção é perigoso — verdade ou mito?",
       "o": [
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
         "Auto-create em produção esconde o contrato e costuma nascer com 1 partição.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas."
       ],
-      "a": 0,
-      "w": "No lab AUTO_CREATE está false de propósito.",
+      "a": 2,
+      "w": "AUTO_CREATE false força o tópico nomeado com N decidido.",
       "t": "auto-create"
     },
     {
-      "q": "Auto-create — o que acontece de verdade?",
+      "q": "Por que auto-create de tópico em produção é perigoso — o que acontece de verdade?",
       "o": [
         "Auto-create em produção esconde o contrato e costuma nascer com 1 partição.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção."
       ],
       "a": 0,
-      "w": "No lab AUTO_CREATE está false de propósito.",
+      "w": "AUTO_CREATE false força o tópico nomeado com N decidido.",
       "t": "auto-create"
     },
     {
-      "q": "Marque a leitura correta (auto-create).",
+      "q": "Na prática: Por que auto-create de tópico em produção é perigoso?",
       "o": [
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
         "Auto-create em produção esconde o contrato e costuma nascer com 1 partição.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção."
       ],
-      "a": 0,
-      "w": "No lab AUTO_CREATE está false de propósito.",
+      "a": 1,
+      "w": "AUTO_CREATE false força o tópico nomeado com N decidido.",
       "t": "auto-create"
     },
     {
-      "q": "Corrija o mito sobre auto-create.",
+      "q": "Por que auto-create de tópico em produção é perigoso — como funciona?",
       "o": [
+        "O subject do value é o group.id do consumidor.",
         "Auto-create em produção esconde o contrato e costuma nascer com 1 partição.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta."
       ],
-      "a": 0,
-      "w": "No lab AUTO_CREATE está false de propósito.",
+      "a": 1,
+      "w": "AUTO_CREATE false força o tópico nomeado com N decidido.",
       "t": "auto-create"
     },
     {
-      "q": "No caderno, a respeito de auto-create: qual vale?",
+      "q": "Se perguntarem: Por que auto-create de tópico em produção é perigoso?",
       "o": [
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
         "Auto-create em produção esconde o contrato e costuma nascer com 1 partição.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas."
       ],
-      "a": 0,
-      "w": "No lab AUTO_CREATE está false de propósito.",
+      "a": 2,
+      "w": "AUTO_CREATE false força o tópico nomeado com N decidido.",
       "t": "auto-create"
     },
     {
-      "q": "Se perguntarem auto-create na mesa, qual frase é a verdadeira?",
+      "q": "Por que auto-create de tópico em produção é perigoso — o que vale aqui?",
       "o": [
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
         "Auto-create em produção esconde o contrato e costuma nascer com 1 partição.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas."
       ],
-      "a": 0,
-      "w": "No lab AUTO_CREATE está false de propósito.",
+      "a": 2,
+      "w": "AUTO_CREATE false força o tópico nomeado com N decidido.",
       "t": "auto-create"
     },
     {
-      "q": "Sobre metadata: qual afirmação está certa?",
+      "q": "O nome do tópico guarda as mensagens?",
       "o": [
+        "O segundo grupo não vê a mensagem: o primeiro já apagou.",
         "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O nome sozinho não guarda as mensagens.",
       "t": "metadata"
     },
     {
-      "q": "Qual frase sobre metadata está certa?",
+      "q": "O nome do tópico guarda as mensagens — verdade ou mito?",
       "o": [
-        "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O nome sozinho não guarda as mensagens.",
       "t": "metadata"
     },
     {
-      "q": "Metadata — o que acontece de verdade?",
+      "q": "O nome do tópico guarda as mensagens — o que acontece de verdade?",
       "o": [
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
         "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O nome sozinho não guarda as mensagens.",
       "t": "metadata"
     },
     {
-      "q": "Marque a leitura correta (metadata).",
+      "q": "Na prática: O nome do tópico guarda as mensagens?",
       "o": [
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
         "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O nome do tópico já guarda os bytes; partição é só um apelido."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O nome sozinho não guarda as mensagens.",
       "t": "metadata"
     },
     {
-      "q": "Corrija o mito sobre metadata.",
+      "q": "O nome do tópico guarda as mensagens — como funciona?",
       "o": [
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
         "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O nome do tópico já guarda os bytes; partição é só um apelido."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O nome sozinho não guarda as mensagens.",
       "t": "metadata"
     },
     {
-      "q": "No caderno, a respeito de metadata: qual vale?",
+      "q": "Se perguntarem: O nome do tópico guarda as mensagens?",
       "o": [
-        "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O nome sozinho não guarda as mensagens.",
       "t": "metadata"
     },
     {
-      "q": "Se perguntarem metadata na mesa, qual frase é a verdadeira?",
+      "q": "O nome do tópico guarda as mensagens — o que vale aqui?",
       "o": [
-        "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "Número de partições e retenção são metadata; os bytes ficam nos arquivos das partições."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O nome sozinho não guarda as mensagens.",
       "t": "metadata"
     },
     {
-      "q": "Sobre append: qual afirmação está certa?",
+      "q": "Dá para reescrever a mensagem 40 de um tópico?",
       "o": [
-        "Ninguém reescreve a linha 40. Quem apaga é retenção ou compaction.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "Ninguém reescreve a mensagem 40. Quem apaga é retenção ou compaction.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar."
+      ],
+      "a": 2,
+      "w": "Tópico não é tabela com UPDATE.",
+      "t": "append"
+    },
+    {
+      "q": "Dá para reescrever a mensagem 40 de um tópico — verdade ou mito?",
+      "o": [
+        "Ninguém reescreve a mensagem 40. Quem apaga é retenção ou compaction.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "O CLI cria um único log; as três partições são só um número no YAML."
       ],
       "a": 0,
       "w": "Tópico não é tabela com UPDATE.",
       "t": "append"
     },
     {
-      "q": "Qual frase sobre append está certa?",
+      "q": "Dá para reescrever a mensagem 40 de um tópico — o que acontece de verdade?",
       "o": [
-        "Ninguém reescreve a linha 40. Quem apaga é retenção ou compaction.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Ninguém reescreve a mensagem 40. Quem apaga é retenção ou compaction.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar."
+      ],
+      "a": 2,
+      "w": "Tópico não é tabela com UPDATE.",
+      "t": "append"
+    },
+    {
+      "q": "Na prática: Dá para reescrever a mensagem 40 de um tópico?",
+      "o": [
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "Ninguém reescreve a mensagem 40. Quem apaga é retenção ou compaction."
+      ],
+      "a": 3,
+      "w": "Tópico não é tabela com UPDATE.",
+      "t": "append"
+    },
+    {
+      "q": "Dá para reescrever a mensagem 40 de um tópico — como funciona?",
+      "o": [
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "Ninguém reescreve a mensagem 40. Quem apaga é retenção ou compaction.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce."
+      ],
+      "a": 1,
+      "w": "Tópico não é tabela com UPDATE.",
+      "t": "append"
+    },
+    {
+      "q": "Se perguntarem: Dá para reescrever a mensagem 40 de um tópico?",
+      "o": [
+        "Ninguém reescreve a mensagem 40. Quem apaga é retenção ou compaction.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições."
       ],
       "a": 0,
       "w": "Tópico não é tabela com UPDATE.",
       "t": "append"
     },
     {
-      "q": "Append — o que acontece de verdade?",
+      "q": "Dá para reescrever a mensagem 40 de um tópico — o que vale aqui?",
       "o": [
-        "Ninguém reescreve a linha 40. Quem apaga é retenção ou compaction.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Ninguém reescreve a mensagem 40. Quem apaga é retenção ou compaction.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições.",
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição."
       ],
       "a": 0,
       "w": "Tópico não é tabela com UPDATE.",
       "t": "append"
     },
     {
-      "q": "Marque a leitura correta (append).",
+      "q": "O que kafka-topics.sh --create --partitions 3 cria de verdade?",
       "o": [
-        "Ninguém reescreve a linha 40. Quem apaga é retenção ou compaction.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "Cria o tópico com 3 partições — cada partição é um log.",
+        "O CLI cria um único log; as três partições são só um número no YAML."
       ],
-      "a": 0,
-      "w": "Tópico não é tabela com UPDATE.",
-      "t": "append"
-    },
-    {
-      "q": "Corrija o mito sobre append.",
-      "o": [
-        "Ninguém reescreve a linha 40. Quem apaga é retenção ou compaction.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "Tópico não é tabela com UPDATE.",
-      "t": "append"
-    },
-    {
-      "q": "No caderno, a respeito de append: qual vale?",
-      "o": [
-        "Ninguém reescreve a linha 40. Quem apaga é retenção ou compaction.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Tópico não é tabela com UPDATE.",
-      "t": "append"
-    },
-    {
-      "q": "Se perguntarem append na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Ninguém reescreve a linha 40. Quem apaga é retenção ou compaction.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Tópico não é tabela com UPDATE.",
-      "t": "append"
-    },
-    {
-      "q": "Sobre CLI: qual afirmação está certa?",
-      "o": [
-        "kafka-topics.sh --create --partitions 3 cria os três logs.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "O equivalente Spring é TopicBuilder no lab.",
+      "a": 2,
+      "w": "Um tópico, três partições. Cada partição é um log no disco. O comando não cria um único log nem três tópicos.",
       "t": "CLI"
     },
     {
-      "q": "Qual frase sobre CLI está certa?",
+      "q": "kafka-topics.sh --create --topic pedidos.criados --partitions 3: o que nasce no cluster?",
       "o": [
-        "kafka-topics.sh --create --partitions 3 cria os três logs.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "Cria o tópico com 3 partições — cada partição é um log.",
+        "O CLI cria um único log; as três partições são só um número no YAML."
       ],
-      "a": 0,
-      "w": "O equivalente Spring é TopicBuilder no lab.",
+      "a": 2,
+      "w": "Um tópico, três partições. Cada partição é um log no disco. O comando não cria um único log nem três tópicos.",
       "t": "CLI"
     },
     {
-      "q": "CLI — o que acontece de verdade?",
+      "q": "--create --partitions 3 cria 3 tópicos ou 1 tópico com 3 partições?",
       "o": [
-        "kafka-topics.sh --create --partitions 3 cria os três logs.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "Cria o tópico com 3 partições — cada partição é um log."
       ],
-      "a": 0,
-      "w": "O equivalente Spring é TopicBuilder no lab.",
+      "a": 3,
+      "w": "Um tópico, três partições. Cada partição é um log no disco. O comando não cria um único log nem três tópicos.",
       "t": "CLI"
     },
     {
-      "q": "Marque a leitura correta (CLI).",
+      "q": "Partição 0, 1 e 2 depois do --create: o que o comando criou?",
       "o": [
-        "kafka-topics.sh --create --partitions 3 cria os três logs.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "Cria o tópico com 3 partições — cada partição é um log."
       ],
-      "a": 0,
-      "w": "O equivalente Spring é TopicBuilder no lab.",
+      "a": 3,
+      "w": "Um tópico, três partições. Cada partição é um log no disco. O comando não cria um único log nem três tópicos.",
       "t": "CLI"
     },
     {
-      "q": "Corrija o mito sobre CLI.",
+      "q": "O CLI com --partitions 3 cria um único log e o 3 é só YAML?",
       "o": [
-        "kafka-topics.sh --create --partitions 3 cria os três logs.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Cria o tópico com 3 partições — cada partição é um log.",
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce."
       ],
       "a": 0,
-      "w": "O equivalente Spring é TopicBuilder no lab.",
+      "w": "Um tópico, três partições. Cada partição é um log no disco. O comando não cria um único log nem três tópicos.",
       "t": "CLI"
     },
     {
-      "q": "No caderno, a respeito de CLI: qual vale?",
+      "q": "O que existe no disco depois de criar o tópico com 3 partições?",
       "o": [
-        "kafka-topics.sh --create --partitions 3 cria os três logs.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "Cria o tópico com 3 partições — cada partição é um log."
       ],
-      "a": 0,
-      "w": "O equivalente Spring é TopicBuilder no lab.",
+      "a": 3,
+      "w": "Um tópico, três partições. Cada partição é um log no disco. O comando não cria um único log nem três tópicos.",
       "t": "CLI"
     },
     {
-      "q": "Se perguntarem CLI na mesa, qual frase é a verdadeira?",
+      "q": "kafka-topics.sh --create --partitions 3: tópico com 3 partições?",
       "o": [
-        "kafka-topics.sh --create --partitions 3 cria os três logs.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "Cria o tópico com 3 partições — cada partição é um log."
       ],
-      "a": 0,
-      "w": "O equivalente Spring é TopicBuilder no lab.",
+      "a": 3,
+      "w": "Um tópico, três partições. Cada partição é um log no disco. O comando não cria um único log nem três tópicos.",
       "t": "CLI"
     },
     {
-      "q": "Sobre inscrição: qual afirmação está certa?",
+      "q": "O consumidor se inscreve no tópico ou no produtor?",
       "o": [
-        "Consumidores se inscrevem no tópico, não no produtor.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "O subject do value é o group.id do consumidor.",
+        "Consumidores se inscrevem no tópico, não no produtor."
       ],
-      "a": 0,
-      "w": "O produtor some; o caderno fica.",
+      "a": 3,
+      "w": "O produtor some; o log fica.",
       "t": "inscrição"
     },
     {
-      "q": "Qual frase sobre inscrição está certa?",
+      "q": "O consumidor se inscreve no tópico ou no produtor — verdade ou mito?",
       "o": [
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
         "Consumidores se inscrevem no tópico, não no produtor.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "O subject do value é o group.id do consumidor."
       ],
-      "a": 0,
-      "w": "O produtor some; o caderno fica.",
+      "a": 1,
+      "w": "O produtor some; o log fica.",
       "t": "inscrição"
     },
     {
-      "q": "Inscrição — o que acontece de verdade?",
+      "q": "O consumidor se inscreve no tópico ou no produtor — o que acontece de verdade?",
       "o": [
-        "Consumidores se inscrevem no tópico, não no produtor.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
+        "Consumidores se inscrevem no tópico, não no produtor."
       ],
-      "a": 0,
-      "w": "O produtor some; o caderno fica.",
+      "a": 3,
+      "w": "O produtor some; o log fica.",
       "t": "inscrição"
     },
     {
-      "q": "Marque a leitura correta (inscrição).",
+      "q": "Na prática: O consumidor se inscreve no tópico ou no produtor?",
       "o": [
         "Consumidores se inscrevem no tópico, não no produtor.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou."
       ],
       "a": 0,
-      "w": "O produtor some; o caderno fica.",
+      "w": "O produtor some; o log fica.",
       "t": "inscrição"
     },
     {
-      "q": "Corrija o mito sobre inscrição.",
+      "q": "O consumidor se inscreve no tópico ou no produtor — como funciona?",
       "o": [
+        "O segundo grupo não vê a mensagem: o primeiro já apagou.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
         "Consumidores se inscrevem no tópico, não no produtor.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some."
       ],
-      "a": 0,
-      "w": "O produtor some; o caderno fica.",
+      "a": 2,
+      "w": "O produtor some; o log fica.",
       "t": "inscrição"
     },
     {
-      "q": "No caderno, a respeito de inscrição: qual vale?",
+      "q": "Se perguntarem: O consumidor se inscreve no tópico ou no produtor?",
       "o": [
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
         "Consumidores se inscrevem no tópico, não no produtor.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta."
       ],
-      "a": 0,
-      "w": "O produtor some; o caderno fica.",
+      "a": 1,
+      "w": "O produtor some; o log fica.",
       "t": "inscrição"
     },
     {
-      "q": "Se perguntarem inscrição na mesa, qual frase é a verdadeira?",
+      "q": "O consumidor se inscreve no tópico ou no produtor — o que vale aqui?",
       "o": [
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
         "Consumidores se inscrevem no tópico, não no produtor.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória."
       ],
-      "a": 0,
-      "w": "O produtor some; o caderno fica.",
+      "a": 1,
+      "w": "O produtor some; o log fica.",
       "t": "inscrição"
     },
     {
-      "q": "Sobre lab: qual afirmação está certa?",
+      "q": "Qual tópico de exemplo esta trilha usa, e com quantas partições?",
       "o": [
-        "O tópico didático é pedidos.criados com 3 partições.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição.",
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "O tópico de exemplo é pedidos.criados com 3 partições.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições."
       ],
-      "a": 0,
-      "w": "TopicConfig.java e o CLI do README.",
+      "a": 2,
+      "w": "TopicBuilder / kafka-topics --create. Não é auto-create escondido.",
       "t": "lab"
     },
     {
-      "q": "Qual frase sobre lab está certa?",
+      "q": "pedidos.criados: quantas partições neste desenho?",
       "o": [
-        "O tópico didático é pedidos.criados com 3 partições.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O tópico de exemplo é pedidos.criados com 3 partições.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições.",
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição.",
+        "Não há tópico fixo: o auto-create escolhe o nome."
       ],
       "a": 0,
-      "w": "TopicConfig.java e o CLI do README.",
+      "w": "TopicBuilder / kafka-topics --create. Não é auto-create escondido.",
       "t": "lab"
     },
     {
-      "q": "Lab — o que acontece de verdade?",
+      "q": "O tópico de exemplo é pedidos.criados ou um UUID do cluster?",
       "o": [
-        "O tópico didático é pedidos.criados com 3 partições.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "O tópico de exemplo é pedidos.criados com 3 partições.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições.",
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição."
       ],
-      "a": 0,
-      "w": "TopicConfig.java e o CLI do README.",
+      "a": 1,
+      "w": "TopicBuilder / kafka-topics --create. Não é auto-create escondido.",
       "t": "lab"
     },
     {
-      "q": "Marque a leitura correta (lab).",
+      "q": "TopicBuilder e o CLI kafka-topics criam o quê?",
       "o": [
-        "O tópico didático é pedidos.criados com 3 partições.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições.",
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição.",
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "O tópico de exemplo é pedidos.criados com 3 partições."
       ],
-      "a": 0,
-      "w": "TopicConfig.java e o CLI do README.",
+      "a": 3,
+      "w": "TopicBuilder / kafka-topics --create. Não é auto-create escondido.",
       "t": "lab"
     },
     {
-      "q": "Corrija o mito sobre lab.",
+      "q": "Se alguém perguntar o tópico de pedidos desta aula, o que você responde?",
       "o": [
-        "O tópico didático é pedidos.criados com 3 partições.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição.",
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "O tópico de exemplo é pedidos.criados com 3 partições.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições."
       ],
-      "a": 0,
-      "w": "TopicConfig.java e o CLI do README.",
+      "a": 2,
+      "w": "TopicBuilder / kafka-topics --create. Não é auto-create escondido.",
       "t": "lab"
     },
     {
-      "q": "No caderno, a respeito de lab: qual vale?",
+      "q": "AUTO_CREATE escondido vs tópico nomeado: o que o desenho usa?",
       "o": [
-        "O tópico didático é pedidos.criados com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "O tópico de exemplo é pedidos.criados com 3 partições.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições.",
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição."
       ],
-      "a": 0,
-      "w": "TopicConfig.java e o CLI do README.",
+      "a": 1,
+      "w": "TopicBuilder / kafka-topics --create. Não é auto-create escondido.",
       "t": "lab"
     },
     {
-      "q": "Se perguntarem lab na mesa, qual frase é a verdadeira?",
+      "q": "3 partições neste desenho: de qual tópico?",
       "o": [
-        "O tópico didático é pedidos.criados com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "O tópico de exemplo é pedidos.criados com 3 partições.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições.",
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição."
       ],
-      "a": 0,
-      "w": "TopicConfig.java e o CLI do README.",
+      "a": 1,
+      "w": "TopicBuilder / kafka-topics --create. Não é auto-create escondido.",
       "t": "lab"
     },
     {
-      "q": "Sobre controller: qual afirmação está certa?",
+      "q": "Onde vive a metadata do tópico, e onde ficam os bytes?",
       "o": [
         "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Você “fala com o tópico” como se fosse um processo; bytes e metadata são a mesma coisa.",
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce."
       ],
       "a": 0,
       "w": "Você não “fala com o tópico” como processo.",
       "t": "controller"
     },
     {
-      "q": "Qual frase sobre controller está certa?",
+      "q": "Onde vive a metadata do tópico, e onde ficam os bytes — verdade ou mito?",
+      "o": [
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
+        "Você “fala com o tópico” como se fosse um processo; bytes e metadata são a mesma coisa."
+      ],
+      "a": 2,
+      "w": "Você não “fala com o tópico” como processo.",
+      "t": "controller"
+    },
+    {
+      "q": "Onde vive a metadata do tópico, e onde ficam os bytes — o que acontece de verdade?",
       "o": [
         "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Você “fala com o tópico” como se fosse um processo; bytes e metadata são a mesma coisa.",
+        "O consumidor se inscreve no produtor; se o serviço sumir, o log some.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições."
       ],
       "a": 0,
       "w": "Você não “fala com o tópico” como processo.",
       "t": "controller"
     },
     {
-      "q": "Controller — o que acontece de verdade?",
+      "q": "Na prática: Onde vive a metadata do tópico, e onde ficam os bytes?",
       "o": [
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição.",
         "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Você “fala com o tópico” como se fosse um processo; bytes e metadata são a mesma coisa.",
+        "O tópico de exemplo é uma fila na RAM do broker, sem partições."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Você não “fala com o tópico” como processo.",
       "t": "controller"
     },
     {
-      "q": "Marque a leitura correta (controller).",
+      "q": "Onde vive a metadata do tópico, e onde ficam os bytes — como funciona?",
       "o": [
-        "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Você “fala com o tópico” como se fosse um processo; bytes e metadata são a mesma coisa.",
+        "O tópico de exemplo se chama fila-do-faturamento e tem 1 partição.",
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "Metadata do tópico vive no controller; bytes no disco do líder/followers."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Você não “fala com o tópico” como processo.",
       "t": "controller"
     },
     {
-      "q": "Corrija o mito sobre controller.",
+      "q": "Se perguntarem: Onde vive a metadata do tópico, e onde ficam os bytes?",
       "o": [
+        "Não há tópico fixo: o auto-create escolhe o nome.",
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
         "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Você “fala com o tópico” como se fosse um processo; bytes e metadata são a mesma coisa."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Você não “fala com o tópico” como processo.",
       "t": "controller"
     },
     {
-      "q": "No caderno, a respeito de controller: qual vale?",
+      "q": "Onde vive a metadata do tópico, e onde ficam os bytes — o que vale aqui?",
       "o": [
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
         "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Você “fala com o tópico” como se fosse um processo; bytes e metadata são a mesma coisa."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Você não “fala com o tópico” como processo.",
       "t": "controller"
     },
     {
-      "q": "Se perguntarem controller na mesa, qual frase é a verdadeira?",
+      "q": "Mais partições é só um número de graça no YAML?",
       "o": [
-        "Metadata do tópico vive no controller; bytes no disco do líder/followers.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
+        "Mais partições não custam arquivos, réplicas nem rebalance."
       ],
-      "a": 0,
-      "w": "Você não “fala com o tópico” como processo.",
-      "t": "controller"
+      "a": 2,
+      "w": "Não é só um número no YAML.",
+      "t": "N"
     },
     {
-      "q": "Sobre N: qual afirmação está certa?",
+      "q": "Mais partições é só um número de graça no YAML — verdade ou mito?",
       "o": [
         "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção."
       ],
       "a": 0,
       "w": "Não é só um número no YAML.",
       "t": "N"
     },
     {
-      "q": "Qual frase sobre N está certa?",
+      "q": "Mais partições é só um número de graça no YAML — o que acontece de verdade?",
+      "o": [
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
+        "Mais partições não custam arquivos, réplicas nem rebalance."
+      ],
+      "a": 2,
+      "w": "Não é só um número no YAML.",
+      "t": "N"
+    },
+    {
+      "q": "Na prática: Mais partições é só um número de graça no YAML?",
+      "o": [
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "O subject do value é o group.id do consumidor.",
+        "Mais partições = mais arquivos, réplicas e rebalance mais caro."
+      ],
+      "a": 3,
+      "w": "Não é só um número no YAML.",
+      "t": "N"
+    },
+    {
+      "q": "Mais partições é só um número de graça no YAML — como funciona?",
+      "o": [
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "Mais partições = mais arquivos, réplicas e rebalance mais caro."
+      ],
+      "a": 3,
+      "w": "Não é só um número no YAML.",
+      "t": "N"
+    },
+    {
+      "q": "Se perguntarem: Mais partições é só um número de graça no YAML?",
       "o": [
         "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico."
       ],
       "a": 0,
       "w": "Não é só um número no YAML.",
       "t": "N"
     },
     {
-      "q": "N — o que acontece de verdade?",
+      "q": "Mais partições é só um número de graça no YAML — o que vale aqui?",
       "o": [
         "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Mais partições não custam arquivos, réplicas nem rebalance.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou."
       ],
       "a": 0,
       "w": "Não é só um número no YAML.",
       "t": "N"
     },
     {
-      "q": "Marque a leitura correta (N).",
+      "q": "--if-not-exists substitui decidir o contrato do tópico antes?",
       "o": [
-        "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "--if-not-exists evita erro na segunda criação do tópico.",
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou."
       ],
-      "a": 0,
-      "w": "Não é só um número no YAML.",
-      "t": "N"
-    },
-    {
-      "q": "Corrija o mito sobre N.",
-      "o": [
-        "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Não é só um número no YAML.",
-      "t": "N"
-    },
-    {
-      "q": "No caderno, a respeito de N: qual vale?",
-      "o": [
-        "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Não é só um número no YAML.",
-      "t": "N"
-    },
-    {
-      "q": "Se perguntarem N na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Mais partições = mais arquivos, réplicas e rebalance mais caro.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Não é só um número no YAML.",
-      "t": "N"
-    },
-    {
-      "q": "Sobre if-not-exists: qual afirmação está certa?",
-      "o": [
-        "--if-not-exists evita erro na segunda subida do lab.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
+      "a": 1,
       "w": "Não substitui decidir o contrato antes.",
       "t": "if-not-exists"
     },
     {
-      "q": "Qual frase sobre if-not-exists está certa?",
+      "q": "--if-not-exists substitui decidir o contrato do tópico antes — verdade ou mito?",
       "o": [
-        "--if-not-exists evita erro na segunda subida do lab.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "--if-not-exists evita erro na segunda criação do tópico."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não substitui decidir o contrato antes.",
       "t": "if-not-exists"
     },
     {
-      "q": "If-not-exists — o que acontece de verdade?",
+      "q": "--if-not-exists substitui decidir o contrato do tópico antes — o que acontece de verdade?",
       "o": [
-        "--if-not-exists evita erro na segunda subida do lab.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "--if-not-exists evita erro na segunda criação do tópico.",
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não substitui decidir o contrato antes.",
       "t": "if-not-exists"
     },
     {
-      "q": "Marque a leitura correta (if-not-exists).",
+      "q": "Na prática: --if-not-exists substitui decidir o contrato do tópico antes?",
       "o": [
-        "--if-not-exists evita erro na segunda subida do lab.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "--if-not-exists evita erro na segunda criação do tópico.",
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Não substitui decidir o contrato antes.",
       "t": "if-not-exists"
     },
     {
-      "q": "Corrija o mito sobre if-not-exists.",
+      "q": "--if-not-exists substitui decidir o contrato do tópico antes — como funciona?",
       "o": [
-        "--if-not-exists evita erro na segunda subida do lab.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "--if-not-exists evita erro na segunda criação do tópico.",
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Não substitui decidir o contrato antes.",
       "t": "if-not-exists"
     },
     {
-      "q": "No caderno, a respeito de if-not-exists: qual vale?",
+      "q": "Se perguntarem: --if-not-exists substitui decidir o contrato do tópico antes?",
       "o": [
-        "--if-not-exists evita erro na segunda subida do lab.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "--if-not-exists evita erro na segunda criação do tópico."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não substitui decidir o contrato antes.",
       "t": "if-not-exists"
     },
     {
-      "q": "Se perguntarem if-not-exists na mesa, qual frase é a verdadeira?",
+      "q": "--if-not-exists substitui decidir o contrato do tópico antes — o que vale aqui?",
       "o": [
-        "--if-not-exists evita erro na segunda subida do lab.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "--if-not-exists decide o contrato por você; não precisa pensar no tópico.",
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "O nome do tópico já guarda os bytes; partição é só um apelido.",
+        "--if-not-exists evita erro na segunda criação do tópico."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não substitui decidir o contrato antes.",
       "t": "if-not-exists"
     },
     {
-      "q": "Sobre RF: qual afirmação está certa?",
+      "q": "replication-factor 1 imita durabilidade de produção?",
       "o": [
-        "replication-factor 1 no lab; em produção 1 é perder a partição se o disco some.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "replication-factor 1 é didático; em produção 1 é perder a partição se o disco some."
       ],
-      "a": 0,
-      "w": "Lab não imita durabilidade de produção.",
+      "a": 3,
+      "w": "Num cluster de um broker, RF=1 cabe. Em produção, some o disco, some a partição. Durabilidade pede réplicas.",
       "t": "RF"
     },
     {
-      "q": "Qual frase sobre RF está certa?",
+      "q": "Se o disco do líder some com RF=1, a partição continua em outro broker?",
       "o": [
-        "replication-factor 1 no lab; em produção 1 é perder a partição se o disco some.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "replication-factor 1 é didático; em produção 1 é perder a partição se o disco some.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta."
       ],
       "a": 0,
-      "w": "Lab não imita durabilidade de produção.",
+      "w": "Num cluster de um broker, RF=1 cabe. Em produção, some o disco, some a partição. Durabilidade pede réplicas.",
       "t": "RF"
     },
     {
-      "q": "RF — o que acontece de verdade?",
+      "q": "Por que um cluster de um broker usa replication-factor 1?",
       "o": [
-        "replication-factor 1 no lab; em produção 1 é perder a partição se o disco some.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "replication-factor 1 é didático; em produção 1 é perder a partição se o disco some.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta."
       ],
       "a": 0,
-      "w": "Lab não imita durabilidade de produção.",
+      "w": "Num cluster de um broker, RF=1 cabe. Em produção, some o disco, some a partição. Durabilidade pede réplicas.",
       "t": "RF"
     },
     {
-      "q": "Marque a leitura correta (RF).",
+      "q": "RF=1 num único broker é o mesmo RF de produção?",
       "o": [
-        "replication-factor 1 no lab; em produção 1 é perder a partição se o disco some.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "replication-factor 1 é didático; em produção 1 é perder a partição se o disco some."
       ],
-      "a": 0,
-      "w": "Lab não imita durabilidade de produção.",
+      "a": 3,
+      "w": "Num cluster de um broker, RF=1 cabe. Em produção, some o disco, some a partição. Durabilidade pede réplicas.",
       "t": "RF"
     },
     {
-      "q": "Corrija o mito sobre RF.",
+      "q": "O que RF=1 custa se o disco do líder falhar?",
       "o": [
-        "replication-factor 1 no lab; em produção 1 é perder a partição se o disco some.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "replication-factor 1 é didático; em produção 1 é perder a partição se o disco some.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda."
       ],
-      "a": 0,
-      "w": "Lab não imita durabilidade de produção.",
+      "a": 2,
+      "w": "Num cluster de um broker, RF=1 cabe. Em produção, some o disco, some a partição. Durabilidade pede réplicas.",
       "t": "RF"
     },
     {
-      "q": "No caderno, a respeito de RF: qual vale?",
+      "q": "Réplica de produção: RF=1 basta?",
       "o": [
-        "replication-factor 1 no lab; em produção 1 é perder a partição se o disco some.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda.",
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "replication-factor 1 é didático; em produção 1 é perder a partição se o disco some."
       ],
-      "a": 0,
-      "w": "Lab não imita durabilidade de produção.",
+      "a": 3,
+      "w": "Num cluster de um broker, RF=1 cabe. Em produção, some o disco, some a partição. Durabilidade pede réplicas.",
       "t": "RF"
     },
     {
-      "q": "Se perguntarem RF na mesa, qual frase é a verdadeira?",
+      "q": "Durabilidade da partição com replication-factor 1: o que vale?",
       "o": [
-        "replication-factor 1 no lab; em produção 1 é perder a partição se o disco some.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "RF=1 já replica em três brokers; isso é o mesmo HA de produção.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "replication-factor 1 é didático; em produção 1 é perder a partição se o disco some.",
+        "RF=1 é o mesmo que produção: o disco do líder pode sumir sem perda."
       ],
-      "a": 0,
-      "w": "Lab não imita durabilidade de produção.",
+      "a": 2,
+      "w": "Num cluster de um broker, RF=1 cabe. Em produção, some o disco, some a partição. Durabilidade pede réplicas.",
       "t": "RF"
     },
     {
-      "q": "Sobre subject: qual afirmação está certa?",
+      "q": "No Schema Registry, como costuma se chamar o subject do value?",
       "o": [
-        "No Registry o subject do value costuma ser {tópico}-value.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
+        "No Registry o subject do value costuma ser {tópico}-value."
       ],
-      "a": 0,
-      "w": "Não é o group.id.",
+      "a": 3,
+      "w": "Não é o group.id. O Schema Registry versiona o schema daquele tópico, não o consumidor.",
       "t": "subject"
     },
     {
-      "q": "Qual frase sobre subject está certa?",
+      "q": "pedidos.criados no tópico: qual subject o Registry espera no value?",
       "o": [
         "No Registry o subject do value costuma ser {tópico}-value.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico."
       ],
       "a": 0,
-      "w": "Não é o group.id.",
+      "w": "Não é o group.id. O Schema Registry versiona o schema daquele tópico, não o consumidor.",
       "t": "subject"
     },
     {
-      "q": "Subject — o que acontece de verdade?",
+      "q": "Subject {tópico}-value ou group.id?",
       "o": [
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
         "No Registry o subject do value costuma ser {tópico}-value.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre."
       ],
-      "a": 0,
-      "w": "Não é o group.id.",
+      "a": 1,
+      "w": "Não é o group.id. O Schema Registry versiona o schema daquele tópico, não o consumidor.",
       "t": "subject"
     },
     {
-      "q": "Marque a leitura correta (subject).",
+      "q": "Onde o schema do payload fica registrado: em qual nome?",
       "o": [
-        "No Registry o subject do value costuma ser {tópico}-value.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
+        "No Registry o subject do value costuma ser {tópico}-value."
       ],
-      "a": 0,
-      "w": "Não é o group.id.",
+      "a": 3,
+      "w": "Não é o group.id. O Schema Registry versiona o schema daquele tópico, não o consumidor.",
       "t": "subject"
     },
     {
-      "q": "Corrija o mito sobre subject.",
+      "q": "Se o tópico é pedidos.criados, o subject do JSON Schema é o quê?",
       "o": [
-        "No Registry o subject do value costuma ser {tópico}-value.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
+        "No Registry o subject do value costuma ser {tópico}-value."
       ],
-      "a": 0,
-      "w": "Não é o group.id.",
+      "a": 3,
+      "w": "Não é o group.id. O Schema Registry versiona o schema daquele tópico, não o consumidor.",
       "t": "subject"
     },
     {
-      "q": "No caderno, a respeito de subject: qual vale?",
+      "q": "Por que o subject não é o group.id do faturamento?",
       "o": [
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
         "No Registry o subject do value costuma ser {tópico}-value.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre."
       ],
-      "a": 0,
-      "w": "Não é o group.id.",
+      "a": 1,
+      "w": "Não é o group.id. O Schema Registry versiona o schema daquele tópico, não o consumidor.",
       "t": "subject"
     },
     {
-      "q": "Se perguntarem subject na mesa, qual frase é a verdadeira?",
+      "q": "O Schema Registry: o que identifica o contrato do value?",
       "o": [
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
         "No Registry o subject do value costuma ser {tópico}-value.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre."
       ],
-      "a": 0,
-      "w": "Não é o group.id.",
+      "a": 1,
+      "w": "Não é o group.id. O Schema Registry versiona o schema daquele tópico, não o consumidor.",
       "t": "subject"
     },
     {
-      "q": "Sobre vários leitores: qual afirmação está certa?",
+      "q": "Vários grupos no mesmo tópico apagam a mensagem uns para os outros?",
       "o": [
-        "Vários grupos leem o mesmo tópico sem apagar linha.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Vários grupos leem o mesmo tópico sem apagar a mensagem.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou.",
+        "Se o líder cair com RF=1, outro broker assume a partição intacta.",
+        "O subject do value é o group.id do consumidor."
       ],
       "a": 0,
       "w": "Isso é o ponto do log.",
       "t": "vários leitores"
     },
     {
-      "q": "Qual frase sobre vários leitores está certa?",
+      "q": "Vários grupos no mesmo tópico apagam a mensagem uns para os outros — verdade ou mito?",
       "o": [
-        "Vários grupos leem o mesmo tópico sem apagar linha.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O subject do value é o group.id do consumidor.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "Vários grupos leem o mesmo tópico sem apagar a mensagem.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou."
+      ],
+      "a": 2,
+      "w": "Isso é o ponto do log.",
+      "t": "vários leitores"
+    },
+    {
+      "q": "Vários grupos no mesmo tópico apagam a mensagem uns para os outros — o que acontece de verdade?",
+      "o": [
+        "Vários grupos leem o mesmo tópico sem apagar a mensagem.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou.",
+        "O Registry não usa subject; o nome do tópico basta e o schema é livre.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico."
       ],
       "a": 0,
       "w": "Isso é o ponto do log.",
       "t": "vários leitores"
     },
     {
-      "q": "Vários leitores — o que acontece de verdade?",
+      "q": "Na prática: Vários grupos no mesmo tópico apagam a mensagem uns para os outros?",
       "o": [
-        "Vários grupos leem o mesmo tópico sem apagar linha.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O segundo grupo não vê a mensagem: o primeiro já apagou.",
+        "O subject é o nome da classe Java (PedidoCriado), não o tópico.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "Vários grupos leem o mesmo tópico sem apagar a mensagem."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Isso é o ponto do log.",
       "t": "vários leitores"
     },
     {
-      "q": "Marque a leitura correta (vários leitores).",
+      "q": "Vários grupos no mesmo tópico apagam a mensagem uns para os outros — como funciona?",
       "o": [
-        "Vários grupos leem o mesmo tópico sem apagar linha.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O segundo grupo não vê a mensagem: o primeiro já apagou.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "Vários grupos leem o mesmo tópico sem apagar a mensagem."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Isso é o ponto do log.",
       "t": "vários leitores"
     },
     {
-      "q": "Corrija o mito sobre vários leitores.",
+      "q": "Se perguntarem: Vários grupos no mesmo tópico apagam a mensagem uns para os outros?",
       "o": [
-        "Vários grupos leem o mesmo tópico sem apagar linha.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Tópico é um processo na RAM do broker, tipo uma fila em memória.",
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "Vários grupos leem o mesmo tópico sem apagar a mensagem.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Isso é o ponto do log.",
       "t": "vários leitores"
     },
     {
-      "q": "No caderno, a respeito de vários leitores: qual vale?",
+      "q": "Vários grupos no mesmo tópico apagam a mensagem uns para os outros — o que vale aqui?",
       "o": [
-        "Vários grupos leem o mesmo tópico sem apagar linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Nomeie fila-do-faturamento: só um time lê, fica mais claro.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Vários grupos leem o mesmo tópico sem apagar a mensagem.",
+        "O segundo grupo não vê a mensagem: o primeiro já apagou."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Isso é o ponto do log.",
       "t": "vários leitores"
     },
     {
-      "q": "Se perguntarem vários leitores na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Vários grupos leem o mesmo tópico sem apagar linha.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Isso é o ponto do log.",
-      "t": "vários leitores"
-    },
-    {
-      "q": "Sobre Spring: qual afirmação está certa?",
+      "q": "NewTopic no Spring Boot faz o quê, comparado ao CLI?",
       "o": [
         "NewTopic no boot faz o mesmo que o CLI de create.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "O nome do tópico deve ser o do microsserviço produtor.",
+        "Tópico anônimo está ok; o contrato é o group.id."
       ],
       "a": 0,
       "w": "Desde que AUTO_CREATE não esconda o N=1.",
       "t": "Spring"
     },
     {
-      "q": "Qual frase sobre Spring está certa?",
+      "q": "NewTopic no Spring Boot faz o quê, comparado ao CLI — verdade ou mito?",
+      "o": [
+        "Tópico anônimo está ok; o contrato é o group.id.",
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "NewTopic no boot faz o mesmo que o CLI de create.",
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta."
+      ],
+      "a": 2,
+      "w": "Desde que AUTO_CREATE não esconda o N=1.",
+      "t": "Spring"
+    },
+    {
+      "q": "NewTopic no Spring Boot faz o quê, comparado ao CLI — o que acontece de verdade?",
       "o": [
         "NewTopic no boot faz o mesmo que o CLI de create.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "Auto-create em produção é ótimo: o contrato nasce sozinho com as partições certas.",
+        "O nome do tópico já guarda os bytes; partição é só um apelido."
       ],
       "a": 0,
       "w": "Desde que AUTO_CREATE não esconda o N=1.",
       "t": "Spring"
     },
     {
-      "q": "Spring — o que acontece de verdade?",
+      "q": "Na prática: NewTopic no Spring Boot faz o quê, comparado ao CLI?",
       "o": [
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
         "NewTopic no boot faz o mesmo que o CLI de create.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "O nome do tópico já guarda os bytes; partição é só um apelido."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Desde que AUTO_CREATE não esconda o N=1.",
       "t": "Spring"
     },
     {
-      "q": "Marque a leitura correta (Spring).",
+      "q": "NewTopic no Spring Boot faz o quê, comparado ao CLI — como funciona?",
       "o": [
-        "NewTopic no boot faz o mesmo que o CLI de create.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta.",
+        "Tópico é tabela: faça UPDATE na mensagem 40 se o pedido mudar.",
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "NewTopic no boot faz o mesmo que o CLI de create."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Desde que AUTO_CREATE não esconda o N=1.",
       "t": "Spring"
     },
     {
-      "q": "Corrija o mito sobre Spring.",
+      "q": "Se perguntarem: NewTopic no Spring Boot faz o quê, comparado ao CLI?",
       "o": [
+        "O CLI cria um único log; as três partições são só um número no YAML.",
+        "Cria 3 tópicos diferentes, um por partição.",
         "NewTopic no boot faz o mesmo que o CLI de create.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Desde que AUTO_CREATE não esconda o N=1.",
       "t": "Spring"
     },
     {
-      "q": "No caderno, a respeito de Spring: qual vale?",
+      "q": "NewTopic no Spring Boot faz o quê, comparado ao CLI — o que vale aqui?",
       "o": [
+        "Cria 3 tópicos diferentes, um por partição.",
+        "Não cria nada no disco: partição só existe depois do primeiro produce.",
         "NewTopic no boot faz o mesmo que o CLI de create.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "NewTopic é outra coisa: o CLI cria tópico, o Spring só escuta."
       ],
-      "a": 0,
-      "w": "Desde que AUTO_CREATE não esconda o N=1.",
-      "t": "Spring"
-    },
-    {
-      "q": "Se perguntarem Spring na mesa, qual frase é a verdadeira?",
-      "o": [
-        "NewTopic no boot faz o mesmo que o CLI de create.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
+      "a": 2,
       "w": "Desde que AUTO_CREATE não esconda o N=1.",
       "t": "Spring"
     }

@@ -1,0 +1,130 @@
+{
+  "beats": [
+    {
+      "id": "hpa-cheio",
+      "kind": "cena",
+      "kicker": "Black Friday",
+      "title": "Quarenta pods. Um Postgres. O HPA está feliz. O caixa não.",
+      "body": "<p>CPU da app em 30%. Conexões no banco no teto. Lock na linha do seller celebrity. Alguém sobe o HPA de novo. Mais workers na mesma briga.</p><p>Esta aula não é dez caixas vazias. É colar no desenho o que já tem nome: p99, índice, réplica, shard, cache. Stateless atrás do LB escala a app. O disco, o lock e a chave quente não sobem junto.</p>"
+    },
+    {
+      "id": "escada",
+      "kind": "explicar",
+      "title": "A escada. Pule um degrau só com número na mesa.",
+      "html": "<ol class=\"tight\"><li><strong>Uma caixa.</strong> VM + um Postgres. Simples. Um disco é o ponto único.</li><li><strong>App stateless × N atrás do LB.</strong> Escala CPU. Sessão no JWT ou Redis — não na memória do pod.</li><li><strong>Réplica de leitura.</strong> “Gravei e não vejo”. Write continua no primary.</li><li><strong>Shard / células.</strong> Write escala. Chave ruim queima um pedaço.</li><li><strong>Multi-AZ / região.</strong> HA de verdade. Custo e conflito de write entram no ADR.</li></ol><p>Sticky session gruda o cliente num pod: atalho que dói no deploy e fura o HPA. Auto-scale adiciona pods. Não adiciona conexões infinitas, não isola PSP lento, não substitui timeout.</p>"
+    },
+    {
+      "id": "envelope",
+      "kind": "explicar",
+      "title": "Ordem de grandeza, storage e o que a nuvem não apaga",
+      "html": "<p>10M DAU × 20 req/dia ≈ 2,3k QPS médio; pico 5× ≈ 12k. Ordem de grandeza, não 12.347. Payload 2 KB → banda cabe na NIC; lock e índice é que não cabem. Envelope existe para matar desenho impossível cedo.</p><p>Storage segue o acesso, não a moda. SQL: relação, transação, query que você ainda não conhece — o default. Documento, KV, partição, grafo: quando o padrão de acesso já é conhecido. “Mongo porque escala” sem carga é troca de problema.</p><p>Multi-AZ não é checkbox: mais cópias, mais chance de ler velho, mais custo. Hot key não some “porque foi para a nuvem”. Cache acerta e mente — o stale tem que estar no desenho, não só o hit ratio.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Mais processos versus mais dado",
+      "ganha": "App stateless × N: CPU e AZ da borda. Réplica: leitura e failover. Índice: a query certa. Cache no dado que pode atrasar. Shard: escrita quando o primary é o teto. Envelope de QPS mata desenho de slide.",
+      "paga": "HPA no gargalo de lock joga worker na mesma linha. Réplica não escala write e cobra lag. Shard cobra chave e reshard. Cache mente até o TTL. Multi-AZ cobra consistência e dinheiro. Kafka “porque escala” paga operação sem o requisito de log.",
+      "quando": [
+        "Você perguntou se o teto é CPU da app, leitura, escrita ou lock",
+        "Índice e query vieram antes do shard; a chave de shard atende o acesso",
+        "HA nomeia a falha (AZ, RPO/RTO), não a logo do Redis"
+      ],
+      "quandoNao": [
+        "Stateless + LB como se o Postgres subisse junto",
+        "Sticky session, sessão na RAM, upload no disco do pod",
+        "Shard no dia um, CQRS no lugar de réplica, Kafka no GET “para caber”"
+      ]
+    },
+    {
+      "id": "cola",
+      "kind": "explicar",
+      "title": "O que cola no quadro, numa frase cada",
+      "html": "<ul class=\"tight\"><li><strong>p99 / SLO</strong> — a cauda, não a média. Quem tem mais dados mora lá.</li><li><strong>Índice</strong> — aquela leitura; write e disco pagam. Ocioso é aluguel.</li><li><strong>Réplica</strong> — leitura e um nó no chão. Write ainda passa no primary.</li><li><strong>Shard</strong> — escrita e volume. Hot shard e cross-shard são o preço.</li><li><strong>Cache</strong> — atalho com validade. Hit no saldo é incidente.</li></ul><p>Sem número, ainda é opinião. Sem gargalo nomeado, as cinco peças viram decalque.</p>"
+    },
+    {
+      "id": "quem-escala",
+      "kind": "escolha",
+      "prompt": "Checkout grava disparado. Catálogo lê 50× mais do que escreve. O Grafana da app está verde. O primary, não. O que você mexe — e o que isso não faz?",
+      "options": [
+        {
+          "id": "so-hpa",
+          "label": "HPA na app. Stateless + LB escala o banco do mesmo jeito.",
+          "verdict": "ruim",
+          "why": "Réplica de processo não é réplica de disco. Mais pods = mais conexões no mesmo primary. Capacidade não é o número de pods. O gargalo nomeado ainda está no write."
+        },
+        {
+          "id": "alavancas",
+          "label": "Réplica de leitura no catálogo. No checkout: índice e query antes de shard. Shard só se o write no primary for o teto.",
+          "verdict": "bom",
+          "why": "Réplica resolve leitura e um nó no chão — não escala write. Índice e query são baratos de reverter. Shard é migração. Cache no catálogo, com stale nomeado; no débito, não."
+        },
+        {
+          "id": "kafka-default",
+          "label": "Kafka no meio. “Escala”. Redis na frente e chamamos de HA.",
+          "verdict": "ruim",
+          "why": "Kafka entra quando o requisito é log, fan-out, replay — não slogan. HA é falha nomeada (AZ, failover, RPO). “Tem Redis” é um cache. Se o Redis cair e o GET morrer, você inventou SPOF."
+        }
+      ]
+    },
+    {
+      "id": "antes-do-shard",
+      "kind": "escolha",
+      "prompt": "A listagem do seller 1 some no EXPLAIN: sequential scan, sem índice na FK. O lead quer shard por seller_id esta sprint. Você?",
+      "options": [
+        {
+          "id": "shard-ja",
+          "label": "Shard agora. Índice é detalhe. Shard é barato.",
+          "verdict": "ruim",
+          "why": "Shard antes de índice e query compra migração para mascarar full scan. Chave = seller celebrity vira hot shard. Reshard não é ALTER de tarde."
+        },
+        {
+          "id": "indice-primeiro",
+          "label": "Índice e query primeiro. Réplica se o gargalo for leitura. Shard quando o primary de write for o teto — e a chave não for o celebrity.",
+          "verdict": "bom",
+          "why": "Na escala o índice entra junto com réplica e cache, não isolado da carga. Réplica e fatia resolvem dores diferentes. A chave atende o acesso."
+        },
+        {
+          "id": "cqrs-split",
+          "label": "Read replica no mesmo schema e chamamos de CQRS. Pronto.",
+          "verdict": "ruim",
+          "why": "Split de leitura é réplica com lag. CQRS é modelo de leitura diferente. Os nomes não são sinônimos — e nenhum dos dois escala o write do celebrity."
+        }
+      ]
+    },
+    {
+      "id": "sessao",
+      "kind": "escolha",
+      "prompt": "O HPA precisa de mais pods no pico. A sessão do checkout está na memória do pod. Qual o próximo passo honesto?",
+      "options": [
+        {
+          "id": "sticky",
+          "label": "Sticky no LB. O cliente gruda no pod. HPA feliz.",
+          "verdict": "ruim",
+          "why": "Você não ficou stateless. Deploy derruba a sessão. Um pod quente come o celebrity. HPA escala processo, não o estado que você escondeu na RAM."
+        },
+        {
+          "id": "fora",
+          "label": "Sessão no Redis ou JWT. Qualquer réplica atende. O banco continua sendo o teto de write — e isso entra no desenho.",
+          "verdict": "bom",
+          "why": "Premissa do HPA: qualquer pod, qualquer request. Estado fora. Depois você nomeia réplica, índice, shard, AZ. Capacidade é envelope e gargalo, não réplica de Deployment."
+        },
+        {
+          "id": "disco-local",
+          "label": "Upload e sessão no disco local. Mais pods, mais discos. Escala.",
+          "verdict": "ruim",
+          "why": "Você replicou o problema. O próximo GET cai noutro pod e o arquivo não está lá. Stateless não é slogan — é onde o byte mora."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "HPA escala processo. Banco, lock e chave quente não sobem no mesmo botão.",
+        "Réplica = leitura e failover. Shard = escrita. Índice e query antes da tesoura.",
+        "HA é falha nomeada. Cache mente. Kafka não é o default de “escala”."
+      ]
+    }
+  ]
+}

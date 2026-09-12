@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre HTTP: qual afirmação está certa?",
+      "q": "Schema Registry é um tópico mágico ou um serviço HTTP?",
       "o": [
-        "Serviço HTTP (8081 no lab) guarda versões de schema por subject.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "Serviço HTTP (porta típica 8081) guarda versões de schema por subject."
+      ],
+      "a": 3,
+      "w": "Não é um tópico mágico só.",
+      "t": "HTTP"
+    },
+    {
+      "q": "Schema Registry é um tópico mágico ou um serviço HTTP — verdade ou mito?",
+      "o": [
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Serviço HTTP (porta típica 8081) guarda versões de schema por subject.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto."
+      ],
+      "a": 1,
+      "w": "Não é um tópico mágico só.",
+      "t": "HTTP"
+    },
+    {
+      "q": "Schema Registry é um tópico mágico ou um serviço HTTP — o que acontece de verdade?",
+      "o": [
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Serviço HTTP (porta típica 8081) guarda versões de schema por subject."
+      ],
+      "a": 3,
+      "w": "Não é um tópico mágico só.",
+      "t": "HTTP"
+    },
+    {
+      "q": "Na prática: Schema Registry é um tópico mágico ou um serviço HTTP?",
+      "o": [
+        "Serviço HTTP (porta típica 8081) guarda versões de schema por subject.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD."
       ],
       "a": 0,
       "w": "Não é um tópico mágico só.",
       "t": "HTTP"
     },
     {
-      "q": "Qual frase sobre HTTP está certa?",
+      "q": "Schema Registry é um tópico mágico ou um serviço HTTP — como funciona?",
       "o": [
-        "Serviço HTTP (8081 no lab) guarda versões de schema por subject.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "Serviço HTTP (porta típica 8081) guarda versões de schema por subject.",
+        "Schema Registry é só um tópico interno, sem HTTP."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Não é um tópico mágico só.",
       "t": "HTTP"
     },
     {
-      "q": "HTTP — o que acontece de verdade?",
+      "q": "Se perguntarem: Schema Registry é um tópico mágico ou um serviço HTTP?",
       "o": [
-        "Serviço HTTP (8081 no lab) guarda versões de schema por subject.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O subject padrão é o group.id do faturamento.",
+        "Serviço HTTP (porta típica 8081) guarda versões de schema por subject.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não é um tópico mágico só.",
       "t": "HTTP"
     },
     {
-      "q": "Marque a leitura correta (HTTP).",
+      "q": "Schema Registry é um tópico mágico ou um serviço HTTP — o que vale aqui?",
       "o": [
-        "Serviço HTTP (8081 no lab) guarda versões de schema por subject.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Serviço HTTP (porta típica 8081) guarda versões de schema por subject.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "O subject padrão é o group.id do faturamento."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não é um tópico mágico só.",
       "t": "HTTP"
     },
     {
-      "q": "Corrija o mito sobre HTTP.",
-      "o": [
-        "Serviço HTTP (8081 no lab) guarda versões de schema por subject.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Não é um tópico mágico só.",
-      "t": "HTTP"
-    },
-    {
-      "q": "No caderno, a respeito de HTTP: qual vale?",
-      "o": [
-        "Serviço HTTP (8081 no lab) guarda versões de schema por subject.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Não é um tópico mágico só.",
-      "t": "HTTP"
-    },
-    {
-      "q": "Se perguntarem HTTP na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Serviço HTTP (8081 no lab) guarda versões de schema por subject.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Não é um tópico mágico só.",
-      "t": "HTTP"
-    },
-    {
-      "q": "Sobre wire: qual afirmação está certa?",
+      "q": "O payload no fio é JSON solto sem contrato?",
       "o": [
         "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa."
       ],
       "a": 0,
       "w": "Serializer Confluent.",
       "t": "wire"
     },
     {
-      "q": "Qual frase sobre wire está certa?",
+      "q": "O payload no fio é JSON solto sem contrato — verdade ou mito?",
+      "o": [
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
+        "No fio vai JSON solto; magic byte e schema id são mito."
+      ],
+      "a": 2,
+      "w": "Serializer Confluent.",
+      "t": "wire"
+    },
+    {
+      "q": "O payload no fio é JSON solto sem contrato — o que acontece de verdade?",
       "o": [
         "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula."
       ],
       "a": 0,
       "w": "Serializer Confluent.",
       "t": "wire"
     },
     {
-      "q": "Wire — o que acontece de verdade?",
+      "q": "Na prática: O payload no fio é JSON solto sem contrato?",
       "o": [
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
         "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Serializer Confluent.",
       "t": "wire"
     },
     {
-      "q": "Marque a leitura correta (wire).",
+      "q": "O payload no fio é JSON solto sem contrato — como funciona?",
       "o": [
+        "Schema Registry e transação de banco são a mesma aula.",
         "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Serializer Confluent.",
       "t": "wire"
     },
     {
-      "q": "Corrija o mito sobre wire.",
+      "q": "Se perguntarem: O payload no fio é JSON solto sem contrato?",
       "o": [
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Não há Schema Registry; o contrato vive só no broker.",
         "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "No fio vai JSON solto; magic byte e schema id são mito."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Serializer Confluent.",
       "t": "wire"
     },
     {
-      "q": "No caderno, a respeito de wire: qual vale?",
+      "q": "O payload no fio é JSON solto sem contrato — o que vale aqui?",
       "o": [
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
         "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "No fio vai JSON solto; magic byte e schema id são mito."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Serializer Confluent.",
       "t": "wire"
     },
     {
-      "q": "Se perguntarem wire na mesa, qual frase é a verdadeira?",
+      "q": "BACKWARD quer dizer o quê para o consumidor novo?",
       "o": [
-        "Magic byte + schema id + payload. Não é JSON solto sem contrato.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "BACKWARD: consumidor novo lê dado antigo. É o nível comum no Registry.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "Schema Registry é só um tópico interno, sem HTTP."
       ],
-      "a": 0,
-      "w": "Serializer Confluent.",
-      "t": "wire"
+      "a": 1,
+      "w": "Campo opcional novo costuma passar.",
+      "t": "BACKWARD"
     },
     {
-      "q": "Sobre BACKWARD: qual afirmação está certa?",
+      "q": "BACKWARD quer dizer o quê para o consumidor novo — verdade ou mito?",
       "o": [
-        "BACKWARD: consumidor novo lê dado antigo. Compose do lab usa isso.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "BACKWARD: consumidor novo lê dado antigo. É o nível comum no Registry."
+      ],
+      "a": 3,
+      "w": "Campo opcional novo costuma passar.",
+      "t": "BACKWARD"
+    },
+    {
+      "q": "BACKWARD quer dizer o quê para o consumidor novo — o que acontece de verdade?",
+      "o": [
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "BACKWARD: consumidor novo lê dado antigo. É o nível comum no Registry.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes ."
+      ],
+      "a": 1,
+      "w": "Campo opcional novo costuma passar.",
+      "t": "BACKWARD"
+    },
+    {
+      "q": "Na prática: BACKWARD quer dizer o quê para o consumidor novo?",
+      "o": [
+        "BACKWARD: consumidor novo lê dado antigo. É o nível comum no Registry.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD."
       ],
       "a": 0,
       "w": "Campo opcional novo costuma passar.",
       "t": "BACKWARD"
     },
     {
-      "q": "Qual frase sobre BACKWARD está certa?",
+      "q": "BACKWARD quer dizer o quê para o consumidor novo — como funciona?",
       "o": [
-        "BACKWARD: consumidor novo lê dado antigo. Compose do lab usa isso.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "BACKWARD: consumidor novo lê dado antigo. É o nível comum no Registry.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
       ],
       "a": 0,
       "w": "Campo opcional novo costuma passar.",
       "t": "BACKWARD"
     },
     {
-      "q": "BACKWARD — o que acontece de verdade?",
+      "q": "Se perguntarem: BACKWARD quer dizer o quê para o consumidor novo?",
       "o": [
-        "BACKWARD: consumidor novo lê dado antigo. Compose do lab usa isso.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "O subject padrão é o group.id do faturamento.",
+        "BACKWARD: consumidor novo lê dado antigo. É o nível comum no Registry."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Campo opcional novo costuma passar.",
       "t": "BACKWARD"
     },
     {
-      "q": "Marque a leitura correta (BACKWARD).",
+      "q": "BACKWARD quer dizer o quê para o consumidor novo — o que vale aqui?",
       "o": [
-        "BACKWARD: consumidor novo lê dado antigo. Compose do lab usa isso.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "O subject padrão é o group.id do faturamento.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "BACKWARD: consumidor novo lê dado antigo. É o nível comum no Registry."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Campo opcional novo costuma passar.",
       "t": "BACKWARD"
     },
     {
-      "q": "Corrija o mito sobre BACKWARD.",
+      "q": "FORWARD é o mesmo que BACKWARD com outro nome?",
       "o": [
-        "BACKWARD: consumidor novo lê dado antigo. Compose do lab usa isso.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Campo opcional novo costuma passar.",
-      "t": "BACKWARD"
-    },
-    {
-      "q": "No caderno, a respeito de BACKWARD: qual vale?",
-      "o": [
-        "BACKWARD: consumidor novo lê dado antigo. Compose do lab usa isso.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Campo opcional novo costuma passar.",
-      "t": "BACKWARD"
-    },
-    {
-      "q": "Se perguntarem BACKWARD na mesa, qual frase é a verdadeira?",
-      "o": [
-        "BACKWARD: consumidor novo lê dado antigo. Compose do lab usa isso.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Campo opcional novo costuma passar.",
-      "t": "BACKWARD"
-    },
-    {
-      "q": "Sobre FORWARD: qual afirmação está certa?",
-      "o": [
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
         "FORWARD: consumidor antigo lê dado novo.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes ."
       ],
-      "a": 0,
-      "w": "Não misture os nomes na mesa.",
+      "a": 2,
+      "w": "Não misture os nomes .",
       "t": "FORWARD"
     },
     {
-      "q": "Qual frase sobre FORWARD está certa?",
+      "q": "FORWARD é o mesmo que BACKWARD com outro nome — verdade ou mito?",
       "o": [
         "FORWARD: consumidor antigo lê dado novo.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent."
       ],
       "a": 0,
-      "w": "Não misture os nomes na mesa.",
+      "w": "Não misture os nomes .",
       "t": "FORWARD"
     },
     {
-      "q": "FORWARD — o que acontece de verdade?",
+      "q": "FORWARD é o mesmo que BACKWARD com outro nome — o que acontece de verdade?",
       "o": [
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
         "FORWARD: consumidor antigo lê dado novo.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes ."
       ],
-      "a": 0,
-      "w": "Não misture os nomes na mesa.",
+      "a": 2,
+      "w": "Não misture os nomes .",
       "t": "FORWARD"
     },
     {
-      "q": "Marque a leitura correta (FORWARD).",
+      "q": "Na prática: FORWARD é o mesmo que BACKWARD com outro nome?",
       "o": [
-        "FORWARD: consumidor antigo lê dado novo.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "FORWARD: consumidor antigo lê dado novo."
       ],
-      "a": 0,
-      "w": "Não misture os nomes na mesa.",
+      "a": 3,
+      "w": "Não misture os nomes .",
       "t": "FORWARD"
     },
     {
-      "q": "Corrija o mito sobre FORWARD.",
+      "q": "FORWARD é o mesmo que BACKWARD com outro nome — como funciona?",
       "o": [
+        "Schema Registry e transação de banco são a mesma aula.",
         "FORWARD: consumidor antigo lê dado novo.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "O consumer adivinha o JSON; schema id no payload é enfeite."
       ],
-      "a": 0,
-      "w": "Não misture os nomes na mesa.",
+      "a": 1,
+      "w": "Não misture os nomes .",
       "t": "FORWARD"
     },
     {
-      "q": "No caderno, a respeito de FORWARD: qual vale?",
+      "q": "Se perguntarem: FORWARD é o mesmo que BACKWARD com outro nome?",
       "o": [
         "FORWARD: consumidor antigo lê dado novo.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Não há Schema Registry; o contrato vive só no broker."
       ],
       "a": 0,
-      "w": "Não misture os nomes na mesa.",
+      "w": "Não misture os nomes .",
       "t": "FORWARD"
     },
     {
-      "q": "Se perguntarem FORWARD na mesa, qual frase é a verdadeira?",
+      "q": "FORWARD é o mesmo que BACKWARD com outro nome — o que vale aqui?",
       "o": [
         "FORWARD: consumidor antigo lê dado novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Schema Registry é só um tópico interno, sem HTTP."
       ],
       "a": 0,
-      "w": "Não misture os nomes na mesa.",
+      "w": "Não misture os nomes .",
       "t": "FORWARD"
     },
     {
-      "q": "Sobre recusa: qual afirmação está certa?",
+      "q": "Remover campo obrigatório: o Registry aceita?",
       "o": [
         "Remover campo obrigatório: Registry responde 409.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "No fio vai JSON solto; magic byte e schema id são mito."
       ],
       "a": 0,
-      "w": "README do lab tem o POST que falha.",
+      "w": "PUT incompatível falha no Schema Registry.",
       "t": "recusa"
     },
     {
-      "q": "Qual frase sobre recusa está certa?",
+      "q": "Remover campo obrigatório: o Registry aceita — verdade ou mito?",
       "o": [
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
         "Remover campo obrigatório: Registry responde 409.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Remover campo obrigatório passa no Registry; 409 é mito."
       ],
-      "a": 0,
-      "w": "README do lab tem o POST que falha.",
+      "a": 2,
+      "w": "PUT incompatível falha no Schema Registry.",
       "t": "recusa"
     },
     {
-      "q": "Recusa — o que acontece de verdade?",
+      "q": "Remover campo obrigatório: o Registry aceita — o que acontece de verdade?",
       "o": [
         "Remover campo obrigatório: Registry responde 409.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes ."
       ],
       "a": 0,
-      "w": "README do lab tem o POST que falha.",
+      "w": "PUT incompatível falha no Schema Registry.",
       "t": "recusa"
     },
     {
-      "q": "Marque a leitura correta (recusa).",
+      "q": "Na prática: Remover campo obrigatório: o Registry aceita?",
       "o": [
-        "Remover campo obrigatório: Registry responde 409.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Remover campo obrigatório: Registry responde 409."
       ],
-      "a": 0,
-      "w": "README do lab tem o POST que falha.",
+      "a": 3,
+      "w": "PUT incompatível falha no Schema Registry.",
       "t": "recusa"
     },
     {
-      "q": "Corrija o mito sobre recusa.",
+      "q": "Remover campo obrigatório: o Registry aceita — como funciona?",
       "o": [
-        "Remover campo obrigatório: Registry responde 409.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "Remover campo obrigatório: Registry responde 409."
       ],
-      "a": 0,
-      "w": "README do lab tem o POST que falha.",
+      "a": 3,
+      "w": "PUT incompatível falha no Schema Registry.",
       "t": "recusa"
     },
     {
-      "q": "No caderno, a respeito de recusa: qual vale?",
+      "q": "Se perguntarem: Remover campo obrigatório: o Registry aceita?",
       "o": [
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "O subject padrão é o group.id do faturamento.",
         "Remover campo obrigatório: Registry responde 409.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Remover campo obrigatório passa no Registry; 409 é mito."
       ],
-      "a": 0,
-      "w": "README do lab tem o POST que falha.",
+      "a": 2,
+      "w": "PUT incompatível falha no Schema Registry.",
       "t": "recusa"
     },
     {
-      "q": "Se perguntarem recusa na mesa, qual frase é a verdadeira?",
+      "q": "Remover campo obrigatório: o Registry aceita — o que vale aqui?",
       "o": [
+        "O subject padrão é o group.id do faturamento.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
         "Remover campo obrigatório: Registry responde 409.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Remover campo obrigatório passa no Registry; 409 é mito."
       ],
-      "a": 0,
-      "w": "README do lab tem o POST que falha.",
+      "a": 2,
+      "w": "PUT incompatível falha no Schema Registry.",
       "t": "recusa"
     },
     {
-      "q": "Sobre rename: qual afirmação está certa?",
+      "q": "Rename de campo obrigatório é evolução BACKWARD-safe?",
+      "o": [
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Rename de campo obrigatório quebra alguém. Recuse no review.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal."
+      ],
+      "a": 1,
+      "w": "Opcional novo ≠ rename.",
+      "t": "rename"
+    },
+    {
+      "q": "Rename de campo obrigatório é evolução BACKWARD-safe — verdade ou mito?",
+      "o": [
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "Rename de campo obrigatório quebra alguém. Recuse no review."
+      ],
+      "a": 3,
+      "w": "Opcional novo ≠ rename.",
+      "t": "rename"
+    },
+    {
+      "q": "Rename de campo obrigatório é evolução BACKWARD-safe — o que acontece de verdade?",
+      "o": [
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "Rename de campo obrigatório quebra alguém. Recuse no review.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent."
+      ],
+      "a": 1,
+      "w": "Opcional novo ≠ rename.",
+      "t": "rename"
+    },
+    {
+      "q": "Na prática: Rename de campo obrigatório é evolução BACKWARD-safe?",
       "o": [
         "Rename de campo obrigatório quebra alguém. Recuse no review.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite."
       ],
       "a": 0,
       "w": "Opcional novo ≠ rename.",
       "t": "rename"
     },
     {
-      "q": "Qual frase sobre rename está certa?",
+      "q": "Rename de campo obrigatório é evolução BACKWARD-safe — como funciona?",
       "o": [
         "Rename de campo obrigatório quebra alguém. Recuse no review.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Schema Registry e transação de banco são a mesma aula."
       ],
       "a": 0,
       "w": "Opcional novo ≠ rename.",
       "t": "rename"
     },
     {
-      "q": "Rename — o que acontece de verdade?",
+      "q": "Se perguntarem: Rename de campo obrigatório é evolução BACKWARD-safe?",
       "o": [
-        "Rename de campo obrigatório quebra alguém. Recuse no review.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Rename de campo obrigatório quebra alguém. Recuse no review."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Opcional novo ≠ rename.",
       "t": "rename"
     },
     {
-      "q": "Marque a leitura correta (rename).",
+      "q": "Rename de campo obrigatório é evolução BACKWARD-safe — o que vale aqui?",
       "o": [
-        "Rename de campo obrigatório quebra alguém. Recuse no review.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "Rename de campo obrigatório quebra alguém. Recuse no review."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Opcional novo ≠ rename.",
       "t": "rename"
     },
     {
-      "q": "Corrija o mito sobre rename.",
-      "o": [
-        "Rename de campo obrigatório quebra alguém. Recuse no review.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Opcional novo ≠ rename.",
-      "t": "rename"
-    },
-    {
-      "q": "No caderno, a respeito de rename: qual vale?",
-      "o": [
-        "Rename de campo obrigatório quebra alguém. Recuse no review.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Opcional novo ≠ rename.",
-      "t": "rename"
-    },
-    {
-      "q": "Se perguntarem rename na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Rename de campo obrigatório quebra alguém. Recuse no review.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Opcional novo ≠ rename.",
-      "t": "rename"
-    },
-    {
-      "q": "Sobre YAML: qual afirmação está certa?",
+      "q": "A URL schema.registry.url precisa estar no producer e no consumer?",
       "o": [
         "schema.registry.url no producer e consumer.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "No fio vai JSON solto; magic byte e schema id são mito."
       ],
       "a": 0,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "Qual frase sobre YAML está certa?",
+      "q": "A URL schema.registry.url precisa estar no producer e no consumer — verdade ou mito?",
+      "o": [
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "schema.registry.url no producer e consumer.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
+      ],
+      "a": 2,
+      "w": "application.yml.",
+      "t": "YAML"
+    },
+    {
+      "q": "A URL schema.registry.url precisa estar no producer e no consumer — o que acontece de verdade?",
       "o": [
         "schema.registry.url no producer e consumer.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes ."
       ],
       "a": 0,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "YAML — o que acontece de verdade?",
+      "q": "Na prática: A URL schema.registry.url precisa estar no producer e no consumer?",
       "o": [
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
         "schema.registry.url no producer e consumer.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes ."
       ],
-      "a": 0,
+      "a": 1,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "Marque a leitura correta (YAML).",
+      "q": "A URL schema.registry.url precisa estar no producer e no consumer — como funciona?",
       "o": [
-        "schema.registry.url no producer e consumer.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "schema.registry.url no producer e consumer."
       ],
-      "a": 0,
+      "a": 3,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "Corrija o mito sobre YAML.",
+      "q": "Se perguntarem: A URL schema.registry.url precisa estar no producer e no consumer?",
       "o": [
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "O subject padrão é o group.id do faturamento.",
         "schema.registry.url no producer e consumer.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
       ],
-      "a": 0,
+      "a": 2,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "No caderno, a respeito de YAML: qual vale?",
+      "q": "A URL schema.registry.url precisa estar no producer e no consumer — o que vale aqui?",
       "o": [
+        "O subject padrão é o group.id do faturamento.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
         "schema.registry.url no producer e consumer.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
       ],
-      "a": 0,
+      "a": 2,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "Se perguntarem YAML na mesa, qual frase é a verdadeira?",
+      "q": "Qual o subject padrão do value em pedidos.criados?",
       "o": [
-        "schema.registry.url no producer e consumer.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Subject padrão: pedidos.criados-value.",
+        "O subject padrão é o group.id do faturamento."
       ],
-      "a": 0,
-      "w": "application.yml.",
-      "t": "YAML"
+      "a": 2,
+      "w": "curl /subjects depois do primeiro produce.",
+      "t": "subject"
     },
     {
-      "q": "Sobre subject: qual afirmação está certa?",
+      "q": "Qual o subject padrão do value em pedidos.criados — verdade ou mito?",
       "o": [
         "Subject padrão: pedidos.criados-value.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O subject padrão é o group.id do faturamento.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent."
       ],
       "a": 0,
       "w": "curl /subjects depois do primeiro produce.",
       "t": "subject"
     },
     {
-      "q": "Qual frase sobre subject está certa?",
+      "q": "Qual o subject padrão do value em pedidos.criados — o que acontece de verdade?",
+      "o": [
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "Subject padrão: pedidos.criados-value.",
+        "O subject padrão é o group.id do faturamento."
+      ],
+      "a": 2,
+      "w": "curl /subjects depois do primeiro produce.",
+      "t": "subject"
+    },
+    {
+      "q": "Na prática: Qual o subject padrão do value em pedidos.criados?",
+      "o": [
+        "O subject padrão é o group.id do faturamento.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Subject padrão: pedidos.criados-value."
+      ],
+      "a": 3,
+      "w": "curl /subjects depois do primeiro produce.",
+      "t": "subject"
+    },
+    {
+      "q": "Qual o subject padrão do value em pedidos.criados — como funciona?",
+      "o": [
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Subject padrão: pedidos.criados-value.",
+        "O subject padrão é o group.id do faturamento.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite."
+      ],
+      "a": 1,
+      "w": "curl /subjects depois do primeiro produce.",
+      "t": "subject"
+    },
+    {
+      "q": "Se perguntarem: Qual o subject padrão do value em pedidos.criados?",
       "o": [
         "Subject padrão: pedidos.criados-value.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O subject padrão é o group.id do faturamento.",
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Não há Schema Registry; o contrato vive só no broker."
       ],
       "a": 0,
       "w": "curl /subjects depois do primeiro produce.",
       "t": "subject"
     },
     {
-      "q": "Subject — o que acontece de verdade?",
+      "q": "Qual o subject padrão do value em pedidos.criados — o que vale aqui?",
       "o": [
         "Subject padrão: pedidos.criados-value.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O subject padrão é o group.id do faturamento.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Schema Registry é só um tópico interno, sem HTTP."
       ],
       "a": 0,
       "w": "curl /subjects depois do primeiro produce.",
       "t": "subject"
     },
     {
-      "q": "Marque a leitura correta (subject).",
+      "q": "Sem Schema Registry, um produtor mudar total para amount faz o quê em produção?",
       "o": [
-        "Subject padrão: pedidos.criados-value.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "curl /subjects depois do primeiro produce.",
-      "t": "subject"
-    },
-    {
-      "q": "Corrija o mito sobre subject.",
-      "o": [
-        "Subject padrão: pedidos.criados-value.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "curl /subjects depois do primeiro produce.",
-      "t": "subject"
-    },
-    {
-      "q": "No caderno, a respeito de subject: qual vale?",
-      "o": [
-        "Subject padrão: pedidos.criados-value.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "curl /subjects depois do primeiro produce.",
-      "t": "subject"
-    },
-    {
-      "q": "Se perguntarem subject na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Subject padrão: pedidos.criados-value.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "curl /subjects depois do primeiro produce.",
-      "t": "subject"
-    },
-    {
-      "q": "Sobre sem registry: qual afirmação está certa?",
-      "o": [
-        "Sem cartório, um produtor muda total para amount e o deserializer explode em produção.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Sem Schema Registry, um produtor muda total para amount e o deserializer explode em produção.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "No fio vai JSON solto; magic byte e schema id são mito."
       ],
       "a": 0,
       "w": "O travão é o Registry.",
       "t": "sem registry"
     },
     {
-      "q": "Qual frase sobre sem registry está certa?",
+      "q": "Sem Schema Registry, um produtor mudar total para amount faz o quê em produção — verdade ou mito?",
       "o": [
-        "Sem cartório, um produtor muda total para amount e o deserializer explode em produção.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "Sem Schema Registry, um produtor muda total para amount e o deserializer explode em produção.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal."
+      ],
+      "a": 2,
+      "w": "O travão é o Registry.",
+      "t": "sem registry"
+    },
+    {
+      "q": "Sem Schema Registry, um produtor mudar total para amount faz o quê em produção — o que acontece de verdade?",
+      "o": [
+        "Sem Schema Registry, um produtor muda total para amount e o deserializer explode em produção.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes ."
       ],
       "a": 0,
       "w": "O travão é o Registry.",
       "t": "sem registry"
     },
     {
-      "q": "Sem registry — o que acontece de verdade?",
+      "q": "Na prática: Sem Schema Registry, um produtor mudar total para amount faz o quê em produção?",
       "o": [
-        "Sem cartório, um produtor muda total para amount e o deserializer explode em produção.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Sem Schema Registry, um produtor muda total para amount e o deserializer explode em produção."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O travão é o Registry.",
       "t": "sem registry"
     },
     {
-      "q": "Marque a leitura correta (sem registry).",
+      "q": "Sem Schema Registry, um produtor mudar total para amount faz o quê em produção — como funciona?",
       "o": [
-        "Sem cartório, um produtor muda total para amount e o deserializer explode em produção.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Sem Schema Registry, um produtor muda total para amount e o deserializer explode em produção."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O travão é o Registry.",
       "t": "sem registry"
     },
     {
-      "q": "Corrija o mito sobre sem registry.",
+      "q": "Se perguntarem: Sem Schema Registry, um produtor mudar total para amount faz o quê em produção?",
       "o": [
-        "Sem cartório, um produtor muda total para amount e o deserializer explode em produção.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "Sem Schema Registry, um produtor muda total para amount e o deserializer explode em produção.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O travão é o Registry.",
       "t": "sem registry"
     },
     {
-      "q": "No caderno, a respeito de sem registry: qual vale?",
+      "q": "Sem Schema Registry, um produtor mudar total para amount faz o quê em produção — o que vale aqui?",
       "o": [
-        "Sem cartório, um produtor muda total para amount e o deserializer explode em produção.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "O subject padrão é o group.id do faturamento.",
+        "Sem Schema Registry, um produtor muda total para amount e o deserializer explode em produção.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O travão é o Registry.",
       "t": "sem registry"
     },
     {
-      "q": "Se perguntarem sem registry na mesa, qual frase é a verdadeira?",
+      "q": "Um campo opcional novo no PedidoCriado quebra BACKWARD?",
       "o": [
-        "Sem cartório, um produtor muda total para amount e o deserializer explode em produção.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "O subject padrão é o group.id do faturamento.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "cupom opcional no PedidoCriado é evolução BACKWARD-safe."
       ],
-      "a": 0,
-      "w": "O travão é o Registry.",
-      "t": "sem registry"
+      "a": 3,
+      "w": "Não remova eventId.",
+      "t": "cupom"
     },
     {
-      "q": "Sobre cupom: qual afirmação está certa?",
+      "q": "Um campo opcional novo no PedidoCriado quebra BACKWARD — verdade ou mito?",
+      "o": [
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal."
+      ],
+      "a": 1,
+      "w": "Não remova eventId.",
+      "t": "cupom"
+    },
+    {
+      "q": "Um campo opcional novo no PedidoCriado quebra BACKWARD — o que acontece de verdade?",
+      "o": [
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "cupom opcional no PedidoCriado é evolução BACKWARD-safe."
+      ],
+      "a": 3,
+      "w": "Não remova eventId.",
+      "t": "cupom"
+    },
+    {
+      "q": "Na prática: Um campo opcional novo no PedidoCriado quebra BACKWARD?",
       "o": [
         "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite."
       ],
       "a": 0,
       "w": "Não remova eventId.",
       "t": "cupom"
     },
     {
-      "q": "Qual frase sobre cupom está certa?",
+      "q": "Um campo opcional novo no PedidoCriado quebra BACKWARD — como funciona?",
       "o": [
         "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Schema Registry e transação de banco são a mesma aula."
       ],
       "a": 0,
       "w": "Não remova eventId.",
       "t": "cupom"
     },
     {
-      "q": "Cupom — o que acontece de verdade?",
+      "q": "Se perguntarem: Um campo opcional novo no PedidoCriado quebra BACKWARD?",
       "o": [
+        "Não há Schema Registry; o contrato vive só no broker.",
         "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Schema Registry e transação de banco são a mesma aula."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não remova eventId.",
       "t": "cupom"
     },
     {
-      "q": "Marque a leitura correta (cupom).",
+      "q": "Um campo opcional novo no PedidoCriado quebra BACKWARD — o que vale aqui?",
       "o": [
+        "Schema Registry é só um tópico interno, sem HTTP.",
         "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Não há Schema Registry; o contrato vive só no broker."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não remova eventId.",
       "t": "cupom"
     },
     {
-      "q": "Corrija o mito sobre cupom.",
+      "q": "O serializer JSON Schema vem de onde no Spring?",
       "o": [
-        "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "kafka-json-schema-serializer no pom, repositório Confluent."
       ],
-      "a": 0,
-      "w": "Não remova eventId.",
-      "t": "cupom"
-    },
-    {
-      "q": "No caderno, a respeito de cupom: qual vale?",
-      "o": [
-        "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Não remova eventId.",
-      "t": "cupom"
-    },
-    {
-      "q": "Se perguntarem cupom na mesa, qual frase é a verdadeira?",
-      "o": [
-        "cupom opcional no PedidoCriado é evolução BACKWARD-safe.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Não remova eventId.",
-      "t": "cupom"
-    },
-    {
-      "q": "Sobre pom: qual afirmação está certa?",
-      "o": [
-        "kafka-json-schema-serializer no pom, repositório Confluent.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Dependência do lab.",
+      "a": 3,
+      "w": "Dependência do serializer JSON Schema.",
       "t": "pom"
     },
     {
-      "q": "Qual frase sobre pom está certa?",
+      "q": "O serializer JSON Schema vem de onde no Spring — verdade ou mito?",
       "o": [
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
         "kafka-json-schema-serializer no pom, repositório Confluent.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "No fio vai JSON solto; magic byte e schema id são mito."
       ],
-      "a": 0,
-      "w": "Dependência do lab.",
+      "a": 1,
+      "w": "Dependência do serializer JSON Schema.",
       "t": "pom"
     },
     {
-      "q": "Pom — o que acontece de verdade?",
+      "q": "O serializer JSON Schema vem de onde no Spring — o que acontece de verdade?",
       "o": [
-        "kafka-json-schema-serializer no pom, repositório Confluent.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "kafka-json-schema-serializer no pom, repositório Confluent."
       ],
-      "a": 0,
-      "w": "Dependência do lab.",
+      "a": 3,
+      "w": "Dependência do serializer JSON Schema.",
       "t": "pom"
     },
     {
-      "q": "Marque a leitura correta (pom).",
+      "q": "Na prática: O serializer JSON Schema vem de onde no Spring?",
       "o": [
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
         "kafka-json-schema-serializer no pom, repositório Confluent.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent."
       ],
-      "a": 0,
-      "w": "Dependência do lab.",
+      "a": 2,
+      "w": "Dependência do serializer JSON Schema.",
       "t": "pom"
     },
     {
-      "q": "Corrija o mito sobre pom.",
+      "q": "O serializer JSON Schema vem de onde no Spring — como funciona?",
       "o": [
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
         "kafka-json-schema-serializer no pom, repositório Confluent.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent."
       ],
-      "a": 0,
-      "w": "Dependência do lab.",
+      "a": 2,
+      "w": "Dependência do serializer JSON Schema.",
       "t": "pom"
     },
     {
-      "q": "No caderno, a respeito de pom: qual vale?",
+      "q": "Se perguntarem: O serializer JSON Schema vem de onde no Spring?",
       "o": [
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
         "kafka-json-schema-serializer no pom, repositório Confluent.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD."
       ],
-      "a": 0,
-      "w": "Dependência do lab.",
+      "a": 1,
+      "w": "Dependência do serializer JSON Schema.",
       "t": "pom"
     },
     {
-      "q": "Se perguntarem pom na mesa, qual frase é a verdadeira?",
+      "q": "O serializer JSON Schema vem de onde no Spring — o que vale aqui?",
       "o": [
+        "O subject padrão é o group.id do faturamento.",
         "kafka-json-schema-serializer no pom, repositório Confluent.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
       ],
-      "a": 0,
-      "w": "Dependência do lab.",
+      "a": 1,
+      "w": "Dependência do serializer JSON Schema.",
       "t": "pom"
     },
     {
-      "q": "Sobre compat: qual afirmação está certa?",
+      "q": "Qual nível de compatibilidade o Schema Registry costuma usar no início?",
       "o": [
-        "Nível de compatibilidade no Compose: BACKWARD.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "O subject padrão é o group.id do faturamento.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Nível de compatibilidade no Compose: BACKWARD."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O Registry recusa PUT incompatível.",
       "t": "compat"
     },
     {
-      "q": "Qual frase sobre compat está certa?",
+      "q": "Qual nível de compatibilidade o Schema Registry costuma usar no início — verdade ou mito?",
       "o": [
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
         "Nível de compatibilidade no Compose: BACKWARD.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O Registry recusa PUT incompatível.",
       "t": "compat"
     },
     {
-      "q": "Compat — o que acontece de verdade?",
+      "q": "Qual nível de compatibilidade o Schema Registry costuma usar no início — o que acontece de verdade?",
       "o": [
-        "Nível de compatibilidade no Compose: BACKWARD.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "Nível de compatibilidade no Compose: BACKWARD."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O Registry recusa PUT incompatível.",
       "t": "compat"
     },
     {
-      "q": "Marque a leitura correta (compat).",
+      "q": "Na prática: Qual nível de compatibilidade o Schema Registry costuma usar no início?",
       "o": [
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
         "Nível de compatibilidade no Compose: BACKWARD.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O Registry recusa PUT incompatível.",
       "t": "compat"
     },
     {
-      "q": "Corrija o mito sobre compat.",
+      "q": "Qual nível de compatibilidade o Schema Registry costuma usar no início — como funciona?",
       "o": [
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Schema Registry e transação de banco são a mesma aula.",
         "Nível de compatibilidade no Compose: BACKWARD.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O Registry recusa PUT incompatível.",
       "t": "compat"
     },
     {
-      "q": "No caderno, a respeito de compat: qual vale?",
+      "q": "Se perguntarem: Qual nível de compatibilidade o Schema Registry costuma usar no início?",
       "o": [
+        "Não há Schema Registry; o contrato vive só no broker.",
         "Nível de compatibilidade no Compose: BACKWARD.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "Schema Registry e transação de banco são a mesma aula."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O Registry recusa PUT incompatível.",
       "t": "compat"
     },
     {
-      "q": "Se perguntarem compat na mesa, qual frase é a verdadeira?",
+      "q": "Qual nível de compatibilidade o Schema Registry costuma usar no início — o que vale aqui?",
       "o": [
+        "Schema Registry é só um tópico interno, sem HTTP.",
         "Nível de compatibilidade no Compose: BACKWARD.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "Não há Schema Registry; o contrato vive só no broker."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O Registry recusa PUT incompatível.",
       "t": "compat"
     },
     {
-      "q": "Sobre id no payload: qual afirmação está certa?",
+      "q": "O consumer adivinha o JSON ou pede o schema daquele id?",
       "o": [
-        "O consumer pede o schema daquele id ao Registry e desserializa.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "O consumer pede o schema daquele id ao Registry e desserializa."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não adivinha o JSON.",
       "t": "id no payload"
     },
     {
-      "q": "Qual frase sobre id no payload está certa?",
+      "q": "O consumer adivinha o JSON ou pede o schema daquele id — verdade ou mito?",
       "o": [
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
         "O consumer pede o schema daquele id ao Registry e desserializa.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "No fio vai JSON solto; magic byte e schema id são mito."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não adivinha o JSON.",
       "t": "id no payload"
     },
     {
-      "q": "Id no payload — o que acontece de verdade?",
+      "q": "O consumer adivinha o JSON ou pede o schema daquele id — o que acontece de verdade?",
       "o": [
-        "O consumer pede o schema daquele id ao Registry e desserializa.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "O consumer pede o schema daquele id ao Registry e desserializa."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não adivinha o JSON.",
       "t": "id no payload"
     },
     {
-      "q": "Marque a leitura correta (id no payload).",
+      "q": "Na prática: O consumer adivinha o JSON ou pede o schema daquele id?",
       "o": [
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
         "O consumer pede o schema daquele id ao Registry e desserializa.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O consumer adivinha o JSON; schema id no payload é enfeite."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Não adivinha o JSON.",
       "t": "id no payload"
     },
     {
-      "q": "Corrija o mito sobre id no payload.",
+      "q": "O consumer adivinha o JSON ou pede o schema daquele id — como funciona?",
       "o": [
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
         "O consumer pede o schema daquele id ao Registry e desserializa.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O consumer adivinha o JSON; schema id no payload é enfeite."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Não adivinha o JSON.",
       "t": "id no payload"
     },
     {
-      "q": "No caderno, a respeito de id no payload: qual vale?",
+      "q": "Se perguntarem: O consumer adivinha o JSON ou pede o schema daquele id?",
       "o": [
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
         "O consumer pede o schema daquele id ao Registry e desserializa.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não adivinha o JSON.",
       "t": "id no payload"
     },
     {
-      "q": "Se perguntarem id no payload na mesa, qual frase é a verdadeira?",
+      "q": "O consumer adivinha o JSON ou pede o schema daquele id — o que vale aqui?",
       "o": [
+        "O subject padrão é o group.id do faturamento.",
         "O consumer pede o schema daquele id ao Registry e desserializa.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não adivinha o JSON.",
       "t": "id no payload"
     },
     {
-      "q": "Sobre aula: qual afirmação está certa?",
+      "q": "Schema Registry e outbox são a mesma peça?",
       "o": [
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
         "Passo a passo na aula de schema; outbox é outra peça.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Schema Registry e transação de banco são a mesma aula.",
+        "O subject padrão é o group.id do faturamento."
       ],
-      "a": 0,
-      "w": "Não misture cartório com transação de banco.",
+      "a": 1,
+      "w": "Não misture Schema Registry com transação de banco.",
       "t": "aula"
     },
     {
-      "q": "Qual frase sobre aula está certa?",
+      "q": "Schema Registry e outbox são a mesma peça — verdade ou mito?",
       "o": [
-        "Passo a passo na aula de schema; outbox é outra peça.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Sem Registry o deserializer nunca explode; o contrato é verbal.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa.",
+        "Passo a passo na aula de schema; outbox é outra peça."
       ],
-      "a": 0,
-      "w": "Não misture cartório com transação de banco.",
+      "a": 3,
+      "w": "Não misture Schema Registry com transação de banco.",
       "t": "aula"
     },
     {
-      "q": "Aula — o que acontece de verdade?",
+      "q": "Schema Registry e outbox são a mesma peça — o que acontece de verdade?",
       "o": [
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
         "Passo a passo na aula de schema; outbox é outra peça.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Campo opcional novo quebra BACKWARD; remover eventId obrigatório é que passa."
       ],
-      "a": 0,
-      "w": "Não misture cartório com transação de banco.",
+      "a": 1,
+      "w": "Não misture Schema Registry com transação de banco.",
       "t": "aula"
     },
     {
-      "q": "Marque a leitura correta (aula).",
+      "q": "Na prática: Schema Registry e outbox são a mesma peça?",
       "o": [
         "Passo a passo na aula de schema; outbox é outra peça.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Não precisa do kafka-json-schema-serializer nem do repositório Confluent.",
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula."
       ],
       "a": 0,
-      "w": "Não misture cartório com transação de banco.",
+      "w": "Não misture Schema Registry com transação de banco.",
       "t": "aula"
     },
     {
-      "q": "Corrija o mito sobre aula.",
+      "q": "Schema Registry e outbox são a mesma peça — como funciona?",
       "o": [
+        "O Registry usa FULL_TRANSITIVE por default; BACKWARD é mito da aula.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
         "Passo a passo na aula de schema; outbox é outra peça.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Schema Registry e transação de banco são a mesma aula."
       ],
-      "a": 0,
-      "w": "Não misture cartório com transação de banco.",
+      "a": 2,
+      "w": "Não misture Schema Registry com transação de banco.",
       "t": "aula"
     },
     {
-      "q": "No caderno, a respeito de aula: qual vale?",
+      "q": "Se perguntarem: Schema Registry e outbox são a mesma peça?",
       "o": [
-        "Passo a passo na aula de schema; outbox é outra peça.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Schema Registry e transação de banco são a mesma aula.",
+        "O consumer adivinha o JSON; schema id no payload é enfeite.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Passo a passo na aula de schema; outbox é outra peça."
       ],
-      "a": 0,
-      "w": "Não misture cartório com transação de banco.",
+      "a": 3,
+      "w": "Não misture Schema Registry com transação de banco.",
       "t": "aula"
     },
     {
-      "q": "Se perguntarem aula na mesa, qual frase é a verdadeira?",
+      "q": "Schema Registry e outbox são a mesma peça — o que vale aqui?",
       "o": [
-        "Passo a passo na aula de schema; outbox é outra peça.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Schema Registry e transação de banco são a mesma aula.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "Passo a passo na aula de schema; outbox é outra peça."
       ],
-      "a": 0,
-      "w": "Não misture cartório com transação de banco.",
+      "a": 3,
+      "w": "Não misture Schema Registry com transação de banco.",
       "t": "aula"
     },
     {
-      "q": "Sobre lab serviço: qual afirmação está certa?",
+      "q": "Schema Registry é um serviço HTTP separado do broker?",
       "o": [
-        "schema-registry no docker-compose.yml.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Schema Registry é só um tópico interno, sem HTTP.",
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "Schema Registry é um serviço HTTP separado do broker.",
+        "Não há Schema Registry; o contrato vive só no broker."
       ],
-      "a": 0,
-      "w": "Um up sobe broker + cartório.",
+      "a": 2,
+      "w": "Broker sozinho não versiona o contrato.",
       "t": "lab serviço"
     },
     {
-      "q": "Qual frase sobre lab serviço está certa?",
+      "q": "Schema Registry é um serviço HTTP separado do broker — verdade ou mito?",
       "o": [
-        "schema-registry no docker-compose.yml.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Schema Registry é um serviço HTTP separado do broker.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "No fio vai JSON solto; magic byte e schema id são mito.",
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto."
       ],
       "a": 0,
-      "w": "Um up sobe broker + cartório.",
+      "w": "Broker sozinho não versiona o contrato.",
       "t": "lab serviço"
     },
     {
-      "q": "Lab serviço — o que acontece de verdade?",
+      "q": "Schema Registry é um serviço HTTP separado do broker — o que acontece de verdade?",
       "o": [
-        "schema-registry no docker-compose.yml.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "BACKWARD: o consumidor antigo é que precisa ler o dado novo. Consumidor novo que lê schema antigo não é o ponto.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Schema Registry é um serviço HTTP separado do broker.",
+        "Não há Schema Registry; o contrato vive só no broker."
       ],
-      "a": 0,
-      "w": "Um up sobe broker + cartório.",
+      "a": 2,
+      "w": "Broker sozinho não versiona o contrato.",
       "t": "lab serviço"
     },
     {
-      "q": "Marque a leitura correta (lab serviço).",
+      "q": "Na prática: Schema Registry é um serviço HTTP separado do broker?",
       "o": [
-        "schema-registry no docker-compose.yml.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "FORWARD e BACKWARD são o mesmo nível; misture os nomes .",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Schema Registry é um serviço HTTP separado do broker."
       ],
-      "a": 0,
-      "w": "Um up sobe broker + cartório.",
+      "a": 3,
+      "w": "Broker sozinho não versiona o contrato.",
       "t": "lab serviço"
     },
     {
-      "q": "Corrija o mito sobre lab serviço.",
+      "q": "Schema Registry é um serviço HTTP separado do broker — como funciona?",
       "o": [
-        "schema-registry no docker-compose.yml.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Remover campo obrigatório passa no Registry; 409 é mito.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Schema Registry é um serviço HTTP separado do broker."
       ],
-      "a": 0,
-      "w": "Um up sobe broker + cartório.",
+      "a": 3,
+      "w": "Broker sozinho não versiona o contrato.",
       "t": "lab serviço"
     },
     {
-      "q": "No caderno, a respeito de lab serviço: qual vale?",
+      "q": "Se perguntarem: Schema Registry é um serviço HTTP separado do broker?",
       "o": [
-        "schema-registry no docker-compose.yml.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Schema Registry é um serviço HTTP separado do broker.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Rename de campo obrigatório é igual a campo opcional novo: passa BACKWARD.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON."
       ],
       "a": 0,
-      "w": "Um up sobe broker + cartório.",
+      "w": "Broker sozinho não versiona o contrato.",
       "t": "lab serviço"
     },
     {
-      "q": "Se perguntarem lab serviço na mesa, qual frase é a verdadeira?",
+      "q": "Schema Registry é um serviço HTTP separado do broker — o que vale aqui?",
       "o": [
-        "schema-registry no docker-compose.yml.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Schema Registry é um serviço HTTP separado do broker.",
+        "Não há Schema Registry; o contrato vive só no broker.",
+        "Só o producer fala com o Registry; o consumer adivinha o JSON.",
+        "O subject padrão é o group.id do faturamento."
       ],
       "a": 0,
-      "w": "Um up sobe broker + cartório.",
+      "w": "Broker sozinho não versiona o contrato.",
       "t": "lab serviço"
     }
   ]

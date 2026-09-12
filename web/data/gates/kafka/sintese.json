@@ -1,1262 +1,1262 @@
 {
   "questions": [
     {
-      "q": "Sobre fluxo 99: qual afirmação está certa?",
+      "q": "Na síntese, o que você precisa narrar sobre o pedido 99?",
+      "o": [
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok."
+      ],
+      "a": 1,
+      "w": "Modelo + garantias + outbox + inbox.",
+      "t": "fluxo 99"
+    },
+    {
+      "q": "Na síntese, o que você precisa narrar sobre o pedido 99 — verdade ou mito?",
+      "o": [
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa."
+      ],
+      "a": 3,
+      "w": "Modelo + garantias + outbox + inbox.",
+      "t": "fluxo 99"
+    },
+    {
+      "q": "Na síntese, o que você precisa narrar sobre o pedido 99 — o que acontece de verdade?",
+      "o": [
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "O cadeado de 5 questões substitui o simulador de 50."
+      ],
+      "a": 1,
+      "w": "Modelo + garantias + outbox + inbox.",
+      "t": "fluxo 99"
+    },
+    {
+      "q": "Na prática: Na síntese, o que você precisa narrar sobre o pedido 99?",
+      "o": [
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado."
+      ],
+      "a": 2,
+      "w": "Modelo + garantias + outbox + inbox.",
+      "t": "fluxo 99"
+    },
+    {
+      "q": "Na síntese, o que você precisa narrar sobre o pedido 99 — como funciona?",
       "o": [
         "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Analytics atrasado trava o faturamento no mesmo tópico."
       ],
       "a": 0,
       "w": "Modelo + garantias + outbox + inbox.",
       "t": "fluxo 99"
     },
     {
-      "q": "Qual frase sobre fluxo 99 está certa?",
+      "q": "Se perguntarem: Na síntese, o que você precisa narrar sobre o pedido 99?",
       "o": [
-        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Modelo + garantias + outbox + inbox.",
       "t": "fluxo 99"
     },
     {
-      "q": "Fluxo 99 — o que acontece de verdade?",
+      "q": "Na síntese, o que você precisa narrar sobre o pedido 99 — o que vale aqui?",
       "o": [
-        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Modelo + garantias + outbox + inbox.",
       "t": "fluxo 99"
     },
     {
-      "q": "Marque a leitura correta (fluxo 99).",
+      "q": "Dá para explicar partição sem abrir o HTML, se a aula colou?",
       "o": [
-        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou."
       ],
-      "a": 0,
-      "w": "Modelo + garantias + outbox + inbox.",
-      "t": "fluxo 99"
+      "a": 3,
+      "w": "Papel, não cópia.",
+      "t": "glossário cego"
     },
     {
-      "q": "Corrija o mito sobre fluxo 99.",
+      "q": "Dá para explicar partição sem abrir o HTML, se a aula colou — verdade ou mito?",
       "o": [
-        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Kafka é backup; o passado não some.",
+        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "4 consumidores e 3 partições: zero ociosos."
       ],
-      "a": 0,
-      "w": "Modelo + garantias + outbox + inbox.",
-      "t": "fluxo 99"
+      "a": 1,
+      "w": "Papel, não cópia.",
+      "t": "glossário cego"
     },
     {
-      "q": "No caderno, a respeito de fluxo 99: qual vale?",
+      "q": "Dá para explicar partição sem abrir o HTML, se a aula colou — o que acontece de verdade?",
       "o": [
-        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "Kafka é backup; o passado não some.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou."
       ],
-      "a": 0,
-      "w": "Modelo + garantias + outbox + inbox.",
-      "t": "fluxo 99"
+      "a": 3,
+      "w": "Papel, não cópia.",
+      "t": "glossário cego"
     },
     {
-      "q": "Se perguntarem fluxo 99 na mesa, qual frase é a verdadeira?",
+      "q": "Na prática: Dá para explicar partição sem abrir o HTML, se a aula colou?",
       "o": [
-        "Narrar o 99 do clique à fatura, nomeando o buraco de cada etapa.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok."
       ],
-      "a": 0,
-      "w": "Modelo + garantias + outbox + inbox.",
-      "t": "fluxo 99"
+      "a": 2,
+      "w": "Papel, não cópia.",
+      "t": "glossário cego"
     },
     {
-      "q": "Sobre glossário cego: qual afirmação está certa?",
+      "q": "Dá para explicar partição sem abrir o HTML, se a aula colou — como funciona?",
       "o": [
         "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Offset é eventId; inbox usa o número da mensagem."
       ],
       "a": 0,
       "w": "Papel, não cópia.",
       "t": "glossário cego"
     },
     {
-      "q": "Qual frase sobre glossário cego está certa?",
+      "q": "Se perguntarem: Dá para explicar partição sem abrir o HTML, se a aula colou?",
       "o": [
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
         "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "Offset é eventId; inbox usa o número da mensagem."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Papel, não cópia.",
       "t": "glossário cego"
     },
     {
-      "q": "Glossário cego — o que acontece de verdade?",
+      "q": "Dá para explicar partição sem abrir o HTML, se a aula colou — o que vale aqui?",
       "o": [
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
         "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Papel, não cópia.",
       "t": "glossário cego"
     },
     {
-      "q": "Marque a leitura correta (glossário cego).",
+      "q": "ISR e inbox são a mesma coisa?",
       "o": [
-        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado."
       ],
-      "a": 0,
-      "w": "Papel, não cópia.",
-      "t": "glossário cego"
+      "a": 2,
+      "w": "Escrita vs efeito.",
+      "t": "eixos"
     },
     {
-      "q": "Corrija o mito sobre glossário cego.",
-      "o": [
-        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Papel, não cópia.",
-      "t": "glossário cego"
-    },
-    {
-      "q": "No caderno, a respeito de glossário cego: qual vale?",
-      "o": [
-        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "Papel, não cópia.",
-      "t": "glossário cego"
-    },
-    {
-      "q": "Se perguntarem glossário cego na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Explicar partição sem abrir o HTML. Se não der, a aula de partição não colou.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Papel, não cópia.",
-      "t": "glossário cego"
-    },
-    {
-      "q": "Sobre eixos: qual afirmação está certa?",
+      "q": "ISR e inbox são a mesma coisa — verdade ou mito?",
       "o": [
         "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "O cadeado de 5 questões substitui o simulador de 50."
       ],
       "a": 0,
       "w": "Escrita vs efeito.",
       "t": "eixos"
     },
     {
-      "q": "Qual frase sobre eixos está certa?",
+      "q": "ISR e inbox são a mesma coisa — o que acontece de verdade?",
+      "o": [
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado."
+      ],
+      "a": 2,
+      "w": "Escrita vs efeito.",
+      "t": "eixos"
+    },
+    {
+      "q": "Na prática: ISR e inbox são a mesma coisa?",
+      "o": [
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Publique e torça; dizer o esperado antes é teatro."
+      ],
+      "a": 1,
+      "w": "Escrita vs efeito.",
+      "t": "eixos"
+    },
+    {
+      "q": "ISR e inbox são a mesma coisa — como funciona?",
+      "o": [
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa."
+      ],
+      "a": 3,
+      "w": "Escrita vs efeito.",
+      "t": "eixos"
+    },
+    {
+      "q": "Se perguntarem: ISR e inbox são a mesma coisa?",
       "o": [
         "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos."
       ],
       "a": 0,
       "w": "Escrita vs efeito.",
       "t": "eixos"
     },
     {
-      "q": "Eixos — o que acontece de verdade?",
+      "q": "ISR e inbox são a mesma coisa — o que vale aqui?",
       "o": [
         "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra."
       ],
       "a": 0,
       "w": "Escrita vs efeito.",
       "t": "eixos"
     },
     {
-      "q": "Marque a leitura correta (eixos).",
+      "q": "O simulador de 50 questões e o cadeado de 5 da aula são o mesmo instrumento?",
       "o": [
-        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "4 consumidores e 3 partições: zero ociosos.",
+        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
+        "O cadeado de 5 questões substitui o simulador de 50."
       ],
-      "a": 0,
-      "w": "Escrita vs efeito.",
-      "t": "eixos"
+      "a": 2,
+      "w": "Dois instrumentos.",
+      "t": "simulador"
     },
     {
-      "q": "Corrija o mito sobre eixos.",
-      "o": [
-        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Escrita vs efeito.",
-      "t": "eixos"
-    },
-    {
-      "q": "No caderno, a respeito de eixos: qual vale?",
-      "o": [
-        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Escrita vs efeito.",
-      "t": "eixos"
-    },
-    {
-      "q": "Se perguntarem eixos na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Não misturar ISR com inbox na mesma frase como se fossem a mesma coisa.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Escrita vs efeito.",
-      "t": "eixos"
-    },
-    {
-      "q": "Sobre simulador: qual afirmação está certa?",
+      "q": "O simulador de 50 questões e o cadeado de 5 da aula são o mesmo instrumento — verdade ou mito?",
       "o": [
         "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Kafka é backup; o passado não some."
       ],
       "a": 0,
       "w": "Dois instrumentos.",
       "t": "simulador"
     },
     {
-      "q": "Qual frase sobre simulador está certa?",
+      "q": "O simulador de 50 questões e o cadeado de 5 da aula são o mesmo instrumento — o que acontece de verdade?",
+      "o": [
+        "Kafka é backup; o passado não some.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
+        "O cadeado de 5 questões substitui o simulador de 50."
+      ],
+      "a": 2,
+      "w": "Dois instrumentos.",
+      "t": "simulador"
+    },
+    {
+      "q": "Na prática: O simulador de 50 questões e o cadeado de 5 da aula são o mesmo instrumento?",
+      "o": [
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato."
+      ],
+      "a": 1,
+      "w": "Dois instrumentos.",
+      "t": "simulador"
+    },
+    {
+      "q": "O simulador de 50 questões e o cadeado de 5 da aula são o mesmo instrumento — como funciona?",
+      "o": [
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula."
+      ],
+      "a": 3,
+      "w": "Dois instrumentos.",
+      "t": "simulador"
+    },
+    {
+      "q": "Se perguntarem: O simulador de 50 questões e o cadeado de 5 da aula são o mesmo instrumento?",
       "o": [
         "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
       "a": 0,
       "w": "Dois instrumentos.",
       "t": "simulador"
     },
     {
-      "q": "Simulador — o que acontece de verdade?",
+      "q": "O simulador de 50 questões e o cadeado de 5 da aula são o mesmo instrumento — o que vale aqui?",
       "o": [
         "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado."
       ],
       "a": 0,
       "w": "Dois instrumentos.",
       "t": "simulador"
     },
     {
-      "q": "Marque a leitura correta (simulador).",
+      "q": "Antes de publicar/consumir, você diz o que espera ver no log?",
       "o": [
-        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Antes de publicar/consumir, diga o que espera ver no log.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok."
       ],
       "a": 0,
-      "w": "Dois instrumentos.",
-      "t": "simulador"
-    },
-    {
-      "q": "Corrija o mito sobre simulador.",
-      "o": [
-        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Dois instrumentos.",
-      "t": "simulador"
-    },
-    {
-      "q": "No caderno, a respeito de simulador: qual vale?",
-      "o": [
-        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Dois instrumentos.",
-      "t": "simulador"
-    },
-    {
-      "q": "Se perguntarem simulador na mesa, qual frase é a verdadeira?",
-      "o": [
-        "O simulador de 50 questões é a mesa; o de 5 é o cadeado de cada aula.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Dois instrumentos.",
-      "t": "simulador"
-    },
-    {
-      "q": "Sobre lab antes: qual afirmação está certa?",
-      "o": [
-        "Nos labs, diga o que espera ver no log antes de rodar.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Senão é teatro.",
+      "w": "Antes de publicar/consumir, diga o que espera ver no log.",
       "t": "lab antes"
     },
     {
-      "q": "Qual frase sobre lab antes está certa?",
+      "q": "Antes de publicar/consumir, você diz o que espera ver no log — verdade ou mito?",
       "o": [
-        "Nos labs, diga o que espera ver no log antes de rodar.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Antes de publicar/consumir, diga o que espera ver no log.",
+        "Publique e torça; dizer o esperado antes é teatro."
       ],
-      "a": 0,
-      "w": "Senão é teatro.",
+      "a": 2,
+      "w": "Antes de publicar/consumir, diga o que espera ver no log.",
       "t": "lab antes"
     },
     {
-      "q": "Lab antes — o que acontece de verdade?",
+      "q": "Antes de publicar/consumir, você diz o que espera ver no log — o que acontece de verdade?",
       "o": [
-        "Nos labs, diga o que espera ver no log antes de rodar.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Antes de publicar/consumir, diga o que espera ver no log.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "O cadeado de 5 questões substitui o simulador de 50."
       ],
       "a": 0,
-      "w": "Senão é teatro.",
+      "w": "Antes de publicar/consumir, diga o que espera ver no log.",
       "t": "lab antes"
     },
     {
-      "q": "Marque a leitura correta (lab antes).",
+      "q": "Na prática: Antes de publicar/consumir, você diz o que espera ver no log?",
       "o": [
-        "Nos labs, diga o que espera ver no log antes de rodar.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Antes de publicar/consumir, diga o que espera ver no log.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "O cadeado de 5 questões substitui o simulador de 50."
       ],
-      "a": 0,
-      "w": "Senão é teatro.",
+      "a": 1,
+      "w": "Antes de publicar/consumir, diga o que espera ver no log.",
       "t": "lab antes"
     },
     {
-      "q": "Corrija o mito sobre lab antes.",
+      "q": "Antes de publicar/consumir, você diz o que espera ver no log — como funciona?",
       "o": [
-        "Nos labs, diga o que espera ver no log antes de rodar.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "Antes de publicar/consumir, diga o que espera ver no log.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada."
       ],
-      "a": 0,
-      "w": "Senão é teatro.",
+      "a": 1,
+      "w": "Antes de publicar/consumir, diga o que espera ver no log.",
       "t": "lab antes"
     },
     {
-      "q": "No caderno, a respeito de lab antes: qual vale?",
+      "q": "Se perguntarem: Antes de publicar/consumir, você diz o que espera ver no log?",
       "o": [
-        "Nos labs, diga o que espera ver no log antes de rodar.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "Antes de publicar/consumir, diga o que espera ver no log.",
+        "Publique e torça; dizer o esperado antes é teatro."
       ],
-      "a": 0,
-      "w": "Senão é teatro.",
+      "a": 2,
+      "w": "Antes de publicar/consumir, diga o que espera ver no log.",
       "t": "lab antes"
     },
     {
-      "q": "Se perguntarem lab antes na mesa, qual frase é a verdadeira?",
+      "q": "Antes de publicar/consumir, você diz o que espera ver no log — o que vale aqui?",
       "o": [
-        "Nos labs, diga o que espera ver no log antes de rodar.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Antes de publicar/consumir, diga o que espera ver no log.",
+        "Publique e torça; dizer o esperado antes é teatro."
       ],
-      "a": 0,
-      "w": "Senão é teatro.",
+      "a": 2,
+      "w": "Antes de publicar/consumir, diga o que espera ver no log.",
       "t": "lab antes"
     },
     {
-      "q": "Sobre key ordem: qual afirmação está certa?",
+      "q": "Sem key, o 99 tem história ordenada?",
+      "o": [
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada."
+      ],
+      "a": 2,
+      "w": "Síntese de partição+key.",
+      "t": "key ordem"
+    },
+    {
+      "q": "Sem key, o 99 tem história ordenada — verdade ou mito?",
       "o": [
         "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Kafka é backup; o passado não some."
       ],
       "a": 0,
       "w": "Síntese de partição+key.",
       "t": "key ordem"
     },
     {
-      "q": "Qual frase sobre key ordem está certa?",
+      "q": "Sem key, o 99 tem história ordenada — o que acontece de verdade?",
+      "o": [
+        "Kafka é backup; o passado não some.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada."
+      ],
+      "a": 2,
+      "w": "Síntese de partição+key.",
+      "t": "key ordem"
+    },
+    {
+      "q": "Na prática: Sem key, o 99 tem história ordenada?",
+      "o": [
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato."
+      ],
+      "a": 1,
+      "w": "Síntese de partição+key.",
+      "t": "key ordem"
+    },
+    {
+      "q": "Sem key, o 99 tem história ordenada — como funciona?",
+      "o": [
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda."
+      ],
+      "a": 3,
+      "w": "Síntese de partição+key.",
+      "t": "key ordem"
+    },
+    {
+      "q": "Se perguntarem: Sem key, o 99 tem história ordenada?",
       "o": [
         "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
       "a": 0,
       "w": "Síntese de partição+key.",
       "t": "key ordem"
     },
     {
-      "q": "Key ordem — o que acontece de verdade?",
+      "q": "Sem key, o 99 tem história ordenada — o que vale aqui?",
       "o": [
         "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado."
       ],
       "a": 0,
       "w": "Síntese de partição+key.",
       "t": "key ordem"
     },
     {
-      "q": "Marque a leitura correta (key ordem).",
+      "q": "Analytics atrasado impede o faturamento?",
       "o": [
-        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Síntese de partição+key.",
-      "t": "key ordem"
-    },
-    {
-      "q": "Corrija o mito sobre key ordem.",
-      "o": [
-        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Síntese de partição+key.",
-      "t": "key ordem"
-    },
-    {
-      "q": "No caderno, a respeito de key ordem: qual vale?",
-      "o": [
-        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Síntese de partição+key.",
-      "t": "key ordem"
-    },
-    {
-      "q": "Se perguntarem key ordem na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Sem key o 99 não tem história ordenada. Com key, enquanto N não muda.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Síntese de partição+key.",
-      "t": "key ordem"
-    },
-    {
-      "q": "Sobre dois grupos: qual afirmação está certa?",
-      "o": [
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
         "Analytics atrasado não impede faturamento.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Analytics atrasado trava o faturamento no mesmo tópico."
       ],
-      "a": 0,
-      "w": "Marcas.",
+      "a": 2,
+      "w": "Dois grupos têm committed offset independente: analytics atrasado não trava faturamento.",
       "t": "dois grupos"
     },
     {
-      "q": "Qual frase sobre dois grupos está certa?",
+      "q": "Analytics atrasado impede o faturamento — verdade ou mito?",
       "o": [
         "Analytics atrasado não impede faturamento.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado."
       ],
       "a": 0,
-      "w": "Marcas.",
+      "w": "Dois grupos têm committed offset independente: analytics atrasado não trava faturamento.",
       "t": "dois grupos"
     },
     {
-      "q": "Dois grupos — o que acontece de verdade?",
+      "q": "Analytics atrasado impede o faturamento — o que acontece de verdade?",
       "o": [
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
         "Analytics atrasado não impede faturamento.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Analytics atrasado trava o faturamento no mesmo tópico."
       ],
-      "a": 0,
-      "w": "Marcas.",
+      "a": 2,
+      "w": "Dois grupos têm committed offset independente: analytics atrasado não trava faturamento.",
       "t": "dois grupos"
     },
     {
-      "q": "Marque a leitura correta (dois grupos).",
+      "q": "Na prática: Analytics atrasado impede o faturamento?",
       "o": [
-        "Analytics atrasado não impede faturamento.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Analytics atrasado não impede faturamento."
       ],
-      "a": 0,
-      "w": "Marcas.",
+      "a": 3,
+      "w": "Dois grupos têm committed offset independente: analytics atrasado não trava faturamento.",
       "t": "dois grupos"
     },
     {
-      "q": "Corrija o mito sobre dois grupos.",
+      "q": "Analytics atrasado impede o faturamento — como funciona?",
       "o": [
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
         "Analytics atrasado não impede faturamento.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "Publique e torça; dizer o esperado antes é teatro."
       ],
-      "a": 0,
-      "w": "Marcas.",
+      "a": 1,
+      "w": "Dois grupos têm committed offset independente: analytics atrasado não trava faturamento.",
       "t": "dois grupos"
     },
     {
-      "q": "No caderno, a respeito de dois grupos: qual vale?",
+      "q": "Se perguntarem: Analytics atrasado impede o faturamento?",
       "o": [
         "Analytics atrasado não impede faturamento.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos."
       ],
       "a": 0,
-      "w": "Marcas.",
+      "w": "Dois grupos têm committed offset independente: analytics atrasado não trava faturamento.",
       "t": "dois grupos"
     },
     {
-      "q": "Se perguntarem dois grupos na mesa, qual frase é a verdadeira?",
+      "q": "Analytics atrasado impede o faturamento — o que vale aqui?",
       "o": [
         "Analytics atrasado não impede faturamento.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra."
       ],
       "a": 0,
-      "w": "Marcas.",
+      "w": "Dois grupos têm committed offset independente: analytics atrasado não trava faturamento.",
       "t": "dois grupos"
     },
     {
-      "q": "Sobre outbox furo: qual afirmação está certa?",
+      "q": "Save+send sem outbox: os dois mundos ficam honestos?",
       "o": [
-        "save+send sem outbox: um dos dois mundos mente.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "4 consumidores e 3 partições: zero ociosos.",
+        "save+send sem outbox: um dos dois mundos mente."
       ],
-      "a": 0,
-      "w": "Banco ou caderno.",
+      "a": 3,
+      "w": "save+send sem outbox: um dos dois mundos mente (banco ou log).",
       "t": "outbox furo"
     },
     {
-      "q": "Qual frase sobre outbox furo está certa?",
+      "q": "Save+send sem outbox: os dois mundos ficam honestos — verdade ou mito?",
       "o": [
+        "Kafka é backup; o passado não some.",
         "save+send sem outbox: um dos dois mundos mente.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "4 consumidores e 3 partições: zero ociosos."
       ],
-      "a": 0,
-      "w": "Banco ou caderno.",
+      "a": 1,
+      "w": "save+send sem outbox: um dos dois mundos mente (banco ou log).",
       "t": "outbox furo"
     },
     {
-      "q": "Outbox furo — o que acontece de verdade?",
+      "q": "Save+send sem outbox: os dois mundos ficam honestos — o que acontece de verdade?",
       "o": [
-        "save+send sem outbox: um dos dois mundos mente.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "Kafka é backup; o passado não some.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "save+send sem outbox: um dos dois mundos mente."
       ],
-      "a": 0,
-      "w": "Banco ou caderno.",
+      "a": 3,
+      "w": "save+send sem outbox: um dos dois mundos mente (banco ou log).",
       "t": "outbox furo"
     },
     {
-      "q": "Marque a leitura correta (outbox furo).",
+      "q": "Na prática: Save+send sem outbox: os dois mundos ficam honestos?",
       "o": [
         "save+send sem outbox: um dos dois mundos mente.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro."
       ],
       "a": 0,
-      "w": "Banco ou caderno.",
+      "w": "save+send sem outbox: um dos dois mundos mente (banco ou log).",
       "t": "outbox furo"
     },
     {
-      "q": "Corrija o mito sobre outbox furo.",
+      "q": "Save+send sem outbox: os dois mundos ficam honestos — como funciona?",
       "o": [
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Offset é eventId; inbox usa o número da mensagem.",
         "save+send sem outbox: um dos dois mundos mente.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "save+send sem outbox nunca mente: banco e log nascem juntos."
       ],
-      "a": 0,
-      "w": "Banco ou caderno.",
+      "a": 2,
+      "w": "save+send sem outbox: um dos dois mundos mente (banco ou log).",
       "t": "outbox furo"
     },
     {
-      "q": "No caderno, a respeito de outbox furo: qual vale?",
+      "q": "Se perguntarem: Save+send sem outbox: os dois mundos ficam honestos?",
       "o": [
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
         "save+send sem outbox: um dos dois mundos mente.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "Offset é eventId; inbox usa o número da mensagem."
       ],
-      "a": 0,
-      "w": "Banco ou caderno.",
+      "a": 1,
+      "w": "save+send sem outbox: um dos dois mundos mente (banco ou log).",
       "t": "outbox furo"
     },
     {
-      "q": "Se perguntarem outbox furo na mesa, qual frase é a verdadeira?",
+      "q": "Save+send sem outbox: os dois mundos ficam honestos — o que vale aqui?",
       "o": [
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
         "save+send sem outbox: um dos dois mundos mente.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
-      "a": 0,
-      "w": "Banco ou caderno.",
+      "a": 1,
+      "w": "save+send sem outbox: um dos dois mundos mente (banco ou log).",
       "t": "outbox furo"
     },
     {
-      "q": "Sobre acks frase: qual afirmação está certa?",
+      "q": "Acks=all + idempotence do producer fecha o cartão?",
+      "o": [
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "acks=all + idempotence do producer não fecha o cartão."
+      ],
+      "a": 3,
+      "w": "A frase falsa da mesa.",
+      "t": "acks frase"
+    },
+    {
+      "q": "Acks=all + idempotence do producer fecha o cartão — verdade ou mito?",
+      "o": [
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "acks=all + idempotence do producer não fecha o cartão.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok."
+      ],
+      "a": 1,
+      "w": "A frase falsa da mesa.",
+      "t": "acks frase"
+    },
+    {
+      "q": "Acks=all + idempotence do producer fecha o cartão — o que acontece de verdade?",
+      "o": [
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "acks=all + idempotence do producer não fecha o cartão."
+      ],
+      "a": 3,
+      "w": "A frase falsa da mesa.",
+      "t": "acks frase"
+    },
+    {
+      "q": "Na prática: Acks=all + idempotence do producer fecha o cartão?",
       "o": [
         "acks=all + idempotence do producer não fecha o cartão.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Publique e torça; dizer o esperado antes é teatro."
       ],
       "a": 0,
       "w": "A frase falsa da mesa.",
       "t": "acks frase"
     },
     {
-      "q": "Qual frase sobre acks frase está certa?",
+      "q": "Acks=all + idempotence do producer fecha o cartão — como funciona?",
       "o": [
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
         "acks=all + idempotence do producer não fecha o cartão.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra."
       ],
-      "a": 0,
+      "a": 2,
       "w": "A frase falsa da mesa.",
       "t": "acks frase"
     },
     {
-      "q": "Acks frase — o que acontece de verdade?",
+      "q": "Se perguntarem: Acks=all + idempotence do producer fecha o cartão?",
       "o": [
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
         "acks=all + idempotence do producer não fecha o cartão.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada."
       ],
-      "a": 0,
+      "a": 1,
       "w": "A frase falsa da mesa.",
       "t": "acks frase"
     },
     {
-      "q": "Marque a leitura correta (acks frase).",
+      "q": "Acks=all + idempotence do producer fecha o cartão — o que vale aqui?",
       "o": [
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
         "acks=all + idempotence do producer não fecha o cartão.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Analytics atrasado trava o faturamento no mesmo tópico."
       ],
-      "a": 0,
+      "a": 1,
       "w": "A frase falsa da mesa.",
       "t": "acks frase"
     },
     {
-      "q": "Corrija o mito sobre acks frase.",
-      "o": [
-        "acks=all + idempotence do producer não fecha o cartão.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "A frase falsa da mesa.",
-      "t": "acks frase"
-    },
-    {
-      "q": "No caderno, a respeito de acks frase: qual vale?",
-      "o": [
-        "acks=all + idempotence do producer não fecha o cartão.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "A frase falsa da mesa.",
-      "t": "acks frase"
-    },
-    {
-      "q": "Se perguntarem acks frase na mesa, qual frase é a verdadeira?",
-      "o": [
-        "acks=all + idempotence do producer não fecha o cartão.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "A frase falsa da mesa.",
-      "t": "acks frase"
-    },
-    {
-      "q": "Sobre N teto: qual afirmação está certa?",
+      "q": "4 consumidores e 3 partições: quantos ociosos?",
       "o": [
         "4 consumidores, 3 partições, 1 ocioso. Sempre.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "4 consumidores e 3 partições: zero ociosos.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra."
       ],
       "a": 0,
       "w": "Desenhe de memória.",
       "t": "N teto"
     },
     {
-      "q": "Qual frase sobre N teto está certa?",
+      "q": "4 consumidores e 3 partições: quantos ociosos — verdade ou mito?",
+      "o": [
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Kafka é backup; o passado não some.",
+        "4 consumidores, 3 partições, 1 ocioso. Sempre.",
+        "4 consumidores e 3 partições: zero ociosos."
+      ],
+      "a": 2,
+      "w": "Desenhe de memória.",
+      "t": "N teto"
+    },
+    {
+      "q": "4 consumidores e 3 partições: quantos ociosos — o que acontece de verdade?",
       "o": [
         "4 consumidores, 3 partições, 1 ocioso. Sempre.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Kafka é backup; o passado não some.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato."
       ],
       "a": 0,
       "w": "Desenhe de memória.",
       "t": "N teto"
     },
     {
-      "q": "N teto — o que acontece de verdade?",
+      "q": "Na prática: 4 consumidores e 3 partições: quantos ociosos?",
       "o": [
-        "4 consumidores, 3 partições, 1 ocioso. Sempre.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "4 consumidores, 3 partições, 1 ocioso. Sempre."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Desenhe de memória.",
       "t": "N teto"
     },
     {
-      "q": "Marque a leitura correta (N teto).",
+      "q": "4 consumidores e 3 partições: quantos ociosos — como funciona?",
       "o": [
+        "Offset é eventId; inbox usa o número da mensagem.",
         "4 consumidores, 3 partições, 1 ocioso. Sempre.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Desenhe de memória.",
       "t": "N teto"
     },
     {
-      "q": "Corrija o mito sobre N teto.",
+      "q": "Se perguntarem: 4 consumidores e 3 partições: quantos ociosos?",
       "o": [
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
         "4 consumidores, 3 partições, 1 ocioso. Sempre.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "4 consumidores e 3 partições: zero ociosos."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Desenhe de memória.",
       "t": "N teto"
     },
     {
-      "q": "No caderno, a respeito de N teto: qual vale?",
+      "q": "4 consumidores e 3 partições: quantos ociosos — o que vale aqui?",
       "o": [
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
         "4 consumidores, 3 partições, 1 ocioso. Sempre.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "4 consumidores e 3 partições: zero ociosos."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Desenhe de memória.",
       "t": "N teto"
     },
     {
-      "q": "Se perguntarem N teto na mesa, qual frase é a verdadeira?",
+      "q": "O passado no Kafka fica para sempre, como backup?",
       "o": [
-        "4 consumidores, 3 partições, 1 ocioso. Sempre.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "O passado some. Kafka não é backup.",
+        "Kafka é backup; o passado não some."
       ],
-      "a": 0,
-      "w": "Desenhe de memória.",
-      "t": "N teto"
+      "a": 2,
+      "w": "Política do tópico.",
+      "t": "retenção"
     },
     {
-      "q": "Sobre retenção: qual afirmação está certa?",
+      "q": "O passado no Kafka fica para sempre, como backup — verdade ou mito?",
       "o": [
         "O passado some. Kafka não é backup.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Kafka é backup; o passado não some.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado."
       ],
       "a": 0,
       "w": "Política do tópico.",
       "t": "retenção"
     },
     {
-      "q": "Qual frase sobre retenção está certa?",
+      "q": "O passado no Kafka fica para sempre, como backup — o que acontece de verdade?",
+      "o": [
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "O passado some. Kafka não é backup.",
+        "Kafka é backup; o passado não some."
+      ],
+      "a": 2,
+      "w": "Política do tópico.",
+      "t": "retenção"
+    },
+    {
+      "q": "Na prática: O passado no Kafka fica para sempre, como backup?",
+      "o": [
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "O passado some. Kafka não é backup.",
+        "Kafka é backup; o passado não some.",
+        "O cadeado de 5 questões substitui o simulador de 50."
+      ],
+      "a": 1,
+      "w": "Política do tópico.",
+      "t": "retenção"
+    },
+    {
+      "q": "O passado no Kafka fica para sempre, como backup — como funciona?",
+      "o": [
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "O passado some. Kafka não é backup.",
+        "Kafka é backup; o passado não some.",
+        "Publique e torça; dizer o esperado antes é teatro."
+      ],
+      "a": 1,
+      "w": "Política do tópico.",
+      "t": "retenção"
+    },
+    {
+      "q": "Se perguntarem: O passado no Kafka fica para sempre, como backup?",
       "o": [
         "O passado some. Kafka não é backup.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Kafka é backup; o passado não some.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Analytics atrasado trava o faturamento no mesmo tópico."
       ],
       "a": 0,
       "w": "Política do tópico.",
       "t": "retenção"
     },
     {
-      "q": "Retenção — o que acontece de verdade?",
+      "q": "O passado no Kafka fica para sempre, como backup — o que vale aqui?",
       "o": [
         "O passado some. Kafka não é backup.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Kafka é backup; o passado não some.",
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos."
       ],
       "a": 0,
       "w": "Política do tópico.",
       "t": "retenção"
     },
     {
-      "q": "Marque a leitura correta (retenção).",
+      "q": "Rename de campo obrigatório costuma passar BACKWARD?",
       "o": [
-        "O passado some. Kafka não é backup.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Política do tópico.",
-      "t": "retenção"
-    },
-    {
-      "q": "Corrija o mito sobre retenção.",
-      "o": [
-        "O passado some. Kafka não é backup.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Política do tópico.",
-      "t": "retenção"
-    },
-    {
-      "q": "No caderno, a respeito de retenção: qual vale?",
-      "o": [
-        "O passado some. Kafka não é backup.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Política do tópico.",
-      "t": "retenção"
-    },
-    {
-      "q": "Se perguntarem retenção na mesa, qual frase é a verdadeira?",
-      "o": [
-        "O passado some. Kafka não é backup.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Política do tópico.",
-      "t": "retenção"
-    },
-    {
-      "q": "Sobre schema: qual afirmação está certa?",
-      "o": [
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
         "Rename quebra. Opcional novo costuma passar BACKWARD.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato."
       ],
-      "a": 0,
-      "w": "Cartório.",
+      "a": 2,
+      "w": "Schema Registry.",
       "t": "schema"
     },
     {
-      "q": "Qual frase sobre schema está certa?",
+      "q": "Rename de campo obrigatório costuma passar BACKWARD — verdade ou mito?",
       "o": [
         "Rename quebra. Opcional novo costuma passar BACKWARD.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "4 consumidores e 3 partições: zero ociosos."
       ],
       "a": 0,
-      "w": "Cartório.",
+      "w": "Schema Registry.",
       "t": "schema"
     },
     {
-      "q": "Schema — o que acontece de verdade?",
+      "q": "Rename de campo obrigatório costuma passar BACKWARD — o que acontece de verdade?",
       "o": [
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Kafka é backup; o passado não some.",
         "Rename quebra. Opcional novo costuma passar BACKWARD.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato."
       ],
-      "a": 0,
-      "w": "Cartório.",
+      "a": 2,
+      "w": "Schema Registry.",
       "t": "schema"
     },
     {
-      "q": "Marque a leitura correta (schema).",
+      "q": "Na prática: Rename de campo obrigatório costuma passar BACKWARD?",
       "o": [
-        "Rename quebra. Opcional novo costuma passar BACKWARD.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Kafka é backup; o passado não some.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Rename quebra. Opcional novo costuma passar BACKWARD."
       ],
-      "a": 0,
-      "w": "Cartório.",
+      "a": 3,
+      "w": "Schema Registry.",
       "t": "schema"
     },
     {
-      "q": "Corrija o mito sobre schema.",
+      "q": "Rename de campo obrigatório costuma passar BACKWARD — como funciona?",
       "o": [
+        "Offset é eventId; inbox usa o número da mensagem.",
         "Rename quebra. Opcional novo costuma passar BACKWARD.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro."
       ],
-      "a": 0,
-      "w": "Cartório.",
+      "a": 1,
+      "w": "Schema Registry.",
       "t": "schema"
     },
     {
-      "q": "No caderno, a respeito de schema: qual vale?",
+      "q": "Se perguntarem: Rename de campo obrigatório costuma passar BACKWARD?",
       "o": [
         "Rename quebra. Opcional novo costuma passar BACKWARD.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
       "a": 0,
-      "w": "Cartório.",
+      "w": "Schema Registry.",
       "t": "schema"
     },
     {
-      "q": "Se perguntarem schema na mesa, qual frase é a verdadeira?",
+      "q": "Rename de campo obrigatório costuma passar BACKWARD — o que vale aqui?",
       "o": [
         "Rename quebra. Opcional novo costuma passar BACKWARD.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado."
       ],
       "a": 0,
-      "w": "Cartório.",
+      "w": "Schema Registry.",
       "t": "schema"
     },
     {
-      "q": "Sobre Lead: qual afirmação está certa?",
+      "q": "Lead diz sim a tópico no lugar de GET na cara do usuário?",
       "o": [
         "Saber dizer não a tópico que deveria ser GET.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok."
       ],
       "a": 0,
       "w": "Julgamento, não tutorial.",
       "t": "Lead"
     },
     {
-      "q": "Qual frase sobre Lead está certa?",
+      "q": "Lead diz sim a tópico no lugar de GET na cara do usuário — verdade ou mito?",
+      "o": [
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Saber dizer não a tópico que deveria ser GET.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro."
+      ],
+      "a": 2,
+      "w": "Julgamento, não tutorial.",
+      "t": "Lead"
+    },
+    {
+      "q": "Lead diz sim a tópico no lugar de GET na cara do usuário — o que acontece de verdade?",
       "o": [
         "Saber dizer não a tópico que deveria ser GET.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "O cadeado de 5 questões substitui o simulador de 50."
       ],
       "a": 0,
       "w": "Julgamento, não tutorial.",
       "t": "Lead"
     },
     {
-      "q": "Lead — o que acontece de verdade?",
+      "q": "Na prática: Lead diz sim a tópico no lugar de GET na cara do usuário?",
       "o": [
-        "Saber dizer não a tópico que deveria ser GET.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Saber dizer não a tópico que deveria ser GET."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Julgamento, não tutorial.",
       "t": "Lead"
     },
     {
-      "q": "Marque a leitura correta (Lead).",
+      "q": "Lead diz sim a tópico no lugar de GET na cara do usuário — como funciona?",
       "o": [
-        "Saber dizer não a tópico que deveria ser GET.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Saber dizer não a tópico que deveria ser GET."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Julgamento, não tutorial.",
       "t": "Lead"
     },
     {
-      "q": "Corrija o mito sobre Lead.",
+      "q": "Se perguntarem: Lead diz sim a tópico no lugar de GET na cara do usuário?",
       "o": [
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
         "Saber dizer não a tópico que deveria ser GET.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Julgamento, não tutorial.",
       "t": "Lead"
     },
     {
-      "q": "No caderno, a respeito de Lead: qual vale?",
+      "q": "Lead diz sim a tópico no lugar de GET na cara do usuário — o que vale aqui?",
       "o": [
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
         "Saber dizer não a tópico que deveria ser GET.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Julgamento, não tutorial.",
       "t": "Lead"
     },
     {
-      "q": "Se perguntarem Lead na mesa, qual frase é a verdadeira?",
+      "q": "Inbox usa offset como eventId?",
       "o": [
-        "Saber dizer não a tópico que deveria ser GET.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra.",
+        "Offset não é eventId. Inbox usa eventId."
       ],
-      "a": 0,
-      "w": "Julgamento, não tutorial.",
-      "t": "Lead"
+      "a": 3,
+      "w": "Dois identificadores.",
+      "t": "offset"
     },
     {
-      "q": "Sobre offset: qual afirmação está certa?",
+      "q": "Inbox usa offset como eventId — verdade ou mito?",
+      "o": [
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Offset não é eventId. Inbox usa eventId.",
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "acks=all e idempotence do producer já cobrem a cobrança; inbox sobra."
+      ],
+      "a": 1,
+      "w": "Dois identificadores.",
+      "t": "offset"
+    },
+    {
+      "q": "Inbox usa offset como eventId — o que acontece de verdade?",
+      "o": [
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "4 consumidores e 3 partições: zero ociosos.",
+        "Kafka é backup; o passado não some.",
+        "Offset não é eventId. Inbox usa eventId."
+      ],
+      "a": 3,
+      "w": "Dois identificadores.",
+      "t": "offset"
+    },
+    {
+      "q": "Na prática: Inbox usa offset como eventId?",
       "o": [
         "Offset não é eventId. Inbox usa eventId.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Kafka é backup; o passado não some.",
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato."
       ],
       "a": 0,
       "w": "Dois identificadores.",
       "t": "offset"
     },
     {
-      "q": "Qual frase sobre offset está certa?",
+      "q": "Inbox usa offset como eventId — como funciona?",
       "o": [
+        "Rename passa BACKWARD; campo opcional novo é que quebra o contrato.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro.",
         "Offset não é eventId. Inbox usa eventId.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Offset é eventId; inbox usa o número da mensagem."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Dois identificadores.",
       "t": "offset"
     },
     {
-      "q": "Offset — o que acontece de verdade?",
+      "q": "Se perguntarem: Inbox usa offset como eventId?",
       "o": [
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
         "Offset não é eventId. Inbox usa eventId.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Tópico no lugar de GET na cara do usuário é julgamento maduro."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Dois identificadores.",
       "t": "offset"
     },
     {
-      "q": "Marque a leitura correta (offset).",
+      "q": "Inbox usa offset como eventId — o que vale aqui?",
       "o": [
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
         "Offset não é eventId. Inbox usa eventId.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Offset é eventId; inbox usa o número da mensagem.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Dois identificadores.",
       "t": "offset"
     },
     {
-      "q": "Corrija o mito sobre offset.",
-      "o": [
-        "Offset não é eventId. Inbox usa eventId.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Dois identificadores.",
-      "t": "offset"
-    },
-    {
-      "q": "No caderno, a respeito de offset: qual vale?",
-      "o": [
-        "Offset não é eventId. Inbox usa eventId.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Dois identificadores.",
-      "t": "offset"
-    },
-    {
-      "q": "Se perguntarem offset na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Offset não é eventId. Inbox usa eventId.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Dois identificadores.",
-      "t": "offset"
-    },
-    {
-      "q": "Sobre rebalance: qual afirmação está certa?",
+      "q": "Lote lento sem poll: o cluster faz o quê?",
       "o": [
         "Lote lento sem poll = o cluster mata você e o lote recomeça.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "Na síntese basta recitar buzzword; o 99 não precisa de buraco nomeado.",
+        "Se não abrir o HTML, você não pode explicar partição — e está ok."
       ],
       "a": 0,
       "w": "Operação na síntese.",
       "t": "rebalance"
     },
     {
-      "q": "Qual frase sobre rebalance está certa?",
+      "q": "Lote lento sem poll: o cluster faz o quê — verdade ou mito?",
+      "o": [
+        "Se não abrir o HTML, você não pode explicar partição — e está ok.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "Lote lento sem poll = o cluster mata você e o lote recomeça.",
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
+      ],
+      "a": 2,
+      "w": "Operação na síntese.",
+      "t": "rebalance"
+    },
+    {
+      "q": "Lote lento sem poll: o cluster faz o quê — o que acontece de verdade?",
       "o": [
         "Lote lento sem poll = o cluster mata você e o lote recomeça.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "ISR e inbox são a mesma coisa: escrita e efeito no mesmo cadeado.",
+        "O cadeado de 5 questões substitui o simulador de 50."
       ],
       "a": 0,
       "w": "Operação na síntese.",
       "t": "rebalance"
     },
     {
-      "q": "Rebalance — o que acontece de verdade?",
+      "q": "Na prática: Lote lento sem poll: o cluster faz o quê?",
       "o": [
-        "Lote lento sem poll = o cluster mata você e o lote recomeça.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "O cadeado de 5 questões substitui o simulador de 50.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Lote lento sem poll = o cluster mata você e o lote recomeça."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Operação na síntese.",
       "t": "rebalance"
     },
     {
-      "q": "Marque a leitura correta (rebalance).",
+      "q": "Lote lento sem poll: o cluster faz o quê — como funciona?",
       "o": [
-        "Lote lento sem poll = o cluster mata você e o lote recomeça.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Lote lento sem poll não gera rebalance; o lote termina em paz.",
+        "Publique e torça; dizer o esperado antes é teatro.",
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Lote lento sem poll = o cluster mata você e o lote recomeça."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Operação na síntese.",
       "t": "rebalance"
     },
     {
-      "q": "Corrija o mito sobre rebalance.",
+      "q": "Se perguntarem: Lote lento sem poll: o cluster faz o quê?",
       "o": [
+        "Sem key o 99 tem história ordenada; N mudar não altera nada.",
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
         "Lote lento sem poll = o cluster mata você e o lote recomeça.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Operação na síntese.",
       "t": "rebalance"
     },
     {
-      "q": "No caderno, a respeito de rebalance: qual vale?",
+      "q": "Lote lento sem poll: o cluster faz o quê — o que vale aqui?",
       "o": [
+        "Analytics atrasado trava o faturamento no mesmo tópico.",
+        "save+send sem outbox nunca mente: banco e log nascem juntos.",
         "Lote lento sem poll = o cluster mata você e o lote recomeça.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Lote lento sem poll não gera rebalance; o lote termina em paz."
       ],
-      "a": 0,
-      "w": "Operação na síntese.",
-      "t": "rebalance"
-    },
-    {
-      "q": "Se perguntarem rebalance na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Lote lento sem poll = o cluster mata você e o lote recomeça.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
+      "a": 2,
       "w": "Operação na síntese.",
       "t": "rebalance"
     }

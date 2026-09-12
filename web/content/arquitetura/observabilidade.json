@@ -1,0 +1,130 @@
+{
+  "beats": [
+    {
+      "id": "cpu-primeiro",
+      "kind": "cena",
+      "kicker": "p99 = 3 s",
+      "title": "Alguém abriu o Grafana de CPU. O cliente enterprise espera o “pago”.",
+      "body": "<p>Média bonita. p50 em 80 ms. Um em cem checkouts leva 3 s. O primeiro reflexo foi o pod. O caminho certo nem chegou na span.</p><p>Métrica diz <em>que</em> está ruim. Trace diz <em>onde</em>. Log diz <em>por quê</em>. Painel do carro, GPS do percurso, diário de bordo — nesta ordem. Alerta de CPU a 80% não é arquitetura. É ruído.</p>"
+    },
+    {
+      "id": "pilares",
+      "kind": "explicar",
+      "title": "Que / onde / por quê",
+      "html": "<div class=\"pipe\"><div class=\"box\">SLO?</div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">Recorte</div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">RED</div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">Trace</div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">Log / causa</div></div><ul class=\"tight\"><li><strong>Métrica</strong> — número no tempo, barata, agregada. RED no serviço (Rate, Errors, Duration). USE no recurso (Utilization, Saturation, Errors). Não é Redis-Elasticsearch-Datadog.</li><li><strong>Trace</strong> — o caminho da request. OpenTelemetry. Sampling pega o comum; erro raro precisa de métrica/log, não fé no sample.</li><li><strong>Log</strong> — um evento, JSON, <code>traceId</code> no HTTP e no Kafka (headers). Sem traceId o diário não cola no GPS.</li></ul><p>Nunca PII, token, cartão. Label <code>user_id</code> em métrica explode cardinalidade. “Consumer up” não substitui lag por partição como SLI de consumidor.</p>"
+    },
+    {
+      "id": "alerta",
+      "kind": "explicar",
+      "title": "Alerta que alguém atende às 3h",
+      "html": "<p>Sintoma do usuário: taxa de erro, p99, lag crescente. Acionável. Runbook. “p99 /pagar &gt; 1 s por 5 min” aponta a ordem da investigação. “CPU &gt; 80%” a cada deploy: ninguém age; no incidente o Slack já é ruído.</p><p>Alerta que dispara e ninguém sabe o que fazer não é acionável — delete. Mais alerta não é mais observabilidade. CPU 80% pode ser o pico normal da Black Friday, o ponto ótimo de utilização.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Ver o usuário versus ver o pod",
+      "ganha": "RED mostra que. Trace mostra onde. Log com traceId mostra por quê. SLO + budget viram freeze de feature. Alerta de sintoma + runbook acorda a pessoa certa.",
+      "paga": "Métrica de alta cardinalidade explode o TSDB. Trace sampleado perde o erro raro. Só log não opera distribuído. SLO 99,99% sem engenharia de quatro noves é assinatura vazia. Sintético ≠ RUM.",
+      "quando": [
+        "Investigação: SLO → recorte → RED → trace → log, sem pular o recorte",
+        "Instrumentação: JSON + traceId (HTTP e Kafka), RED/USE, OpenTelemetry, zero PII",
+        "Pager: sintoma do usuário, runbook, delete o que ninguém atende"
+      ],
+      "quandoNao": [
+        "Abrir CPU no primeiro minuto e chamar de RCA",
+        "SLI = SLO = budget; média no lugar do p99; “consumer up” no lugar de lag",
+        "Alerta sem ação, label user_id, log de cartão"
+      ]
+    },
+    {
+      "id": "ensaiar",
+      "kind": "explicar",
+      "title": "Ensaie a ordem em voz alta",
+      "html": "<p>Serviço com p99 de 3 s. Sem olhar: o SLO foi violado? Qual o recorte (endpoint, região, cliente)? RED. Trace do percentil ruim. Log da span lenta. Dependência? Lock? GC? Hot key?</p><p>Se pular o recorte, a sessão não fechou. Essa é a pergunta de síntese da trilha — e a primeira coisa que a mesa de staff cobra no incidente, não o nome do exporter.</p>"
+    },
+    {
+      "id": "ordem-inv",
+      "kind": "escolha",
+      "prompt": "Checkout p99 = 3 s. Você tem cinco minutos no incidente. Qual a ordem?",
+      "options": [
+        {
+          "id": "cpu",
+          "label": "CPU do pod, GC, réplica a mais. Métrica no fim. Trace se sobrar.",
+          "verdict": "ruim",
+          "why": "Você otimiza o sintoma errado. Sobe replica do checkout e a span `risco.avaliar` continua 2,7 s. Começar por CPU é o atalho que perde a Black Friday."
+        },
+        {
+          "id": "slo-recorte",
+          "label": "SLO violado? Recorte (POST /pagar, região, plano). RED. Trace do percentil ruim. Log da span. Aí a causa.",
+          "verdict": "bom",
+          "why": "Ordem já resolvida: (1) SLO 300 ms no p99? (2) recorte (3) rate/errors/duration (4) span lenta (5) timeout no HTTP do risco. Ação: timeout + breaker + fallback — não HPA no checkout."
+        },
+        {
+          "id": "so-log",
+          "label": "Grep no Kibana. Só log opera sistema distribuído. Taxa e cauda sobram.",
+          "verdict": "ruim",
+          "why": "Log sem recorte é diário de bordo sem GPS. Sem métrica você não vê taxa nem p99. Sem trace o log não cola no request. Os três pilares juntos."
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "kind": "escolha",
+      "prompt": "SLO: 99,9% das POST /pagar em 30 dias abaixo de 300 ms. Terça estourou 20 min. Product quer checkout novo na quinta. CI verde. Você?",
+      "options": [
+        {
+          "id": "ci",
+          "label": "CI verde. Budget é Grafana, não conversa de produto. Lança.",
+          "verdict": "ruim",
+          "why": "30 dias ≈ 43 200 min. 0,1% ≈ 43 min fora. Restam ~23 min. Budget estourado é freeze de feature — decisão de produto, não dashboard."
+        },
+        {
+          "id": "minutos",
+          "label": "Restam ~23 min no mês. Lança só se o risco de queimar o resto for aceitável. Senão, estabilidade.",
+          "verdict": "bom",
+          "why": "SLI mede. SLO é a meta. Error budget é o complemento. 99,99% ≈ 4 min/mês — assinar isso com o time atual é o impossível. Probe sintético não é o p99 do cliente real; RUM e SLI de backend são fatias diferentes."
+        },
+        {
+          "id": "media",
+          "label": "A média no Grafana baixou. O usuário sente a média. Budget irrelevante.",
+          "verdict": "ruim",
+          "why": "A média esconde a cauda. Quem tem mais dados mora no p99. SLO se escreve em percentil + recorte, não no green do gráfico liso."
+        }
+      ]
+    },
+    {
+      "id": "pager",
+      "kind": "escolha",
+      "prompt": "Dois alertas no ar. Qual você deixa — e qual apaga?",
+      "options": [
+        {
+          "id": "cpu80",
+          "label": "CPU &gt; 80%. Sem runbook. “Alguém olha o pod”.",
+          "verdict": "ruim",
+          "why": "Causa, não sintoma. Sem runbook o pager não é justo. Treina o time a silenciar. Delete."
+        },
+        {
+          "id": "p99",
+          "label": "p99 /pagar &gt; 1 s por 5 min + runbook (SLO → recorte → RED → trace → log).",
+          "verdict": "bom",
+          "why": "Sintoma, acionável, ensaio da ordem. O mesmo molde para lag de consumidor por partição, não “consumer up”."
+        },
+        {
+          "id": "tudo",
+          "label": "Os dois, mais um por pod. Mais alerta = mais observabilidade.",
+          "verdict": "ruim",
+          "why": "Ruído mata a atenção. Alerta que ninguém age às 3h é o contrário de instrumentar."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Métrica = que. Trace = onde. Log = por quê. Não comece por CPU.",
+        "SLI mede, SLO é meta, budget é produto: 99,9% ≈ 43 min/mês.",
+        "Alerta de sintoma + runbook. O que ninguém atende, apaga."
+      ]
+    }
+  ]
+}

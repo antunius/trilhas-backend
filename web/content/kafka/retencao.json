@@ -1,0 +1,68 @@
+{
+  "beats": [
+    {
+      "id": "semana-sumiu",
+      "kind": "cena",
+      "kicker": "Analytics atrasado",
+      "title": "O committed offset do analytics está no 12. Os segmentos do 12 já foram para o lixo.",
+      "body": "<p>Faturamento passou longe — cobrou o 99 no mesmo dia. Analytics quer a semana. <code>retention.ms</code> já apagou os segmentos velhos.</p><p>Kafka não é S3. Sem retenção infinita (cara e rara), o log esquece. Quem não commitou a tempo perdeu a linha, a menos que tenha copiado para outro lugar.</p>"
+    },
+    {
+      "id": "segmentos",
+      "kind": "explicar",
+      "title": "O log é uma fila de logs menores.",
+      "html": "<p>A partição não é um arquivo eterno. É uma sequência de segmentos (<code>00000000000000000000.log</code>, depois outro quando atinge <code>segment.bytes</code>).</p><p><strong>Retenção</strong> (<code>retention.ms</code> / <code>retention.bytes</code>) apaga segmentos <em>fechados</em> que passaram do prazo.</p><p><strong>Compaction</strong> (<code>cleanup.policy=compact</code>): para cada key, o cleaner mantém o value mais recente. Tombstone (value nulo) pede para apagar a key.</p><pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-configs.sh \\\n  --bootstrap-server localhost:9092 \\\n  --entity-type topics --entity-name pedidos.criados --describe</pre><p>O tópico didático usa retenção padrão da imagem Apache Kafka. Não trate o lab como backup. Compaction não devolve os estados intermediários.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Replay é disco. Compaction é último estado.",
+      "ganha": "Retenção por tempo: analytics relê a semana se chegar a tempo. Disco limitado. Compaction: changelog magro, compacto por key — ótimo para estado atual (carrinho, CDC).",
+      "paga": "Passou o prazo, a linha sumiu — committed offset antigo vira erro no Fetch. Infinito é data lake no broker. Compaction apaga o filme: PedidoCriado depois PedidoCancelado pode virar só o último. Tombstone ≠ DELETE no Postgres.",
+      "quando": [
+        "Você combinou um prazo e o consumidor cabe nele (event log)",
+        "Compaction: precisa do último value por key, não da história",
+        "O que precisa viver para sempre foi copiado (S3, warehouse, outro tópico)"
+      ],
+      "quandoNao": [
+        "Tratar o tópico do lab — ou o de produção sem política — como backup",
+        "Compactar pedidos.criados e achar que a semana volta",
+        "Retenção de 10 minutos no fato que o analytics lê uma vez por dia"
+      ]
+    },
+    {
+      "id": "politica",
+      "kind": "escolha",
+      "prompt": "pedidos.criados precisa de replay para o analytics e não pode virar o data lake. Qual política?",
+      "options": [
+        {
+          "id": "prazo",
+          "label": "retention.ms de alguns dias. Quem precisa do filme, copia a tempo",
+          "verdict": "bom",
+          "why": "Replay enquanto o disco aguenta o prazo. Analytics atrasado demais perde — e isso é o contrato, não um bug."
+        },
+        {
+          "id": "infinita",
+          "label": "Retenção infinita no tópico de produção. Kafka vira backup",
+          "verdict": "meio",
+          "why": "Dá para reler 2019. Você paga disco para sempre e opera um data lake no cluster de mensageria. Raro e caro. Não é o default."
+        },
+        {
+          "id": "compact",
+          "label": "cleanup.policy=compact. Aí o analytics relê o filme",
+          "verdict": "ruim",
+          "why": "Compaction guarda o value mais recente de cada key. Estados intermediários morrem. Tombstone não é DELETE no Postgres. Serve changelog/CDC, não a semana de PedidoCriado."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Segmento velho some com retention.ms/bytes. Replay só enquanto o disco guarda.",
+        "Compaction deixa o último value por key. Não é o filme do PedidoCriado.",
+        "Kafka não é S3. Tombstone não é DELETE no Postgres. Lab não é backup."
+      ]
+    }
+  ]
+}

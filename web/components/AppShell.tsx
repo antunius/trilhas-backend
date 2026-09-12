@@ -3,12 +3,16 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AppSidebar } from "@/components/AppSidebar";
+import { CommandMenu } from "@/components/CommandMenu";
+import { ProgressProvider } from "@/components/ProgressProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SidebarContext } from "@/components/sidebar-context";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
+  const isLogin = path === "/login";
   const [open, setOpen] = useState(false);
+  const [commandOpen, setCommandOpen] = useState(false);
 
   useEffect(() => {
     setOpen(false);
@@ -28,23 +32,38 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }, [open]);
 
   const toggle = useCallback(() => setOpen((v) => !v), []);
-  const value = useMemo(() => ({ open, setOpen, toggle }), [open, toggle]);
+  const toggleCommand = useCallback(() => setCommandOpen((v) => !v), []);
+
+  const value = useMemo(
+    () => ({
+      open,
+      setOpen,
+      toggle,
+      commandOpen,
+      setCommandOpen,
+      toggleCommand,
+    }),
+    [open, toggle, commandOpen, toggleCommand]
+  );
 
   return (
-    <SidebarContext.Provider value={value}>
-      <SiteHeader />
-      <div className="app-shell">
-        {open ? (
-          <button
-            type="button"
-            className="sidebar-backdrop"
-            aria-label="Fechar índice"
-            onClick={() => setOpen(false)}
-          />
-        ) : null}
-        <AppSidebar />
-        <main className="app-main">{children}</main>
-      </div>
-    </SidebarContext.Provider>
+    <ProgressProvider>
+      <SidebarContext.Provider value={value}>
+        <SiteHeader />
+        <CommandMenu open={commandOpen} onOpenChange={setCommandOpen} />
+        <div className={`app-shell${isLogin ? " login-shell" : ""}`}>
+          {open && !isLogin ? (
+            <button
+              type="button"
+              className="sidebar-backdrop"
+              aria-label="Fechar índice"
+              onClick={() => setOpen(false)}
+            />
+          ) : null}
+          {isLogin ? null : <AppSidebar />}
+          <main className="app-main">{children}</main>
+        </div>
+      </SidebarContext.Provider>
+    </ProgressProvider>
   );
 }

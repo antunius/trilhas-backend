@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>schema — Kafka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../trilhas.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="crumb"><a href="../index.html">Trilhas</a> · <a href="index.html">Kafka</a></p>
+      <div class="eyebrow">Trilha 4 · Kafka</div>
+      <h1>schema</h1>
+      <p class="lede"></p>
+    </header>
+    <nav class="toc" aria-label="Índice"><a href="index.html">Início</a>
+      <a href="modelo-mental.html">Modelo mental</a>
+      <a href="evento.html">Evento</a>
+      <a href="topico.html">Tópico</a>
+      <a href="particao.html">Partição</a>
+      <a href="offset.html">Offset</a>
+      <a href="key.html">Key</a>
+      <a href="broker.html">Broker</a>
+      <a href="isr.html">ISR</a>
+      <a href="produtor.html">Produtor</a>
+      <a href="consumidor.html">Consumidor</a>
+      <a href="rebalance.html">Rebalance</a>
+      <a href="retencao.html">Retenção</a>
+      <a href="garantias.html">Garantias</a>
+      <a href="operacao.html">Operação</a>
+      <a href="schema.html">Schema Registry</a>
+      <a href="outbox.html">Outbox</a>
+      <a href="spring.html">Spring Kafka</a>
+      <a href="sintese.html">Síntese</a>
+      <a href="tech-lead.html">Tech Lead</a>
+      <a href="simulador.html">Simulador</a></nav>
+    <section class="week">
+<article class="term" id="schema">
+        <div class="tag">Vocabulário</div>
+        <h3>Schema Registry</h3>
+        <p>
+          <strong>O que é.</strong> Um serviço HTTP (no lab: porta <code>8081</code>) que guarda versões de schema
+          por <em>subject</em> (em geral <code>{tópico}-value</code> e <code>{tópico}-key</code>).
+          O producer, com o serializer Confluent, registra o schema se ainda não existe, e manda no wire
+          um magic byte + schema id + payload (não um JSON solto “sem contrato”).
+          O consumer pede o schema daquele id ao Registry e desserializa.
+          Nível de compatibilidade (<code>BACKWARD</code> no Compose): o Registry <em>recusa</em> PUT/POST de schema que quebra quem já lê.
+          BACKWARD = consumidor <em>novo</em> lê dado <em>antigo</em>. FORWARD = consumidor antigo lê dado novo.
+          Campo opcional novo costuma ser BACKWARD-safe. Remover ou renomear campo obrigatório não é.
+        </p>
+        <p class="analogy">Analogia: um cartório de contratos. Ninguém muda o formulário sem checar se o outro lado ainda lê.</p>
+        <p><strong>Na prática.</strong> Sobe no Compose. YAML do app:</p>
+<pre class="code">spring.kafka.producer.value-serializer: io.confluent.kafka.serializers.json.KafkaJsonSchemaSerializer
+spring.kafka.consumer.value-deserializer: io.confluent.kafka.serializers.json.KafkaJsonSchemaDeserializer
+spring.kafka.producer.properties.schema.registry.url: http://localhost:8081</pre>
+        <p>Depois do primeiro produce:</p>
+<pre class="code">curl -s http://localhost:8081/subjects
+curl -s http://localhost:8081/subjects/pedidos.criados-value/versions/1</pre>
+        <p>Evolução que o cartório recusa (some o campo obrigatório) — comando no README do lab. Passo a passo de compatibilidade: <a href="outbox.html">Integração</a>.</p>
+        <p class="lab-ref"><strong>No lab.</strong> Serviço <code>schema-registry</code> no Compose; record <code>PedidoCriado</code> com <code>eventId</code>, <code>pedidoId</code>, <code>totalCentavos</code> obrigatórios e <code>cupom</code> opcional.</p>
+        <div class="warn">
+          Sem Registry, um produtor muda <code>total</code> para <code>amount</code> e todos os consumers em produção quebram no deserializer.
+          JSON “na mão” no tópico não tem esse travão.
+        </div>
+      </article>
+</section>
+
+    <footer>Trilha Kafka por tema.</footer>
+  </div>
+</body>
+</html>

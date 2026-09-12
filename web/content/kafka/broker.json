@@ -1,0 +1,69 @@
+{
+  "beats": [
+    {
+      "id": "lider",
+      "kind": "cena",
+      "kicker": "Metadata",
+      "title": "Você não fala com “o Kafka”. Fala com o líder da partição.",
+      "body": "<p>O cliente pega <code>bootstrap.servers</code>, pergunta quem é o líder de cada partição, e manda o ProduceRequest para esse processo.</p><p>No lab há um container. Em produção são N JVMs com o mesmo <code>cluster.id</code>. Caiu o líder, o controller elege outro. O nome Kafka no slide não recebe o socket.</p>"
+    },
+    {
+      "id": "pecas",
+      "kind": "explicar",
+      "title": "Broker, cluster, controller. KRaft, não ZooKeeper.",
+      "html": "<p><strong>Broker</strong> = um processo JVM que guarda partições, aceita Produce/Fetch e replica. No lab: o container <code>kafka</code>.</p><p><strong>Cluster</strong> = N brokers com o mesmo <code>cluster.id</code>.</p><p><strong>Controller</strong> = o eleito que cria tópico, elege líder, trata falha. Cluster novo: <strong>KRaft</strong> (quorum dentro do Kafka). ZooKeeper é o desenho antigo.</p><p>O Compose sobe um broker KRaft e anuncia dois listeners: um para os containers (<code>kafka:29092</code>), outro para a sua máquina (<code>localhost:9092</code>).</p><pre class=\"code\">spring.kafka.bootstrap-servers: localhost:9092</pre><p><code>labs/kafka/docker-compose.yml</code> — serviço <code>kafka</code>, <code>KAFKA_PROCESS_ROLES: broker,controller</code>.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Disco e metadata. Não o cartão.",
+      "ganha": "Produtor e consumidor não se conhecem. O cluster guarda, replica, elege líder. Você escala o log sem colocar regra no meio do append.",
+      "paga": "O broker não valida PedidoCriado, não cobra, não desfaz. Schema e efeito são problema seu. Um broker só (o lab) não é durabilidade. Operar cluster é aluguel: disco, ISR, controller.",
+      "quando": [
+        "Você precisa de um log compartilhado, não de um worker com uma fila",
+        "Vários processos vão Produce/Fetch o mesmo fato",
+        "O efeito de negócio pode viver fora do cluster"
+      ],
+      "quandoNao": [
+        "Esperar que o Kafka “rode a regra” se o JSON tiver totalCentavos",
+        "Um processo, uma mensagem, ninguém replica — um banco ou uma fila local resolvem",
+        "Tratar bootstrap.servers como “o servidor que executa o checkout”"
+      ]
+    },
+    {
+      "id": "o-que-faz",
+      "kind": "escolha",
+      "kicker": "PedidoCriado chegou",
+      "prompt": "O envelope do pedido 99 bate no cluster. O que o broker faz com esses bytes?",
+      "options": [
+        {
+          "id": "bytes",
+          "label": "Append na partição líder. Replica se houver follower. Devolve offset",
+          "verdict": "bom",
+          "why": "Guarda bytes. Não cobra cartão. Não parseia o JSON para aplicar regra. Quem executa negócio é o consumidor."
+        },
+        {
+          "id": "cobra",
+          "label": "Lê totalCentavos e dispara a cobrança se for > 0",
+          "verdict": "ruim",
+          "why": "O broker não é o faturamento. Se fosse, analytics e estoque teriam que morar dentro do Kafka."
+        },
+        {
+          "id": "http",
+          "label": "Encaminha um POST para o serviço que estiver no header",
+          "verdict": "ruim",
+          "why": "Isso é service mesh com nome de tópico. O cliente resolve o líder e manda bytes. Ponto."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Broker guarda bytes, replica, elege líder. Não executa PedidoCriado.",
+        "O cliente resolve metadata e fala com o líder da partição, não com um deus Kafka.",
+        "Lab: um container KRaft, broker+controller, localhost:9092. Não imita produção."
+      ]
+    }
+  ]
+}

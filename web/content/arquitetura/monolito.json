@@ -1,0 +1,74 @@
+{
+  "beats": [
+    {
+      "id": "geladeira",
+      "kind": "cena",
+      "kicker": "Condomínio",
+      "title": "Apartamentos separados. A geladeira é a mesma.",
+      "body": "<p>Casa com cômodos bem separados: um deploy, módulos que não se atravessam. Isso é monolito modular — o default até o domínio e o time pedirem outra coisa.</p><p>Condomínio de verdade: cada apartamento com chave, conta de luz e geladeira próprias. Deploy independente, banco próprio, time capaz de operar. O pior desenho é o do meio: vários deploys e a <strong>mesma geladeira</strong>. Schema compartilhado. Toda feature muda três repos juntos. Monolito distribuído.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Autonomia versus banco compartilhado",
+      "ganha": "Módulo no monolito: fronteira de código sem o preço da rede. Um processo para debugar. Micro de verdade: time solta sozinho, banco próprio, falha isolada.",
+      "paga": "Microsserviço cobra rede, trace, consistência distribuída, operação. Não é medalha técnica — é escolha organizacional. DNS na frente do mesmo banco inventa serviço e casa os times. Reverter o corte cedo explode o calendário.",
+      "quando": [
+        "Monolito modular: time pequeno, domínio incerto, operação ainda frágil",
+        "Micro: bounded context claro, time que opera o que solta, banco que o outro não mexe",
+        "Strangler Fig: extrair com calma, não reescrever o mundo numa sprint"
+      ],
+      "quandoNao": [
+        "Micro no dia um porque “escala” e o domínio ainda não tem dono",
+        "Vários deploys + schema compartilhado e chamar de decomposição",
+        "Toda feature em três repos — você não decompôs, só espalhou o release"
+      ]
+    },
+    {
+      "id": "corte",
+      "kind": "explicar",
+      "title": "O corte segue o contexto, não o organograma",
+      "html": "<p>Bounded context guia a tesoura. Organograma invertido (“um serviço por squad porque o VP pediu”) vira casamento disfarçado.</p><p>Preço do micro, nomeado: hop no p99, observabilidade obrigatória, saga no lugar do COMMIT único, debug que atravessa trace. Monolito é um processo. Isso não é atraso — é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.</p>"
+    },
+    {
+      "id": "operar",
+      "kind": "explicar",
+      "title": "Serviço sem time que opera não é serviço",
+      "html": "<p>Microsserviço de verdade tem três pernas: deploy que sobe sozinho, dado que o vizinho não UPDATE, gente que acorda quando aquele pedaço cai. Falta uma das três — você comprou o preço e não a autonomia.</p><p>Banco compartilhado é schema compartilhado. Os times casaram, mesmo com repos diferentes. Se a feature sempre atravessa três pull requests, o corte foi teatro.</p>"
+    },
+    {
+      "id": "dia-um",
+      "kind": "escolha",
+      "prompt": "Time de oito pessoas, checkout ainda muda toda semana, ninguém on-call de verdade. O lead quer oito microsserviços no Q1. Você?",
+      "options": [
+        {
+          "id": "oito",
+          "label": "Corta. Micro cedo evita o monolito eterno. banco compartilhado depois a gente separa.",
+          "verdict": "ruim",
+          "why": "Lead recusa micro cedo quando o custo de reverter explode. Time pequeno, domínio incerto, operação frágil: a aula de decomposição diz não. O banco compartilhado “depois” vira o desenho permanente."
+        },
+        {
+          "id": "modular",
+          "label": "Monolito modular agora. Módulos com dono. Extrai quando o contexto e o time aguentarem operar.",
+          "verdict": "bom",
+          "why": "Default honesto. Fronteira de código sem rede. Strangler quando (e se) o bounded context pedir. DNS no mesmo Postgres não conta como extração."
+        },
+        {
+          "id": "dns",
+          "label": "Sobe um Deployment por pasta no mesmo banco. Já parece serviço no dashboard.",
+          "verdict": "ruim",
+          "why": "Monolito distribuído: vários deploys no mesmo banco. Pior dos dois mundos — preço da rede sem a autonomia."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Monolito modular é o default. Micro é preço organizacional, não medalha.",
+        "Serviço de verdade: deploy, banco próprio, time que opera. DNS no mesmo Postgres não conta.",
+        "Vários deploys e o mesmo banco é monolito distribuído — o pior dos dois mundos."
+      ]
+    }
+  ]
+}

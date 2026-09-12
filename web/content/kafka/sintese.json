@@ -1,0 +1,124 @@
+{
+  "beats": [
+    {
+      "id": "espelho",
+      "kind": "cena",
+      "kicker": "Antes do simulador",
+      "title": "Feche a página. Conte o pedido 99 até a fatura.",
+      "body": "<p>Se travar numa palavra, volte nela — não releia a trilha inteira. Não avance às 50 questões no chute. Glossário ainda solto, sem comando: rode o lab 1 em <code>labs/kafka</code>.</p><p>A síntese junta os temas num fluxo só. Você nomeia o buraco de cada etapa e a peça que tapa. Gabaritar no simulador sem narrar o 99 mede sorte, não fluência.</p>"
+    },
+    {
+      "id": "fluxo-99",
+      "kind": "explicar",
+      "title": "Sete batidas. O 99 do clique até a fatura.",
+      "html": "<ol><li>Usuário confirma o 99 (R$ 80). Checkout grava pedido + outbox na mesma transação. Kafka pode estar no chão: o pedido existe.</li><li>poller publica <code>PedidoCriado</code>, key 99, eventId e-17, no tópico <code>pedidos</code> (3 partições). Cai numa partição só.</li><li>Grupo faturamento lê. Analytics lê o mesmo log com outro committed offset. Não brigam.</li><li>Faturamento chama o cartão com Idempotency-Key e-17. Grava inbox + pagamento na mesma transação. Só então ack.</li><li>O pod morre entre cartão e ack: at-least-once relê. Inbox (ou a key no emissor) impede a segunda fatura.</li><li>JSON podre no offset 40: DLT, o committed offset anda. Timeout do banco: retry, não DLT.</li><li><code>acks=all</code> no producer do checkout: a mensagem não some se o líder cair depois do ACK. Não substitui o passo 4.</li></ol>"
+    },
+    {
+      "id": "api-lenta",
+      "kind": "explicar",
+      "title": "API lenta, reprocessar 3 dias, eventual ≠ inconsistente.",
+      "html": "<p><strong>Gateway lento no pico.</strong> Não faça a chamada no poll da partição crítica. Reduza o lote, isole o trabalho (outro tópico, fila interna, workers), timeout e retry com DLT para o permanente. Senão estoura max.poll e começa o loop de rebalance.</p><p><strong>Reprocessar 3 dias.</strong> Confirme a retenção. Volte o offset do grupo (ou group.id novo). Inbox / upsert / versão maior: o efeito já aplicado é ignorado. Sem isso você duplica o mundo real.</p><p><strong>Eventual vs inconsistente.</strong> Eventual: as cópias convergem; o atraso é esperado e observável (lag). Inconsistente: cobrou duas vezes, estoque negativo sem compensação. Lag não é bug. Duplicata sem idempotência é.</p><p>Checklist cego, 60 segundos cada: evento vs comando; tópico / partição / offset; key e ordem; group e ociosos; ISR / acks / retenção / compaction; at-least-once + inbox; outbox; rebalance e lag; quando não usar Kafka. Grave áudio. Ouça onde enrolou.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Narrar o 99 custa tempo. Chutar as 50 custa o gap escondido.",
+      "ganha": "Um fluxo: outbox → log com key → dois committed offsets → inbox + cartão → ack. Você sabe onde voltar (partição, garantia, schema) em vez de reler tudo. O simulador então mede fluência. Serviço real do trabalho: tem outbox? key certa? DLT? lag no dashboard?",
+      "paga": "Gabarito 50/50 na primeira sem o espelho não é Lead — é sorte. Buzzword sem buraco nomeado. Cadeado de 5 da aula não substitui as 50. ISR misturado com inbox. Tópico no lugar de GET.",
+      "quando": [
+        "Você desenha o log no papel sem abrir o HTML",
+        "Onde travar, volta só naquele tema",
+        "Depois das 50: mapa de gaps, estude abaixo de 80%, refaça"
+      ],
+      "quandoNao": [
+        "Abrir o simulador como prova surpresa",
+        "Recitar glossário e achar que o fluxo do 99 está pronto",
+        "Tratar lag como inconsistência e duplicata como “eventual”"
+      ]
+    },
+    {
+      "id": "fila-ou-caderno",
+      "kind": "escolha",
+      "prompt": "Alguém de produto: “então Kafka é uma fila mais rápida?” O que você desenha?",
+      "options": [
+        {
+          "id": "caderno",
+          "label": "Fila: pega e some. Kafka: log particionado. Committed offset por grupo. A mensagem não some na leitura",
+          "verdict": "bom",
+          "why": "Três minutos, sem jargão. Se aparecer “fila mais rápida”, recomece. Dois times no mesmo fato: outro group.id, não outro send."
+        },
+        {
+          "id": "rapida",
+          "label": "É a fila da empresa, só que escala melhor",
+          "verdict": "ruim",
+          "why": "Analytics atrasado na fila clássica não relê a semana. Você vendeu o nome errado."
+        },
+        {
+          "id": "rpc",
+          "label": "Dá para fazer o GET do frete por tópico, fica moderno",
+          "verdict": "ruim",
+          "why": "Lead diz não a tópico no lugar de GET na cara do usuário. HTTP no clique. Log no fato consumado."
+        }
+      ]
+    },
+    {
+      "id": "eixos",
+      "kind": "escolha",
+      "prompt": "acks=all + enable.idempotence no producer. Ninguém cobra duas vezes — e ISR é a inbox?",
+      "options": [
+        {
+          "id": "nao",
+          "label": "Não. Escrita no cluster ≠ efeito no cartão. ISR não é inbox. Offset não é eventId",
+          "verdict": "bom",
+          "why": "Acks: durabilidade do Produce. Idempotência do producer: retry do mesmo send. Inbox: o mesmo evento não causa o mesmo efeito duas vezes. São cadeados diferentes. save(); send(); ainda mente sem outbox."
+        },
+        {
+          "id": "fecha",
+          "label": "Fecha o cartão. Exactly-once porque tem Kafka",
+          "verdict": "ruim",
+          "why": "A frase da mesa é at-least-once + consumidor idempotente. A bolha EOS não assina o POST do emissor."
+        },
+        {
+          "id": "offset-id",
+          "label": "Inbox usa o offset da linha como eventId",
+          "verdict": "ruim",
+          "why": "Offset 4 da P0 e da P1 são mensagens diferentes. Replay, compactação, dois tópicos: o offset não identifica o fato. eventId estável no envelope."
+        }
+      ]
+    },
+    {
+      "id": "migrar-n",
+      "kind": "escolha",
+      "prompt": "O tópico tem 6 partições. Precisamos de 12. E 4 consumidores em 3 partições — quantos ociosos? Retenção é backup?",
+      "options": [
+        {
+          "id": "plano",
+          "label": "Aumentar N redistribui hash(key). Tópico novo, dual-write ou replay. 4 em 3: um ocioso. Kafka não é S3",
+          "verdict": "bom",
+          "why": "Não existe “só clicar em 12” sem custo de ordenação. Replay de 3 dias: retenção ainda guarda? Grupo novo ou reset de offset + inbox. Lag não é bug. Duplicata sem idempotência é inconsistência, não eventual."
+        },
+        {
+          "id": "alter",
+          "label": "--alter 12. A key 99 continua na mesma partição. Os 4 trabalham nas 3. O passado fica para sempre",
+          "verdict": "ruim",
+          "why": "Módulo novo, ocioso no teto, retenção apaga segmento. Três erros no mesmo chute."
+        },
+        {
+          "id": "rename",
+          "label": "No mesmo PR: rename de campo obrigatório, BACKWARD deixa",
+          "verdict": "ruim",
+          "why": "Opcional novo passa. Rename quebra. Schema é contrato, não detalhe do simulador."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Narra o 99: outbox, key, dois committed offsets, inbox + cartão, depois ack. acks=all não substitui o inbox.",
+        "Fila some a mensagem. Log deixa o committed offset. 4 em 3: um ocioso. Subir N quebra a cola da key.",
+        "Simulador depois do espelho. Gap abaixo de 80% é o estudo — não o chute."
+      ]
+    }
+  ]
+}

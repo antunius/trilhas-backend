@@ -1,1260 +1,1260 @@
 {
   "questions": [
     {
-      "q": "Sobre log: qual afirmação está certa?",
+      "q": "O que é uma partição no disco, e de quem são os offsets?",
+      "o": [
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "Cada partição é um log independente em disco, com offsets só dela.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem."
+      ],
+      "a": 2,
+      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
+      "t": "log"
+    },
+    {
+      "q": "O que é uma partição no disco, e de quem são os offsets — verdade ou mito?",
       "o": [
         "Cada partição é um log independente em disco, com offsets só dela.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log."
       ],
       "a": 0,
       "w": "Offset 0 da P0 ≠ offset 0 da P1.",
       "t": "log"
     },
     {
-      "q": "Qual frase sobre log está certa?",
+      "q": "O que é uma partição no disco, e de quem são os offsets — o que acontece de verdade?",
+      "o": [
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Você escreve no follower para aliviar o líder.",
+        "Cada partição é um log independente em disco, com offsets só dela.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem."
+      ],
+      "a": 2,
+      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
+      "t": "log"
+    },
+    {
+      "q": "Na prática: O que é uma partição no disco, e de quem são os offsets?",
+      "o": [
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Você escreve no follower para aliviar o líder.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Cada partição é um log independente em disco, com offsets só dela."
+      ],
+      "a": 3,
+      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
+      "t": "log"
+    },
+    {
+      "q": "O que é uma partição no disco, e de quem são os offsets — como funciona?",
+      "o": [
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Cada partição é um log independente em disco, com offsets só dela.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
+      ],
+      "a": 1,
+      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
+      "t": "log"
+    },
+    {
+      "q": "Se perguntarem: O que é uma partição no disco, e de quem são os offsets?",
       "o": [
         "Cada partição é um log independente em disco, com offsets só dela.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição."
       ],
       "a": 0,
       "w": "Offset 0 da P0 ≠ offset 0 da P1.",
       "t": "log"
     },
     {
-      "q": "Log — o que acontece de verdade?",
+      "q": "O que é uma partição no disco, e de quem são os offsets — o que vale aqui?",
       "o": [
         "Cada partição é um log independente em disco, com offsets só dela.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada."
       ],
       "a": 0,
       "w": "Offset 0 da P0 ≠ offset 0 da P1.",
       "t": "log"
     },
     {
-      "q": "Marque a leitura correta (log).",
-      "o": [
-        "Cada partição é um log independente em disco, com offsets só dela.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
-      "t": "log"
-    },
-    {
-      "q": "Corrija o mito sobre log.",
-      "o": [
-        "Cada partição é um log independente em disco, com offsets só dela.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
-      "t": "log"
-    },
-    {
-      "q": "No caderno, a respeito de log: qual vale?",
-      "o": [
-        "Cada partição é um log independente em disco, com offsets só dela.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
-      "t": "log"
-    },
-    {
-      "q": "Se perguntarem log na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Cada partição é um log independente em disco, com offsets só dela.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Offset 0 da P0 ≠ offset 0 da P1.",
-      "t": "log"
-    },
-    {
-      "q": "Sobre teto: qual afirmação está certa?",
+      "q": "Num grupo, quantos membros ativos uma partição pode ter?",
       "o": [
         "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição."
       ],
       "a": 0,
       "w": "O 4º consumidor em 3 partições fica ocioso.",
       "t": "teto"
     },
     {
-      "q": "Qual frase sobre teto está certa?",
+      "q": "Num grupo, quantos membros ativos uma partição pode ter — verdade ou mito?",
+      "o": [
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
+        "O 4º consumidor em 3 partições também recebe uma fatia."
+      ],
+      "a": 2,
+      "w": "O 4º consumidor em 3 partições fica ocioso.",
+      "t": "teto"
+    },
+    {
+      "q": "Num grupo, quantos membros ativos uma partição pode ter — o que acontece de verdade?",
       "o": [
         "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Subir concurrency drena a partição quente da key vip."
       ],
       "a": 0,
       "w": "O 4º consumidor em 3 partições fica ocioso.",
       "t": "teto"
     },
     {
-      "q": "Teto — o que acontece de verdade?",
+      "q": "Na prática: Num grupo, quantos membros ativos uma partição pode ter?",
       "o": [
-        "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O 4º consumidor em 3 partições fica ocioso.",
       "t": "teto"
     },
     {
-      "q": "Marque a leitura correta (teto).",
+      "q": "Num grupo, quantos membros ativos uma partição pode ter — como funciona?",
       "o": [
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
         "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O 4º consumidor em 3 partições fica ocioso.",
       "t": "teto"
     },
     {
-      "q": "Corrija o mito sobre teto.",
+      "q": "Se perguntarem: Num grupo, quantos membros ativos uma partição pode ter?",
       "o": [
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
         "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O 4º consumidor em 3 partições também recebe uma fatia."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O 4º consumidor em 3 partições fica ocioso.",
       "t": "teto"
     },
     {
-      "q": "No caderno, a respeito de teto: qual vale?",
+      "q": "Num grupo, quantos membros ativos uma partição pode ter — o que vale aqui?",
       "o": [
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
         "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O 4º consumidor em 3 partições também recebe uma fatia."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O 4º consumidor em 3 partições fica ocioso.",
       "t": "teto"
     },
     {
-      "q": "Se perguntarem teto na mesa, qual frase é a verdadeira?",
+      "q": "Aumentar o número de partições faz o quê com a key do pedido 99?",
       "o": [
-        "Num grupo, cada partição vai para no máximo um membro. 1 partição = 1 trabalhador ativo.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de partição.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem."
       ],
-      "a": 0,
-      "w": "O 4º consumidor em 3 partições fica ocioso.",
-      "t": "teto"
+      "a": 1,
+      "w": "A ordem histórica daquela entidade quebra.",
+      "t": "aumentar"
     },
     {
-      "q": "Sobre aumentar: qual afirmação está certa?",
+      "q": "Aumentar o número de partições faz o quê com a key do pedido 99 — verdade ou mito?",
       "o": [
-        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de coluna.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de partição."
+      ],
+      "a": 3,
+      "w": "A ordem histórica daquela entidade quebra.",
+      "t": "aumentar"
+    },
+    {
+      "q": "Aumentar o número de partições faz o quê com a key do pedido 99 — o que acontece de verdade?",
+      "o": [
+        "Você escreve no follower para aliviar o líder.",
+        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de partição.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log."
+      ],
+      "a": 1,
+      "w": "A ordem histórica daquela entidade quebra.",
+      "t": "aumentar"
+    },
+    {
+      "q": "Na prática: Aumentar o número de partições faz o quê com a key do pedido 99?",
+      "o": [
+        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de partição.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "Você escreve no follower para aliviar o líder.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
       ],
       "a": 0,
       "w": "A ordem histórica daquela entidade quebra.",
       "t": "aumentar"
     },
     {
-      "q": "Qual frase sobre aumentar está certa?",
+      "q": "Aumentar o número de partições faz o quê com a key do pedido 99 — como funciona?",
       "o": [
-        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de coluna.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de partição.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual."
       ],
-      "a": 0,
+      "a": 2,
       "w": "A ordem histórica daquela entidade quebra.",
       "t": "aumentar"
     },
     {
-      "q": "Aumentar — o que acontece de verdade?",
+      "q": "Se perguntarem: Aumentar o número de partições faz o quê com a key do pedido 99?",
       "o": [
-        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de coluna.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de partição."
       ],
-      "a": 0,
+      "a": 3,
       "w": "A ordem histórica daquela entidade quebra.",
       "t": "aumentar"
     },
     {
-      "q": "Marque a leitura correta (aumentar).",
+      "q": "Aumentar o número de partições faz o quê com a key do pedido 99 — o que vale aqui?",
       "o": [
-        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de coluna.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de partição."
       ],
-      "a": 0,
+      "a": 3,
       "w": "A ordem histórica daquela entidade quebra.",
       "t": "aumentar"
     },
     {
-      "q": "Corrija o mito sobre aumentar.",
+      "q": "O Kafka diminui o número de partições se você pedir?",
       "o": [
-        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de coluna.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "A ordem histórica daquela entidade quebra.",
-      "t": "aumentar"
-    },
-    {
-      "q": "No caderno, a respeito de aumentar: qual vale?",
-      "o": [
-        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de coluna.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "A ordem histórica daquela entidade quebra.",
-      "t": "aumentar"
-    },
-    {
-      "q": "Se perguntarem aumentar na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Aumentar N recalcula hash(key)%N: o pedido 99 pode mudar de coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "A ordem histórica daquela entidade quebra.",
-      "t": "aumentar"
-    },
-    {
-      "q": "Sobre diminuir: qual afirmação está certa?",
-      "o": [
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
         "O Kafka não diminui o número de partições.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada."
       ],
-      "a": 0,
-      "w": "Recriar tópico apaga o caderno.",
+      "a": 1,
+      "w": "Recriar tópico apaga o log.",
       "t": "diminuir"
     },
     {
-      "q": "Qual frase sobre diminuir está certa?",
+      "q": "O Kafka diminui o número de partições se você pedir — verdade ou mito?",
       "o": [
-        "O Kafka não diminui o número de partições.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "O Kafka não diminui o número de partições."
       ],
-      "a": 0,
-      "w": "Recriar tópico apaga o caderno.",
+      "a": 3,
+      "w": "Recriar tópico apaga o log.",
       "t": "diminuir"
     },
     {
-      "q": "Diminuir — o que acontece de verdade?",
+      "q": "O Kafka diminui o número de partições se você pedir — o que acontece de verdade?",
       "o": [
+        "Subir concurrency drena a partição quente da key vip.",
         "O Kafka não diminui o número de partições.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
       ],
-      "a": 0,
-      "w": "Recriar tópico apaga o caderno.",
+      "a": 1,
+      "w": "Recriar tópico apaga o log.",
       "t": "diminuir"
     },
     {
-      "q": "Marque a leitura correta (diminuir).",
+      "q": "Na prática: O Kafka diminui o número de partições se você pedir?",
       "o": [
+        "Subir concurrency drena a partição quente da key vip.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
         "O Kafka não diminui o número de partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log."
       ],
-      "a": 0,
-      "w": "Recriar tópico apaga o caderno.",
+      "a": 2,
+      "w": "Recriar tópico apaga o log.",
       "t": "diminuir"
     },
     {
-      "q": "Corrija o mito sobre diminuir.",
+      "q": "O Kafka diminui o número de partições se você pedir — como funciona?",
       "o": [
         "O Kafka não diminui o número de partições.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset."
       ],
       "a": 0,
-      "w": "Recriar tópico apaga o caderno.",
+      "w": "Recriar tópico apaga o log.",
       "t": "diminuir"
     },
     {
-      "q": "No caderno, a respeito de diminuir: qual vale?",
+      "q": "Se perguntarem: O Kafka diminui o número de partições se você pedir?",
       "o": [
-        "O Kafka não diminui o número de partições.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "O Kafka não diminui o número de partições."
       ],
-      "a": 0,
-      "w": "Recriar tópico apaga o caderno.",
+      "a": 3,
+      "w": "Recriar tópico apaga o log.",
       "t": "diminuir"
     },
     {
-      "q": "Se perguntarem diminuir na mesa, qual frase é a verdadeira?",
+      "q": "O Kafka diminui o número de partições se você pedir — o que vale aqui?",
       "o": [
-        "O Kafka não diminui o número de partições.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "O Kafka não diminui o número de partições."
       ],
-      "a": 0,
-      "w": "Recriar tópico apaga o caderno.",
+      "a": 3,
+      "w": "Recriar tópico apaga o log.",
       "t": "diminuir"
     },
     {
-      "q": "Sobre líder: qual afirmação está certa?",
+      "q": "Quem recebe o ProduceRequest: o líder ou um follower qualquer?",
+      "o": [
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "O líder da partição recebe o ProduceRequest; followers copiam.",
+        "Você escreve no follower para aliviar o líder.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem."
+      ],
+      "a": 1,
+      "w": "Você não escreve em follower clássico.",
+      "t": "líder"
+    },
+    {
+      "q": "Quem recebe o ProduceRequest: o líder ou um follower qualquer — verdade ou mito?",
+      "o": [
+        "Você escreve no follower para aliviar o líder.",
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O líder da partição recebe o ProduceRequest; followers copiam."
+      ],
+      "a": 3,
+      "w": "Você não escreve em follower clássico.",
+      "t": "líder"
+    },
+    {
+      "q": "Quem recebe o ProduceRequest: o líder ou um follower qualquer — o que acontece de verdade?",
+      "o": [
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "O líder da partição recebe o ProduceRequest; followers copiam.",
+        "Você escreve no follower para aliviar o líder.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual."
+      ],
+      "a": 1,
+      "w": "Você não escreve em follower clássico.",
+      "t": "líder"
+    },
+    {
+      "q": "Na prática: Quem recebe o ProduceRequest: o líder ou um follower qualquer?",
       "o": [
         "O líder da partição recebe o ProduceRequest; followers copiam.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Você escreve no follower para aliviar o líder.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
       ],
       "a": 0,
       "w": "Você não escreve em follower clássico.",
       "t": "líder"
     },
     {
-      "q": "Qual frase sobre líder está certa?",
+      "q": "Quem recebe o ProduceRequest: o líder ou um follower qualquer — como funciona?",
       "o": [
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
         "O líder da partição recebe o ProduceRequest; followers copiam.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Você escreve no follower para aliviar o líder."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Você não escreve em follower clássico.",
       "t": "líder"
     },
     {
-      "q": "Líder — o que acontece de verdade?",
+      "q": "Se perguntarem: Quem recebe o ProduceRequest: o líder ou um follower qualquer?",
       "o": [
-        "O líder da partição recebe o ProduceRequest; followers copiam.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Você escreve no follower para aliviar o líder.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "O líder da partição recebe o ProduceRequest; followers copiam."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Você não escreve em follower clássico.",
       "t": "líder"
     },
     {
-      "q": "Marque a leitura correta (líder).",
+      "q": "Quem recebe o ProduceRequest: o líder ou um follower qualquer — o que vale aqui?",
       "o": [
-        "O líder da partição recebe o ProduceRequest; followers copiam.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Você escreve no follower para aliviar o líder.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "O líder da partição recebe o ProduceRequest; followers copiam."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Você não escreve em follower clássico.",
       "t": "líder"
     },
     {
-      "q": "Corrija o mito sobre líder.",
+      "q": "Subir pod no grupo, sem mais partições, escala o consumo?",
       "o": [
-        "O líder da partição recebe o ProduceRequest; followers copiam.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "Você não escreve em follower clássico.",
-      "t": "líder"
-    },
-    {
-      "q": "No caderno, a respeito de líder: qual vale?",
-      "o": [
-        "O líder da partição recebe o ProduceRequest; followers copiam.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Você não escreve em follower clássico.",
-      "t": "líder"
-    },
-    {
-      "q": "Se perguntarem líder na mesa, qual frase é a verdadeira?",
-      "o": [
-        "O líder da partição recebe o ProduceRequest; followers copiam.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Você não escreve em follower clássico.",
-      "t": "líder"
-    },
-    {
-      "q": "Sobre escala: qual afirmação está certa?",
-      "o": [
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
         "Throughput de um grupo escala com o número de partições — e é limitado por ele.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Subir pod sem partição não escala.",
       "t": "escala"
     },
     {
-      "q": "Qual frase sobre escala está certa?",
+      "q": "Subir pod no grupo, sem mais partições, escala o consumo — verdade ou mito?",
       "o": [
-        "Throughput de um grupo escala com o número de partições — e é limitado por ele.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Throughput de um grupo escala com o número de partições — e é limitado por ele."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Subir pod sem partição não escala.",
       "t": "escala"
     },
     {
-      "q": "Escala — o que acontece de verdade?",
+      "q": "Subir pod no grupo, sem mais partições, escala o consumo — o que acontece de verdade?",
       "o": [
+        "Subir concurrency drena a partição quente da key vip.",
         "Throughput de um grupo escala com o número de partições — e é limitado por ele.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Subir pod sem partição não escala.",
       "t": "escala"
     },
     {
-      "q": "Marque a leitura correta (escala).",
+      "q": "Na prática: Subir pod no grupo, sem mais partições, escala o consumo?",
       "o": [
+        "Subir concurrency drena a partição quente da key vip.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
         "Throughput de um grupo escala com o número de partições — e é limitado por ele.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Subir pod sem partição não escala.",
       "t": "escala"
     },
     {
-      "q": "Corrija o mito sobre escala.",
+      "q": "Subir pod no grupo, sem mais partições, escala o consumo — como funciona?",
       "o": [
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
         "Throughput de um grupo escala com o número de partições — e é limitado por ele.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Subir pod sem partição não escala.",
       "t": "escala"
     },
     {
-      "q": "No caderno, a respeito de escala: qual vale?",
+      "q": "Se perguntarem: Subir pod no grupo, sem mais partições, escala o consumo?",
       "o": [
-        "Throughput de um grupo escala com o número de partições — e é limitado por ele.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Throughput de um grupo escala com o número de partições — e é limitado por ele."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Subir pod sem partição não escala.",
       "t": "escala"
     },
     {
-      "q": "Se perguntarem escala na mesa, qual frase é a verdadeira?",
+      "q": "Subir pod no grupo, sem mais partições, escala o consumo — o que vale aqui?",
       "o": [
-        "Throughput de um grupo escala com o número de partições — e é limitado por ele.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Throughput de um grupo escala com o número de partições — e é limitado por ele."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Subir pod sem partição não escala.",
       "t": "escala"
     },
     {
-      "q": "Sobre describe: qual afirmação está certa?",
+      "q": "Qual comando mostra PartitionCount e o líder de cada partição?",
       "o": [
-        "kafka-topics --describe mostra PartitionCount e o líder de cada uma.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "kafka-topics --describe mostra PartitionCount e o líder de cada uma."
       ],
-      "a": 0,
-      "w": "É o comando do lab para ver as três colunas.",
+      "a": 3,
+      "w": "É o comando para ver as três partições.",
       "t": "describe"
     },
     {
-      "q": "Qual frase sobre describe está certa?",
+      "q": "Qual comando mostra PartitionCount e o líder de cada partição — verdade ou mito?",
       "o": [
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
         "kafka-topics --describe mostra PartitionCount e o líder de cada uma.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "O 4º consumidor em 3 partições também recebe uma fatia."
       ],
-      "a": 0,
-      "w": "É o comando do lab para ver as três colunas.",
+      "a": 1,
+      "w": "É o comando para ver as três partições.",
       "t": "describe"
     },
     {
-      "q": "Describe — o que acontece de verdade?",
+      "q": "Qual comando mostra PartitionCount e o líder de cada partição — o que acontece de verdade?",
       "o": [
-        "kafka-topics --describe mostra PartitionCount e o líder de cada uma.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "kafka-topics --describe mostra PartitionCount e o líder de cada uma."
       ],
-      "a": 0,
-      "w": "É o comando do lab para ver as três colunas.",
+      "a": 3,
+      "w": "É o comando para ver as três partições.",
       "t": "describe"
     },
     {
-      "q": "Marque a leitura correta (describe).",
+      "q": "Na prática: Qual comando mostra PartitionCount e o líder de cada partição?",
       "o": [
         "kafka-topics --describe mostra PartitionCount e o líder de cada uma.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Você escreve no follower para aliviar o líder."
       ],
       "a": 0,
-      "w": "É o comando do lab para ver as três colunas.",
+      "w": "É o comando para ver as três partições.",
       "t": "describe"
     },
     {
-      "q": "Corrija o mito sobre describe.",
+      "q": "Qual comando mostra PartitionCount e o líder de cada partição — como funciona?",
       "o": [
+        "Você escreve no follower para aliviar o líder.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
         "kafka-topics --describe mostra PartitionCount e o líder de cada uma.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Não há comando para ver as partições; chute pelo log da aplicação."
       ],
-      "a": 0,
-      "w": "É o comando do lab para ver as três colunas.",
+      "a": 2,
+      "w": "É o comando para ver as três partições.",
       "t": "describe"
     },
     {
-      "q": "No caderno, a respeito de describe: qual vale?",
+      "q": "Se perguntarem: Qual comando mostra PartitionCount e o líder de cada partição?",
       "o": [
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
         "kafka-topics --describe mostra PartitionCount e o líder de cada uma.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
       ],
-      "a": 0,
-      "w": "É o comando do lab para ver as três colunas.",
+      "a": 1,
+      "w": "É o comando para ver as três partições.",
       "t": "describe"
     },
     {
-      "q": "Se perguntarem describe na mesa, qual frase é a verdadeira?",
+      "q": "Qual comando mostra PartitionCount e o líder de cada partição — o que vale aqui?",
       "o": [
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
         "kafka-topics --describe mostra PartitionCount e o líder de cada uma.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição."
       ],
-      "a": 0,
-      "w": "É o comando do lab para ver as três colunas.",
+      "a": 1,
+      "w": "É o comando para ver as três partições.",
       "t": "describe"
     },
     {
-      "q": "Sobre key cola: qual afirmação está certa?",
+      "q": "Sem key, os eventos do mesmo pedido ficam ordenados?",
       "o": [
-        "A key escolhe a coluna enquanto N não muda.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "A key escolhe a partição enquanto N não muda.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada."
+      ],
+      "a": 1,
+      "w": "Sem key não há ordem por pedido.",
+      "t": "key cola"
+    },
+    {
+      "q": "Sem key, os eventos do mesmo pedido ficam ordenados — verdade ou mito?",
+      "o": [
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "A key escolhe a partição enquanto N não muda."
+      ],
+      "a": 3,
+      "w": "Sem key não há ordem por pedido.",
+      "t": "key cola"
+    },
+    {
+      "q": "Sem key, os eventos do mesmo pedido ficam ordenados — o que acontece de verdade?",
+      "o": [
+        "Subir concurrency drena a partição quente da key vip.",
+        "A key escolhe a partição enquanto N não muda.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
+      ],
+      "a": 1,
+      "w": "Sem key não há ordem por pedido.",
+      "t": "key cola"
+    },
+    {
+      "q": "Na prática: Sem key, os eventos do mesmo pedido ficam ordenados?",
+      "o": [
+        "A key escolhe a partição enquanto N não muda.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição."
       ],
       "a": 0,
       "w": "Sem key não há ordem por pedido.",
       "t": "key cola"
     },
     {
-      "q": "Qual frase sobre key cola está certa?",
+      "q": "Sem key, os eventos do mesmo pedido ficam ordenados — como funciona?",
       "o": [
-        "A key escolhe a coluna enquanto N não muda.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "A key escolhe a partição enquanto N não muda.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Sem key não há ordem por pedido.",
       "t": "key cola"
     },
     {
-      "q": "Key cola — o que acontece de verdade?",
+      "q": "Se perguntarem: Sem key, os eventos do mesmo pedido ficam ordenados?",
       "o": [
-        "A key escolhe a coluna enquanto N não muda.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "A key escolhe a partição enquanto N não muda."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Sem key não há ordem por pedido.",
       "t": "key cola"
     },
     {
-      "q": "Marque a leitura correta (key cola).",
+      "q": "Sem key, os eventos do mesmo pedido ficam ordenados — o que vale aqui?",
       "o": [
-        "A key escolhe a coluna enquanto N não muda.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "A key escolhe a partição enquanto N não muda."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Sem key não há ordem por pedido.",
       "t": "key cola"
     },
     {
-      "q": "Corrija o mito sobre key cola.",
+      "q": "A partição é um arquivo eterno ou uma fila de segmentos?",
       "o": [
-        "A key escolhe a coluna enquanto N não muda.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem."
       ],
-      "a": 0,
-      "w": "Sem key não há ordem por pedido.",
-      "t": "key cola"
+      "a": 1,
+      "w": "segment.bytes fecha um e abre outro.",
+      "t": "segmentos"
     },
     {
-      "q": "No caderno, a respeito de key cola: qual vale?",
+      "q": "A partição é um arquivo eterno ou uma fila de segmentos — verdade ou mito?",
       "o": [
-        "A key escolhe a coluna enquanto N não muda.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno."
       ],
-      "a": 0,
-      "w": "Sem key não há ordem por pedido.",
-      "t": "key cola"
+      "a": 3,
+      "w": "segment.bytes fecha um e abre outro.",
+      "t": "segmentos"
     },
     {
-      "q": "Se perguntarem key cola na mesa, qual frase é a verdadeira?",
+      "q": "A partição é um arquivo eterno ou uma fila de segmentos — o que acontece de verdade?",
       "o": [
-        "A key escolhe a coluna enquanto N não muda.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual."
       ],
-      "a": 0,
-      "w": "Sem key não há ordem por pedido.",
-      "t": "key cola"
+      "a": 1,
+      "w": "segment.bytes fecha um e abre outro.",
+      "t": "segmentos"
     },
     {
-      "q": "Sobre segmentos: qual afirmação está certa?",
+      "q": "Na prática: A partição é um arquivo eterno ou uma fila de segmentos?",
+      "o": [
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Você escreve no follower para aliviar o líder.",
+        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada."
+      ],
+      "a": 2,
+      "w": "segment.bytes fecha um e abre outro.",
+      "t": "segmentos"
+    },
+    {
+      "q": "A partição é um arquivo eterno ou uma fila de segmentos — como funciona?",
       "o": [
         "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "Você escreve no follower para aliviar o líder.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
       ],
       "a": 0,
       "w": "segment.bytes fecha um e abre outro.",
       "t": "segmentos"
     },
     {
-      "q": "Qual frase sobre segmentos está certa?",
+      "q": "Se perguntarem: A partição é um arquivo eterno ou uma fila de segmentos?",
       "o": [
-        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno."
       ],
-      "a": 0,
+      "a": 3,
       "w": "segment.bytes fecha um e abre outro.",
       "t": "segmentos"
     },
     {
-      "q": "Segmentos — o que acontece de verdade?",
+      "q": "A partição é um arquivo eterno ou uma fila de segmentos — o que vale aqui?",
       "o": [
-        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno."
       ],
-      "a": 0,
+      "a": 3,
       "w": "segment.bytes fecha um e abre outro.",
       "t": "segmentos"
     },
     {
-      "q": "Marque a leitura correta (segmentos).",
+      "q": "TopicBuilder.partitions(3) no Spring cria o quê?",
       "o": [
-        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "TopicBuilder.name(...).partitions(3) cria um NewTopic no Spring.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada."
       ],
       "a": 0,
-      "w": "segment.bytes fecha um e abre outro.",
-      "t": "segmentos"
-    },
-    {
-      "q": "Corrija o mito sobre segmentos.",
-      "o": [
-        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "segment.bytes fecha um e abre outro.",
-      "t": "segmentos"
-    },
-    {
-      "q": "No caderno, a respeito de segmentos: qual vale?",
-      "o": [
-        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "segment.bytes fecha um e abre outro.",
-      "t": "segmentos"
-    },
-    {
-      "q": "Se perguntarem segmentos na mesa, qual frase é a verdadeira?",
-      "o": [
-        "A partição é uma fila de segmentos .log + índices, não um arquivo eterno.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "segment.bytes fecha um e abre outro.",
-      "t": "segmentos"
-    },
-    {
-      "q": "Sobre TopicBuilder: qual afirmação está certa?",
-      "o": [
-        "TopicBuilder.name(...).partitions(3) é o NewTopic do lab.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Já está em TopicConfig.java.",
+      "w": "Bean NewTopic no boot, equivalente ao CLI.",
       "t": "TopicBuilder"
     },
     {
-      "q": "Qual frase sobre TopicBuilder está certa?",
+      "q": "TopicBuilder.partitions(3) no Spring cria o quê — verdade ou mito?",
       "o": [
-        "TopicBuilder.name(...).partitions(3) é o NewTopic do lab.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "TopicBuilder.name(...).partitions(3) cria um NewTopic no Spring.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição."
       ],
-      "a": 0,
-      "w": "Já está em TopicConfig.java.",
+      "a": 2,
+      "w": "Bean NewTopic no boot, equivalente ao CLI.",
       "t": "TopicBuilder"
     },
     {
-      "q": "TopicBuilder — o que acontece de verdade?",
+      "q": "TopicBuilder.partitions(3) no Spring cria o quê — o que acontece de verdade?",
       "o": [
-        "TopicBuilder.name(...).partitions(3) é o NewTopic do lab.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "TopicBuilder.name(...).partitions(3) cria um NewTopic no Spring.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Subir concurrency drena a partição quente da key vip."
       ],
       "a": 0,
-      "w": "Já está em TopicConfig.java.",
+      "w": "Bean NewTopic no boot, equivalente ao CLI.",
       "t": "TopicBuilder"
     },
     {
-      "q": "Marque a leitura correta (TopicBuilder).",
+      "q": "Na prática: TopicBuilder.partitions(3) no Spring cria o quê?",
       "o": [
-        "TopicBuilder.name(...).partitions(3) é o NewTopic do lab.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "TopicBuilder.name(...).partitions(3) cria um NewTopic no Spring."
       ],
-      "a": 0,
-      "w": "Já está em TopicConfig.java.",
+      "a": 3,
+      "w": "Bean NewTopic no boot, equivalente ao CLI.",
       "t": "TopicBuilder"
     },
     {
-      "q": "Corrija o mito sobre TopicBuilder.",
+      "q": "TopicBuilder.partitions(3) no Spring cria o quê — como funciona?",
       "o": [
-        "TopicBuilder.name(...).partitions(3) é o NewTopic do lab.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "TopicBuilder.name(...).partitions(3) cria um NewTopic no Spring.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição."
       ],
-      "a": 0,
-      "w": "Já está em TopicConfig.java.",
+      "a": 1,
+      "w": "Bean NewTopic no boot, equivalente ao CLI.",
       "t": "TopicBuilder"
     },
     {
-      "q": "No caderno, a respeito de TopicBuilder: qual vale?",
+      "q": "Se perguntarem: TopicBuilder.partitions(3) no Spring cria o quê?",
       "o": [
-        "TopicBuilder.name(...).partitions(3) é o NewTopic do lab.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "TopicBuilder.name(...).partitions(3) cria um NewTopic no Spring.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição."
       ],
-      "a": 0,
-      "w": "Já está em TopicConfig.java.",
+      "a": 2,
+      "w": "Bean NewTopic no boot, equivalente ao CLI.",
       "t": "TopicBuilder"
     },
     {
-      "q": "Se perguntarem TopicBuilder na mesa, qual frase é a verdadeira?",
+      "q": "TopicBuilder.partitions(3) no Spring cria o quê — o que vale aqui?",
       "o": [
-        "TopicBuilder.name(...).partitions(3) é o NewTopic do lab.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "TopicBuilder.name(...).partitions(3) cria um NewTopic no Spring.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição."
       ],
-      "a": 0,
-      "w": "Já está em TopicConfig.java.",
+      "a": 2,
+      "w": "Bean NewTopic no boot, equivalente ao CLI.",
       "t": "TopicBuilder"
     },
     {
-      "q": "Sobre alter: qual afirmação está certa?",
+      "q": "Subir de 3 para 6 partições é reversível para baixo?",
       "o": [
         "--alter --partitions 6 é irreversível para baixo e muda o módulo da key.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "O 4º consumidor em 3 partições também recebe uma fatia."
       ],
       "a": 0,
-      "w": "Faça no lab só depois de anotar a coluna do 99.",
+      "w": "Faça só depois de anotar a partição do pedido 99.",
       "t": "alter"
     },
     {
-      "q": "Qual frase sobre alter está certa?",
+      "q": "Subir de 3 para 6 partições é reversível para baixo — verdade ou mito?",
       "o": [
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
         "--alter --partitions 6 é irreversível para baixo e muda o módulo da key.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
       ],
-      "a": 0,
-      "w": "Faça no lab só depois de anotar a coluna do 99.",
+      "a": 2,
+      "w": "Faça só depois de anotar a partição do pedido 99.",
       "t": "alter"
     },
     {
-      "q": "Alter — o que acontece de verdade?",
+      "q": "Subir de 3 para 6 partições é reversível para baixo — o que acontece de verdade?",
       "o": [
         "--alter --partitions 6 é irreversível para baixo e muda o módulo da key.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log."
       ],
       "a": 0,
-      "w": "Faça no lab só depois de anotar a coluna do 99.",
+      "w": "Faça só depois de anotar a partição do pedido 99.",
       "t": "alter"
     },
     {
-      "q": "Marque a leitura correta (alter).",
+      "q": "Na prática: Subir de 3 para 6 partições é reversível para baixo?",
       "o": [
+        "Você escreve no follower para aliviar o líder.",
         "--alter --partitions 6 é irreversível para baixo e muda o módulo da key.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log."
       ],
-      "a": 0,
-      "w": "Faça no lab só depois de anotar a coluna do 99.",
+      "a": 1,
+      "w": "Faça só depois de anotar a partição do pedido 99.",
       "t": "alter"
     },
     {
-      "q": "Corrija o mito sobre alter.",
+      "q": "Subir de 3 para 6 partições é reversível para baixo — como funciona?",
       "o": [
-        "--alter --partitions 6 é irreversível para baixo e muda o módulo da key.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Você escreve no follower para aliviar o líder.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "--alter --partitions 6 é irreversível para baixo e muda o módulo da key."
       ],
-      "a": 0,
-      "w": "Faça no lab só depois de anotar a coluna do 99.",
+      "a": 3,
+      "w": "Faça só depois de anotar a partição do pedido 99.",
       "t": "alter"
     },
     {
-      "q": "No caderno, a respeito de alter: qual vale?",
+      "q": "Se perguntarem: Subir de 3 para 6 partições é reversível para baixo?",
       "o": [
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
         "--alter --partitions 6 é irreversível para baixo e muda o módulo da key.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
       ],
-      "a": 0,
-      "w": "Faça no lab só depois de anotar a coluna do 99.",
+      "a": 2,
+      "w": "Faça só depois de anotar a partição do pedido 99.",
       "t": "alter"
     },
     {
-      "q": "Se perguntarem alter na mesa, qual frase é a verdadeira?",
+      "q": "Subir de 3 para 6 partições é reversível para baixo — o que vale aqui?",
       "o": [
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
         "--alter --partitions 6 é irreversível para baixo e muda o módulo da key.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
       ],
-      "a": 0,
-      "w": "Faça no lab só depois de anotar a coluna do 99.",
+      "a": 2,
+      "w": "Faça só depois de anotar a partição do pedido 99.",
       "t": "alter"
     },
     {
-      "q": "Sobre hot: qual afirmação está certa?",
+      "q": "Uma key gigante (vip) se resolve subindo concurrency?",
       "o": [
-        "Uma key gigante (vip) deixa uma coluna com lag e as outras zeradas.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "Uma key gigante (vip) deixa uma partição com lag e as outras zeradas.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição."
       ],
-      "a": 0,
-      "w": "Subir concurrency não drena a coluna quente.",
+      "a": 1,
+      "w": "Subir concurrency não drena a partição quente.",
       "t": "hot"
     },
     {
-      "q": "Qual frase sobre hot está certa?",
+      "q": "Uma key gigante (vip) se resolve subindo concurrency — verdade ou mito?",
       "o": [
-        "Uma key gigante (vip) deixa uma coluna com lag e as outras zeradas.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Subir concurrency drena a partição quente da key vip.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "Uma key gigante (vip) deixa uma partição com lag e as outras zeradas."
       ],
-      "a": 0,
-      "w": "Subir concurrency não drena a coluna quente.",
+      "a": 3,
+      "w": "Subir concurrency não drena a partição quente.",
       "t": "hot"
     },
     {
-      "q": "Hot — o que acontece de verdade?",
+      "q": "Uma key gigante (vip) se resolve subindo concurrency — o que acontece de verdade?",
       "o": [
-        "Uma key gigante (vip) deixa uma coluna com lag e as outras zeradas.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Uma key gigante (vip) deixa uma partição com lag e as outras zeradas.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição."
       ],
-      "a": 0,
-      "w": "Subir concurrency não drena a coluna quente.",
+      "a": 1,
+      "w": "Subir concurrency não drena a partição quente.",
       "t": "hot"
     },
     {
-      "q": "Marque a leitura correta (hot).",
+      "q": "Na prática: Uma key gigante (vip) se resolve subindo concurrency?",
       "o": [
-        "Uma key gigante (vip) deixa uma coluna com lag e as outras zeradas.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Uma key gigante (vip) deixa uma partição com lag e as outras zeradas.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição."
       ],
       "a": 0,
-      "w": "Subir concurrency não drena a coluna quente.",
+      "w": "Subir concurrency não drena a partição quente.",
       "t": "hot"
     },
     {
-      "q": "Corrija o mito sobre hot.",
+      "q": "Uma key gigante (vip) se resolve subindo concurrency — como funciona?",
       "o": [
-        "Uma key gigante (vip) deixa uma coluna com lag e as outras zeradas.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Uma key gigante (vip) deixa uma partição com lag e as outras zeradas.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset."
       ],
       "a": 0,
-      "w": "Subir concurrency não drena a coluna quente.",
+      "w": "Subir concurrency não drena a partição quente.",
       "t": "hot"
     },
     {
-      "q": "No caderno, a respeito de hot: qual vale?",
+      "q": "Se perguntarem: Uma key gigante (vip) se resolve subindo concurrency?",
       "o": [
-        "Uma key gigante (vip) deixa uma coluna com lag e as outras zeradas.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Subir concurrency drena a partição quente da key vip.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Uma key gigante (vip) deixa uma partição com lag e as outras zeradas."
       ],
-      "a": 0,
-      "w": "Subir concurrency não drena a coluna quente.",
+      "a": 3,
+      "w": "Subir concurrency não drena a partição quente.",
       "t": "hot"
     },
     {
-      "q": "Se perguntarem hot na mesa, qual frase é a verdadeira?",
+      "q": "Uma key gigante (vip) se resolve subindo concurrency — o que vale aqui?",
       "o": [
-        "Uma key gigante (vip) deixa uma coluna com lag e as outras zeradas.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Subir concurrency drena a partição quente da key vip.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Uma key gigante (vip) deixa uma partição com lag e as outras zeradas."
       ],
-      "a": 0,
-      "w": "Subir concurrency não drena a coluna quente.",
+      "a": 3,
+      "w": "Subir concurrency não drena a partição quente.",
       "t": "hot"
     },
     {
-      "q": "Sobre grupo B: qual afirmação está certa?",
+      "q": "Um consumidor sozinho pode ler as três partições?",
       "o": [
-        "Um consumidor sozinho pode ler as três partições, em série.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Um consumidor sozinho pode ler as três partições, em série."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Analytics com 1 membro não precisa de 3 pods.",
       "t": "grupo B"
     },
     {
-      "q": "Qual frase sobre grupo B está certa?",
+      "q": "Um consumidor sozinho pode ler as três partições — verdade ou mito?",
       "o": [
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
         "Um consumidor sozinho pode ler as três partições, em série.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "O 4º consumidor em 3 partições também recebe uma fatia."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Analytics com 1 membro não precisa de 3 pods.",
       "t": "grupo B"
     },
     {
-      "q": "Grupo B — o que acontece de verdade?",
+      "q": "Um consumidor sozinho pode ler as três partições — o que acontece de verdade?",
       "o": [
-        "Um consumidor sozinho pode ler as três partições, em série.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Um consumidor sozinho pode ler as três partições, em série."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Analytics com 1 membro não precisa de 3 pods.",
       "t": "grupo B"
     },
     {
-      "q": "Marque a leitura correta (grupo B).",
+      "q": "Na prática: Um consumidor sozinho pode ler as três partições?",
       "o": [
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Você escreve no follower para aliviar o líder.",
         "Um consumidor sozinho pode ler as três partições, em série.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Analytics com 1 membro precisa de 3 pods, um por partição."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Analytics com 1 membro não precisa de 3 pods.",
       "t": "grupo B"
     },
     {
-      "q": "Corrija o mito sobre grupo B.",
+      "q": "Um consumidor sozinho pode ler as três partições — como funciona?",
       "o": [
+        "Você escreve no follower para aliviar o líder.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
         "Um consumidor sozinho pode ler as três partições, em série.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Analytics com 1 membro precisa de 3 pods, um por partição."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Analytics com 1 membro não precisa de 3 pods.",
       "t": "grupo B"
     },
     {
-      "q": "No caderno, a respeito de grupo B: qual vale?",
+      "q": "Se perguntarem: Um consumidor sozinho pode ler as três partições?",
       "o": [
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
         "Um consumidor sozinho pode ler as três partições, em série.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Analytics com 1 membro não precisa de 3 pods.",
       "t": "grupo B"
     },
     {
-      "q": "Se perguntarem grupo B na mesa, qual frase é a verdadeira?",
+      "q": "Um consumidor sozinho pode ler as três partições — o que vale aqui?",
       "o": [
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
         "Um consumidor sozinho pode ler as três partições, em série.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Não há comando para ver as partições; chute pelo log da aplicação."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Analytics com 1 membro não precisa de 3 pods.",
       "t": "grupo B"
     },
     {
-      "q": "Sobre ordem local: qual afirmação está certa?",
+      "q": "Há ordem entre um mensagem da P0 e um da P1?",
       "o": [
-        "Ordem existe só dentro da coluna, não entre colunas.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Ordem existe só dentro da partição, não entre partições.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição.",
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada."
       ],
       "a": 0,
       "w": "Pago na P1 não tem ordem com Criado na P0.",
       "t": "ordem local"
     },
     {
-      "q": "Qual frase sobre ordem local está certa?",
+      "q": "Há ordem entre um mensagem da P0 e um da P1 — verdade ou mito?",
       "o": [
-        "Ordem existe só dentro da coluna, não entre colunas.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "A partição é um único arquivo eterno; segment.bytes não fecha nada.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "Ordem existe só dentro da partição, não entre partições.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset."
+      ],
+      "a": 2,
+      "w": "Pago na P1 não tem ordem com Criado na P0.",
+      "t": "ordem local"
+    },
+    {
+      "q": "Há ordem entre um mensagem da P0 e um da P1 — o que acontece de verdade?",
+      "o": [
+        "Ordem existe só dentro da partição, não entre partições.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "TopicBuilder.partitions(3) é só comentário; o tópico nasce com 1 partição.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
       ],
       "a": 0,
       "w": "Pago na P1 não tem ordem com Criado na P0.",
       "t": "ordem local"
     },
     {
-      "q": "Ordem local — o que acontece de verdade?",
+      "q": "Na prática: Há ordem entre um mensagem da P0 e um da P1?",
       "o": [
-        "Ordem existe só dentro da coluna, não entre colunas.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Subir concurrency drena a partição quente da key vip.",
+        "Ordem existe só dentro da partição, não entre partições.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "--alter --partitions 6 volta para 3 quando você quiser, sem mudar o módulo da key."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Pago na P1 não tem ordem com Criado na P0.",
       "t": "ordem local"
     },
     {
-      "q": "Marque a leitura correta (ordem local).",
+      "q": "Há ordem entre um mensagem da P0 e um da P1 — como funciona?",
       "o": [
-        "Ordem existe só dentro da coluna, não entre colunas.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset.",
+        "Subir concurrency drena a partição quente da key vip.",
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Ordem existe só dentro da partição, não entre partições."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Pago na P1 não tem ordem com Criado na P0.",
       "t": "ordem local"
     },
     {
-      "q": "Corrija o mito sobre ordem local.",
+      "q": "Se perguntarem: Há ordem entre um mensagem da P0 e um da P1?",
       "o": [
-        "Ordem existe só dentro da coluna, não entre colunas.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Analytics com 1 membro precisa de 3 pods, um por partição.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Ordem existe só dentro da partição, não entre partições.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Pago na P1 não tem ordem com Criado na P0.",
       "t": "ordem local"
     },
     {
-      "q": "No caderno, a respeito de ordem local: qual vale?",
+      "q": "Há ordem entre um mensagem da P0 e um da P1 — o que vale aqui?",
       "o": [
-        "Ordem existe só dentro da coluna, não entre colunas.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "Ordem existe só dentro da partição, não entre partições.",
+        "Pago na P1 nasce ordenado com Criado na P0 pelo offset."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Pago na P1 não tem ordem com Criado na P0.",
       "t": "ordem local"
     },
     {
-      "q": "Se perguntarem ordem local na mesa, qual frase é a verdadeira?",
+      "q": "Mais partições custam o quê além de paralelismo?",
       "o": [
-        "Ordem existe só dentro da coluna, não entre colunas.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Offset 0 da P0 e offset 0 da P1 são o mesmo mensagem.",
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Mais partições = mais arquivos abertos, réplicas e memória.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça."
       ],
-      "a": 0,
-      "w": "Pago na P1 não tem ordem com Criado na P0.",
-      "t": "ordem local"
+      "a": 2,
+      "w": "Não é número de graça.",
+      "t": "arquivos"
     },
     {
-      "q": "Sobre arquivos: qual afirmação está certa?",
+      "q": "Mais partições custam o quê além de paralelismo — verdade ou mito?",
       "o": [
         "Mais partições = mais arquivos abertos, réplicas e memória.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "O 4º consumidor em 3 partições também recebe uma fatia.",
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual."
       ],
       "a": 0,
       "w": "Não é número de graça.",
       "t": "arquivos"
     },
     {
-      "q": "Qual frase sobre arquivos está certa?",
+      "q": "Mais partições custam o quê além de paralelismo — o que acontece de verdade?",
+      "o": [
+        "Aumentar N não muda a partição do pedido 99; o hash continua igual.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Mais partições = mais arquivos abertos, réplicas e memória.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça."
+      ],
+      "a": 2,
+      "w": "Não é número de graça.",
+      "t": "arquivos"
+    },
+    {
+      "q": "Na prática: Mais partições custam o quê além de paralelismo?",
+      "o": [
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "O Kafka diminui partições com --alter para baixo, sem apagar o log.",
+        "Você escreve no follower para aliviar o líder.",
+        "Mais partições = mais arquivos abertos, réplicas e memória."
+      ],
+      "a": 3,
+      "w": "Não é número de graça.",
+      "t": "arquivos"
+    },
+    {
+      "q": "Mais partições custam o quê além de paralelismo — como funciona?",
+      "o": [
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Mais partições = mais arquivos abertos, réplicas e memória.",
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Você escreve no follower para aliviar o líder."
+      ],
+      "a": 1,
+      "w": "Não é número de graça.",
+      "t": "arquivos"
+    },
+    {
+      "q": "Se perguntarem: Mais partições custam o quê além de paralelismo?",
       "o": [
         "Mais partições = mais arquivos abertos, réplicas e memória.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Subir pod sem aumentar partições escala o grupo do mesmo jeito.",
+        "Não há comando para ver as partições; chute pelo log da aplicação."
       ],
       "a": 0,
       "w": "Não é número de graça.",
       "t": "arquivos"
     },
     {
-      "q": "Arquivos — o que acontece de verdade?",
+      "q": "Mais partições custam o quê além de paralelismo — o que vale aqui?",
       "o": [
         "Mais partições = mais arquivos abertos, réplicas e memória.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Não é número de graça.",
-      "t": "arquivos"
-    },
-    {
-      "q": "Marque a leitura correta (arquivos).",
-      "o": [
-        "Mais partições = mais arquivos abertos, réplicas e memória.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Não é número de graça.",
-      "t": "arquivos"
-    },
-    {
-      "q": "Corrija o mito sobre arquivos.",
-      "o": [
-        "Mais partições = mais arquivos abertos, réplicas e memória.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "Não é número de graça.",
-      "t": "arquivos"
-    },
-    {
-      "q": "No caderno, a respeito de arquivos: qual vale?",
-      "o": [
-        "Mais partições = mais arquivos abertos, réplicas e memória.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Não é número de graça.",
-      "t": "arquivos"
-    },
-    {
-      "q": "Se perguntarem arquivos na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Mais partições = mais arquivos abertos, réplicas e memória.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Mais partições não abrem mais arquivos nem réplicas; é número de graça.",
+        "Não há comando para ver as partições; chute pelo log da aplicação.",
+        "Sem key o pedido 99 ainda cai sempre na mesma partição."
       ],
       "a": 0,
       "w": "Não é número de graça.",

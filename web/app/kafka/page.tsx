@@ -25,7 +25,7 @@ export default function KafkaIndexPage() {
           href: "/kafka/modelo-mental",
           tag: "Comece aqui",
           title: "Modelo mental",
-          blurb: "Fila vs caderno, depois um simulador de 5 perguntas.",
+          blurb: "Fila vs log, depois um simulador de 5 perguntas.",
         },
         {
           href: "/kafka/evento",

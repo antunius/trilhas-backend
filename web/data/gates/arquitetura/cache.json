@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre post-it: qual afirmação está certa?",
+      "q": "Cache é mais rápido que o banco. Qual o risco?",
       "o": [
-        "Post-it na mesa: mais rápido que o estoque; se ninguém rasgou, você mente.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Cache é a fonte da verdade do sistema.",
+        "Cache é mais lento que o banco, mas sempre correto.",
+        "Cache é mais rápido que o banco; se ninguém invalidou, você serve dado velho.",
+        "Cache é mais rápido que o banco e nunca serve dado velho."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "Atalho com data de validade. Cache não é fonte da verdade.",
       "t": "post-it"
     },
     {
-      "q": "Qual frase sobre post-it está certa?",
+      "q": "Ninguém invalidou o cache. O que o usuário vê?",
       "o": [
-        "Post-it na mesa: mais rápido que o estoque; se ninguém rasgou, você mente.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Cache é mais rápido que o banco e nunca serve dado velho.",
+        "Cache é a fonte da verdade do sistema.",
+        "Cache é mais lento que o banco, mas sempre correto.",
+        "Cache é mais rápido que o banco; se ninguém invalidou, você serve dado velho."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 3,
+      "w": "Atalho com data de validade. Cache não é fonte da verdade.",
       "t": "post-it"
     },
     {
-      "q": "Post-it — o que acontece de verdade?",
+      "q": "Cache é fonte da verdade?",
       "o": [
-        "Post-it na mesa: mais rápido que o estoque; se ninguém rasgou, você mente.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Cache é a fonte da verdade do sistema.",
+        "Cache é mais lento que o banco, mas sempre correto.",
+        "Cache é mais rápido que o banco; se ninguém invalidou, você serve dado velho.",
+        "Cache é mais rápido que o banco e nunca serve dado velho."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "Atalho com data de validade. Cache não é fonte da verdade.",
       "t": "post-it"
     },
     {
-      "q": "Marque a leitura correta (post-it).",
+      "q": "O que acontece quando o dado muda e o cache não sabe?",
       "o": [
-        "Post-it na mesa: mais rápido que o estoque; se ninguém rasgou, você mente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cache é a fonte da verdade do sistema.",
+        "Cache é mais lento que o banco, mas sempre correto.",
+        "Cache é mais rápido que o banco; se ninguém invalidou, você serve dado velho.",
+        "Cache é mais rápido que o banco e nunca serve dado velho."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "Atalho com data de validade. Cache não é fonte da verdade.",
       "t": "post-it"
     },
     {
-      "q": "Corrija o mito sobre post-it.",
+      "q": "Cache é atalho com validade ou verdade definitiva?",
       "o": [
-        "Post-it na mesa: mais rápido que o estoque; se ninguém rasgou, você mente.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cache é mais rápido que o banco; se ninguém invalidou, você serve dado velho.",
+        "Cache é mais rápido que o banco e nunca serve dado velho.",
+        "Cache é a fonte da verdade do sistema.",
+        "Cache é mais lento que o banco, mas sempre correto."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "Atalho com data de validade. Cache não é fonte da verdade.",
       "t": "post-it"
     },
     {
-      "q": "No caderno, a respeito de post-it: qual vale?",
+      "q": "Cache é mais lento e mais correto que o banco?",
       "o": [
-        "Post-it na mesa: mais rápido que o estoque; se ninguém rasgou, você mente.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cache é mais rápido que o banco; se ninguém invalidou, você serve dado velho.",
+        "Cache é mais rápido que o banco e nunca serve dado velho.",
+        "Cache é a fonte da verdade do sistema.",
+        "Cache é mais lento que o banco, mas sempre correto."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "Atalho com data de validade. Cache não é fonte da verdade.",
       "t": "post-it"
     },
     {
-      "q": "Se perguntarem post-it na mesa, qual frase é a verdadeira?",
+      "q": "Por que o cache pode mentir para o cliente?",
       "o": [
-        "Post-it na mesa: mais rápido que o estoque; se ninguém rasgou, você mente.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Cache é mais rápido que o banco; se ninguém invalidou, você serve dado velho.",
+        "Cache é mais rápido que o banco e nunca serve dado velho.",
+        "Cache é a fonte da verdade do sistema.",
+        "Cache é mais lento que o banco, mas sempre correto."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "Atalho com data de validade. Cache não é fonte da verdade.",
       "t": "post-it"
     },
     {
-      "q": "Sobre aside: qual afirmação está certa?",
+      "q": "Como funciona o cache-aside?",
       "o": [
-        "Cache-aside: app pergunta no cache; miss → banco → preenche.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "No cache-aside a app escreve no cache e no banco na mesma operação.",
+        "No cache-aside o cache busca o dado no banco sozinho, sem a app.",
+        "Cache-aside é o default: a app pergunta no cache e, se não achar, vai ao banco e preenche.",
+        "No cache-aside o banco avisa o cache sempre que um dado muda."
       ],
-      "a": 0,
-      "w": "Padrão comum.",
+      "a": 2,
+      "w": "Você controla o que entra no cache. Um miss com mil requests ao mesmo tempo vira stampede.",
       "t": "aside"
     },
     {
-      "q": "Qual frase sobre aside está certa?",
+      "q": "Qual estratégia de cache é o default desta aula?",
       "o": [
-        "Cache-aside: app pergunta no cache; miss → banco → preenche.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "No cache-aside o cache busca o dado no banco sozinho, sem a app.",
+        "Cache-aside é o default: a app pergunta no cache e, se não achar, vai ao banco e preenche.",
+        "No cache-aside o banco avisa o cache sempre que um dado muda.",
+        "No cache-aside a app escreve no cache e no banco na mesma operação."
       ],
-      "a": 0,
-      "w": "Padrão comum.",
+      "a": 1,
+      "w": "Você controla o que entra no cache. Um miss com mil requests ao mesmo tempo vira stampede.",
       "t": "aside"
     },
     {
-      "q": "Aside — o que acontece de verdade?",
+      "q": "No cache-aside, quem vai ao banco quando não acha no cache?",
       "o": [
-        "Cache-aside: app pergunta no cache; miss → banco → preenche.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "No cache-aside a app escreve no cache e no banco na mesma operação.",
+        "No cache-aside o cache busca o dado no banco sozinho, sem a app.",
+        "Cache-aside é o default: a app pergunta no cache e, se não achar, vai ao banco e preenche.",
+        "No cache-aside o banco avisa o cache sempre que um dado muda."
       ],
-      "a": 0,
-      "w": "Padrão comum.",
+      "a": 2,
+      "w": "Você controla o que entra no cache. Um miss com mil requests ao mesmo tempo vira stampede.",
       "t": "aside"
     },
     {
-      "q": "Marque a leitura correta (aside).",
+      "q": "Deu miss no cache-aside. O que acontece depois?",
       "o": [
-        "Cache-aside: app pergunta no cache; miss → banco → preenche.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "No cache-aside o cache busca o dado no banco sozinho, sem a app.",
+        "Cache-aside é o default: a app pergunta no cache e, se não achar, vai ao banco e preenche.",
+        "No cache-aside o banco avisa o cache sempre que um dado muda.",
+        "No cache-aside a app escreve no cache e no banco na mesma operação."
       ],
-      "a": 0,
-      "w": "Padrão comum.",
+      "a": 1,
+      "w": "Você controla o que entra no cache. Um miss com mil requests ao mesmo tempo vira stampede.",
       "t": "aside"
     },
     {
-      "q": "Corrija o mito sobre aside.",
+      "q": "No cache-aside, quem controla o que entra no cache?",
       "o": [
-        "Cache-aside: app pergunta no cache; miss → banco → preenche.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "No cache-aside a app escreve no cache e no banco na mesma operação.",
+        "No cache-aside o cache busca o dado no banco sozinho, sem a app.",
+        "Cache-aside é o default: a app pergunta no cache e, se não achar, vai ao banco e preenche.",
+        "No cache-aside o banco avisa o cache sempre que um dado muda."
       ],
-      "a": 0,
-      "w": "Padrão comum.",
+      "a": 2,
+      "w": "Você controla o que entra no cache. Um miss com mil requests ao mesmo tempo vira stampede.",
       "t": "aside"
     },
     {
-      "q": "No caderno, a respeito de aside: qual vale?",
+      "q": "O cache busca o dado sozinho no cache-aside?",
       "o": [
-        "Cache-aside: app pergunta no cache; miss → banco → preenche.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "No cache-aside o banco avisa o cache sempre que um dado muda.",
+        "No cache-aside a app escreve no cache e no banco na mesma operação.",
+        "No cache-aside o cache busca o dado no banco sozinho, sem a app.",
+        "Cache-aside é o default: a app pergunta no cache e, se não achar, vai ao banco e preenche."
       ],
-      "a": 0,
-      "w": "Padrão comum.",
+      "a": 3,
+      "w": "Você controla o que entra no cache. Um miss com mil requests ao mesmo tempo vira stampede.",
       "t": "aside"
     },
     {
-      "q": "Se perguntarem aside na mesa, qual frase é a verdadeira?",
+      "q": "Mil requests com miss ao mesmo tempo: como isso se chama?",
       "o": [
-        "Cache-aside: app pergunta no cache; miss → banco → preenche.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cache-aside é o default: a app pergunta no cache e, se não achar, vai ao banco e preenche.",
+        "No cache-aside o banco avisa o cache sempre que um dado muda.",
+        "No cache-aside a app escreve no cache e no banco na mesma operação.",
+        "No cache-aside o cache busca o dado no banco sozinho, sem a app."
       ],
       "a": 0,
-      "w": "Padrão comum.",
+      "w": "Você controla o que entra no cache. Um miss com mil requests ao mesmo tempo vira stampede.",
       "t": "aside"
     },
     {
-      "q": "Sobre through: qual afirmação está certa?",
+      "q": "O que o write-through faz na escrita?",
       "o": [
-        "Write-through: escreve nos dois. Mais consistente, mais lento.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Write-through é mais rápido na escrita que write-behind.",
+        "Write-through escreve só no banco e nunca toca o cache.",
+        "Write-through escreve nos dois: mais coerente e mais lento que write-behind.",
+        "Write-through escreve só no cache e persiste depois."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 2,
+      "w": "A escrita vai ao cache e ao banco. Você paga milissegundos na escrita para ganhar coerência.",
       "t": "through"
     },
     {
-      "q": "Qual frase sobre through está certa?",
+      "q": "Write-through é mais rápido ou mais lento que write-behind?",
       "o": [
-        "Write-through: escreve nos dois. Mais consistente, mais lento.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Write-through escreve só no banco e nunca toca o cache.",
+        "Write-through escreve nos dois: mais coerente e mais lento que write-behind.",
+        "Write-through escreve só no cache e persiste depois.",
+        "Write-through é mais rápido na escrita que write-behind."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 1,
+      "w": "A escrita vai ao cache e ao banco. Você paga milissegundos na escrita para ganhar coerência.",
       "t": "through"
     },
     {
-      "q": "Through — o que acontece de verdade?",
+      "q": "Onde a escrita vai no write-through?",
       "o": [
-        "Write-through: escreve nos dois. Mais consistente, mais lento.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Write-through escreve só no cache e persiste depois.",
+        "Write-through é mais rápido na escrita que write-behind.",
+        "Write-through escreve só no banco e nunca toca o cache.",
+        "Write-through escreve nos dois: mais coerente e mais lento que write-behind."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 3,
+      "w": "A escrita vai ao cache e ao banco. Você paga milissegundos na escrita para ganhar coerência.",
       "t": "through"
     },
     {
-      "q": "Marque a leitura correta (through).",
+      "q": "O que você paga para ter coerência no write-through?",
       "o": [
-        "Write-through: escreve nos dois. Mais consistente, mais lento.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Write-through escreve só no cache e persiste depois.",
+        "Write-through é mais rápido na escrita que write-behind.",
+        "Write-through escreve só no banco e nunca toca o cache.",
+        "Write-through escreve nos dois: mais coerente e mais lento que write-behind."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 3,
+      "w": "A escrita vai ao cache e ao banco. Você paga milissegundos na escrita para ganhar coerência.",
       "t": "through"
     },
     {
-      "q": "Corrija o mito sobre through.",
+      "q": "Write-through escreve só no cache?",
       "o": [
-        "Write-through: escreve nos dois. Mais consistente, mais lento.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Write-through é mais rápido na escrita que write-behind.",
+        "Write-through escreve só no banco e nunca toca o cache.",
+        "Write-through escreve nos dois: mais coerente e mais lento que write-behind.",
+        "Write-through escreve só no cache e persiste depois."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 2,
+      "w": "A escrita vai ao cache e ao banco. Você paga milissegundos na escrita para ganhar coerência.",
       "t": "through"
     },
     {
-      "q": "No caderno, a respeito de through: qual vale?",
+      "q": "Write-through toca o banco na escrita?",
       "o": [
-        "Write-through: escreve nos dois. Mais consistente, mais lento.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Write-through escreve só no banco e nunca toca o cache.",
+        "Write-through escreve nos dois: mais coerente e mais lento que write-behind.",
+        "Write-through escreve só no cache e persiste depois.",
+        "Write-through é mais rápido na escrita que write-behind."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 1,
+      "w": "A escrita vai ao cache e ao banco. Você paga milissegundos na escrita para ganhar coerência.",
       "t": "through"
     },
     {
-      "q": "Se perguntarem through na mesa, qual frase é a verdadeira?",
+      "q": "Entre coerência e velocidade, o que o write-through escolhe?",
       "o": [
-        "Write-through: escreve nos dois. Mais consistente, mais lento.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Write-through escreve só no banco e nunca toca o cache.",
+        "Write-through escreve nos dois: mais coerente e mais lento que write-behind.",
+        "Write-through escreve só no cache e persiste depois.",
+        "Write-through é mais rápido na escrita que write-behind."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 1,
+      "w": "A escrita vai ao cache e ao banco. Você paga milissegundos na escrita para ganhar coerência.",
       "t": "through"
     },
     {
-      "q": "Sobre behind: qual afirmação está certa?",
+      "q": "O que o write-behind faz na escrita?",
       "o": [
-        "Write-behind: escreve no cache e persiste depois. Rápido, arriscado.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Write-behind escreve no cache e persiste depois: rápido e arriscado.",
+        "Write-behind escreve no cache e no banco na mesma operação.",
+        "Write-behind é o mais seguro para operações de dinheiro.",
+        "Write-behind é mais lento que write-through na escrita."
       ],
       "a": 0,
-      "w": "Pode perder escrita.",
+      "w": "Se o processo morrer antes de persistir, o banco nunca soube da escrita. Quase nunca no débito.",
       "t": "behind"
     },
     {
-      "q": "Qual frase sobre behind está certa?",
+      "q": "Qual o risco do write-behind?",
       "o": [
-        "Write-behind: escreve no cache e persiste depois. Rápido, arriscado.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Write-behind escreve no cache e no banco na mesma operação.",
+        "Write-behind é o mais seguro para operações de dinheiro.",
+        "Write-behind é mais lento que write-through na escrita.",
+        "Write-behind escreve no cache e persiste depois: rápido e arriscado."
       ],
-      "a": 0,
-      "w": "Pode perder escrita.",
+      "a": 3,
+      "w": "Se o processo morrer antes de persistir, o banco nunca soube da escrita. Quase nunca no débito.",
       "t": "behind"
     },
     {
-      "q": "Behind — o que acontece de verdade?",
+      "q": "O processo morreu antes de persistir. O que o banco sabe?",
       "o": [
-        "Write-behind: escreve no cache e persiste depois. Rápido, arriscado.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Write-behind é mais lento que write-through na escrita.",
+        "Write-behind escreve no cache e persiste depois: rápido e arriscado.",
+        "Write-behind escreve no cache e no banco na mesma operação.",
+        "Write-behind é o mais seguro para operações de dinheiro."
       ],
-      "a": 0,
-      "w": "Pode perder escrita.",
+      "a": 1,
+      "w": "Se o processo morrer antes de persistir, o banco nunca soube da escrita. Quase nunca no débito.",
       "t": "behind"
     },
     {
-      "q": "Marque a leitura correta (behind).",
+      "q": "Write-behind serve para débito de conta?",
       "o": [
-        "Write-behind: escreve no cache e persiste depois. Rápido, arriscado.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Write-behind é o mais seguro para operações de dinheiro.",
+        "Write-behind é mais lento que write-through na escrita.",
+        "Write-behind escreve no cache e persiste depois: rápido e arriscado.",
+        "Write-behind escreve no cache e no banco na mesma operação."
       ],
-      "a": 0,
-      "w": "Pode perder escrita.",
+      "a": 2,
+      "w": "Se o processo morrer antes de persistir, o banco nunca soube da escrita. Quase nunca no débito.",
       "t": "behind"
     },
     {
-      "q": "Corrija o mito sobre behind.",
+      "q": "Write-behind troca o que por velocidade?",
       "o": [
-        "Write-behind: escreve no cache e persiste depois. Rápido, arriscado.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Write-behind é o mais seguro para operações de dinheiro.",
+        "Write-behind é mais lento que write-through na escrita.",
+        "Write-behind escreve no cache e persiste depois: rápido e arriscado.",
+        "Write-behind escreve no cache e no banco na mesma operação."
       ],
-      "a": 0,
-      "w": "Pode perder escrita.",
+      "a": 2,
+      "w": "Se o processo morrer antes de persistir, o banco nunca soube da escrita. Quase nunca no débito.",
       "t": "behind"
     },
     {
-      "q": "No caderno, a respeito de behind: qual vale?",
+      "q": "Write-behind é mais lento que write-through?",
       "o": [
-        "Write-behind: escreve no cache e persiste depois. Rápido, arriscado.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Write-behind escreve no cache e no banco na mesma operação.",
+        "Write-behind é o mais seguro para operações de dinheiro.",
+        "Write-behind é mais lento que write-through na escrita.",
+        "Write-behind escreve no cache e persiste depois: rápido e arriscado."
       ],
-      "a": 0,
-      "w": "Pode perder escrita.",
+      "a": 3,
+      "w": "Se o processo morrer antes de persistir, o banco nunca soube da escrita. Quase nunca no débito.",
       "t": "behind"
     },
     {
-      "q": "Se perguntarem behind na mesa, qual frase é a verdadeira?",
+      "q": "Onde a escrita cai primeiro no write-behind?",
       "o": [
-        "Write-behind: escreve no cache e persiste depois. Rápido, arriscado.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Write-behind escreve no cache e no banco na mesma operação.",
+        "Write-behind é o mais seguro para operações de dinheiro.",
+        "Write-behind é mais lento que write-through na escrita.",
+        "Write-behind escreve no cache e persiste depois: rápido e arriscado."
       ],
-      "a": 0,
-      "w": "Pode perder escrita.",
+      "a": 3,
+      "w": "Se o processo morrer antes de persistir, o banco nunca soube da escrita. Quase nunca no débito.",
       "t": "behind"
     },
     {
-      "q": "Sobre stampede: qual afirmação está certa?",
+      "q": "O que é stampede?",
       "o": [
-        "TTL estoura, mil vão ao banco ao mesmo tempo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Stampede é quando uma única chave concentra todo o tráfego do cache.",
+        "Stampede se resolve aumentando o TTL para um valor maior.",
+        "Stampede é o cache ficar vazio depois de um reinício.",
+        "Stampede é o TTL estourar junto e mil threads pedirem a mesma chave ao banco."
       ],
-      "a": 0,
-      "w": "Stampede.",
+      "a": 3,
+      "w": "Defesa: jitter no TTL, lock, ou atualização proativa antes de expirar.",
       "t": "stampede"
     },
     {
-      "q": "Qual frase sobre stampede está certa?",
+      "q": "O TTL estourou e mil threads foram ao banco. Como se chama isso?",
       "o": [
-        "TTL estoura, mil vão ao banco ao mesmo tempo.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Stampede se resolve aumentando o TTL para um valor maior.",
+        "Stampede é o cache ficar vazio depois de um reinício.",
+        "Stampede é o TTL estourar junto e mil threads pedirem a mesma chave ao banco.",
+        "Stampede é quando uma única chave concentra todo o tráfego do cache."
       ],
-      "a": 0,
-      "w": "Stampede.",
+      "a": 2,
+      "w": "Defesa: jitter no TTL, lock, ou atualização proativa antes de expirar.",
       "t": "stampede"
     },
     {
-      "q": "Stampede — o que acontece de verdade?",
+      "q": "Como defender do stampede?",
       "o": [
-        "TTL estoura, mil vão ao banco ao mesmo tempo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Stampede é o TTL estourar junto e mil threads pedirem a mesma chave ao banco.",
+        "Stampede é quando uma única chave concentra todo o tráfego do cache.",
+        "Stampede se resolve aumentando o TTL para um valor maior.",
+        "Stampede é o cache ficar vazio depois de um reinício."
       ],
       "a": 0,
-      "w": "Stampede.",
+      "w": "Defesa: jitter no TTL, lock, ou atualização proativa antes de expirar.",
       "t": "stampede"
     },
     {
-      "q": "Marque a leitura correta (stampede).",
+      "q": "Aumentar o TTL resolve o stampede?",
       "o": [
-        "TTL estoura, mil vão ao banco ao mesmo tempo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Stampede é quando uma única chave concentra todo o tráfego do cache.",
+        "Stampede se resolve aumentando o TTL para um valor maior.",
+        "Stampede é o cache ficar vazio depois de um reinício.",
+        "Stampede é o TTL estourar junto e mil threads pedirem a mesma chave ao banco."
       ],
-      "a": 0,
-      "w": "Stampede.",
+      "a": 3,
+      "w": "Defesa: jitter no TTL, lock, ou atualização proativa antes de expirar.",
       "t": "stampede"
     },
     {
-      "q": "Corrija o mito sobre stampede.",
+      "q": "Jitter no TTL serve para quê?",
       "o": [
-        "TTL estoura, mil vão ao banco ao mesmo tempo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Stampede é quando uma única chave concentra todo o tráfego do cache.",
+        "Stampede se resolve aumentando o TTL para um valor maior.",
+        "Stampede é o cache ficar vazio depois de um reinício.",
+        "Stampede é o TTL estourar junto e mil threads pedirem a mesma chave ao banco."
       ],
-      "a": 0,
-      "w": "Stampede.",
+      "a": 3,
+      "w": "Defesa: jitter no TTL, lock, ou atualização proativa antes de expirar.",
       "t": "stampede"
     },
     {
-      "q": "No caderno, a respeito de stampede: qual vale?",
+      "q": "Stampede é a mesma coisa que uma chave concentrar o tráfego?",
       "o": [
-        "TTL estoura, mil vão ao banco ao mesmo tempo.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Stampede é quando uma única chave concentra todo o tráfego do cache.",
+        "Stampede se resolve aumentando o TTL para um valor maior.",
+        "Stampede é o cache ficar vazio depois de um reinício.",
+        "Stampede é o TTL estourar junto e mil threads pedirem a mesma chave ao banco."
       ],
-      "a": 0,
-      "w": "Stampede.",
+      "a": 3,
+      "w": "Defesa: jitter no TTL, lock, ou atualização proativa antes de expirar.",
       "t": "stampede"
     },
     {
-      "q": "Se perguntarem stampede na mesa, qual frase é a verdadeira?",
+      "q": "O que acontece no instante em que o TTL expira para todos juntos?",
       "o": [
-        "TTL estoura, mil vão ao banco ao mesmo tempo.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Stampede é o cache ficar vazio depois de um reinício.",
+        "Stampede é o TTL estourar junto e mil threads pedirem a mesma chave ao banco.",
+        "Stampede é quando uma única chave concentra todo o tráfego do cache.",
+        "Stampede se resolve aumentando o TTL para um valor maior."
       ],
-      "a": 0,
-      "w": "Stampede.",
+      "a": 1,
+      "w": "Defesa: jitter no TTL, lock, ou atualização proativa antes de expirar.",
       "t": "stampede"
     },
     {
-      "q": "Sobre hot key: qual afirmação está certa?",
+      "q": "O que uma hot key faz com o cache?",
       "o": [
-        "Uma chave quente derrete um shard de cache.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Hot key é o mesmo problema que o TTL estourar junto.",
+        "Hot key não afeta o cache, só o banco.",
+        "Uma hot key concentra o tráfego e derrete um pedaço do cache.",
+        "Uma hot key distribui o tráfego igualmente entre os nós."
       ],
-      "a": 0,
-      "w": "Mesma ideia da partição Kafka.",
+      "a": 2,
+      "w": "Um produto na capa do site, um nó de cache. A hot key vira o gargalo.",
       "t": "hot key"
     },
     {
-      "q": "Qual frase sobre hot key está certa?",
+      "q": "Um produto na capa do site concentra acesso. Qual o efeito?",
       "o": [
-        "Uma chave quente derrete um shard de cache.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Uma hot key concentra o tráfego e derrete um pedaço do cache.",
+        "Uma hot key distribui o tráfego igualmente entre os nós.",
+        "Hot key é o mesmo problema que o TTL estourar junto.",
+        "Hot key não afeta o cache, só o banco."
       ],
       "a": 0,
-      "w": "Mesma ideia da partição Kafka.",
+      "w": "Um produto na capa do site, um nó de cache. A hot key vira o gargalo.",
       "t": "hot key"
     },
     {
-      "q": "Hot key — o que acontece de verdade?",
+      "q": "Hot key distribui tráfego entre os nós?",
       "o": [
-        "Uma chave quente derrete um shard de cache.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Uma hot key distribui o tráfego igualmente entre os nós.",
+        "Hot key é o mesmo problema que o TTL estourar junto.",
+        "Hot key não afeta o cache, só o banco.",
+        "Uma hot key concentra o tráfego e derrete um pedaço do cache."
       ],
-      "a": 0,
-      "w": "Mesma ideia da partição Kafka.",
+      "a": 3,
+      "w": "Um produto na capa do site, um nó de cache. A hot key vira o gargalo.",
       "t": "hot key"
     },
     {
-      "q": "Marque a leitura correta (hot key).",
+      "q": "Hot key e TTL estourando junto são o mesmo problema?",
       "o": [
-        "Uma chave quente derrete um shard de cache.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Hot key é o mesmo problema que o TTL estourar junto.",
+        "Hot key não afeta o cache, só o banco.",
+        "Uma hot key concentra o tráfego e derrete um pedaço do cache.",
+        "Uma hot key distribui o tráfego igualmente entre os nós."
       ],
-      "a": 0,
-      "w": "Mesma ideia da partição Kafka.",
+      "a": 2,
+      "w": "Um produto na capa do site, um nó de cache. A hot key vira o gargalo.",
       "t": "hot key"
     },
     {
-      "q": "Corrija o mito sobre hot key.",
+      "q": "Onde a hot key vira gargalo?",
       "o": [
-        "Uma chave quente derrete um shard de cache.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Uma hot key concentra o tráfego e derrete um pedaço do cache.",
+        "Uma hot key distribui o tráfego igualmente entre os nós.",
+        "Hot key é o mesmo problema que o TTL estourar junto.",
+        "Hot key não afeta o cache, só o banco."
       ],
       "a": 0,
-      "w": "Mesma ideia da partição Kafka.",
+      "w": "Um produto na capa do site, um nó de cache. A hot key vira o gargalo.",
       "t": "hot key"
     },
     {
-      "q": "No caderno, a respeito de hot key: qual vale?",
+      "q": "Hot key afeta só o banco?",
       "o": [
-        "Uma chave quente derrete um shard de cache.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Hot key não afeta o cache, só o banco.",
+        "Uma hot key concentra o tráfego e derrete um pedaço do cache.",
+        "Uma hot key distribui o tráfego igualmente entre os nós.",
+        "Hot key é o mesmo problema que o TTL estourar junto."
       ],
-      "a": 0,
-      "w": "Mesma ideia da partição Kafka.",
+      "a": 1,
+      "w": "Um produto na capa do site, um nó de cache. A hot key vira o gargalo.",
       "t": "hot key"
     },
     {
-      "q": "Se perguntarem hot key na mesa, qual frase é a verdadeira?",
+      "q": "Como se chama a chave que absorve todo o acesso?",
       "o": [
-        "Uma chave quente derrete um shard de cache.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Hot key é o mesmo problema que o TTL estourar junto.",
+        "Hot key não afeta o cache, só o banco.",
+        "Uma hot key concentra o tráfego e derrete um pedaço do cache.",
+        "Uma hot key distribui o tráfego igualmente entre os nós."
       ],
-      "a": 0,
-      "w": "Mesma ideia da partição Kafka.",
+      "a": 2,
+      "w": "Um produto na capa do site, um nó de cache. A hot key vira o gargalo.",
       "t": "hot key"
     },
     {
-      "q": "Sobre invalidação: qual afirmação está certa?",
+      "q": "Qual a parte difícil do cache?",
       "o": [
-        "Invalidar certo é o problema difícil, não o get.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Invalidação é problema de infraestrutura, não de desenho.",
+        "Invalidar certo é o problema difícil do cache, não a leitura.",
+        "A leitura é a parte difícil do cache; invalidar é trivial.",
+        "TTL sozinho resolve a invalidação em qualquer cenário."
       ],
-      "a": 0,
-      "w": "TTL é palpite.",
+      "a": 1,
+      "w": "Ler é fácil. A pergunta difícil é quem invalida o cache quando o dado muda.",
       "t": "invalidação"
     },
     {
-      "q": "Qual frase sobre invalidação está certa?",
+      "q": "Quem invalida o cache quando o dado muda?",
       "o": [
-        "Invalidar certo é o problema difícil, não o get.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A leitura é a parte difícil do cache; invalidar é trivial.",
+        "TTL sozinho resolve a invalidação em qualquer cenário.",
+        "Invalidação é problema de infraestrutura, não de desenho.",
+        "Invalidar certo é o problema difícil do cache, não a leitura."
       ],
-      "a": 0,
-      "w": "TTL é palpite.",
+      "a": 3,
+      "w": "Ler é fácil. A pergunta difícil é quem invalida o cache quando o dado muda.",
       "t": "invalidação"
     },
     {
-      "q": "Invalidação — o que acontece de verdade?",
+      "q": "Ler do cache é o problema ou invalidar é?",
       "o": [
-        "Invalidar certo é o problema difícil, não o get.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A leitura é a parte difícil do cache; invalidar é trivial.",
+        "TTL sozinho resolve a invalidação em qualquer cenário.",
+        "Invalidação é problema de infraestrutura, não de desenho.",
+        "Invalidar certo é o problema difícil do cache, não a leitura."
       ],
-      "a": 0,
-      "w": "TTL é palpite.",
+      "a": 3,
+      "w": "Ler é fácil. A pergunta difícil é quem invalida o cache quando o dado muda.",
       "t": "invalidação"
     },
     {
-      "q": "Marque a leitura correta (invalidação).",
+      "q": "TTL sozinho resolve a invalidação?",
       "o": [
-        "Invalidar certo é o problema difícil, não o get.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Invalidar certo é o problema difícil do cache, não a leitura.",
+        "A leitura é a parte difícil do cache; invalidar é trivial.",
+        "TTL sozinho resolve a invalidação em qualquer cenário.",
+        "Invalidação é problema de infraestrutura, não de desenho."
       ],
       "a": 0,
-      "w": "TTL é palpite.",
+      "w": "Ler é fácil. A pergunta difícil é quem invalida o cache quando o dado muda.",
       "t": "invalidação"
     },
     {
-      "q": "Corrija o mito sobre invalidação.",
+      "q": "Invalidação é problema de infraestrutura?",
       "o": [
-        "Invalidar certo é o problema difícil, não o get.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "TTL sozinho resolve a invalidação em qualquer cenário.",
+        "Invalidação é problema de infraestrutura, não de desenho.",
+        "Invalidar certo é o problema difícil do cache, não a leitura.",
+        "A leitura é a parte difícil do cache; invalidar é trivial."
       ],
-      "a": 0,
-      "w": "TTL é palpite.",
+      "a": 2,
+      "w": "Ler é fácil. A pergunta difícil é quem invalida o cache quando o dado muda.",
       "t": "invalidação"
     },
     {
-      "q": "No caderno, a respeito de invalidação: qual vale?",
+      "q": "O dado mudou no banco. E no cache?",
       "o": [
-        "Invalidar certo é o problema difícil, não o get.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "A leitura é a parte difícil do cache; invalidar é trivial.",
+        "TTL sozinho resolve a invalidação em qualquer cenário.",
+        "Invalidação é problema de infraestrutura, não de desenho.",
+        "Invalidar certo é o problema difícil do cache, não a leitura."
       ],
-      "a": 0,
-      "w": "TTL é palpite.",
+      "a": 3,
+      "w": "Ler é fácil. A pergunta difícil é quem invalida o cache quando o dado muda.",
       "t": "invalidação"
     },
     {
-      "q": "Se perguntarem invalidação na mesa, qual frase é a verdadeira?",
+      "q": "Por que esta aula chama a invalidação de problema difícil?",
       "o": [
-        "Invalidar certo é o problema difícil, não o get.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A leitura é a parte difícil do cache; invalidar é trivial.",
+        "TTL sozinho resolve a invalidação em qualquer cenário.",
+        "Invalidação é problema de infraestrutura, não de desenho.",
+        "Invalidar certo é o problema difícil do cache, não a leitura."
       ],
-      "a": 0,
-      "w": "TTL é palpite.",
+      "a": 3,
+      "w": "Ler é fácil. A pergunta difícil é quem invalida o cache quando o dado muda.",
       "t": "invalidação"
     },
     {
-      "q": "Sobre custo velho: qual afirmação está certa?",
+      "q": "Qual a pergunta madura antes de colocar cache?",
       "o": [
-        "A pergunta madura: qual o custo de mostrar 2s atrasado?",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O custo do dado atrasado é decisão técnica, não de negócio.",
+        "A pergunta madura é: qual o custo de mostrar o dado 2 segundos atrasado?",
+        "A pergunta madura é qual o hit ratio que o cache alcança.",
+        "A pergunta madura é qual ferramenta de cache usar."
       ],
-      "a": 0,
-      "w": "Produto.",
+      "a": 1,
+      "w": "Não é “tem cache?”. É quanto custa o atraso para o negócio naquela tela.",
       "t": "custo velho"
     },
     {
-      "q": "Qual frase sobre custo velho está certa?",
+      "q": "O que decide se você pode usar cache naquela tela?",
       "o": [
-        "A pergunta madura: qual o custo de mostrar 2s atrasado?",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A pergunta madura é qual ferramenta de cache usar.",
+        "O custo do dado atrasado é decisão técnica, não de negócio.",
+        "A pergunta madura é: qual o custo de mostrar o dado 2 segundos atrasado?",
+        "A pergunta madura é qual o hit ratio que o cache alcança."
       ],
-      "a": 0,
-      "w": "Produto.",
+      "a": 2,
+      "w": "Não é “tem cache?”. É quanto custa o atraso para o negócio naquela tela.",
       "t": "custo velho"
     },
     {
-      "q": "Custo velho — o que acontece de verdade?",
+      "q": "A pergunta é “tem cache?” ou “quanto custa o atraso?”",
       "o": [
-        "A pergunta madura: qual o custo de mostrar 2s atrasado?",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "A pergunta madura é: qual o custo de mostrar o dado 2 segundos atrasado?",
+        "A pergunta madura é qual o hit ratio que o cache alcança.",
+        "A pergunta madura é qual ferramenta de cache usar.",
+        "O custo do dado atrasado é decisão técnica, não de negócio."
       ],
       "a": 0,
-      "w": "Produto.",
+      "w": "Não é “tem cache?”. É quanto custa o atraso para o negócio naquela tela.",
       "t": "custo velho"
     },
     {
-      "q": "Marque a leitura correta (custo velho).",
+      "q": "Hit ratio alto é a pergunta madura?",
       "o": [
-        "A pergunta madura: qual o custo de mostrar 2s atrasado?",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A pergunta madura é qual ferramenta de cache usar.",
+        "O custo do dado atrasado é decisão técnica, não de negócio.",
+        "A pergunta madura é: qual o custo de mostrar o dado 2 segundos atrasado?",
+        "A pergunta madura é qual o hit ratio que o cache alcança."
       ],
-      "a": 0,
-      "w": "Produto.",
+      "a": 2,
+      "w": "Não é “tem cache?”. É quanto custa o atraso para o negócio naquela tela.",
       "t": "custo velho"
     },
     {
-      "q": "Corrija o mito sobre custo velho.",
+      "q": "Quem responde o custo do dado atrasado?",
       "o": [
-        "A pergunta madura: qual o custo de mostrar 2s atrasado?",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A pergunta madura é qual o hit ratio que o cache alcança.",
+        "A pergunta madura é qual ferramenta de cache usar.",
+        "O custo do dado atrasado é decisão técnica, não de negócio.",
+        "A pergunta madura é: qual o custo de mostrar o dado 2 segundos atrasado?"
       ],
-      "a": 0,
-      "w": "Produto.",
+      "a": 3,
+      "w": "Não é “tem cache?”. É quanto custa o atraso para o negócio naquela tela.",
       "t": "custo velho"
     },
     {
-      "q": "No caderno, a respeito de custo velho: qual vale?",
+      "q": "Escolher a ferramenta de cache é a primeira pergunta?",
       "o": [
-        "A pergunta madura: qual o custo de mostrar 2s atrasado?",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O custo do dado atrasado é decisão técnica, não de negócio.",
+        "A pergunta madura é: qual o custo de mostrar o dado 2 segundos atrasado?",
+        "A pergunta madura é qual o hit ratio que o cache alcança.",
+        "A pergunta madura é qual ferramenta de cache usar."
       ],
-      "a": 0,
-      "w": "Produto.",
+      "a": 1,
+      "w": "Não é “tem cache?”. É quanto custa o atraso para o negócio naquela tela.",
       "t": "custo velho"
     },
     {
-      "q": "Se perguntarem custo velho na mesa, qual frase é a verdadeira?",
+      "q": "Dois segundos atrasado no catálogo: quem avalia se dá?",
       "o": [
-        "A pergunta madura: qual o custo de mostrar 2s atrasado?",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A pergunta madura é: qual o custo de mostrar o dado 2 segundos atrasado?",
+        "A pergunta madura é qual o hit ratio que o cache alcança.",
+        "A pergunta madura é qual ferramenta de cache usar.",
+        "O custo do dado atrasado é decisão técnica, não de negócio."
       ],
       "a": 0,
-      "w": "Produto.",
+      "w": "Não é “tem cache?”. É quanto custa o atraso para o negócio naquela tela.",
       "t": "custo velho"
     },
     {
-      "q": "Sobre camadas: qual afirmação está certa?",
+      "q": "CDN, cache da aplicação e cache local são a mesma camada?",
       "o": [
-        "CDN ≠ Redis da app ≠ cache local. Camadas diferentes.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Invalidar o cache da aplicação invalida a CDN automaticamente.",
+        "Todas as camadas de cache compartilham o mesmo TTL.",
+        "CDN, cache da aplicação e cache local são camadas diferentes, com invalidação diferente.",
+        "As três são a mesma camada com nomes diferentes."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 2,
+      "w": "Cada camada guarda uma coisa e expira de um jeito. Invalidar uma não invalida as outras.",
       "t": "camadas"
     },
     {
-      "q": "Qual frase sobre camadas está certa?",
+      "q": "Invalidar o cache da aplicação invalida a CDN?",
       "o": [
-        "CDN ≠ Redis da app ≠ cache local. Camadas diferentes.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Invalidar o cache da aplicação invalida a CDN automaticamente.",
+        "Todas as camadas de cache compartilham o mesmo TTL.",
+        "CDN, cache da aplicação e cache local são camadas diferentes, com invalidação diferente.",
+        "As três são a mesma camada com nomes diferentes."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 2,
+      "w": "Cada camada guarda uma coisa e expira de um jeito. Invalidar uma não invalida as outras.",
       "t": "camadas"
     },
     {
-      "q": "Camadas — o que acontece de verdade?",
+      "q": "Esta aula separa quais camadas de cache?",
       "o": [
-        "CDN ≠ Redis da app ≠ cache local. Camadas diferentes.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Todas as camadas de cache compartilham o mesmo TTL.",
+        "CDN, cache da aplicação e cache local são camadas diferentes, com invalidação diferente.",
+        "As três são a mesma camada com nomes diferentes.",
+        "Invalidar o cache da aplicação invalida a CDN automaticamente."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Cada camada guarda uma coisa e expira de um jeito. Invalidar uma não invalida as outras.",
       "t": "camadas"
     },
     {
-      "q": "Marque a leitura correta (camadas).",
+      "q": "Todas as camadas compartilham o mesmo TTL?",
       "o": [
-        "CDN ≠ Redis da app ≠ cache local. Camadas diferentes.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Todas as camadas de cache compartilham o mesmo TTL.",
+        "CDN, cache da aplicação e cache local são camadas diferentes, com invalidação diferente.",
+        "As três são a mesma camada com nomes diferentes.",
+        "Invalidar o cache da aplicação invalida a CDN automaticamente."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Cada camada guarda uma coisa e expira de um jeito. Invalidar uma não invalida as outras.",
       "t": "camadas"
     },
     {
-      "q": "Corrija o mito sobre camadas.",
+      "q": "O que muda de uma camada de cache para outra?",
       "o": [
-        "CDN ≠ Redis da app ≠ cache local. Camadas diferentes.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "As três são a mesma camada com nomes diferentes.",
+        "Invalidar o cache da aplicação invalida a CDN automaticamente.",
+        "Todas as camadas de cache compartilham o mesmo TTL.",
+        "CDN, cache da aplicação e cache local são camadas diferentes, com invalidação diferente."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 3,
+      "w": "Cada camada guarda uma coisa e expira de um jeito. Invalidar uma não invalida as outras.",
       "t": "camadas"
     },
     {
-      "q": "No caderno, a respeito de camadas: qual vale?",
+      "q": "Você limpou uma camada. As outras seguem velhas?",
       "o": [
-        "CDN ≠ Redis da app ≠ cache local. Camadas diferentes.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "CDN, cache da aplicação e cache local são camadas diferentes, com invalidação diferente.",
+        "As três são a mesma camada com nomes diferentes.",
+        "Invalidar o cache da aplicação invalida a CDN automaticamente.",
+        "Todas as camadas de cache compartilham o mesmo TTL."
       ],
       "a": 0,
-      "w": "Catálogo.",
+      "w": "Cada camada guarda uma coisa e expira de um jeito. Invalidar uma não invalida as outras.",
       "t": "camadas"
     },
     {
-      "q": "Se perguntarem camadas na mesa, qual frase é a verdadeira?",
+      "q": "Por que a invalidação é diferente em cada camada?",
       "o": [
-        "CDN ≠ Redis da app ≠ cache local. Camadas diferentes.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Invalidar o cache da aplicação invalida a CDN automaticamente.",
+        "Todas as camadas de cache compartilham o mesmo TTL.",
+        "CDN, cache da aplicação e cache local são camadas diferentes, com invalidação diferente.",
+        "As três são a mesma camada com nomes diferentes."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 2,
+      "w": "Cada camada guarda uma coisa e expira de um jeito. Invalidar uma não invalida as outras.",
       "t": "camadas"
     },
     {
-      "q": "Sobre hit: qual afirmação está certa?",
+      "q": "Hit ratio alto com dado errado é vitória?",
       "o": [
-        "Hit ratio alto com dado errado não é vitória.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Hit ratio alto é sempre sinal de cache bem desenhado.",
+        "O hit ratio mede se o dado servido está correto.",
+        "Hit ratio baixo é sempre pior que hit ratio alto.",
+        "Hit ratio alto com dado errado não é vitória."
       ],
-      "a": 0,
-      "w": "Métrica enganosa.",
+      "a": 3,
+      "w": "95% de acerto servindo saldo velho é incidente, não métrica boa.",
       "t": "hit"
     },
     {
-      "q": "Qual frase sobre hit está certa?",
+      "q": "95% de acerto servindo saldo velho: métrica boa ou incidente?",
       "o": [
+        "Hit ratio baixo é sempre pior que hit ratio alto.",
         "Hit ratio alto com dado errado não é vitória.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Hit ratio alto é sempre sinal de cache bem desenhado.",
+        "O hit ratio mede se o dado servido está correto."
       ],
-      "a": 0,
-      "w": "Métrica enganosa.",
+      "a": 1,
+      "w": "95% de acerto servindo saldo velho é incidente, não métrica boa.",
       "t": "hit"
     },
     {
-      "q": "Hit — o que acontece de verdade?",
+      "q": "O hit ratio mede se o dado está correto?",
       "o": [
         "Hit ratio alto com dado errado não é vitória.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Hit ratio alto é sempre sinal de cache bem desenhado.",
+        "O hit ratio mede se o dado servido está correto.",
+        "Hit ratio baixo é sempre pior que hit ratio alto."
       ],
       "a": 0,
-      "w": "Métrica enganosa.",
+      "w": "95% de acerto servindo saldo velho é incidente, não métrica boa.",
       "t": "hit"
     },
     {
-      "q": "Marque a leitura correta (hit).",
+      "q": "Hit ratio alto prova cache bem desenhado?",
       "o": [
+        "Hit ratio baixo é sempre pior que hit ratio alto.",
         "Hit ratio alto com dado errado não é vitória.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Hit ratio alto é sempre sinal de cache bem desenhado.",
+        "O hit ratio mede se o dado servido está correto."
       ],
-      "a": 0,
-      "w": "Métrica enganosa.",
+      "a": 1,
+      "w": "95% de acerto servindo saldo velho é incidente, não métrica boa.",
       "t": "hit"
     },
     {
-      "q": "Corrija o mito sobre hit.",
+      "q": "Por que o hit ratio pode enganar?",
       "o": [
+        "Hit ratio baixo é sempre pior que hit ratio alto.",
         "Hit ratio alto com dado errado não é vitória.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Hit ratio alto é sempre sinal de cache bem desenhado.",
+        "O hit ratio mede se o dado servido está correto."
       ],
-      "a": 0,
-      "w": "Métrica enganosa.",
+      "a": 1,
+      "w": "95% de acerto servindo saldo velho é incidente, não métrica boa.",
       "t": "hit"
     },
     {
-      "q": "No caderno, a respeito de hit: qual vale?",
+      "q": "Hit ratio baixo é sempre pior?",
       "o": [
+        "O hit ratio mede se o dado servido está correto.",
+        "Hit ratio baixo é sempre pior que hit ratio alto.",
         "Hit ratio alto com dado errado não é vitória.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Hit ratio alto é sempre sinal de cache bem desenhado."
       ],
-      "a": 0,
-      "w": "Métrica enganosa.",
+      "a": 2,
+      "w": "95% de acerto servindo saldo velho é incidente, não métrica boa.",
       "t": "hit"
     },
     {
-      "q": "Se perguntarem hit na mesa, qual frase é a verdadeira?",
+      "q": "Qual métrica falta quando o hit está alto?",
       "o": [
+        "Hit ratio baixo é sempre pior que hit ratio alto.",
         "Hit ratio alto com dado errado não é vitória.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Hit ratio alto é sempre sinal de cache bem desenhado.",
+        "O hit ratio mede se o dado servido está correto."
       ],
-      "a": 0,
-      "w": "Métrica enganosa.",
+      "a": 1,
+      "w": "95% de acerto servindo saldo velho é incidente, não métrica boa.",
       "t": "hit"
     },
     {
-      "q": "Sobre cold: qual afirmação está certa?",
+      "q": "O que acontece com a latência depois de limpar o cache?",
       "o": [
-        "Cold start depois de flush: latência explode.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Cache vazio protege o banco de tráfego.",
+        "Limpar o cache melhora a latência imediatamente.",
+        "Depois de limpar o cache, a latência explode até ele encher de novo.",
+        "Depois de limpar o cache, a latência continua igual."
       ],
-      "a": 0,
-      "w": "Planeje aquecimento.",
+      "a": 2,
+      "w": "Cache vazio manda todo mundo ao banco. Planeje o aquecimento antes de limpar.",
       "t": "cold"
     },
     {
-      "q": "Qual frase sobre cold está certa?",
+      "q": "Cache vazio: quem recebe todo o tráfego?",
       "o": [
-        "Cold start depois de flush: latência explode.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Depois de limpar o cache, a latência continua igual.",
+        "Cache vazio protege o banco de tráfego.",
+        "Limpar o cache melhora a latência imediatamente.",
+        "Depois de limpar o cache, a latência explode até ele encher de novo."
       ],
-      "a": 0,
-      "w": "Planeje aquecimento.",
+      "a": 3,
+      "w": "Cache vazio manda todo mundo ao banco. Planeje o aquecimento antes de limpar.",
       "t": "cold"
     },
     {
-      "q": "Cold — o que acontece de verdade?",
+      "q": "Limpar o cache melhora a latência na hora?",
       "o": [
-        "Cold start depois de flush: latência explode.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Depois de limpar o cache, a latência continua igual.",
+        "Cache vazio protege o banco de tráfego.",
+        "Limpar o cache melhora a latência imediatamente.",
+        "Depois de limpar o cache, a latência explode até ele encher de novo."
       ],
-      "a": 0,
-      "w": "Planeje aquecimento.",
+      "a": 3,
+      "w": "Cache vazio manda todo mundo ao banco. Planeje o aquecimento antes de limpar.",
       "t": "cold"
     },
     {
-      "q": "Marque a leitura correta (cold).",
+      "q": "O que planejar antes de limpar o cache?",
       "o": [
-        "Cold start depois de flush: latência explode.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cache vazio protege o banco de tráfego.",
+        "Limpar o cache melhora a latência imediatamente.",
+        "Depois de limpar o cache, a latência explode até ele encher de novo.",
+        "Depois de limpar o cache, a latência continua igual."
       ],
-      "a": 0,
-      "w": "Planeje aquecimento.",
+      "a": 2,
+      "w": "Cache vazio manda todo mundo ao banco. Planeje o aquecimento antes de limpar.",
       "t": "cold"
     },
     {
-      "q": "Corrija o mito sobre cold.",
+      "q": "Cache vazio protege o banco?",
       "o": [
-        "Cold start depois de flush: latência explode.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Depois de limpar o cache, a latência explode até ele encher de novo.",
+        "Depois de limpar o cache, a latência continua igual.",
+        "Cache vazio protege o banco de tráfego.",
+        "Limpar o cache melhora a latência imediatamente."
       ],
       "a": 0,
-      "w": "Planeje aquecimento.",
+      "w": "Cache vazio manda todo mundo ao banco. Planeje o aquecimento antes de limpar.",
       "t": "cold"
     },
     {
-      "q": "No caderno, a respeito de cold: qual vale?",
+      "q": "Por que o primeiro minuto depois da limpeza é o pior?",
       "o": [
-        "Cold start depois de flush: latência explode.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Depois de limpar o cache, a latência explode até ele encher de novo.",
+        "Depois de limpar o cache, a latência continua igual.",
+        "Cache vazio protege o banco de tráfego.",
+        "Limpar o cache melhora a latência imediatamente."
       ],
       "a": 0,
-      "w": "Planeje aquecimento.",
+      "w": "Cache vazio manda todo mundo ao banco. Planeje o aquecimento antes de limpar.",
       "t": "cold"
     },
     {
-      "q": "Se perguntarem cold na mesa, qual frase é a verdadeira?",
+      "q": "Aquecimento de cache serve para quê?",
       "o": [
-        "Cold start depois de flush: latência explode.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Depois de limpar o cache, a latência explode até ele encher de novo.",
+        "Depois de limpar o cache, a latência continua igual.",
+        "Cache vazio protege o banco de tráfego.",
+        "Limpar o cache melhora a latência imediatamente."
       ],
       "a": 0,
-      "w": "Planeje aquecimento.",
+      "w": "Cache vazio manda todo mundo ao banco. Planeje o aquecimento antes de limpar.",
       "t": "cold"
     },
     {
-      "q": "Sobre chave: qual afirmação está certa?",
+      "q": "O que uma chave de cache precisa identificar?",
       "o": [
-        "Chave ruim (sem user, sem versão) mistura mundos.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Chave de cache sem usuário nem versão mistura mundos diferentes.",
+        "A chave de cache não precisa identificar usuário nem versão.",
+        "Chave de cache é detalhe de implementação, sem efeito no dado servido.",
+        "Quanto mais curta a chave, mais correto o cache fica."
       ],
       "a": 0,
-      "w": "Contrato da chave.",
+      "w": "A chave é contrato. Sem identificar quem e qual versão, um cliente vê o dado do outro.",
       "t": "chave"
     },
     {
-      "q": "Qual frase sobre chave está certa?",
+      "q": "Chave sem usuário: o que pode acontecer?",
       "o": [
-        "Chave ruim (sem user, sem versão) mistura mundos.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Chave de cache é detalhe de implementação, sem efeito no dado servido.",
+        "Quanto mais curta a chave, mais correto o cache fica.",
+        "Chave de cache sem usuário nem versão mistura mundos diferentes.",
+        "A chave de cache não precisa identificar usuário nem versão."
       ],
-      "a": 0,
-      "w": "Contrato da chave.",
+      "a": 2,
+      "w": "A chave é contrato. Sem identificar quem e qual versão, um cliente vê o dado do outro.",
       "t": "chave"
     },
     {
-      "q": "Chave — o que acontece de verdade?",
+      "q": "A chave de cache é contrato ou detalhe?",
       "o": [
-        "Chave ruim (sem user, sem versão) mistura mundos.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "A chave de cache não precisa identificar usuário nem versão.",
+        "Chave de cache é detalhe de implementação, sem efeito no dado servido.",
+        "Quanto mais curta a chave, mais correto o cache fica.",
+        "Chave de cache sem usuário nem versão mistura mundos diferentes."
       ],
-      "a": 0,
-      "w": "Contrato da chave.",
+      "a": 3,
+      "w": "A chave é contrato. Sem identificar quem e qual versão, um cliente vê o dado do outro.",
       "t": "chave"
     },
     {
-      "q": "Marque a leitura correta (chave).",
+      "q": "Um cliente viu o dado do outro. O que a chave não tinha?",
       "o": [
-        "Chave ruim (sem user, sem versão) mistura mundos.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Quanto mais curta a chave, mais correto o cache fica.",
+        "Chave de cache sem usuário nem versão mistura mundos diferentes.",
+        "A chave de cache não precisa identificar usuário nem versão.",
+        "Chave de cache é detalhe de implementação, sem efeito no dado servido."
       ],
-      "a": 0,
-      "w": "Contrato da chave.",
+      "a": 1,
+      "w": "A chave é contrato. Sem identificar quem e qual versão, um cliente vê o dado do outro.",
       "t": "chave"
     },
     {
-      "q": "Corrija o mito sobre chave.",
+      "q": "Chave mais curta deixa o cache mais correto?",
       "o": [
-        "Chave ruim (sem user, sem versão) mistura mundos.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Chave de cache sem usuário nem versão mistura mundos diferentes.",
+        "A chave de cache não precisa identificar usuário nem versão.",
+        "Chave de cache é detalhe de implementação, sem efeito no dado servido.",
+        "Quanto mais curta a chave, mais correto o cache fica."
       ],
       "a": 0,
-      "w": "Contrato da chave.",
+      "w": "A chave é contrato. Sem identificar quem e qual versão, um cliente vê o dado do outro.",
       "t": "chave"
     },
     {
-      "q": "No caderno, a respeito de chave: qual vale?",
+      "q": "Por que a versão entra na chave?",
       "o": [
-        "Chave ruim (sem user, sem versão) mistura mundos.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Quanto mais curta a chave, mais correto o cache fica.",
+        "Chave de cache sem usuário nem versão mistura mundos diferentes.",
+        "A chave de cache não precisa identificar usuário nem versão.",
+        "Chave de cache é detalhe de implementação, sem efeito no dado servido."
       ],
-      "a": 0,
-      "w": "Contrato da chave.",
+      "a": 1,
+      "w": "A chave é contrato. Sem identificar quem e qual versão, um cliente vê o dado do outro.",
       "t": "chave"
     },
     {
-      "q": "Se perguntarem chave na mesa, qual frase é a verdadeira?",
+      "q": "Chave de cache afeta o dado servido?",
       "o": [
-        "Chave ruim (sem user, sem versão) mistura mundos.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Chave de cache é detalhe de implementação, sem efeito no dado servido.",
+        "Quanto mais curta a chave, mais correto o cache fica.",
+        "Chave de cache sem usuário nem versão mistura mundos diferentes.",
+        "A chave de cache não precisa identificar usuário nem versão."
       ],
-      "a": 0,
-      "w": "Contrato da chave.",
+      "a": 2,
+      "w": "A chave é contrato. Sem identificar quem e qual versão, um cliente vê o dado do outro.",
       "t": "chave"
     },
     {
-      "q": "Sobre HA cache: qual afirmação está certa?",
+      "q": "O cache caiu. O banco aguenta o tráfego?",
       "o": [
-        "Cache não é fonte da verdade. Se cair, o banco aguenta?",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O banco nunca precisa aguentar o tráfego sozinho.",
+        "Cache que caiu é substituído automaticamente sem impacto no banco.",
+        "Cache não é fonte da verdade: se ele cair, o banco precisa aguentar.",
+        "Se o cache cair, o sistema para: ele é a fonte da verdade."
       ],
-      "a": 0,
-      "w": "Degradação.",
+      "a": 2,
+      "w": "Pergunte antes de desenhar: o banco sobrevive ao tráfego sem o cache na frente?",
       "t": "HA cache"
     },
     {
-      "q": "Qual frase sobre HA cache está certa?",
+      "q": "Cache é fonte da verdade ou atalho?",
       "o": [
-        "Cache não é fonte da verdade. Se cair, o banco aguenta?",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cache que caiu é substituído automaticamente sem impacto no banco.",
+        "Cache não é fonte da verdade: se ele cair, o banco precisa aguentar.",
+        "Se o cache cair, o sistema para: ele é a fonte da verdade.",
+        "O banco nunca precisa aguentar o tráfego sozinho."
       ],
-      "a": 0,
-      "w": "Degradação.",
+      "a": 1,
+      "w": "Pergunte antes de desenhar: o banco sobrevive ao tráfego sem o cache na frente?",
       "t": "HA cache"
     },
     {
-      "q": "HA cache — o que acontece de verdade?",
+      "q": "Cache na frente do banco: o que isso exige do banco?",
       "o": [
-        "Cache não é fonte da verdade. Se cair, o banco aguenta?",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O banco nunca precisa aguentar o tráfego sozinho.",
+        "Cache que caiu é substituído automaticamente sem impacto no banco.",
+        "Cache não é fonte da verdade: se ele cair, o banco precisa aguentar.",
+        "Se o cache cair, o sistema para: ele é a fonte da verdade."
       ],
-      "a": 0,
-      "w": "Degradação.",
+      "a": 2,
+      "w": "Pergunte antes de desenhar: o banco sobrevive ao tráfego sem o cache na frente?",
       "t": "HA cache"
     },
     {
-      "q": "Marque a leitura correta (HA cache).",
+      "q": "Se o cache cair, o sistema para?",
       "o": [
-        "Cache não é fonte da verdade. Se cair, o banco aguenta?",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Cache não é fonte da verdade: se ele cair, o banco precisa aguentar.",
+        "Se o cache cair, o sistema para: ele é a fonte da verdade.",
+        "O banco nunca precisa aguentar o tráfego sozinho.",
+        "Cache que caiu é substituído automaticamente sem impacto no banco."
       ],
       "a": 0,
-      "w": "Degradação.",
+      "w": "Pergunte antes de desenhar: o banco sobrevive ao tráfego sem o cache na frente?",
       "t": "HA cache"
     },
     {
-      "q": "Corrija o mito sobre HA cache.",
+      "q": "O banco precisa suportar o tráfego sem cache?",
       "o": [
-        "Cache não é fonte da verdade. Se cair, o banco aguenta?",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O banco nunca precisa aguentar o tráfego sozinho.",
+        "Cache que caiu é substituído automaticamente sem impacto no banco.",
+        "Cache não é fonte da verdade: se ele cair, o banco precisa aguentar.",
+        "Se o cache cair, o sistema para: ele é a fonte da verdade."
       ],
-      "a": 0,
-      "w": "Degradação.",
+      "a": 2,
+      "w": "Pergunte antes de desenhar: o banco sobrevive ao tráfego sem o cache na frente?",
       "t": "HA cache"
     },
     {
-      "q": "No caderno, a respeito de HA cache: qual vale?",
+      "q": "Qual pergunta de capacidade o cache levanta?",
       "o": [
-        "Cache não é fonte da verdade. Se cair, o banco aguenta?",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Cache não é fonte da verdade: se ele cair, o banco precisa aguentar.",
+        "Se o cache cair, o sistema para: ele é a fonte da verdade.",
+        "O banco nunca precisa aguentar o tráfego sozinho.",
+        "Cache que caiu é substituído automaticamente sem impacto no banco."
       ],
       "a": 0,
-      "w": "Degradação.",
+      "w": "Pergunte antes de desenhar: o banco sobrevive ao tráfego sem o cache na frente?",
       "t": "HA cache"
     },
     {
-      "q": "Se perguntarem HA cache na mesa, qual frase é a verdadeira?",
+      "q": "Cache que cai é substituído sem impacto?",
       "o": [
-        "Cache não é fonte da verdade. Se cair, o banco aguenta?",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Se o cache cair, o sistema para: ele é a fonte da verdade.",
+        "O banco nunca precisa aguentar o tráfego sozinho.",
+        "Cache que caiu é substituído automaticamente sem impacto no banco.",
+        "Cache não é fonte da verdade: se ele cair, o banco precisa aguentar."
       ],
-      "a": 0,
-      "w": "Degradação.",
+      "a": 3,
+      "w": "Pergunte antes de desenhar: o banco sobrevive ao tráfego sem o cache na frente?",
       "t": "HA cache"
     },
     {
-      "q": "Sobre aside miss: qual afirmação está certa?",
+      "q": "Como defender do miss simultâneo?",
       "o": [
-        "Miss stampede: lock ou singleflight.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Contra o miss simultâneo use lock ou uma só busca compartilhada, não só TTL maior.",
+        "Contra o miss simultâneo basta aumentar o TTL.",
+        "Miss simultâneo se resolve removendo o cache do desenho.",
+        "Não existe defesa contra o miss simultâneo."
       ],
       "a": 0,
-      "w": "Não só TTL maior.",
+      "w": "Uma thread busca no banco e as outras esperam o resultado dela. TTL maior só adia o problema.",
       "t": "aside miss"
     },
     {
-      "q": "Qual frase sobre aside miss está certa?",
+      "q": "Mil threads deram miss na mesma chave. O que fazer?",
       "o": [
-        "Miss stampede: lock ou singleflight.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Contra o miss simultâneo basta aumentar o TTL.",
+        "Miss simultâneo se resolve removendo o cache do desenho.",
+        "Não existe defesa contra o miss simultâneo.",
+        "Contra o miss simultâneo use lock ou uma só busca compartilhada, não só TTL maior."
       ],
-      "a": 0,
-      "w": "Não só TTL maior.",
+      "a": 3,
+      "w": "Uma thread busca no banco e as outras esperam o resultado dela. TTL maior só adia o problema.",
       "t": "aside miss"
     },
     {
-      "q": "Aside miss — o que acontece de verdade?",
+      "q": "Aumentar o TTL resolve o miss simultâneo?",
       "o": [
-        "Miss stampede: lock ou singleflight.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Contra o miss simultâneo basta aumentar o TTL.",
+        "Miss simultâneo se resolve removendo o cache do desenho.",
+        "Não existe defesa contra o miss simultâneo.",
+        "Contra o miss simultâneo use lock ou uma só busca compartilhada, não só TTL maior."
       ],
-      "a": 0,
-      "w": "Não só TTL maior.",
+      "a": 3,
+      "w": "Uma thread busca no banco e as outras esperam o resultado dela. TTL maior só adia o problema.",
       "t": "aside miss"
     },
     {
-      "q": "Marque a leitura correta (aside miss).",
+      "q": "No miss simultâneo, quantas threads vão ao banco?",
       "o": [
-        "Miss stampede: lock ou singleflight.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Contra o miss simultâneo use lock ou uma só busca compartilhada, não só TTL maior.",
+        "Contra o miss simultâneo basta aumentar o TTL.",
+        "Miss simultâneo se resolve removendo o cache do desenho.",
+        "Não existe defesa contra o miss simultâneo."
       ],
       "a": 0,
-      "w": "Não só TTL maior.",
+      "w": "Uma thread busca no banco e as outras esperam o resultado dela. TTL maior só adia o problema.",
       "t": "aside miss"
     },
     {
-      "q": "Corrija o mito sobre aside miss.",
+      "q": "Existe defesa contra o miss simultâneo?",
       "o": [
-        "Miss stampede: lock ou singleflight.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Miss simultâneo se resolve removendo o cache do desenho.",
+        "Não existe defesa contra o miss simultâneo.",
+        "Contra o miss simultâneo use lock ou uma só busca compartilhada, não só TTL maior.",
+        "Contra o miss simultâneo basta aumentar o TTL."
       ],
-      "a": 0,
-      "w": "Não só TTL maior.",
+      "a": 2,
+      "w": "Uma thread busca no banco e as outras esperam o resultado dela. TTL maior só adia o problema.",
       "t": "aside miss"
     },
     {
-      "q": "No caderno, a respeito de aside miss: qual vale?",
+      "q": "O que o lock faz no miss simultâneo?",
       "o": [
-        "Miss stampede: lock ou singleflight.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Contra o miss simultâneo use lock ou uma só busca compartilhada, não só TTL maior.",
+        "Contra o miss simultâneo basta aumentar o TTL.",
+        "Miss simultâneo se resolve removendo o cache do desenho.",
+        "Não existe defesa contra o miss simultâneo."
       ],
       "a": 0,
-      "w": "Não só TTL maior.",
+      "w": "Uma thread busca no banco e as outras esperam o resultado dela. TTL maior só adia o problema.",
       "t": "aside miss"
     },
     {
-      "q": "Se perguntarem aside miss na mesa, qual frase é a verdadeira?",
+      "q": "TTL maior resolve ou adia o problema?",
       "o": [
-        "Miss stampede: lock ou singleflight.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Contra o miss simultâneo use lock ou uma só busca compartilhada, não só TTL maior.",
+        "Contra o miss simultâneo basta aumentar o TTL.",
+        "Miss simultâneo se resolve removendo o cache do desenho.",
+        "Não existe defesa contra o miss simultâneo."
       ],
       "a": 0,
-      "w": "Não só TTL maior.",
+      "w": "Uma thread busca no banco e as outras esperam o resultado dela. TTL maior só adia o problema.",
       "t": "aside miss"
     },
     {
-      "q": "Sobre não saldo: qual afirmação está certa?",
+      "q": "Saldo e assento podem vir do cache?",
       "o": [
-        "CDN não é fonte da verdade para saldo e assento.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Saldo e assento aceitam alguns segundos de atraso sem problema.",
+        "CDN e cache não são fonte da verdade para saldo e assento.",
+        "CDN e cache servem bem como fonte da verdade para saldo.",
+        "Assento livre no cache prova que o assento está livre."
       ],
-      "a": 0,
-      "w": "Distrator clássico da trilha.",
+      "a": 1,
+      "w": "Invariante de dinheiro e reserva não aceitam dado velho. A verdade fica no banco ou num lock.",
       "t": "não saldo"
     },
     {
-      "q": "Qual frase sobre não saldo está certa?",
+      "q": "Assento livre no cache prova que ele está livre?",
       "o": [
-        "CDN não é fonte da verdade para saldo e assento.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Saldo e assento aceitam alguns segundos de atraso sem problema.",
+        "CDN e cache não são fonte da verdade para saldo e assento.",
+        "CDN e cache servem bem como fonte da verdade para saldo.",
+        "Assento livre no cache prova que o assento está livre."
       ],
-      "a": 0,
-      "w": "Distrator clássico da trilha.",
+      "a": 1,
+      "w": "Invariante de dinheiro e reserva não aceitam dado velho. A verdade fica no banco ou num lock.",
       "t": "não saldo"
     },
     {
-      "q": "Não saldo — o que acontece de verdade?",
+      "q": "Onde mora a verdade do saldo?",
       "o": [
-        "CDN não é fonte da verdade para saldo e assento.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "CDN e cache não são fonte da verdade para saldo e assento.",
+        "CDN e cache servem bem como fonte da verdade para saldo.",
+        "Assento livre no cache prova que o assento está livre.",
+        "Saldo e assento aceitam alguns segundos de atraso sem problema."
       ],
       "a": 0,
-      "w": "Distrator clássico da trilha.",
+      "w": "Invariante de dinheiro e reserva não aceitam dado velho. A verdade fica no banco ou num lock.",
       "t": "não saldo"
     },
     {
-      "q": "Marque a leitura correta (não saldo).",
+      "q": "Saldo e assento aceitam segundos de atraso?",
       "o": [
-        "CDN não é fonte da verdade para saldo e assento.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Saldo e assento aceitam alguns segundos de atraso sem problema.",
+        "CDN e cache não são fonte da verdade para saldo e assento.",
+        "CDN e cache servem bem como fonte da verdade para saldo.",
+        "Assento livre no cache prova que o assento está livre."
       ],
-      "a": 0,
-      "w": "Distrator clássico da trilha.",
+      "a": 1,
+      "w": "Invariante de dinheiro e reserva não aceitam dado velho. A verdade fica no banco ou num lock.",
       "t": "não saldo"
     },
     {
-      "q": "Corrija o mito sobre não saldo.",
+      "q": "Que tipo de dado nunca vai para o cache como verdade?",
       "o": [
-        "CDN não é fonte da verdade para saldo e assento.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "CDN e cache não são fonte da verdade para saldo e assento.",
+        "CDN e cache servem bem como fonte da verdade para saldo.",
+        "Assento livre no cache prova que o assento está livre.",
+        "Saldo e assento aceitam alguns segundos de atraso sem problema."
       ],
       "a": 0,
-      "w": "Distrator clássico da trilha.",
+      "w": "Invariante de dinheiro e reserva não aceitam dado velho. A verdade fica no banco ou num lock.",
       "t": "não saldo"
     },
     {
-      "q": "No caderno, a respeito de não saldo: qual vale?",
+      "q": "Dois clientes compraram o mesmo assento. Onde estava a verdade?",
       "o": [
-        "CDN não é fonte da verdade para saldo e assento.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Assento livre no cache prova que o assento está livre.",
+        "Saldo e assento aceitam alguns segundos de atraso sem problema.",
+        "CDN e cache não são fonte da verdade para saldo e assento.",
+        "CDN e cache servem bem como fonte da verdade para saldo."
       ],
-      "a": 0,
-      "w": "Distrator clássico da trilha.",
+      "a": 2,
+      "w": "Invariante de dinheiro e reserva não aceitam dado velho. A verdade fica no banco ou num lock.",
       "t": "não saldo"
     },
     {
-      "q": "Se perguntarem não saldo na mesa, qual frase é a verdadeira?",
+      "q": "Invariante de dinheiro aceita dado velho?",
       "o": [
-        "CDN não é fonte da verdade para saldo e assento.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Assento livre no cache prova que o assento está livre.",
+        "Saldo e assento aceitam alguns segundos de atraso sem problema.",
+        "CDN e cache não são fonte da verdade para saldo e assento.",
+        "CDN e cache servem bem como fonte da verdade para saldo."
       ],
-      "a": 0,
-      "w": "Distrator clássico da trilha.",
+      "a": 2,
+      "w": "Invariante de dinheiro e reserva não aceitam dado velho. A verdade fica no banco ou num lock.",
       "t": "não saldo"
     }
   ]

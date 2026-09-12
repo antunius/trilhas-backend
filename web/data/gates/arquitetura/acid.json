@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre um RM: qual afirmação está certa?",
+      "q": "Onde o ACID vale?",
       "o": [
-        "ACID vale no mesmo resource manager. Dois bancos: não há transação mágica.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "ACID vale em qualquer lugar onde exista a palavra COMMIT.",
+        "ACID vale dentro do mesmo resource manager. Com dois bancos não existe transação mágica.",
+        "ACID vale entre bancos diferentes desde que os dois sejam relacionais.",
+        "ACID cobre o banco e o broker na mesma transação."
       ],
-      "a": 0,
-      "w": "Um caixa, uma borracha.",
+      "a": 1,
+      "w": "Um resource manager, um rollback. Dois bancos anotam cada um o seu e alguém reconcilia depois.",
       "t": "um RM"
     },
     {
-      "q": "Qual frase sobre um RM está certa?",
+      "q": "Você tem dois bancos. Existe transação única entre eles?",
       "o": [
-        "ACID vale no mesmo resource manager. Dois bancos: não há transação mágica.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "ACID cobre o banco e o broker na mesma transação.",
+        "ACID vale em qualquer lugar onde exista a palavra COMMIT.",
+        "ACID vale dentro do mesmo resource manager. Com dois bancos não existe transação mágica.",
+        "ACID vale entre bancos diferentes desde que os dois sejam relacionais."
       ],
-      "a": 0,
-      "w": "Um caixa, uma borracha.",
+      "a": 2,
+      "w": "Um resource manager, um rollback. Dois bancos anotam cada um o seu e alguém reconcilia depois.",
       "t": "um RM"
     },
     {
-      "q": "Um RM — o que acontece de verdade?",
+      "q": "ACID atravessa dois resource managers?",
       "o": [
-        "ACID vale no mesmo resource manager. Dois bancos: não há transação mágica.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "ACID vale em qualquer lugar onde exista a palavra COMMIT.",
+        "ACID vale dentro do mesmo resource manager. Com dois bancos não existe transação mágica.",
+        "ACID vale entre bancos diferentes desde que os dois sejam relacionais.",
+        "ACID cobre o banco e o broker na mesma transação."
       ],
-      "a": 0,
-      "w": "Um caixa, uma borracha.",
+      "a": 1,
+      "w": "Um resource manager, um rollback. Dois bancos anotam cada um o seu e alguém reconcilia depois.",
       "t": "um RM"
     },
     {
-      "q": "Marque a leitura correta (um RM).",
+      "q": "Um resource manager garante o quê?",
       "o": [
-        "ACID vale no mesmo resource manager. Dois bancos: não há transação mágica.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "ACID vale entre bancos diferentes desde que os dois sejam relacionais.",
+        "ACID cobre o banco e o broker na mesma transação.",
+        "ACID vale em qualquer lugar onde exista a palavra COMMIT.",
+        "ACID vale dentro do mesmo resource manager. Com dois bancos não existe transação mágica."
       ],
-      "a": 0,
-      "w": "Um caixa, uma borracha.",
+      "a": 3,
+      "w": "Um resource manager, um rollback. Dois bancos anotam cada um o seu e alguém reconcilia depois.",
       "t": "um RM"
     },
     {
-      "q": "Corrija o mito sobre um RM.",
+      "q": "Dois bancos relacionais compartilham rollback?",
       "o": [
-        "ACID vale no mesmo resource manager. Dois bancos: não há transação mágica.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "ACID vale entre bancos diferentes desde que os dois sejam relacionais.",
+        "ACID cobre o banco e o broker na mesma transação.",
+        "ACID vale em qualquer lugar onde exista a palavra COMMIT.",
+        "ACID vale dentro do mesmo resource manager. Com dois bancos não existe transação mágica."
       ],
-      "a": 0,
-      "w": "Um caixa, uma borracha.",
+      "a": 3,
+      "w": "Um resource manager, um rollback. Dois bancos anotam cada um o seu e alguém reconcilia depois.",
       "t": "um RM"
     },
     {
-      "q": "No caderno, a respeito de um RM: qual vale?",
+      "q": "O que acontece quando a operação atravessa dois resource managers?",
       "o": [
-        "ACID vale no mesmo resource manager. Dois bancos: não há transação mágica.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "ACID vale em qualquer lugar onde exista a palavra COMMIT.",
+        "ACID vale dentro do mesmo resource manager. Com dois bancos não existe transação mágica.",
+        "ACID vale entre bancos diferentes desde que os dois sejam relacionais.",
+        "ACID cobre o banco e o broker na mesma transação."
       ],
-      "a": 0,
-      "w": "Um caixa, uma borracha.",
+      "a": 1,
+      "w": "Um resource manager, um rollback. Dois bancos anotam cada um o seu e alguém reconcilia depois.",
       "t": "um RM"
     },
     {
-      "q": "Se perguntarem um RM na mesa, qual frase é a verdadeira?",
+      "q": "ACID vale em qualquer lugar que tenha COMMIT?",
       "o": [
-        "ACID vale no mesmo resource manager. Dois bancos: não há transação mágica.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "ACID vale entre bancos diferentes desde que os dois sejam relacionais.",
+        "ACID cobre o banco e o broker na mesma transação.",
+        "ACID vale em qualquer lugar onde exista a palavra COMMIT.",
+        "ACID vale dentro do mesmo resource manager. Com dois bancos não existe transação mágica."
       ],
-      "a": 0,
-      "w": "Um caixa, uma borracha.",
+      "a": 3,
+      "w": "Um resource manager, um rollback. Dois bancos anotam cada um o seu e alguém reconcilia depois.",
       "t": "um RM"
     },
     {
-      "q": "Sobre A: qual afirmação está certa?",
+      "q": "O que a atomicidade garante?",
       "o": [
-        "Atomicidade: tudo ou nada naquele banco.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Atomicidade é a ordem em que as operações acontecem.",
+        "Atomicidade é tudo ou nada naquele resource manager.",
+        "Atomicidade é tudo ou nada em todos os sistemas envolvidos.",
+        "Atomicidade garante que a mensagem também foi publicada."
       ],
-      "a": 0,
-      "w": "Não atravessa Kafka.",
+      "a": 1,
+      "w": "Pedido e estoque no mesmo COMMIT, ou nenhum dos dois. A atomicidade não atravessa o tópico.",
       "t": "A"
     },
     {
-      "q": "Qual frase sobre A está certa?",
+      "q": "Atomicidade vale só naquele banco ou em todos os sistemas?",
       "o": [
-        "Atomicidade: tudo ou nada naquele banco.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Atomicidade é tudo ou nada naquele resource manager.",
+        "Atomicidade é tudo ou nada em todos os sistemas envolvidos.",
+        "Atomicidade garante que a mensagem também foi publicada.",
+        "Atomicidade é a ordem em que as operações acontecem."
       ],
       "a": 0,
-      "w": "Não atravessa Kafka.",
+      "w": "Pedido e estoque no mesmo COMMIT, ou nenhum dos dois. A atomicidade não atravessa o tópico.",
       "t": "A"
     },
     {
-      "q": "A — o que acontece de verdade?",
+      "q": "Pedido e estoque no mesmo COMMIT: qual letra é essa?",
       "o": [
-        "Atomicidade: tudo ou nada naquele banco.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Atomicidade é a ordem em que as operações acontecem.",
+        "Atomicidade é tudo ou nada naquele resource manager.",
+        "Atomicidade é tudo ou nada em todos os sistemas envolvidos.",
+        "Atomicidade garante que a mensagem também foi publicada."
       ],
-      "a": 0,
-      "w": "Não atravessa Kafka.",
+      "a": 1,
+      "w": "Pedido e estoque no mesmo COMMIT, ou nenhum dos dois. A atomicidade não atravessa o tópico.",
       "t": "A"
     },
     {
-      "q": "Marque a leitura correta (A).",
+      "q": "A atomicidade garante que a mensagem saiu?",
       "o": [
-        "Atomicidade: tudo ou nada naquele banco.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Atomicidade garante que a mensagem também foi publicada.",
+        "Atomicidade é a ordem em que as operações acontecem.",
+        "Atomicidade é tudo ou nada naquele resource manager.",
+        "Atomicidade é tudo ou nada em todos os sistemas envolvidos."
       ],
-      "a": 0,
-      "w": "Não atravessa Kafka.",
+      "a": 2,
+      "w": "Pedido e estoque no mesmo COMMIT, ou nenhum dos dois. A atomicidade não atravessa o tópico.",
       "t": "A"
     },
     {
-      "q": "Corrija o mito sobre A.",
+      "q": "Tudo ou nada: em qual escopo?",
       "o": [
-        "Atomicidade: tudo ou nada naquele banco.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Atomicidade garante que a mensagem também foi publicada.",
+        "Atomicidade é a ordem em que as operações acontecem.",
+        "Atomicidade é tudo ou nada naquele resource manager.",
+        "Atomicidade é tudo ou nada em todos os sistemas envolvidos."
       ],
-      "a": 0,
-      "w": "Não atravessa Kafka.",
+      "a": 2,
+      "w": "Pedido e estoque no mesmo COMMIT, ou nenhum dos dois. A atomicidade não atravessa o tópico.",
       "t": "A"
     },
     {
-      "q": "No caderno, a respeito de A: qual vale?",
+      "q": "A atomicidade atravessa o tópico?",
       "o": [
-        "Atomicidade: tudo ou nada naquele banco.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Atomicidade é tudo ou nada naquele resource manager.",
+        "Atomicidade é tudo ou nada em todos os sistemas envolvidos.",
+        "Atomicidade garante que a mensagem também foi publicada.",
+        "Atomicidade é a ordem em que as operações acontecem."
       ],
       "a": 0,
-      "w": "Não atravessa Kafka.",
+      "w": "Pedido e estoque no mesmo COMMIT, ou nenhum dos dois. A atomicidade não atravessa o tópico.",
       "t": "A"
     },
     {
-      "q": "Se perguntarem A na mesa, qual frase é a verdadeira?",
+      "q": "Atomicidade é sobre ordem ou sobre tudo ou nada?",
       "o": [
-        "Atomicidade: tudo ou nada naquele banco.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Atomicidade garante que a mensagem também foi publicada.",
+        "Atomicidade é a ordem em que as operações acontecem.",
+        "Atomicidade é tudo ou nada naquele resource manager.",
+        "Atomicidade é tudo ou nada em todos os sistemas envolvidos."
       ],
-      "a": 0,
-      "w": "Não atravessa Kafka.",
+      "a": 2,
+      "w": "Pedido e estoque no mesmo COMMIT, ou nenhum dos dois. A atomicidade não atravessa o tópico.",
       "t": "A"
     },
     {
-      "q": "Sobre I: qual afirmação está certa?",
+      "q": "O que o isolamento controla?",
       "o": [
-        "Isolamento: concorrência naquele banco, não entre serviços.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Isolamento é concorrência naquele banco, não entre serviços.",
+        "Isolamento controla a concorrência entre dois serviços diferentes.",
+        "Isolamento é a garantia de que o dado não sai do banco.",
+        "Isolamento é a mesma coisa que consistência distribuída."
       ],
       "a": 0,
-      "w": "Não confunda com CAP.",
+      "w": "Duas transações no mesmo banco, não dois serviços conversando. Não confunda com o C de CAP.",
       "t": "I"
     },
     {
-      "q": "Qual frase sobre I está certa?",
+      "q": "Isolamento vale entre dois serviços ou dentro do mesmo banco?",
       "o": [
-        "Isolamento: concorrência naquele banco, não entre serviços.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Isolamento é a mesma coisa que consistência distribuída.",
+        "Isolamento é concorrência naquele banco, não entre serviços.",
+        "Isolamento controla a concorrência entre dois serviços diferentes.",
+        "Isolamento é a garantia de que o dado não sai do banco."
       ],
-      "a": 0,
-      "w": "Não confunda com CAP.",
+      "a": 1,
+      "w": "Duas transações no mesmo banco, não dois serviços conversando. Não confunda com o C de CAP.",
       "t": "I"
     },
     {
-      "q": "I — o que acontece de verdade?",
+      "q": "Duas transações concorrentes no mesmo banco: qual letra cuida disso?",
       "o": [
-        "Isolamento: concorrência naquele banco, não entre serviços.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Isolamento controla a concorrência entre dois serviços diferentes.",
+        "Isolamento é a garantia de que o dado não sai do banco.",
+        "Isolamento é a mesma coisa que consistência distribuída.",
+        "Isolamento é concorrência naquele banco, não entre serviços."
       ],
-      "a": 0,
-      "w": "Não confunda com CAP.",
+      "a": 3,
+      "w": "Duas transações no mesmo banco, não dois serviços conversando. Não confunda com o C de CAP.",
       "t": "I"
     },
     {
-      "q": "Marque a leitura correta (I).",
+      "q": "Isolamento é a mesma coisa que consistência distribuída?",
       "o": [
-        "Isolamento: concorrência naquele banco, não entre serviços.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Isolamento é concorrência naquele banco, não entre serviços.",
+        "Isolamento controla a concorrência entre dois serviços diferentes.",
+        "Isolamento é a garantia de que o dado não sai do banco.",
+        "Isolamento é a mesma coisa que consistência distribuída."
       ],
       "a": 0,
-      "w": "Não confunda com CAP.",
+      "w": "Duas transações no mesmo banco, não dois serviços conversando. Não confunda com o C de CAP.",
       "t": "I"
     },
     {
-      "q": "Corrija o mito sobre I.",
+      "q": "O isolamento resolve concorrência entre serviços?",
       "o": [
-        "Isolamento: concorrência naquele banco, não entre serviços.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Isolamento é a mesma coisa que consistência distribuída.",
+        "Isolamento é concorrência naquele banco, não entre serviços.",
+        "Isolamento controla a concorrência entre dois serviços diferentes.",
+        "Isolamento é a garantia de que o dado não sai do banco."
       ],
-      "a": 0,
-      "w": "Não confunda com CAP.",
+      "a": 1,
+      "w": "Duas transações no mesmo banco, não dois serviços conversando. Não confunda com o C de CAP.",
       "t": "I"
     },
     {
-      "q": "No caderno, a respeito de I: qual vale?",
+      "q": "Em qual escopo o isolamento funciona?",
       "o": [
-        "Isolamento: concorrência naquele banco, não entre serviços.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Isolamento controla a concorrência entre dois serviços diferentes.",
+        "Isolamento é a garantia de que o dado não sai do banco.",
+        "Isolamento é a mesma coisa que consistência distribuída.",
+        "Isolamento é concorrência naquele banco, não entre serviços."
       ],
-      "a": 0,
-      "w": "Não confunda com CAP.",
+      "a": 3,
+      "w": "Duas transações no mesmo banco, não dois serviços conversando. Não confunda com o C de CAP.",
       "t": "I"
     },
     {
-      "q": "Se perguntarem I na mesa, qual frase é a verdadeira?",
+      "q": "Isolamento impede o dado de sair do banco?",
       "o": [
-        "Isolamento: concorrência naquele banco, não entre serviços.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Isolamento é concorrência naquele banco, não entre serviços.",
+        "Isolamento controla a concorrência entre dois serviços diferentes.",
+        "Isolamento é a garantia de que o dado não sai do banco.",
+        "Isolamento é a mesma coisa que consistência distribuída."
       ],
       "a": 0,
-      "w": "Não confunda com CAP.",
+      "w": "Duas transações no mesmo banco, não dois serviços conversando. Não confunda com o C de CAP.",
       "t": "I"
     },
     {
-      "q": "Sobre D: qual afirmação está certa?",
+      "q": "O que a durabilidade garante?",
       "o": [
-        "Durabilidade: commitou naquele disco/WAL.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Durabilidade é a mesma coisa que a mensagem ter sido publicada.",
+        "Durabilidade quer dizer que o dado nunca muda depois do COMMIT.",
+        "Durabilidade é ter commitado naquele disco; o outro serviço pode não ter sabido.",
+        "Durabilidade garante que todos os serviços receberam o dado."
       ],
-      "a": 0,
-      "w": "O outro serviço não soube.",
+      "a": 2,
+      "w": "Commitou no disco daquele banco. O faturamento ainda pode não ter a mensagem.",
       "t": "D"
     },
     {
-      "q": "Qual frase sobre D está certa?",
+      "q": "Commitou no disco. O outro serviço soube?",
       "o": [
-        "Durabilidade: commitou naquele disco/WAL.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Durabilidade é a mesma coisa que a mensagem ter sido publicada.",
+        "Durabilidade quer dizer que o dado nunca muda depois do COMMIT.",
+        "Durabilidade é ter commitado naquele disco; o outro serviço pode não ter sabido.",
+        "Durabilidade garante que todos os serviços receberam o dado."
       ],
-      "a": 0,
-      "w": "O outro serviço não soube.",
+      "a": 2,
+      "w": "Commitou no disco daquele banco. O faturamento ainda pode não ter a mensagem.",
       "t": "D"
     },
     {
-      "q": "D — o que acontece de verdade?",
+      "q": "Durabilidade garante que a mensagem foi publicada?",
       "o": [
-        "Durabilidade: commitou naquele disco/WAL.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Durabilidade garante que todos os serviços receberam o dado.",
+        "Durabilidade é a mesma coisa que a mensagem ter sido publicada.",
+        "Durabilidade quer dizer que o dado nunca muda depois do COMMIT.",
+        "Durabilidade é ter commitado naquele disco; o outro serviço pode não ter sabido."
       ],
-      "a": 0,
-      "w": "O outro serviço não soube.",
+      "a": 3,
+      "w": "Commitou no disco daquele banco. O faturamento ainda pode não ter a mensagem.",
       "t": "D"
     },
     {
-      "q": "Marque a leitura correta (D).",
+      "q": "Durabilidade cobre todos os serviços ou só aquele banco?",
       "o": [
-        "Durabilidade: commitou naquele disco/WAL.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Durabilidade garante que todos os serviços receberam o dado.",
+        "Durabilidade é a mesma coisa que a mensagem ter sido publicada.",
+        "Durabilidade quer dizer que o dado nunca muda depois do COMMIT.",
+        "Durabilidade é ter commitado naquele disco; o outro serviço pode não ter sabido."
       ],
-      "a": 0,
-      "w": "O outro serviço não soube.",
+      "a": 3,
+      "w": "Commitou no disco daquele banco. O faturamento ainda pode não ter a mensagem.",
       "t": "D"
     },
     {
-      "q": "Corrija o mito sobre D.",
+      "q": "Depois do COMMIT, o dado está onde?",
       "o": [
-        "Durabilidade: commitou naquele disco/WAL.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Durabilidade quer dizer que o dado nunca muda depois do COMMIT.",
+        "Durabilidade é ter commitado naquele disco; o outro serviço pode não ter sabido.",
+        "Durabilidade garante que todos os serviços receberam o dado.",
+        "Durabilidade é a mesma coisa que a mensagem ter sido publicada."
       ],
-      "a": 0,
-      "w": "O outro serviço não soube.",
+      "a": 1,
+      "w": "Commitou no disco daquele banco. O faturamento ainda pode não ter a mensagem.",
       "t": "D"
     },
     {
-      "q": "No caderno, a respeito de D: qual vale?",
+      "q": "Durabilidade quer dizer que o dado nunca muda?",
       "o": [
-        "Durabilidade: commitou naquele disco/WAL.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Durabilidade é a mesma coisa que a mensagem ter sido publicada.",
+        "Durabilidade quer dizer que o dado nunca muda depois do COMMIT.",
+        "Durabilidade é ter commitado naquele disco; o outro serviço pode não ter sabido.",
+        "Durabilidade garante que todos os serviços receberam o dado."
       ],
-      "a": 0,
-      "w": "O outro serviço não soube.",
+      "a": 2,
+      "w": "Commitou no disco daquele banco. O faturamento ainda pode não ter a mensagem.",
       "t": "D"
     },
     {
-      "q": "Se perguntarem D na mesa, qual frase é a verdadeira?",
+      "q": "O faturamento não recebeu a mensagem. A durabilidade falhou?",
       "o": [
-        "Durabilidade: commitou naquele disco/WAL.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Durabilidade quer dizer que o dado nunca muda depois do COMMIT.",
+        "Durabilidade é ter commitado naquele disco; o outro serviço pode não ter sabido.",
+        "Durabilidade garante que todos os serviços receberam o dado.",
+        "Durabilidade é a mesma coisa que a mensagem ter sido publicada."
       ],
-      "a": 0,
-      "w": "O outro serviço não soube.",
+      "a": 1,
+      "w": "Commitou no disco daquele banco. O faturamento ainda pode não ter a mensagem.",
       "t": "D"
     },
     {
-      "q": "Sobre C banco: qual afirmação está certa?",
+      "q": "O que é o C de ACID?",
       "o": [
-        "C de ACID é invariante do banco, não consistência distribuída.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O C de ACID é a consistência entre réplicas do sistema.",
+        "O C de ACID quer dizer que o read vê o write em todos os nós.",
+        "O C de ACID é invariante do banco, como constraint e unique — não é o C de CAP.",
+        "O C de ACID é o mesmo C de CAP."
       ],
-      "a": 0,
-      "w": "Palavra sobrecarregada.",
+      "a": 2,
+      "w": "Palavra sobrecarregada. O C de ACID é constraint local; o C de CAP é consistência distribuída.",
       "t": "C banco"
     },
     {
-      "q": "Qual frase sobre C banco está certa?",
+      "q": "O C de ACID e o C de CAP são a mesma coisa?",
       "o": [
-        "C de ACID é invariante do banco, não consistência distribuída.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O C de ACID quer dizer que o read vê o write em todos os nós.",
+        "O C de ACID é invariante do banco, como constraint e unique — não é o C de CAP.",
+        "O C de ACID é o mesmo C de CAP.",
+        "O C de ACID é a consistência entre réplicas do sistema."
       ],
-      "a": 0,
-      "w": "Palavra sobrecarregada.",
+      "a": 1,
+      "w": "Palavra sobrecarregada. O C de ACID é constraint local; o C de CAP é consistência distribuída.",
       "t": "C banco"
     },
     {
-      "q": "C banco — o que acontece de verdade?",
+      "q": "Constraint e unique pertencem a qual letra?",
       "o": [
-        "C de ACID é invariante do banco, não consistência distribuída.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O C de ACID é o mesmo C de CAP.",
+        "O C de ACID é a consistência entre réplicas do sistema.",
+        "O C de ACID quer dizer que o read vê o write em todos os nós.",
+        "O C de ACID é invariante do banco, como constraint e unique — não é o C de CAP."
       ],
-      "a": 0,
-      "w": "Palavra sobrecarregada.",
+      "a": 3,
+      "w": "Palavra sobrecarregada. O C de ACID é constraint local; o C de CAP é consistência distribuída.",
       "t": "C banco"
     },
     {
-      "q": "Marque a leitura correta (C banco).",
+      "q": "O C de ACID fala de réplicas ou de invariante local?",
       "o": [
-        "C de ACID é invariante do banco, não consistência distribuída.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O C de ACID é a consistência entre réplicas do sistema.",
+        "O C de ACID quer dizer que o read vê o write em todos os nós.",
+        "O C de ACID é invariante do banco, como constraint e unique — não é o C de CAP.",
+        "O C de ACID é o mesmo C de CAP."
       ],
-      "a": 0,
-      "w": "Palavra sobrecarregada.",
+      "a": 2,
+      "w": "Palavra sobrecarregada. O C de ACID é constraint local; o C de CAP é consistência distribuída.",
       "t": "C banco"
     },
     {
-      "q": "Corrija o mito sobre C banco.",
+      "q": "Por que esta aula chama consistência de palavra sobrecarregada?",
       "o": [
-        "C de ACID é invariante do banco, não consistência distribuída.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O C de ACID é a consistência entre réplicas do sistema.",
+        "O C de ACID quer dizer que o read vê o write em todos os nós.",
+        "O C de ACID é invariante do banco, como constraint e unique — não é o C de CAP.",
+        "O C de ACID é o mesmo C de CAP."
       ],
-      "a": 0,
-      "w": "Palavra sobrecarregada.",
+      "a": 2,
+      "w": "Palavra sobrecarregada. O C de ACID é constraint local; o C de CAP é consistência distribuída.",
       "t": "C banco"
     },
     {
-      "q": "No caderno, a respeito de C banco: qual vale?",
+      "q": "O C de ACID garante que o read vê o write em todos os nós?",
       "o": [
-        "C de ACID é invariante do banco, não consistência distribuída.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O C de ACID é a consistência entre réplicas do sistema.",
+        "O C de ACID quer dizer que o read vê o write em todos os nós.",
+        "O C de ACID é invariante do banco, como constraint e unique — não é o C de CAP.",
+        "O C de ACID é o mesmo C de CAP."
       ],
-      "a": 0,
-      "w": "Palavra sobrecarregada.",
+      "a": 2,
+      "w": "Palavra sobrecarregada. O C de ACID é constraint local; o C de CAP é consistência distribuída.",
       "t": "C banco"
     },
     {
-      "q": "Se perguntarem C banco na mesa, qual frase é a verdadeira?",
+      "q": "Qual C é local e qual é distribuído?",
       "o": [
-        "C de ACID é invariante do banco, não consistência distribuída.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O C de ACID é invariante do banco, como constraint e unique — não é o C de CAP.",
+        "O C de ACID é o mesmo C de CAP.",
+        "O C de ACID é a consistência entre réplicas do sistema.",
+        "O C de ACID quer dizer que o read vê o write em todos os nós."
       ],
       "a": 0,
-      "w": "Palavra sobrecarregada.",
+      "w": "Palavra sobrecarregada. O C de ACID é constraint local; o C de CAP é consistência distribuída.",
       "t": "C banco"
     },
     {
-      "q": "Sobre dois caixas: qual afirmação está certa?",
+      "q": "Dois resource managers compartilham rollback?",
       "o": [
-        "Dois caixas em lojas diferentes não compartilham a mesma borracha.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Dois resource managers desfazem juntos quando um deles falha.",
+        "O rollback é global sempre que os dois bancos são do mesmo fornecedor.",
+        "Dois resource managers não compartilham rollback: o ACID é local.",
+        "Dois resource managers compartilham rollback se estiverem na mesma rede."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "Um caixa desfaz a venda inteira. Dois caixas não compartilham a borracha; entre eles é saga e compensação.",
       "t": "dois caixas"
     },
     {
-      "q": "Qual frase sobre dois caixas está certa?",
+      "q": "Um banco desfaz. O outro desfaz junto?",
       "o": [
-        "Dois caixas em lojas diferentes não compartilham a mesma borracha.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O rollback é global sempre que os dois bancos são do mesmo fornecedor.",
+        "Dois resource managers não compartilham rollback: o ACID é local.",
+        "Dois resource managers compartilham rollback se estiverem na mesma rede.",
+        "Dois resource managers desfazem juntos quando um deles falha."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "Um caixa desfaz a venda inteira. Dois caixas não compartilham a borracha; entre eles é saga e compensação.",
       "t": "dois caixas"
     },
     {
-      "q": "Dois caixas — o que acontece de verdade?",
+      "q": "O que existe entre dois resource managers, se não há rollback comum?",
       "o": [
-        "Dois caixas em lojas diferentes não compartilham a mesma borracha.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Dois resource managers compartilham rollback se estiverem na mesma rede.",
+        "Dois resource managers desfazem juntos quando um deles falha.",
+        "O rollback é global sempre que os dois bancos são do mesmo fornecedor.",
+        "Dois resource managers não compartilham rollback: o ACID é local."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 3,
+      "w": "Um caixa desfaz a venda inteira. Dois caixas não compartilham a borracha; entre eles é saga e compensação.",
       "t": "dois caixas"
     },
     {
-      "q": "Marque a leitura correta (dois caixas).",
+      "q": "Estar na mesma rede faz dois bancos desfazerem juntos?",
       "o": [
-        "Dois caixas em lojas diferentes não compartilham a mesma borracha.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Dois resource managers não compartilham rollback: o ACID é local.",
+        "Dois resource managers compartilham rollback se estiverem na mesma rede.",
+        "Dois resource managers desfazem juntos quando um deles falha.",
+        "O rollback é global sempre que os dois bancos são do mesmo fornecedor."
       ],
       "a": 0,
-      "w": "Analogia da aula.",
+      "w": "Um caixa desfaz a venda inteira. Dois caixas não compartilham a borracha; entre eles é saga e compensação.",
       "t": "dois caixas"
     },
     {
-      "q": "Corrija o mito sobre dois caixas.",
+      "q": "Bancos do mesmo fornecedor têm rollback global?",
       "o": [
-        "Dois caixas em lojas diferentes não compartilham a mesma borracha.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Dois resource managers compartilham rollback se estiverem na mesma rede.",
+        "Dois resource managers desfazem juntos quando um deles falha.",
+        "O rollback é global sempre que os dois bancos são do mesmo fornecedor.",
+        "Dois resource managers não compartilham rollback: o ACID é local."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 3,
+      "w": "Um caixa desfaz a venda inteira. Dois caixas não compartilham a borracha; entre eles é saga e compensação.",
       "t": "dois caixas"
     },
     {
-      "q": "No caderno, a respeito de dois caixas: qual vale?",
+      "q": "O ACID é local ou global?",
       "o": [
-        "Dois caixas em lojas diferentes não compartilham a mesma borracha.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O rollback é global sempre que os dois bancos são do mesmo fornecedor.",
+        "Dois resource managers não compartilham rollback: o ACID é local.",
+        "Dois resource managers compartilham rollback se estiverem na mesma rede.",
+        "Dois resource managers desfazem juntos quando um deles falha."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "Um caixa desfaz a venda inteira. Dois caixas não compartilham a borracha; entre eles é saga e compensação.",
       "t": "dois caixas"
     },
     {
-      "q": "Se perguntarem dois caixas na mesa, qual frase é a verdadeira?",
+      "q": "Um caixa desfaz a venda. E o segundo caixa?",
       "o": [
-        "Dois caixas em lojas diferentes não compartilham a mesma borracha.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O rollback é global sempre que os dois bancos são do mesmo fornecedor.",
+        "Dois resource managers não compartilham rollback: o ACID é local.",
+        "Dois resource managers compartilham rollback se estiverem na mesma rede.",
+        "Dois resource managers desfazem juntos quando um deles falha."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "Um caixa desfaz a venda inteira. Dois caixas não compartilham a borracha; entre eles é saga e compensação.",
       "t": "dois caixas"
     },
     {
-      "q": "Sobre outbox: qual afirmação está certa?",
+      "q": "Como fechar o buraco entre banco e broker?",
       "o": [
-        "Banco + Kafka: outbox, saga, idempotência.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Banco mais broker se resolve com 2PC entre os dois.",
+        "Banco mais broker não precisa de nada: o COMMIT cobre os dois.",
+        "Banco mais broker exige transação global do sistema operacional.",
+        "Banco mais broker se resolve com outbox, saga e idempotência — não com 2PC barato."
       ],
-      "a": 0,
-      "w": "Não 2PC barato.",
+      "a": 3,
+      "w": "A linha de mensagem entra na mesma transação do pedido. Um publisher lê a tabela e manda depois.",
       "t": "outbox"
     },
     {
-      "q": "Qual frase sobre outbox está certa?",
+      "q": "Qual o caminho maduro para banco mais broker?",
       "o": [
-        "Banco + Kafka: outbox, saga, idempotência.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Banco mais broker se resolve com 2PC entre os dois.",
+        "Banco mais broker não precisa de nada: o COMMIT cobre os dois.",
+        "Banco mais broker exige transação global do sistema operacional.",
+        "Banco mais broker se resolve com outbox, saga e idempotência — não com 2PC barato."
       ],
-      "a": 0,
-      "w": "Não 2PC barato.",
+      "a": 3,
+      "w": "A linha de mensagem entra na mesma transação do pedido. Um publisher lê a tabela e manda depois.",
       "t": "outbox"
     },
     {
-      "q": "Outbox — o que acontece de verdade?",
+      "q": "2PC entre banco e broker é o desenho recomendado?",
       "o": [
-        "Banco + Kafka: outbox, saga, idempotência.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Banco mais broker se resolve com 2PC entre os dois.",
+        "Banco mais broker não precisa de nada: o COMMIT cobre os dois.",
+        "Banco mais broker exige transação global do sistema operacional.",
+        "Banco mais broker se resolve com outbox, saga e idempotência — não com 2PC barato."
       ],
-      "a": 0,
-      "w": "Não 2PC barato.",
+      "a": 3,
+      "w": "A linha de mensagem entra na mesma transação do pedido. Um publisher lê a tabela e manda depois.",
       "t": "outbox"
     },
     {
-      "q": "Marque a leitura correta (outbox).",
+      "q": "O COMMIT do banco cobre o envio da mensagem?",
       "o": [
-        "Banco + Kafka: outbox, saga, idempotência.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Banco mais broker se resolve com 2PC entre os dois.",
+        "Banco mais broker não precisa de nada: o COMMIT cobre os dois.",
+        "Banco mais broker exige transação global do sistema operacional.",
+        "Banco mais broker se resolve com outbox, saga e idempotência — não com 2PC barato."
       ],
-      "a": 0,
-      "w": "Não 2PC barato.",
+      "a": 3,
+      "w": "A linha de mensagem entra na mesma transação do pedido. Um publisher lê a tabela e manda depois.",
       "t": "outbox"
     },
     {
-      "q": "Corrija o mito sobre outbox.",
+      "q": "Onde a linha de mensagem é gravada no outbox?",
       "o": [
-        "Banco + Kafka: outbox, saga, idempotência.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Banco mais broker não precisa de nada: o COMMIT cobre os dois.",
+        "Banco mais broker exige transação global do sistema operacional.",
+        "Banco mais broker se resolve com outbox, saga e idempotência — não com 2PC barato.",
+        "Banco mais broker se resolve com 2PC entre os dois."
       ],
-      "a": 0,
-      "w": "Não 2PC barato.",
+      "a": 2,
+      "w": "A linha de mensagem entra na mesma transação do pedido. Um publisher lê a tabela e manda depois.",
       "t": "outbox"
     },
     {
-      "q": "No caderno, a respeito de outbox: qual vale?",
+      "q": "Quem manda a mensagem depois, no outbox?",
       "o": [
-        "Banco + Kafka: outbox, saga, idempotência.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Banco mais broker se resolve com 2PC entre os dois.",
+        "Banco mais broker não precisa de nada: o COMMIT cobre os dois.",
+        "Banco mais broker exige transação global do sistema operacional.",
+        "Banco mais broker se resolve com outbox, saga e idempotência — não com 2PC barato."
       ],
-      "a": 0,
-      "w": "Não 2PC barato.",
+      "a": 3,
+      "w": "A linha de mensagem entra na mesma transação do pedido. Um publisher lê a tabela e manda depois.",
       "t": "outbox"
     },
     {
-      "q": "Se perguntarem outbox na mesa, qual frase é a verdadeira?",
+      "q": "Que três peças resolvem banco mais broker?",
       "o": [
-        "Banco + Kafka: outbox, saga, idempotência.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Banco mais broker se resolve com 2PC entre os dois.",
+        "Banco mais broker não precisa de nada: o COMMIT cobre os dois.",
+        "Banco mais broker exige transação global do sistema operacional.",
+        "Banco mais broker se resolve com outbox, saga e idempotência — não com 2PC barato."
       ],
-      "a": 0,
-      "w": "Não 2PC barato.",
+      "a": 3,
+      "w": "A linha de mensagem entra na mesma transação do pedido. Um publisher lê a tabela e manda depois.",
       "t": "outbox"
     },
     {
-      "q": "Sobre micro: qual afirmação está certa?",
+      "q": "Cada serviço com seu banco: o que vale dentro e o que vale entre eles?",
       "o": [
-        "Cada serviço com seu banco: ACID local, saga entre eles.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Cada serviço com seu banco mantém ACID entre todos eles.",
+        "Cada serviço com seu banco elimina a necessidade de saga.",
+        "Cada serviço com seu banco só funciona com transação global.",
+        "Cada serviço com seu banco: ACID local, saga entre eles."
       ],
-      "a": 0,
-      "w": "Preço da decomposição.",
+      "a": 3,
+      "w": "Esse é o preço da decomposição. Dentro do serviço vale o rollback; entre serviços, compensação.",
       "t": "micro"
     },
     {
-      "q": "Qual frase sobre micro está certa?",
+      "q": "Onde o rollback funciona quando cada serviço tem seu banco?",
       "o": [
         "Cada serviço com seu banco: ACID local, saga entre eles.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Cada serviço com seu banco mantém ACID entre todos eles.",
+        "Cada serviço com seu banco elimina a necessidade de saga.",
+        "Cada serviço com seu banco só funciona com transação global."
       ],
       "a": 0,
-      "w": "Preço da decomposição.",
+      "w": "Esse é o preço da decomposição. Dentro do serviço vale o rollback; entre serviços, compensação.",
       "t": "micro"
     },
     {
-      "q": "Micro — o que acontece de verdade?",
+      "q": "Bancos separados mantêm ACID entre os serviços?",
       "o": [
+        "Cada serviço com seu banco elimina a necessidade de saga.",
+        "Cada serviço com seu banco só funciona com transação global.",
         "Cada serviço com seu banco: ACID local, saga entre eles.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Cada serviço com seu banco mantém ACID entre todos eles."
       ],
-      "a": 0,
-      "w": "Preço da decomposição.",
+      "a": 2,
+      "w": "Esse é o preço da decomposição. Dentro do serviço vale o rollback; entre serviços, compensação.",
       "t": "micro"
     },
     {
-      "q": "Marque a leitura correta (micro).",
+      "q": "O que entra no lugar da transação entre serviços?",
       "o": [
+        "Cada serviço com seu banco só funciona com transação global.",
         "Cada serviço com seu banco: ACID local, saga entre eles.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Cada serviço com seu banco mantém ACID entre todos eles.",
+        "Cada serviço com seu banco elimina a necessidade de saga."
       ],
-      "a": 0,
-      "w": "Preço da decomposição.",
+      "a": 1,
+      "w": "Esse é o preço da decomposição. Dentro do serviço vale o rollback; entre serviços, compensação.",
       "t": "micro"
     },
     {
-      "q": "Corrija o mito sobre micro.",
+      "q": "Qual o preço de dar um banco para cada serviço?",
       "o": [
         "Cada serviço com seu banco: ACID local, saga entre eles.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cada serviço com seu banco mantém ACID entre todos eles.",
+        "Cada serviço com seu banco elimina a necessidade de saga.",
+        "Cada serviço com seu banco só funciona com transação global."
       ],
       "a": 0,
-      "w": "Preço da decomposição.",
+      "w": "Esse é o preço da decomposição. Dentro do serviço vale o rollback; entre serviços, compensação.",
       "t": "micro"
     },
     {
-      "q": "No caderno, a respeito de micro: qual vale?",
+      "q": "Bancos separados dispensam saga?",
       "o": [
         "Cada serviço com seu banco: ACID local, saga entre eles.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cada serviço com seu banco mantém ACID entre todos eles.",
+        "Cada serviço com seu banco elimina a necessidade de saga.",
+        "Cada serviço com seu banco só funciona com transação global."
       ],
       "a": 0,
-      "w": "Preço da decomposição.",
+      "w": "Esse é o preço da decomposição. Dentro do serviço vale o rollback; entre serviços, compensação.",
       "t": "micro"
     },
     {
-      "q": "Se perguntarem micro na mesa, qual frase é a verdadeira?",
+      "q": "Dentro do serviço: ACID ou saga?",
       "o": [
+        "Cada serviço com seu banco só funciona com transação global.",
         "Cada serviço com seu banco: ACID local, saga entre eles.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cada serviço com seu banco mantém ACID entre todos eles.",
+        "Cada serviço com seu banco elimina a necessidade de saga."
       ],
-      "a": 0,
-      "w": "Preço da decomposição.",
+      "a": 1,
+      "w": "Esse é o preço da decomposição. Dentro do serviço vale o rollback; entre serviços, compensação.",
       "t": "micro"
     },
     {
-      "q": "Sobre shared db: qual afirmação está certa?",
+      "q": "Banco compartilhado entre serviços traz de volta o quê?",
       "o": [
-        "Banco compartilhado entre “serviços” restaura um RM — e o acoplamento.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Banco compartilhado entre serviços devolve um resource manager só, e o acoplamento com ele.",
+        "Banco compartilhado entre serviços preserva a independência de cada um.",
+        "Banco compartilhado é o jeito recomendado de manter ACID no micro.",
+        "Banco compartilhado entre serviços não muda o acoplamento."
       ],
       "a": 0,
-      "w": "Monolito distribuído.",
+      "w": "Você recuperou o rollback e perdeu a independência. Isso é monolito distribuído.",
       "t": "shared db"
     },
     {
-      "q": "Qual frase sobre shared db está certa?",
+      "q": "O que você perde ao compartilhar o banco entre serviços?",
       "o": [
-        "Banco compartilhado entre “serviços” restaura um RM — e o acoplamento.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Banco compartilhado entre serviços não muda o acoplamento.",
+        "Banco compartilhado entre serviços devolve um resource manager só, e o acoplamento com ele.",
+        "Banco compartilhado entre serviços preserva a independência de cada um.",
+        "Banco compartilhado é o jeito recomendado de manter ACID no micro."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 1,
+      "w": "Você recuperou o rollback e perdeu a independência. Isso é monolito distribuído.",
       "t": "shared db"
     },
     {
-      "q": "Shared db — o que acontece de verdade?",
+      "q": "Compartilhar o banco preserva a independência dos serviços?",
       "o": [
-        "Banco compartilhado entre “serviços” restaura um RM — e o acoplamento.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Banco compartilhado é o jeito recomendado de manter ACID no micro.",
+        "Banco compartilhado entre serviços não muda o acoplamento.",
+        "Banco compartilhado entre serviços devolve um resource manager só, e o acoplamento com ele.",
+        "Banco compartilhado entre serviços preserva a independência de cada um."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 2,
+      "w": "Você recuperou o rollback e perdeu a independência. Isso é monolito distribuído.",
       "t": "shared db"
     },
     {
-      "q": "Marque a leitura correta (shared db).",
+      "q": "Como esta aula chama vários deploys com o mesmo banco?",
       "o": [
-        "Banco compartilhado entre “serviços” restaura um RM — e o acoplamento.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Banco compartilhado entre serviços preserva a independência de cada um.",
+        "Banco compartilhado é o jeito recomendado de manter ACID no micro.",
+        "Banco compartilhado entre serviços não muda o acoplamento.",
+        "Banco compartilhado entre serviços devolve um resource manager só, e o acoplamento com ele."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 3,
+      "w": "Você recuperou o rollback e perdeu a independência. Isso é monolito distribuído.",
       "t": "shared db"
     },
     {
-      "q": "Corrija o mito sobre shared db.",
+      "q": "Banco compartilhado é o jeito recomendado de manter ACID?",
       "o": [
-        "Banco compartilhado entre “serviços” restaura um RM — e o acoplamento.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Banco compartilhado é o jeito recomendado de manter ACID no micro.",
+        "Banco compartilhado entre serviços não muda o acoplamento.",
+        "Banco compartilhado entre serviços devolve um resource manager só, e o acoplamento com ele.",
+        "Banco compartilhado entre serviços preserva a independência de cada um."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 2,
+      "w": "Você recuperou o rollback e perdeu a independência. Isso é monolito distribuído.",
       "t": "shared db"
     },
     {
-      "q": "No caderno, a respeito de shared db: qual vale?",
+      "q": "Compartilhar o banco muda o acoplamento?",
       "o": [
-        "Banco compartilhado entre “serviços” restaura um RM — e o acoplamento.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Banco compartilhado entre serviços devolve um resource manager só, e o acoplamento com ele.",
+        "Banco compartilhado entre serviços preserva a independência de cada um.",
+        "Banco compartilhado é o jeito recomendado de manter ACID no micro.",
+        "Banco compartilhado entre serviços não muda o acoplamento."
       ],
       "a": 0,
-      "w": "Monolito distribuído.",
+      "w": "Você recuperou o rollback e perdeu a independência. Isso é monolito distribuído.",
       "t": "shared db"
     },
     {
-      "q": "Se perguntarem shared db na mesa, qual frase é a verdadeira?",
+      "q": "Você ganhou rollback compartilhando o banco. E perdeu o quê?",
       "o": [
-        "Banco compartilhado entre “serviços” restaura um RM — e o acoplamento.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Banco compartilhado entre serviços não muda o acoplamento.",
+        "Banco compartilhado entre serviços devolve um resource manager só, e o acoplamento com ele.",
+        "Banco compartilhado entre serviços preserva a independência de cada um.",
+        "Banco compartilhado é o jeito recomendado de manter ACID no micro."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 1,
+      "w": "Você recuperou o rollback e perdeu a independência. Isso é monolito distribuído.",
       "t": "shared db"
     },
     {
-      "q": "Sobre rollback: qual afirmação está certa?",
+      "q": "Existe rollback distribuído?",
       "o": [
-        "Não há rollback distribuído. Há compensação (saga).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Não há rollback distribuído: há compensação, que é a saga.",
+        "Existe rollback distribuído quando o framework suporta.",
+        "O rollback distribuído acontece automaticamente na saga.",
+        "Compensação e rollback distribuído são a mesma coisa."
       ],
       "a": 0,
-      "w": "Não recitar ACID no cluster.",
+      "w": "Recitar ACID no cluster não inventa rollback distribuído. O que existe é publicar um fato contrário.",
       "t": "rollback"
     },
     {
-      "q": "Qual frase sobre rollback está certa?",
+      "q": "O que entra no lugar do rollback entre sistemas?",
       "o": [
-        "Não há rollback distribuído. Há compensação (saga).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Não há rollback distribuído: há compensação, que é a saga.",
+        "Existe rollback distribuído quando o framework suporta.",
+        "O rollback distribuído acontece automaticamente na saga.",
+        "Compensação e rollback distribuído são a mesma coisa."
       ],
       "a": 0,
-      "w": "Não recitar ACID no cluster.",
+      "w": "Recitar ACID no cluster não inventa rollback distribuído. O que existe é publicar um fato contrário.",
       "t": "rollback"
     },
     {
-      "q": "Rollback — o que acontece de verdade?",
+      "q": "Compensação e rollback são a mesma coisa?",
       "o": [
-        "Não há rollback distribuído. Há compensação (saga).",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O rollback distribuído acontece automaticamente na saga.",
+        "Compensação e rollback distribuído são a mesma coisa.",
+        "Não há rollback distribuído: há compensação, que é a saga.",
+        "Existe rollback distribuído quando o framework suporta."
       ],
-      "a": 0,
-      "w": "Não recitar ACID no cluster.",
+      "a": 2,
+      "w": "Recitar ACID no cluster não inventa rollback distribuído. O que existe é publicar um fato contrário.",
       "t": "rollback"
     },
     {
-      "q": "Marque a leitura correta (rollback).",
+      "q": "A saga faz rollback automático?",
       "o": [
-        "Não há rollback distribuído. Há compensação (saga).",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O rollback distribuído acontece automaticamente na saga.",
+        "Compensação e rollback distribuído são a mesma coisa.",
+        "Não há rollback distribuído: há compensação, que é a saga.",
+        "Existe rollback distribuído quando o framework suporta."
       ],
-      "a": 0,
-      "w": "Não recitar ACID no cluster.",
+      "a": 2,
+      "w": "Recitar ACID no cluster não inventa rollback distribuído. O que existe é publicar um fato contrário.",
       "t": "rollback"
     },
     {
-      "q": "Corrija o mito sobre rollback.",
+      "q": "Recitar ACID no cluster resolve o rollback?",
       "o": [
-        "Não há rollback distribuído. Há compensação (saga).",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Existe rollback distribuído quando o framework suporta.",
+        "O rollback distribuído acontece automaticamente na saga.",
+        "Compensação e rollback distribuído são a mesma coisa.",
+        "Não há rollback distribuído: há compensação, que é a saga."
       ],
-      "a": 0,
-      "w": "Não recitar ACID no cluster.",
+      "a": 3,
+      "w": "Recitar ACID no cluster não inventa rollback distribuído. O que existe é publicar um fato contrário.",
       "t": "rollback"
     },
     {
-      "q": "No caderno, a respeito de rollback: qual vale?",
+      "q": "Como desfazer um efeito num sistema remoto?",
       "o": [
-        "Não há rollback distribuído. Há compensação (saga).",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Não há rollback distribuído: há compensação, que é a saga.",
+        "Existe rollback distribuído quando o framework suporta.",
+        "O rollback distribuído acontece automaticamente na saga.",
+        "Compensação e rollback distribuído são a mesma coisa."
       ],
       "a": 0,
-      "w": "Não recitar ACID no cluster.",
+      "w": "Recitar ACID no cluster não inventa rollback distribuído. O que existe é publicar um fato contrário.",
       "t": "rollback"
     },
     {
-      "q": "Se perguntarem rollback na mesa, qual frase é a verdadeira?",
+      "q": "O framework certo dá rollback distribuído?",
       "o": [
-        "Não há rollback distribuído. Há compensação (saga).",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Compensação e rollback distribuído são a mesma coisa.",
+        "Não há rollback distribuído: há compensação, que é a saga.",
+        "Existe rollback distribuído quando o framework suporta.",
+        "O rollback distribuído acontece automaticamente na saga."
       ],
-      "a": 0,
-      "w": "Não recitar ACID no cluster.",
+      "a": 1,
+      "w": "Recitar ACID no cluster não inventa rollback distribuído. O que existe é publicar um fato contrário.",
       "t": "rollback"
     },
     {
-      "q": "Sobre idempotência: qual afirmação está certa?",
+      "q": "Sem transação global, o que protege a operação?",
       "o": [
-        "Sem transação global, idempotência é o cinto.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Com transação global ou sem, a idempotência é dispensável.",
+        "A idempotência substitui a transação local do banco.",
+        "Idempotência quer dizer que a operação só chega uma vez.",
+        "Sem transação global, a idempotência é o cinto de segurança."
       ],
-      "a": 0,
-      "w": "eventId, upsert.",
+      "a": 3,
+      "w": "eventId, upsert e inbox garantem que aplicar duas vezes não cobra duas vezes.",
       "t": "idempotência"
     },
     {
-      "q": "Qual frase sobre idempotência está certa?",
+      "q": "Por que a idempotência é chamada de cinto?",
       "o": [
-        "Sem transação global, idempotência é o cinto.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Sem transação global, a idempotência é o cinto de segurança.",
+        "Com transação global ou sem, a idempotência é dispensável.",
+        "A idempotência substitui a transação local do banco.",
+        "Idempotência quer dizer que a operação só chega uma vez."
       ],
       "a": 0,
-      "w": "eventId, upsert.",
+      "w": "eventId, upsert e inbox garantem que aplicar duas vezes não cobra duas vezes.",
       "t": "idempotência"
     },
     {
-      "q": "Idempotência — o que acontece de verdade?",
+      "q": "Que peças garantem idempotência, segundo esta aula?",
       "o": [
-        "Sem transação global, idempotência é o cinto.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Sem transação global, a idempotência é o cinto de segurança.",
+        "Com transação global ou sem, a idempotência é dispensável.",
+        "A idempotência substitui a transação local do banco.",
+        "Idempotência quer dizer que a operação só chega uma vez."
       ],
       "a": 0,
-      "w": "eventId, upsert.",
+      "w": "eventId, upsert e inbox garantem que aplicar duas vezes não cobra duas vezes.",
       "t": "idempotência"
     },
     {
-      "q": "Marque a leitura correta (idempotência).",
+      "q": "A idempotência substitui a transação local?",
       "o": [
-        "Sem transação global, idempotência é o cinto.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Sem transação global, a idempotência é o cinto de segurança.",
+        "Com transação global ou sem, a idempotência é dispensável.",
+        "A idempotência substitui a transação local do banco.",
+        "Idempotência quer dizer que a operação só chega uma vez."
       ],
       "a": 0,
-      "w": "eventId, upsert.",
+      "w": "eventId, upsert e inbox garantem que aplicar duas vezes não cobra duas vezes.",
       "t": "idempotência"
     },
     {
-      "q": "Corrija o mito sobre idempotência.",
+      "q": "Idempotência quer dizer que a mensagem chega só uma vez?",
       "o": [
-        "Sem transação global, idempotência é o cinto.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Idempotência quer dizer que a operação só chega uma vez.",
+        "Sem transação global, a idempotência é o cinto de segurança.",
+        "Com transação global ou sem, a idempotência é dispensável.",
+        "A idempotência substitui a transação local do banco."
       ],
-      "a": 0,
-      "w": "eventId, upsert.",
+      "a": 1,
+      "w": "eventId, upsert e inbox garantem que aplicar duas vezes não cobra duas vezes.",
       "t": "idempotência"
     },
     {
-      "q": "No caderno, a respeito de idempotência: qual vale?",
+      "q": "Aplicar o mesmo efeito duas vezes: o que evita a cobrança dupla?",
       "o": [
-        "Sem transação global, idempotência é o cinto.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Com transação global ou sem, a idempotência é dispensável.",
+        "A idempotência substitui a transação local do banco.",
+        "Idempotência quer dizer que a operação só chega uma vez.",
+        "Sem transação global, a idempotência é o cinto de segurança."
       ],
-      "a": 0,
-      "w": "eventId, upsert.",
+      "a": 3,
+      "w": "eventId, upsert e inbox garantem que aplicar duas vezes não cobra duas vezes.",
       "t": "idempotência"
     },
     {
-      "q": "Se perguntarem idempotência na mesa, qual frase é a verdadeira?",
+      "q": "A idempotência é dispensável quando existe transação global?",
       "o": [
-        "Sem transação global, idempotência é o cinto.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "A idempotência substitui a transação local do banco.",
+        "Idempotência quer dizer que a operação só chega uma vez.",
+        "Sem transação global, a idempotência é o cinto de segurança.",
+        "Com transação global ou sem, a idempotência é dispensável."
       ],
-      "a": 0,
-      "w": "eventId, upsert.",
+      "a": 2,
+      "w": "eventId, upsert e inbox garantem que aplicar duas vezes não cobra duas vezes.",
       "t": "idempotência"
     },
     {
-      "q": "Sobre mensagem: qual afirmação está certa?",
+      "q": "Publicar no broker entra no COMMIT do banco?",
       "o": [
-        "Publicar no Kafka não entra no COMMIT do Postgres sozinho.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Publicar no broker e gravar no banco é sempre uma operação só.",
+        "Publicar no broker não entra no COMMIT do banco.",
+        "Publicar no broker entra no COMMIT do banco automaticamente.",
+        "O COMMIT do banco espera a confirmação do broker antes de fechar."
       ],
-      "a": 0,
-      "w": "O buraco do save+send.",
+      "a": 1,
+      "w": "Se o processo morre no meio, sobra linha sem evento ou evento sem linha. Esse é o buraco do save mais send.",
       "t": "mensagem"
     },
     {
-      "q": "Qual frase sobre mensagem está certa?",
+      "q": "O processo morre entre o save e o send. O que sobra?",
       "o": [
-        "Publicar no Kafka não entra no COMMIT do Postgres sozinho.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O COMMIT do banco espera a confirmação do broker antes de fechar.",
+        "Publicar no broker e gravar no banco é sempre uma operação só.",
+        "Publicar no broker não entra no COMMIT do banco.",
+        "Publicar no broker entra no COMMIT do banco automaticamente."
       ],
-      "a": 0,
-      "w": "O buraco do save+send.",
+      "a": 2,
+      "w": "Se o processo morre no meio, sobra linha sem evento ou evento sem linha. Esse é o buraco do save mais send.",
       "t": "mensagem"
     },
     {
-      "q": "Mensagem — o que acontece de verdade?",
+      "q": "Como se chama o buraco entre gravar e publicar?",
       "o": [
-        "Publicar no Kafka não entra no COMMIT do Postgres sozinho.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Publicar no broker não entra no COMMIT do banco.",
+        "Publicar no broker entra no COMMIT do banco automaticamente.",
+        "O COMMIT do banco espera a confirmação do broker antes de fechar.",
+        "Publicar no broker e gravar no banco é sempre uma operação só."
       ],
       "a": 0,
-      "w": "O buraco do save+send.",
+      "w": "Se o processo morre no meio, sobra linha sem evento ou evento sem linha. Esse é o buraco do save mais send.",
       "t": "mensagem"
     },
     {
-      "q": "Marque a leitura correta (mensagem).",
+      "q": "O COMMIT do banco espera o broker confirmar?",
       "o": [
-        "Publicar no Kafka não entra no COMMIT do Postgres sozinho.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O COMMIT do banco espera a confirmação do broker antes de fechar.",
+        "Publicar no broker e gravar no banco é sempre uma operação só.",
+        "Publicar no broker não entra no COMMIT do banco.",
+        "Publicar no broker entra no COMMIT do banco automaticamente."
       ],
-      "a": 0,
-      "w": "O buraco do save+send.",
+      "a": 2,
+      "w": "Se o processo morre no meio, sobra linha sem evento ou evento sem linha. Esse é o buraco do save mais send.",
       "t": "mensagem"
     },
     {
-      "q": "Corrija o mito sobre mensagem.",
+      "q": "Save e send formam uma operação só?",
       "o": [
-        "Publicar no Kafka não entra no COMMIT do Postgres sozinho.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O COMMIT do banco espera a confirmação do broker antes de fechar.",
+        "Publicar no broker e gravar no banco é sempre uma operação só.",
+        "Publicar no broker não entra no COMMIT do banco.",
+        "Publicar no broker entra no COMMIT do banco automaticamente."
       ],
-      "a": 0,
-      "w": "O buraco do save+send.",
+      "a": 2,
+      "w": "Se o processo morre no meio, sobra linha sem evento ou evento sem linha. Esse é o buraco do save mais send.",
       "t": "mensagem"
     },
     {
-      "q": "No caderno, a respeito de mensagem: qual vale?",
+      "q": "Linha sem evento: como isso acontece?",
       "o": [
-        "Publicar no Kafka não entra no COMMIT do Postgres sozinho.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Publicar no broker entra no COMMIT do banco automaticamente.",
+        "O COMMIT do banco espera a confirmação do broker antes de fechar.",
+        "Publicar no broker e gravar no banco é sempre uma operação só.",
+        "Publicar no broker não entra no COMMIT do banco."
       ],
-      "a": 0,
-      "w": "O buraco do save+send.",
+      "a": 3,
+      "w": "Se o processo morre no meio, sobra linha sem evento ou evento sem linha. Esse é o buraco do save mais send.",
       "t": "mensagem"
     },
     {
-      "q": "Se perguntarem mensagem na mesa, qual frase é a verdadeira?",
+      "q": "Por que save mais send não é atômico?",
       "o": [
-        "Publicar no Kafka não entra no COMMIT do Postgres sozinho.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O COMMIT do banco espera a confirmação do broker antes de fechar.",
+        "Publicar no broker e gravar no banco é sempre uma operação só.",
+        "Publicar no broker não entra no COMMIT do banco.",
+        "Publicar no broker entra no COMMIT do banco automaticamente."
       ],
-      "a": 0,
-      "w": "O buraco do save+send.",
+      "a": 2,
+      "w": "Se o processo morre no meio, sobra linha sem evento ou evento sem linha. Esse é o buraco do save mais send.",
       "t": "mensagem"
     },
     {
-      "q": "Sobre local first: qual afirmação está certa?",
+      "q": "Onde manter a invariante forte?",
       "o": [
-        "Mantenha invariantes fortes no mesmo RM quando puder.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Distribua a invariante forte entre vários resource managers sempre que possível.",
+        "A invariante forte funciona igual espalhada em vários bancos.",
+        "Invariante forte não é assunto de arquitetura, é de código.",
+        "Mantenha a invariante forte no mesmo resource manager quando puder."
       ],
-      "a": 0,
-      "w": "Não distribua por esporte.",
+      "a": 3,
+      "w": "Saldo e assento pedem invariante forte. Não distribua por esporte.",
       "t": "local first"
     },
     {
-      "q": "Qual frase sobre local first está certa?",
+      "q": "Saldo e assento pedem o quê?",
       "o": [
-        "Mantenha invariantes fortes no mesmo RM quando puder.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Distribua a invariante forte entre vários resource managers sempre que possível.",
+        "A invariante forte funciona igual espalhada em vários bancos.",
+        "Invariante forte não é assunto de arquitetura, é de código.",
+        "Mantenha a invariante forte no mesmo resource manager quando puder."
       ],
-      "a": 0,
-      "w": "Não distribua por esporte.",
+      "a": 3,
+      "w": "Saldo e assento pedem invariante forte. Não distribua por esporte.",
       "t": "local first"
     },
     {
-      "q": "Local first — o que acontece de verdade?",
+      "q": "Espalhar a invariante forte em vários bancos ajuda?",
       "o": [
-        "Mantenha invariantes fortes no mesmo RM quando puder.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Invariante forte não é assunto de arquitetura, é de código.",
+        "Mantenha a invariante forte no mesmo resource manager quando puder.",
+        "Distribua a invariante forte entre vários resource managers sempre que possível.",
+        "A invariante forte funciona igual espalhada em vários bancos."
       ],
-      "a": 0,
-      "w": "Não distribua por esporte.",
+      "a": 1,
+      "w": "Saldo e assento pedem invariante forte. Não distribua por esporte.",
       "t": "local first"
     },
     {
-      "q": "Marque a leitura correta (local first).",
+      "q": "Quando você distribui a invariante forte?",
       "o": [
-        "Mantenha invariantes fortes no mesmo RM quando puder.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Distribua a invariante forte entre vários resource managers sempre que possível.",
+        "A invariante forte funciona igual espalhada em vários bancos.",
+        "Invariante forte não é assunto de arquitetura, é de código.",
+        "Mantenha a invariante forte no mesmo resource manager quando puder."
       ],
-      "a": 0,
-      "w": "Não distribua por esporte.",
+      "a": 3,
+      "w": "Saldo e assento pedem invariante forte. Não distribua por esporte.",
       "t": "local first"
     },
     {
-      "q": "Corrija o mito sobre local first.",
+      "q": "A invariante forte funciona igual espalhada?",
       "o": [
-        "Mantenha invariantes fortes no mesmo RM quando puder.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A invariante forte funciona igual espalhada em vários bancos.",
+        "Invariante forte não é assunto de arquitetura, é de código.",
+        "Mantenha a invariante forte no mesmo resource manager quando puder.",
+        "Distribua a invariante forte entre vários resource managers sempre que possível."
       ],
-      "a": 0,
-      "w": "Não distribua por esporte.",
+      "a": 2,
+      "w": "Saldo e assento pedem invariante forte. Não distribua por esporte.",
       "t": "local first"
     },
     {
-      "q": "No caderno, a respeito de local first: qual vale?",
+      "q": "Qual o conselho desta aula sobre saldo e assento?",
       "o": [
-        "Mantenha invariantes fortes no mesmo RM quando puder.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Distribua a invariante forte entre vários resource managers sempre que possível.",
+        "A invariante forte funciona igual espalhada em vários bancos.",
+        "Invariante forte não é assunto de arquitetura, é de código.",
+        "Mantenha a invariante forte no mesmo resource manager quando puder."
       ],
-      "a": 0,
-      "w": "Não distribua por esporte.",
+      "a": 3,
+      "w": "Saldo e assento pedem invariante forte. Não distribua por esporte.",
       "t": "local first"
     },
     {
-      "q": "Se perguntarem local first na mesa, qual frase é a verdadeira?",
+      "q": "Distribuir por esporte custa o quê?",
       "o": [
-        "Mantenha invariantes fortes no mesmo RM quando puder.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Invariante forte não é assunto de arquitetura, é de código.",
+        "Mantenha a invariante forte no mesmo resource manager quando puder.",
+        "Distribua a invariante forte entre vários resource managers sempre que possível.",
+        "A invariante forte funciona igual espalhada em vários bancos."
       ],
-      "a": 0,
-      "w": "Não distribua por esporte.",
+      "a": 1,
+      "w": "Saldo e assento pedem invariante forte. Não distribua por esporte.",
       "t": "local first"
     },
     {
-      "q": "Sobre entrevista: qual afirmação está certa?",
+      "q": "O que acompanha a frase “ACID aqui, saga ali”?",
       "o": [
-        "Diga “ACID aqui, saga ali” com o desenho, não como slogan.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Dizer que o sistema é ACID resolve a pergunta na mesa.",
+        "Diga onde está cada resource manager: ACID aqui, saga ali, com o desenho na frente.",
+        "Basta dizer a frase “ACID aqui, saga ali” sem apontar nada.",
+        "Na entrevista não vale falar de resource manager: é detalhe técnico."
       ],
-      "a": 0,
-      "w": "Onde está o RM?",
+      "a": 1,
+      "w": "Slogan sem apontar o resource manager é recitação. Mostre no desenho onde cada um está.",
       "t": "entrevista"
     },
     {
-      "q": "Qual frase sobre entrevista está certa?",
+      "q": "Dizer a frase sem apontar o resource manager é o quê?",
       "o": [
-        "Diga “ACID aqui, saga ali” com o desenho, não como slogan.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Basta dizer a frase “ACID aqui, saga ali” sem apontar nada.",
+        "Na entrevista não vale falar de resource manager: é detalhe técnico.",
+        "Dizer que o sistema é ACID resolve a pergunta na mesa.",
+        "Diga onde está cada resource manager: ACID aqui, saga ali, com o desenho na frente."
       ],
-      "a": 0,
-      "w": "Onde está o RM?",
+      "a": 3,
+      "w": "Slogan sem apontar o resource manager é recitação. Mostre no desenho onde cada um está.",
       "t": "entrevista"
     },
     {
-      "q": "Entrevista — o que acontece de verdade?",
+      "q": "O que mostrar no desenho quando falam de transação?",
       "o": [
-        "Diga “ACID aqui, saga ali” com o desenho, não como slogan.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Na entrevista não vale falar de resource manager: é detalhe técnico.",
+        "Dizer que o sistema é ACID resolve a pergunta na mesa.",
+        "Diga onde está cada resource manager: ACID aqui, saga ali, com o desenho na frente.",
+        "Basta dizer a frase “ACID aqui, saga ali” sem apontar nada."
       ],
-      "a": 0,
-      "w": "Onde está o RM?",
+      "a": 2,
+      "w": "Slogan sem apontar o resource manager é recitação. Mostre no desenho onde cada um está.",
       "t": "entrevista"
     },
     {
-      "q": "Marque a leitura correta (entrevista).",
+      "q": "Falar de resource manager na entrevista é detalhe demais?",
       "o": [
-        "Diga “ACID aqui, saga ali” com o desenho, não como slogan.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Na entrevista não vale falar de resource manager: é detalhe técnico.",
+        "Dizer que o sistema é ACID resolve a pergunta na mesa.",
+        "Diga onde está cada resource manager: ACID aqui, saga ali, com o desenho na frente.",
+        "Basta dizer a frase “ACID aqui, saga ali” sem apontar nada."
       ],
-      "a": 0,
-      "w": "Onde está o RM?",
+      "a": 2,
+      "w": "Slogan sem apontar o resource manager é recitação. Mostre no desenho onde cada um está.",
       "t": "entrevista"
     },
     {
-      "q": "Corrija o mito sobre entrevista.",
+      "q": "Dizer que o sistema é ACID resolve a pergunta?",
       "o": [
-        "Diga “ACID aqui, saga ali” com o desenho, não como slogan.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Diga onde está cada resource manager: ACID aqui, saga ali, com o desenho na frente.",
+        "Basta dizer a frase “ACID aqui, saga ali” sem apontar nada.",
+        "Na entrevista não vale falar de resource manager: é detalhe técnico.",
+        "Dizer que o sistema é ACID resolve a pergunta na mesa."
       ],
       "a": 0,
-      "w": "Onde está o RM?",
+      "w": "Slogan sem apontar o resource manager é recitação. Mostre no desenho onde cada um está.",
       "t": "entrevista"
     },
     {
-      "q": "No caderno, a respeito de entrevista: qual vale?",
+      "q": "Como transformar o slogan em resposta de arquiteto?",
       "o": [
-        "Diga “ACID aqui, saga ali” com o desenho, não como slogan.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Dizer que o sistema é ACID resolve a pergunta na mesa.",
+        "Diga onde está cada resource manager: ACID aqui, saga ali, com o desenho na frente.",
+        "Basta dizer a frase “ACID aqui, saga ali” sem apontar nada.",
+        "Na entrevista não vale falar de resource manager: é detalhe técnico."
       ],
-      "a": 0,
-      "w": "Onde está o RM?",
+      "a": 1,
+      "w": "Slogan sem apontar o resource manager é recitação. Mostre no desenho onde cada um está.",
       "t": "entrevista"
     },
     {
-      "q": "Se perguntarem entrevista na mesa, qual frase é a verdadeira?",
+      "q": "Onde o entrevistador quer que você aponte?",
       "o": [
-        "Diga “ACID aqui, saga ali” com o desenho, não como slogan.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Dizer que o sistema é ACID resolve a pergunta na mesa.",
+        "Diga onde está cada resource manager: ACID aqui, saga ali, com o desenho na frente.",
+        "Basta dizer a frase “ACID aqui, saga ali” sem apontar nada.",
+        "Na entrevista não vale falar de resource manager: é detalhe técnico."
       ],
-      "a": 0,
-      "w": "Onde está o RM?",
+      "a": 1,
+      "w": "Slogan sem apontar o resource manager é recitação. Mostre no desenho onde cada um está.",
       "t": "entrevista"
     },
     {
-      "q": "Sobre compensação: qual afirmação está certa?",
+      "q": "O que o estorno faz com o COMMIT remoto?",
       "o": [
-        "Estorno é compensação, não undo mágico da primeira transação remota.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Estorno apaga o registro original do outro sistema.",
+        "Estorno e rollback fazem exatamente a mesma coisa.",
+        "Estorno é compensação: publica um fato contrário, não desfaz o COMMIT remoto.",
+        "Estorno desfaz o COMMIT remoto que já aconteceu."
       ],
-      "a": 0,
-      "w": "Saga.",
+      "a": 2,
+      "w": "O COMMIT remoto já aconteceu. A saga cria um fato novo que compensa o anterior.",
       "t": "compensação"
     },
     {
-      "q": "Qual frase sobre compensação está certa?",
+      "q": "Estorno desfaz ou cria um fato novo?",
       "o": [
-        "Estorno é compensação, não undo mágico da primeira transação remota.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Estorno e rollback fazem exatamente a mesma coisa.",
+        "Estorno é compensação: publica um fato contrário, não desfaz o COMMIT remoto.",
+        "Estorno desfaz o COMMIT remoto que já aconteceu.",
+        "Estorno apaga o registro original do outro sistema."
       ],
-      "a": 0,
-      "w": "Saga.",
+      "a": 1,
+      "w": "O COMMIT remoto já aconteceu. A saga cria um fato novo que compensa o anterior.",
       "t": "compensação"
     },
     {
-      "q": "Compensação — o que acontece de verdade?",
+      "q": "Estorno e rollback são a mesma coisa?",
       "o": [
-        "Estorno é compensação, não undo mágico da primeira transação remota.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Estorno apaga o registro original do outro sistema.",
+        "Estorno e rollback fazem exatamente a mesma coisa.",
+        "Estorno é compensação: publica um fato contrário, não desfaz o COMMIT remoto.",
+        "Estorno desfaz o COMMIT remoto que já aconteceu."
       ],
-      "a": 0,
-      "w": "Saga.",
+      "a": 2,
+      "w": "O COMMIT remoto já aconteceu. A saga cria um fato novo que compensa o anterior.",
       "t": "compensação"
     },
     {
-      "q": "Marque a leitura correta (compensação).",
+      "q": "O estorno apaga o registro original?",
       "o": [
-        "Estorno é compensação, não undo mágico da primeira transação remota.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Estorno e rollback fazem exatamente a mesma coisa.",
+        "Estorno é compensação: publica um fato contrário, não desfaz o COMMIT remoto.",
+        "Estorno desfaz o COMMIT remoto que já aconteceu.",
+        "Estorno apaga o registro original do outro sistema."
       ],
-      "a": 0,
-      "w": "Saga.",
+      "a": 1,
+      "w": "O COMMIT remoto já aconteceu. A saga cria um fato novo que compensa o anterior.",
       "t": "compensação"
     },
     {
-      "q": "Corrija o mito sobre compensação.",
+      "q": "Como a saga corrige um efeito já commitado longe?",
       "o": [
-        "Estorno é compensação, não undo mágico da primeira transação remota.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Estorno é compensação: publica um fato contrário, não desfaz o COMMIT remoto.",
+        "Estorno desfaz o COMMIT remoto que já aconteceu.",
+        "Estorno apaga o registro original do outro sistema.",
+        "Estorno e rollback fazem exatamente a mesma coisa."
       ],
       "a": 0,
-      "w": "Saga.",
+      "w": "O COMMIT remoto já aconteceu. A saga cria um fato novo que compensa o anterior.",
       "t": "compensação"
     },
     {
-      "q": "No caderno, a respeito de compensação: qual vale?",
+      "q": "Por que estorno não é undo mágico?",
       "o": [
-        "Estorno é compensação, não undo mágico da primeira transação remota.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Estorno é compensação: publica um fato contrário, não desfaz o COMMIT remoto.",
+        "Estorno desfaz o COMMIT remoto que já aconteceu.",
+        "Estorno apaga o registro original do outro sistema.",
+        "Estorno e rollback fazem exatamente a mesma coisa."
       ],
       "a": 0,
-      "w": "Saga.",
+      "w": "O COMMIT remoto já aconteceu. A saga cria um fato novo que compensa o anterior.",
       "t": "compensação"
     },
     {
-      "q": "Se perguntarem compensação na mesa, qual frase é a verdadeira?",
+      "q": "O COMMIT remoto já aconteceu. Qual a saída?",
       "o": [
-        "Estorno é compensação, não undo mágico da primeira transação remota.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Estorno e rollback fazem exatamente a mesma coisa.",
+        "Estorno é compensação: publica um fato contrário, não desfaz o COMMIT remoto.",
+        "Estorno desfaz o COMMIT remoto que já aconteceu.",
+        "Estorno apaga o registro original do outro sistema."
       ],
-      "a": 0,
-      "w": "Saga.",
+      "a": 1,
+      "w": "O COMMIT remoto já aconteceu. A saga cria um fato novo que compensa o anterior.",
       "t": "compensação"
     }
   ]

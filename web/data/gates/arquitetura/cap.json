@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre gatilho: qual afirmação está certa?",
+      "q": "Quando o teorema CAP entra em jogo?",
       "o": [
-        "CAP só vale durante partição: pedacinhos não se falam.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "CAP vale quando o banco está lento, mesmo sem partição.",
+        "CAP só vale durante a partição: pedaços do sistema não se falam.",
+        "CAP vale todo dia, mesmo com a rede inteira funcionando.",
+        "CAP é o clima do time: hoje AP, amanhã CP."
       ],
-      "a": 0,
-      "w": "Dizer “escolhi AP” sem partição é decoreba.",
+      "a": 1,
+      "w": "Dizer que escolheu AP sem partição na mesa é decoreba. O gatilho vem antes da letra.",
       "t": "gatilho"
     },
     {
-      "q": "Qual frase sobre gatilho está certa?",
+      "q": "A rede está inteira. CAP está em jogo?",
       "o": [
-        "CAP só vale durante partição: pedacinhos não se falam.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "CAP é o clima do time: hoje AP, amanhã CP.",
+        "CAP vale quando o banco está lento, mesmo sem partição.",
+        "CAP só vale durante a partição: pedaços do sistema não se falam.",
+        "CAP vale todo dia, mesmo com a rede inteira funcionando."
       ],
-      "a": 0,
-      "w": "Dizer “escolhi AP” sem partição é decoreba.",
+      "a": 2,
+      "w": "Dizer que escolheu AP sem partição na mesa é decoreba. O gatilho vem antes da letra.",
       "t": "gatilho"
     },
     {
-      "q": "Gatilho — o que acontece de verdade?",
+      "q": "Qual é o gatilho de CAP?",
       "o": [
-        "CAP só vale durante partição: pedacinhos não se falam.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "CAP só vale durante a partição: pedaços do sistema não se falam.",
+        "CAP vale todo dia, mesmo com a rede inteira funcionando.",
+        "CAP é o clima do time: hoje AP, amanhã CP.",
+        "CAP vale quando o banco está lento, mesmo sem partição."
       ],
       "a": 0,
-      "w": "Dizer “escolhi AP” sem partição é decoreba.",
+      "w": "Dizer que escolheu AP sem partição na mesa é decoreba. O gatilho vem antes da letra.",
       "t": "gatilho"
     },
     {
-      "q": "Marque a leitura correta (gatilho).",
+      "q": "Dizer “somos AP” sem partição mostra o quê?",
       "o": [
-        "CAP só vale durante partição: pedacinhos não se falam.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "CAP só vale durante a partição: pedaços do sistema não se falam.",
+        "CAP vale todo dia, mesmo com a rede inteira funcionando.",
+        "CAP é o clima do time: hoje AP, amanhã CP.",
+        "CAP vale quando o banco está lento, mesmo sem partição."
       ],
       "a": 0,
-      "w": "Dizer “escolhi AP” sem partição é decoreba.",
+      "w": "Dizer que escolheu AP sem partição na mesa é decoreba. O gatilho vem antes da letra.",
       "t": "gatilho"
     },
     {
-      "q": "Corrija o mito sobre gatilho.",
+      "q": "O que precisa acontecer para CAP virar dilema?",
       "o": [
-        "CAP só vale durante partição: pedacinhos não se falam.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "CAP vale quando o banco está lento, mesmo sem partição.",
+        "CAP só vale durante a partição: pedaços do sistema não se falam.",
+        "CAP vale todo dia, mesmo com a rede inteira funcionando.",
+        "CAP é o clima do time: hoje AP, amanhã CP."
       ],
-      "a": 0,
-      "w": "Dizer “escolhi AP” sem partição é decoreba.",
+      "a": 1,
+      "w": "Dizer que escolheu AP sem partição na mesa é decoreba. O gatilho vem antes da letra.",
       "t": "gatilho"
     },
     {
-      "q": "No caderno, a respeito de gatilho: qual vale?",
+      "q": "CAP vale todo dia ou só num momento específico?",
       "o": [
-        "CAP só vale durante partição: pedacinhos não se falam.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "CAP vale quando o banco está lento, mesmo sem partição.",
+        "CAP só vale durante a partição: pedaços do sistema não se falam.",
+        "CAP vale todo dia, mesmo com a rede inteira funcionando.",
+        "CAP é o clima do time: hoje AP, amanhã CP."
       ],
-      "a": 0,
-      "w": "Dizer “escolhi AP” sem partição é decoreba.",
+      "a": 1,
+      "w": "Dizer que escolheu AP sem partição na mesa é decoreba. O gatilho vem antes da letra.",
       "t": "gatilho"
     },
     {
-      "q": "Se perguntarem gatilho na mesa, qual frase é a verdadeira?",
+      "q": "O banco está lento e a rede está inteira. É CAP?",
       "o": [
-        "CAP só vale durante partição: pedacinhos não se falam.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "CAP vale todo dia, mesmo com a rede inteira funcionando.",
+        "CAP é o clima do time: hoje AP, amanhã CP.",
+        "CAP vale quando o banco está lento, mesmo sem partição.",
+        "CAP só vale durante a partição: pedaços do sistema não se falam."
       ],
-      "a": 0,
-      "w": "Dizer “escolhi AP” sem partição é decoreba.",
+      "a": 3,
+      "w": "Dizer que escolheu AP sem partição na mesa é decoreba. O gatilho vem antes da letra.",
       "t": "gatilho"
     },
     {
-      "q": "Sobre C: qual afirmação está certa?",
+      "q": "Durante a partição, o que a letra C faz com a escrita?",
       "o": [
-        "Durante partição, C = recusar em vez de responder talvez velho.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Durante a partição, C é recusar em vez de responder talvez velho.",
+        "Durante a partição, C é responder com o dado que estiver disponível.",
+        "C aceita a escrita local e reconcilia quando a rede voltar.",
+        "C mantém a disponibilidade da escrita intacta durante a partição."
       ],
       "a": 0,
-      "w": "Fecha o caixa até a linha voltar.",
+      "w": "C recusa a escrita. A disponibilidade da escrita desce, e o dado continua certo.",
       "t": "C"
     },
     {
-      "q": "Qual frase sobre C está certa?",
+      "q": "Você fecha o caixa até a linha voltar. Isso é C ou A?",
       "o": [
-        "Durante partição, C = recusar em vez de responder talvez velho.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "C mantém a disponibilidade da escrita intacta durante a partição.",
+        "Durante a partição, C é recusar em vez de responder talvez velho.",
+        "Durante a partição, C é responder com o dado que estiver disponível.",
+        "C aceita a escrita local e reconcilia quando a rede voltar."
       ],
-      "a": 0,
-      "w": "Fecha o caixa até a linha voltar.",
+      "a": 1,
+      "w": "C recusa a escrita. A disponibilidade da escrita desce, e o dado continua certo.",
       "t": "C"
     },
     {
-      "q": "C — o que acontece de verdade?",
+      "q": "C recusa ou responde com dado talvez velho?",
       "o": [
-        "Durante partição, C = recusar em vez de responder talvez velho.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Durante a partição, C é recusar em vez de responder talvez velho.",
+        "Durante a partição, C é responder com o dado que estiver disponível.",
+        "C aceita a escrita local e reconcilia quando a rede voltar.",
+        "C mantém a disponibilidade da escrita intacta durante a partição."
       ],
       "a": 0,
-      "w": "Fecha o caixa até a linha voltar.",
+      "w": "C recusa a escrita. A disponibilidade da escrita desce, e o dado continua certo.",
       "t": "C"
     },
     {
-      "q": "Marque a leitura correta (C).",
+      "q": "O que acontece com a disponibilidade da escrita no viés C?",
       "o": [
-        "Durante partição, C = recusar em vez de responder talvez velho.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Durante a partição, C é recusar em vez de responder talvez velho.",
+        "Durante a partição, C é responder com o dado que estiver disponível.",
+        "C aceita a escrita local e reconcilia quando a rede voltar.",
+        "C mantém a disponibilidade da escrita intacta durante a partição."
       ],
       "a": 0,
-      "w": "Fecha o caixa até a linha voltar.",
+      "w": "C recusa a escrita. A disponibilidade da escrita desce, e o dado continua certo.",
       "t": "C"
     },
     {
-      "q": "Corrija o mito sobre C.",
+      "q": "No viés C, o dado fica certo ou pode divergir?",
       "o": [
-        "Durante partição, C = recusar em vez de responder talvez velho.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "C mantém a disponibilidade da escrita intacta durante a partição.",
+        "Durante a partição, C é recusar em vez de responder talvez velho.",
+        "Durante a partição, C é responder com o dado que estiver disponível.",
+        "C aceita a escrita local e reconcilia quando a rede voltar."
       ],
-      "a": 0,
-      "w": "Fecha o caixa até a linha voltar.",
+      "a": 1,
+      "w": "C recusa a escrita. A disponibilidade da escrita desce, e o dado continua certo.",
       "t": "C"
     },
     {
-      "q": "No caderno, a respeito de C: qual vale?",
+      "q": "C aceita write local e reconcilia depois?",
       "o": [
-        "Durante partição, C = recusar em vez de responder talvez velho.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Durante a partição, C é responder com o dado que estiver disponível.",
+        "C aceita a escrita local e reconcilia quando a rede voltar.",
+        "C mantém a disponibilidade da escrita intacta durante a partição.",
+        "Durante a partição, C é recusar em vez de responder talvez velho."
       ],
-      "a": 0,
-      "w": "Fecha o caixa até a linha voltar.",
+      "a": 3,
+      "w": "C recusa a escrita. A disponibilidade da escrita desce, e o dado continua certo.",
       "t": "C"
     },
     {
-      "q": "Se perguntarem C na mesa, qual frase é a verdadeira?",
+      "q": "Recusar a venda até o telefone voltar: qual letra é essa?",
       "o": [
-        "Durante partição, C = recusar em vez de responder talvez velho.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "C aceita a escrita local e reconcilia quando a rede voltar.",
+        "C mantém a disponibilidade da escrita intacta durante a partição.",
+        "Durante a partição, C é recusar em vez de responder talvez velho.",
+        "Durante a partição, C é responder com o dado que estiver disponível."
       ],
-      "a": 0,
-      "w": "Fecha o caixa até a linha voltar.",
+      "a": 2,
+      "w": "C recusa a escrita. A disponibilidade da escrita desce, e o dado continua certo.",
       "t": "C"
     },
     {
-      "q": "Sobre A: qual afirmação está certa?",
+      "q": "Durante a partição, o que a letra A faz?",
       "o": [
-        "Durante partição, A = responder, talvez com dado velho.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Durante a partição, A recusa a escrita até a rede voltar.",
+        "A garante que o dado nunca fica velho durante a partição.",
+        "A impede qualquer divergência entre as cópias.",
+        "Durante a partição, A é responder, talvez com dado velho."
       ],
-      "a": 0,
-      "w": "Vende sem saber o estoque da outra loja.",
+      "a": 3,
+      "w": "A aceita o write local e reconcilia depois. As cópias podem divergir nesse meio.",
       "t": "A"
     },
     {
-      "q": "Qual frase sobre A está certa?",
+      "q": "Você vende sem saber o estoque da outra loja. Isso é C ou A?",
       "o": [
-        "Durante partição, A = responder, talvez com dado velho.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Durante a partição, A recusa a escrita até a rede voltar.",
+        "A garante que o dado nunca fica velho durante a partição.",
+        "A impede qualquer divergência entre as cópias.",
+        "Durante a partição, A é responder, talvez com dado velho."
       ],
-      "a": 0,
-      "w": "Vende sem saber o estoque da outra loja.",
+      "a": 3,
+      "w": "A aceita o write local e reconcilia depois. As cópias podem divergir nesse meio.",
       "t": "A"
     },
     {
-      "q": "A — o que acontece de verdade?",
+      "q": "No viés A, o dado pode estar velho?",
       "o": [
-        "Durante partição, A = responder, talvez com dado velho.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Durante a partição, A é responder, talvez com dado velho.",
+        "Durante a partição, A recusa a escrita até a rede voltar.",
+        "A garante que o dado nunca fica velho durante a partição.",
+        "A impede qualquer divergência entre as cópias."
       ],
       "a": 0,
-      "w": "Vende sem saber o estoque da outra loja.",
+      "w": "A aceita o write local e reconcilia depois. As cópias podem divergir nesse meio.",
       "t": "A"
     },
     {
-      "q": "Marque a leitura correta (A).",
+      "q": "O que A faz com o write durante a partição?",
       "o": [
-        "Durante partição, A = responder, talvez com dado velho.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "A impede qualquer divergência entre as cópias.",
+        "Durante a partição, A é responder, talvez com dado velho.",
+        "Durante a partição, A recusa a escrita até a rede voltar.",
+        "A garante que o dado nunca fica velho durante a partição."
       ],
-      "a": 0,
-      "w": "Vende sem saber o estoque da outra loja.",
+      "a": 1,
+      "w": "A aceita o write local e reconcilia depois. As cópias podem divergir nesse meio.",
       "t": "A"
     },
     {
-      "q": "Corrija o mito sobre A.",
+      "q": "As cópias podem divergir no viés A?",
       "o": [
-        "Durante partição, A = responder, talvez com dado velho.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Durante a partição, A é responder, talvez com dado velho.",
+        "Durante a partição, A recusa a escrita até a rede voltar.",
+        "A garante que o dado nunca fica velho durante a partição.",
+        "A impede qualquer divergência entre as cópias."
       ],
       "a": 0,
-      "w": "Vende sem saber o estoque da outra loja.",
+      "w": "A aceita o write local e reconcilia depois. As cópias podem divergir nesse meio.",
       "t": "A"
     },
     {
-      "q": "No caderno, a respeito de A: qual vale?",
+      "q": "A recusa a escrita até a rede voltar?",
       "o": [
-        "Durante partição, A = responder, talvez com dado velho.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Durante a partição, A é responder, talvez com dado velho.",
+        "Durante a partição, A recusa a escrita até a rede voltar.",
+        "A garante que o dado nunca fica velho durante a partição.",
+        "A impede qualquer divergência entre as cópias."
       ],
       "a": 0,
-      "w": "Vende sem saber o estoque da outra loja.",
+      "w": "A aceita o write local e reconcilia depois. As cópias podem divergir nesse meio.",
       "t": "A"
     },
     {
-      "q": "Se perguntarem A na mesa, qual frase é a verdadeira?",
+      "q": "Caixa aberto com dado talvez velho: qual letra é essa?",
       "o": [
-        "Durante partição, A = responder, talvez com dado velho.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Durante a partição, A recusa a escrita até a rede voltar.",
+        "A garante que o dado nunca fica velho durante a partição.",
+        "A impede qualquer divergência entre as cópias.",
+        "Durante a partição, A é responder, talvez com dado velho."
       ],
-      "a": 0,
-      "w": "Vende sem saber o estoque da outra loja.",
+      "a": 3,
+      "w": "A aceita o write local e reconcilia depois. As cópias podem divergir nesse meio.",
       "t": "A"
     },
     {
-      "q": "Sobre P: qual afirmação está certa?",
+      "q": "P é escolha ou fato?",
       "o": [
-        "P é o fato da partição, não uma “escolha de arquitetura” solta.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "P é a escolha de deixar o sistema mais resiliente.",
+        "P é o nome do modo de operação que você liga no cluster.",
+        "P é o fato da partição, não uma escolha de arquitetura.",
+        "P é uma feature que o time decide adotar."
       ],
-      "a": 0,
-      "w": "A rede caiu entre filiais.",
+      "a": 2,
+      "w": "A rede partiu entre pedaços do sistema. Ninguém escolhe isso; acontece.",
       "t": "P"
     },
     {
-      "q": "Qual frase sobre P está certa?",
+      "q": "Dizer “vamos ser P” faz sentido?",
       "o": [
-        "P é o fato da partição, não uma “escolha de arquitetura” solta.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "P é a escolha de deixar o sistema mais resiliente.",
+        "P é o nome do modo de operação que você liga no cluster.",
+        "P é o fato da partição, não uma escolha de arquitetura.",
+        "P é uma feature que o time decide adotar."
       ],
-      "a": 0,
-      "w": "A rede caiu entre filiais.",
+      "a": 2,
+      "w": "A rede partiu entre pedaços do sistema. Ninguém escolhe isso; acontece.",
       "t": "P"
     },
     {
-      "q": "P — o que acontece de verdade?",
+      "q": "O que P descreve no teorema?",
       "o": [
-        "P é o fato da partição, não uma “escolha de arquitetura” solta.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "P é uma feature que o time decide adotar.",
+        "P é a escolha de deixar o sistema mais resiliente.",
+        "P é o nome do modo de operação que você liga no cluster.",
+        "P é o fato da partição, não uma escolha de arquitetura."
       ],
-      "a": 0,
-      "w": "A rede caiu entre filiais.",
+      "a": 3,
+      "w": "A rede partiu entre pedaços do sistema. Ninguém escolhe isso; acontece.",
       "t": "P"
     },
     {
-      "q": "Marque a leitura correta (P).",
+      "q": "P é uma feature que o time liga no cluster?",
       "o": [
-        "P é o fato da partição, não uma “escolha de arquitetura” solta.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "P é uma feature que o time decide adotar.",
+        "P é a escolha de deixar o sistema mais resiliente.",
+        "P é o nome do modo de operação que você liga no cluster.",
+        "P é o fato da partição, não uma escolha de arquitetura."
       ],
-      "a": 0,
-      "w": "A rede caiu entre filiais.",
+      "a": 3,
+      "w": "A rede partiu entre pedaços do sistema. Ninguém escolhe isso; acontece.",
       "t": "P"
     },
     {
-      "q": "Corrija o mito sobre P.",
+      "q": "Quem escolhe a partição de rede?",
       "o": [
-        "P é o fato da partição, não uma “escolha de arquitetura” solta.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "P é a escolha de deixar o sistema mais resiliente.",
+        "P é o nome do modo de operação que você liga no cluster.",
+        "P é o fato da partição, não uma escolha de arquitetura.",
+        "P é uma feature que o time decide adotar."
       ],
-      "a": 0,
-      "w": "A rede caiu entre filiais.",
+      "a": 2,
+      "w": "A rede partiu entre pedaços do sistema. Ninguém escolhe isso; acontece.",
       "t": "P"
     },
     {
-      "q": "No caderno, a respeito de P: qual vale?",
+      "q": "P é decisão de arquitetura ou situação da rede?",
       "o": [
-        "P é o fato da partição, não uma “escolha de arquitetura” solta.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "P é o nome do modo de operação que você liga no cluster.",
+        "P é o fato da partição, não uma escolha de arquitetura.",
+        "P é uma feature que o time decide adotar.",
+        "P é a escolha de deixar o sistema mais resiliente."
       ],
-      "a": 0,
-      "w": "A rede caiu entre filiais.",
+      "a": 1,
+      "w": "A rede partiu entre pedaços do sistema. Ninguém escolhe isso; acontece.",
       "t": "P"
     },
     {
-      "q": "Se perguntarem P na mesa, qual frase é a verdadeira?",
+      "q": "A rede partiu. Isso é P ou é escolha do time?",
       "o": [
-        "P é o fato da partição, não uma “escolha de arquitetura” solta.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "P é o nome do modo de operação que você liga no cluster.",
+        "P é o fato da partição, não uma escolha de arquitetura.",
+        "P é uma feature que o time decide adotar.",
+        "P é a escolha de deixar o sistema mais resiliente."
       ],
-      "a": 0,
-      "w": "A rede caiu entre filiais.",
+      "a": 1,
+      "w": "A rede partiu entre pedaços do sistema. Ninguém escolhe isso; acontece.",
       "t": "P"
     },
     {
-      "q": "Sobre PACELC: qual afirmação está certa?",
+      "q": "Sem partição, qual é o dilema do dia a dia?",
       "o": [
-        "Sem partição, o dilema cotidiano é latência vs consistência (ELC).",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "PACELC substitui CAP: o teorema antigo não vale mais.",
+        "Sem partição não existe dilema nenhum a decidir.",
+        "Sem partição, o dilema do dia a dia é latência contra consistência.",
+        "Sem partição, o dilema continua sendo A contra C."
       ],
-      "a": 0,
-      "w": "Replicar síncrono é mais lento e mais coerente.",
+      "a": 2,
+      "w": "Se partição: A ou C. Senão: latência ou consistência. É isso que PACELC acrescenta.",
       "t": "PACELC"
     },
     {
-      "q": "Qual frase sobre PACELC está certa?",
+      "q": "O que PACELC acrescenta ao CAP?",
       "o": [
-        "Sem partição, o dilema cotidiano é latência vs consistência (ELC).",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "PACELC substitui CAP: o teorema antigo não vale mais.",
+        "Sem partição não existe dilema nenhum a decidir.",
+        "Sem partição, o dilema do dia a dia é latência contra consistência.",
+        "Sem partição, o dilema continua sendo A contra C."
       ],
-      "a": 0,
-      "w": "Replicar síncrono é mais lento e mais coerente.",
+      "a": 2,
+      "w": "Se partição: A ou C. Senão: latência ou consistência. É isso que PACELC acrescenta.",
       "t": "PACELC"
     },
     {
-      "q": "PACELC — o que acontece de verdade?",
+      "q": "Se não tem partição, você escolhe entre o que e o que?",
       "o": [
-        "Sem partição, o dilema cotidiano é latência vs consistência (ELC).",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "PACELC substitui CAP: o teorema antigo não vale mais.",
+        "Sem partição não existe dilema nenhum a decidir.",
+        "Sem partição, o dilema do dia a dia é latência contra consistência.",
+        "Sem partição, o dilema continua sendo A contra C."
       ],
-      "a": 0,
-      "w": "Replicar síncrono é mais lento e mais coerente.",
+      "a": 2,
+      "w": "Se partição: A ou C. Senão: latência ou consistência. É isso que PACELC acrescenta.",
       "t": "PACELC"
     },
     {
-      "q": "Marque a leitura correta (PACELC).",
+      "q": "PACELC substitui CAP?",
       "o": [
-        "Sem partição, o dilema cotidiano é latência vs consistência (ELC).",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Sem partição, o dilema continua sendo A contra C.",
+        "PACELC substitui CAP: o teorema antigo não vale mais.",
+        "Sem partição não existe dilema nenhum a decidir.",
+        "Sem partição, o dilema do dia a dia é latência contra consistência."
       ],
-      "a": 0,
-      "w": "Replicar síncrono é mais lento e mais coerente.",
+      "a": 3,
+      "w": "Se partição: A ou C. Senão: latência ou consistência. É isso que PACELC acrescenta.",
       "t": "PACELC"
     },
     {
-      "q": "Corrija o mito sobre PACELC.",
+      "q": "No dia sem partição existe dilema para decidir?",
       "o": [
-        "Sem partição, o dilema cotidiano é latência vs consistência (ELC).",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "PACELC substitui CAP: o teorema antigo não vale mais.",
+        "Sem partição não existe dilema nenhum a decidir.",
+        "Sem partição, o dilema do dia a dia é latência contra consistência.",
+        "Sem partição, o dilema continua sendo A contra C."
       ],
-      "a": 0,
-      "w": "Replicar síncrono é mais lento e mais coerente.",
+      "a": 2,
+      "w": "Se partição: A ou C. Senão: latência ou consistência. É isso que PACELC acrescenta.",
       "t": "PACELC"
     },
     {
-      "q": "No caderno, a respeito de PACELC: qual vale?",
+      "q": "Qual a frase completa de PACELC?",
       "o": [
-        "Sem partição, o dilema cotidiano é latência vs consistência (ELC).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "PACELC substitui CAP: o teorema antigo não vale mais.",
+        "Sem partição não existe dilema nenhum a decidir.",
+        "Sem partição, o dilema do dia a dia é latência contra consistência.",
+        "Sem partição, o dilema continua sendo A contra C."
       ],
-      "a": 0,
-      "w": "Replicar síncrono é mais lento e mais coerente.",
+      "a": 2,
+      "w": "Se partição: A ou C. Senão: latência ou consistência. É isso que PACELC acrescenta.",
       "t": "PACELC"
     },
     {
-      "q": "Se perguntarem PACELC na mesa, qual frase é a verdadeira?",
+      "q": "Fora da partição, A contra C ainda é a escolha?",
       "o": [
-        "Sem partição, o dilema cotidiano é latência vs consistência (ELC).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "PACELC substitui CAP: o teorema antigo não vale mais.",
+        "Sem partição não existe dilema nenhum a decidir.",
+        "Sem partição, o dilema do dia a dia é latência contra consistência.",
+        "Sem partição, o dilema continua sendo A contra C."
       ],
-      "a": 0,
-      "w": "Replicar síncrono é mais lento e mais coerente.",
+      "a": 2,
+      "w": "Se partição: A ou C. Senão: latência ou consistência. É isso que PACELC acrescenta.",
       "t": "PACELC"
     },
     {
-      "q": "Sobre dia bom: qual afirmação está certa?",
+      "q": "No dia sem partição, CAP é o dilema?",
       "o": [
-        "No dia ensolarado o telefone funciona — CAP não é o dilema.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cluster saudável significa que consistência e latência deixaram de competir.",
+        "No dia sem partição, CAP não é o dilema: o dilema é latência contra consistência.",
+        "No dia sem partição, CAP continua sendo o dilema principal.",
+        "No dia sem partição você já escolheu AP e não precisa decidir mais nada."
       ],
-      "a": 0,
-      "w": "Aí é PACELC.",
+      "a": 1,
+      "w": "Cluster saudável é o dia sem partição. Aí o preço que você paga é outro.",
       "t": "dia bom"
     },
     {
-      "q": "Qual frase sobre dia bom está certa?",
+      "q": "O cluster está saudável. Qual escolha ainda está na sua frente?",
       "o": [
-        "No dia ensolarado o telefone funciona — CAP não é o dilema.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Cluster saudável significa que consistência e latência deixaram de competir.",
+        "No dia sem partição, CAP não é o dilema: o dilema é latência contra consistência.",
+        "No dia sem partição, CAP continua sendo o dilema principal.",
+        "No dia sem partição você já escolheu AP e não precisa decidir mais nada."
       ],
-      "a": 0,
-      "w": "Aí é PACELC.",
+      "a": 1,
+      "w": "Cluster saudável é o dia sem partição. Aí o preço que você paga é outro.",
       "t": "dia bom"
     },
     {
-      "q": "Dia bom — o que acontece de verdade?",
+      "q": "Qual preço você paga no dia bom?",
       "o": [
-        "No dia ensolarado o telefone funciona — CAP não é o dilema.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "No dia sem partição, CAP não é o dilema: o dilema é latência contra consistência.",
+        "No dia sem partição, CAP continua sendo o dilema principal.",
+        "No dia sem partição você já escolheu AP e não precisa decidir mais nada.",
+        "Cluster saudável significa que consistência e latência deixaram de competir."
       ],
       "a": 0,
-      "w": "Aí é PACELC.",
+      "w": "Cluster saudável é o dia sem partição. Aí o preço que você paga é outro.",
       "t": "dia bom"
     },
     {
-      "q": "Marque a leitura correta (dia bom).",
+      "q": "Cluster saudável elimina o dilema entre latência e consistência?",
       "o": [
-        "No dia ensolarado o telefone funciona — CAP não é o dilema.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "No dia sem partição, CAP não é o dilema: o dilema é latência contra consistência.",
+        "No dia sem partição, CAP continua sendo o dilema principal.",
+        "No dia sem partição você já escolheu AP e não precisa decidir mais nada.",
+        "Cluster saudável significa que consistência e latência deixaram de competir."
       ],
       "a": 0,
-      "w": "Aí é PACELC.",
+      "w": "Cluster saudável é o dia sem partição. Aí o preço que você paga é outro.",
       "t": "dia bom"
     },
     {
-      "q": "Corrija o mito sobre dia bom.",
+      "q": "Ter escolhido AP resolve o dia sem partição?",
       "o": [
-        "No dia ensolarado o telefone funciona — CAP não é o dilema.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "No dia sem partição, CAP continua sendo o dilema principal.",
+        "No dia sem partição você já escolheu AP e não precisa decidir mais nada.",
+        "Cluster saudável significa que consistência e latência deixaram de competir.",
+        "No dia sem partição, CAP não é o dilema: o dilema é latência contra consistência."
       ],
-      "a": 0,
-      "w": "Aí é PACELC.",
+      "a": 3,
+      "w": "Cluster saudável é o dia sem partição. Aí o preço que você paga é outro.",
       "t": "dia bom"
     },
     {
-      "q": "No caderno, a respeito de dia bom: qual vale?",
+      "q": "Qual é o dilema cotidiano, quando a rede está inteira?",
       "o": [
-        "No dia ensolarado o telefone funciona — CAP não é o dilema.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "No dia sem partição, CAP continua sendo o dilema principal.",
+        "No dia sem partição você já escolheu AP e não precisa decidir mais nada.",
+        "Cluster saudável significa que consistência e latência deixaram de competir.",
+        "No dia sem partição, CAP não é o dilema: o dilema é latência contra consistência."
       ],
-      "a": 0,
-      "w": "Aí é PACELC.",
+      "a": 3,
+      "w": "Cluster saudável é o dia sem partição. Aí o preço que você paga é outro.",
       "t": "dia bom"
     },
     {
-      "q": "Se perguntarem dia bom na mesa, qual frase é a verdadeira?",
+      "q": "Por que CAP não ajuda no dia sem partição?",
       "o": [
-        "No dia ensolarado o telefone funciona — CAP não é o dilema.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "No dia sem partição, CAP não é o dilema: o dilema é latência contra consistência.",
+        "No dia sem partição, CAP continua sendo o dilema principal.",
+        "No dia sem partição você já escolheu AP e não precisa decidir mais nada.",
+        "Cluster saudável significa que consistência e latência deixaram de competir."
       ],
       "a": 0,
-      "w": "Aí é PACELC.",
+      "w": "Cluster saudável é o dia sem partição. Aí o preço que você paga é outro.",
       "t": "dia bom"
     },
     {
-      "q": "Sobre analogia: qual afirmação está certa?",
+      "q": "Com a rede partida, quais são as duas saídas?",
       "o": [
-        "Telefone entre filiais caiu. Fechar caixa (C) ou vender (A).",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Na partição você consegue recusar o write e responder na hora ao mesmo tempo.",
+        "Na partição a escolha é entre mais máquinas ou menos máquinas.",
+        "Na partição de rede você escolhe entre recusar o write ou responder talvez velho.",
+        "Na partição você escolhe entre responder rápido ou responder devagar."
       ],
-      "a": 0,
-      "w": "Aula de CAP.",
+      "a": 2,
+      "w": "Recusar é C. Responder talvez velho é A. As duas letras só existem com a rede partida.",
       "t": "analogia"
     },
     {
-      "q": "Qual frase sobre analogia está certa?",
+      "q": "Recusar o write é qual letra?",
       "o": [
-        "Telefone entre filiais caiu. Fechar caixa (C) ou vender (A).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Na partição de rede você escolhe entre recusar o write ou responder talvez velho.",
+        "Na partição você escolhe entre responder rápido ou responder devagar.",
+        "Na partição você consegue recusar o write e responder na hora ao mesmo tempo.",
+        "Na partição a escolha é entre mais máquinas ou menos máquinas."
       ],
       "a": 0,
-      "w": "Aula de CAP.",
+      "w": "Recusar é C. Responder talvez velho é A. As duas letras só existem com a rede partida.",
       "t": "analogia"
     },
     {
-      "q": "Analogia — o que acontece de verdade?",
+      "q": "Responder talvez velho é qual letra?",
       "o": [
-        "Telefone entre filiais caiu. Fechar caixa (C) ou vender (A).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Na partição você escolhe entre responder rápido ou responder devagar.",
+        "Na partição você consegue recusar o write e responder na hora ao mesmo tempo.",
+        "Na partição a escolha é entre mais máquinas ou menos máquinas.",
+        "Na partição de rede você escolhe entre recusar o write ou responder talvez velho."
       ],
-      "a": 0,
-      "w": "Aula de CAP.",
+      "a": 3,
+      "w": "Recusar é C. Responder talvez velho é A. As duas letras só existem com a rede partida.",
       "t": "analogia"
     },
     {
-      "q": "Marque a leitura correta (analogia).",
+      "q": "As duas letras existem sem a rede partida?",
       "o": [
-        "Telefone entre filiais caiu. Fechar caixa (C) ou vender (A).",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Na partição a escolha é entre mais máquinas ou menos máquinas.",
+        "Na partição de rede você escolhe entre recusar o write ou responder talvez velho.",
+        "Na partição você escolhe entre responder rápido ou responder devagar.",
+        "Na partição você consegue recusar o write e responder na hora ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Aula de CAP.",
+      "a": 1,
+      "w": "Recusar é C. Responder talvez velho é A. As duas letras só existem com a rede partida.",
       "t": "analogia"
     },
     {
-      "q": "Corrija o mito sobre analogia.",
+      "q": "Na partição, você escolhe entre rápido e devagar?",
       "o": [
-        "Telefone entre filiais caiu. Fechar caixa (C) ou vender (A).",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Na partição você consegue recusar o write e responder na hora ao mesmo tempo.",
+        "Na partição a escolha é entre mais máquinas ou menos máquinas.",
+        "Na partição de rede você escolhe entre recusar o write ou responder talvez velho.",
+        "Na partição você escolhe entre responder rápido ou responder devagar."
       ],
-      "a": 0,
-      "w": "Aula de CAP.",
+      "a": 2,
+      "w": "Recusar é C. Responder talvez velho é A. As duas letras só existem com a rede partida.",
       "t": "analogia"
     },
     {
-      "q": "No caderno, a respeito de analogia: qual vale?",
+      "q": "Dá para recusar o write e responder na hora ao mesmo tempo?",
       "o": [
-        "Telefone entre filiais caiu. Fechar caixa (C) ou vender (A).",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Na partição você escolhe entre responder rápido ou responder devagar.",
+        "Na partição você consegue recusar o write e responder na hora ao mesmo tempo.",
+        "Na partição a escolha é entre mais máquinas ou menos máquinas.",
+        "Na partição de rede você escolhe entre recusar o write ou responder talvez velho."
       ],
-      "a": 0,
-      "w": "Aula de CAP.",
+      "a": 3,
+      "w": "Recusar é C. Responder talvez velho é A. As duas letras só existem com a rede partida.",
       "t": "analogia"
     },
     {
-      "q": "Se perguntarem analogia na mesa, qual frase é a verdadeira?",
+      "q": "O telefone entre as filiais caiu. Quais são suas opções?",
       "o": [
-        "Telefone entre filiais caiu. Fechar caixa (C) ou vender (A).",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Na partição você consegue recusar o write e responder na hora ao mesmo tempo.",
+        "Na partição a escolha é entre mais máquinas ou menos máquinas.",
+        "Na partição de rede você escolhe entre recusar o write ou responder talvez velho.",
+        "Na partição você escolhe entre responder rápido ou responder devagar."
       ],
-      "a": 0,
-      "w": "Aula de CAP.",
+      "a": 2,
+      "w": "Recusar é C. Responder talvez velho é A. As duas letras só existem com a rede partida.",
       "t": "analogia"
     },
     {
-      "q": "Sobre não clima: qual afirmação está certa?",
+      "q": "CAP é clima ou gatilho mais escolha?",
       "o": [
-        "CAP não é clima (“hoje estou AP”).",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "CAP é o clima do time: hoje AP, amanhã CP, conforme a necessidade.",
+        "CAP é uma preferência que você declara no começo do projeto.",
+        "CAP é o estilo de arquitetura que a empresa adota para sempre.",
+        "CAP não é clima: é gatilho de partição mais escolha."
       ],
-      "a": 0,
-      "w": "É gatilho + escolha.",
+      "a": 3,
+      "w": "“Hoje estou AP” não descreve nada. A letra precisa do gatilho e da decisão de produto.",
       "t": "não clima"
     },
     {
-      "q": "Qual frase sobre não clima está certa?",
+      "q": "“Hoje estou AP” descreve alguma decisão?",
       "o": [
-        "CAP não é clima (“hoje estou AP”).",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "CAP é o estilo de arquitetura que a empresa adota para sempre.",
+        "CAP não é clima: é gatilho de partição mais escolha.",
+        "CAP é o clima do time: hoje AP, amanhã CP, conforme a necessidade.",
+        "CAP é uma preferência que você declara no começo do projeto."
       ],
-      "a": 0,
-      "w": "É gatilho + escolha.",
+      "a": 1,
+      "w": "“Hoje estou AP” não descreve nada. A letra precisa do gatilho e da decisão de produto.",
       "t": "não clima"
     },
     {
-      "q": "Não clima — o que acontece de verdade?",
+      "q": "O que uma resposta de CAP precisa ter para valer?",
       "o": [
-        "CAP não é clima (“hoje estou AP”).",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "CAP é uma preferência que você declara no começo do projeto.",
+        "CAP é o estilo de arquitetura que a empresa adota para sempre.",
+        "CAP não é clima: é gatilho de partição mais escolha.",
+        "CAP é o clima do time: hoje AP, amanhã CP, conforme a necessidade."
       ],
-      "a": 0,
-      "w": "É gatilho + escolha.",
+      "a": 2,
+      "w": "“Hoje estou AP” não descreve nada. A letra precisa do gatilho e da decisão de produto.",
       "t": "não clima"
     },
     {
-      "q": "Marque a leitura correta (não clima).",
+      "q": "CAP é preferência declarada no começo do projeto?",
       "o": [
-        "CAP não é clima (“hoje estou AP”).",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "CAP é o clima do time: hoje AP, amanhã CP, conforme a necessidade.",
+        "CAP é uma preferência que você declara no começo do projeto.",
+        "CAP é o estilo de arquitetura que a empresa adota para sempre.",
+        "CAP não é clima: é gatilho de partição mais escolha."
       ],
-      "a": 0,
-      "w": "É gatilho + escolha.",
+      "a": 3,
+      "w": "“Hoje estou AP” não descreve nada. A letra precisa do gatilho e da decisão de produto.",
       "t": "não clima"
     },
     {
-      "q": "Corrija o mito sobre não clima.",
+      "q": "Dá para mudar de AP para CP como quem muda de humor?",
       "o": [
-        "CAP não é clima (“hoje estou AP”).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "CAP é o estilo de arquitetura que a empresa adota para sempre.",
+        "CAP não é clima: é gatilho de partição mais escolha.",
+        "CAP é o clima do time: hoje AP, amanhã CP, conforme a necessidade.",
+        "CAP é uma preferência que você declara no começo do projeto."
       ],
-      "a": 0,
-      "w": "É gatilho + escolha.",
+      "a": 1,
+      "w": "“Hoje estou AP” não descreve nada. A letra precisa do gatilho e da decisão de produto.",
       "t": "não clima"
     },
     {
-      "q": "No caderno, a respeito de não clima: qual vale?",
+      "q": "O que falta quando alguém diz só a letra?",
       "o": [
-        "CAP não é clima (“hoje estou AP”).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "CAP é uma preferência que você declara no começo do projeto.",
+        "CAP é o estilo de arquitetura que a empresa adota para sempre.",
+        "CAP não é clima: é gatilho de partição mais escolha.",
+        "CAP é o clima do time: hoje AP, amanhã CP, conforme a necessidade."
       ],
-      "a": 0,
-      "w": "É gatilho + escolha.",
+      "a": 2,
+      "w": "“Hoje estou AP” não descreve nada. A letra precisa do gatilho e da decisão de produto.",
       "t": "não clima"
     },
     {
-      "q": "Se perguntarem não clima na mesa, qual frase é a verdadeira?",
+      "q": "CAP é estilo da empresa ou situação mais decisão?",
       "o": [
-        "CAP não é clima (“hoje estou AP”).",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "CAP é o estilo de arquitetura que a empresa adota para sempre.",
+        "CAP não é clima: é gatilho de partição mais escolha.",
+        "CAP é o clima do time: hoje AP, amanhã CP, conforme a necessidade.",
+        "CAP é uma preferência que você declara no começo do projeto."
       ],
-      "a": 0,
-      "w": "É gatilho + escolha.",
+      "a": 1,
+      "w": "“Hoje estou AP” não descreve nada. A letra precisa do gatilho e da decisão de produto.",
       "t": "não clima"
     },
     {
-      "q": "Sobre CP exemplo: qual afirmação está certa?",
+      "q": "O quorum não responde e você recusa o write. Qual viés é esse?",
       "o": [
-        "Recusar write se o quorum não responde é viés C.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Recusar o write preserva a disponibilidade da escrita.",
+        "Sem quorum, o viés C aceita o write local e segue.",
+        "Recusar o write quando o quorum não responde é viés C.",
+        "Quando o quorum não responde, recusar o write é viés A."
       ],
-      "a": 0,
-      "w": "Disponibilidade da escrita cai.",
+      "a": 2,
+      "w": "Sem quorum, a escrita cai. Você preserva o dado e perde disponibilidade de escrita.",
       "t": "CP exemplo"
     },
     {
-      "q": "Qual frase sobre CP exemplo está certa?",
+      "q": "Recusar o write sem quorum preserva o quê?",
       "o": [
-        "Recusar write se o quorum não responde é viés C.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Quando o quorum não responde, recusar o write é viés A.",
+        "Recusar o write preserva a disponibilidade da escrita.",
+        "Sem quorum, o viés C aceita o write local e segue.",
+        "Recusar o write quando o quorum não responde é viés C."
       ],
-      "a": 0,
-      "w": "Disponibilidade da escrita cai.",
+      "a": 3,
+      "w": "Sem quorum, a escrita cai. Você preserva o dado e perde disponibilidade de escrita.",
       "t": "CP exemplo"
     },
     {
-      "q": "CP exemplo — o que acontece de verdade?",
+      "q": "O que cai quando você recusa o write por falta de quorum?",
       "o": [
-        "Recusar write se o quorum não responde é viés C.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Recusar o write preserva a disponibilidade da escrita.",
+        "Sem quorum, o viés C aceita o write local e segue.",
+        "Recusar o write quando o quorum não responde é viés C.",
+        "Quando o quorum não responde, recusar o write é viés A."
       ],
-      "a": 0,
-      "w": "Disponibilidade da escrita cai.",
+      "a": 2,
+      "w": "Sem quorum, a escrita cai. Você preserva o dado e perde disponibilidade de escrita.",
       "t": "CP exemplo"
     },
     {
-      "q": "Marque a leitura correta (CP exemplo).",
+      "q": "O viés C aceita o write local quando o quorum falha?",
       "o": [
-        "Recusar write se o quorum não responde é viés C.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Recusar o write preserva a disponibilidade da escrita.",
+        "Sem quorum, o viés C aceita o write local e segue.",
+        "Recusar o write quando o quorum não responde é viés C.",
+        "Quando o quorum não responde, recusar o write é viés A."
       ],
-      "a": 0,
-      "w": "Disponibilidade da escrita cai.",
+      "a": 2,
+      "w": "Sem quorum, a escrita cai. Você preserva o dado e perde disponibilidade de escrita.",
       "t": "CP exemplo"
     },
     {
-      "q": "Corrija o mito sobre CP exemplo.",
+      "q": "Recusar a escrita é viés C ou A?",
       "o": [
-        "Recusar write se o quorum não responde é viés C.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Recusar o write quando o quorum não responde é viés C.",
+        "Quando o quorum não responde, recusar o write é viés A.",
+        "Recusar o write preserva a disponibilidade da escrita.",
+        "Sem quorum, o viés C aceita o write local e segue."
       ],
       "a": 0,
-      "w": "Disponibilidade da escrita cai.",
+      "w": "Sem quorum, a escrita cai. Você preserva o dado e perde disponibilidade de escrita.",
       "t": "CP exemplo"
     },
     {
-      "q": "No caderno, a respeito de CP exemplo: qual vale?",
+      "q": "Qual o preço de recusar o write na partição?",
       "o": [
-        "Recusar write se o quorum não responde é viés C.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Recusar o write preserva a disponibilidade da escrita.",
+        "Sem quorum, o viés C aceita o write local e segue.",
+        "Recusar o write quando o quorum não responde é viés C.",
+        "Quando o quorum não responde, recusar o write é viés A."
       ],
-      "a": 0,
-      "w": "Disponibilidade da escrita cai.",
+      "a": 2,
+      "w": "Sem quorum, a escrita cai. Você preserva o dado e perde disponibilidade de escrita.",
       "t": "CP exemplo"
     },
     {
-      "q": "Se perguntarem CP exemplo na mesa, qual frase é a verdadeira?",
+      "q": "Sem quorum, o viés C faz o quê?",
       "o": [
-        "Recusar write se o quorum não responde é viés C.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Recusar o write quando o quorum não responde é viés C.",
+        "Quando o quorum não responde, recusar o write é viés A.",
+        "Recusar o write preserva a disponibilidade da escrita.",
+        "Sem quorum, o viés C aceita o write local e segue."
       ],
       "a": 0,
-      "w": "Disponibilidade da escrita cai.",
+      "w": "Sem quorum, a escrita cai. Você preserva o dado e perde disponibilidade de escrita.",
       "t": "CP exemplo"
     },
     {
-      "q": "Sobre AP exemplo: qual afirmação está certa?",
+      "q": "Aceitar o write local e reconciliar depois: qual viés?",
       "o": [
-        "Aceitar write local e reconciliar depois é viés A.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Reconciliar depois elimina a divergência: as cópias nunca diferem.",
+        "Aceitar write local só é possível fora da partição.",
+        "Aceitar o write local e reconciliar depois é viés A.",
+        "Reconciliar depois de aceitar o write local é viés C."
       ],
-      "a": 0,
-      "w": "Pode divergir.",
+      "a": 2,
+      "w": "As cópias podem divergir até a reconciliação. Você manteve o caixa aberto.",
       "t": "AP exemplo"
     },
     {
-      "q": "Qual frase sobre AP exemplo está certa?",
+      "q": "O que pode acontecer com as cópias no viés A?",
       "o": [
-        "Aceitar write local e reconciliar depois é viés A.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Aceitar write local só é possível fora da partição.",
+        "Aceitar o write local e reconciliar depois é viés A.",
+        "Reconciliar depois de aceitar o write local é viés C.",
+        "Reconciliar depois elimina a divergência: as cópias nunca diferem."
       ],
-      "a": 0,
-      "w": "Pode divergir.",
+      "a": 1,
+      "w": "As cópias podem divergir até a reconciliação. Você manteve o caixa aberto.",
       "t": "AP exemplo"
     },
     {
-      "q": "AP exemplo — o que acontece de verdade?",
+      "q": "Reconciliar depois garante que as cópias nunca diferem?",
       "o": [
-        "Aceitar write local e reconciliar depois é viés A.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Reconciliar depois elimina a divergência: as cópias nunca diferem.",
+        "Aceitar write local só é possível fora da partição.",
+        "Aceitar o write local e reconciliar depois é viés A.",
+        "Reconciliar depois de aceitar o write local é viés C."
       ],
-      "a": 0,
-      "w": "Pode divergir.",
+      "a": 2,
+      "w": "As cópias podem divergir até a reconciliação. Você manteve o caixa aberto.",
       "t": "AP exemplo"
     },
     {
-      "q": "Marque a leitura correta (AP exemplo).",
+      "q": "Manter o caixa aberto na partição é qual viés?",
       "o": [
-        "Aceitar write local e reconciliar depois é viés A.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Reconciliar depois elimina a divergência: as cópias nunca diferem.",
+        "Aceitar write local só é possível fora da partição.",
+        "Aceitar o write local e reconciliar depois é viés A.",
+        "Reconciliar depois de aceitar o write local é viés C."
       ],
-      "a": 0,
-      "w": "Pode divergir.",
+      "a": 2,
+      "w": "As cópias podem divergir até a reconciliação. Você manteve o caixa aberto.",
       "t": "AP exemplo"
     },
     {
-      "q": "Corrija o mito sobre AP exemplo.",
+      "q": "Aceitar write local é viés C ou A?",
       "o": [
-        "Aceitar write local e reconciliar depois é viés A.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Reconciliar depois de aceitar o write local é viés C.",
+        "Reconciliar depois elimina a divergência: as cópias nunca diferem.",
+        "Aceitar write local só é possível fora da partição.",
+        "Aceitar o write local e reconciliar depois é viés A."
       ],
-      "a": 0,
-      "w": "Pode divergir.",
+      "a": 3,
+      "w": "As cópias podem divergir até a reconciliação. Você manteve o caixa aberto.",
       "t": "AP exemplo"
     },
     {
-      "q": "No caderno, a respeito de AP exemplo: qual vale?",
+      "q": "Aceitar write local só funciona fora da partição?",
       "o": [
-        "Aceitar write local e reconciliar depois é viés A.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Aceitar o write local e reconciliar depois é viés A.",
+        "Reconciliar depois de aceitar o write local é viés C.",
+        "Reconciliar depois elimina a divergência: as cópias nunca diferem.",
+        "Aceitar write local só é possível fora da partição."
       ],
       "a": 0,
-      "w": "Pode divergir.",
+      "w": "As cópias podem divergir até a reconciliação. Você manteve o caixa aberto.",
       "t": "AP exemplo"
     },
     {
-      "q": "Se perguntarem AP exemplo na mesa, qual frase é a verdadeira?",
+      "q": "O que você ganha e o que arrisca aceitando o write local?",
       "o": [
-        "Aceitar write local e reconciliar depois é viés A.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Reconciliar depois elimina a divergência: as cópias nunca diferem.",
+        "Aceitar write local só é possível fora da partição.",
+        "Aceitar o write local e reconciliar depois é viés A.",
+        "Reconciliar depois de aceitar o write local é viés C."
       ],
-      "a": 0,
-      "w": "Pode divergir.",
+      "a": 2,
+      "w": "As cópias podem divergir até a reconciliação. Você manteve o caixa aberto.",
       "t": "AP exemplo"
     },
     {
-      "q": "Sobre ELC: qual afirmação está certa?",
+      "q": "O que ELC descreve?",
       "o": [
-        "Else Latency or Consistency: o dia a dia sem partição.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "ELC descreve o que acontece durante a partição de rede.",
+        "ELC é outro nome para a escolha entre A e C.",
+        "ELC vale só quando o cluster está com problema.",
+        "ELC é a segunda metade de PACELC: sem partição, latência ou consistência."
       ],
-      "a": 0,
-      "w": "PACELC completa CAP.",
+      "a": 3,
+      "w": "Else Latency or Consistency descreve o dia a dia. É a parte que CAP não cobre.",
       "t": "ELC"
     },
     {
-      "q": "Qual frase sobre ELC está certa?",
+      "q": "ELC vale durante a partição ou fora dela?",
       "o": [
-        "Else Latency or Consistency: o dia a dia sem partição.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "ELC descreve o que acontece durante a partição de rede.",
+        "ELC é outro nome para a escolha entre A e C.",
+        "ELC vale só quando o cluster está com problema.",
+        "ELC é a segunda metade de PACELC: sem partição, latência ou consistência."
       ],
-      "a": 0,
-      "w": "PACELC completa CAP.",
+      "a": 3,
+      "w": "Else Latency or Consistency descreve o dia a dia. É a parte que CAP não cobre.",
       "t": "ELC"
     },
     {
-      "q": "ELC — o que acontece de verdade?",
+      "q": "Qual metade de PACELC cobre o dia a dia?",
       "o": [
-        "Else Latency or Consistency: o dia a dia sem partição.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "ELC vale só quando o cluster está com problema.",
+        "ELC é a segunda metade de PACELC: sem partição, latência ou consistência.",
+        "ELC descreve o que acontece durante a partição de rede.",
+        "ELC é outro nome para a escolha entre A e C."
       ],
-      "a": 0,
-      "w": "PACELC completa CAP.",
+      "a": 1,
+      "w": "Else Latency or Consistency descreve o dia a dia. É a parte que CAP não cobre.",
       "t": "ELC"
     },
     {
-      "q": "Marque a leitura correta (ELC).",
+      "q": "ELC é outro nome para a escolha entre A e C?",
       "o": [
-        "Else Latency or Consistency: o dia a dia sem partição.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "ELC é outro nome para a escolha entre A e C.",
+        "ELC vale só quando o cluster está com problema.",
+        "ELC é a segunda metade de PACELC: sem partição, latência ou consistência.",
+        "ELC descreve o que acontece durante a partição de rede."
       ],
-      "a": 0,
-      "w": "PACELC completa CAP.",
+      "a": 2,
+      "w": "Else Latency or Consistency descreve o dia a dia. É a parte que CAP não cobre.",
       "t": "ELC"
     },
     {
-      "q": "Corrija o mito sobre ELC.",
+      "q": "O que CAP não cobre e ELC cobre?",
       "o": [
-        "Else Latency or Consistency: o dia a dia sem partição.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "ELC descreve o que acontece durante a partição de rede.",
+        "ELC é outro nome para a escolha entre A e C.",
+        "ELC vale só quando o cluster está com problema.",
+        "ELC é a segunda metade de PACELC: sem partição, latência ou consistência."
       ],
-      "a": 0,
-      "w": "PACELC completa CAP.",
+      "a": 3,
+      "w": "Else Latency or Consistency descreve o dia a dia. É a parte que CAP não cobre.",
       "t": "ELC"
     },
     {
-      "q": "No caderno, a respeito de ELC: qual vale?",
+      "q": "ELC só vale quando o cluster tem problema?",
       "o": [
-        "Else Latency or Consistency: o dia a dia sem partição.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "ELC vale só quando o cluster está com problema.",
+        "ELC é a segunda metade de PACELC: sem partição, latência ou consistência.",
+        "ELC descreve o que acontece durante a partição de rede.",
+        "ELC é outro nome para a escolha entre A e C."
       ],
-      "a": 0,
-      "w": "PACELC completa CAP.",
+      "a": 1,
+      "w": "Else Latency or Consistency descreve o dia a dia. É a parte que CAP não cobre.",
       "t": "ELC"
     },
     {
-      "q": "Se perguntarem ELC na mesa, qual frase é a verdadeira?",
+      "q": "Entre o que e o que você escolhe no ELC?",
       "o": [
-        "Else Latency or Consistency: o dia a dia sem partição.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "ELC vale só quando o cluster está com problema.",
+        "ELC é a segunda metade de PACELC: sem partição, latência ou consistência.",
+        "ELC descreve o que acontece durante a partição de rede.",
+        "ELC é outro nome para a escolha entre A e C."
       ],
-      "a": 0,
-      "w": "PACELC completa CAP.",
+      "a": 1,
+      "w": "Else Latency or Consistency descreve o dia a dia. É a parte que CAP não cobre.",
       "t": "ELC"
     },
     {
-      "q": "Sobre mesa: qual afirmação está certa?",
+      "q": "O que vem primeiro na resposta: a letra ou o gatilho?",
       "o": [
-        "Na mesa, mencione o gatilho da partição antes da letra.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Basta dizer a letra: o entrevistador entende o resto.",
+        "Falar de partição antes da letra atrasa a resposta.",
+        "Na mesa, mencione o gatilho da partição antes de dizer a letra.",
+        "Diga a letra primeiro; o gatilho é detalhe que vem depois."
       ],
-      "a": 0,
-      "w": "Senão é podcast.",
+      "a": 2,
+      "w": "Letra antes do gatilho soa a paper. Diga primeiro o que a rede fez.",
       "t": "mesa"
     },
     {
-      "q": "Qual frase sobre mesa está certa?",
+      "q": "Você diz “somos CP”. O que faltou antes disso?",
       "o": [
-        "Na mesa, mencione o gatilho da partição antes da letra.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Diga a letra primeiro; o gatilho é detalhe que vem depois.",
+        "Basta dizer a letra: o entrevistador entende o resto.",
+        "Falar de partição antes da letra atrasa a resposta.",
+        "Na mesa, mencione o gatilho da partição antes de dizer a letra."
       ],
-      "a": 0,
-      "w": "Senão é podcast.",
+      "a": 3,
+      "w": "Letra antes do gatilho soa a paper. Diga primeiro o que a rede fez.",
       "t": "mesa"
     },
     {
-      "q": "Mesa — o que acontece de verdade?",
+      "q": "Por que a letra sozinha soa a paper?",
       "o": [
-        "Na mesa, mencione o gatilho da partição antes da letra.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Na mesa, mencione o gatilho da partição antes de dizer a letra.",
+        "Diga a letra primeiro; o gatilho é detalhe que vem depois.",
+        "Basta dizer a letra: o entrevistador entende o resto.",
+        "Falar de partição antes da letra atrasa a resposta."
       ],
       "a": 0,
-      "w": "Senão é podcast.",
+      "w": "Letra antes do gatilho soa a paper. Diga primeiro o que a rede fez.",
       "t": "mesa"
     },
     {
-      "q": "Marque a leitura correta (mesa).",
+      "q": "Basta dizer a letra na mesa?",
       "o": [
-        "Na mesa, mencione o gatilho da partição antes da letra.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Na mesa, mencione o gatilho da partição antes de dizer a letra.",
+        "Diga a letra primeiro; o gatilho é detalhe que vem depois.",
+        "Basta dizer a letra: o entrevistador entende o resto.",
+        "Falar de partição antes da letra atrasa a resposta."
       ],
       "a": 0,
-      "w": "Senão é podcast.",
+      "w": "Letra antes do gatilho soa a paper. Diga primeiro o que a rede fez.",
       "t": "mesa"
     },
     {
-      "q": "Corrija o mito sobre mesa.",
+      "q": "Mencionar a partição antes da letra atrasa a resposta?",
       "o": [
-        "Na mesa, mencione o gatilho da partição antes da letra.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Diga a letra primeiro; o gatilho é detalhe que vem depois.",
+        "Basta dizer a letra: o entrevistador entende o resto.",
+        "Falar de partição antes da letra atrasa a resposta.",
+        "Na mesa, mencione o gatilho da partição antes de dizer a letra."
       ],
-      "a": 0,
-      "w": "Senão é podcast.",
+      "a": 3,
+      "w": "Letra antes do gatilho soa a paper. Diga primeiro o que a rede fez.",
       "t": "mesa"
     },
     {
-      "q": "No caderno, a respeito de mesa: qual vale?",
+      "q": "Como começar uma resposta de CAP na entrevista?",
       "o": [
-        "Na mesa, mencione o gatilho da partição antes da letra.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Na mesa, mencione o gatilho da partição antes de dizer a letra.",
+        "Diga a letra primeiro; o gatilho é detalhe que vem depois.",
+        "Basta dizer a letra: o entrevistador entende o resto.",
+        "Falar de partição antes da letra atrasa a resposta."
       ],
       "a": 0,
-      "w": "Senão é podcast.",
+      "w": "Letra antes do gatilho soa a paper. Diga primeiro o que a rede fez.",
       "t": "mesa"
     },
     {
-      "q": "Se perguntarem mesa na mesa, qual frase é a verdadeira?",
+      "q": "Qual informação o entrevistador precisa antes da letra?",
       "o": [
-        "Na mesa, mencione o gatilho da partição antes da letra.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Diga a letra primeiro; o gatilho é detalhe que vem depois.",
+        "Basta dizer a letra: o entrevistador entende o resto.",
+        "Falar de partição antes da letra atrasa a resposta.",
+        "Na mesa, mencione o gatilho da partição antes de dizer a letra."
       ],
-      "a": 0,
-      "w": "Senão é podcast.",
+      "a": 3,
+      "w": "Letra antes do gatilho soa a paper. Diga primeiro o que a rede fez.",
       "t": "mesa"
     },
     {
-      "q": "Sobre não 3: qual afirmação está certa?",
+      "q": "Durante a partição, dá para levar as três letras?",
       "o": [
-        "Você não “escolhe as três letras” ao mesmo tempo durante partição.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "As três letras convivem se você usar réplica síncrona.",
+        "CAP é um menu: escolha quantas letras quiser.",
+        "Durante a partição você não escolhe C, A e P ao mesmo tempo.",
+        "Com um cluster bom você leva C, A e P ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Teorema.",
+      "a": 2,
+      "w": "CAP é teorema, não menu. Com a rede partida, as duas letras não cabem juntas.",
       "t": "não 3"
     },
     {
-      "q": "Qual frase sobre não 3 está certa?",
+      "q": "Cluster bom permite C, A e P juntos?",
       "o": [
-        "Você não “escolhe as três letras” ao mesmo tempo durante partição.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "As três letras convivem se você usar réplica síncrona.",
+        "CAP é um menu: escolha quantas letras quiser.",
+        "Durante a partição você não escolhe C, A e P ao mesmo tempo.",
+        "Com um cluster bom você leva C, A e P ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Teorema.",
+      "a": 2,
+      "w": "CAP é teorema, não menu. Com a rede partida, as duas letras não cabem juntas.",
       "t": "não 3"
     },
     {
-      "q": "Não 3 — o que acontece de verdade?",
+      "q": "CAP é teorema ou menu de escolhas?",
       "o": [
-        "Você não “escolhe as três letras” ao mesmo tempo durante partição.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Durante a partição você não escolhe C, A e P ao mesmo tempo.",
+        "Com um cluster bom você leva C, A e P ao mesmo tempo.",
+        "As três letras convivem se você usar réplica síncrona.",
+        "CAP é um menu: escolha quantas letras quiser."
       ],
       "a": 0,
-      "w": "Teorema.",
+      "w": "CAP é teorema, não menu. Com a rede partida, as duas letras não cabem juntas.",
       "t": "não 3"
     },
     {
-      "q": "Marque a leitura correta (não 3).",
+      "q": "Réplica síncrona faz as três letras conviverem?",
       "o": [
-        "Você não “escolhe as três letras” ao mesmo tempo durante partição.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Durante a partição você não escolhe C, A e P ao mesmo tempo.",
+        "Com um cluster bom você leva C, A e P ao mesmo tempo.",
+        "As três letras convivem se você usar réplica síncrona.",
+        "CAP é um menu: escolha quantas letras quiser."
       ],
       "a": 0,
-      "w": "Teorema.",
+      "w": "CAP é teorema, não menu. Com a rede partida, as duas letras não cabem juntas.",
       "t": "não 3"
     },
     {
-      "q": "Corrija o mito sobre não 3.",
+      "q": "Com a rede partida, C e A cabem na mesma resposta?",
       "o": [
-        "Você não “escolhe as três letras” ao mesmo tempo durante partição.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "CAP é um menu: escolha quantas letras quiser.",
+        "Durante a partição você não escolhe C, A e P ao mesmo tempo.",
+        "Com um cluster bom você leva C, A e P ao mesmo tempo.",
+        "As três letras convivem se você usar réplica síncrona."
       ],
-      "a": 0,
-      "w": "Teorema.",
+      "a": 1,
+      "w": "CAP é teorema, não menu. Com a rede partida, as duas letras não cabem juntas.",
       "t": "não 3"
     },
     {
-      "q": "No caderno, a respeito de não 3: qual vale?",
+      "q": "Alguém diz que leva as três. Onde está o erro?",
       "o": [
-        "Você não “escolhe as três letras” ao mesmo tempo durante partição.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "As três letras convivem se você usar réplica síncrona.",
+        "CAP é um menu: escolha quantas letras quiser.",
+        "Durante a partição você não escolhe C, A e P ao mesmo tempo.",
+        "Com um cluster bom você leva C, A e P ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Teorema.",
+      "a": 2,
+      "w": "CAP é teorema, não menu. Com a rede partida, as duas letras não cabem juntas.",
       "t": "não 3"
     },
     {
-      "q": "Se perguntarem não 3 na mesa, qual frase é a verdadeira?",
+      "q": "O que o teorema proíbe durante a partição?",
       "o": [
-        "Você não “escolhe as três letras” ao mesmo tempo durante partição.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Durante a partição você não escolhe C, A e P ao mesmo tempo.",
+        "Com um cluster bom você leva C, A e P ao mesmo tempo.",
+        "As três letras convivem se você usar réplica síncrona.",
+        "CAP é um menu: escolha quantas letras quiser."
       ],
       "a": 0,
-      "w": "Teorema.",
+      "w": "CAP é teorema, não menu. Com a rede partida, as duas letras não cabem juntas.",
       "t": "não 3"
     },
     {
-      "q": "Sobre quorum: qual afirmação está certa?",
+      "q": "Quorum de escrita com a rede inteira: CAP ou ELC?",
       "o": [
-        "Quorum de escrita é uma forma de pagar latência por consistência no dia bom.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Quorum só existe durante a partição de rede.",
+        "Quorum de escrita no dia bom paga latência por consistência: isso é ELC, não CAP.",
+        "Quorum de escrita no dia bom é uma decisão de CAP.",
+        "Quorum de escrita não custa latência nenhuma."
       ],
-      "a": 0,
-      "w": "PACELC.",
+      "a": 1,
+      "w": "Quorum com a rede inteira é escolha de latência contra consistência. Confundir com CAP é a decoreba mais cara.",
       "t": "quorum"
     },
     {
-      "q": "Qual frase sobre quorum está certa?",
+      "q": "O que o quorum de escrita cobra em troca de consistência?",
       "o": [
-        "Quorum de escrita é uma forma de pagar latência por consistência no dia bom.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Quorum só existe durante a partição de rede.",
+        "Quorum de escrita no dia bom paga latência por consistência: isso é ELC, não CAP.",
+        "Quorum de escrita no dia bom é uma decisão de CAP.",
+        "Quorum de escrita não custa latência nenhuma."
       ],
-      "a": 0,
-      "w": "PACELC.",
+      "a": 1,
+      "w": "Quorum com a rede inteira é escolha de latência contra consistência. Confundir com CAP é a decoreba mais cara.",
       "t": "quorum"
     },
     {
-      "q": "Quorum — o que acontece de verdade?",
+      "q": "Usar quorum no dia bom é decisão de CAP?",
       "o": [
-        "Quorum de escrita é uma forma de pagar latência por consistência no dia bom.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Quorum só existe durante a partição de rede.",
+        "Quorum de escrita no dia bom paga latência por consistência: isso é ELC, não CAP.",
+        "Quorum de escrita no dia bom é uma decisão de CAP.",
+        "Quorum de escrita não custa latência nenhuma."
       ],
-      "a": 0,
-      "w": "PACELC.",
+      "a": 1,
+      "w": "Quorum com a rede inteira é escolha de latência contra consistência. Confundir com CAP é a decoreba mais cara.",
       "t": "quorum"
     },
     {
-      "q": "Marque a leitura correta (quorum).",
+      "q": "Quorum custa latência?",
       "o": [
-        "Quorum de escrita é uma forma de pagar latência por consistência no dia bom.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Quorum só existe durante a partição de rede.",
+        "Quorum de escrita no dia bom paga latência por consistência: isso é ELC, não CAP.",
+        "Quorum de escrita no dia bom é uma decisão de CAP.",
+        "Quorum de escrita não custa latência nenhuma."
       ],
-      "a": 0,
-      "w": "PACELC.",
+      "a": 1,
+      "w": "Quorum com a rede inteira é escolha de latência contra consistência. Confundir com CAP é a decoreba mais cara.",
       "t": "quorum"
     },
     {
-      "q": "Corrija o mito sobre quorum.",
+      "q": "Quorum só existe durante a partição?",
       "o": [
-        "Quorum de escrita é uma forma de pagar latência por consistência no dia bom.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Quorum de escrita não custa latência nenhuma.",
+        "Quorum só existe durante a partição de rede.",
+        "Quorum de escrita no dia bom paga latência por consistência: isso é ELC, não CAP.",
+        "Quorum de escrita no dia bom é uma decisão de CAP."
       ],
-      "a": 0,
-      "w": "PACELC.",
+      "a": 2,
+      "w": "Quorum com a rede inteira é escolha de latência contra consistência. Confundir com CAP é a decoreba mais cara.",
       "t": "quorum"
     },
     {
-      "q": "No caderno, a respeito de quorum: qual vale?",
+      "q": "Qual a confusão mais cara envolvendo quorum?",
       "o": [
-        "Quorum de escrita é uma forma de pagar latência por consistência no dia bom.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Quorum de escrita no dia bom paga latência por consistência: isso é ELC, não CAP.",
+        "Quorum de escrita no dia bom é uma decisão de CAP.",
+        "Quorum de escrita não custa latência nenhuma.",
+        "Quorum só existe durante a partição de rede."
       ],
       "a": 0,
-      "w": "PACELC.",
+      "w": "Quorum com a rede inteira é escolha de latência contra consistência. Confundir com CAP é a decoreba mais cara.",
       "t": "quorum"
     },
     {
-      "q": "Se perguntarem quorum na mesa, qual frase é a verdadeira?",
+      "q": "Esperar a réplica confirmar troca o que por o que?",
       "o": [
-        "Quorum de escrita é uma forma de pagar latência por consistência no dia bom.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Quorum de escrita no dia bom paga latência por consistência: isso é ELC, não CAP.",
+        "Quorum de escrita no dia bom é uma decisão de CAP.",
+        "Quorum de escrita não custa latência nenhuma.",
+        "Quorum só existe durante a partição de rede."
       ],
       "a": 0,
-      "w": "PACELC.",
+      "w": "Quorum com a rede inteira é escolha de latência contra consistência. Confundir com CAP é a decoreba mais cara.",
       "t": "quorum"
     },
     {
-      "q": "Sobre produto: qual afirmação está certa?",
+      "q": "Quem responde se o estoque errado é aceitável nesta venda?",
       "o": [
-        "A escolha C/A é de produto: estoque errado é aceitável?",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A escolha entre C e A é puramente técnica, decidida pelo time de banco.",
+        "A escolha entre C e A vem do paper, não do negócio.",
+        "A escolha entre C e A é a mesma para todo tipo de operação.",
+        "A escolha entre C e A é de produto: estoque errado nesta venda é aceitável?"
       ],
-      "a": 0,
-      "w": "Não só de paper.",
+      "a": 3,
+      "w": "Quem responde não é o paper: é o negócio. Cada venda tem seu custo de errar.",
       "t": "produto"
     },
     {
-      "q": "Qual frase sobre produto está certa?",
+      "q": "A escolha entre C e A é técnica ou de produto?",
       "o": [
-        "A escolha C/A é de produto: estoque errado é aceitável?",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "A escolha entre C e A vem do paper, não do negócio.",
+        "A escolha entre C e A é a mesma para todo tipo de operação.",
+        "A escolha entre C e A é de produto: estoque errado nesta venda é aceitável?",
+        "A escolha entre C e A é puramente técnica, decidida pelo time de banco."
       ],
-      "a": 0,
-      "w": "Não só de paper.",
+      "a": 2,
+      "w": "Quem responde não é o paper: é o negócio. Cada venda tem seu custo de errar.",
       "t": "produto"
     },
     {
-      "q": "Produto — o que acontece de verdade?",
+      "q": "O paper decide se você aceita dado velho?",
       "o": [
-        "A escolha C/A é de produto: estoque errado é aceitável?",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A escolha entre C e A é puramente técnica, decidida pelo time de banco.",
+        "A escolha entre C e A vem do paper, não do negócio.",
+        "A escolha entre C e A é a mesma para todo tipo de operação.",
+        "A escolha entre C e A é de produto: estoque errado nesta venda é aceitável?"
       ],
-      "a": 0,
-      "w": "Não só de paper.",
+      "a": 3,
+      "w": "Quem responde não é o paper: é o negócio. Cada venda tem seu custo de errar.",
       "t": "produto"
     },
     {
-      "q": "Marque a leitura correta (produto).",
+      "q": "A mesma escolha entre C e A serve para todas as operações?",
       "o": [
-        "A escolha C/A é de produto: estoque errado é aceitável?",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "A escolha entre C e A é de produto: estoque errado nesta venda é aceitável?",
+        "A escolha entre C e A é puramente técnica, decidida pelo time de banco.",
+        "A escolha entre C e A vem do paper, não do negócio.",
+        "A escolha entre C e A é a mesma para todo tipo de operação."
       ],
       "a": 0,
-      "w": "Não só de paper.",
+      "w": "Quem responde não é o paper: é o negócio. Cada venda tem seu custo de errar.",
       "t": "produto"
     },
     {
-      "q": "Corrija o mito sobre produto.",
+      "q": "Qual pergunta de negócio decide o viés na partição?",
       "o": [
-        "A escolha C/A é de produto: estoque errado é aceitável?",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A escolha entre C e A é a mesma para todo tipo de operação.",
+        "A escolha entre C e A é de produto: estoque errado nesta venda é aceitável?",
+        "A escolha entre C e A é puramente técnica, decidida pelo time de banco.",
+        "A escolha entre C e A vem do paper, não do negócio."
       ],
-      "a": 0,
-      "w": "Não só de paper.",
+      "a": 1,
+      "w": "Quem responde não é o paper: é o negócio. Cada venda tem seu custo de errar.",
       "t": "produto"
     },
     {
-      "q": "No caderno, a respeito de produto: qual vale?",
+      "q": "Estoque errado numa venda: quem avalia o custo?",
       "o": [
-        "A escolha C/A é de produto: estoque errado é aceitável?",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A escolha entre C e A vem do paper, não do negócio.",
+        "A escolha entre C e A é a mesma para todo tipo de operação.",
+        "A escolha entre C e A é de produto: estoque errado nesta venda é aceitável?",
+        "A escolha entre C e A é puramente técnica, decidida pelo time de banco."
       ],
-      "a": 0,
-      "w": "Não só de paper.",
+      "a": 2,
+      "w": "Quem responde não é o paper: é o negócio. Cada venda tem seu custo de errar.",
       "t": "produto"
     },
     {
-      "q": "Se perguntarem produto na mesa, qual frase é a verdadeira?",
+      "q": "Por que a escolha entre C e A não é só do time de banco?",
       "o": [
-        "A escolha C/A é de produto: estoque errado é aceitável?",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A escolha entre C e A é a mesma para todo tipo de operação.",
+        "A escolha entre C e A é de produto: estoque errado nesta venda é aceitável?",
+        "A escolha entre C e A é puramente técnica, decidida pelo time de banco.",
+        "A escolha entre C e A vem do paper, não do negócio."
       ],
-      "a": 0,
-      "w": "Não só de paper.",
+      "a": 1,
+      "w": "Quem responde não é o paper: é o negócio. Cada venda tem seu custo de errar.",
       "t": "produto"
     }
   ]

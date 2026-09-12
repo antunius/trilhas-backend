@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre quando não: qual afirmação está certa?",
+      "q": "Quando você não cortaria o sistema em serviços?",
       "o": [
-        "Não use microsserviços no começo incerto com time pequeno.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Cortar cedo evita o monolito eterno, mesmo com um time só.",
+        "A resposta madura começa por listar as vantagens dos serviços.",
+        "Time pequeno, domínio instável e produto sem escala: não corte em serviços.",
+        "Time pequeno e domínio instável é exatamente quando cortar em serviços."
       ],
-      "a": 0,
-      "w": "Aula inteira nisso.",
+      "a": 2,
+      "w": "Você compra o preço técnico sem a justificativa de organização. Monolito modular é o default.",
       "t": "quando não"
     },
     {
-      "q": "Qual frase sobre quando não está certa?",
+      "q": "Time pequeno e domínio incerto: cortar em serviços?",
       "o": [
-        "Não use microsserviços no começo incerto com time pequeno.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Time pequeno e domínio instável é exatamente quando cortar em serviços.",
+        "Cortar cedo evita o monolito eterno, mesmo com um time só.",
+        "A resposta madura começa por listar as vantagens dos serviços.",
+        "Time pequeno, domínio instável e produto sem escala: não corte em serviços."
       ],
-      "a": 0,
-      "w": "Aula inteira nisso.",
+      "a": 3,
+      "w": "Você compra o preço técnico sem a justificativa de organização. Monolito modular é o default.",
       "t": "quando não"
     },
     {
-      "q": "Quando não — o que acontece de verdade?",
+      "q": "Cortar cedo evita o monolito eterno?",
       "o": [
-        "Não use microsserviços no começo incerto com time pequeno.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Time pequeno, domínio instável e produto sem escala: não corte em serviços.",
+        "Time pequeno e domínio instável é exatamente quando cortar em serviços.",
+        "Cortar cedo evita o monolito eterno, mesmo com um time só.",
+        "A resposta madura começa por listar as vantagens dos serviços."
       ],
       "a": 0,
-      "w": "Aula inteira nisso.",
+      "w": "Você compra o preço técnico sem a justificativa de organização. Monolito modular é o default.",
       "t": "quando não"
     },
     {
-      "q": "Marque a leitura correta (quando não).",
+      "q": "O que você compra quando corta sem justificativa de organização?",
       "o": [
-        "Não use microsserviços no começo incerto com time pequeno.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A resposta madura começa por listar as vantagens dos serviços.",
+        "Time pequeno, domínio instável e produto sem escala: não corte em serviços.",
+        "Time pequeno e domínio instável é exatamente quando cortar em serviços.",
+        "Cortar cedo evita o monolito eterno, mesmo com um time só."
       ],
-      "a": 0,
-      "w": "Aula inteira nisso.",
+      "a": 1,
+      "w": "Você compra o preço técnico sem a justificativa de organização. Monolito modular é o default.",
       "t": "quando não"
     },
     {
-      "q": "Corrija o mito sobre quando não.",
+      "q": "Qual é o default quando o domínio ainda é instável?",
       "o": [
-        "Não use microsserviços no começo incerto com time pequeno.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Time pequeno, domínio instável e produto sem escala: não corte em serviços.",
+        "Time pequeno e domínio instável é exatamente quando cortar em serviços.",
+        "Cortar cedo evita o monolito eterno, mesmo com um time só.",
+        "A resposta madura começa por listar as vantagens dos serviços."
       ],
       "a": 0,
-      "w": "Aula inteira nisso.",
+      "w": "Você compra o preço técnico sem a justificativa de organização. Monolito modular é o default.",
       "t": "quando não"
     },
     {
-      "q": "No caderno, a respeito de quando não: qual vale?",
+      "q": "Por onde começa a resposta madura sobre serviços?",
       "o": [
-        "Não use microsserviços no começo incerto com time pequeno.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cortar cedo evita o monolito eterno, mesmo com um time só.",
+        "A resposta madura começa por listar as vantagens dos serviços.",
+        "Time pequeno, domínio instável e produto sem escala: não corte em serviços.",
+        "Time pequeno e domínio instável é exatamente quando cortar em serviços."
       ],
-      "a": 0,
-      "w": "Aula inteira nisso.",
+      "a": 2,
+      "w": "Você compra o preço técnico sem a justificativa de organização. Monolito modular é o default.",
       "t": "quando não"
     },
     {
-      "q": "Se perguntarem quando não na mesa, qual frase é a verdadeira?",
+      "q": "Você tem o preço mas não a justificativa. O que fazer?",
       "o": [
-        "Não use microsserviços no começo incerto com time pequeno.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Cortar cedo evita o monolito eterno, mesmo com um time só.",
+        "A resposta madura começa por listar as vantagens dos serviços.",
+        "Time pequeno, domínio instável e produto sem escala: não corte em serviços.",
+        "Time pequeno e domínio instável é exatamente quando cortar em serviços."
       ],
-      "a": 0,
-      "w": "Aula inteira nisso.",
+      "a": 2,
+      "w": "Você compra o preço técnico sem a justificativa de organização. Monolito modular é o default.",
       "t": "quando não"
     },
     {
-      "q": "Sobre bounded: qual afirmação está certa?",
+      "q": "Onde passa a fronteira de um recorte de domínio?",
       "o": [
-        "Corte por bounded context, não por entidade de banco.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Corte onde as palavras têm significado estável, não por entidade de banco.",
+        "Corte por entidade de banco: uma tabela, um serviço.",
+        "Corte por camada técnica: um serviço de banco, um serviço de interface.",
+        "A mesma palavra sempre significa a mesma coisa em todo o sistema."
       ],
       "a": 0,
-      "w": "UserService para tudo é cheiro.",
+      "w": "“Pedido” no checkout é carrinho e pagamento; no fiscal é nota e imposto. São dois recortes.",
       "t": "bounded"
     },
     {
-      "q": "Qual frase sobre bounded está certa?",
+      "q": "“Pedido” significa a mesma coisa no checkout e no fiscal?",
       "o": [
-        "Corte por bounded context, não por entidade de banco.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A mesma palavra sempre significa a mesma coisa em todo o sistema.",
+        "Corte onde as palavras têm significado estável, não por entidade de banco.",
+        "Corte por entidade de banco: uma tabela, um serviço.",
+        "Corte por camada técnica: um serviço de banco, um serviço de interface."
       ],
-      "a": 0,
-      "w": "UserService para tudo é cheiro.",
+      "a": 1,
+      "w": "“Pedido” no checkout é carrinho e pagamento; no fiscal é nota e imposto. São dois recortes.",
       "t": "bounded"
     },
     {
-      "q": "Bounded — o que acontece de verdade?",
+      "q": "Cortar por entidade de banco funciona?",
       "o": [
-        "Corte por bounded context, não por entidade de banco.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "A mesma palavra sempre significa a mesma coisa em todo o sistema.",
+        "Corte onde as palavras têm significado estável, não por entidade de banco.",
+        "Corte por entidade de banco: uma tabela, um serviço.",
+        "Corte por camada técnica: um serviço de banco, um serviço de interface."
       ],
-      "a": 0,
-      "w": "UserService para tudo é cheiro.",
+      "a": 1,
+      "w": "“Pedido” no checkout é carrinho e pagamento; no fiscal é nota e imposto. São dois recortes.",
       "t": "bounded"
     },
     {
-      "q": "Marque a leitura correta (bounded).",
+      "q": "Cortar por camada técnica funciona?",
       "o": [
-        "Corte por bounded context, não por entidade de banco.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Corte por entidade de banco: uma tabela, um serviço.",
+        "Corte por camada técnica: um serviço de banco, um serviço de interface.",
+        "A mesma palavra sempre significa a mesma coisa em todo o sistema.",
+        "Corte onde as palavras têm significado estável, não por entidade de banco."
       ],
-      "a": 0,
-      "w": "UserService para tudo é cheiro.",
+      "a": 3,
+      "w": "“Pedido” no checkout é carrinho e pagamento; no fiscal é nota e imposto. São dois recortes.",
       "t": "bounded"
     },
     {
-      "q": "Corrija o mito sobre bounded.",
+      "q": "A mesma palavra tem sempre o mesmo significado?",
       "o": [
-        "Corte por bounded context, não por entidade de banco.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "A mesma palavra sempre significa a mesma coisa em todo o sistema.",
+        "Corte onde as palavras têm significado estável, não por entidade de banco.",
+        "Corte por entidade de banco: uma tabela, um serviço.",
+        "Corte por camada técnica: um serviço de banco, um serviço de interface."
       ],
-      "a": 0,
-      "w": "UserService para tudo é cheiro.",
+      "a": 1,
+      "w": "“Pedido” no checkout é carrinho e pagamento; no fiscal é nota e imposto. São dois recortes.",
       "t": "bounded"
     },
     {
-      "q": "No caderno, a respeito de bounded: qual vale?",
+      "q": "Que critério define onde o modelo pode evoluir sem vazar?",
       "o": [
-        "Corte por bounded context, não por entidade de banco.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A mesma palavra sempre significa a mesma coisa em todo o sistema.",
+        "Corte onde as palavras têm significado estável, não por entidade de banco.",
+        "Corte por entidade de banco: uma tabela, um serviço.",
+        "Corte por camada técnica: um serviço de banco, um serviço de interface."
       ],
-      "a": 0,
-      "w": "UserService para tudo é cheiro.",
+      "a": 1,
+      "w": "“Pedido” no checkout é carrinho e pagamento; no fiscal é nota e imposto. São dois recortes.",
       "t": "bounded"
     },
     {
-      "q": "Se perguntarem bounded na mesa, qual frase é a verdadeira?",
+      "q": "Um serviço por tabela é bom corte?",
       "o": [
-        "Corte por bounded context, não por entidade de banco.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A mesma palavra sempre significa a mesma coisa em todo o sistema.",
+        "Corte onde as palavras têm significado estável, não por entidade de banco.",
+        "Corte por entidade de banco: uma tabela, um serviço.",
+        "Corte por camada técnica: um serviço de banco, um serviço de interface."
       ],
-      "a": 0,
-      "w": "UserService para tudo é cheiro.",
+      "a": 1,
+      "w": "“Pedido” no checkout é carrinho e pagamento; no fiscal é nota e imposto. São dois recortes.",
       "t": "bounded"
     },
     {
-      "q": "Sobre shared db: qual afirmação está certa?",
+      "q": "Dois deploys no mesmo banco dão independência?",
       "o": [
-        "Banco compartilhado entre deploys anula a independência.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Compartilhar o banco mantém os times saudavelmente acoplados.",
+        "O schema compartilhado é um contrato explícito e seguro.",
+        "Dois deploys no mesmo banco anulam a independência: virou monolito distribuído.",
+        "Dois deploys no mesmo banco dão independência de schema."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 2,
+      "w": "O schema vira contrato secreto. A migração de um quebra o outro de madrugada.",
       "t": "shared db"
     },
     {
-      "q": "Qual frase sobre shared db está certa?",
+      "q": "O que o banco compartilhado faz do schema?",
       "o": [
-        "Banco compartilhado entre deploys anula a independência.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Dois deploys no mesmo banco anulam a independência: virou monolito distribuído.",
+        "Dois deploys no mesmo banco dão independência de schema.",
+        "Compartilhar o banco mantém os times saudavelmente acoplados.",
+        "O schema compartilhado é um contrato explícito e seguro."
       ],
       "a": 0,
-      "w": "Monolito distribuído.",
+      "w": "O schema vira contrato secreto. A migração de um quebra o outro de madrugada.",
       "t": "shared db"
     },
     {
-      "q": "Shared db — o que acontece de verdade?",
+      "q": "Como se chama dois deploys no mesmo banco?",
       "o": [
-        "Banco compartilhado entre deploys anula a independência.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Compartilhar o banco mantém os times saudavelmente acoplados.",
+        "O schema compartilhado é um contrato explícito e seguro.",
+        "Dois deploys no mesmo banco anulam a independência: virou monolito distribuído.",
+        "Dois deploys no mesmo banco dão independência de schema."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 2,
+      "w": "O schema vira contrato secreto. A migração de um quebra o outro de madrugada.",
       "t": "shared db"
     },
     {
-      "q": "Marque a leitura correta (shared db).",
+      "q": "A migração de um time quebra o outro? Por quê?",
       "o": [
-        "Banco compartilhado entre deploys anula a independência.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Compartilhar o banco mantém os times saudavelmente acoplados.",
+        "O schema compartilhado é um contrato explícito e seguro.",
+        "Dois deploys no mesmo banco anulam a independência: virou monolito distribuído.",
+        "Dois deploys no mesmo banco dão independência de schema."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 2,
+      "w": "O schema vira contrato secreto. A migração de um quebra o outro de madrugada.",
       "t": "shared db"
     },
     {
-      "q": "Corrija o mito sobre shared db.",
+      "q": "Compartilhar banco é acoplamento saudável?",
       "o": [
-        "Banco compartilhado entre deploys anula a independência.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Dois deploys no mesmo banco anulam a independência: virou monolito distribuído.",
+        "Dois deploys no mesmo banco dão independência de schema.",
+        "Compartilhar o banco mantém os times saudavelmente acoplados.",
+        "O schema compartilhado é um contrato explícito e seguro."
       ],
       "a": 0,
-      "w": "Monolito distribuído.",
+      "w": "O schema vira contrato secreto. A migração de um quebra o outro de madrugada.",
       "t": "shared db"
     },
     {
-      "q": "No caderno, a respeito de shared db: qual vale?",
+      "q": "O schema compartilhado é contrato explícito?",
       "o": [
-        "Banco compartilhado entre deploys anula a independência.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O schema compartilhado é um contrato explícito e seguro.",
+        "Dois deploys no mesmo banco anulam a independência: virou monolito distribuído.",
+        "Dois deploys no mesmo banco dão independência de schema.",
+        "Compartilhar o banco mantém os times saudavelmente acoplados."
       ],
-      "a": 0,
-      "w": "Monolito distribuído.",
+      "a": 1,
+      "w": "O schema vira contrato secreto. A migração de um quebra o outro de madrugada.",
       "t": "shared db"
     },
     {
-      "q": "Se perguntarem shared db na mesa, qual frase é a verdadeira?",
+      "q": "Qual é o pior dos dois mundos, nesta aula?",
       "o": [
-        "Banco compartilhado entre deploys anula a independência.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Dois deploys no mesmo banco anulam a independência: virou monolito distribuído.",
+        "Dois deploys no mesmo banco dão independência de schema.",
+        "Compartilhar o banco mantém os times saudavelmente acoplados.",
+        "O schema compartilhado é um contrato explícito e seguro."
       ],
       "a": 0,
-      "w": "Monolito distribuído.",
+      "w": "O schema vira contrato secreto. A migração de um quebra o outro de madrugada.",
       "t": "shared db"
     },
     {
-      "q": "Sobre strangler: qual afirmação está certa?",
+      "q": "Como extrair uma fatia sem parar o negócio?",
       "o": [
-        "Strangler Fig: extraia um pedaço com fachada, não big bang.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Extraia uma fatia por vez com um roteador na frente, nunca reescrevendo tudo de uma vez.",
+        "Extraia tudo de uma vez: o roteador na frente é atraso.",
+        "Comece pelo núcleo de pagamento, que é o mais importante.",
+        "Desligue o módulo velho no dia em que o novo sobe."
       ],
       "a": 0,
-      "w": "Caminho.",
+      "w": "Comece pelo que tem fronteira clara. Desligue o módulo velho só quando tráfego e dado migraram.",
       "t": "strangler"
     },
     {
-      "q": "Qual frase sobre strangler está certa?",
+      "q": "Reescrever tudo de uma vez funciona?",
       "o": [
-        "Strangler Fig: extraia um pedaço com fachada, não big bang.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Desligue o módulo velho no dia em que o novo sobe.",
+        "Extraia uma fatia por vez com um roteador na frente, nunca reescrevendo tudo de uma vez.",
+        "Extraia tudo de uma vez: o roteador na frente é atraso.",
+        "Comece pelo núcleo de pagamento, que é o mais importante."
       ],
-      "a": 0,
-      "w": "Caminho.",
+      "a": 1,
+      "w": "Comece pelo que tem fronteira clara. Desligue o módulo velho só quando tráfego e dado migraram.",
       "t": "strangler"
     },
     {
-      "q": "Strangler — o que acontece de verdade?",
+      "q": "Por qual fatia começar?",
       "o": [
-        "Strangler Fig: extraia um pedaço com fachada, não big bang.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Comece pelo núcleo de pagamento, que é o mais importante.",
+        "Desligue o módulo velho no dia em que o novo sobe.",
+        "Extraia uma fatia por vez com um roteador na frente, nunca reescrevendo tudo de uma vez.",
+        "Extraia tudo de uma vez: o roteador na frente é atraso."
       ],
-      "a": 0,
-      "w": "Caminho.",
+      "a": 2,
+      "w": "Comece pelo que tem fronteira clara. Desligue o módulo velho só quando tráfego e dado migraram.",
       "t": "strangler"
     },
     {
-      "q": "Marque a leitura correta (strangler).",
+      "q": "Quando desligar o módulo velho?",
       "o": [
-        "Strangler Fig: extraia um pedaço com fachada, não big bang.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Desligue o módulo velho no dia em que o novo sobe.",
+        "Extraia uma fatia por vez com um roteador na frente, nunca reescrevendo tudo de uma vez.",
+        "Extraia tudo de uma vez: o roteador na frente é atraso.",
+        "Comece pelo núcleo de pagamento, que é o mais importante."
       ],
-      "a": 0,
-      "w": "Caminho.",
+      "a": 1,
+      "w": "Comece pelo que tem fronteira clara. Desligue o módulo velho só quando tráfego e dado migraram.",
       "t": "strangler"
     },
     {
-      "q": "Corrija o mito sobre strangler.",
+      "q": "Para que serve o roteador na frente?",
       "o": [
-        "Strangler Fig: extraia um pedaço com fachada, não big bang.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Desligue o módulo velho no dia em que o novo sobe.",
+        "Extraia uma fatia por vez com um roteador na frente, nunca reescrevendo tudo de uma vez.",
+        "Extraia tudo de uma vez: o roteador na frente é atraso.",
+        "Comece pelo núcleo de pagamento, que é o mais importante."
       ],
-      "a": 0,
-      "w": "Caminho.",
+      "a": 1,
+      "w": "Comece pelo que tem fronteira clara. Desligue o módulo velho só quando tráfego e dado migraram.",
       "t": "strangler"
     },
     {
-      "q": "No caderno, a respeito de strangler: qual vale?",
+      "q": "Começar pelo núcleo de pagamento é boa ideia?",
       "o": [
-        "Strangler Fig: extraia um pedaço com fachada, não big bang.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Extraia uma fatia por vez com um roteador na frente, nunca reescrevendo tudo de uma vez.",
+        "Extraia tudo de uma vez: o roteador na frente é atraso.",
+        "Comece pelo núcleo de pagamento, que é o mais importante.",
+        "Desligue o módulo velho no dia em que o novo sobe."
       ],
       "a": 0,
-      "w": "Caminho.",
+      "w": "Comece pelo que tem fronteira clara. Desligue o módulo velho só quando tráfego e dado migraram.",
       "t": "strangler"
     },
     {
-      "q": "Se perguntarem strangler na mesa, qual frase é a verdadeira?",
+      "q": "O que fica no sistema antigo durante a extração?",
       "o": [
-        "Strangler Fig: extraia um pedaço com fachada, não big bang.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Extraia uma fatia por vez com um roteador na frente, nunca reescrevendo tudo de uma vez.",
+        "Extraia tudo de uma vez: o roteador na frente é atraso.",
+        "Comece pelo núcleo de pagamento, que é o mais importante.",
+        "Desligue o módulo velho no dia em que o novo sobe."
       ],
       "a": 0,
-      "w": "Caminho.",
+      "w": "Comece pelo que tem fronteira clara. Desligue o módulo velho só quando tráfego e dado migraram.",
       "t": "strangler"
     },
     {
-      "q": "Sobre release: qual afirmação está certa?",
+      "q": "Toda feature mexe em três repositórios. O que isso indica?",
       "o": [
-        "Se toda feature muda três repos, a decomposição falhou.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Feature em três repositórios prova que a decomposição deu certo.",
+        "O número de repositórios tocados por feature não diz nada sobre o corte.",
+        "Espalhar o release por vários repositórios é o objetivo da decomposição.",
+        "Se toda feature mexe em três repositórios, a fatia está errada."
       ],
-      "a": 0,
-      "w": "Acoplamento.",
+      "a": 3,
+      "w": "Você não decompôs: espalhou o release. É monolito com arquivo de deploy.",
       "t": "release"
     },
     {
-      "q": "Qual frase sobre release está certa?",
+      "q": "Qual indicador prático mostra que a fatia está errada?",
       "o": [
-        "Se toda feature muda três repos, a decomposição falhou.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Se toda feature mexe em três repositórios, a fatia está errada.",
+        "Feature em três repositórios prova que a decomposição deu certo.",
+        "O número de repositórios tocados por feature não diz nada sobre o corte.",
+        "Espalhar o release por vários repositórios é o objetivo da decomposição."
       ],
       "a": 0,
-      "w": "Acoplamento.",
+      "w": "Você não decompôs: espalhou o release. É monolito com arquivo de deploy.",
       "t": "release"
     },
     {
-      "q": "Release — o que acontece de verdade?",
+      "q": "Espalhar o release é o objetivo da decomposição?",
       "o": [
-        "Se toda feature muda três repos, a decomposição falhou.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Se toda feature mexe em três repositórios, a fatia está errada.",
+        "Feature em três repositórios prova que a decomposição deu certo.",
+        "O número de repositórios tocados por feature não diz nada sobre o corte.",
+        "Espalhar o release por vários repositórios é o objetivo da decomposição."
       ],
       "a": 0,
-      "w": "Acoplamento.",
+      "w": "Você não decompôs: espalhou o release. É monolito com arquivo de deploy.",
       "t": "release"
     },
     {
-      "q": "Marque a leitura correta (release).",
+      "q": "O número de repositórios por feature diz algo sobre o corte?",
       "o": [
-        "Se toda feature muda três repos, a decomposição falhou.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Se toda feature mexe em três repositórios, a fatia está errada.",
+        "Feature em três repositórios prova que a decomposição deu certo.",
+        "O número de repositórios tocados por feature não diz nada sobre o corte.",
+        "Espalhar o release por vários repositórios é o objetivo da decomposição."
       ],
       "a": 0,
-      "w": "Acoplamento.",
+      "w": "Você não decompôs: espalhou o release. É monolito com arquivo de deploy.",
       "t": "release"
     },
     {
-      "q": "Corrija o mito sobre release.",
+      "q": "Três repositórios por feature: decompôs ou espalhou?",
       "o": [
-        "Se toda feature muda três repos, a decomposição falhou.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Espalhar o release por vários repositórios é o objetivo da decomposição.",
+        "Se toda feature mexe em três repositórios, a fatia está errada.",
+        "Feature em três repositórios prova que a decomposição deu certo.",
+        "O número de repositórios tocados por feature não diz nada sobre o corte."
       ],
-      "a": 0,
-      "w": "Acoplamento.",
+      "a": 1,
+      "w": "Você não decompôs: espalhou o release. É monolito com arquivo de deploy.",
       "t": "release"
     },
     {
-      "q": "No caderno, a respeito de release: qual vale?",
+      "q": "Como saber que você tem monolito com arquivo de deploy?",
       "o": [
-        "Se toda feature muda três repos, a decomposição falhou.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O número de repositórios tocados por feature não diz nada sobre o corte.",
+        "Espalhar o release por vários repositórios é o objetivo da decomposição.",
+        "Se toda feature mexe em três repositórios, a fatia está errada.",
+        "Feature em três repositórios prova que a decomposição deu certo."
       ],
-      "a": 0,
-      "w": "Acoplamento.",
+      "a": 2,
+      "w": "Você não decompôs: espalhou o release. É monolito com arquivo de deploy.",
       "t": "release"
     },
     {
-      "q": "Se perguntarem release na mesa, qual frase é a verdadeira?",
+      "q": "Toda feature em três repositórios significa corte bom?",
       "o": [
-        "Se toda feature muda três repos, a decomposição falhou.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Se toda feature mexe em três repositórios, a fatia está errada.",
+        "Feature em três repositórios prova que a decomposição deu certo.",
+        "O número de repositórios tocados por feature não diz nada sobre o corte.",
+        "Espalhar o release por vários repositórios é o objetivo da decomposição."
       ],
       "a": 0,
-      "w": "Acoplamento.",
+      "w": "Você não decompôs: espalhou o release. É monolito com arquivo de deploy.",
       "t": "release"
     },
     {
-      "q": "Sobre dado dono: qual afirmação está certa?",
+      "q": "Quem escreve um dado, quando há vários serviços?",
       "o": [
-        "Um dono por dado. O resto lê API/evento.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Todos os serviços escrevem no mesmo dado, cada um na sua hora.",
+        "Ler direto na tabela do outro é aceitável se for só leitura.",
+        "Um dado não precisa de dono: quem chegar primeiro escreve.",
+        "Um dono escreve o dado; os outros copiam por evento ou perguntam na interface."
       ],
-      "a": 0,
-      "w": "Fronteira de dado.",
+      "a": 3,
+      "w": "Ninguém faz leitura direta na tabela do outro. Duplicação controlada, com dono nomeado.",
       "t": "dado dono"
     },
     {
-      "q": "Qual frase sobre dado dono está certa?",
+      "q": "Como os outros serviços obtêm o dado?",
       "o": [
-        "Um dono por dado. O resto lê API/evento.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Ler direto na tabela do outro é aceitável se for só leitura.",
+        "Um dado não precisa de dono: quem chegar primeiro escreve.",
+        "Um dono escreve o dado; os outros copiam por evento ou perguntam na interface.",
+        "Todos os serviços escrevem no mesmo dado, cada um na sua hora."
       ],
-      "a": 0,
-      "w": "Fronteira de dado.",
+      "a": 2,
+      "w": "Ninguém faz leitura direta na tabela do outro. Duplicação controlada, com dono nomeado.",
       "t": "dado dono"
     },
     {
-      "q": "Dado dono — o que acontece de verdade?",
+      "q": "Ler direto na tabela do outro é aceitável?",
       "o": [
-        "Um dono por dado. O resto lê API/evento.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Um dono escreve o dado; os outros copiam por evento ou perguntam na interface.",
+        "Todos os serviços escrevem no mesmo dado, cada um na sua hora.",
+        "Ler direto na tabela do outro é aceitável se for só leitura.",
+        "Um dado não precisa de dono: quem chegar primeiro escreve."
       ],
       "a": 0,
-      "w": "Fronteira de dado.",
+      "w": "Ninguém faz leitura direta na tabela do outro. Duplicação controlada, com dono nomeado.",
       "t": "dado dono"
     },
     {
-      "q": "Marque a leitura correta (dado dono).",
+      "q": "Um dado precisa de dono?",
       "o": [
-        "Um dono por dado. O resto lê API/evento.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Um dado não precisa de dono: quem chegar primeiro escreve.",
+        "Um dono escreve o dado; os outros copiam por evento ou perguntam na interface.",
+        "Todos os serviços escrevem no mesmo dado, cada um na sua hora.",
+        "Ler direto na tabela do outro é aceitável se for só leitura."
       ],
-      "a": 0,
-      "w": "Fronteira de dado.",
+      "a": 1,
+      "w": "Ninguém faz leitura direta na tabela do outro. Duplicação controlada, com dono nomeado.",
       "t": "dado dono"
     },
     {
-      "q": "Corrija o mito sobre dado dono.",
+      "q": "O que é duplicação controlada?",
       "o": [
-        "Um dono por dado. O resto lê API/evento.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Ler direto na tabela do outro é aceitável se for só leitura.",
+        "Um dado não precisa de dono: quem chegar primeiro escreve.",
+        "Um dono escreve o dado; os outros copiam por evento ou perguntam na interface.",
+        "Todos os serviços escrevem no mesmo dado, cada um na sua hora."
       ],
-      "a": 0,
-      "w": "Fronteira de dado.",
+      "a": 2,
+      "w": "Ninguém faz leitura direta na tabela do outro. Duplicação controlada, com dono nomeado.",
       "t": "dado dono"
     },
     {
-      "q": "No caderno, a respeito de dado dono: qual vale?",
+      "q": "Vários serviços podem escrever no mesmo dado?",
       "o": [
-        "Um dono por dado. O resto lê API/evento.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Um dado não precisa de dono: quem chegar primeiro escreve.",
+        "Um dono escreve o dado; os outros copiam por evento ou perguntam na interface.",
+        "Todos os serviços escrevem no mesmo dado, cada um na sua hora.",
+        "Ler direto na tabela do outro é aceitável se for só leitura."
       ],
-      "a": 0,
-      "w": "Fronteira de dado.",
+      "a": 1,
+      "w": "Ninguém faz leitura direta na tabela do outro. Duplicação controlada, com dono nomeado.",
       "t": "dado dono"
     },
     {
-      "q": "Se perguntarem dado dono na mesa, qual frase é a verdadeira?",
+      "q": "Só leitura na tabela alheia: passa?",
       "o": [
-        "Um dono por dado. O resto lê API/evento.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Todos os serviços escrevem no mesmo dado, cada um na sua hora.",
+        "Ler direto na tabela do outro é aceitável se for só leitura.",
+        "Um dado não precisa de dono: quem chegar primeiro escreve.",
+        "Um dono escreve o dado; os outros copiam por evento ou perguntam na interface."
       ],
-      "a": 0,
-      "w": "Fronteira de dado.",
+      "a": 3,
+      "w": "Ninguém faz leitura direta na tabela do outro. Duplicação controlada, com dono nomeado.",
       "t": "dado dono"
     },
     {
-      "q": "Sobre modular first: qual afirmação está certa?",
+      "q": "Qual é o ponto de partida: modular ou separado?",
       "o": [
-        "Monolito modular primeiro. Extraia quando o custo de coordenação pede.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O custo de coordenação não tem relação com a decisão de extrair.",
+        "Monolito modular primeiro; extraia quando o custo de coordenação pedir.",
+        "Serviços separados primeiro; junte depois se der problema.",
+        "Monolito modular nunca permite extração depois."
       ],
-      "a": 0,
-      "w": "Default.",
+      "a": 1,
+      "w": "Fronteira de código sem o preço da rede. Dá para extrair depois, e você extrai.",
       "t": "modular first"
     },
     {
-      "q": "Qual frase sobre modular first está certa?",
+      "q": "O que faz você extrair um módulo em serviço?",
       "o": [
-        "Monolito modular primeiro. Extraia quando o custo de coordenação pede.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Monolito modular nunca permite extração depois.",
+        "O custo de coordenação não tem relação com a decisão de extrair.",
+        "Monolito modular primeiro; extraia quando o custo de coordenação pedir.",
+        "Serviços separados primeiro; junte depois se der problema."
       ],
-      "a": 0,
-      "w": "Default.",
+      "a": 2,
+      "w": "Fronteira de código sem o preço da rede. Dá para extrair depois, e você extrai.",
       "t": "modular first"
     },
     {
-      "q": "Modular first — o que acontece de verdade?",
+      "q": "Monolito modular permite extração depois?",
       "o": [
-        "Monolito modular primeiro. Extraia quando o custo de coordenação pede.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Serviços separados primeiro; junte depois se der problema.",
+        "Monolito modular nunca permite extração depois.",
+        "O custo de coordenação não tem relação com a decisão de extrair.",
+        "Monolito modular primeiro; extraia quando o custo de coordenação pedir."
       ],
-      "a": 0,
-      "w": "Default.",
+      "a": 3,
+      "w": "Fronteira de código sem o preço da rede. Dá para extrair depois, e você extrai.",
       "t": "modular first"
     },
     {
-      "q": "Marque a leitura correta (modular first).",
+      "q": "O que o monolito modular dá sem cobrar o preço da rede?",
       "o": [
-        "Monolito modular primeiro. Extraia quando o custo de coordenação pede.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Serviços separados primeiro; junte depois se der problema.",
+        "Monolito modular nunca permite extração depois.",
+        "O custo de coordenação não tem relação com a decisão de extrair.",
+        "Monolito modular primeiro; extraia quando o custo de coordenação pedir."
       ],
-      "a": 0,
-      "w": "Default.",
+      "a": 3,
+      "w": "Fronteira de código sem o preço da rede. Dá para extrair depois, e você extrai.",
       "t": "modular first"
     },
     {
-      "q": "Corrija o mito sobre modular first.",
+      "q": "Começar com serviços separados e juntar depois funciona?",
       "o": [
-        "Monolito modular primeiro. Extraia quando o custo de coordenação pede.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Monolito modular primeiro; extraia quando o custo de coordenação pedir.",
+        "Serviços separados primeiro; junte depois se der problema.",
+        "Monolito modular nunca permite extração depois.",
+        "O custo de coordenação não tem relação com a decisão de extrair."
       ],
       "a": 0,
-      "w": "Default.",
+      "w": "Fronteira de código sem o preço da rede. Dá para extrair depois, e você extrai.",
       "t": "modular first"
     },
     {
-      "q": "No caderno, a respeito de modular first: qual vale?",
+      "q": "O custo de coordenação pesa na decisão?",
       "o": [
-        "Monolito modular primeiro. Extraia quando o custo de coordenação pede.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O custo de coordenação não tem relação com a decisão de extrair.",
+        "Monolito modular primeiro; extraia quando o custo de coordenação pedir.",
+        "Serviços separados primeiro; junte depois se der problema.",
+        "Monolito modular nunca permite extração depois."
       ],
-      "a": 0,
-      "w": "Default.",
+      "a": 1,
+      "w": "Fronteira de código sem o preço da rede. Dá para extrair depois, e você extrai.",
       "t": "modular first"
     },
     {
-      "q": "Se perguntarem modular first na mesa, qual frase é a verdadeira?",
+      "q": "Quando o módulo vira serviço?",
       "o": [
-        "Monolito modular primeiro. Extraia quando o custo de coordenação pede.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O custo de coordenação não tem relação com a decisão de extrair.",
+        "Monolito modular primeiro; extraia quando o custo de coordenação pedir.",
+        "Serviços separados primeiro; junte depois se der problema.",
+        "Monolito modular nunca permite extração depois."
       ],
-      "a": 0,
-      "w": "Default.",
+      "a": 1,
+      "w": "Fronteira de código sem o preço da rede. Dá para extrair depois, e você extrai.",
       "t": "modular first"
     },
     {
-      "q": "Sobre rede: qual afirmação está certa?",
+      "q": "O que cada corte adiciona?",
       "o": [
-        "Cada corte é uma falha parcial nova. Nomeie.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Cada corte remove saltos de rede e simplifica a falha.",
+        "Saltos de rede não afetam o tempo de resposta percebido.",
+        "Falha parcial é problema do monolito, não dos serviços separados.",
+        "Cada corte adiciona um salto de rede e uma falha parcial nova. Nomeie."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 3,
+      "w": "Salto de rede cobra tempo de resposta. Falha parcial cobra tratamento em quem chama.",
       "t": "rede"
     },
     {
-      "q": "Qual frase sobre rede está certa?",
+      "q": "Salto de rede cobra o quê?",
       "o": [
-        "Cada corte é uma falha parcial nova. Nomeie.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Falha parcial é problema do monolito, não dos serviços separados.",
+        "Cada corte adiciona um salto de rede e uma falha parcial nova. Nomeie.",
+        "Cada corte remove saltos de rede e simplifica a falha.",
+        "Saltos de rede não afetam o tempo de resposta percebido."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 1,
+      "w": "Salto de rede cobra tempo de resposta. Falha parcial cobra tratamento em quem chama.",
       "t": "rede"
     },
     {
-      "q": "Rede — o que acontece de verdade?",
+      "q": "Falha parcial cobra o quê, e de quem?",
       "o": [
-        "Cada corte é uma falha parcial nova. Nomeie.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Falha parcial é problema do monolito, não dos serviços separados.",
+        "Cada corte adiciona um salto de rede e uma falha parcial nova. Nomeie.",
+        "Cada corte remove saltos de rede e simplifica a falha.",
+        "Saltos de rede não afetam o tempo de resposta percebido."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 1,
+      "w": "Salto de rede cobra tempo de resposta. Falha parcial cobra tratamento em quem chama.",
       "t": "rede"
     },
     {
-      "q": "Marque a leitura correta (rede).",
+      "q": "Cortar em serviços simplifica a falha?",
       "o": [
-        "Cada corte é uma falha parcial nova. Nomeie.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Saltos de rede não afetam o tempo de resposta percebido.",
+        "Falha parcial é problema do monolito, não dos serviços separados.",
+        "Cada corte adiciona um salto de rede e uma falha parcial nova. Nomeie.",
+        "Cada corte remove saltos de rede e simplifica a falha."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 2,
+      "w": "Salto de rede cobra tempo de resposta. Falha parcial cobra tratamento em quem chama.",
       "t": "rede"
     },
     {
-      "q": "Corrija o mito sobre rede.",
+      "q": "Saltos de rede afetam o tempo de resposta?",
       "o": [
-        "Cada corte é uma falha parcial nova. Nomeie.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cada corte adiciona um salto de rede e uma falha parcial nova. Nomeie.",
+        "Cada corte remove saltos de rede e simplifica a falha.",
+        "Saltos de rede não afetam o tempo de resposta percebido.",
+        "Falha parcial é problema do monolito, não dos serviços separados."
       ],
       "a": 0,
-      "w": "Preço.",
+      "w": "Salto de rede cobra tempo de resposta. Falha parcial cobra tratamento em quem chama.",
       "t": "rede"
     },
     {
-      "q": "No caderno, a respeito de rede: qual vale?",
+      "q": "Falha parcial é problema de qual desenho?",
       "o": [
-        "Cada corte é uma falha parcial nova. Nomeie.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cada corte adiciona um salto de rede e uma falha parcial nova. Nomeie.",
+        "Cada corte remove saltos de rede e simplifica a falha.",
+        "Saltos de rede não afetam o tempo de resposta percebido.",
+        "Falha parcial é problema do monolito, não dos serviços separados."
       ],
       "a": 0,
-      "w": "Preço.",
+      "w": "Salto de rede cobra tempo de resposta. Falha parcial cobra tratamento em quem chama.",
       "t": "rede"
     },
     {
-      "q": "Se perguntarem rede na mesa, qual frase é a verdadeira?",
+      "q": "Um corte cria quantas falhas novas?",
       "o": [
-        "Cada corte é uma falha parcial nova. Nomeie.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Saltos de rede não afetam o tempo de resposta percebido.",
+        "Falha parcial é problema do monolito, não dos serviços separados.",
+        "Cada corte adiciona um salto de rede e uma falha parcial nova. Nomeie.",
+        "Cada corte remove saltos de rede e simplifica a falha."
       ],
-      "a": 0,
-      "w": "Preço.",
+      "a": 2,
+      "w": "Salto de rede cobra tempo de resposta. Falha parcial cobra tratamento em quem chama.",
       "t": "rede"
     },
     {
-      "q": "Sobre time: qual afirmação está certa?",
+      "q": "Quem define onde passa o corte?",
       "o": [
-        "Conway: o corte segue o time que consegue operar.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O corte segue o time que consegue operar o pedaço, não o organograma.",
+        "O corte segue o organograma que a diretoria desenhou.",
+        "Qualquer time pode receber qualquer serviço para operar.",
+        "Quem opera o serviço não influencia onde passa o corte."
       ],
       "a": 0,
-      "w": "Org.",
+      "w": "Time que não opera o pedaço não tem serviço: tem pager órfão.",
       "t": "time"
     },
     {
-      "q": "Qual frase sobre time está certa?",
+      "q": "Um serviço por área do organograma funciona?",
       "o": [
-        "Conway: o corte segue o time que consegue operar.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O corte segue o time que consegue operar o pedaço, não o organograma.",
+        "O corte segue o organograma que a diretoria desenhou.",
+        "Qualquer time pode receber qualquer serviço para operar.",
+        "Quem opera o serviço não influencia onde passa o corte."
       ],
       "a": 0,
-      "w": "Org.",
+      "w": "Time que não opera o pedaço não tem serviço: tem pager órfão.",
       "t": "time"
     },
     {
-      "q": "Time — o que acontece de verdade?",
+      "q": "Time que não opera o pedaço tem serviço?",
       "o": [
-        "Conway: o corte segue o time que consegue operar.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O corte segue o time que consegue operar o pedaço, não o organograma.",
+        "O corte segue o organograma que a diretoria desenhou.",
+        "Qualquer time pode receber qualquer serviço para operar.",
+        "Quem opera o serviço não influencia onde passa o corte."
       ],
       "a": 0,
-      "w": "Org.",
+      "w": "Time que não opera o pedaço não tem serviço: tem pager órfão.",
       "t": "time"
     },
     {
-      "q": "Marque a leitura correta (time).",
+      "q": "Quem opera influencia o corte?",
       "o": [
-        "Conway: o corte segue o time que consegue operar.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Qualquer time pode receber qualquer serviço para operar.",
+        "Quem opera o serviço não influencia onde passa o corte.",
+        "O corte segue o time que consegue operar o pedaço, não o organograma.",
+        "O corte segue o organograma que a diretoria desenhou."
       ],
-      "a": 0,
-      "w": "Org.",
+      "a": 2,
+      "w": "Time que não opera o pedaço não tem serviço: tem pager órfão.",
       "t": "time"
     },
     {
-      "q": "Corrija o mito sobre time.",
+      "q": "O que acontece quando o time não consegue operar o pedaço?",
       "o": [
-        "Conway: o corte segue o time que consegue operar.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O corte segue o time que consegue operar o pedaço, não o organograma.",
+        "O corte segue o organograma que a diretoria desenhou.",
+        "Qualquer time pode receber qualquer serviço para operar.",
+        "Quem opera o serviço não influencia onde passa o corte."
       ],
       "a": 0,
-      "w": "Org.",
+      "w": "Time que não opera o pedaço não tem serviço: tem pager órfão.",
       "t": "time"
     },
     {
-      "q": "No caderno, a respeito de time: qual vale?",
+      "q": "Qualquer time pode receber qualquer serviço?",
       "o": [
-        "Conway: o corte segue o time que consegue operar.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Quem opera o serviço não influencia onde passa o corte.",
+        "O corte segue o time que consegue operar o pedaço, não o organograma.",
+        "O corte segue o organograma que a diretoria desenhou.",
+        "Qualquer time pode receber qualquer serviço para operar."
       ],
-      "a": 0,
-      "w": "Org.",
+      "a": 1,
+      "w": "Time que não opera o pedaço não tem serviço: tem pager órfão.",
       "t": "time"
     },
     {
-      "q": "Se perguntarem time na mesa, qual frase é a verdadeira?",
+      "q": "O corte segue o organograma ou a capacidade de operar?",
       "o": [
-        "Conway: o corte segue o time que consegue operar.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Quem opera o serviço não influencia onde passa o corte.",
+        "O corte segue o time que consegue operar o pedaço, não o organograma.",
+        "O corte segue o organograma que a diretoria desenhou.",
+        "Qualquer time pode receber qualquer serviço para operar."
       ],
-      "a": 0,
-      "w": "Org.",
+      "a": 1,
+      "w": "Time que não opera o pedaço não tem serviço: tem pager órfão.",
       "t": "time"
     },
     {
-      "q": "Sobre ACL: qual afirmação está certa?",
+      "q": "O que a camada de tradução na borda do legado faz?",
       "o": [
-        "Anti-corruption layer na borda do legado.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O serviço novo deve adotar o modelo do sistema antigo sem tradução.",
+        "A camada de tradução fica dentro do serviço novo, no núcleo.",
+        "Uma camada de tradução na borda do sistema antigo converte o modelo velho.",
+        "A camada de tradução atrapalha a extração e deve ser evitada."
       ],
-      "a": 0,
-      "w": "Strangler amigo.",
+      "a": 2,
+      "w": "Ela ajuda a extração: o serviço novo não herda o vocabulário do legado.",
       "t": "ACL"
     },
     {
-      "q": "Qual frase sobre ACL está certa?",
+      "q": "Onde essa camada de tradução fica?",
       "o": [
-        "Anti-corruption layer na borda do legado.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A camada de tradução fica dentro do serviço novo, no núcleo.",
+        "Uma camada de tradução na borda do sistema antigo converte o modelo velho.",
+        "A camada de tradução atrapalha a extração e deve ser evitada.",
+        "O serviço novo deve adotar o modelo do sistema antigo sem tradução."
       ],
-      "a": 0,
-      "w": "Strangler amigo.",
+      "a": 1,
+      "w": "Ela ajuda a extração: o serviço novo não herda o vocabulário do legado.",
       "t": "ACL"
     },
     {
-      "q": "ACL — o que acontece de verdade?",
+      "q": "A camada de tradução ajuda ou atrapalha a extração?",
       "o": [
-        "Anti-corruption layer na borda do legado.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O serviço novo deve adotar o modelo do sistema antigo sem tradução.",
+        "A camada de tradução fica dentro do serviço novo, no núcleo.",
+        "Uma camada de tradução na borda do sistema antigo converte o modelo velho.",
+        "A camada de tradução atrapalha a extração e deve ser evitada."
       ],
-      "a": 0,
-      "w": "Strangler amigo.",
+      "a": 2,
+      "w": "Ela ajuda a extração: o serviço novo não herda o vocabulário do legado.",
       "t": "ACL"
     },
     {
-      "q": "Marque a leitura correta (ACL).",
+      "q": "O serviço novo deve herdar o vocabulário do legado?",
       "o": [
-        "Anti-corruption layer na borda do legado.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Uma camada de tradução na borda do sistema antigo converte o modelo velho.",
+        "A camada de tradução atrapalha a extração e deve ser evitada.",
+        "O serviço novo deve adotar o modelo do sistema antigo sem tradução.",
+        "A camada de tradução fica dentro do serviço novo, no núcleo."
       ],
       "a": 0,
-      "w": "Strangler amigo.",
+      "w": "Ela ajuda a extração: o serviço novo não herda o vocabulário do legado.",
       "t": "ACL"
     },
     {
-      "q": "Corrija o mito sobre ACL.",
+      "q": "Como evitar que o modelo velho contamine o novo?",
       "o": [
-        "Anti-corruption layer na borda do legado.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "A camada de tradução fica dentro do serviço novo, no núcleo.",
+        "Uma camada de tradução na borda do sistema antigo converte o modelo velho.",
+        "A camada de tradução atrapalha a extração e deve ser evitada.",
+        "O serviço novo deve adotar o modelo do sistema antigo sem tradução."
       ],
-      "a": 0,
-      "w": "Strangler amigo.",
+      "a": 1,
+      "w": "Ela ajuda a extração: o serviço novo não herda o vocabulário do legado.",
       "t": "ACL"
     },
     {
-      "q": "No caderno, a respeito de ACL: qual vale?",
+      "q": "A tradução fica no núcleo do serviço novo?",
       "o": [
-        "Anti-corruption layer na borda do legado.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Uma camada de tradução na borda do sistema antigo converte o modelo velho.",
+        "A camada de tradução atrapalha a extração e deve ser evitada.",
+        "O serviço novo deve adotar o modelo do sistema antigo sem tradução.",
+        "A camada de tradução fica dentro do serviço novo, no núcleo."
       ],
       "a": 0,
-      "w": "Strangler amigo.",
+      "w": "Ela ajuda a extração: o serviço novo não herda o vocabulário do legado.",
       "t": "ACL"
     },
     {
-      "q": "Se perguntarem ACL na mesa, qual frase é a verdadeira?",
+      "q": "Por que traduzir o modelo antigo na borda?",
       "o": [
-        "Anti-corruption layer na borda do legado.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Uma camada de tradução na borda do sistema antigo converte o modelo velho.",
+        "A camada de tradução atrapalha a extração e deve ser evitada.",
+        "O serviço novo deve adotar o modelo do sistema antigo sem tradução.",
+        "A camada de tradução fica dentro do serviço novo, no núcleo."
       ],
       "a": 0,
-      "w": "Strangler amigo.",
+      "w": "Ela ajuda a extração: o serviço novo não herda o vocabulário do legado.",
       "t": "ACL"
     },
     {
-      "q": "Sobre evento vs API: qual afirmação está certa?",
+      "q": "Decompor significa trocar tudo por mensagem?",
       "o": [
-        "Não substitua consulta síncrona por tópico na decomposição.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Decompor significa trocar toda consulta síncrona por mensagem.",
+        "Consulta que o usuário espera fica melhor como mensagem.",
+        "O canal de comunicação deve mudar sempre que você corta um serviço.",
+        "Não troque consulta que o usuário espera por mensagem só porque você decompôs."
       ],
-      "a": 0,
-      "w": "Ferramenta certa.",
+      "a": 3,
+      "w": "Consulta na cara continua chamada direta. Mensagem no lugar da pergunta mente o tempo.",
       "t": "evento vs API"
     },
     {
-      "q": "Qual frase sobre evento vs API está certa?",
+      "q": "Consulta que o usuário espera vira mensagem?",
       "o": [
-        "Não substitua consulta síncrona por tópico na decomposição.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Não troque consulta que o usuário espera por mensagem só porque você decompôs.",
+        "Decompor significa trocar toda consulta síncrona por mensagem.",
+        "Consulta que o usuário espera fica melhor como mensagem.",
+        "O canal de comunicação deve mudar sempre que você corta um serviço."
       ],
       "a": 0,
-      "w": "Ferramenta certa.",
+      "w": "Consulta na cara continua chamada direta. Mensagem no lugar da pergunta mente o tempo.",
       "t": "evento vs API"
     },
     {
-      "q": "Evento vs API — o que acontece de verdade?",
+      "q": "O canal muda quando você corta um serviço?",
       "o": [
-        "Não substitua consulta síncrona por tópico na decomposição.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Decompor significa trocar toda consulta síncrona por mensagem.",
+        "Consulta que o usuário espera fica melhor como mensagem.",
+        "O canal de comunicação deve mudar sempre que você corta um serviço.",
+        "Não troque consulta que o usuário espera por mensagem só porque você decompôs."
       ],
-      "a": 0,
-      "w": "Ferramenta certa.",
+      "a": 3,
+      "w": "Consulta na cara continua chamada direta. Mensagem no lugar da pergunta mente o tempo.",
       "t": "evento vs API"
     },
     {
-      "q": "Marque a leitura correta (evento vs API).",
+      "q": "O que acontece quando mensagem substitui pergunta na cara?",
       "o": [
-        "Não substitua consulta síncrona por tópico na decomposição.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O canal de comunicação deve mudar sempre que você corta um serviço.",
+        "Não troque consulta que o usuário espera por mensagem só porque você decompôs.",
+        "Decompor significa trocar toda consulta síncrona por mensagem.",
+        "Consulta que o usuário espera fica melhor como mensagem."
       ],
-      "a": 0,
-      "w": "Ferramenta certa.",
+      "a": 1,
+      "w": "Consulta na cara continua chamada direta. Mensagem no lugar da pergunta mente o tempo.",
       "t": "evento vs API"
     },
     {
-      "q": "Corrija o mito sobre evento vs API.",
+      "q": "Qual canal serve para consulta que o usuário espera?",
       "o": [
-        "Não substitua consulta síncrona por tópico na decomposição.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Não troque consulta que o usuário espera por mensagem só porque você decompôs.",
+        "Decompor significa trocar toda consulta síncrona por mensagem.",
+        "Consulta que o usuário espera fica melhor como mensagem.",
+        "O canal de comunicação deve mudar sempre que você corta um serviço."
       ],
       "a": 0,
-      "w": "Ferramenta certa.",
+      "w": "Consulta na cara continua chamada direta. Mensagem no lugar da pergunta mente o tempo.",
       "t": "evento vs API"
     },
     {
-      "q": "No caderno, a respeito de evento vs API: qual vale?",
+      "q": "Mensagem fica melhor que chamada direta na consulta?",
       "o": [
-        "Não substitua consulta síncrona por tópico na decomposição.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Consulta que o usuário espera fica melhor como mensagem.",
+        "O canal de comunicação deve mudar sempre que você corta um serviço.",
+        "Não troque consulta que o usuário espera por mensagem só porque você decompôs.",
+        "Decompor significa trocar toda consulta síncrona por mensagem."
       ],
-      "a": 0,
-      "w": "Ferramenta certa.",
+      "a": 2,
+      "w": "Consulta na cara continua chamada direta. Mensagem no lugar da pergunta mente o tempo.",
       "t": "evento vs API"
     },
     {
-      "q": "Se perguntarem evento vs API na mesa, qual frase é a verdadeira?",
+      "q": "O corte muda o canal de comunicação?",
       "o": [
-        "Não substitua consulta síncrona por tópico na decomposição.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Não troque consulta que o usuário espera por mensagem só porque você decompôs.",
+        "Decompor significa trocar toda consulta síncrona por mensagem.",
+        "Consulta que o usuário espera fica melhor como mensagem.",
+        "O canal de comunicação deve mudar sempre que você corta um serviço."
       ],
       "a": 0,
-      "w": "Ferramenta certa.",
+      "w": "Consulta na cara continua chamada direta. Mensagem no lugar da pergunta mente o tempo.",
       "t": "evento vs API"
     },
     {
-      "q": "Sobre teste contrato: qual afirmação está certa?",
+      "q": "Por que o verde interno de cada serviço mente?",
       "o": [
-        "Contrato testado entre serviços. Senão o CI mente.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Teste de contrato exige o código do produtor rodando no consumidor.",
+        "Contrato entre serviços não é testável de forma automática.",
+        "O contrato entre serviços precisa de teste, senão o verde interno mente.",
+        "Se cada serviço passa nos próprios testes, a integração está garantida."
       ],
-      "a": 0,
-      "w": "Pact/schema.",
+      "a": 2,
+      "w": "Cada serviço passa sozinho e a integração quebra. O teste de contrato pega antes do deploy.",
       "t": "teste contrato"
     },
     {
-      "q": "Qual frase sobre teste contrato está certa?",
+      "q": "O que testar entre serviços?",
       "o": [
-        "Contrato testado entre serviços. Senão o CI mente.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Se cada serviço passa nos próprios testes, a integração está garantida.",
+        "Teste de contrato exige o código do produtor rodando no consumidor.",
+        "Contrato entre serviços não é testável de forma automática.",
+        "O contrato entre serviços precisa de teste, senão o verde interno mente."
       ],
-      "a": 0,
-      "w": "Pact/schema.",
+      "a": 3,
+      "w": "Cada serviço passa sozinho e a integração quebra. O teste de contrato pega antes do deploy.",
       "t": "teste contrato"
     },
     {
-      "q": "Teste contrato — o que acontece de verdade?",
+      "q": "Cada serviço passando garante a integração?",
       "o": [
-        "Contrato testado entre serviços. Senão o CI mente.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Contrato entre serviços não é testável de forma automática.",
+        "O contrato entre serviços precisa de teste, senão o verde interno mente.",
+        "Se cada serviço passa nos próprios testes, a integração está garantida.",
+        "Teste de contrato exige o código do produtor rodando no consumidor."
       ],
-      "a": 0,
-      "w": "Pact/schema.",
+      "a": 1,
+      "w": "Cada serviço passa sozinho e a integração quebra. O teste de contrato pega antes do deploy.",
       "t": "teste contrato"
     },
     {
-      "q": "Marque a leitura correta (teste contrato).",
+      "q": "Teste de contrato exige o código do outro serviço?",
       "o": [
-        "Contrato testado entre serviços. Senão o CI mente.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Contrato entre serviços não é testável de forma automática.",
+        "O contrato entre serviços precisa de teste, senão o verde interno mente.",
+        "Se cada serviço passa nos próprios testes, a integração está garantida.",
+        "Teste de contrato exige o código do produtor rodando no consumidor."
       ],
-      "a": 0,
-      "w": "Pact/schema.",
+      "a": 1,
+      "w": "Cada serviço passa sozinho e a integração quebra. O teste de contrato pega antes do deploy.",
       "t": "teste contrato"
     },
     {
-      "q": "Corrija o mito sobre teste contrato.",
+      "q": "Quando o teste de contrato pega a quebra?",
       "o": [
-        "Contrato testado entre serviços. Senão o CI mente.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Contrato entre serviços não é testável de forma automática.",
+        "O contrato entre serviços precisa de teste, senão o verde interno mente.",
+        "Se cada serviço passa nos próprios testes, a integração está garantida.",
+        "Teste de contrato exige o código do produtor rodando no consumidor."
       ],
-      "a": 0,
-      "w": "Pact/schema.",
+      "a": 1,
+      "w": "Cada serviço passa sozinho e a integração quebra. O teste de contrato pega antes do deploy.",
       "t": "teste contrato"
     },
     {
-      "q": "No caderno, a respeito de teste contrato: qual vale?",
+      "q": "Contrato entre serviços é testável?",
       "o": [
-        "Contrato testado entre serviços. Senão o CI mente.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Se cada serviço passa nos próprios testes, a integração está garantida.",
+        "Teste de contrato exige o código do produtor rodando no consumidor.",
+        "Contrato entre serviços não é testável de forma automática.",
+        "O contrato entre serviços precisa de teste, senão o verde interno mente."
       ],
-      "a": 0,
-      "w": "Pact/schema.",
+      "a": 3,
+      "w": "Cada serviço passa sozinho e a integração quebra. O teste de contrato pega antes do deploy.",
       "t": "teste contrato"
     },
     {
-      "q": "Se perguntarem teste contrato na mesa, qual frase é a verdadeira?",
+      "q": "Os dois lados passaram e a integração quebrou. O que faltou?",
       "o": [
-        "Contrato testado entre serviços. Senão o CI mente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Contrato entre serviços não é testável de forma automática.",
+        "O contrato entre serviços precisa de teste, senão o verde interno mente.",
+        "Se cada serviço passa nos próprios testes, a integração está garantida.",
+        "Teste de contrato exige o código do produtor rodando no consumidor."
       ],
-      "a": 0,
-      "w": "Pact/schema.",
+      "a": 1,
+      "w": "Cada serviço passa sozinho e a integração quebra. O teste de contrato pega antes do deploy.",
       "t": "teste contrato"
     },
     {
-      "q": "Sobre transação: qual afirmação está certa?",
+      "q": "O que você perde ao cortar em serviços?",
       "o": [
-        "Você perdeu a transação única. Saga/outbox entram.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A garantia forte passa a valer entre todos os serviços automaticamente.",
+        "Compensar passos é desnecessário quando cada serviço tem banco próprio.",
+        "Depois do corte a transação única some: entram passo a passo compensável e caixa de saída.",
+        "Depois do corte a transação única continua funcionando entre serviços."
       ],
-      "a": 0,
-      "w": "ACID local.",
+      "a": 2,
+      "w": "A garantia forte fica dentro de cada serviço. Entre serviços você orquestra e compensa.",
       "t": "transação"
     },
     {
-      "q": "Qual frase sobre transação está certa?",
+      "q": "O que entra no lugar da transação única?",
       "o": [
-        "Você perdeu a transação única. Saga/outbox entram.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Depois do corte a transação única continua funcionando entre serviços.",
+        "A garantia forte passa a valer entre todos os serviços automaticamente.",
+        "Compensar passos é desnecessário quando cada serviço tem banco próprio.",
+        "Depois do corte a transação única some: entram passo a passo compensável e caixa de saída."
       ],
-      "a": 0,
-      "w": "ACID local.",
+      "a": 3,
+      "w": "A garantia forte fica dentro de cada serviço. Entre serviços você orquestra e compensa.",
       "t": "transação"
     },
     {
-      "q": "Transação — o que acontece de verdade?",
+      "q": "A transação única continua valendo entre serviços?",
       "o": [
-        "Você perdeu a transação única. Saga/outbox entram.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Compensar passos é desnecessário quando cada serviço tem banco próprio.",
+        "Depois do corte a transação única some: entram passo a passo compensável e caixa de saída.",
+        "Depois do corte a transação única continua funcionando entre serviços.",
+        "A garantia forte passa a valer entre todos os serviços automaticamente."
       ],
-      "a": 0,
-      "w": "ACID local.",
+      "a": 1,
+      "w": "A garantia forte fica dentro de cada serviço. Entre serviços você orquestra e compensa.",
       "t": "transação"
     },
     {
-      "q": "Marque a leitura correta (transação).",
+      "q": "Onde a garantia forte continua valendo?",
       "o": [
-        "Você perdeu a transação única. Saga/outbox entram.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Depois do corte a transação única continua funcionando entre serviços.",
+        "A garantia forte passa a valer entre todos os serviços automaticamente.",
+        "Compensar passos é desnecessário quando cada serviço tem banco próprio.",
+        "Depois do corte a transação única some: entram passo a passo compensável e caixa de saída."
       ],
-      "a": 0,
-      "w": "ACID local.",
+      "a": 3,
+      "w": "A garantia forte fica dentro de cada serviço. Entre serviços você orquestra e compensa.",
       "t": "transação"
     },
     {
-      "q": "Corrija o mito sobre transação.",
+      "q": "Como desfazer um passo entre serviços?",
       "o": [
-        "Você perdeu a transação única. Saga/outbox entram.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Compensar passos é desnecessário quando cada serviço tem banco próprio.",
+        "Depois do corte a transação única some: entram passo a passo compensável e caixa de saída.",
+        "Depois do corte a transação única continua funcionando entre serviços.",
+        "A garantia forte passa a valer entre todos os serviços automaticamente."
       ],
-      "a": 0,
-      "w": "ACID local.",
+      "a": 1,
+      "w": "A garantia forte fica dentro de cada serviço. Entre serviços você orquestra e compensa.",
       "t": "transação"
     },
     {
-      "q": "No caderno, a respeito de transação: qual vale?",
+      "q": "A garantia forte passa a valer entre todos os serviços?",
       "o": [
-        "Você perdeu a transação única. Saga/outbox entram.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Depois do corte a transação única continua funcionando entre serviços.",
+        "A garantia forte passa a valer entre todos os serviços automaticamente.",
+        "Compensar passos é desnecessário quando cada serviço tem banco próprio.",
+        "Depois do corte a transação única some: entram passo a passo compensável e caixa de saída."
       ],
-      "a": 0,
-      "w": "ACID local.",
+      "a": 3,
+      "w": "A garantia forte fica dentro de cada serviço. Entre serviços você orquestra e compensa.",
       "t": "transação"
     },
     {
-      "q": "Se perguntarem transação na mesa, qual frase é a verdadeira?",
+      "q": "Compensar passos é necessário com banco próprio?",
       "o": [
-        "Você perdeu a transação única. Saga/outbox entram.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Depois do corte a transação única some: entram passo a passo compensável e caixa de saída.",
+        "Depois do corte a transação única continua funcionando entre serviços.",
+        "A garantia forte passa a valer entre todos os serviços automaticamente.",
+        "Compensar passos é desnecessário quando cada serviço tem banco próprio."
       ],
       "a": 0,
-      "w": "ACID local.",
+      "w": "A garantia forte fica dentro de cada serviço. Entre serviços você orquestra e compensa.",
       "t": "transação"
     },
     {
-      "q": "Sobre tamanho: qual afirmação está certa?",
+      "q": "Serviço do tamanho de um método é maduro?",
       "o": [
-        "Serviço do tamanho de um método é teatro, não micro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Serviço do tamanho de um método é teatro: o tamanho segue o recorte de domínio.",
+        "Serviço do tamanho de um método é o objetivo maduro da decomposição.",
+        "O tamanho do serviço segue o número de arquivos que ele tem.",
+        "Quanto menor o serviço, melhor: sempre."
       ],
       "a": 0,
-      "w": "Granularidade.",
+      "w": "Um serviço por método é vários saltos e várias falhas parciais sem ganho nenhum.",
       "t": "tamanho"
     },
     {
-      "q": "Qual frase sobre tamanho está certa?",
+      "q": "O que define o tamanho de um serviço?",
       "o": [
-        "Serviço do tamanho de um método é teatro, não micro.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Serviço do tamanho de um método é teatro: o tamanho segue o recorte de domínio.",
+        "Serviço do tamanho de um método é o objetivo maduro da decomposição.",
+        "O tamanho do serviço segue o número de arquivos que ele tem.",
+        "Quanto menor o serviço, melhor: sempre."
       ],
       "a": 0,
-      "w": "Granularidade.",
+      "w": "Um serviço por método é vários saltos e várias falhas parciais sem ganho nenhum.",
       "t": "tamanho"
     },
     {
-      "q": "Tamanho — o que acontece de verdade?",
+      "q": "Quanto menor o serviço, melhor?",
       "o": [
-        "Serviço do tamanho de um método é teatro, não micro.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O tamanho do serviço segue o número de arquivos que ele tem.",
+        "Quanto menor o serviço, melhor: sempre.",
+        "Serviço do tamanho de um método é teatro: o tamanho segue o recorte de domínio.",
+        "Serviço do tamanho de um método é o objetivo maduro da decomposição."
       ],
-      "a": 0,
-      "w": "Granularidade.",
+      "a": 2,
+      "w": "Um serviço por método é vários saltos e várias falhas parciais sem ganho nenhum.",
       "t": "tamanho"
     },
     {
-      "q": "Marque a leitura correta (tamanho).",
+      "q": "Um serviço por método custa o quê?",
       "o": [
-        "Serviço do tamanho de um método é teatro, não micro.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Quanto menor o serviço, melhor: sempre.",
+        "Serviço do tamanho de um método é teatro: o tamanho segue o recorte de domínio.",
+        "Serviço do tamanho de um método é o objetivo maduro da decomposição.",
+        "O tamanho do serviço segue o número de arquivos que ele tem."
       ],
-      "a": 0,
-      "w": "Granularidade.",
+      "a": 1,
+      "w": "Um serviço por método é vários saltos e várias falhas parciais sem ganho nenhum.",
       "t": "tamanho"
     },
     {
-      "q": "Corrija o mito sobre tamanho.",
+      "q": "O número de arquivos define o tamanho do serviço?",
       "o": [
-        "Serviço do tamanho de um método é teatro, não micro.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Quanto menor o serviço, melhor: sempre.",
+        "Serviço do tamanho de um método é teatro: o tamanho segue o recorte de domínio.",
+        "Serviço do tamanho de um método é o objetivo maduro da decomposição.",
+        "O tamanho do serviço segue o número de arquivos que ele tem."
       ],
-      "a": 0,
-      "w": "Granularidade.",
+      "a": 1,
+      "w": "Um serviço por método é vários saltos e várias falhas parciais sem ganho nenhum.",
       "t": "tamanho"
     },
     {
-      "q": "No caderno, a respeito de tamanho: qual vale?",
+      "q": "Por que serviço minúsculo é teatro?",
       "o": [
-        "Serviço do tamanho de um método é teatro, não micro.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Quanto menor o serviço, melhor: sempre.",
+        "Serviço do tamanho de um método é teatro: o tamanho segue o recorte de domínio.",
+        "Serviço do tamanho de um método é o objetivo maduro da decomposição.",
+        "O tamanho do serviço segue o número de arquivos que ele tem."
       ],
-      "a": 0,
-      "w": "Granularidade.",
+      "a": 1,
+      "w": "Um serviço por método é vários saltos e várias falhas parciais sem ganho nenhum.",
       "t": "tamanho"
     },
     {
-      "q": "Se perguntarem tamanho na mesa, qual frase é a verdadeira?",
+      "q": "Qual critério dá o tamanho certo?",
       "o": [
-        "Serviço do tamanho de um método é teatro, não micro.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Serviço do tamanho de um método é o objetivo maduro da decomposição.",
+        "O tamanho do serviço segue o número de arquivos que ele tem.",
+        "Quanto menor o serviço, melhor: sempre.",
+        "Serviço do tamanho de um método é teatro: o tamanho segue o recorte de domínio."
       ],
-      "a": 0,
-      "w": "Granularidade.",
+      "a": 3,
+      "w": "Um serviço por método é vários saltos e várias falhas parciais sem ganho nenhum.",
       "t": "tamanho"
     },
     {
-      "q": "Sobre lead: qual afirmação está certa?",
+      "q": "O que faz uma extração ser cosmética?",
       "o": [
-        "Lead recusa extração cosmética que só adiciona YAML.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Extração cosmética com arquivo de deploy já conta como serviço.",
+        "Um arquivo de deploy por pasta é decomposição suficiente.",
+        "Dono de dado é detalhe: o importante é ter deploy separado.",
+        "Recuse extração cosmética que só adiciona arquivo de deploy sem dono de dado."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 3,
+      "w": "Parece serviço e não é. Sem deploy próprio, banco próprio e gente que opera, é módulo.",
       "t": "lead"
     },
     {
-      "q": "Qual frase sobre lead está certa?",
+      "q": "Quais três coisas um serviço de verdade tem?",
       "o": [
-        "Lead recusa extração cosmética que só adiciona YAML.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Dono de dado é detalhe: o importante é ter deploy separado.",
+        "Recuse extração cosmética que só adiciona arquivo de deploy sem dono de dado.",
+        "Extração cosmética com arquivo de deploy já conta como serviço.",
+        "Um arquivo de deploy por pasta é decomposição suficiente."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 1,
+      "w": "Parece serviço e não é. Sem deploy próprio, banco próprio e gente que opera, é módulo.",
       "t": "lead"
     },
     {
-      "q": "Lead — o que acontece de verdade?",
+      "q": "Um arquivo de deploy por pasta é decomposição?",
       "o": [
-        "Lead recusa extração cosmética que só adiciona YAML.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Recuse extração cosmética que só adiciona arquivo de deploy sem dono de dado.",
+        "Extração cosmética com arquivo de deploy já conta como serviço.",
+        "Um arquivo de deploy por pasta é decomposição suficiente.",
+        "Dono de dado é detalhe: o importante é ter deploy separado."
       ],
       "a": 0,
-      "w": "Julgamento.",
+      "w": "Parece serviço e não é. Sem deploy próprio, banco próprio e gente que opera, é módulo.",
       "t": "lead"
     },
     {
-      "q": "Marque a leitura correta (lead).",
+      "q": "Arquivo de deploy sem dono de dado é serviço?",
       "o": [
-        "Lead recusa extração cosmética que só adiciona YAML.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Extração cosmética com arquivo de deploy já conta como serviço.",
+        "Um arquivo de deploy por pasta é decomposição suficiente.",
+        "Dono de dado é detalhe: o importante é ter deploy separado.",
+        "Recuse extração cosmética que só adiciona arquivo de deploy sem dono de dado."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 3,
+      "w": "Parece serviço e não é. Sem deploy próprio, banco próprio e gente que opera, é módulo.",
       "t": "lead"
     },
     {
-      "q": "Corrija o mito sobre lead.",
+      "q": "Dono de dado é detalhe?",
       "o": [
-        "Lead recusa extração cosmética que só adiciona YAML.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Extração cosmética com arquivo de deploy já conta como serviço.",
+        "Um arquivo de deploy por pasta é decomposição suficiente.",
+        "Dono de dado é detalhe: o importante é ter deploy separado.",
+        "Recuse extração cosmética que só adiciona arquivo de deploy sem dono de dado."
       ],
-      "a": 0,
-      "w": "Julgamento.",
+      "a": 3,
+      "w": "Parece serviço e não é. Sem deploy próprio, banco próprio e gente que opera, é módulo.",
       "t": "lead"
     },
     {
-      "q": "No caderno, a respeito de lead: qual vale?",
+      "q": "Falta uma das três condições. Você decompôs?",
       "o": [
-        "Lead recusa extração cosmética que só adiciona YAML.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Recuse extração cosmética que só adiciona arquivo de deploy sem dono de dado.",
+        "Extração cosmética com arquivo de deploy já conta como serviço.",
+        "Um arquivo de deploy por pasta é decomposição suficiente.",
+        "Dono de dado é detalhe: o importante é ter deploy separado."
       ],
       "a": 0,
-      "w": "Julgamento.",
+      "w": "Parece serviço e não é. Sem deploy próprio, banco próprio e gente que opera, é módulo.",
       "t": "lead"
     },
     {
-      "q": "Se perguntarem lead na mesa, qual frase é a verdadeira?",
+      "q": "Parece serviço mas não é. O que verificar?",
       "o": [
-        "Lead recusa extração cosmética que só adiciona YAML.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Recuse extração cosmética que só adiciona arquivo de deploy sem dono de dado.",
+        "Extração cosmética com arquivo de deploy já conta como serviço.",
+        "Um arquivo de deploy por pasta é decomposição suficiente.",
+        "Dono de dado é detalhe: o importante é ter deploy separado."
       ],
       "a": 0,
-      "w": "Julgamento.",
+      "w": "Parece serviço e não é. Sem deploy próprio, banco próprio e gente que opera, é módulo.",
       "t": "lead"
     }
   ]

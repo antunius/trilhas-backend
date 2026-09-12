@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre latência: qual afirmação está certa?",
+      "q": "O que é latência?",
       "o": [
-        "Latência é o tempo de uma operação (ida e volta).",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Latência é o número de máquinas que atendem o pedido.",
+        "Latência é o total de dados que trafega no período.",
+        "Latência é o tempo de uma operação: a vez de um, ida e volta.",
+        "Latência é quantas operações o sistema faz por segundo."
       ],
-      "a": 0,
-      "w": "Não é quantas por segundo.",
+      "a": 2,
+      "w": "É o tempo que um clique leva para voltar. Não é quantas operações o sistema faz por minuto.",
       "t": "latência"
     },
     {
-      "q": "Qual frase sobre latência está certa?",
+      "q": "Latência mede o tempo de uma operação ou o total por segundo?",
       "o": [
-        "Latência é o tempo de uma operação (ida e volta).",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Latência é o total de dados que trafega no período.",
+        "Latência é o tempo de uma operação: a vez de um, ida e volta.",
+        "Latência é quantas operações o sistema faz por segundo.",
+        "Latência é o número de máquinas que atendem o pedido."
       ],
-      "a": 0,
-      "w": "Não é quantas por segundo.",
+      "a": 1,
+      "w": "É o tempo que um clique leva para voltar. Não é quantas operações o sistema faz por minuto.",
       "t": "latência"
     },
     {
-      "q": "Latência — o que acontece de verdade?",
+      "q": "O tempo que o clique leva para voltar tem que nome?",
       "o": [
-        "Latência é o tempo de uma operação (ida e volta).",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Latência é o número de máquinas que atendem o pedido.",
+        "Latência é o total de dados que trafega no período.",
+        "Latência é o tempo de uma operação: a vez de um, ida e volta.",
+        "Latência é quantas operações o sistema faz por segundo."
       ],
-      "a": 0,
-      "w": "Não é quantas por segundo.",
+      "a": 2,
+      "w": "É o tempo que um clique leva para voltar. Não é quantas operações o sistema faz por minuto.",
       "t": "latência"
     },
     {
-      "q": "Marque a leitura correta (latência).",
+      "q": "Latência é a vez de um ou o volume do sistema inteiro?",
       "o": [
-        "Latência é o tempo de uma operação (ida e volta).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Latência é quantas operações o sistema faz por segundo.",
+        "Latência é o número de máquinas que atendem o pedido.",
+        "Latência é o total de dados que trafega no período.",
+        "Latência é o tempo de uma operação: a vez de um, ida e volta."
       ],
-      "a": 0,
-      "w": "Não é quantas por segundo.",
+      "a": 3,
+      "w": "É o tempo que um clique leva para voltar. Não é quantas operações o sistema faz por minuto.",
       "t": "latência"
     },
     {
-      "q": "Corrija o mito sobre latência.",
+      "q": "Quando você mede ida e volta de uma operação, mede o quê?",
       "o": [
-        "Latência é o tempo de uma operação (ida e volta).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Latência é quantas operações o sistema faz por segundo.",
+        "Latência é o número de máquinas que atendem o pedido.",
+        "Latência é o total de dados que trafega no período.",
+        "Latência é o tempo de uma operação: a vez de um, ida e volta."
       ],
-      "a": 0,
-      "w": "Não é quantas por segundo.",
+      "a": 3,
+      "w": "É o tempo que um clique leva para voltar. Não é quantas operações o sistema faz por minuto.",
       "t": "latência"
     },
     {
-      "q": "No caderno, a respeito de latência: qual vale?",
+      "q": "Latência conta máquinas ou conta tempo?",
       "o": [
-        "Latência é o tempo de uma operação (ida e volta).",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Latência é quantas operações o sistema faz por segundo.",
+        "Latência é o número de máquinas que atendem o pedido.",
+        "Latência é o total de dados que trafega no período.",
+        "Latência é o tempo de uma operação: a vez de um, ida e volta."
       ],
-      "a": 0,
-      "w": "Não é quantas por segundo.",
+      "a": 3,
+      "w": "É o tempo que um clique leva para voltar. Não é quantas operações o sistema faz por minuto.",
       "t": "latência"
     },
     {
-      "q": "Se perguntarem latência na mesa, qual frase é a verdadeira?",
+      "q": "Por que latência não é o mesmo que quantidade por segundo?",
       "o": [
-        "Latência é o tempo de uma operação (ida e volta).",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Latência é quantas operações o sistema faz por segundo.",
+        "Latência é o número de máquinas que atendem o pedido.",
+        "Latência é o total de dados que trafega no período.",
+        "Latência é o tempo de uma operação: a vez de um, ida e volta."
       ],
-      "a": 0,
-      "w": "Não é quantas por segundo.",
+      "a": 3,
+      "w": "É o tempo que um clique leva para voltar. Não é quantas operações o sistema faz por minuto.",
       "t": "latência"
     },
     {
-      "q": "Sobre throughput: qual afirmação está certa?",
+      "q": "O que é throughput?",
       "o": [
-        "Throughput é quantas operações por unidade de tempo.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Throughput é o tempo que uma operação leva para voltar.",
+        "Throughput é o percentil que descreve a cauda lenta.",
+        "Throughput é o tempo de espera da primeira mensagem do lote.",
+        "Throughput é quantas operações o sistema faz por unidade de tempo."
       ],
-      "a": 0,
-      "w": "Supermercado: pessoas por hora.",
+      "a": 3,
+      "w": "É o volume por minuto do sistema inteiro. Sobe com paralelismo, lote e mais máquinas.",
       "t": "throughput"
     },
     {
-      "q": "Qual frase sobre throughput está certa?",
+      "q": "Throughput mede o volume por minuto ou o tempo de uma operação?",
       "o": [
-        "Throughput é quantas operações por unidade de tempo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Throughput é o tempo de espera da primeira mensagem do lote.",
+        "Throughput é quantas operações o sistema faz por unidade de tempo.",
+        "Throughput é o tempo que uma operação leva para voltar.",
+        "Throughput é o percentil que descreve a cauda lenta."
       ],
-      "a": 0,
-      "w": "Supermercado: pessoas por hora.",
+      "a": 1,
+      "w": "É o volume por minuto do sistema inteiro. Sobe com paralelismo, lote e mais máquinas.",
       "t": "throughput"
     },
     {
-      "q": "Throughput — o que acontece de verdade?",
+      "q": "O número de operações por unidade de tempo tem qual nome?",
       "o": [
-        "Throughput é quantas operações por unidade de tempo.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Throughput é o tempo de espera da primeira mensagem do lote.",
+        "Throughput é quantas operações o sistema faz por unidade de tempo.",
+        "Throughput é o tempo que uma operação leva para voltar.",
+        "Throughput é o percentil que descreve a cauda lenta."
       ],
-      "a": 0,
-      "w": "Supermercado: pessoas por hora.",
+      "a": 1,
+      "w": "É o volume por minuto do sistema inteiro. Sobe com paralelismo, lote e mais máquinas.",
       "t": "throughput"
     },
     {
-      "q": "Marque a leitura correta (throughput).",
+      "q": "Throughput é a vez de um ou o total do sistema?",
       "o": [
-        "Throughput é quantas operações por unidade de tempo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Throughput é quantas operações o sistema faz por unidade de tempo.",
+        "Throughput é o tempo que uma operação leva para voltar.",
+        "Throughput é o percentil que descreve a cauda lenta.",
+        "Throughput é o tempo de espera da primeira mensagem do lote."
       ],
       "a": 0,
-      "w": "Supermercado: pessoas por hora.",
+      "w": "É o volume por minuto do sistema inteiro. Sobe com paralelismo, lote e mais máquinas.",
       "t": "throughput"
     },
     {
-      "q": "Corrija o mito sobre throughput.",
+      "q": "O que sobe quando você adiciona paralelismo, lote e máquinas?",
       "o": [
-        "Throughput é quantas operações por unidade de tempo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Throughput é quantas operações o sistema faz por unidade de tempo.",
+        "Throughput é o tempo que uma operação leva para voltar.",
+        "Throughput é o percentil que descreve a cauda lenta.",
+        "Throughput é o tempo de espera da primeira mensagem do lote."
       ],
       "a": 0,
-      "w": "Supermercado: pessoas por hora.",
+      "w": "É o volume por minuto do sistema inteiro. Sobe com paralelismo, lote e mais máquinas.",
       "t": "throughput"
     },
     {
-      "q": "No caderno, a respeito de throughput: qual vale?",
+      "q": "Throughput é percentil de cauda?",
       "o": [
-        "Throughput é quantas operações por unidade de tempo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Throughput é o percentil que descreve a cauda lenta.",
+        "Throughput é o tempo de espera da primeira mensagem do lote.",
+        "Throughput é quantas operações o sistema faz por unidade de tempo.",
+        "Throughput é o tempo que uma operação leva para voltar."
       ],
-      "a": 0,
-      "w": "Supermercado: pessoas por hora.",
+      "a": 2,
+      "w": "É o volume por minuto do sistema inteiro. Sobe com paralelismo, lote e mais máquinas.",
       "t": "throughput"
     },
     {
-      "q": "Se perguntarem throughput na mesa, qual frase é a verdadeira?",
+      "q": "Por que throughput não descreve o tempo do clique?",
       "o": [
-        "Throughput é quantas operações por unidade de tempo.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Throughput é o tempo que uma operação leva para voltar.",
+        "Throughput é o percentil que descreve a cauda lenta.",
+        "Throughput é o tempo de espera da primeira mensagem do lote.",
+        "Throughput é quantas operações o sistema faz por unidade de tempo."
       ],
-      "a": 0,
-      "w": "Supermercado: pessoas por hora.",
+      "a": 3,
+      "w": "É o volume por minuto do sistema inteiro. Sobe com paralelismo, lote e mais máquinas.",
       "t": "throughput"
     },
     {
-      "q": "Sobre p99: qual afirmação está certa?",
+      "q": "O que o p99 significa?",
       "o": [
-        "p99 = 99% abaixo daquele valor; a cauda é o 1% restante.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "p99 é o valor abaixo do qual estão 99% das operações; a cauda é o 1% restante.",
+        "p99 é a média das 99 operações mais rápidas.",
+        "p99 é o tempo da operação mais lenta que já aconteceu.",
+        "p99 é o número de operações por segundo que o sistema aguenta."
       ],
       "a": 0,
-      "w": "SLO se escreve em percentil.",
+      "w": "O requisito de experiência se escreve em percentil. A cauda é onde mora quem sofre.",
       "t": "p99"
     },
     {
-      "q": "Qual frase sobre p99 está certa?",
+      "q": "Se o p99 é 300 ms, o que isso diz sobre as operações?",
       "o": [
-        "p99 = 99% abaixo daquele valor; a cauda é o 1% restante.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "p99 é o tempo da operação mais lenta que já aconteceu.",
+        "p99 é o número de operações por segundo que o sistema aguenta.",
+        "p99 é o valor abaixo do qual estão 99% das operações; a cauda é o 1% restante.",
+        "p99 é a média das 99 operações mais rápidas."
       ],
-      "a": 0,
-      "w": "SLO se escreve em percentil.",
+      "a": 2,
+      "w": "O requisito de experiência se escreve em percentil. A cauda é onde mora quem sofre.",
       "t": "p99"
     },
     {
-      "q": "P99 — o que acontece de verdade?",
+      "q": "p99 é média das mais rápidas ou corte de percentil?",
       "o": [
-        "p99 = 99% abaixo daquele valor; a cauda é o 1% restante.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "p99 é a média das 99 operações mais rápidas.",
+        "p99 é o tempo da operação mais lenta que já aconteceu.",
+        "p99 é o número de operações por segundo que o sistema aguenta.",
+        "p99 é o valor abaixo do qual estão 99% das operações; a cauda é o 1% restante."
       ],
-      "a": 0,
-      "w": "SLO se escreve em percentil.",
+      "a": 3,
+      "w": "O requisito de experiência se escreve em percentil. A cauda é onde mora quem sofre.",
       "t": "p99"
     },
     {
-      "q": "Marque a leitura correta (p99).",
+      "q": "Qual fatia das operações fica acima do p99?",
       "o": [
-        "p99 = 99% abaixo daquele valor; a cauda é o 1% restante.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "p99 é o tempo da operação mais lenta que já aconteceu.",
+        "p99 é o número de operações por segundo que o sistema aguenta.",
+        "p99 é o valor abaixo do qual estão 99% das operações; a cauda é o 1% restante.",
+        "p99 é a média das 99 operações mais rápidas."
       ],
-      "a": 0,
-      "w": "SLO se escreve em percentil.",
+      "a": 2,
+      "w": "O requisito de experiência se escreve em percentil. A cauda é onde mora quem sofre.",
       "t": "p99"
     },
     {
-      "q": "Corrija o mito sobre p99.",
+      "q": "O p99 descreve tempo ou volume?",
       "o": [
-        "p99 = 99% abaixo daquele valor; a cauda é o 1% restante.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "p99 é a média das 99 operações mais rápidas.",
+        "p99 é o tempo da operação mais lenta que já aconteceu.",
+        "p99 é o número de operações por segundo que o sistema aguenta.",
+        "p99 é o valor abaixo do qual estão 99% das operações; a cauda é o 1% restante."
       ],
-      "a": 0,
-      "w": "SLO se escreve em percentil.",
+      "a": 3,
+      "w": "O requisito de experiência se escreve em percentil. A cauda é onde mora quem sofre.",
       "t": "p99"
     },
     {
-      "q": "No caderno, a respeito de p99: qual vale?",
+      "q": "Onde fica a cauda em relação ao p99?",
       "o": [
-        "p99 = 99% abaixo daquele valor; a cauda é o 1% restante.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "p99 é a média das 99 operações mais rápidas.",
+        "p99 é o tempo da operação mais lenta que já aconteceu.",
+        "p99 é o número de operações por segundo que o sistema aguenta.",
+        "p99 é o valor abaixo do qual estão 99% das operações; a cauda é o 1% restante."
       ],
-      "a": 0,
-      "w": "SLO se escreve em percentil.",
+      "a": 3,
+      "w": "O requisito de experiência se escreve em percentil. A cauda é onde mora quem sofre.",
       "t": "p99"
     },
     {
-      "q": "Se perguntarem p99 na mesa, qual frase é a verdadeira?",
+      "q": "Por que o requisito de experiência se escreve em p99?",
       "o": [
-        "p99 = 99% abaixo daquele valor; a cauda é o 1% restante.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "p99 é o valor abaixo do qual estão 99% das operações; a cauda é o 1% restante.",
+        "p99 é a média das 99 operações mais rápidas.",
+        "p99 é o tempo da operação mais lenta que já aconteceu.",
+        "p99 é o número de operações por segundo que o sistema aguenta."
       ],
       "a": 0,
-      "w": "SLO se escreve em percentil.",
+      "w": "O requisito de experiência se escreve em percentil. A cauda é onde mora quem sofre.",
       "t": "p99"
     },
     {
-      "q": "Sobre média: qual afirmação está certa?",
+      "q": "Otimizar a média resolve a experiência de todos?",
       "o": [
-        "Otimizar a média esconde os usuários mais valiosos na cauda.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Otimizar a média cobre todos os usuários, inclusive a cauda.",
+        "A média é o número mais honesto para descrever a experiência.",
+        "A média sobe quando a cauda melhora; são o mesmo sinal.",
+        "Otimizar a média esconde os usuários mais valiosos, que estão na cauda."
       ],
-      "a": 0,
-      "w": "Erro comum.",
+      "a": 3,
+      "w": "99 pedidos em 20 ms e 1 em 5 s dão média “ok”. Quem esperou 5 s foi o cliente do carrinho grande.",
       "t": "média"
     },
     {
-      "q": "Qual frase sobre média está certa?",
+      "q": "Quem a média esconde?",
       "o": [
-        "Otimizar a média esconde os usuários mais valiosos na cauda.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A média é o número mais honesto para descrever a experiência.",
+        "A média sobe quando a cauda melhora; são o mesmo sinal.",
+        "Otimizar a média esconde os usuários mais valiosos, que estão na cauda.",
+        "Otimizar a média cobre todos os usuários, inclusive a cauda."
       ],
-      "a": 0,
-      "w": "Erro comum.",
+      "a": 2,
+      "w": "99 pedidos em 20 ms e 1 em 5 s dão média “ok”. Quem esperou 5 s foi o cliente do carrinho grande.",
       "t": "média"
     },
     {
-      "q": "Média — o que acontece de verdade?",
+      "q": "99 pedidos rápidos e 1 lento: a média conta essa história?",
       "o": [
-        "Otimizar a média esconde os usuários mais valiosos na cauda.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Otimizar a média cobre todos os usuários, inclusive a cauda.",
+        "A média é o número mais honesto para descrever a experiência.",
+        "A média sobe quando a cauda melhora; são o mesmo sinal.",
+        "Otimizar a média esconde os usuários mais valiosos, que estão na cauda."
       ],
-      "a": 0,
-      "w": "Erro comum.",
+      "a": 3,
+      "w": "99 pedidos em 20 ms e 1 em 5 s dão média “ok”. Quem esperou 5 s foi o cliente do carrinho grande.",
       "t": "média"
     },
     {
-      "q": "Marque a leitura correta (média).",
+      "q": "A média é o número mais honesto da experiência?",
       "o": [
-        "Otimizar a média esconde os usuários mais valiosos na cauda.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Otimizar a média cobre todos os usuários, inclusive a cauda.",
+        "A média é o número mais honesto para descrever a experiência.",
+        "A média sobe quando a cauda melhora; são o mesmo sinal.",
+        "Otimizar a média esconde os usuários mais valiosos, que estão na cauda."
       ],
-      "a": 0,
-      "w": "Erro comum.",
+      "a": 3,
+      "w": "99 pedidos em 20 ms e 1 em 5 s dão média “ok”. Quem esperou 5 s foi o cliente do carrinho grande.",
       "t": "média"
     },
     {
-      "q": "Corrija o mito sobre média.",
+      "q": "Melhorar a média move a cauda?",
       "o": [
-        "Otimizar a média esconde os usuários mais valiosos na cauda.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Otimizar a média cobre todos os usuários, inclusive a cauda.",
+        "A média é o número mais honesto para descrever a experiência.",
+        "A média sobe quando a cauda melhora; são o mesmo sinal.",
+        "Otimizar a média esconde os usuários mais valiosos, que estão na cauda."
       ],
-      "a": 0,
-      "w": "Erro comum.",
+      "a": 3,
+      "w": "99 pedidos em 20 ms e 1 em 5 s dão média “ok”. Quem esperou 5 s foi o cliente do carrinho grande.",
       "t": "média"
     },
     {
-      "q": "No caderno, a respeito de média: qual vale?",
+      "q": "Por que a média engana no requisito de experiência?",
       "o": [
-        "Otimizar a média esconde os usuários mais valiosos na cauda.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Otimizar a média esconde os usuários mais valiosos, que estão na cauda.",
+        "Otimizar a média cobre todos os usuários, inclusive a cauda.",
+        "A média é o número mais honesto para descrever a experiência.",
+        "A média sobe quando a cauda melhora; são o mesmo sinal."
       ],
       "a": 0,
-      "w": "Erro comum.",
+      "w": "99 pedidos em 20 ms e 1 em 5 s dão média “ok”. Quem esperou 5 s foi o cliente do carrinho grande.",
       "t": "média"
     },
     {
-      "q": "Se perguntarem média na mesa, qual frase é a verdadeira?",
+      "q": "Quem fica invisível quando você mede pela média?",
       "o": [
-        "Otimizar a média esconde os usuários mais valiosos na cauda.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "A média sobe quando a cauda melhora; são o mesmo sinal.",
+        "Otimizar a média esconde os usuários mais valiosos, que estão na cauda.",
+        "Otimizar a média cobre todos os usuários, inclusive a cauda.",
+        "A média é o número mais honesto para descrever a experiência."
       ],
-      "a": 0,
-      "w": "Erro comum.",
+      "a": 1,
+      "w": "99 pedidos em 20 ms e 1 em 5 s dão média “ok”. Quem esperou 5 s foi o cliente do carrinho grande.",
       "t": "média"
     },
     {
-      "q": "Sobre trade: qual afirmação está certa?",
+      "q": "Melhorar throughput pode piorar a latência?",
       "o": [
-        "Melhorar um pode piorar o outro: lote ↑ throughput ↓ latência.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Melhorar um número pode piorar o outro: lote sobe throughput e piora a latência.",
+        "Throughput e latência melhoram sempre juntos.",
+        "Lote melhora os dois números ao mesmo tempo.",
+        "Os dois números são independentes: mexer em um nunca afeta o outro."
       ],
       "a": 0,
-      "w": "Pergunte o requisito.",
+      "w": "Os dois pedidos na mesma frase — “rápido e 50 mil por minuto no mesmo clique” — são motivo para recusar o requisito.",
       "t": "trade"
     },
     {
-      "q": "Qual frase sobre trade está certa?",
+      "q": "Lote sobe o volume por minuto. O que acontece com a latência?",
       "o": [
-        "Melhorar um pode piorar o outro: lote ↑ throughput ↓ latência.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Throughput e latência melhoram sempre juntos.",
+        "Lote melhora os dois números ao mesmo tempo.",
+        "Os dois números são independentes: mexer em um nunca afeta o outro.",
+        "Melhorar um número pode piorar o outro: lote sobe throughput e piora a latência."
       ],
-      "a": 0,
-      "w": "Pergunte o requisito.",
+      "a": 3,
+      "w": "Os dois pedidos na mesma frase — “rápido e 50 mil por minuto no mesmo clique” — são motivo para recusar o requisito.",
       "t": "trade"
     },
     {
-      "q": "Trade — o que acontece de verdade?",
+      "q": "Throughput e latência melhoram sempre juntos?",
       "o": [
-        "Melhorar um pode piorar o outro: lote ↑ throughput ↓ latência.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Os dois números são independentes: mexer em um nunca afeta o outro.",
+        "Melhorar um número pode piorar o outro: lote sobe throughput e piora a latência.",
+        "Throughput e latência melhoram sempre juntos.",
+        "Lote melhora os dois números ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Pergunte o requisito.",
+      "a": 1,
+      "w": "Os dois pedidos na mesma frase — “rápido e 50 mil por minuto no mesmo clique” — são motivo para recusar o requisito.",
       "t": "trade"
     },
     {
-      "q": "Marque a leitura correta (trade).",
+      "q": "“Rápido e 50 mil por minuto no mesmo clique”: aceitar ou recusar?",
       "o": [
-        "Melhorar um pode piorar o outro: lote ↑ throughput ↓ latência.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Melhorar um número pode piorar o outro: lote sobe throughput e piora a latência.",
+        "Throughput e latência melhoram sempre juntos.",
+        "Lote melhora os dois números ao mesmo tempo.",
+        "Os dois números são independentes: mexer em um nunca afeta o outro."
       ],
       "a": 0,
-      "w": "Pergunte o requisito.",
+      "w": "Os dois pedidos na mesma frase — “rápido e 50 mil por minuto no mesmo clique” — são motivo para recusar o requisito.",
       "t": "trade"
     },
     {
-      "q": "Corrija o mito sobre trade.",
+      "q": "Os dois números são independentes entre si?",
       "o": [
-        "Melhorar um pode piorar o outro: lote ↑ throughput ↓ latência.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Lote melhora os dois números ao mesmo tempo.",
+        "Os dois números são independentes: mexer em um nunca afeta o outro.",
+        "Melhorar um número pode piorar o outro: lote sobe throughput e piora a latência.",
+        "Throughput e latência melhoram sempre juntos."
       ],
-      "a": 0,
-      "w": "Pergunte o requisito.",
+      "a": 2,
+      "w": "Os dois pedidos na mesma frase — “rápido e 50 mil por minuto no mesmo clique” — são motivo para recusar o requisito.",
       "t": "trade"
     },
     {
-      "q": "No caderno, a respeito de trade: qual vale?",
+      "q": "Qual o preço de subir o volume por minuto?",
       "o": [
-        "Melhorar um pode piorar o outro: lote ↑ throughput ↓ latência.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Os dois números são independentes: mexer em um nunca afeta o outro.",
+        "Melhorar um número pode piorar o outro: lote sobe throughput e piora a latência.",
+        "Throughput e latência melhoram sempre juntos.",
+        "Lote melhora os dois números ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Pergunte o requisito.",
+      "a": 1,
+      "w": "Os dois pedidos na mesma frase — “rápido e 50 mil por minuto no mesmo clique” — são motivo para recusar o requisito.",
       "t": "trade"
     },
     {
-      "q": "Se perguntarem trade na mesa, qual frase é a verdadeira?",
+      "q": "Por que pedir os dois máximos na mesma operação não fecha?",
       "o": [
-        "Melhorar um pode piorar o outro: lote ↑ throughput ↓ latência.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Melhorar um número pode piorar o outro: lote sobe throughput e piora a latência.",
+        "Throughput e latência melhoram sempre juntos.",
+        "Lote melhora os dois números ao mesmo tempo.",
+        "Os dois números são independentes: mexer em um nunca afeta o outro."
       ],
       "a": 0,
-      "w": "Pergunte o requisito.",
+      "w": "Os dois pedidos na mesma frase — “rápido e 50 mil por minuto no mesmo clique” — são motivo para recusar o requisito.",
       "t": "trade"
     },
     {
-      "q": "Sobre caixa: qual afirmação está certa?",
+      "q": "Qual a diferença entre latência e throughput?",
       "o": [
-        "Latência = sua vez no caixa. Throughput = o mercado inteiro.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Latência é o tempo de uma operação; throughput é quantas o sistema inteiro faz.",
+        "Latência e throughput são dois nomes para a mesma medida.",
+        "Latência é o volume do sistema e throughput é a vez de um.",
+        "Quem mede um dos dois já sabe o valor do outro."
       ],
       "a": 0,
-      "w": "Analogia da aula.",
+      "w": "Dois números diferentes, dois requisitos diferentes. Um descreve a vez de um; o outro, o volume do todo.",
       "t": "caixa"
     },
     {
-      "q": "Qual frase sobre caixa está certa?",
+      "q": "Um número é a vez de um; o outro é o volume do todo. Quem é quem?",
       "o": [
-        "Latência = sua vez no caixa. Throughput = o mercado inteiro.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Latência é o volume do sistema e throughput é a vez de um.",
+        "Quem mede um dos dois já sabe o valor do outro.",
+        "Latência é o tempo de uma operação; throughput é quantas o sistema inteiro faz.",
+        "Latência e throughput são dois nomes para a mesma medida."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "Dois números diferentes, dois requisitos diferentes. Um descreve a vez de um; o outro, o volume do todo.",
       "t": "caixa"
     },
     {
-      "q": "Caixa — o que acontece de verdade?",
+      "q": "Latência e throughput são a mesma medida com nomes diferentes?",
       "o": [
-        "Latência = sua vez no caixa. Throughput = o mercado inteiro.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Latência é o volume do sistema e throughput é a vez de um.",
+        "Quem mede um dos dois já sabe o valor do outro.",
+        "Latência é o tempo de uma operação; throughput é quantas o sistema inteiro faz.",
+        "Latência e throughput são dois nomes para a mesma medida."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "Dois números diferentes, dois requisitos diferentes. Um descreve a vez de um; o outro, o volume do todo.",
       "t": "caixa"
     },
     {
-      "q": "Marque a leitura correta (caixa).",
+      "q": "Medir throughput já revela a latência?",
       "o": [
-        "Latência = sua vez no caixa. Throughput = o mercado inteiro.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Latência é o tempo de uma operação; throughput é quantas o sistema inteiro faz.",
+        "Latência e throughput são dois nomes para a mesma medida.",
+        "Latência é o volume do sistema e throughput é a vez de um.",
+        "Quem mede um dos dois já sabe o valor do outro."
       ],
       "a": 0,
-      "w": "Analogia da aula.",
+      "w": "Dois números diferentes, dois requisitos diferentes. Um descreve a vez de um; o outro, o volume do todo.",
       "t": "caixa"
     },
     {
-      "q": "Corrija o mito sobre caixa.",
+      "q": "Qual dos dois descreve o tempo de uma operação?",
       "o": [
-        "Latência = sua vez no caixa. Throughput = o mercado inteiro.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Quem mede um dos dois já sabe o valor do outro.",
+        "Latência é o tempo de uma operação; throughput é quantas o sistema inteiro faz.",
+        "Latência e throughput são dois nomes para a mesma medida.",
+        "Latência é o volume do sistema e throughput é a vez de um."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "Dois números diferentes, dois requisitos diferentes. Um descreve a vez de um; o outro, o volume do todo.",
       "t": "caixa"
     },
     {
-      "q": "No caderno, a respeito de caixa: qual vale?",
+      "q": "Por que a aula insiste em separar os dois números?",
       "o": [
-        "Latência = sua vez no caixa. Throughput = o mercado inteiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Latência é o tempo de uma operação; throughput é quantas o sistema inteiro faz.",
+        "Latência e throughput são dois nomes para a mesma medida.",
+        "Latência é o volume do sistema e throughput é a vez de um.",
+        "Quem mede um dos dois já sabe o valor do outro."
       ],
       "a": 0,
-      "w": "Analogia da aula.",
+      "w": "Dois números diferentes, dois requisitos diferentes. Um descreve a vez de um; o outro, o volume do todo.",
       "t": "caixa"
     },
     {
-      "q": "Se perguntarem caixa na mesa, qual frase é a verdadeira?",
+      "q": "Throughput é a vez de um?",
       "o": [
-        "Latência = sua vez no caixa. Throughput = o mercado inteiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Latência é o tempo de uma operação; throughput é quantas o sistema inteiro faz.",
+        "Latência e throughput são dois nomes para a mesma medida.",
+        "Latência é o volume do sistema e throughput é a vez de um.",
+        "Quem mede um dos dois já sabe o valor do outro."
       ],
       "a": 0,
-      "w": "Analogia da aula.",
+      "w": "Dois números diferentes, dois requisitos diferentes. Um descreve a vez de um; o outro, o volume do todo.",
       "t": "caixa"
     },
     {
-      "q": "Sobre SLO: qual afirmação está certa?",
+      "q": "O que um SLO precisa ter para ser meta?",
       "o": [
-        "SLO = percentil + recorte de tempo, não um feeling.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "SLO é percentil mais recorte de tempo: p99 abaixo de 300 ms em 30 dias.",
+        "SLO é a sensação do time de que o sistema está rápido.",
+        "SLO é a média do período, sem recorte de tempo.",
+        "SLO é o valor máximo já registrado na operação."
       ],
       "a": 0,
-      "w": "p99 em 30 dias, por exemplo.",
+      "w": "Sem percentil e sem janela não é meta, é sensação. “O sistema está rápido” não se mede.",
       "t": "SLO"
     },
     {
-      "q": "Qual frase sobre SLO está certa?",
+      "q": "SLO se escreve em percentil ou em sensação?",
       "o": [
-        "SLO = percentil + recorte de tempo, não um feeling.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "SLO é o valor máximo já registrado na operação.",
+        "SLO é percentil mais recorte de tempo: p99 abaixo de 300 ms em 30 dias.",
+        "SLO é a sensação do time de que o sistema está rápido.",
+        "SLO é a média do período, sem recorte de tempo."
       ],
-      "a": 0,
-      "w": "p99 em 30 dias, por exemplo.",
+      "a": 1,
+      "w": "Sem percentil e sem janela não é meta, é sensação. “O sistema está rápido” não se mede.",
       "t": "SLO"
     },
     {
-      "q": "SLO — o que acontece de verdade?",
+      "q": "“p99 abaixo de 300 ms em 30 dias”: por que essa forma?",
       "o": [
-        "SLO = percentil + recorte de tempo, não um feeling.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "SLO é a sensação do time de que o sistema está rápido.",
+        "SLO é a média do período, sem recorte de tempo.",
+        "SLO é o valor máximo já registrado na operação.",
+        "SLO é percentil mais recorte de tempo: p99 abaixo de 300 ms em 30 dias."
       ],
-      "a": 0,
-      "w": "p99 em 30 dias, por exemplo.",
+      "a": 3,
+      "w": "Sem percentil e sem janela não é meta, é sensação. “O sistema está rápido” não se mede.",
       "t": "SLO"
     },
     {
-      "q": "Marque a leitura correta (SLO).",
+      "q": "Falta o quê num SLO sem recorte de tempo?",
       "o": [
-        "SLO = percentil + recorte de tempo, não um feeling.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "SLO é a sensação do time de que o sistema está rápido.",
+        "SLO é a média do período, sem recorte de tempo.",
+        "SLO é o valor máximo já registrado na operação.",
+        "SLO é percentil mais recorte de tempo: p99 abaixo de 300 ms em 30 dias."
       ],
-      "a": 0,
-      "w": "p99 em 30 dias, por exemplo.",
+      "a": 3,
+      "w": "Sem percentil e sem janela não é meta, é sensação. “O sistema está rápido” não se mede.",
       "t": "SLO"
     },
     {
-      "q": "Corrija o mito sobre SLO.",
+      "q": "A média do período serve como SLO?",
       "o": [
-        "SLO = percentil + recorte de tempo, não um feeling.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "SLO é a média do período, sem recorte de tempo.",
+        "SLO é o valor máximo já registrado na operação.",
+        "SLO é percentil mais recorte de tempo: p99 abaixo de 300 ms em 30 dias.",
+        "SLO é a sensação do time de que o sistema está rápido."
       ],
-      "a": 0,
-      "w": "p99 em 30 dias, por exemplo.",
+      "a": 2,
+      "w": "Sem percentil e sem janela não é meta, é sensação. “O sistema está rápido” não se mede.",
       "t": "SLO"
     },
     {
-      "q": "No caderno, a respeito de SLO: qual vale?",
+      "q": "SLO é o pior valor já visto?",
       "o": [
-        "SLO = percentil + recorte de tempo, não um feeling.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "SLO é a sensação do time de que o sistema está rápido.",
+        "SLO é a média do período, sem recorte de tempo.",
+        "SLO é o valor máximo já registrado na operação.",
+        "SLO é percentil mais recorte de tempo: p99 abaixo de 300 ms em 30 dias."
       ],
-      "a": 0,
-      "w": "p99 em 30 dias, por exemplo.",
+      "a": 3,
+      "w": "Sem percentil e sem janela não é meta, é sensação. “O sistema está rápido” não se mede.",
       "t": "SLO"
     },
     {
-      "q": "Se perguntarem SLO na mesa, qual frase é a verdadeira?",
+      "q": "Por que “o sistema está rápido” não é SLO?",
       "o": [
-        "SLO = percentil + recorte de tempo, não um feeling.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "SLO é a média do período, sem recorte de tempo.",
+        "SLO é o valor máximo já registrado na operação.",
+        "SLO é percentil mais recorte de tempo: p99 abaixo de 300 ms em 30 dias.",
+        "SLO é a sensação do time de que o sistema está rápido."
       ],
-      "a": 0,
-      "w": "p99 em 30 dias, por exemplo.",
+      "a": 2,
+      "w": "Sem percentil e sem janela não é meta, é sensação. “O sistema está rápido” não se mede.",
       "t": "SLO"
     },
     {
-      "q": "Sobre p50: qual afirmação está certa?",
+      "q": "p50 serve como meta de experiência?",
       "o": [
-        "p50 não conta a fila do caixa lento.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "p50 é o mesmo que p99 com outro nome.",
+        "p50 mostra o pior caso da operação.",
+        "p50 não conta a cauda lenta, então não serve como meta de experiência.",
+        "p50 cobre a cauda lenta e serve como meta de experiência."
       ],
-      "a": 0,
-      "w": "Não use como SLO de UX.",
+      "a": 2,
+      "w": "Metade das operações fica acima do p50. A parte que dói continua invisível.",
       "t": "p50"
     },
     {
-      "q": "Qual frase sobre p50 está certa?",
+      "q": "O que o p50 deixa de fora?",
       "o": [
-        "p50 não conta a fila do caixa lento.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "p50 não conta a cauda lenta, então não serve como meta de experiência.",
+        "p50 cobre a cauda lenta e serve como meta de experiência.",
+        "p50 é o mesmo que p99 com outro nome.",
+        "p50 mostra o pior caso da operação."
       ],
       "a": 0,
-      "w": "Não use como SLO de UX.",
+      "w": "Metade das operações fica acima do p50. A parte que dói continua invisível.",
       "t": "p50"
     },
     {
-      "q": "P50 — o que acontece de verdade?",
+      "q": "p50 e p99 descrevem a mesma coisa?",
       "o": [
-        "p50 não conta a fila do caixa lento.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "p50 cobre a cauda lenta e serve como meta de experiência.",
+        "p50 é o mesmo que p99 com outro nome.",
+        "p50 mostra o pior caso da operação.",
+        "p50 não conta a cauda lenta, então não serve como meta de experiência."
       ],
-      "a": 0,
-      "w": "Não use como SLO de UX.",
+      "a": 3,
+      "w": "Metade das operações fica acima do p50. A parte que dói continua invisível.",
       "t": "p50"
     },
     {
-      "q": "Marque a leitura correta (p50).",
+      "q": "Quanta operação fica acima do p50?",
       "o": [
-        "p50 não conta a fila do caixa lento.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "p50 é o mesmo que p99 com outro nome.",
+        "p50 mostra o pior caso da operação.",
+        "p50 não conta a cauda lenta, então não serve como meta de experiência.",
+        "p50 cobre a cauda lenta e serve como meta de experiência."
       ],
-      "a": 0,
-      "w": "Não use como SLO de UX.",
+      "a": 2,
+      "w": "Metade das operações fica acima do p50. A parte que dói continua invisível.",
       "t": "p50"
     },
     {
-      "q": "Corrija o mito sobre p50.",
+      "q": "O p50 mostra o pior caso?",
       "o": [
-        "p50 não conta a fila do caixa lento.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "p50 mostra o pior caso da operação.",
+        "p50 não conta a cauda lenta, então não serve como meta de experiência.",
+        "p50 cobre a cauda lenta e serve como meta de experiência.",
+        "p50 é o mesmo que p99 com outro nome."
       ],
-      "a": 0,
-      "w": "Não use como SLO de UX.",
+      "a": 1,
+      "w": "Metade das operações fica acima do p50. A parte que dói continua invisível.",
       "t": "p50"
     },
     {
-      "q": "No caderno, a respeito de p50: qual vale?",
+      "q": "Por que o p50 não é suficiente para o requisito de UX?",
       "o": [
-        "p50 não conta a fila do caixa lento.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "p50 é o mesmo que p99 com outro nome.",
+        "p50 mostra o pior caso da operação.",
+        "p50 não conta a cauda lenta, então não serve como meta de experiência.",
+        "p50 cobre a cauda lenta e serve como meta de experiência."
       ],
-      "a": 0,
-      "w": "Não use como SLO de UX.",
+      "a": 2,
+      "w": "Metade das operações fica acima do p50. A parte que dói continua invisível.",
       "t": "p50"
     },
     {
-      "q": "Se perguntarem p50 na mesa, qual frase é a verdadeira?",
+      "q": "A cauda lenta aparece no p50?",
       "o": [
-        "p50 não conta a fila do caixa lento.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "p50 não conta a cauda lenta, então não serve como meta de experiência.",
+        "p50 cobre a cauda lenta e serve como meta de experiência.",
+        "p50 é o mesmo que p99 com outro nome.",
+        "p50 mostra o pior caso da operação."
       ],
       "a": 0,
-      "w": "Não use como SLO de UX.",
+      "w": "Metade das operações fica acima do p50. A parte que dói continua invisível.",
       "t": "p50"
     },
     {
-      "q": "Sobre cauda: qual afirmação está certa?",
+      "q": "Quem costuma estar na cauda lenta?",
       "o": [
-        "Quem tem mais dados costuma estar na cauda.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "A cauda é aleatória: não tem relação com o volume de dados.",
+        "Quem tem mais dados fica na parte rápida da distribuição.",
+        "Quem tem mais dados costuma estar na cauda — justamente os usuários mais valiosos.",
+        "A cauda é formada pelos usuários menos importantes do sistema."
       ],
-      "a": 0,
-      "w": "Justamente os mais valiosos.",
+      "a": 2,
+      "w": "Carrinho grande, mais cupom, mais item, mais consulta. O cliente que mais compra é o que mais espera.",
       "t": "cauda"
     },
     {
-      "q": "Qual frase sobre cauda está certa?",
+      "q": "A cauda é formada pelos usuários menos importantes?",
       "o": [
-        "Quem tem mais dados costuma estar na cauda.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Quem tem mais dados costuma estar na cauda — justamente os usuários mais valiosos.",
+        "A cauda é formada pelos usuários menos importantes do sistema.",
+        "A cauda é aleatória: não tem relação com o volume de dados.",
+        "Quem tem mais dados fica na parte rápida da distribuição."
       ],
       "a": 0,
-      "w": "Justamente os mais valiosos.",
+      "w": "Carrinho grande, mais cupom, mais item, mais consulta. O cliente que mais compra é o que mais espera.",
       "t": "cauda"
     },
     {
-      "q": "Cauda — o que acontece de verdade?",
+      "q": "Quem tem carrinho grande fica na parte rápida ou na cauda?",
       "o": [
-        "Quem tem mais dados costuma estar na cauda.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A cauda é formada pelos usuários menos importantes do sistema.",
+        "A cauda é aleatória: não tem relação com o volume de dados.",
+        "Quem tem mais dados fica na parte rápida da distribuição.",
+        "Quem tem mais dados costuma estar na cauda — justamente os usuários mais valiosos."
       ],
-      "a": 0,
-      "w": "Justamente os mais valiosos.",
+      "a": 3,
+      "w": "Carrinho grande, mais cupom, mais item, mais consulta. O cliente que mais compra é o que mais espera.",
       "t": "cauda"
     },
     {
-      "q": "Marque a leitura correta (cauda).",
+      "q": "Há relação entre volume de dados e posição na cauda?",
       "o": [
-        "Quem tem mais dados costuma estar na cauda.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Quem tem mais dados costuma estar na cauda — justamente os usuários mais valiosos.",
+        "A cauda é formada pelos usuários menos importantes do sistema.",
+        "A cauda é aleatória: não tem relação com o volume de dados.",
+        "Quem tem mais dados fica na parte rápida da distribuição."
       ],
       "a": 0,
-      "w": "Justamente os mais valiosos.",
+      "w": "Carrinho grande, mais cupom, mais item, mais consulta. O cliente que mais compra é o que mais espera.",
       "t": "cauda"
     },
     {
-      "q": "Corrija o mito sobre cauda.",
+      "q": "Por que a cauda dói mais no negócio?",
       "o": [
-        "Quem tem mais dados costuma estar na cauda.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A cauda é aleatória: não tem relação com o volume de dados.",
+        "Quem tem mais dados fica na parte rápida da distribuição.",
+        "Quem tem mais dados costuma estar na cauda — justamente os usuários mais valiosos.",
+        "A cauda é formada pelos usuários menos importantes do sistema."
       ],
-      "a": 0,
-      "w": "Justamente os mais valiosos.",
+      "a": 2,
+      "w": "Carrinho grande, mais cupom, mais item, mais consulta. O cliente que mais compra é o que mais espera.",
       "t": "cauda"
     },
     {
-      "q": "No caderno, a respeito de cauda: qual vale?",
+      "q": "A cauda é aleatória?",
       "o": [
-        "Quem tem mais dados costuma estar na cauda.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "A cauda é aleatória: não tem relação com o volume de dados.",
+        "Quem tem mais dados fica na parte rápida da distribuição.",
+        "Quem tem mais dados costuma estar na cauda — justamente os usuários mais valiosos.",
+        "A cauda é formada pelos usuários menos importantes do sistema."
       ],
-      "a": 0,
-      "w": "Justamente os mais valiosos.",
+      "a": 2,
+      "w": "Carrinho grande, mais cupom, mais item, mais consulta. O cliente que mais compra é o que mais espera.",
       "t": "cauda"
     },
     {
-      "q": "Se perguntarem cauda na mesa, qual frase é a verdadeira?",
+      "q": "O cliente que mais compra espera mais ou menos?",
       "o": [
-        "Quem tem mais dados costuma estar na cauda.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A cauda é aleatória: não tem relação com o volume de dados.",
+        "Quem tem mais dados fica na parte rápida da distribuição.",
+        "Quem tem mais dados costuma estar na cauda — justamente os usuários mais valiosos.",
+        "A cauda é formada pelos usuários menos importantes do sistema."
       ],
-      "a": 0,
-      "w": "Justamente os mais valiosos.",
+      "a": 2,
+      "w": "Carrinho grande, mais cupom, mais item, mais consulta. O cliente que mais compra é o que mais espera.",
       "t": "cauda"
     },
     {
-      "q": "Sobre batch: qual afirmação está certa?",
+      "q": "Onde o lote pertence: no pipeline ou no clique?",
       "o": [
-        "linger.ms e flush melhoram lote e pioram a primeira mensagem.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Lote fica no pipeline, não no clique de quem está olhando a tela.",
+        "Lote no clique é o jeito certo de acelerar a resposta ao usuário.",
+        "Lote serve igual no clique e no pipeline: é a mesma decisão.",
+        "Quem está olhando a tela se beneficia do agrupamento em lote."
       ],
       "a": 0,
-      "w": "Nomeie o preço.",
+      "w": "Agrupar no job fiscal sobe o volume por minuto. Agrupar no clique põe a espera do lote na cara do cliente.",
       "t": "batch"
     },
     {
-      "q": "Qual frase sobre batch está certa?",
+      "q": "Agrupar em lote no clique acelera a resposta ao usuário?",
       "o": [
-        "linger.ms e flush melhoram lote e pioram a primeira mensagem.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Quem está olhando a tela se beneficia do agrupamento em lote.",
+        "Lote fica no pipeline, não no clique de quem está olhando a tela.",
+        "Lote no clique é o jeito certo de acelerar a resposta ao usuário.",
+        "Lote serve igual no clique e no pipeline: é a mesma decisão."
       ],
-      "a": 0,
-      "w": "Nomeie o preço.",
+      "a": 1,
+      "w": "Agrupar no job fiscal sobe o volume por minuto. Agrupar no clique põe a espera do lote na cara do cliente.",
       "t": "batch"
     },
     {
-      "q": "Batch — o que acontece de verdade?",
+      "q": "O relatório precisa de volume e o clique de resposta curta. Onde vai o lote?",
       "o": [
-        "linger.ms e flush melhoram lote e pioram a primeira mensagem.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Lote no clique é o jeito certo de acelerar a resposta ao usuário.",
+        "Lote serve igual no clique e no pipeline: é a mesma decisão.",
+        "Quem está olhando a tela se beneficia do agrupamento em lote.",
+        "Lote fica no pipeline, não no clique de quem está olhando a tela."
       ],
-      "a": 0,
-      "w": "Nomeie o preço.",
+      "a": 3,
+      "w": "Agrupar no job fiscal sobe o volume por minuto. Agrupar no clique põe a espera do lote na cara do cliente.",
       "t": "batch"
     },
     {
-      "q": "Marque a leitura correta (batch).",
+      "q": "Lote é a mesma decisão no clique e no job?",
       "o": [
-        "linger.ms e flush melhoram lote e pioram a primeira mensagem.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Lote fica no pipeline, não no clique de quem está olhando a tela.",
+        "Lote no clique é o jeito certo de acelerar a resposta ao usuário.",
+        "Lote serve igual no clique e no pipeline: é a mesma decisão.",
+        "Quem está olhando a tela se beneficia do agrupamento em lote."
       ],
       "a": 0,
-      "w": "Nomeie o preço.",
+      "w": "Agrupar no job fiscal sobe o volume por minuto. Agrupar no clique põe a espera do lote na cara do cliente.",
       "t": "batch"
     },
     {
-      "q": "Corrija o mito sobre batch.",
+      "q": "O que o lote no clique põe na cara do cliente?",
       "o": [
-        "linger.ms e flush melhoram lote e pioram a primeira mensagem.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Lote serve igual no clique e no pipeline: é a mesma decisão.",
+        "Quem está olhando a tela se beneficia do agrupamento em lote.",
+        "Lote fica no pipeline, não no clique de quem está olhando a tela.",
+        "Lote no clique é o jeito certo de acelerar a resposta ao usuário."
       ],
-      "a": 0,
-      "w": "Nomeie o preço.",
+      "a": 2,
+      "w": "Agrupar no job fiscal sobe o volume por minuto. Agrupar no clique põe a espera do lote na cara do cliente.",
       "t": "batch"
     },
     {
-      "q": "No caderno, a respeito de batch: qual vale?",
+      "q": "Quem se beneficia do agrupamento em lote?",
       "o": [
-        "linger.ms e flush melhoram lote e pioram a primeira mensagem.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Lote fica no pipeline, não no clique de quem está olhando a tela.",
+        "Lote no clique é o jeito certo de acelerar a resposta ao usuário.",
+        "Lote serve igual no clique e no pipeline: é a mesma decisão.",
+        "Quem está olhando a tela se beneficia do agrupamento em lote."
       ],
       "a": 0,
-      "w": "Nomeie o preço.",
+      "w": "Agrupar no job fiscal sobe o volume por minuto. Agrupar no clique põe a espera do lote na cara do cliente.",
       "t": "batch"
     },
     {
-      "q": "Se perguntarem batch na mesa, qual frase é a verdadeira?",
+      "q": "Por que lote no clique compra volume com o preço da experiência?",
       "o": [
-        "linger.ms e flush melhoram lote e pioram a primeira mensagem.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Lote fica no pipeline, não no clique de quem está olhando a tela.",
+        "Lote no clique é o jeito certo de acelerar a resposta ao usuário.",
+        "Lote serve igual no clique e no pipeline: é a mesma decisão.",
+        "Quem está olhando a tela se beneficia do agrupamento em lote."
       ],
       "a": 0,
-      "w": "Nomeie o preço.",
+      "w": "Agrupar no job fiscal sobe o volume por minuto. Agrupar no clique põe a espera do lote na cara do cliente.",
       "t": "batch"
     },
     {
-      "q": "Sobre unidade: qual afirmação está certa?",
+      "q": "O número precisa vir com unidade?",
       "o": [
-        "Sempre diga a unidade: ms, p99, writes/s.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Sempre diga a unidade: milissegundos, percentil, operações por segundo.",
+        "“Rápido” e “muito acesso” já servem como métrica.",
+        "A unidade é detalhe de documentação; o número basta.",
+        "Dizer a unidade só importa quando o número é grande."
       ],
       "a": 0,
-      "w": "“Rápido” não é métrica.",
+      "w": "“Rápido” não é métrica. Sem unidade ninguém sabe se o requisito foi cumprido.",
       "t": "unidade"
     },
     {
-      "q": "Qual frase sobre unidade está certa?",
+      "q": "“Rápido” serve como métrica?",
       "o": [
-        "Sempre diga a unidade: ms, p99, writes/s.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Dizer a unidade só importa quando o número é grande.",
+        "Sempre diga a unidade: milissegundos, percentil, operações por segundo.",
+        "“Rápido” e “muito acesso” já servem como métrica.",
+        "A unidade é detalhe de documentação; o número basta."
       ],
-      "a": 0,
-      "w": "“Rápido” não é métrica.",
+      "a": 1,
+      "w": "“Rápido” não é métrica. Sem unidade ninguém sabe se o requisito foi cumprido.",
       "t": "unidade"
     },
     {
-      "q": "Unidade — o que acontece de verdade?",
+      "q": "O que falta quando você diz o número sem a unidade?",
       "o": [
-        "Sempre diga a unidade: ms, p99, writes/s.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A unidade é detalhe de documentação; o número basta.",
+        "Dizer a unidade só importa quando o número é grande.",
+        "Sempre diga a unidade: milissegundos, percentil, operações por segundo.",
+        "“Rápido” e “muito acesso” já servem como métrica."
       ],
-      "a": 0,
-      "w": "“Rápido” não é métrica.",
+      "a": 2,
+      "w": "“Rápido” não é métrica. Sem unidade ninguém sabe se o requisito foi cumprido.",
       "t": "unidade"
     },
     {
-      "q": "Marque a leitura correta (unidade).",
+      "q": "A unidade é detalhe de documentação?",
       "o": [
-        "Sempre diga a unidade: ms, p99, writes/s.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Sempre diga a unidade: milissegundos, percentil, operações por segundo.",
+        "“Rápido” e “muito acesso” já servem como métrica.",
+        "A unidade é detalhe de documentação; o número basta.",
+        "Dizer a unidade só importa quando o número é grande."
       ],
       "a": 0,
-      "w": "“Rápido” não é métrica.",
+      "w": "“Rápido” não é métrica. Sem unidade ninguém sabe se o requisito foi cumprido.",
       "t": "unidade"
     },
     {
-      "q": "Corrija o mito sobre unidade.",
+      "q": "Como saber se o requisito foi cumprido sem unidade?",
       "o": [
-        "Sempre diga a unidade: ms, p99, writes/s.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A unidade é detalhe de documentação; o número basta.",
+        "Dizer a unidade só importa quando o número é grande.",
+        "Sempre diga a unidade: milissegundos, percentil, operações por segundo.",
+        "“Rápido” e “muito acesso” já servem como métrica."
       ],
-      "a": 0,
-      "w": "“Rápido” não é métrica.",
+      "a": 2,
+      "w": "“Rápido” não é métrica. Sem unidade ninguém sabe se o requisito foi cumprido.",
       "t": "unidade"
     },
     {
-      "q": "No caderno, a respeito de unidade: qual vale?",
+      "q": "Dizer a unidade só vale para número grande?",
       "o": [
-        "Sempre diga a unidade: ms, p99, writes/s.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A unidade é detalhe de documentação; o número basta.",
+        "Dizer a unidade só importa quando o número é grande.",
+        "Sempre diga a unidade: milissegundos, percentil, operações por segundo.",
+        "“Rápido” e “muito acesso” já servem como métrica."
       ],
-      "a": 0,
-      "w": "“Rápido” não é métrica.",
+      "a": 2,
+      "w": "“Rápido” não é métrica. Sem unidade ninguém sabe se o requisito foi cumprido.",
       "t": "unidade"
     },
     {
-      "q": "Se perguntarem unidade na mesa, qual frase é a verdadeira?",
+      "q": "Por que “muito acesso” não é requisito?",
       "o": [
-        "Sempre diga a unidade: ms, p99, writes/s.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Sempre diga a unidade: milissegundos, percentil, operações por segundo.",
+        "“Rápido” e “muito acesso” já servem como métrica.",
+        "A unidade é detalhe de documentação; o número basta.",
+        "Dizer a unidade só importa quando o número é grande."
       ],
       "a": 0,
-      "w": "“Rápido” não é métrica.",
+      "w": "“Rápido” não é métrica. Sem unidade ninguém sabe se o requisito foi cumprido.",
       "t": "unidade"
     },
     {
-      "q": "Sobre fila: qual afirmação está certa?",
+      "q": "Fila interna com throughput alto mantém a latência baixa?",
       "o": [
-        "Fila interna aumenta latência da vez mesmo com throughput alto.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Se o throughput está alto, nenhuma operação está esperando.",
+        "Fila interna aumenta a latência da vez mesmo com throughput alto.",
+        "Fila interna com throughput alto mantém a latência da vez baixa.",
+        "Fila interna melhora os dois números ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Dois números, dois sentires.",
+      "a": 1,
+      "w": "O sistema entrega muito por minuto e o seu pedido espera na fila. Volume alto não garante resposta curta.",
       "t": "fila"
     },
     {
-      "q": "Qual frase sobre fila está certa?",
+      "q": "O sistema entrega muito por minuto. Seu pedido pode esperar?",
       "o": [
-        "Fila interna aumenta latência da vez mesmo com throughput alto.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Fila interna com throughput alto mantém a latência da vez baixa.",
+        "Fila interna melhora os dois números ao mesmo tempo.",
+        "Se o throughput está alto, nenhuma operação está esperando.",
+        "Fila interna aumenta a latência da vez mesmo com throughput alto."
       ],
-      "a": 0,
-      "w": "Dois números, dois sentires.",
+      "a": 3,
+      "w": "O sistema entrega muito por minuto e o seu pedido espera na fila. Volume alto não garante resposta curta.",
       "t": "fila"
     },
     {
-      "q": "Fila — o que acontece de verdade?",
+      "q": "Throughput alto garante resposta curta?",
       "o": [
-        "Fila interna aumenta latência da vez mesmo com throughput alto.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Se o throughput está alto, nenhuma operação está esperando.",
+        "Fila interna aumenta a latência da vez mesmo com throughput alto.",
+        "Fila interna com throughput alto mantém a latência da vez baixa.",
+        "Fila interna melhora os dois números ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Dois números, dois sentires.",
+      "a": 1,
+      "w": "O sistema entrega muito por minuto e o seu pedido espera na fila. Volume alto não garante resposta curta.",
       "t": "fila"
     },
     {
-      "q": "Marque a leitura correta (fila).",
+      "q": "O que a fila interna faz com a latência da vez?",
       "o": [
-        "Fila interna aumenta latência da vez mesmo com throughput alto.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Fila interna aumenta a latência da vez mesmo com throughput alto.",
+        "Fila interna com throughput alto mantém a latência da vez baixa.",
+        "Fila interna melhora os dois números ao mesmo tempo.",
+        "Se o throughput está alto, nenhuma operação está esperando."
       ],
       "a": 0,
-      "w": "Dois números, dois sentires.",
+      "w": "O sistema entrega muito por minuto e o seu pedido espera na fila. Volume alto não garante resposta curta.",
       "t": "fila"
     },
     {
-      "q": "Corrija o mito sobre fila.",
+      "q": "Fila interna melhora os dois números?",
       "o": [
-        "Fila interna aumenta latência da vez mesmo com throughput alto.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Se o throughput está alto, nenhuma operação está esperando.",
+        "Fila interna aumenta a latência da vez mesmo com throughput alto.",
+        "Fila interna com throughput alto mantém a latência da vez baixa.",
+        "Fila interna melhora os dois números ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Dois números, dois sentires.",
+      "a": 1,
+      "w": "O sistema entrega muito por minuto e o seu pedido espera na fila. Volume alto não garante resposta curta.",
       "t": "fila"
     },
     {
-      "q": "No caderno, a respeito de fila: qual vale?",
+      "q": "Volume alto significa que ninguém está na fila?",
       "o": [
-        "Fila interna aumenta latência da vez mesmo com throughput alto.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Fila interna aumenta a latência da vez mesmo com throughput alto.",
+        "Fila interna com throughput alto mantém a latência da vez baixa.",
+        "Fila interna melhora os dois números ao mesmo tempo.",
+        "Se o throughput está alto, nenhuma operação está esperando."
       ],
       "a": 0,
-      "w": "Dois números, dois sentires.",
+      "w": "O sistema entrega muito por minuto e o seu pedido espera na fila. Volume alto não garante resposta curta.",
       "t": "fila"
     },
     {
-      "q": "Se perguntarem fila na mesa, qual frase é a verdadeira?",
+      "q": "Por que throughput alto e latência ruim convivem?",
       "o": [
-        "Fila interna aumenta latência da vez mesmo com throughput alto.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Fila interna aumenta a latência da vez mesmo com throughput alto.",
+        "Fila interna com throughput alto mantém a latência da vez baixa.",
+        "Fila interna melhora os dois números ao mesmo tempo.",
+        "Se o throughput está alto, nenhuma operação está esperando."
       ],
       "a": 0,
-      "w": "Dois números, dois sentires.",
+      "w": "O sistema entrega muito por minuto e o seu pedido espera na fila. Volume alto não garante resposta curta.",
       "t": "fila"
     },
     {
-      "q": "Sobre rede: qual afirmação está certa?",
+      "q": "Hop extra de microsserviço afeta o tempo do clique?",
       "o": [
-        "Hop extra de microsserviço é latência, não só “boa prática”.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Hop extra de microsserviço não afeta o tempo do clique.",
+        "Hop extra é só organização de código: latência não muda.",
+        "Cada hop novo reduz a latência por distribuir o trabalho.",
+        "Hop extra de microsserviço é latência: entra no p99, não é só “boa prática”."
       ],
-      "a": 0,
-      "w": "Some no p99.",
+      "a": 3,
+      "w": "Frete, cupom e estoque na mesma chamada: cada um soma no tempo do clique.",
       "t": "rede"
     },
     {
-      "q": "Qual frase sobre rede está certa?",
+      "q": "Frete, cupom e estoque na mesma chamada: cada um soma onde?",
       "o": [
-        "Hop extra de microsserviço é latência, não só “boa prática”.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cada hop novo reduz a latência por distribuir o trabalho.",
+        "Hop extra de microsserviço é latência: entra no p99, não é só “boa prática”.",
+        "Hop extra de microsserviço não afeta o tempo do clique.",
+        "Hop extra é só organização de código: latência não muda."
       ],
-      "a": 0,
-      "w": "Some no p99.",
+      "a": 1,
+      "w": "Frete, cupom e estoque na mesma chamada: cada um soma no tempo do clique.",
       "t": "rede"
     },
     {
-      "q": "Rede — o que acontece de verdade?",
+      "q": "Adicionar um hop é só organização de código?",
       "o": [
-        "Hop extra de microsserviço é latência, não só “boa prática”.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Hop extra de microsserviço é latência: entra no p99, não é só “boa prática”.",
+        "Hop extra de microsserviço não afeta o tempo do clique.",
+        "Hop extra é só organização de código: latência não muda.",
+        "Cada hop novo reduz a latência por distribuir o trabalho."
       ],
       "a": 0,
-      "w": "Some no p99.",
+      "w": "Frete, cupom e estoque na mesma chamada: cada um soma no tempo do clique.",
       "t": "rede"
     },
     {
-      "q": "Marque a leitura correta (rede).",
+      "q": "Cada hop novo reduz a latência?",
       "o": [
-        "Hop extra de microsserviço é latência, não só “boa prática”.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Hop extra de microsserviço não afeta o tempo do clique.",
+        "Hop extra é só organização de código: latência não muda.",
+        "Cada hop novo reduz a latência por distribuir o trabalho.",
+        "Hop extra de microsserviço é latência: entra no p99, não é só “boa prática”."
       ],
-      "a": 0,
-      "w": "Some no p99.",
+      "a": 3,
+      "w": "Frete, cupom e estoque na mesma chamada: cada um soma no tempo do clique.",
       "t": "rede"
     },
     {
-      "q": "Corrija o mito sobre rede.",
+      "q": "O que o hop extra faz com o p99?",
       "o": [
-        "Hop extra de microsserviço é latência, não só “boa prática”.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Hop extra de microsserviço não afeta o tempo do clique.",
+        "Hop extra é só organização de código: latência não muda.",
+        "Cada hop novo reduz a latência por distribuir o trabalho.",
+        "Hop extra de microsserviço é latência: entra no p99, não é só “boa prática”."
       ],
-      "a": 0,
-      "w": "Some no p99.",
+      "a": 3,
+      "w": "Frete, cupom e estoque na mesma chamada: cada um soma no tempo do clique.",
       "t": "rede"
     },
     {
-      "q": "No caderno, a respeito de rede: qual vale?",
+      "q": "Chamar mais um serviço no clique sai de graça?",
       "o": [
-        "Hop extra de microsserviço é latência, não só “boa prática”.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Cada hop novo reduz a latência por distribuir o trabalho.",
+        "Hop extra de microsserviço é latência: entra no p99, não é só “boa prática”.",
+        "Hop extra de microsserviço não afeta o tempo do clique.",
+        "Hop extra é só organização de código: latência não muda."
       ],
-      "a": 0,
-      "w": "Some no p99.",
+      "a": 1,
+      "w": "Frete, cupom e estoque na mesma chamada: cada um soma no tempo do clique.",
       "t": "rede"
     },
     {
-      "q": "Se perguntarem rede na mesa, qual frase é a verdadeira?",
+      "q": "Por que contar hops importa no requisito de latência?",
       "o": [
-        "Hop extra de microsserviço é latência, não só “boa prática”.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Hop extra de microsserviço é latência: entra no p99, não é só “boa prática”.",
+        "Hop extra de microsserviço não afeta o tempo do clique.",
+        "Hop extra é só organização de código: latência não muda.",
+        "Cada hop novo reduz a latência por distribuir o trabalho."
       ],
       "a": 0,
-      "w": "Some no p99.",
+      "w": "Frete, cupom e estoque na mesma chamada: cada um soma no tempo do clique.",
       "t": "rede"
     },
     {
-      "q": "Sobre cache: qual afirmação está certa?",
+      "q": "Cache corta latência de leitura. Qual o preço?",
       "o": [
-        "Cache corta latência de leitura e arrisca dado velho.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Cache corta a latência de leitura sem nenhum risco de dado velho.",
+        "Cache piora a latência de leitura e garante dado atual.",
+        "Cache não muda a latência: só reduz custo de banco.",
+        "Cache corta a latência de leitura e arrisca servir dado velho."
       ],
-      "a": 0,
-      "w": "Trade explícito.",
+      "a": 3,
+      "w": "Dado perto responde rápido. O preço é o dado desatualizado, e alguém precisa invalidá-lo.",
       "t": "cache"
     },
     {
-      "q": "Qual frase sobre cache está certa?",
+      "q": "Aproximar o dado tem risco?",
       "o": [
-        "Cache corta latência de leitura e arrisca dado velho.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Cache corta a latência de leitura e arrisca servir dado velho.",
+        "Cache corta a latência de leitura sem nenhum risco de dado velho.",
+        "Cache piora a latência de leitura e garante dado atual.",
+        "Cache não muda a latência: só reduz custo de banco."
       ],
       "a": 0,
-      "w": "Trade explícito.",
+      "w": "Dado perto responde rápido. O preço é o dado desatualizado, e alguém precisa invalidá-lo.",
       "t": "cache"
     },
     {
-      "q": "Cache — o que acontece de verdade?",
+      "q": "Cache garante dado atual?",
       "o": [
-        "Cache corta latência de leitura e arrisca dado velho.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cache corta a latência de leitura sem nenhum risco de dado velho.",
+        "Cache piora a latência de leitura e garante dado atual.",
+        "Cache não muda a latência: só reduz custo de banco.",
+        "Cache corta a latência de leitura e arrisca servir dado velho."
       ],
-      "a": 0,
-      "w": "Trade explícito.",
+      "a": 3,
+      "w": "Dado perto responde rápido. O preço é o dado desatualizado, e alguém precisa invalidá-lo.",
       "t": "cache"
     },
     {
-      "q": "Marque a leitura correta (cache).",
+      "q": "O que o cache troca por velocidade de leitura?",
       "o": [
-        "Cache corta latência de leitura e arrisca dado velho.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cache piora a latência de leitura e garante dado atual.",
+        "Cache não muda a latência: só reduz custo de banco.",
+        "Cache corta a latência de leitura e arrisca servir dado velho.",
+        "Cache corta a latência de leitura sem nenhum risco de dado velho."
       ],
-      "a": 0,
-      "w": "Trade explícito.",
+      "a": 2,
+      "w": "Dado perto responde rápido. O preço é o dado desatualizado, e alguém precisa invalidá-lo.",
       "t": "cache"
     },
     {
-      "q": "Corrija o mito sobre cache.",
+      "q": "Cache muda a latência ou só o custo?",
       "o": [
-        "Cache corta latência de leitura e arrisca dado velho.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cache não muda a latência: só reduz custo de banco.",
+        "Cache corta a latência de leitura e arrisca servir dado velho.",
+        "Cache corta a latência de leitura sem nenhum risco de dado velho.",
+        "Cache piora a latência de leitura e garante dado atual."
       ],
-      "a": 0,
-      "w": "Trade explícito.",
+      "a": 1,
+      "w": "Dado perto responde rápido. O preço é o dado desatualizado, e alguém precisa invalidá-lo.",
       "t": "cache"
     },
     {
-      "q": "No caderno, a respeito de cache: qual vale?",
+      "q": "Quem precisa cuidar do dado velho no cache?",
       "o": [
-        "Cache corta latência de leitura e arrisca dado velho.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Cache corta a latência de leitura sem nenhum risco de dado velho.",
+        "Cache piora a latência de leitura e garante dado atual.",
+        "Cache não muda a latência: só reduz custo de banco.",
+        "Cache corta a latência de leitura e arrisca servir dado velho."
       ],
-      "a": 0,
-      "w": "Trade explícito.",
+      "a": 3,
+      "w": "Dado perto responde rápido. O preço é o dado desatualizado, e alguém precisa invalidá-lo.",
       "t": "cache"
     },
     {
-      "q": "Se perguntarem cache na mesa, qual frase é a verdadeira?",
+      "q": "Por que cache não é ganho sem contrapartida?",
       "o": [
-        "Cache corta latência de leitura e arrisca dado velho.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Cache corta a latência de leitura sem nenhum risco de dado velho.",
+        "Cache piora a latência de leitura e garante dado atual.",
+        "Cache não muda a latência: só reduz custo de banco.",
+        "Cache corta a latência de leitura e arrisca servir dado velho."
       ],
-      "a": 0,
-      "w": "Trade explícito.",
+      "a": 3,
+      "w": "Dado perto responde rápido. O preço é o dado desatualizado, e alguém precisa invalidá-lo.",
       "t": "cache"
     },
     {
-      "q": "Sobre mesa: qual afirmação está certa?",
+      "q": "Na entrevista, o que você pede antes de desenhar cache ou réplica?",
       "o": [
-        "Na entrevista, peça o p99 alvo antes de desenhar Redis.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Na entrevista, peça o p99 alvo antes de desenhar cache ou réplica.",
+        "Desenhe o cache primeiro; o p99 alvo aparece depois.",
+        "O p99 alvo é detalhe: qualquer peça de leitura serve.",
+        "Peça e requisito entram juntos, sem ordem definida."
       ],
       "a": 0,
-      "w": "Requisito primeiro.",
+      "w": "Sem o número não há como saber se a peça resolve. Requisito primeiro, peça depois.",
       "t": "mesa"
     },
     {
-      "q": "Qual frase sobre mesa está certa?",
+      "q": "Desenhar a peça de leitura antes do número funciona?",
       "o": [
-        "Na entrevista, peça o p99 alvo antes de desenhar Redis.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Desenhe o cache primeiro; o p99 alvo aparece depois.",
+        "O p99 alvo é detalhe: qualquer peça de leitura serve.",
+        "Peça e requisito entram juntos, sem ordem definida.",
+        "Na entrevista, peça o p99 alvo antes de desenhar cache ou réplica."
       ],
-      "a": 0,
-      "w": "Requisito primeiro.",
+      "a": 3,
+      "w": "Sem o número não há como saber se a peça resolve. Requisito primeiro, peça depois.",
       "t": "mesa"
     },
     {
-      "q": "Mesa — o que acontece de verdade?",
+      "q": "Por que o p99 alvo vem primeiro?",
       "o": [
-        "Na entrevista, peça o p99 alvo antes de desenhar Redis.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Na entrevista, peça o p99 alvo antes de desenhar cache ou réplica.",
+        "Desenhe o cache primeiro; o p99 alvo aparece depois.",
+        "O p99 alvo é detalhe: qualquer peça de leitura serve.",
+        "Peça e requisito entram juntos, sem ordem definida."
       ],
       "a": 0,
-      "w": "Requisito primeiro.",
+      "w": "Sem o número não há como saber se a peça resolve. Requisito primeiro, peça depois.",
       "t": "mesa"
     },
     {
-      "q": "Marque a leitura correta (mesa).",
+      "q": "Sem o número, como saber se a peça resolve?",
       "o": [
-        "Na entrevista, peça o p99 alvo antes de desenhar Redis.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Na entrevista, peça o p99 alvo antes de desenhar cache ou réplica.",
+        "Desenhe o cache primeiro; o p99 alvo aparece depois.",
+        "O p99 alvo é detalhe: qualquer peça de leitura serve.",
+        "Peça e requisito entram juntos, sem ordem definida."
       ],
       "a": 0,
-      "w": "Requisito primeiro.",
+      "w": "Sem o número não há como saber se a peça resolve. Requisito primeiro, peça depois.",
       "t": "mesa"
     },
     {
-      "q": "Corrija o mito sobre mesa.",
+      "q": "Qualquer peça de leitura serve sem o requisito?",
       "o": [
-        "Na entrevista, peça o p99 alvo antes de desenhar Redis.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Na entrevista, peça o p99 alvo antes de desenhar cache ou réplica.",
+        "Desenhe o cache primeiro; o p99 alvo aparece depois.",
+        "O p99 alvo é detalhe: qualquer peça de leitura serve.",
+        "Peça e requisito entram juntos, sem ordem definida."
       ],
       "a": 0,
-      "w": "Requisito primeiro.",
+      "w": "Sem o número não há como saber se a peça resolve. Requisito primeiro, peça depois.",
       "t": "mesa"
     },
     {
-      "q": "No caderno, a respeito de mesa: qual vale?",
+      "q": "Requisito e peça entram em que ordem?",
       "o": [
-        "Na entrevista, peça o p99 alvo antes de desenhar Redis.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O p99 alvo é detalhe: qualquer peça de leitura serve.",
+        "Peça e requisito entram juntos, sem ordem definida.",
+        "Na entrevista, peça o p99 alvo antes de desenhar cache ou réplica.",
+        "Desenhe o cache primeiro; o p99 alvo aparece depois."
       ],
-      "a": 0,
-      "w": "Requisito primeiro.",
+      "a": 2,
+      "w": "Sem o número não há como saber se a peça resolve. Requisito primeiro, peça depois.",
       "t": "mesa"
     },
     {
-      "q": "Se perguntarem mesa na mesa, qual frase é a verdadeira?",
+      "q": "O p99 alvo é detalhe na mesa?",
       "o": [
-        "Na entrevista, peça o p99 alvo antes de desenhar Redis.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Na entrevista, peça o p99 alvo antes de desenhar cache ou réplica.",
+        "Desenhe o cache primeiro; o p99 alvo aparece depois.",
+        "O p99 alvo é detalhe: qualquer peça de leitura serve.",
+        "Peça e requisito entram juntos, sem ordem definida."
       ],
       "a": 0,
-      "w": "Requisito primeiro.",
+      "w": "Sem o número não há como saber se a peça resolve. Requisito primeiro, peça depois.",
       "t": "mesa"
     }
   ]

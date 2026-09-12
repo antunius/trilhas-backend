@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { loadProgress, trackProgress } from "@/lib/progress";
+import { isProgressHydrated, loadProgress, trackProgress } from "@/lib/progress";
 import { arquiteturaNav, kafkaNav } from "@/lib/catalog";
 
 export function HomeProgress() {
@@ -12,11 +12,17 @@ export function HomeProgress() {
   const [arq, setArq] = useState({ done: 0, total: 1, pct: 0 });
 
   useEffect(() => {
-    const p = loadProgress();
-    setLast(p.lastPath);
-    setKafka(trackProgress("/kafka", kafkaNav.map((n) => n.href)));
-    setArq(trackProgress("/arquitetura", arquiteturaNav.map((n) => n.href)));
-    setReady(true);
+    function sync() {
+      if (!isProgressHydrated()) return;
+      const p = loadProgress();
+      setLast(p.lastPath);
+      setKafka(trackProgress("/kafka", kafkaNav.map((n) => n.href)));
+      setArq(trackProgress("/arquitetura", arquiteturaNav.map((n) => n.href)));
+      setReady(true);
+    }
+    sync();
+    window.addEventListener("trilhas-progress", sync);
+    return () => window.removeEventListener("trilhas-progress", sync);
   }, []);
 
   if (!ready) return null;

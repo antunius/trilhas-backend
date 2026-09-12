@@ -1,0 +1,124 @@
+{
+  "beats": [
+    {
+      "id": "amount",
+      "kind": "cena",
+      "kicker": "Sexta · 18h",
+      "title": "O producer mandou amount. O faturamento ainda lê total.",
+      "body": "<p>Sem Registry, JSON na mão. Um PR renomeia o campo. Todos os consumers em produção quebram no deserializer. O contrato era verbal.</p><p>Schema Registry é um serviço HTTP — no lab, porta <code>8081</code> — não um tópico mágico. Cartório: ninguém muda o formulário sem checar se o outro lado ainda lê.</p>"
+    },
+    {
+      "id": "fio",
+      "kind": "explicar",
+      "title": "Magic byte + schema id + payload. Não é JSON solto.",
+      "html": "<p>O producer, com o serializer Confluent, registra o schema se ainda não existe e manda no wire um magic byte + schema id + payload. O consumer pede o schema daquele id ao Registry e desserializa. Não adivinha o JSON.</p><p>Subject padrão: <code>{tópico}-value</code> e <code>{tópico}-key</code>. No lab: <code>pedidos.criados-value</code> — não o <code>group.id</code> do faturamento.</p><pre class=\"code\">spring.kafka.producer.value-serializer: io.confluent.kafka.serializers.json.KafkaJsonSchemaSerializer\nspring.kafka.consumer.value-deserializer: io.confluent.kafka.serializers.json.KafkaJsonSchemaDeserializer\nspring.kafka.producer.properties.schema.registry.url: http://localhost:8081\nspring.kafka.consumer.properties.schema.registry.url: http://localhost:8081\nspring.kafka.consumer.properties.json.value.type: com.trilhas.kafka.lab.PedidoCriado</pre><p>URL nos dois lados. Serializer no <code>pom.xml</code>: <code>kafka-json-schema-serializer</code>, repositório Maven Confluent. Sem isso o app manda JSON cru e o Schema Registry não entra na jogada.</p>"
+    },
+    {
+      "id": "lab-curl",
+      "kind": "explicar",
+      "title": "Sobe o serviço. O primeiro produce registra. O 409 é recusa.",
+      "html": "<p>Serviço <code>schema-registry</code> no Compose, separado do broker.</p><pre class=\"code\">cd labs/kafka\ndocker compose up -d\ncurl -s http://localhost:8081/subjects</pre><p>Depois do primeiro produce:</p><pre class=\"code\">curl -s http://localhost:8081/subjects/pedidos.criados-value/versions\ncurl -s http://localhost:8081/subjects/pedidos.criados-value/versions/1</pre><p>Record do lab: <code>eventId</code>, <code>pedidoId</code>, <code>totalCentavos</code> obrigatórios; <code>cupom</code> opcional. Evolução que some campo obrigatório: comando no README, seção Schema Registry. Incompatível de verdade: novo tópico ou novo tipo de evento, migre consumidores.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Contrato no Schema Registry. JSON na mão é fé.",
+      "ganha": "Producer e consumer falam a mesma versão. BACKWARD recusa o PR que quebra o leitor. Campo opcional evolui. Magic byte + id: o payload não é um Map solto. O lab registra no primeiro produce.",
+      "paga": "Mais um serviço para operar (8081). Serializer Confluent no pom. Rename e remover obrigatório travam o time — de propósito. Sem Registry, um campo a mais “só no meu serviço” vira incidente de deserializer em massa.",
+      "quando": [
+        "Mais de um consumidor no mesmo fato, em deploys diferentes",
+        "Você quer recusar incompatível antes de produção (409)",
+        "JSON Schema (didático) ou Avro/Protobuf no time grande"
+      ],
+      "quandoNao": [
+        "Tratar Registry e outbox como a mesma aula",
+        "Remover ou renomear obrigatório “porque o meu listener já mudou”",
+        "Apontar schema.registry.url só no producer e achar que o consumer adivinha"
+      ]
+    },
+    {
+      "id": "evolucao",
+      "kind": "escolha",
+      "prompt": "PedidoCriado hoje tem eventId, pedidoId, totalCentavos. Qual mudança o Registry BACKWARD deixa passar?",
+      "options": [
+        {
+          "id": "cupom",
+          "label": "Campo opcional novo: cupom",
+          "verdict": "bom",
+          "why": "Consumidor novo lê dado antigo: ignora o que não está lá, ou usa default. Consumidor velho que ainda não conhece cupom também sobrevive se o campo não é obrigatório no payload antigo."
+        },
+        {
+          "id": "renomear",
+          "label": "Renomear totalCentavos para amount. É só um nome",
+          "verdict": "ruim",
+          "why": "Rename de obrigatório = remover + criar. Quem ainda lê totalCentavos quebra. Recuse no review. Reaproveitar o nome com outro significado também."
+        },
+        {
+          "id": "sumir",
+          "label": "Remover eventId. Inbox já não precisa",
+          "verdict": "ruim",
+          "why": "Campo obrigatório que some: o Registry responde 409. Inbox precisa do id estável. Não é o cupom que quebra BACKWARD."
+        }
+      ]
+    },
+    {
+      "id": "backward-forward",
+      "kind": "escolha",
+      "prompt": "BACKWARD no Compose. O que essa palavra promete?",
+      "options": [
+        {
+          "id": "novo-le-antigo",
+          "label": "Consumidor novo lê dado antigo. O Registry recusa schema que quebra quem já lê",
+          "verdict": "bom",
+          "why": "BACKWARD = leitor novo, payload velho. FORWARD = consumidor antigo lê dado novo. Não são o mesmo nível com outro nome. O lab usa BACKWARD (SCHEMA_REGISTRY_SCHEMA_COMPATIBILITY_LEVEL)."
+        },
+        {
+          "id": "antigo-le-novo",
+          "label": "BACKWARD: consumidor antigo lê dado novo",
+          "verdict": "ruim",
+          "why": "Isso é FORWARD. Inverter os nomes na mesa é o erro caro do review."
+        },
+        {
+          "id": "full",
+          "label": "O default do Registry é FULL_TRANSITIVE; BACKWARD é mito da aula",
+          "verdict": "ruim",
+          "why": "O Compose do lab crava BACKWARD. FULL_TRANSITIVE é outro nível, mais rígido — não é o que esta aula opera."
+        }
+      ]
+    },
+    {
+      "id": "sem-cartorio",
+      "kind": "escolha",
+      "prompt": "Alguém diz: “só o producer fala com o Registry; o consumer adivinha.” Você deixa passar?",
+      "options": [
+        {
+          "id": "nao",
+          "label": "Não. Os dois precisam da URL. O consumer pede o schema daquele id",
+          "verdict": "bom",
+          "why": "Deserializer Confluent lê o id no payload e busca o contrato. Sem URL no consumer, quebra. Sem Registry de jeito nenhum: rename total→amount explode em produção, sem 409 no caminho."
+        },
+        {
+          "id": "producer",
+          "label": "Sim. Schema id no payload é enfeite",
+          "verdict": "ruim",
+          "why": "O id é o índice no Schema Registry. Sem ele o fio é JSON solto outra vez."
+        },
+        {
+          "id": "broker",
+          "label": "O contrato vive no broker. HTTP 8081 é opcional",
+          "verdict": "ruim",
+          "why": "Registry não é tópico interno. É processo HTTP ao lado. Outbox é outra peça: transação de banco, não Schema Registry."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Registry é HTTP (8081). Subject pedidos.criados-value. No fio: magic byte + schema id, não JSON solto.",
+        "BACKWARD: consumidor novo lê dado antigo. Opcional novo passa. Remover/renomear obrigatório toma 409.",
+        "URL no producer e no consumer. Sem Schema Registry, total→amount derruba produção."
+      ]
+    }
+  ]
+}

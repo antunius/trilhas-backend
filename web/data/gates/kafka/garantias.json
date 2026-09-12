@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre at-least: qual afirmação está certa?",
+      "q": "Processar e depois commitar: pode duplicar o efeito?",
+      "o": [
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Padrão prático: processa depois commita. Pode duplicar o efeito."
+      ],
+      "a": 3,
+      "w": "Por isso idempotência no consumidor.",
+      "t": "at-least"
+    },
+    {
+      "q": "Processar e depois commitar: pode duplicar o efeito — verdade ou mito?",
+      "o": [
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Padrão prático: processa depois commita. Pode duplicar o efeito.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Exactly-once do Kafka vale na API HTTP do cartão."
+      ],
+      "a": 1,
+      "w": "Por isso idempotência no consumidor.",
+      "t": "at-least"
+    },
+    {
+      "q": "Processar e depois commitar: pode duplicar o efeito — o que acontece de verdade?",
+      "o": [
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Idempotência do producer substitui a inbox.",
+        "Padrão prático: processa depois commita. Pode duplicar o efeito."
+      ],
+      "a": 3,
+      "w": "Por isso idempotência no consumidor.",
+      "t": "at-least"
+    },
+    {
+      "q": "Na prática: Processar e depois commitar: pode duplicar o efeito?",
       "o": [
         "Padrão prático: processa depois commita. Pode duplicar o efeito.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Idempotência do producer substitui a inbox.",
+        "Se o cartão já cobrou, o restart não relê o 99."
       ],
       "a": 0,
       "w": "Por isso idempotência no consumidor.",
       "t": "at-least"
     },
     {
-      "q": "Qual frase sobre at-least está certa?",
+      "q": "Processar e depois commitar: pode duplicar o efeito — como funciona?",
       "o": [
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
         "Padrão prático: processa depois commita. Pode duplicar o efeito.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Processar depois commitar nunca duplica; não precisa de idempotência."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Por isso idempotência no consumidor.",
       "t": "at-least"
     },
     {
-      "q": "At-least — o que acontece de verdade?",
+      "q": "Se perguntarem: Processar e depois commitar: pode duplicar o efeito?",
       "o": [
+        "Lag mede duplicata, não atraso do committed offset.",
         "Padrão prático: processa depois commita. Pode duplicar o efeito.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Por isso idempotência no consumidor.",
       "t": "at-least"
     },
     {
-      "q": "Marque a leitura correta (at-least).",
+      "q": "Processar e depois commitar: pode duplicar o efeito — o que vale aqui?",
       "o": [
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
         "Padrão prático: processa depois commita. Pode duplicar o efeito.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Lag mede duplicata, não atraso do committed offset."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Por isso idempotência no consumidor.",
       "t": "at-least"
     },
     {
-      "q": "Corrija o mito sobre at-least.",
+      "q": "Commit antes de processar, em cobrança: o que pode acontecer?",
       "o": [
-        "Padrão prático: processa depois commita. Pode duplicar o efeito.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "Commit antes de processar: se cair no meio, a mensagem se perde.",
+        "Commit antes de processar é o padrão certo para cobrança."
       ],
-      "a": 0,
-      "w": "Por isso idempotência no consumidor.",
-      "t": "at-least"
+      "a": 2,
+      "w": "Raramente aceitável em cobrança.",
+      "t": "at-most"
     },
     {
-      "q": "No caderno, a respeito de at-least: qual vale?",
-      "o": [
-        "Padrão prático: processa depois commita. Pode duplicar o efeito.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Por isso idempotência no consumidor.",
-      "t": "at-least"
-    },
-    {
-      "q": "Se perguntarem at-least na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Padrão prático: processa depois commita. Pode duplicar o efeito.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Por isso idempotência no consumidor.",
-      "t": "at-least"
-    },
-    {
-      "q": "Sobre at-most: qual afirmação está certa?",
+      "q": "Commit antes de processar, em cobrança: o que pode acontecer — verdade ou mito?",
       "o": [
         "Commit antes de processar: se cair no meio, a mensagem se perde.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa."
       ],
       "a": 0,
       "w": "Raramente aceitável em cobrança.",
       "t": "at-most"
     },
     {
-      "q": "Qual frase sobre at-most está certa?",
+      "q": "Commit antes de processar, em cobrança: o que pode acontecer — o que acontece de verdade?",
+      "o": [
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "Commit antes de processar: se cair no meio, a mensagem se perde.",
+        "Commit antes de processar é o padrão certo para cobrança."
+      ],
+      "a": 2,
+      "w": "Raramente aceitável em cobrança.",
+      "t": "at-most"
+    },
+    {
+      "q": "Na prática: Commit antes de processar, em cobrança: o que pode acontecer?",
+      "o": [
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Commit antes de processar: se cair no meio, a mensagem se perde.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Morte no meio do lote não reprocessa; inbox é inútil."
+      ],
+      "a": 1,
+      "w": "Raramente aceitável em cobrança.",
+      "t": "at-most"
+    },
+    {
+      "q": "Commit antes de processar, em cobrança: o que pode acontecer — como funciona?",
+      "o": [
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Commit antes de processar: se cair no meio, a mensagem se perde.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "AckMode manual chama ack sozinho no começo do listener."
+      ],
+      "a": 1,
+      "w": "Raramente aceitável em cobrança.",
+      "t": "at-most"
+    },
+    {
+      "q": "Se perguntarem: Commit antes de processar, em cobrança: o que pode acontecer?",
       "o": [
         "Commit antes de processar: se cair no meio, a mensagem se perde.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart."
       ],
       "a": 0,
       "w": "Raramente aceitável em cobrança.",
       "t": "at-most"
     },
     {
-      "q": "At-most — o que acontece de verdade?",
+      "q": "Commit antes de processar, em cobrança: o que pode acontecer — o que vale aqui?",
       "o": [
         "Commit antes de processar: se cair no meio, a mensagem se perde.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência."
       ],
       "a": 0,
       "w": "Raramente aceitável em cobrança.",
       "t": "at-most"
     },
     {
-      "q": "Marque a leitura correta (at-most).",
+      "q": "Exactly-once do Kafka cobre a API do cartão?",
       "o": [
-        "Commit antes de processar: se cair no meio, a mensagem se perde.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora."
       ],
-      "a": 0,
-      "w": "Raramente aceitável em cobrança.",
-      "t": "at-most"
+      "a": 3,
+      "w": "Não recite EOS para API HTTP.",
+      "t": "EOS"
     },
     {
-      "q": "Corrija o mito sobre at-most.",
+      "q": "Exactly-once do Kafka cobre a API do cartão — verdade ou mito?",
       "o": [
-        "Commit antes de processar: se cair no meio, a mensagem se perde.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Commit antes de processar é o padrão certo para cobrança."
       ],
-      "a": 0,
-      "w": "Raramente aceitável em cobrança.",
-      "t": "at-most"
+      "a": 1,
+      "w": "Não recite EOS para API HTTP.",
+      "t": "EOS"
     },
     {
-      "q": "No caderno, a respeito de at-most: qual vale?",
+      "q": "Exactly-once do Kafka cobre a API do cartão — o que acontece de verdade?",
       "o": [
-        "Commit antes de processar: se cair no meio, a mensagem se perde.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Idempotência do producer substitui a inbox.",
+        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora."
       ],
-      "a": 0,
-      "w": "Raramente aceitável em cobrança.",
-      "t": "at-most"
+      "a": 3,
+      "w": "Não recite EOS para API HTTP.",
+      "t": "EOS"
     },
     {
-      "q": "Se perguntarem at-most na mesa, qual frase é a verdadeira?",
+      "q": "Na prática: Exactly-once do Kafka cobre a API do cartão?",
       "o": [
-        "Commit antes de processar: se cair no meio, a mensagem se perde.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Idempotência do producer substitui a inbox.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
+        "Exactly-once do Kafka vale na API HTTP do cartão."
       ],
-      "a": 0,
-      "w": "Raramente aceitável em cobrança.",
-      "t": "at-most"
+      "a": 2,
+      "w": "Não recite EOS para API HTTP.",
+      "t": "EOS"
     },
     {
-      "q": "Sobre EOS: qual afirmação está certa?",
+      "q": "Exactly-once do Kafka cobre a API do cartão — como funciona?",
       "o": [
         "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
       "a": 0,
       "w": "Não recite EOS para API HTTP.",
       "t": "EOS"
     },
     {
-      "q": "Qual frase sobre EOS está certa?",
+      "q": "Se perguntarem: Exactly-once do Kafka cobre a API do cartão?",
       "o": [
+        "Lag mede duplicata, não atraso do committed offset.",
         "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não recite EOS para API HTTP.",
       "t": "EOS"
     },
     {
-      "q": "EOS — o que acontece de verdade?",
+      "q": "Exactly-once do Kafka cobre a API do cartão — o que vale aqui?",
       "o": [
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
         "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Lag mede duplicata, não atraso do committed offset."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não recite EOS para API HTTP.",
       "t": "EOS"
     },
     {
-      "q": "Marque a leitura correta (EOS).",
+      "q": "Acks=all impede a segunda cobrança no cartão?",
       "o": [
-        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "acks=all não impede a segunda cobrança."
       ],
-      "a": 0,
-      "w": "Não recite EOS para API HTTP.",
-      "t": "EOS"
-    },
-    {
-      "q": "Corrija o mito sobre EOS.",
-      "o": [
-        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Não recite EOS para API HTTP.",
-      "t": "EOS"
-    },
-    {
-      "q": "No caderno, a respeito de EOS: qual vale?",
-      "o": [
-        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Não recite EOS para API HTTP.",
-      "t": "EOS"
-    },
-    {
-      "q": "Se perguntarem EOS na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Exactly-once do Kafka é bolha tópico-a-tópico. Cartão está fora.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Não recite EOS para API HTTP.",
-      "t": "EOS"
-    },
-    {
-      "q": "Sobre acks≠efeito: qual afirmação está certa?",
-      "o": [
-        "acks=all não impede a segunda cobrança.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
+      "a": 3,
       "w": "Durabilidade da escrita ≠ unicidade do efeito.",
       "t": "acks≠efeito"
     },
     {
-      "q": "Qual frase sobre acks≠efeito está certa?",
+      "q": "Acks=all impede a segunda cobrança no cartão — verdade ou mito?",
       "o": [
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
         "acks=all não impede a segunda cobrança.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "enable.idempotence é a chave do cartão; inbox é opcional."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Durabilidade da escrita ≠ unicidade do efeito.",
       "t": "acks≠efeito"
     },
     {
-      "q": "Acks≠efeito — o que acontece de verdade?",
+      "q": "Acks=all impede a segunda cobrança no cartão — o que acontece de verdade?",
       "o": [
-        "acks=all não impede a segunda cobrança.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "acks=all não impede a segunda cobrança."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Durabilidade da escrita ≠ unicidade do efeito.",
       "t": "acks≠efeito"
     },
     {
-      "q": "Marque a leitura correta (acks≠efeito).",
+      "q": "Na prática: Acks=all impede a segunda cobrança no cartão?",
       "o": [
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "AckMode manual chama ack sozinho no começo do listener.",
         "acks=all não impede a segunda cobrança.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Durabilidade da escrita ≠ unicidade do efeito.",
       "t": "acks≠efeito"
     },
     {
-      "q": "Corrija o mito sobre acks≠efeito.",
+      "q": "Acks=all impede a segunda cobrança no cartão — como funciona?",
       "o": [
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "O log duplicou a mensagem; culpe o broker primeiro.",
         "acks=all não impede a segunda cobrança.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Durabilidade da escrita ≠ unicidade do efeito.",
       "t": "acks≠efeito"
     },
     {
-      "q": "No caderno, a respeito de acks≠efeito: qual vale?",
+      "q": "Se perguntarem: Acks=all impede a segunda cobrança no cartão?",
       "o": [
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
         "acks=all não impede a segunda cobrança.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "O log duplicou a mensagem; culpe o broker primeiro."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Durabilidade da escrita ≠ unicidade do efeito.",
       "t": "acks≠efeito"
     },
     {
-      "q": "Se perguntarem acks≠efeito na mesa, qual frase é a verdadeira?",
+      "q": "Acks=all impede a segunda cobrança no cartão — o que vale aqui?",
       "o": [
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
         "acks=all não impede a segunda cobrança.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Durabilidade da escrita ≠ unicidade do efeito.",
       "t": "acks≠efeito"
     },
     {
-      "q": "Sobre dois cadeados: qual afirmação está certa?",
+      "q": "Idempotência do producer substitui a inbox do consumidor?",
       "o": [
         "Idempotência do producer ≠ inbox do consumidor.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Idempotência do producer substitui a inbox.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Commit antes de processar é o padrão certo para cobrança."
       ],
       "a": 0,
       "w": "Um não substitui o outro.",
       "t": "dois cadeados"
     },
     {
-      "q": "Qual frase sobre dois cadeados está certa?",
+      "q": "Idempotência do producer substitui a inbox do consumidor — verdade ou mito?",
+      "o": [
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Idempotência do producer ≠ inbox do consumidor.",
+        "Idempotência do producer substitui a inbox."
+      ],
+      "a": 2,
+      "w": "Um não substitui o outro.",
+      "t": "dois cadeados"
+    },
+    {
+      "q": "Idempotência do producer substitui a inbox do consumidor — o que acontece de verdade?",
       "o": [
         "Idempotência do producer ≠ inbox do consumidor.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Idempotência do producer substitui a inbox.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra."
       ],
       "a": 0,
       "w": "Um não substitui o outro.",
       "t": "dois cadeados"
     },
     {
-      "q": "Dois cadeados — o que acontece de verdade?",
+      "q": "Na prática: Idempotência do producer substitui a inbox do consumidor?",
       "o": [
+        "Se o cartão já cobrou, o restart não relê o 99.",
         "Idempotência do producer ≠ inbox do consumidor.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Idempotência do producer substitui a inbox.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Um não substitui o outro.",
       "t": "dois cadeados"
     },
     {
-      "q": "Marque a leitura correta (dois cadeados).",
+      "q": "Idempotência do producer substitui a inbox do consumidor — como funciona?",
       "o": [
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
         "Idempotência do producer ≠ inbox do consumidor.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Idempotência do producer substitui a inbox.",
+        "Se o cartão já cobrou, o restart não relê o 99."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Um não substitui o outro.",
       "t": "dois cadeados"
     },
     {
-      "q": "Corrija o mito sobre dois cadeados.",
+      "q": "Se perguntarem: Idempotência do producer substitui a inbox do consumidor?",
       "o": [
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Lag mede duplicata, não atraso do committed offset.",
         "Idempotência do producer ≠ inbox do consumidor.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Idempotência do producer substitui a inbox."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Um não substitui o outro.",
       "t": "dois cadeados"
     },
     {
-      "q": "No caderno, a respeito de dois cadeados: qual vale?",
+      "q": "Idempotência do producer substitui a inbox do consumidor — o que vale aqui?",
       "o": [
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
         "Idempotência do producer ≠ inbox do consumidor.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Idempotência do producer substitui a inbox."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Um não substitui o outro.",
       "t": "dois cadeados"
     },
     {
-      "q": "Se perguntarem dois cadeados na mesa, qual frase é a verdadeira?",
+      "q": "Cartão cobrou e offset não commitou: o restart faz o quê?",
       "o": [
-        "Idempotência do producer ≠ inbox do consumidor.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "Cartão cobrou, offset não commitou, restart relê o 99.",
+        "Se o cartão já cobrou, o restart não relê o 99."
       ],
-      "a": 0,
-      "w": "Um não substitui o outro.",
-      "t": "dois cadeados"
+      "a": 2,
+      "w": "Duplicata de negócio, log certo.",
+      "t": "morte no meio"
     },
     {
-      "q": "Sobre morte no meio: qual afirmação está certa?",
+      "q": "Cartão cobrou e offset não commitou: o restart faz o quê — verdade ou mito?",
       "o": [
         "Cartão cobrou, offset não commitou, restart relê o 99.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa."
       ],
       "a": 0,
       "w": "Duplicata de negócio, log certo.",
       "t": "morte no meio"
     },
     {
-      "q": "Qual frase sobre morte no meio está certa?",
+      "q": "Cartão cobrou e offset não commitou: o restart faz o quê — o que acontece de verdade?",
+      "o": [
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "Cartão cobrou, offset não commitou, restart relê o 99.",
+        "Se o cartão já cobrou, o restart não relê o 99."
+      ],
+      "a": 2,
+      "w": "Duplicata de negócio, log certo.",
+      "t": "morte no meio"
+    },
+    {
+      "q": "Na prática: Cartão cobrou e offset não commitou: o restart faz o quê?",
+      "o": [
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Cartão cobrou, offset não commitou, restart relê o 99.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Morte no meio do lote não reprocessa; inbox é inútil."
+      ],
+      "a": 1,
+      "w": "Duplicata de negócio, log certo.",
+      "t": "morte no meio"
+    },
+    {
+      "q": "Cartão cobrou e offset não commitou: o restart faz o quê — como funciona?",
+      "o": [
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Cartão cobrou, offset não commitou, restart relê o 99.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "AckMode manual chama ack sozinho no começo do listener."
+      ],
+      "a": 1,
+      "w": "Duplicata de negócio, log certo.",
+      "t": "morte no meio"
+    },
+    {
+      "q": "Se perguntarem: Cartão cobrou e offset não commitou: o restart faz o quê?",
       "o": [
         "Cartão cobrou, offset não commitou, restart relê o 99.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart."
       ],
       "a": 0,
       "w": "Duplicata de negócio, log certo.",
       "t": "morte no meio"
     },
     {
-      "q": "Morte no meio — o que acontece de verdade?",
+      "q": "Cartão cobrou e offset não commitou: o restart faz o quê — o que vale aqui?",
       "o": [
         "Cartão cobrou, offset não commitou, restart relê o 99.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência."
       ],
       "a": 0,
       "w": "Duplicata de negócio, log certo.",
       "t": "morte no meio"
     },
     {
-      "q": "Marque a leitura correta (morte no meio).",
+      "q": "Auto-commit anda o committed offset quando o trabalho termina?",
       "o": [
-        "Cartão cobrou, offset não commitou, restart relê o 99.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Auto-commit anda o committed offset por relógio, não por “terminei o trabalho”.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Commit antes de processar é o padrão certo para cobrança."
       ],
       "a": 0,
-      "w": "Duplicata de negócio, log certo.",
-      "t": "morte no meio"
-    },
-    {
-      "q": "Corrija o mito sobre morte no meio.",
-      "o": [
-        "Cartão cobrou, offset não commitou, restart relê o 99.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Duplicata de negócio, log certo.",
-      "t": "morte no meio"
-    },
-    {
-      "q": "No caderno, a respeito de morte no meio: qual vale?",
-      "o": [
-        "Cartão cobrou, offset não commitou, restart relê o 99.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Duplicata de negócio, log certo.",
-      "t": "morte no meio"
-    },
-    {
-      "q": "Se perguntarem morte no meio na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Cartão cobrou, offset não commitou, restart relê o 99.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Duplicata de negócio, log certo.",
-      "t": "morte no meio"
-    },
-    {
-      "q": "Sobre auto-commit: qual afirmação está certa?",
-      "o": [
-        "Auto-commit anda a marca por relógio, não por “terminei o trabalho”.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "Manual no lab.",
+      "w": "AckMode MANUAL espera o efeito.",
       "t": "auto-commit"
     },
     {
-      "q": "Qual frase sobre auto-commit está certa?",
+      "q": "Auto-commit anda o committed offset quando o trabalho termina — verdade ou mito?",
       "o": [
-        "Auto-commit anda a marca por relógio, não por “terminei o trabalho”.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Auto-commit anda o committed offset por relógio, não por “terminei o trabalho”.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
-      "a": 0,
-      "w": "Manual no lab.",
+      "a": 2,
+      "w": "AckMode MANUAL espera o efeito.",
       "t": "auto-commit"
     },
     {
-      "q": "Auto-commit — o que acontece de verdade?",
+      "q": "Auto-commit anda o committed offset quando o trabalho termina — o que acontece de verdade?",
       "o": [
-        "Auto-commit anda a marca por relógio, não por “terminei o trabalho”.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Auto-commit anda o committed offset por relógio, não por “terminei o trabalho”.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra."
       ],
       "a": 0,
-      "w": "Manual no lab.",
+      "w": "AckMode MANUAL espera o efeito.",
       "t": "auto-commit"
     },
     {
-      "q": "Marque a leitura correta (auto-commit).",
+      "q": "Na prática: Auto-commit anda o committed offset quando o trabalho termina?",
       "o": [
-        "Auto-commit anda a marca por relógio, não por “terminei o trabalho”.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Idempotência do producer substitui a inbox.",
+        "Auto-commit anda o committed offset por relógio, não por “terminei o trabalho”."
       ],
-      "a": 0,
-      "w": "Manual no lab.",
+      "a": 3,
+      "w": "AckMode MANUAL espera o efeito.",
       "t": "auto-commit"
     },
     {
-      "q": "Corrija o mito sobre auto-commit.",
+      "q": "Auto-commit anda o committed offset quando o trabalho termina — como funciona?",
       "o": [
-        "Auto-commit anda a marca por relógio, não por “terminei o trabalho”.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Auto-commit anda o committed offset por relógio, não por “terminei o trabalho”.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Idempotência do producer substitui a inbox."
       ],
-      "a": 0,
-      "w": "Manual no lab.",
+      "a": 1,
+      "w": "AckMode MANUAL espera o efeito.",
       "t": "auto-commit"
     },
     {
-      "q": "No caderno, a respeito de auto-commit: qual vale?",
+      "q": "Se perguntarem: Auto-commit anda o committed offset quando o trabalho termina?",
       "o": [
-        "Auto-commit anda a marca por relógio, não por “terminei o trabalho”.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Auto-commit anda o committed offset por relógio, não por “terminei o trabalho”.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
-      "a": 0,
-      "w": "Manual no lab.",
+      "a": 2,
+      "w": "AckMode MANUAL espera o efeito.",
       "t": "auto-commit"
     },
     {
-      "q": "Se perguntarem auto-commit na mesa, qual frase é a verdadeira?",
+      "q": "Auto-commit anda o committed offset quando o trabalho termina — o que vale aqui?",
       "o": [
-        "Auto-commit anda a marca por relógio, não por “terminei o trabalho”.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "Auto-commit anda o committed offset por relógio, não por “terminei o trabalho”.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
-      "a": 0,
-      "w": "Manual no lab.",
+      "a": 2,
+      "w": "AckMode MANUAL espera o efeito.",
       "t": "auto-commit"
     },
     {
-      "q": "Sobre lag: qual afirmação está certa?",
+      "q": "Lag de 1600 mensagens prova duplicata?",
       "o": [
-        "Lag não mede duplicata; mede atraso da marca.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "Lag não mede duplicata; mede atraso do committed offset.",
+        "Lag mede duplicata, não atraso do committed offset."
       ],
-      "a": 0,
-      "w": "10k-8400=1600 linhas atrás.",
+      "a": 2,
+      "w": "10k-8400=1600 mensagens atrás.",
       "t": "lag"
     },
     {
-      "q": "Qual frase sobre lag está certa?",
+      "q": "Lag de 1600 mensagens prova duplicata — verdade ou mito?",
       "o": [
-        "Lag não mede duplicata; mede atraso da marca.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Lag não mede duplicata; mede atraso do committed offset.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa."
       ],
       "a": 0,
-      "w": "10k-8400=1600 linhas atrás.",
+      "w": "10k-8400=1600 mensagens atrás.",
       "t": "lag"
     },
     {
-      "q": "Lag — o que acontece de verdade?",
+      "q": "Lag de 1600 mensagens prova duplicata — o que acontece de verdade?",
       "o": [
-        "Lag não mede duplicata; mede atraso da marca.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "Lag não mede duplicata; mede atraso do committed offset.",
+        "Lag mede duplicata, não atraso do committed offset."
       ],
-      "a": 0,
-      "w": "10k-8400=1600 linhas atrás.",
+      "a": 2,
+      "w": "10k-8400=1600 mensagens atrás.",
       "t": "lag"
     },
     {
-      "q": "Marque a leitura correta (lag).",
+      "q": "Na prática: Lag de 1600 mensagens prova duplicata?",
       "o": [
-        "Lag não mede duplicata; mede atraso da marca.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Lag não mede duplicata; mede atraso do committed offset."
       ],
-      "a": 0,
-      "w": "10k-8400=1600 linhas atrás.",
+      "a": 3,
+      "w": "10k-8400=1600 mensagens atrás.",
       "t": "lag"
     },
     {
-      "q": "Corrija o mito sobre lag.",
+      "q": "Lag de 1600 mensagens prova duplicata — como funciona?",
       "o": [
-        "Lag não mede duplicata; mede atraso da marca.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Lag não mede duplicata; mede atraso do committed offset.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "AckMode manual chama ack sozinho no começo do listener."
       ],
-      "a": 0,
-      "w": "10k-8400=1600 linhas atrás.",
+      "a": 1,
+      "w": "10k-8400=1600 mensagens atrás.",
       "t": "lag"
     },
     {
-      "q": "No caderno, a respeito de lag: qual vale?",
+      "q": "Se perguntarem: Lag de 1600 mensagens prova duplicata?",
       "o": [
-        "Lag não mede duplicata; mede atraso da marca.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Lag não mede duplicata; mede atraso do committed offset.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart."
       ],
       "a": 0,
-      "w": "10k-8400=1600 linhas atrás.",
+      "w": "10k-8400=1600 mensagens atrás.",
       "t": "lag"
     },
     {
-      "q": "Se perguntarem lag na mesa, qual frase é a verdadeira?",
+      "q": "Lag de 1600 mensagens prova duplicata — o que vale aqui?",
       "o": [
-        "Lag não mede duplicata; mede atraso da marca.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Lag não mede duplicata; mede atraso do committed offset.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência."
       ],
       "a": 0,
-      "w": "10k-8400=1600 linhas atrás.",
+      "w": "10k-8400=1600 mensagens atrás.",
       "t": "lag"
     },
     {
-      "q": "Sobre inbox: qual afirmação está certa?",
+      "q": "O eventId na mesma transação do efeito impede a segunda cobrança?",
       "o": [
-        "eventId na mesma transação do efeito impede a segunda cobrança.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "eventId na mesma transação do efeito impede a segunda cobrança."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Unique / if exists.",
       "t": "inbox"
     },
     {
-      "q": "Qual frase sobre inbox está certa?",
+      "q": "O eventId na mesma transação do efeito impede a segunda cobrança — verdade ou mito?",
       "o": [
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
         "eventId na mesma transação do efeito impede a segunda cobrança.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "Commit antes de processar é o padrão certo para cobrança."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Unique / if exists.",
       "t": "inbox"
     },
     {
-      "q": "Inbox — o que acontece de verdade?",
+      "q": "O eventId na mesma transação do efeito impede a segunda cobrança — o que acontece de verdade?",
       "o": [
-        "eventId na mesma transação do efeito impede a segunda cobrança.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "eventId na mesma transação do efeito impede a segunda cobrança."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Unique / if exists.",
       "t": "inbox"
     },
     {
-      "q": "Marque a leitura correta (inbox).",
+      "q": "Na prática: O eventId na mesma transação do efeito impede a segunda cobrança?",
       "o": [
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Idempotência do producer substitui a inbox.",
         "eventId na mesma transação do efeito impede a segunda cobrança.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Unique / if exists.",
       "t": "inbox"
     },
     {
-      "q": "Corrija o mito sobre inbox.",
+      "q": "O eventId na mesma transação do efeito impede a segunda cobrança — como funciona?",
       "o": [
+        "Idempotência do producer substitui a inbox.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
         "eventId na mesma transação do efeito impede a segunda cobrança.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Unique / if exists.",
       "t": "inbox"
     },
     {
-      "q": "No caderno, a respeito de inbox: qual vale?",
+      "q": "Se perguntarem: O eventId na mesma transação do efeito impede a segunda cobrança?",
       "o": [
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
         "eventId na mesma transação do efeito impede a segunda cobrança.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "Se o cartão já cobrou, o restart não relê o 99."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Unique / if exists.",
       "t": "inbox"
     },
     {
-      "q": "Se perguntarem inbox na mesa, qual frase é a verdadeira?",
+      "q": "O eventId na mesma transação do efeito impede a segunda cobrança — o que vale aqui?",
       "o": [
+        "Lag mede duplicata, não atraso do committed offset.",
         "eventId na mesma transação do efeito impede a segunda cobrança.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Unique / if exists.",
       "t": "inbox"
     },
     {
-      "q": "Sobre producer idemp: qual afirmação está certa?",
+      "q": "A config enable.idempotence evita duas mensagens do retry — e o cartão?",
       "o": [
-        "enable.idempotence evita duas linhas iguais do mesmo producer no retry.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "enable.idempotence evita duas mensagens iguais do mesmo producer no retry.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Inbox sem unique / if exists ainda impede a segunda cobrança."
       ],
       "a": 0,
       "w": "O cartão ainda precisa de chave.",
       "t": "producer idemp"
     },
     {
-      "q": "Qual frase sobre producer idemp está certa?",
+      "q": "A config enable.idempotence evita duas mensagens do retry — e o cartão — verdade ou mito?",
       "o": [
-        "enable.idempotence evita duas linhas iguais do mesmo producer no retry.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "enable.idempotence evita duas mensagens iguais do mesmo producer no retry.",
+        "enable.idempotence é a chave do cartão; inbox é opcional."
+      ],
+      "a": 2,
+      "w": "O cartão ainda precisa de chave.",
+      "t": "producer idemp"
+    },
+    {
+      "q": "A config enable.idempotence evita duas mensagens do retry — e o cartão — o que acontece de verdade?",
+      "o": [
+        "enable.idempotence evita duas mensagens iguais do mesmo producer no retry.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Morte no meio do lote não reprocessa; inbox é inútil."
       ],
       "a": 0,
       "w": "O cartão ainda precisa de chave.",
       "t": "producer idemp"
     },
     {
-      "q": "Producer idemp — o que acontece de verdade?",
+      "q": "Na prática: A config enable.idempotence evita duas mensagens do retry — e o cartão?",
       "o": [
-        "enable.idempotence evita duas linhas iguais do mesmo producer no retry.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "enable.idempotence evita duas mensagens iguais do mesmo producer no retry.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "Morte no meio do lote não reprocessa; inbox é inútil."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O cartão ainda precisa de chave.",
       "t": "producer idemp"
     },
     {
-      "q": "Marque a leitura correta (producer idemp).",
+      "q": "A config enable.idempotence evita duas mensagens do retry — e o cartão — como funciona?",
       "o": [
-        "enable.idempotence evita duas linhas iguais do mesmo producer no retry.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "enable.idempotence evita duas mensagens iguais do mesmo producer no retry.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "AckMode manual chama ack sozinho no começo do listener."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O cartão ainda precisa de chave.",
       "t": "producer idemp"
     },
     {
-      "q": "Corrija o mito sobre producer idemp.",
+      "q": "Se perguntarem: A config enable.idempotence evita duas mensagens do retry — e o cartão?",
       "o": [
-        "enable.idempotence evita duas linhas iguais do mesmo producer no retry.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "enable.idempotence evita duas mensagens iguais do mesmo producer no retry.",
+        "enable.idempotence é a chave do cartão; inbox é opcional."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O cartão ainda precisa de chave.",
       "t": "producer idemp"
     },
     {
-      "q": "No caderno, a respeito de producer idemp: qual vale?",
+      "q": "A config enable.idempotence evita duas mensagens do retry — e o cartão — o que vale aqui?",
       "o": [
-        "enable.idempotence evita duas linhas iguais do mesmo producer no retry.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "enable.idempotence evita duas mensagens iguais do mesmo producer no retry.",
+        "enable.idempotence é a chave do cartão; inbox é opcional."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O cartão ainda precisa de chave.",
       "t": "producer idemp"
     },
     {
-      "q": "Se perguntarem producer idemp na mesa, qual frase é a verdadeira?",
+      "q": "O que o sênior quer ouvir: exactly-once porque tem Kafka, ou outra frase?",
       "o": [
-        "enable.idempotence evita duas linhas iguais do mesmo producer no retry.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa."
       ],
-      "a": 0,
-      "w": "O cartão ainda precisa de chave.",
-      "t": "producer idemp"
+      "a": 2,
+      "w": "Não “exactly-once porque tem Kafka”.",
+      "t": "frase da mesa"
     },
     {
-      "q": "Sobre frase da mesa: qual afirmação está certa?",
+      "q": "O que o sênior quer ouvir: exactly-once porque tem Kafka, ou outra frase — verdade ou mito?",
       "o": [
         "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Exactly-once do Kafka vale na API HTTP do cartão."
       ],
       "a": 0,
       "w": "Não “exactly-once porque tem Kafka”.",
       "t": "frase da mesa"
     },
     {
-      "q": "Qual frase sobre frase da mesa está certa?",
+      "q": "O que o sênior quer ouvir: exactly-once porque tem Kafka, ou outra frase — o que acontece de verdade?",
+      "o": [
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa."
+      ],
+      "a": 2,
+      "w": "Não “exactly-once porque tem Kafka”.",
+      "t": "frase da mesa"
+    },
+    {
+      "q": "Na prática: O que o sênior quer ouvir: exactly-once porque tem Kafka, ou outra frase?",
+      "o": [
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Idempotência do producer substitui a inbox.",
+        "At-least-once + consumidor idempotente é o que o sênior quer ouvir."
+      ],
+      "a": 3,
+      "w": "Não “exactly-once porque tem Kafka”.",
+      "t": "frase da mesa"
+    },
+    {
+      "q": "O que o sênior quer ouvir: exactly-once porque tem Kafka, ou outra frase — como funciona?",
+      "o": [
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Idempotência do producer substitui a inbox.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "At-least-once + consumidor idempotente é o que o sênior quer ouvir."
+      ],
+      "a": 3,
+      "w": "Não “exactly-once porque tem Kafka”.",
+      "t": "frase da mesa"
+    },
+    {
+      "q": "Se perguntarem: O que o sênior quer ouvir: exactly-once porque tem Kafka, ou outra frase?",
       "o": [
         "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset."
       ],
       "a": 0,
       "w": "Não “exactly-once porque tem Kafka”.",
       "t": "frase da mesa"
     },
     {
-      "q": "Frase da mesa — o que acontece de verdade?",
+      "q": "O que o sênior quer ouvir: exactly-once porque tem Kafka, ou outra frase — o que vale aqui?",
       "o": [
         "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Lag mede duplicata, não atraso do committed offset."
       ],
       "a": 0,
       "w": "Não “exactly-once porque tem Kafka”.",
       "t": "frase da mesa"
     },
     {
-      "q": "Marque a leitura correta (frase da mesa).",
+      "q": "Morte no meio do lote: o lote reprocessa?",
       "o": [
-        "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Não “exactly-once porque tem Kafka”.",
-      "t": "frase da mesa"
-    },
-    {
-      "q": "Corrija o mito sobre frase da mesa.",
-      "o": [
-        "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Não “exactly-once porque tem Kafka”.",
-      "t": "frase da mesa"
-    },
-    {
-      "q": "No caderno, a respeito de frase da mesa: qual vale?",
-      "o": [
-        "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Não “exactly-once porque tem Kafka”.",
-      "t": "frase da mesa"
-    },
-    {
-      "q": "Se perguntarem frase da mesa na mesa, qual frase é a verdadeira?",
-      "o": [
-        "At-least-once + consumidor idempotente é o que o sênior quer ouvir.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Não “exactly-once porque tem Kafka”.",
-      "t": "frase da mesa"
-    },
-    {
-      "q": "Sobre lote commit: qual afirmação está certa?",
-      "o": [
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
         "Morte no meio do lote reprocessa o lote.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "Lag mede duplicata, não atraso do committed offset."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Inbox cobre o replay.",
       "t": "lote commit"
     },
     {
-      "q": "Qual frase sobre lote commit está certa?",
+      "q": "Morte no meio do lote: o lote reprocessa — verdade ou mito?",
       "o": [
-        "Morte no meio do lote reprocessa o lote.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "Morte no meio do lote reprocessa o lote."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Inbox cobre o replay.",
       "t": "lote commit"
     },
     {
-      "q": "Lote commit — o que acontece de verdade?",
+      "q": "Morte no meio do lote: o lote reprocessa — o que acontece de verdade?",
       "o": [
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
         "Morte no meio do lote reprocessa o lote.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "enable.idempotence é a chave do cartão; inbox é opcional."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Inbox cobre o replay.",
       "t": "lote commit"
     },
     {
-      "q": "Marque a leitura correta (lote commit).",
+      "q": "Na prática: Morte no meio do lote: o lote reprocessa?",
       "o": [
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "AckMode manual chama ack sozinho no começo do listener.",
         "Morte no meio do lote reprocessa o lote.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Morte no meio do lote não reprocessa; inbox é inútil."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Inbox cobre o replay.",
       "t": "lote commit"
     },
     {
-      "q": "Corrija o mito sobre lote commit.",
+      "q": "Morte no meio do lote: o lote reprocessa — como funciona?",
       "o": [
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "O log duplicou a mensagem; culpe o broker primeiro.",
         "Morte no meio do lote reprocessa o lote.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Morte no meio do lote não reprocessa; inbox é inútil."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Inbox cobre o replay.",
       "t": "lote commit"
     },
     {
-      "q": "No caderno, a respeito de lote commit: qual vale?",
+      "q": "Se perguntarem: Morte no meio do lote: o lote reprocessa?",
       "o": [
-        "Morte no meio do lote reprocessa o lote.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Morte no meio do lote reprocessa o lote."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Inbox cobre o replay.",
       "t": "lote commit"
     },
     {
-      "q": "Se perguntarem lote commit na mesa, qual frase é a verdadeira?",
+      "q": "Morte no meio do lote: o lote reprocessa — o que vale aqui?",
       "o": [
-        "Morte no meio do lote reprocessa o lote.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência.",
+        "Morte no meio do lote reprocessa o lote."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Inbox cobre o replay.",
       "t": "lote commit"
     },
     {
-      "q": "Sobre YAML ack: qual afirmação está certa?",
+      "q": "AckMode manual: quem chama ack, e depois de quê?",
       "o": [
+        "Commit antes de processar é o padrão certo para cobrança.",
         "AckMode manual: você chama ack depois do efeito.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência."
       ],
-      "a": 0,
-      "w": "PedidoConsumer.",
+      "a": 1,
+      "w": "@KafkaListener + Acknowledgment.",
       "t": "YAML ack"
     },
     {
-      "q": "Qual frase sobre YAML ack está certa?",
+      "q": "AckMode manual: quem chama ack, e depois de quê — verdade ou mito?",
       "o": [
-        "AckMode manual: você chama ack depois do efeito.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "AckMode manual: você chama ack depois do efeito."
       ],
-      "a": 0,
-      "w": "PedidoConsumer.",
+      "a": 3,
+      "w": "@KafkaListener + Acknowledgment.",
       "t": "YAML ack"
     },
     {
-      "q": "YAML ack — o que acontece de verdade?",
+      "q": "AckMode manual: quem chama ack, e depois de quê — o que acontece de verdade?",
       "o": [
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
         "AckMode manual: você chama ack depois do efeito.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Exactly-once do Kafka vale na API HTTP do cartão."
       ],
-      "a": 0,
-      "w": "PedidoConsumer.",
+      "a": 1,
+      "w": "@KafkaListener + Acknowledgment.",
       "t": "YAML ack"
     },
     {
-      "q": "Marque a leitura correta (YAML ack).",
+      "q": "Na prática: AckMode manual: quem chama ack, e depois de quê?",
       "o": [
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Idempotência do producer substitui a inbox.",
         "AckMode manual: você chama ack depois do efeito.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "AckMode manual chama ack sozinho no começo do listener."
       ],
-      "a": 0,
-      "w": "PedidoConsumer.",
+      "a": 2,
+      "w": "@KafkaListener + Acknowledgment.",
       "t": "YAML ack"
     },
     {
-      "q": "Corrija o mito sobre YAML ack.",
+      "q": "AckMode manual: quem chama ack, e depois de quê — como funciona?",
       "o": [
         "AckMode manual: você chama ack depois do efeito.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Idempotência do producer substitui a inbox.",
+        "Se o cartão já cobrou, o restart não relê o 99."
       ],
       "a": 0,
-      "w": "PedidoConsumer.",
+      "w": "@KafkaListener + Acknowledgment.",
       "t": "YAML ack"
     },
     {
-      "q": "No caderno, a respeito de YAML ack: qual vale?",
+      "q": "Se perguntarem: AckMode manual: quem chama ack, e depois de quê?",
       "o": [
-        "AckMode manual: você chama ack depois do efeito.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "AckMode manual: você chama ack depois do efeito."
       ],
-      "a": 0,
-      "w": "PedidoConsumer.",
+      "a": 3,
+      "w": "@KafkaListener + Acknowledgment.",
       "t": "YAML ack"
     },
     {
-      "q": "Se perguntarem YAML ack na mesa, qual frase é a verdadeira?",
+      "q": "AckMode manual: quem chama ack, e depois de quê — o que vale aqui?",
       "o": [
-        "AckMode manual: você chama ack depois do efeito.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "AckMode manual: você chama ack depois do efeito."
       ],
-      "a": 0,
-      "w": "PedidoConsumer.",
+      "a": 3,
+      "w": "@KafkaListener + Acknowledgment.",
       "t": "YAML ack"
     },
     {
-      "q": "Sobre log não duplicou: qual afirmação está certa?",
+      "q": "Se cobrou duas vezes, o primeiro culpado é o broker?",
+      "o": [
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "O log está certo; quem duplicou foi o efeito.",
+        "O log duplicou a mensagem; culpe o broker primeiro."
+      ],
+      "a": 2,
+      "w": "Não culpe o broker primeiro.",
+      "t": "log não duplicou"
+    },
+    {
+      "q": "Se cobrou duas vezes, o primeiro culpado é o broker — verdade ou mito?",
       "o": [
         "O log está certo; quem duplicou foi o efeito.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Inbox sem unique / if exists ainda impede a segunda cobrança.",
+        "enable.idempotence é a chave do cartão; inbox é opcional."
       ],
       "a": 0,
       "w": "Não culpe o broker primeiro.",
       "t": "log não duplicou"
     },
     {
-      "q": "Qual frase sobre log não duplicou está certa?",
+      "q": "Se cobrou duas vezes, o primeiro culpado é o broker — o que acontece de verdade?",
+      "o": [
+        "enable.idempotence é a chave do cartão; inbox é opcional.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "O log está certo; quem duplicou foi o efeito.",
+        "O log duplicou a mensagem; culpe o broker primeiro."
+      ],
+      "a": 2,
+      "w": "Não culpe o broker primeiro.",
+      "t": "log não duplicou"
+    },
+    {
+      "q": "Na prática: Se cobrou duas vezes, o primeiro culpado é o broker?",
+      "o": [
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "“Exactly-once porque tem Kafka” é a frase certa da mesa.",
+        "Morte no meio do lote não reprocessa; inbox é inútil.",
+        "O log está certo; quem duplicou foi o efeito."
+      ],
+      "a": 3,
+      "w": "Não culpe o broker primeiro.",
+      "t": "log não duplicou"
+    },
+    {
+      "q": "Se cobrou duas vezes, o primeiro culpado é o broker — como funciona?",
+      "o": [
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "O log está certo; quem duplicou foi o efeito.",
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Morte no meio do lote não reprocessa; inbox é inútil."
+      ],
+      "a": 1,
+      "w": "Não culpe o broker primeiro.",
+      "t": "log não duplicou"
+    },
+    {
+      "q": "Se perguntarem: Se cobrou duas vezes, o primeiro culpado é o broker?",
       "o": [
         "O log está certo; quem duplicou foi o efeito.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "AckMode manual chama ack sozinho no começo do listener.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart."
       ],
       "a": 0,
       "w": "Não culpe o broker primeiro.",
       "t": "log não duplicou"
     },
     {
-      "q": "Log não duplicou — o que acontece de verdade?",
+      "q": "Se cobrou duas vezes, o primeiro culpado é o broker — o que vale aqui?",
       "o": [
         "O log está certo; quem duplicou foi o efeito.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O log duplicou a mensagem; culpe o broker primeiro.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência."
       ],
       "a": 0,
       "w": "Não culpe o broker primeiro.",
       "t": "log não duplicou"
     },
     {
-      "q": "Marque a leitura correta (log não duplicou).",
+      "q": "Se o consumidor morre depois de processar e antes do ack, qual garantia aparece no restart?",
       "o": [
-        "O log está certo; quem duplicou foi o efeito.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Se o processo morre depois de processar e antes do ack, a mensagem volta. At-least-once visível.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Processar depois commitar nunca duplica; não precisa de idempotência."
       ],
-      "a": 0,
-      "w": "Não culpe o broker primeiro.",
-      "t": "log não duplicou"
-    },
-    {
-      "q": "Corrija o mito sobre log não duplicou.",
-      "o": [
-        "O log está certo; quem duplicou foi o efeito.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Não culpe o broker primeiro.",
-      "t": "log não duplicou"
-    },
-    {
-      "q": "No caderno, a respeito de log não duplicou: qual vale?",
-      "o": [
-        "O log está certo; quem duplicou foi o efeito.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Não culpe o broker primeiro.",
-      "t": "log não duplicou"
-    },
-    {
-      "q": "Se perguntarem log não duplicou na mesa, qual frase é a verdadeira?",
-      "o": [
-        "O log está certo; quem duplicou foi o efeito.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Não culpe o broker primeiro.",
-      "t": "log não duplicou"
-    },
-    {
-      "q": "Sobre lab 7: qual afirmação está certa?",
-      "o": [
-        "Kill entre log e ack: o recado volta. At-least-once visível.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Spring Kafka lab 7.",
+      "a": 1,
+      "w": "Restart do grupo relê o committed offset antigo.",
       "t": "lab 7"
     },
     {
-      "q": "Qual frase sobre lab 7 está certa?",
+      "q": "Se o consumidor morre depois de processar e antes do ack, qual garantia aparece no restart — verdade ou mito?",
       "o": [
-        "Kill entre log e ack: o recado volta. At-least-once visível.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Commit antes de processar é o padrão certo para cobrança.",
+        "Exactly-once do Kafka vale na API HTTP do cartão.",
+        "Se o processo morre depois de processar e antes do ack, a mensagem volta. At-least-once visível."
       ],
-      "a": 0,
-      "w": "Spring Kafka lab 7.",
+      "a": 3,
+      "w": "Restart do grupo relê o committed offset antigo.",
       "t": "lab 7"
     },
     {
-      "q": "Lab 7 — o que acontece de verdade?",
+      "q": "Se o consumidor morre depois de processar e antes do ack, qual garantia aparece no restart — o que acontece de verdade?",
       "o": [
-        "Kill entre log e ack: o recado volta. At-least-once visível.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Se o processo morre depois de processar e antes do ack, a mensagem volta. At-least-once visível.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Exactly-once do Kafka vale na API HTTP do cartão."
       ],
-      "a": 0,
-      "w": "Spring Kafka lab 7.",
+      "a": 1,
+      "w": "Restart do grupo relê o committed offset antigo.",
       "t": "lab 7"
     },
     {
-      "q": "Marque a leitura correta (lab 7).",
+      "q": "Na prática: Se o consumidor morre depois de processar e antes do ack, qual garantia aparece no restart?",
       "o": [
-        "Kill entre log e ack: o recado volta. At-least-once visível.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "acks=all no producer fecha o cartão; inbox do consumidor sobra.",
+        "Idempotência do producer substitui a inbox.",
+        "Se o processo morre depois de processar e antes do ack, a mensagem volta. At-least-once visível.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart."
       ],
-      "a": 0,
-      "w": "Spring Kafka lab 7.",
+      "a": 2,
+      "w": "Restart do grupo relê o committed offset antigo.",
       "t": "lab 7"
     },
     {
-      "q": "Corrija o mito sobre lab 7.",
+      "q": "Se o consumidor morre depois de processar e antes do ack, qual garantia aparece no restart — como funciona?",
       "o": [
-        "Kill entre log e ack: o recado volta. At-least-once visível.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Idempotência do producer substitui a inbox.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Se o processo morre depois de processar e antes do ack, a mensagem volta. At-least-once visível.",
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart."
       ],
-      "a": 0,
-      "w": "Spring Kafka lab 7.",
+      "a": 2,
+      "w": "Restart do grupo relê o committed offset antigo.",
       "t": "lab 7"
     },
     {
-      "q": "No caderno, a respeito de lab 7: qual vale?",
+      "q": "Se perguntarem: Se o consumidor morre depois de processar e antes do ack, qual garantia aparece no restart?",
       "o": [
-        "Kill entre log e ack: o recado volta. At-least-once visível.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Se o cartão já cobrou, o restart não relê o 99.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Se o processo morre depois de processar e antes do ack, a mensagem volta. At-least-once visível."
       ],
-      "a": 0,
-      "w": "Spring Kafka lab 7.",
+      "a": 3,
+      "w": "Restart do grupo relê o committed offset antigo.",
       "t": "lab 7"
     },
     {
-      "q": "Se perguntarem lab 7 na mesa, qual frase é a verdadeira?",
+      "q": "Se o consumidor morre depois de processar e antes do ack, qual garantia aparece no restart — o que vale aqui?",
       "o": [
-        "Kill entre log e ack: o recado volta. At-least-once visível.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Morrer antes do ack mostra exactly-once: a mensagem não volta no restart.",
+        "Auto-commit espera o cartão; por relógio não anda o committed offset.",
+        "Lag mede duplicata, não atraso do committed offset.",
+        "Se o processo morre depois de processar e antes do ack, a mensagem volta. At-least-once visível."
       ],
-      "a": 0,
-      "w": "Spring Kafka lab 7.",
+      "a": 3,
+      "w": "Restart do grupo relê o committed offset antigo.",
       "t": "lab 7"
     }
   ]

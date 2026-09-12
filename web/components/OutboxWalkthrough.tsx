@@ -4,20 +4,20 @@ import { useState } from "react";
 
 const STEPS = [
   {
-    title: "A canetada no banco",
-    body: "Na mesma transação: grava o pedido e um recado na tabela outbox. O Kafka ainda não viu nada.",
+    title: "A transação no banco",
+    body: "Na mesma transação: grava o pedido e uma linha na tabela outbox. O Kafka ainda não viu nada.",
   },
   {
-    title: "O carteiro",
-    body: "Um poller (ou Debezium) lê recados com publicado_em nulo e manda para o tópico.",
+    title: "O poller",
+    body: "Um poller (ou Debezium) lê linhas com publicado_em nulo e manda para o tópico.",
   },
   {
     title: "Kafka fora",
-    body: "O broker cai. O pedido continua no Postgres. O recado continua na caixinha. Nada se perde.",
+    body: "O broker cai. O pedido continua no Postgres. A linha continua na tabela outbox. Nada se perde.",
   },
   {
     title: "O broker volta",
-    body: "O carteiro tenta de novo. At-least-once na publicação — o consumidor precisa de inbox.",
+    body: "O poller tenta de novo. At-least-once na publicação — o consumidor precisa de inbox.",
   },
 ];
 

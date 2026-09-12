@@ -1,0 +1,85 @@
+{
+  "beats": [
+    {
+      "id": "dez-caixas",
+      "kind": "cena",
+      "kicker": "Mesa · 45 min",
+      "title": "Dez caixas no quadro. Zero pergunta no ar.",
+      "body": "<p>O candidato desenha checkout, estoque, cupom, Kafka, Redis, dez microsserviços. Recita “somos AP”. Ninguém perguntou quantos usuários, se o débito pode atrasar 2 s, nem qual é o p99.</p><p>Arquitetura não é o desenho. É o conjunto de decisões <strong>caras de reverter</strong>: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair. Sem vocabulário do zero — latência, consistência, serviço, contrato — CAP e Saga viram palavra de podcast.</p>"
+    },
+    {
+      "id": "cara",
+      "kind": "explicar",
+      "title": "O que é cara de reverter",
+      "html": "<p>Júnior descreve o que o sistema faz. Pleno descreve como as peças se falam. Arquiteto descreve o que <em>não</em> pode quebrar, o que custa reverter, e o que faria diferente com mais tempo — com números de ordem de grandeza.</p><p>Fronteira de dado, contrato, “quem cai junto”: isso gruda. Trocar o JSON do endpoint interno não. Se a decisão reverte numa sprint, ainda não era arquitetura.</p>"
+    },
+    {
+      "id": "caminho",
+      "kind": "explicar",
+      "title": "O caminho que o usuário sente",
+      "html": "<p>Comece pelo que a pessoa sente e desça. Cada camada é fronteira, não carimbo de tecnologia. Na entrevista esse esqueleto cabe em 30 segundos; o stack entra depois.</p><ol class=\"tight\"><li><strong>Usuário</strong> — a conversa começa aqui, não no Kafka.</li><li><strong>Latência / SLO</strong> — p99, erro, dado errado. Não a média do Grafana.</li><li><strong>API / gateway</strong> — contrato, auth, rate limit. Não é a regra de checkout.</li><li><strong>Serviços</strong> — capacidade de negócio, não pasta no Git.</li><li><strong>Dados + cache + filas</strong> — onde mora a verdade, o atalho e o mensagem.</li><li><strong>Falha</strong> — timeout, retry, breaker, degradação. Nesta ordem.</li></ol>"
+    },
+    {
+      "id": "setas",
+      "kind": "explicar",
+      "title": "Toda seta tem preço",
+      "html": "<p>Três setas que entram no quadro sem ninguém nomear o custo:</p><ul class=\"tight\"><li><strong>Lote / batch.</strong> Sobe throughput, piora a latência da primeira mensagem. <code>linger.ms</code>, flush, agregação. Peça o requisito: p99 de 50 ms ou 50k writes/s?</li><li><strong>Microsserviço.</strong> Sobe autonomia de time, desce simplicidade de debug. Preço técnico alto — escolha organizacional. Monolito modular é o default até o domínio e o time pedirem outra coisa.</li><li><strong>Cache.</strong> Sobe velocidade, sobe o risco de dado velho. A pergunta madura: qual o custo de mostrar 2 segundos atrasado?</li></ul>"
+    },
+    {
+      "id": "curriculo",
+      "kind": "explicar",
+      "title": "Peças versus juízo",
+      "html": "<p>Cursos tipo “The System Design Interview” são um <strong>catálogo de peças</strong>: API, HA, cache, storage, batch, particionamento. Esta trilha é o <strong>julgamento</strong> — o que perguntar, o que recusar, o custo de cada seta.</p><p>Profundidade de Kafka, HPA, keyset, Service/Ingress ficam nas trilhas irmãs. Aqui entra a ponte: quando a peça cabe no desenho, e quando é teatro. Labs de Redis queue e cache drill não se copiam nesta página — apontam para o lugar certo.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "ganha": "Perguntar requisitos antes das caixas. Número na mesa. Cada seta nomeada: lote, micro, cache. O desenho que sobra é o que dá para reverter.",
+      "paga": "Desenhar caixas e recitar AP é rápido e impressiona 30 segundos. Reverter fronteira de dado, contrato e “quem cai junto” custa trimestre. Seta de graça no quadro vira incidente no ano que vem.",
+      "quando": [
+        "Você ainda não tem usuários, p99, consistência obrigatória, leitura vs escrita",
+        "A decisão gruda: dono do dado, quem fala com quem, o que acontece se um pedaço cair",
+        "Na entrevista: esqueleto usuário → SLO → API → serviço → dado → falha em 30 s"
+      ],
+      "quandoNao": [
+        "Sair desenhando dez serviços e Kafka “porque escala”",
+        "Memorizar o stack e encaixar o template",
+        "Tratar média do Grafana como NFR e gateway como regra de checkout"
+      ]
+    },
+    {
+      "id": "primeiro-passo",
+      "kind": "escolha",
+      "prompt": "O entrevistador pede o checkout. Você tem 30 segundos. O que faz no quadro?",
+      "options": [
+        {
+          "id": "caixas",
+          "label": "Sair desenhando serviços, Kafka e Redis. Requisitos no fim, se sobrar tempo.",
+          "verdict": "ruim",
+          "why": "Assume milhões de usuários e recita AP como clima. A seta entrou de graça. Reverter isso daqui a um ano custa um trimestre."
+        },
+        {
+          "id": "perguntar",
+          "label": "Perguntar: quantos usuários, leitura ou escrita, p99, o débito pode atrasar?",
+          "verdict": "bom",
+          "why": "Depois escolhe. Toda seta no desenho tem preço. Sem número ainda é opinião — ordem de grandeza em voz alta já muda o desenho."
+        },
+        {
+          "id": "stack",
+          "label": "Memorizar o stack da moda e encaixar as caixas no template.",
+          "verdict": "ruim",
+          "why": "Catálogo de peças não é julgamento. Tecnologia entra depois do caminho que o usuário sente."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Arquitetura é decisão cara de reverter, não diagrama nem contagem de serviços.",
+        "Usuário → SLO → API → serviço → dado → falha. Stack depois. Toda seta tem preço.",
+        "Catálogo de peças não substitui o juízo: o que perguntar, o que recusar."
+      ]
+    }
+  ]
+}

@@ -1,8 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "trilhas-backend.vercel.app" }],
+        destination: "https://learning.codetoscale.dev/:path*",
+        permanent: true,
+      },
       { source: "/kafka/fundamentos", destination: "/kafka/modelo-mental", permanent: true },
       { source: "/kafka/semana-1", destination: "/kafka/particao", permanent: true },
       { source: "/kafka/semana-2", destination: "/kafka/garantias", permanent: true },

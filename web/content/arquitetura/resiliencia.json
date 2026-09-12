@@ -1,0 +1,130 @@
+{
+  "beats": [
+    {
+      "id": "risco-travado",
+      "kind": "cena",
+      "kicker": "Checkout",
+      "title": "Risco parou 30 segundos. O site inteiro parece morto.",
+      "body": "<p>Checkout chama risco sem timeout. O pool de 50 threads enche. A home passa pelo mesmo processo. B lento derrubou A. O 0,1% segurou 100% das linhas.</p><p>Despertador primeiro. Depois tentar de novo com espera aleatória. Depois parar de ligar para o morto. Depois não deixar um telefone ocupar todas as linhas. Por último, atender com o cardápio de ontem. A ordem não é enfeite.</p>"
+    },
+    {
+      "id": "ordem",
+      "kind": "explicar",
+      "title": "Cinco peças. Nesta ordem.",
+      "html": "<div class=\"pipe\"><div class=\"box\">Timeout</div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">Retry<br><small>backoff + jitter</small></div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">Breaker</div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">Bulkhead</div><div class=\"arrow\" aria-hidden=\"true\">→</div><div class=\"box\">Fallback</div></div><ol class=\"tight\"><li><strong>Timeout</strong> — sem ele, vazamento de thread. B lento vira A no chão.</li><li><strong>Retry + backoff + jitter</strong> — só erro transitório e operação idempotente. Sem jitter, thundering herd.</li><li><strong>Circuit breaker</strong> — fechado → aberto (falha rápido) → meio-aberto (poucas). Não testa o morto com o planeta.</li><li><strong>Bulkhead</strong> — pool isolado por dependência. Risco não come as threads da home.</li><li><strong>Fallback</strong> — cache, valor padrão, revisão manual. Degradar em vez de 500.</li></ol>"
+    },
+    {
+      "id": "isolamento",
+      "kind": "explicar",
+      "title": "A chama B, C e D. B está lento.",
+      "html": "<p>Sem timeout: o pool de A esgota, o health check falha, o site some. Com timeout e sem bulkhead: B ainda pode comer todas as threads — C e D esperam na fila do mesmo pool.</p><p>Pools separados por dependência. Isso é isolamento de falha, não “pôr Hystrix no pom”. Rate limit na borda (IP, API key, usuário autenticado), não só no pod local atrás de NAT de operadora. 429 + <code>Retry-After</code>. Não limite o health check.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Sobreviver versus martelar",
+      "ganha": "Timeout solta a thread. Jitter espalha. Breaker falha rápido. Bulkhead isola B. Fallback degrada. Gateway faz política; BFF faz payload. Contrato aditivo não acorda a loja.",
+      "paga": "Retry sem teto vira tempestade. Retry em POST sem chave duplica cobrança. Timeout do caller maior que a soma dos callees espera fantasma. “BFF” que só faz TLS é nome errado. Discovery não substitui despertador.",
+      "quando": [
+        "Cadeia síncrona: timeout em todo hop, caller ≤ soma dos callees",
+        "Retry só transitório + idempotente; breaker e bulkhead no PSP",
+        "Gateway = porta; BFF = cliente; regra de negócio no dono"
+      ],
+      "quandoNao": [
+        "Timeout infinito porque B é 99,9%",
+        "Retry em todo POST, half-open com o planeta, um pool para B+C+D",
+        "Regra de checkout no gateway, quebra de campo sem versão"
+      ]
+    },
+    {
+      "id": "sync-ainda",
+      "kind": "explicar",
+      "title": "Resiliência no sync. O async já era outra aula.",
+      "html": "<p>Consulta na cara continua HTTP — com despertador. E-mail e analytics continuam mensagem. Esta aula não troca o canal; ela impede o canal síncrono de derrubar a casa.</p><p>Cartão na cara: timeout curto, bulkhead no adquirente, Idempotency-Key, fallback honesto (“tente de novo”) em vez de 500 genérico. Sem isso, B lento é o site inteiro.</p>"
+    },
+    {
+      "id": "sem-timeout",
+      "kind": "escolha",
+      "prompt": "Serviço de risco está 99,9% ok. O lead não quer timeout “para não recusar cliente bom”. Você?",
+      "options": [
+        {
+          "id": "infinito",
+          "label": "Sem timeout. B é quase sempre ok. Fallback é drama.",
+          "verdict": "ruim",
+          "why": "Sem timeout a thread não se solta. O 0,1% esgota o pool. Discovery e retry não substituem despertador. Timeout é o primeiro da lista, não o último."
+        },
+        {
+          "id": "curto-fallback",
+          "label": "Timeout curto (centenas de ms) + fallback “risco indisponível, revisão manual”. Checkout sobrevive.",
+          "verdict": "bom",
+          "why": "O checkout sobrevive. Você degradou em vez de 500. Timeout do caller não pode ser maior que a soma dos callees — senão A espera um B que já desistiu."
+        },
+        {
+          "id": "fallback-primeiro",
+          "label": "Fallback na frente de tudo. Timeout no fim, se sobrar.",
+          "verdict": "ruim",
+          "why": "Fallback sem timeout ainda prende a thread enquanto “degrada”. A ordem é timeout → retry+jitter → breaker → bulkhead → fallback. Inverter é teatro."
+        }
+      ]
+    },
+    {
+      "id": "retry-storm",
+      "kind": "escolha",
+      "prompt": "Pagamento 99 volta 503. 200 checkouts retentam na hora, de novo, de novo. Sem idempotency-key. O que está errado — e o que você corta?",
+      "options": [
+        {
+          "id": "retry-tudo",
+          "label": "Retry em todo HTTP. GET e POST de cobrança iguais. Resiliência é tentar de novo.",
+          "verdict": "ruim",
+          "why": "Retry multiplica carga no incidente. POST de pagamento sem idempotency-key cobra R$ 80 três vezes quando o 503 vira 200. GET de catálogo talvez. Cobrança, só com idempotency-key e só erro transitório."
+        },
+        {
+          "id": "limite",
+          "label": "Retry com teto, backoff e jitter, só 5xx transitório, Idempotency-Key no POST. Breaker abre. Bulkhead no PSP.",
+          "verdict": "bom",
+          "why": "Jitter espalha a manada. Breaker para de martelar o morto. Sem limite e sem breaker, degradação vira queda total. HTTP muda: GET ≠ POST de efeito."
+        },
+        {
+          "id": "half-open-tudo",
+          "label": "Breaker no half-open libera o tráfego inteiro para “testar se voltou”.",
+          "verdict": "ruim",
+          "why": "Half-open prova com poucas. Abrir o planeta no morto é o retry storm com nome de padrão."
+        }
+      ]
+    },
+    {
+      "id": "porta",
+      "kind": "escolha",
+      "prompt": "Um único “gateway” monta o JSON gordo do iOS e da SPA, e ainda autoriza o desconto do checkout. Mobile pede menos campos; a web puxa o contrário. O que você recorta?",
+      "options": [
+        {
+          "id": "kong-bff",
+          "label": "Kong/NGINX com TLS e rota já é BFF. A regra de checkout mora aí.",
+          "verdict": "ruim",
+          "why": "Gateway é porta do prédio: TLS, auth, rate limit, rota. BFF é cozinha de um cliente — agrega o payload daquela tela. Regra de desconto no gateway vira o segundo monolito."
+        },
+        {
+          "id": "dois-bff",
+          "label": "Gateway de auth/rate limit. BFF mobile e BFF web. Checkout continua no serviço dono. Campo novo opcional; remover `total` só com versão.",
+          "verdict": "bom",
+          "why": "Cada cliente puxa o contrato para o lado dele. Evolução aditiva. Depreciação com prazo. Pact no CI pega a quebra antes do deploy. Remover campo em uso quebra a loja."
+        },
+        {
+          "id": "quebra-livre",
+          "label": "Renomeia campo à vontade. Consumidor que se vire. Versão é enfeite.",
+          "verdict": "ruim",
+          "why": "Contrato é lei. Mudança incompatível sem `/v2` (ou header) e prazo é incidente. Consumer-driven contract existe para o CI gritar, não o app da loja às 19h."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Ordem: timeout → retry+jitter → breaker → bulkhead → fallback. Inverter é teatro.",
+        "Retry sem teto piora o 503. POST de pagamento sem chave duplica cobrança.",
+        "Gateway é porta. BFF é payload de um cliente. Contrato aditivo; Pact no CI."
+      ]
+    }
+  ]
+}

@@ -1,14 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { loadProgress, saveProgress } from "@/lib/progress";
+import {
+  isProgressHydrated,
+  loadProgress,
+  saveProgress,
+} from "@/lib/progress";
 
 export function SessionChecklist({ path }: { path: string }) {
   const [checks, setChecks] = useState([false, false, false]);
 
   useEffect(() => {
-    const p = loadProgress();
-    setChecks(p.sessions?.[path] ?? [false, false, false]);
+    function sync() {
+      if (!isProgressHydrated()) return;
+      const p = loadProgress();
+      setChecks(p.sessions?.[path] ?? [false, false, false]);
+    }
+    sync();
+    window.addEventListener("trilhas-progress", sync);
+    return () => window.removeEventListener("trilhas-progress", sync);
   }, [path]);
 
   function toggle(i: number) {

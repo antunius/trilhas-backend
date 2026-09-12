@@ -1,0 +1,133 @@
+{
+  "beats": [
+    {
+      "id": "dois-furos",
+      "kind": "cena",
+      "kicker": "Dois buracos",
+      "title": "O usuário vê o 99. O faturamento nunca cobra. Ou o contrário.",
+      "body": "<p>Kafka cai depois do INSERT: o site mostra o pedido; o log nunca soube. Publica antes do commit: o banco dá rollback e o tópico anuncia um PedidoCriado fantasma.</p><p>Na mesma transação: <code>INSERT pedido</code> + <code>INSERT outbox</code>. Um poller (ou Debezium) leva a mensagem. Se o poller falhar, a linha continua na tabela outbox. Pintar publicado_em antes do ACK do broker é o outro furo.</p>"
+    },
+    {
+      "id": "walkthrough",
+      "kind": "widget",
+      "widget": "outbox",
+      "kicker": "Interativo",
+      "title": "Outbox em quatro batidas"
+    },
+    {
+      "id": "carteiro",
+      "kind": "explicar",
+      "title": "Poller ou CDC. O Kafka ainda não viu o INSERT.",
+      "html": "<p>Tabela típica: id, payload, criado_em, publicado_em (nulo até o ACK). A publicação é at-least-once — o consumidor precisa de inbox.</p><p><strong>Poller:</strong> job da aplicação (“tem evento novo?”). Simples de operar. Pode atrasar uns segundos. No lab: <code>OutboxPublisher</code> com <code>@Scheduled</code> 2s.</p><p><strong>CDC (Debezium):</strong> lê o WAL e publica. Mesma ideia, outro publisher. Menos código seu, mais peça para operar. Não substitui a tabela outbox.</p><pre class=\"code\">docker compose stop kafka\ncurl -s -X POST \"http://localhost:8080/pedidos/outbox?pedidoId=outbox-1\"\n# H2: pedido existe. OutboxPublisher tenta e a linha fica pendente.\ndocker compose start kafka\n# em ~2s o poller publica</pre><p><code>OutboxService</code> (mesma transação pedido + outbox), <code>POST /pedidos/outbox</code>. Kafka down: o pedido <em>não</em> se perde.</p>"
+    },
+    {
+      "id": "quando",
+      "kind": "widget",
+      "kicker": "Quatro cenas",
+      "title": "Quando é Kafka — e quando é teatro",
+      "widget": "quando-kafka"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "a tabela outbox nasce com o pedido. O log vem depois.",
+      "ganha": "Kafka no chão: o 99 existe no Postgres. Poller ou Debezium publicam quando o broker volta. Inbox na mesma transação do efeito: replay não cobra duas vezes. Estado no envelope: o faturamento não faz GET no checkout.",
+      "paga": "save(); send(); mente. Outbox é at-least-once na publicação — sem inbox, duplicata. Poller atrasa segundos. CDC é mais uma peça. Notification só com ID devolve o acoplamento. Frete na cara do usuário não passa por tópico.",
+      "quando": [
+        "O fato de negócio e a mensagem precisam nascer juntos",
+        "O clique não pode falhar porque o broker oscilou",
+        "Mais de um consumidor no mesmo fato, replay, desacoplar escritor de leitor"
+      ],
+      "quandoNao": [
+        "Resposta síncrona na cara (“qual o frete agora?”)",
+        "Volume baixo, um worker, ninguém reprocessa — fila simples",
+        "Time sem capacidade de operar cluster, ou prioridade nativa por mensagem (Kafka não tem)"
+      ]
+    },
+    {
+      "id": "save-send",
+      "kind": "escolha",
+      "kicker": "Checkout",
+      "prompt": "INSERT pedido 99; kafka.send(PedidoCriado). O processo morre no meio. Postgres e Kafka compartilham a transação?",
+      "options": [
+        {
+          "id": "nao",
+          "label": "Não. Ou o site tem o pedido e o log não; ou o log anuncia o que o rollback desfez",
+          "verdict": "bom",
+          "why": "Não existe 2PC barato entre o seu Postgres e o cluster. save(); send(); deixa um dos dois mundos mentindo. Outbox: as duas linhas na mesma transação SQL, poller depois."
+        },
+        {
+          "id": "atomico",
+          "label": "Sim. send() dentro da @Transactional nasce junto do INSERT",
+          "verdict": "ruim",
+          "why": "O driver JDBC não commita o ProduceRequest. Publicar “dentro” da transação SQL é a pegada mágica que não existe."
+        },
+        {
+          "id": "template",
+          "label": "KafkaTemplate já resolve. OutboxService é atraso",
+          "verdict": "ruim",
+          "why": "O template escreve no log. Não grava a linha do pedido. Sem outbox, Kafka down = POST falha ou pedido some do fato."
+        }
+      ]
+    },
+    {
+      "id": "inbox-tx",
+      "kind": "escolha",
+      "prompt": "Faturamento processa e-17. Onde entra o eventId — e o pagamento?",
+      "options": [
+        {
+          "id": "mesma",
+          "label": "Tabela inbox + insert de pagamento na mesma transação. Depois ack",
+          "verdict": "bom",
+          "why": "Replay do e-17: unique viola ou o if exists ignora. Sem unique, o replay cobra de novo. Outbox sozinho só empurra duplicata para o outro lado."
+        },
+        {
+          "id": "antes",
+          "label": "Grava o eventId, commita, depois cobra",
+          "verdict": "ruim",
+          "why": "Queda no meio: “já vi” sem cobrar. O restart ignora o 99 para sempre."
+        },
+        {
+          "id": "depois",
+          "label": "Cobra, commita o pagamento, depois grava o eventId",
+          "verdict": "ruim",
+          "why": "Queda no meio: cobrou sem “já vi”. Replay duplica. São a mesma transação ou não é inbox."
+        }
+      ]
+    },
+    {
+      "id": "estado-ou-id",
+      "kind": "escolha",
+      "prompt": "O envelope do PedidoCriado leva só o ID (“99 mudou, busca lá”) ou o estado para agir?",
+      "options": [
+        {
+          "id": "estado",
+          "label": "Estado suficiente: total, cupom, eventId. Ninguém liga de volta no checkout",
+          "verdict": "bom",
+          "why": "State transfer. Payload maior, pode envelhecer — mas o consumidor não depende do checkout estar no ar. A escolha é trade-off, não religião."
+        },
+        {
+          "id": "so-id",
+          "label": "Só pedidoId. Payload pequeno, GET /pedidos/99",
+          "verdict": "meio",
+          "why": "Notification. Barato de publicar. No pico o checkout vira API dos consumidores. Não é o máximo de desacoplamento — é o GET de volta."
+        },
+        {
+          "id": "streams",
+          "label": "Kafka Streams no faturamento, porque é o Kafka de verdade",
+          "verdict": "ruim",
+          "why": "Se o trabalho é chamar o cartão, consumer Spring + banco. Streams junta janelas do próprio log (join, changelog). Começar por Streams empilha estado sem necessidade."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Postgres e Kafka não compartilham transação. Outbox: pedido + mensagem na mesma transação; poller depois.",
+        "Outbox empurra at-least-once. Inbox (eventId unique) na mesma transação do efeito impede a segunda cobrança.",
+        "HTTP no clique. Log no fato consumado. Streams quando o trabalho é sobre o log, não sobre o cartão."
+      ]
+    }
+  ]
+}

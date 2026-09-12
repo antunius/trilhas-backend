@@ -1,0 +1,68 @@
+{
+  "beats": [
+    {
+      "id": "nome-errado",
+      "kind": "cena",
+      "kicker": "Contrato",
+      "title": "Alguém criou fila-do-faturamento. Analytics ficou de fora.",
+      "body": "<p>O checkout publica PedidoCriado nessa “fila”. O faturamento lê. Analytics pede o mesmo fato. Resposta do time: “sobe outro tópico, outro send”.</p><p>Tópico não é a caixa do João. É o <strong>nome do fato</strong> no cluster. Os bytes ficam nos arquivos das partições. O nome é só o ponteiro.</p>"
+    },
+    {
+      "id": "cli",
+      "kind": "explicar",
+      "title": "Três partições. Um nome. Append-only.",
+      "html": "<p>Metadata (partições, réplica, retenção) fica no controller. Mensagem fica no disco do líder e dos followers. Ninguém dá UPDATE na linha 40. Quem apaga é retenção ou compaction, em segmento velho.</p><p>No lab, criar na mão:</p><pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-topics.sh \\\n  --bootstrap-server localhost:9092 \\\n  --create --if-not-exists \\\n  --topic pedidos.criados \\\n  --partitions 3 \\\n  --replication-factor 1</pre><p>O Spring faz o mesmo no boot: <code>TopicConfig.java</code> — <code>TopicBuilder.name(...).partitions(3)</code>.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "O nome é o contrato. Auto-create é o contrato que ninguém assinou.",
+      "ganha": "Nome pelo fato: N consumidores, um produce. Partições combinadas. Replay enquanto a retenção deixar. Produtor não conhece o João.",
+      "paga": "Nome pelo destinatário: cada time novo pede tópico novo. Auto-create: 1 partição, config surpresa, hot partition no primeiro pico. Tópico não é processo na RAM — é log em disco com um nome.",
+      "quando": [
+        "Mais de um consumidor no mesmo fato",
+        "Você quer partições, retenção e réplica explícitos",
+        "O fato tem nome estável (pedidos.criados, pagamentos.aprovados)"
+      ],
+      "quandoNao": [
+        "Um worker, uma mensagem, ninguém vai reprocessar — aí uma fila clássica basta",
+        "Auto-create em produção “para ir mais rápido”",
+        "Um tópico genérico pedidos onde tudo é PedidoUpdated"
+      ]
+    },
+    {
+      "id": "como-chamar",
+      "kind": "escolha",
+      "prompt": "Como você batiza o tópico do PedidoCriado — sabendo que faturamento e analytics vão ler?",
+      "options": [
+        {
+          "id": "fato",
+          "label": "pedidos.criados — o fato. Quem quiser, se inscreve",
+          "verdict": "bom",
+          "why": "O contrato é o acontecimento. Novo time não pede um send novo. Pede um group.id novo."
+        },
+        {
+          "id": "destinatario",
+          "label": "fila-do-faturamento — o destinatário já no nome",
+          "verdict": "ruim",
+          "why": "Analytics não cabe. Você reacoplou produtor e consumidor no batismo. Tópico virou HTTP com nome de fila."
+        },
+        {
+          "id": "auto",
+          "label": "Nem crio. Publico. O cluster inventa o tópico",
+          "verdict": "ruim",
+          "why": "Auto-create esconde o contrato: 1 partição, retenção default, ninguém revisou. No Compose do lab está KAFKA_AUTO_CREATE_TOPICS_ENABLE=false de propósito."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Tópico é nome + logs das partições. Não é fila na memória do broker.",
+        "Nomeie pelo fato (pedidos.criados), não pelo destinatário (fila-do-faturamento).",
+        "Auto-create inventa 1 partição. No lab isso está desligado de propósito."
+      ]
+    }
+  ]
+}

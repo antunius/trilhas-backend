@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomeProgress } from "@/components/HomeProgress";
+import { HomeDashboard } from "@/components/HomeDashboard";
 import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/seo";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function HomePage() {
   return (
-    <div className="wrap">
+    <div>
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -24,16 +24,7 @@ export default function HomePage() {
           inLanguage: "pt-BR",
         }}
       />
-      <header className="hero">
-        <div className="eyebrow">Kafka · Arquitetura</div>
-        <h1>Duas trilhas, em páginas curtas</h1>
-        <p className="lede">
-          Kafka e arquitetura de software no mesmo caderno visual. Cada tema abre
-          numa página; o simulador da aula destranca a próxima. O progresso fica neste navegador.
-        </p>
-      </header>
-      <HomeProgress />
-      <footer>Next.js · Vercel · trilhas Kafka e Arquitetura.</footer>
+      <HomeDashboard />
     </div>
   );
 }

@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre saga: qual afirmação está certa?",
+      "q": "O que é saga?",
       "o": [
-        "Saga: passos locais + compensação. Não há rollback distribuído.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Saga usa uma transação global que abrange todos os serviços.",
+        "Saga apaga o registro que o outro serviço já gravou.",
+        "Saga é passo local mais compensação: não existe desfazer distribuído.",
+        "Saga é o desfazer distribuído entre os dois bancos."
       ],
-      "a": 0,
-      "w": "Coreografia vs orquestração.",
+      "a": 2,
+      "w": "O passo 2 falhou, então você libera o estoque com uma operação inversa visível.",
       "t": "saga"
     },
     {
-      "q": "Qual frase sobre saga está certa?",
+      "q": "Saga é desfazer distribuído?",
       "o": [
-        "Saga: passos locais + compensação. Não há rollback distribuído.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Saga é passo local mais compensação: não existe desfazer distribuído.",
+        "Saga é o desfazer distribuído entre os dois bancos.",
+        "Saga usa uma transação global que abrange todos os serviços.",
+        "Saga apaga o registro que o outro serviço já gravou."
       ],
       "a": 0,
-      "w": "Coreografia vs orquestração.",
+      "w": "O passo 2 falhou, então você libera o estoque com uma operação inversa visível.",
       "t": "saga"
     },
     {
-      "q": "Saga — o que acontece de verdade?",
+      "q": "O passo 2 falhou. Como o estoque volta ao estado honesto?",
       "o": [
-        "Saga: passos locais + compensação. Não há rollback distribuído.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Saga usa uma transação global que abrange todos os serviços.",
+        "Saga apaga o registro que o outro serviço já gravou.",
+        "Saga é passo local mais compensação: não existe desfazer distribuído.",
+        "Saga é o desfazer distribuído entre os dois bancos."
       ],
-      "a": 0,
-      "w": "Coreografia vs orquestração.",
+      "a": 2,
+      "w": "O passo 2 falhou, então você libera o estoque com uma operação inversa visível.",
       "t": "saga"
     },
     {
-      "q": "Marque a leitura correta (saga).",
+      "q": "Saga usa transação global?",
       "o": [
-        "Saga: passos locais + compensação. Não há rollback distribuído.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Saga apaga o registro que o outro serviço já gravou.",
+        "Saga é passo local mais compensação: não existe desfazer distribuído.",
+        "Saga é o desfazer distribuído entre os dois bancos.",
+        "Saga usa uma transação global que abrange todos os serviços."
       ],
-      "a": 0,
-      "w": "Coreografia vs orquestração.",
+      "a": 1,
+      "w": "O passo 2 falhou, então você libera o estoque com uma operação inversa visível.",
       "t": "saga"
     },
     {
-      "q": "Corrija o mito sobre saga.",
+      "q": "O que a compensação faz, na prática?",
       "o": [
-        "Saga: passos locais + compensação. Não há rollback distribuído.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Saga apaga o registro que o outro serviço já gravou.",
+        "Saga é passo local mais compensação: não existe desfazer distribuído.",
+        "Saga é o desfazer distribuído entre os dois bancos.",
+        "Saga usa uma transação global que abrange todos os serviços."
       ],
-      "a": 0,
-      "w": "Coreografia vs orquestração.",
+      "a": 1,
+      "w": "O passo 2 falhou, então você libera o estoque com uma operação inversa visível.",
       "t": "saga"
     },
     {
-      "q": "No caderno, a respeito de saga: qual vale?",
+      "q": "Saga apaga o registro do outro serviço?",
       "o": [
-        "Saga: passos locais + compensação. Não há rollback distribuído.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Saga usa uma transação global que abrange todos os serviços.",
+        "Saga apaga o registro que o outro serviço já gravou.",
+        "Saga é passo local mais compensação: não existe desfazer distribuído.",
+        "Saga é o desfazer distribuído entre os dois bancos."
       ],
-      "a": 0,
-      "w": "Coreografia vs orquestração.",
+      "a": 2,
+      "w": "O passo 2 falhou, então você libera o estoque com uma operação inversa visível.",
       "t": "saga"
     },
     {
-      "q": "Se perguntarem saga na mesa, qual frase é a verdadeira?",
+      "q": "Existe desfazer mágico entre dois bancos?",
       "o": [
-        "Saga: passos locais + compensação. Não há rollback distribuído.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Saga é passo local mais compensação: não existe desfazer distribuído.",
+        "Saga é o desfazer distribuído entre os dois bancos.",
+        "Saga usa uma transação global que abrange todos os serviços.",
+        "Saga apaga o registro que o outro serviço já gravou."
       ],
       "a": 0,
-      "w": "Coreografia vs orquestração.",
+      "w": "O passo 2 falhou, então você libera o estoque com uma operação inversa visível.",
       "t": "saga"
     },
     {
-      "q": "Sobre outbox: qual afirmação está certa?",
+      "q": "Como fechar o buraco entre gravar e publicar?",
       "o": [
-        "Outbox: evento na mesma transação do dado; publicador depois.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Grave o dado, confirme, e depois publique o evento em outra chamada.",
+        "Grave o evento primeiro e o dado depois, para não perder a mensagem.",
+        "O publicador precisa rodar dentro da mesma transação do dado.",
+        "Grave o dado e a linha do evento na mesma transação; publique depois."
       ],
-      "a": 0,
-      "w": "Buraco save+send.",
+      "a": 3,
+      "w": "Assim o registro e o evento nascem juntos. Um publicador separado envia em seguida.",
       "t": "outbox"
     },
     {
-      "q": "Qual frase sobre outbox está certa?",
+      "q": "O que entra na mesma transação do dado?",
       "o": [
-        "Outbox: evento na mesma transação do dado; publicador depois.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Grave o dado e a linha do evento na mesma transação; publique depois.",
+        "Grave o dado, confirme, e depois publique o evento em outra chamada.",
+        "Grave o evento primeiro e o dado depois, para não perder a mensagem.",
+        "O publicador precisa rodar dentro da mesma transação do dado."
       ],
       "a": 0,
-      "w": "Buraco save+send.",
+      "w": "Assim o registro e o evento nascem juntos. Um publicador separado envia em seguida.",
       "t": "outbox"
     },
     {
-      "q": "Outbox — o que acontece de verdade?",
+      "q": "Quem publica o evento, e quando?",
       "o": [
-        "Outbox: evento na mesma transação do dado; publicador depois.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Grave o dado e a linha do evento na mesma transação; publique depois.",
+        "Grave o dado, confirme, e depois publique o evento em outra chamada.",
+        "Grave o evento primeiro e o dado depois, para não perder a mensagem.",
+        "O publicador precisa rodar dentro da mesma transação do dado."
       ],
       "a": 0,
-      "w": "Buraco save+send.",
+      "w": "Assim o registro e o evento nascem juntos. Um publicador separado envia em seguida.",
       "t": "outbox"
     },
     {
-      "q": "Marque a leitura correta (outbox).",
+      "q": "Gravar, confirmar e depois publicar funciona?",
       "o": [
-        "Outbox: evento na mesma transação do dado; publicador depois.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O publicador precisa rodar dentro da mesma transação do dado.",
+        "Grave o dado e a linha do evento na mesma transação; publique depois.",
+        "Grave o dado, confirme, e depois publique o evento em outra chamada.",
+        "Grave o evento primeiro e o dado depois, para não perder a mensagem."
       ],
-      "a": 0,
-      "w": "Buraco save+send.",
+      "a": 1,
+      "w": "Assim o registro e o evento nascem juntos. Um publicador separado envia em seguida.",
       "t": "outbox"
     },
     {
-      "q": "Corrija o mito sobre outbox.",
+      "q": "Gravar o evento antes do dado resolve?",
       "o": [
-        "Outbox: evento na mesma transação do dado; publicador depois.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Grave o evento primeiro e o dado depois, para não perder a mensagem.",
+        "O publicador precisa rodar dentro da mesma transação do dado.",
+        "Grave o dado e a linha do evento na mesma transação; publique depois.",
+        "Grave o dado, confirme, e depois publique o evento em outra chamada."
       ],
-      "a": 0,
-      "w": "Buraco save+send.",
+      "a": 2,
+      "w": "Assim o registro e o evento nascem juntos. Um publicador separado envia em seguida.",
       "t": "outbox"
     },
     {
-      "q": "No caderno, a respeito de outbox: qual vale?",
+      "q": "O publicador roda dentro da transação?",
       "o": [
-        "Outbox: evento na mesma transação do dado; publicador depois.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Grave o dado e a linha do evento na mesma transação; publique depois.",
+        "Grave o dado, confirme, e depois publique o evento em outra chamada.",
+        "Grave o evento primeiro e o dado depois, para não perder a mensagem.",
+        "O publicador precisa rodar dentro da mesma transação do dado."
       ],
       "a": 0,
-      "w": "Buraco save+send.",
+      "w": "Assim o registro e o evento nascem juntos. Um publicador separado envia em seguida.",
       "t": "outbox"
     },
     {
-      "q": "Se perguntarem outbox na mesa, qual frase é a verdadeira?",
+      "q": "O registro existe e ninguém soube. O que faltou?",
       "o": [
-        "Outbox: evento na mesma transação do dado; publicador depois.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Grave o dado e a linha do evento na mesma transação; publique depois.",
+        "Grave o dado, confirme, e depois publique o evento em outra chamada.",
+        "Grave o evento primeiro e o dado depois, para não perder a mensagem.",
+        "O publicador precisa rodar dentro da mesma transação do dado."
       ],
       "a": 0,
-      "w": "Buraco save+send.",
+      "w": "Assim o registro e o evento nascem juntos. Um publicador separado envia em seguida.",
       "t": "outbox"
     },
     {
-      "q": "Sobre CQRS: qual afirmação está certa?",
+      "q": "O que CQRS separa?",
       "o": [
-        "CQRS: modelo de escrita ≠ leitura. Caro; só quando os requisitos divergem.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "CQRS separa o modelo de escrita do de leitura, quando os requisitos são muito diferentes.",
+        "CQRS é o default para o sistema já nascer escalável.",
+        "CQRS é o nome técnico de réplica de leitura no mesmo modelo.",
+        "CQRS serve para qualquer cadastro simples com um formulário."
       ],
       "a": 0,
-      "w": "Não é réplica com outro nome.",
+      "w": "Feed que lê ordens de magnitude acima da escrita justifica. Cadastro na tela de administração, não.",
       "t": "CQRS"
     },
     {
-      "q": "Qual frase sobre CQRS está certa?",
+      "q": "Quando CQRS se justifica?",
       "o": [
-        "CQRS: modelo de escrita ≠ leitura. Caro; só quando os requisitos divergem.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "CQRS separa o modelo de escrita do de leitura, quando os requisitos são muito diferentes.",
+        "CQRS é o default para o sistema já nascer escalável.",
+        "CQRS é o nome técnico de réplica de leitura no mesmo modelo.",
+        "CQRS serve para qualquer cadastro simples com um formulário."
       ],
       "a": 0,
-      "w": "Não é réplica com outro nome.",
+      "w": "Feed que lê ordens de magnitude acima da escrita justifica. Cadastro na tela de administração, não.",
       "t": "CQRS"
     },
     {
-      "q": "CQRS — o que acontece de verdade?",
+      "q": "CQRS é o default para nascer escalável?",
       "o": [
-        "CQRS: modelo de escrita ≠ leitura. Caro; só quando os requisitos divergem.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "CQRS é o default para o sistema já nascer escalável.",
+        "CQRS é o nome técnico de réplica de leitura no mesmo modelo.",
+        "CQRS serve para qualquer cadastro simples com um formulário.",
+        "CQRS separa o modelo de escrita do de leitura, quando os requisitos são muito diferentes."
       ],
-      "a": 0,
-      "w": "Não é réplica com outro nome.",
+      "a": 3,
+      "w": "Feed que lê ordens de magnitude acima da escrita justifica. Cadastro na tela de administração, não.",
       "t": "CQRS"
     },
     {
-      "q": "Marque a leitura correta (CQRS).",
+      "q": "Cadastro com um formulário e vinte chamadas por minuto: CQRS?",
       "o": [
-        "CQRS: modelo de escrita ≠ leitura. Caro; só quando os requisitos divergem.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "CQRS separa o modelo de escrita do de leitura, quando os requisitos são muito diferentes.",
+        "CQRS é o default para o sistema já nascer escalável.",
+        "CQRS é o nome técnico de réplica de leitura no mesmo modelo.",
+        "CQRS serve para qualquer cadastro simples com um formulário."
       ],
       "a": 0,
-      "w": "Não é réplica com outro nome.",
+      "w": "Feed que lê ordens de magnitude acima da escrita justifica. Cadastro na tela de administração, não.",
       "t": "CQRS"
     },
     {
-      "q": "Corrija o mito sobre CQRS.",
+      "q": "CQRS é réplica de leitura com outro nome?",
       "o": [
-        "CQRS: modelo de escrita ≠ leitura. Caro; só quando os requisitos divergem.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "CQRS serve para qualquer cadastro simples com um formulário.",
+        "CQRS separa o modelo de escrita do de leitura, quando os requisitos são muito diferentes.",
+        "CQRS é o default para o sistema já nascer escalável.",
+        "CQRS é o nome técnico de réplica de leitura no mesmo modelo."
       ],
-      "a": 0,
-      "w": "Não é réplica com outro nome.",
+      "a": 1,
+      "w": "Feed que lê ordens de magnitude acima da escrita justifica. Cadastro na tela de administração, não.",
       "t": "CQRS"
     },
     {
-      "q": "No caderno, a respeito de CQRS: qual vale?",
+      "q": "Que requisito precisa divergir para CQRS valer?",
       "o": [
-        "CQRS: modelo de escrita ≠ leitura. Caro; só quando os requisitos divergem.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "CQRS serve para qualquer cadastro simples com um formulário.",
+        "CQRS separa o modelo de escrita do de leitura, quando os requisitos são muito diferentes.",
+        "CQRS é o default para o sistema já nascer escalável.",
+        "CQRS é o nome técnico de réplica de leitura no mesmo modelo."
       ],
-      "a": 0,
-      "w": "Não é réplica com outro nome.",
+      "a": 1,
+      "w": "Feed que lê ordens de magnitude acima da escrita justifica. Cadastro na tela de administração, não.",
       "t": "CQRS"
     },
     {
-      "q": "Se perguntarem CQRS na mesa, qual frase é a verdadeira?",
+      "q": "CQRS serve para qualquer cadastro?",
       "o": [
-        "CQRS: modelo de escrita ≠ leitura. Caro; só quando os requisitos divergem.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "CQRS separa o modelo de escrita do de leitura, quando os requisitos são muito diferentes.",
+        "CQRS é o default para o sistema já nascer escalável.",
+        "CQRS é o nome técnico de réplica de leitura no mesmo modelo.",
+        "CQRS serve para qualquer cadastro simples com um formulário."
       ],
       "a": 0,
-      "w": "Não é réplica com outro nome.",
+      "w": "Feed que lê ordens de magnitude acima da escrita justifica. Cadastro na tela de administração, não.",
       "t": "CQRS"
     },
     {
-      "q": "Sobre ES: qual afirmação está certa?",
+      "q": "Como o estado é obtido quando você guarda só eventos?",
       "o": [
-        "Event sourcing: estado = replay. Auditoria incrível, operação cara. Raro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Guardar o estado como sequência de eventos é raro: o custo é operação o ano inteiro.",
+        "Esse desenho é o default de qualquer cadastro simples.",
+        "Reconstruir estado a partir de eventos sai de graça na operação.",
+        "Reprocessar eventos não permite reconstruir o estado."
       ],
       "a": 0,
-      "w": "Não religião.",
+      "w": "Você reconstrói o estado reprocessando os eventos. Ganha auditoria, paga versionamento e consulta difícil.",
       "t": "ES"
     },
     {
-      "q": "Qual frase sobre ES está certa?",
+      "q": "Guardar o estado como eventos é comum ou raro?",
       "o": [
-        "Event sourcing: estado = replay. Auditoria incrível, operação cara. Raro.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Guardar o estado como sequência de eventos é raro: o custo é operação o ano inteiro.",
+        "Esse desenho é o default de qualquer cadastro simples.",
+        "Reconstruir estado a partir de eventos sai de graça na operação.",
+        "Reprocessar eventos não permite reconstruir o estado."
       ],
       "a": 0,
-      "w": "Não religião.",
+      "w": "Você reconstrói o estado reprocessando os eventos. Ganha auditoria, paga versionamento e consulta difícil.",
       "t": "ES"
     },
     {
-      "q": "ES — o que acontece de verdade?",
+      "q": "Onde está o custo de guardar só eventos?",
       "o": [
-        "Event sourcing: estado = replay. Auditoria incrível, operação cara. Raro.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Guardar o estado como sequência de eventos é raro: o custo é operação o ano inteiro.",
+        "Esse desenho é o default de qualquer cadastro simples.",
+        "Reconstruir estado a partir de eventos sai de graça na operação.",
+        "Reprocessar eventos não permite reconstruir o estado."
       ],
       "a": 0,
-      "w": "Não religião.",
+      "w": "Você reconstrói o estado reprocessando os eventos. Ganha auditoria, paga versionamento e consulta difícil.",
       "t": "ES"
     },
     {
-      "q": "Marque a leitura correta (ES).",
+      "q": "O que esse desenho cobra?",
       "o": [
-        "Event sourcing: estado = replay. Auditoria incrível, operação cara. Raro.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Reconstruir estado a partir de eventos sai de graça na operação.",
+        "Reprocessar eventos não permite reconstruir o estado.",
+        "Guardar o estado como sequência de eventos é raro: o custo é operação o ano inteiro.",
+        "Esse desenho é o default de qualquer cadastro simples."
       ],
-      "a": 0,
-      "w": "Não religião.",
+      "a": 2,
+      "w": "Você reconstrói o estado reprocessando os eventos. Ganha auditoria, paga versionamento e consulta difícil.",
       "t": "ES"
     },
     {
-      "q": "Corrija o mito sobre ES.",
+      "q": "Guardar o estado como eventos é default de cadastro?",
       "o": [
-        "Event sourcing: estado = replay. Auditoria incrível, operação cara. Raro.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Reconstruir estado a partir de eventos sai de graça na operação.",
+        "Reprocessar eventos não permite reconstruir o estado.",
+        "Guardar o estado como sequência de eventos é raro: o custo é operação o ano inteiro.",
+        "Esse desenho é o default de qualquer cadastro simples."
       ],
-      "a": 0,
-      "w": "Não religião.",
+      "a": 2,
+      "w": "Você reconstrói o estado reprocessando os eventos. Ganha auditoria, paga versionamento e consulta difícil.",
       "t": "ES"
     },
     {
-      "q": "No caderno, a respeito de ES: qual vale?",
+      "q": "Reprocessar eventos reconstrói o estado?",
       "o": [
-        "Event sourcing: estado = replay. Auditoria incrível, operação cara. Raro.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Esse desenho é o default de qualquer cadastro simples.",
+        "Reconstruir estado a partir de eventos sai de graça na operação.",
+        "Reprocessar eventos não permite reconstruir o estado.",
+        "Guardar o estado como sequência de eventos é raro: o custo é operação o ano inteiro."
       ],
-      "a": 0,
-      "w": "Não religião.",
+      "a": 3,
+      "w": "Você reconstrói o estado reprocessando os eventos. Ganha auditoria, paga versionamento e consulta difícil.",
       "t": "ES"
     },
     {
-      "q": "Se perguntarem ES na mesa, qual frase é a verdadeira?",
+      "q": "Esse desenho sai de graça na operação?",
       "o": [
-        "Event sourcing: estado = replay. Auditoria incrível, operação cara. Raro.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Reconstruir estado a partir de eventos sai de graça na operação.",
+        "Reprocessar eventos não permite reconstruir o estado.",
+        "Guardar o estado como sequência de eventos é raro: o custo é operação o ano inteiro.",
+        "Esse desenho é o default de qualquer cadastro simples."
       ],
-      "a": 0,
-      "w": "Não religião.",
+      "a": 2,
+      "w": "Você reconstrói o estado reprocessando os eventos. Ganha auditoria, paga versionamento e consulta difícil.",
       "t": "ES"
     },
     {
-      "q": "Sobre idempotência pagto: qual afirmação está certa?",
+      "q": "O que a idempotency-key garante na segunda chamada?",
       "o": [
-        "API de pagamento: Idempotency-Key + inbox.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Dois toques no botão nunca chegam duas vezes ao servidor.",
+        "Interface de pagamento pede idempotency-key: a segunda chamada devolve o mesmo resultado.",
+        "Interface de pagamento não precisa de chave: o servidor detecta a duplicata.",
+        "Com idempotency-key a segunda chamada cobra de novo."
       ],
-      "a": 0,
-      "w": "At-least-once chega.",
+      "a": 1,
+      "w": "Dois toques no botão sem chave viram duas autorizações. Com chave, só uma cobrança.",
       "t": "idempotência pagto"
     },
     {
-      "q": "Qual frase sobre idempotência pagto está certa?",
+      "q": "Dois toques no botão sem chave: o que acontece?",
       "o": [
-        "API de pagamento: Idempotency-Key + inbox.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Com idempotency-key a segunda chamada cobra de novo.",
+        "Dois toques no botão nunca chegam duas vezes ao servidor.",
+        "Interface de pagamento pede idempotency-key: a segunda chamada devolve o mesmo resultado.",
+        "Interface de pagamento não precisa de chave: o servidor detecta a duplicata."
       ],
-      "a": 0,
-      "w": "At-least-once chega.",
+      "a": 2,
+      "w": "Dois toques no botão sem chave viram duas autorizações. Com chave, só uma cobrança.",
       "t": "idempotência pagto"
     },
     {
-      "q": "Idempotência pagto — o que acontece de verdade?",
+      "q": "A interface de pagamento precisa de chave?",
       "o": [
-        "API de pagamento: Idempotency-Key + inbox.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Com idempotency-key a segunda chamada cobra de novo.",
+        "Dois toques no botão nunca chegam duas vezes ao servidor.",
+        "Interface de pagamento pede idempotency-key: a segunda chamada devolve o mesmo resultado.",
+        "Interface de pagamento não precisa de chave: o servidor detecta a duplicata."
       ],
-      "a": 0,
-      "w": "At-least-once chega.",
+      "a": 2,
+      "w": "Dois toques no botão sem chave viram duas autorizações. Com chave, só uma cobrança.",
       "t": "idempotência pagto"
     },
     {
-      "q": "Marque a leitura correta (idempotência pagto).",
+      "q": "Com chave, a segunda chamada cobra de novo?",
       "o": [
-        "API de pagamento: Idempotency-Key + inbox.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Interface de pagamento não precisa de chave: o servidor detecta a duplicata.",
+        "Com idempotency-key a segunda chamada cobra de novo.",
+        "Dois toques no botão nunca chegam duas vezes ao servidor.",
+        "Interface de pagamento pede idempotency-key: a segunda chamada devolve o mesmo resultado."
       ],
-      "a": 0,
-      "w": "At-least-once chega.",
+      "a": 3,
+      "w": "Dois toques no botão sem chave viram duas autorizações. Com chave, só uma cobrança.",
       "t": "idempotência pagto"
     },
     {
-      "q": "Corrija o mito sobre idempotência pagto.",
+      "q": "O servidor detecta duplicata sozinho?",
       "o": [
-        "API de pagamento: Idempotency-Key + inbox.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Interface de pagamento pede idempotency-key: a segunda chamada devolve o mesmo resultado.",
+        "Interface de pagamento não precisa de chave: o servidor detecta a duplicata.",
+        "Com idempotency-key a segunda chamada cobra de novo.",
+        "Dois toques no botão nunca chegam duas vezes ao servidor."
       ],
       "a": 0,
-      "w": "At-least-once chega.",
+      "w": "Dois toques no botão sem chave viram duas autorizações. Com chave, só uma cobrança.",
       "t": "idempotência pagto"
     },
     {
-      "q": "No caderno, a respeito de idempotência pagto: qual vale?",
+      "q": "Como evitar duas autorizações do mesmo pagamento?",
       "o": [
-        "API de pagamento: Idempotency-Key + inbox.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Dois toques no botão nunca chegam duas vezes ao servidor.",
+        "Interface de pagamento pede idempotency-key: a segunda chamada devolve o mesmo resultado.",
+        "Interface de pagamento não precisa de chave: o servidor detecta a duplicata.",
+        "Com idempotency-key a segunda chamada cobra de novo."
       ],
-      "a": 0,
-      "w": "At-least-once chega.",
+      "a": 1,
+      "w": "Dois toques no botão sem chave viram duas autorizações. Com chave, só uma cobrança.",
       "t": "idempotência pagto"
     },
     {
-      "q": "Se perguntarem idempotência pagto na mesa, qual frase é a verdadeira?",
+      "q": "Dois toques chegam duas vezes ao servidor?",
       "o": [
-        "API de pagamento: Idempotency-Key + inbox.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Interface de pagamento não precisa de chave: o servidor detecta a duplicata.",
+        "Com idempotency-key a segunda chamada cobra de novo.",
+        "Dois toques no botão nunca chegam duas vezes ao servidor.",
+        "Interface de pagamento pede idempotency-key: a segunda chamada devolve o mesmo resultado."
       ],
-      "a": 0,
-      "w": "At-least-once chega.",
+      "a": 3,
+      "w": "Dois toques no botão sem chave viram duas autorizações. Com chave, só uma cobrança.",
       "t": "idempotência pagto"
     },
     {
-      "q": "Sobre ferramenta: qual afirmação está certa?",
+      "q": "Nome de padrão prova que o problema é aquele?",
       "o": [
-        "Nomes de padrão não provam que o problema era prego.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Padrão com nome famoso serve para qualquer problema parecido.",
+        "Nome de padrão não prova que o problema era do tipo que ele resolve.",
+        "Nome de padrão conhecido já justifica adotar a solução.",
+        "Escolha a ferramenta primeiro e depois procure o requisito."
       ],
-      "a": 0,
-      "w": "Analogia martelo.",
+      "a": 1,
+      "w": "Martelo não prova que era prego. Primeiro o requisito, depois a ferramenta.",
       "t": "ferramenta"
     },
     {
-      "q": "Qual frase sobre ferramenta está certa?",
+      "q": "O que vem primeiro: requisito ou ferramenta?",
       "o": [
-        "Nomes de padrão não provam que o problema era prego.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Nome de padrão conhecido já justifica adotar a solução.",
+        "Escolha a ferramenta primeiro e depois procure o requisito.",
+        "Padrão com nome famoso serve para qualquer problema parecido.",
+        "Nome de padrão não prova que o problema era do tipo que ele resolve."
       ],
-      "a": 0,
-      "w": "Analogia martelo.",
+      "a": 3,
+      "w": "Martelo não prova que era prego. Primeiro o requisito, depois a ferramenta.",
       "t": "ferramenta"
     },
     {
-      "q": "Ferramenta — o que acontece de verdade?",
+      "q": "Nome famoso já justifica adotar?",
       "o": [
-        "Nomes de padrão não provam que o problema era prego.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Nome de padrão não prova que o problema era do tipo que ele resolve.",
+        "Nome de padrão conhecido já justifica adotar a solução.",
+        "Escolha a ferramenta primeiro e depois procure o requisito.",
+        "Padrão com nome famoso serve para qualquer problema parecido."
       ],
       "a": 0,
-      "w": "Analogia martelo.",
+      "w": "Martelo não prova que era prego. Primeiro o requisito, depois a ferramenta.",
       "t": "ferramenta"
     },
     {
-      "q": "Marque a leitura correta (ferramenta).",
+      "q": "Por que a aula fala de martelo e prego?",
       "o": [
-        "Nomes de padrão não provam que o problema era prego.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Nome de padrão conhecido já justifica adotar a solução.",
+        "Escolha a ferramenta primeiro e depois procure o requisito.",
+        "Padrão com nome famoso serve para qualquer problema parecido.",
+        "Nome de padrão não prova que o problema era do tipo que ele resolve."
       ],
-      "a": 0,
-      "w": "Analogia martelo.",
+      "a": 3,
+      "w": "Martelo não prova que era prego. Primeiro o requisito, depois a ferramenta.",
       "t": "ferramenta"
     },
     {
-      "q": "Corrija o mito sobre ferramenta.",
+      "q": "Escolher a ferramenta antes do requisito funciona?",
       "o": [
-        "Nomes de padrão não provam que o problema era prego.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Nome de padrão conhecido já justifica adotar a solução.",
+        "Escolha a ferramenta primeiro e depois procure o requisito.",
+        "Padrão com nome famoso serve para qualquer problema parecido.",
+        "Nome de padrão não prova que o problema era do tipo que ele resolve."
       ],
-      "a": 0,
-      "w": "Analogia martelo.",
+      "a": 3,
+      "w": "Martelo não prova que era prego. Primeiro o requisito, depois a ferramenta.",
       "t": "ferramenta"
     },
     {
-      "q": "No caderno, a respeito de ferramenta: qual vale?",
+      "q": "Padrão famoso serve para qualquer problema?",
       "o": [
-        "Nomes de padrão não provam que o problema era prego.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Padrão com nome famoso serve para qualquer problema parecido.",
+        "Nome de padrão não prova que o problema era do tipo que ele resolve.",
+        "Nome de padrão conhecido já justifica adotar a solução.",
+        "Escolha a ferramenta primeiro e depois procure o requisito."
       ],
-      "a": 0,
-      "w": "Analogia martelo.",
+      "a": 1,
+      "w": "Martelo não prova que era prego. Primeiro o requisito, depois a ferramenta.",
       "t": "ferramenta"
     },
     {
-      "q": "Se perguntarem ferramenta na mesa, qual frase é a verdadeira?",
+      "q": "Como decidir se o padrão cabe?",
       "o": [
-        "Nomes de padrão não provam que o problema era prego.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Nome de padrão conhecido já justifica adotar a solução.",
+        "Escolha a ferramenta primeiro e depois procure o requisito.",
+        "Padrão com nome famoso serve para qualquer problema parecido.",
+        "Nome de padrão não prova que o problema era do tipo que ele resolve."
       ],
-      "a": 0,
-      "w": "Analogia martelo.",
+      "a": 3,
+      "w": "Martelo não prova que era prego. Primeiro o requisito, depois a ferramenta.",
       "t": "ferramenta"
     },
     {
-      "q": "Sobre orquestração: qual afirmação está certa?",
+      "q": "O que um condutor central dá?",
       "o": [
-        "Maestro na saga: mais visível, mais ponto único.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Um condutor central não tem nenhum custo em troca da visibilidade.",
+        "O condutor central é sempre a melhor escolha, sem trade.",
+        "Um condutor central deixa o fluxo visível e vira ponto único.",
+        "Um condutor central deixa o fluxo invisível e distribui o risco."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 2,
+      "w": "Você vê o filme inteiro num lugar, e esse lugar concentra risco. Os dois preços existem.",
       "t": "orquestração"
     },
     {
-      "q": "Qual frase sobre orquestração está certa?",
+      "q": "O que um condutor central cobra?",
       "o": [
-        "Maestro na saga: mais visível, mais ponto único.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Um condutor central deixa o fluxo visível e vira ponto único.",
+        "Um condutor central deixa o fluxo invisível e distribui o risco.",
+        "Um condutor central não tem nenhum custo em troca da visibilidade.",
+        "O condutor central é sempre a melhor escolha, sem trade."
       ],
       "a": 0,
-      "w": "Trade.",
+      "w": "Você vê o filme inteiro num lugar, e esse lugar concentra risco. Os dois preços existem.",
       "t": "orquestração"
     },
     {
-      "q": "Orquestração — o que acontece de verdade?",
+      "q": "Com condutor central, o fluxo fica visível ou invisível?",
       "o": [
-        "Maestro na saga: mais visível, mais ponto único.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O condutor central é sempre a melhor escolha, sem trade.",
+        "Um condutor central deixa o fluxo visível e vira ponto único.",
+        "Um condutor central deixa o fluxo invisível e distribui o risco.",
+        "Um condutor central não tem nenhum custo em troca da visibilidade."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 1,
+      "w": "Você vê o filme inteiro num lugar, e esse lugar concentra risco. Os dois preços existem.",
       "t": "orquestração"
     },
     {
-      "q": "Marque a leitura correta (orquestração).",
+      "q": "O condutor central concentra ou distribui risco?",
       "o": [
-        "Maestro na saga: mais visível, mais ponto único.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Um condutor central não tem nenhum custo em troca da visibilidade.",
+        "O condutor central é sempre a melhor escolha, sem trade.",
+        "Um condutor central deixa o fluxo visível e vira ponto único.",
+        "Um condutor central deixa o fluxo invisível e distribui o risco."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 2,
+      "w": "Você vê o filme inteiro num lugar, e esse lugar concentra risco. Os dois preços existem.",
       "t": "orquestração"
     },
     {
-      "q": "Corrija o mito sobre orquestração.",
+      "q": "Existe custo em ter um condutor central?",
       "o": [
-        "Maestro na saga: mais visível, mais ponto único.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Um condutor central não tem nenhum custo em troca da visibilidade.",
+        "O condutor central é sempre a melhor escolha, sem trade.",
+        "Um condutor central deixa o fluxo visível e vira ponto único.",
+        "Um condutor central deixa o fluxo invisível e distribui o risco."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 2,
+      "w": "Você vê o filme inteiro num lugar, e esse lugar concentra risco. Os dois preços existem.",
       "t": "orquestração"
     },
     {
-      "q": "No caderno, a respeito de orquestração: qual vale?",
+      "q": "O condutor central é sempre a melhor escolha?",
       "o": [
-        "Maestro na saga: mais visível, mais ponto único.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Um condutor central não tem nenhum custo em troca da visibilidade.",
+        "O condutor central é sempre a melhor escolha, sem trade.",
+        "Um condutor central deixa o fluxo visível e vira ponto único.",
+        "Um condutor central deixa o fluxo invisível e distribui o risco."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 2,
+      "w": "Você vê o filme inteiro num lugar, e esse lugar concentra risco. Os dois preços existem.",
       "t": "orquestração"
     },
     {
-      "q": "Se perguntarem orquestração na mesa, qual frase é a verdadeira?",
+      "q": "Você quer ver o filme inteiro. Qual desenho?",
       "o": [
-        "Maestro na saga: mais visível, mais ponto único.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O condutor central é sempre a melhor escolha, sem trade.",
+        "Um condutor central deixa o fluxo visível e vira ponto único.",
+        "Um condutor central deixa o fluxo invisível e distribui o risco.",
+        "Um condutor central não tem nenhum custo em troca da visibilidade."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 1,
+      "w": "Você vê o filme inteiro num lugar, e esse lugar concentra risco. Os dois preços existem.",
       "t": "orquestração"
     },
     {
-      "q": "Sobre coreografia: qual afirmação está certa?",
+      "q": "O que acontece quando cada serviço reage ao evento do outro?",
       "o": [
-        "Eventos entre serviços: menos centro, mais difícil de ver o filme.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Cada serviço reage ao evento do outro: desacopla e esconde o fluxo global.",
+        "Cada serviço reagindo ao evento do outro deixa o fluxo global mais visível.",
+        "Esse arranjo serve para fluxos de quinze passos sem problema.",
+        "Reagir a eventos acopla os serviços mais do que a chamada direta."
       ],
       "a": 0,
-      "w": "Trade.",
+      "w": "Serve para dois ou três passos. Quando o fluxo cresce, ninguém enxerga o filme inteiro.",
       "t": "coreografia"
     },
     {
-      "q": "Qual frase sobre coreografia está certa?",
+      "q": "Esse arranjo deixa o fluxo global visível?",
       "o": [
-        "Eventos entre serviços: menos centro, mais difícil de ver o filme.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Reagir a eventos acopla os serviços mais do que a chamada direta.",
+        "Cada serviço reage ao evento do outro: desacopla e esconde o fluxo global.",
+        "Cada serviço reagindo ao evento do outro deixa o fluxo global mais visível.",
+        "Esse arranjo serve para fluxos de quinze passos sem problema."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 1,
+      "w": "Serve para dois ou três passos. Quando o fluxo cresce, ninguém enxerga o filme inteiro.",
       "t": "coreografia"
     },
     {
-      "q": "Coreografia — o que acontece de verdade?",
+      "q": "Para quantos passos esse arranjo serve?",
       "o": [
-        "Eventos entre serviços: menos centro, mais difícil de ver o filme.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Cada serviço reagindo ao evento do outro deixa o fluxo global mais visível.",
+        "Esse arranjo serve para fluxos de quinze passos sem problema.",
+        "Reagir a eventos acopla os serviços mais do que a chamada direta.",
+        "Cada serviço reage ao evento do outro: desacopla e esconde o fluxo global."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 3,
+      "w": "Serve para dois ou três passos. Quando o fluxo cresce, ninguém enxerga o filme inteiro.",
       "t": "coreografia"
     },
     {
-      "q": "Marque a leitura correta (coreografia).",
+      "q": "O que você perde ao desacoplar por evento?",
       "o": [
-        "Eventos entre serviços: menos centro, mais difícil de ver o filme.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Reagir a eventos acopla os serviços mais do que a chamada direta.",
+        "Cada serviço reage ao evento do outro: desacopla e esconde o fluxo global.",
+        "Cada serviço reagindo ao evento do outro deixa o fluxo global mais visível.",
+        "Esse arranjo serve para fluxos de quinze passos sem problema."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 1,
+      "w": "Serve para dois ou três passos. Quando o fluxo cresce, ninguém enxerga o filme inteiro.",
       "t": "coreografia"
     },
     {
-      "q": "Corrija o mito sobre coreografia.",
+      "q": "Fluxo de quinze passos: esse arranjo aguenta?",
       "o": [
-        "Eventos entre serviços: menos centro, mais difícil de ver o filme.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cada serviço reagindo ao evento do outro deixa o fluxo global mais visível.",
+        "Esse arranjo serve para fluxos de quinze passos sem problema.",
+        "Reagir a eventos acopla os serviços mais do que a chamada direta.",
+        "Cada serviço reage ao evento do outro: desacopla e esconde o fluxo global."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 3,
+      "w": "Serve para dois ou três passos. Quando o fluxo cresce, ninguém enxerga o filme inteiro.",
       "t": "coreografia"
     },
     {
-      "q": "No caderno, a respeito de coreografia: qual vale?",
+      "q": "Reagir a evento acopla mais que chamada direta?",
       "o": [
-        "Eventos entre serviços: menos centro, mais difícil de ver o filme.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cada serviço reage ao evento do outro: desacopla e esconde o fluxo global.",
+        "Cada serviço reagindo ao evento do outro deixa o fluxo global mais visível.",
+        "Esse arranjo serve para fluxos de quinze passos sem problema.",
+        "Reagir a eventos acopla os serviços mais do que a chamada direta."
       ],
       "a": 0,
-      "w": "Trade.",
+      "w": "Serve para dois ou três passos. Quando o fluxo cresce, ninguém enxerga o filme inteiro.",
       "t": "coreografia"
     },
     {
-      "q": "Se perguntarem coreografia na mesa, qual frase é a verdadeira?",
+      "q": "O filme inteiro fica visível para quem?",
       "o": [
-        "Eventos entre serviços: menos centro, mais difícil de ver o filme.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cada serviço reage ao evento do outro: desacopla e esconde o fluxo global.",
+        "Cada serviço reagindo ao evento do outro deixa o fluxo global mais visível.",
+        "Esse arranjo serve para fluxos de quinze passos sem problema.",
+        "Reagir a eventos acopla os serviços mais do que a chamada direta."
       ],
       "a": 0,
-      "w": "Trade.",
+      "w": "Serve para dois ou três passos. Quando o fluxo cresce, ninguém enxerga o filme inteiro.",
       "t": "coreografia"
     },
     {
-      "q": "Sobre compensação: qual afirmação está certa?",
+      "q": "O que o estorno faz com a cobrança original?",
       "o": [
-        "Estorno não desfaz o mundo; cria um fato novo.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Estorno é um desfazer silencioso que não deixa registro.",
+        "Estorno nunca falha, porque é só uma reversão técnica.",
+        "Estorno cria um fato novo; não desfaz o que já aconteceu.",
+        "Estorno apaga a cobrança original do sistema do emissor."
       ],
-      "a": 0,
-      "w": "Compensação.",
+      "a": 2,
+      "w": "A cobrança existiu. O estorno é outro lançamento, visível e que também pode falhar.",
       "t": "compensação"
     },
     {
-      "q": "Qual frase sobre compensação está certa?",
+      "q": "Estorno desfaz o que aconteceu?",
       "o": [
-        "Estorno não desfaz o mundo; cria um fato novo.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Estorno é um desfazer silencioso que não deixa registro.",
+        "Estorno nunca falha, porque é só uma reversão técnica.",
+        "Estorno cria um fato novo; não desfaz o que já aconteceu.",
+        "Estorno apaga a cobrança original do sistema do emissor."
       ],
-      "a": 0,
-      "w": "Compensação.",
+      "a": 2,
+      "w": "A cobrança existiu. O estorno é outro lançamento, visível e que também pode falhar.",
       "t": "compensação"
     },
     {
-      "q": "Compensação — o que acontece de verdade?",
+      "q": "O estorno pode falhar?",
       "o": [
-        "Estorno não desfaz o mundo; cria um fato novo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Estorno nunca falha, porque é só uma reversão técnica.",
+        "Estorno cria um fato novo; não desfaz o que já aconteceu.",
+        "Estorno apaga a cobrança original do sistema do emissor.",
+        "Estorno é um desfazer silencioso que não deixa registro."
       ],
-      "a": 0,
-      "w": "Compensação.",
+      "a": 1,
+      "w": "A cobrança existiu. O estorno é outro lançamento, visível e que também pode falhar.",
       "t": "compensação"
     },
     {
-      "q": "Marque a leitura correta (compensação).",
+      "q": "Estorno deixa registro?",
       "o": [
-        "Estorno não desfaz o mundo; cria um fato novo.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Estorno cria um fato novo; não desfaz o que já aconteceu.",
+        "Estorno apaga a cobrança original do sistema do emissor.",
+        "Estorno é um desfazer silencioso que não deixa registro.",
+        "Estorno nunca falha, porque é só uma reversão técnica."
       ],
       "a": 0,
-      "w": "Compensação.",
+      "w": "A cobrança existiu. O estorno é outro lançamento, visível e que também pode falhar.",
       "t": "compensação"
     },
     {
-      "q": "Corrija o mito sobre compensação.",
+      "q": "Já cobrou e o passo seguinte falhou. Qual o caminho?",
       "o": [
-        "Estorno não desfaz o mundo; cria um fato novo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Estorno apaga a cobrança original do sistema do emissor.",
+        "Estorno é um desfazer silencioso que não deixa registro.",
+        "Estorno nunca falha, porque é só uma reversão técnica.",
+        "Estorno cria um fato novo; não desfaz o que já aconteceu."
       ],
-      "a": 0,
-      "w": "Compensação.",
+      "a": 3,
+      "w": "A cobrança existiu. O estorno é outro lançamento, visível e que também pode falhar.",
       "t": "compensação"
     },
     {
-      "q": "No caderno, a respeito de compensação: qual vale?",
+      "q": "Estorno apaga a cobrança do emissor?",
       "o": [
-        "Estorno não desfaz o mundo; cria um fato novo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Estorno apaga a cobrança original do sistema do emissor.",
+        "Estorno é um desfazer silencioso que não deixa registro.",
+        "Estorno nunca falha, porque é só uma reversão técnica.",
+        "Estorno cria um fato novo; não desfaz o que já aconteceu."
       ],
-      "a": 0,
-      "w": "Compensação.",
+      "a": 3,
+      "w": "A cobrança existiu. O estorno é outro lançamento, visível e que também pode falhar.",
       "t": "compensação"
     },
     {
-      "q": "Se perguntarem compensação na mesa, qual frase é a verdadeira?",
+      "q": "Por que o estorno é um fato novo?",
       "o": [
-        "Estorno não desfaz o mundo; cria um fato novo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Estorno é um desfazer silencioso que não deixa registro.",
+        "Estorno nunca falha, porque é só uma reversão técnica.",
+        "Estorno cria um fato novo; não desfaz o que já aconteceu.",
+        "Estorno apaga a cobrança original do sistema do emissor."
       ],
-      "a": 0,
-      "w": "Compensação.",
+      "a": 2,
+      "w": "A cobrança existiu. O estorno é outro lançamento, visível e que também pode falhar.",
       "t": "compensação"
     },
     {
-      "q": "Sobre leitura derivada: qual afirmação está certa?",
+      "q": "O modelo de leitura derivado está sempre atualizado?",
       "o": [
-        "Projeção CQRS pode estar atrasada. SLO de leitura nomeado.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O atraso da projeção não precisa de número nem de alvo.",
+        "A projeção só atrasa quando há incidente no sistema.",
+        "O modelo de leitura derivado pode estar atrasado: nomeie o alvo de atraso.",
+        "O modelo de leitura derivado está sempre atualizado na hora."
       ],
-      "a": 0,
-      "w": "Eventual.",
+      "a": 2,
+      "w": "Não está “sempre na hora”. O atraso da projeção é um número no desenho, não fé.",
       "t": "leitura derivada"
     },
     {
-      "q": "Qual frase sobre leitura derivada está certa?",
+      "q": "O que nomear sobre o atraso da projeção?",
       "o": [
-        "Projeção CQRS pode estar atrasada. SLO de leitura nomeado.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O modelo de leitura derivado está sempre atualizado na hora.",
+        "O atraso da projeção não precisa de número nem de alvo.",
+        "A projeção só atrasa quando há incidente no sistema.",
+        "O modelo de leitura derivado pode estar atrasado: nomeie o alvo de atraso."
       ],
-      "a": 0,
-      "w": "Eventual.",
+      "a": 3,
+      "w": "Não está “sempre na hora”. O atraso da projeção é um número no desenho, não fé.",
       "t": "leitura derivada"
     },
     {
-      "q": "Leitura derivada — o que acontece de verdade?",
+      "q": "A projeção só atrasa em incidente?",
       "o": [
-        "Projeção CQRS pode estar atrasada. SLO de leitura nomeado.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O atraso da projeção não precisa de número nem de alvo.",
+        "A projeção só atrasa quando há incidente no sistema.",
+        "O modelo de leitura derivado pode estar atrasado: nomeie o alvo de atraso.",
+        "O modelo de leitura derivado está sempre atualizado na hora."
       ],
-      "a": 0,
-      "w": "Eventual.",
+      "a": 2,
+      "w": "Não está “sempre na hora”. O atraso da projeção é um número no desenho, não fé.",
       "t": "leitura derivada"
     },
     {
-      "q": "Marque a leitura correta (leitura derivada).",
+      "q": "O atraso da projeção precisa de número?",
       "o": [
-        "Projeção CQRS pode estar atrasada. SLO de leitura nomeado.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "A projeção só atrasa quando há incidente no sistema.",
+        "O modelo de leitura derivado pode estar atrasado: nomeie o alvo de atraso.",
+        "O modelo de leitura derivado está sempre atualizado na hora.",
+        "O atraso da projeção não precisa de número nem de alvo."
       ],
-      "a": 0,
-      "w": "Eventual.",
+      "a": 1,
+      "w": "Não está “sempre na hora”. O atraso da projeção é um número no desenho, não fé.",
       "t": "leitura derivada"
     },
     {
-      "q": "Corrija o mito sobre leitura derivada.",
+      "q": "Você lê da projeção. O que pode estar diferente?",
       "o": [
-        "Projeção CQRS pode estar atrasada. SLO de leitura nomeado.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O modelo de leitura derivado pode estar atrasado: nomeie o alvo de atraso.",
+        "O modelo de leitura derivado está sempre atualizado na hora.",
+        "O atraso da projeção não precisa de número nem de alvo.",
+        "A projeção só atrasa quando há incidente no sistema."
       ],
       "a": 0,
-      "w": "Eventual.",
+      "w": "Não está “sempre na hora”. O atraso da projeção é um número no desenho, não fé.",
       "t": "leitura derivada"
     },
     {
-      "q": "No caderno, a respeito de leitura derivada: qual vale?",
+      "q": "Projeção atrasada é falha ou característica?",
       "o": [
-        "Projeção CQRS pode estar atrasada. SLO de leitura nomeado.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O atraso da projeção não precisa de número nem de alvo.",
+        "A projeção só atrasa quando há incidente no sistema.",
+        "O modelo de leitura derivado pode estar atrasado: nomeie o alvo de atraso.",
+        "O modelo de leitura derivado está sempre atualizado na hora."
       ],
-      "a": 0,
-      "w": "Eventual.",
+      "a": 2,
+      "w": "Não está “sempre na hora”. O atraso da projeção é um número no desenho, não fé.",
       "t": "leitura derivada"
     },
     {
-      "q": "Se perguntarem leitura derivada na mesa, qual frase é a verdadeira?",
+      "q": "Como escrever o atraso da projeção no desenho?",
       "o": [
-        "Projeção CQRS pode estar atrasada. SLO de leitura nomeado.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O atraso da projeção não precisa de número nem de alvo.",
+        "A projeção só atrasa quando há incidente no sistema.",
+        "O modelo de leitura derivado pode estar atrasado: nomeie o alvo de atraso.",
+        "O modelo de leitura derivado está sempre atualizado na hora."
       ],
-      "a": 0,
-      "w": "Eventual.",
+      "a": 2,
+      "w": "Não está “sempre na hora”. O atraso da projeção é um número no desenho, não fé.",
       "t": "leitura derivada"
     },
     {
-      "q": "Sobre não ES default: qual afirmação está certa?",
+      "q": "Guardar só eventos num cadastro comum: aceita ou recusa?",
       "o": [
-        "Não comece por event sourcing num CRUD.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Recusar esse desenho é sinal de time sem maturidade.",
+        "Não comece guardando só eventos num cadastro comum: recuse.",
+        "Comece guardando só eventos: assim o cadastro nasce preparado.",
+        "Guardar só eventos num cadastro comum é a escolha barata."
       ],
-      "a": 0,
-      "w": "Raro por motivo.",
+      "a": 1,
+      "w": "Sem requisito de auditoria ou leitura que não caiba no modelo normal, é aluguel de plataforma.",
       "t": "não ES default"
     },
     {
-      "q": "Qual frase sobre não ES default está certa?",
+      "q": "Que requisito justificaria esse desenho?",
       "o": [
-        "Não comece por event sourcing num CRUD.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Recusar esse desenho é sinal de time sem maturidade.",
+        "Não comece guardando só eventos num cadastro comum: recuse.",
+        "Comece guardando só eventos: assim o cadastro nasce preparado.",
+        "Guardar só eventos num cadastro comum é a escolha barata."
       ],
-      "a": 0,
-      "w": "Raro por motivo.",
+      "a": 1,
+      "w": "Sem requisito de auditoria ou leitura que não caiba no modelo normal, é aluguel de plataforma.",
       "t": "não ES default"
     },
     {
-      "q": "Não ES default — o que acontece de verdade?",
+      "q": "Guardar só eventos num cadastro é barato?",
       "o": [
-        "Não comece por event sourcing num CRUD.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Guardar só eventos num cadastro comum é a escolha barata.",
+        "Recusar esse desenho é sinal de time sem maturidade.",
+        "Não comece guardando só eventos num cadastro comum: recuse.",
+        "Comece guardando só eventos: assim o cadastro nasce preparado."
       ],
-      "a": 0,
-      "w": "Raro por motivo.",
+      "a": 2,
+      "w": "Sem requisito de auditoria ou leitura que não caiba no modelo normal, é aluguel de plataforma.",
       "t": "não ES default"
     },
     {
-      "q": "Marque a leitura correta (não ES default).",
+      "q": "Recusar esse desenho é falta de maturidade?",
       "o": [
-        "Não comece por event sourcing num CRUD.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Guardar só eventos num cadastro comum é a escolha barata.",
+        "Recusar esse desenho é sinal de time sem maturidade.",
+        "Não comece guardando só eventos num cadastro comum: recuse.",
+        "Comece guardando só eventos: assim o cadastro nasce preparado."
       ],
-      "a": 0,
-      "w": "Raro por motivo.",
+      "a": 2,
+      "w": "Sem requisito de auditoria ou leitura que não caiba no modelo normal, é aluguel de plataforma.",
       "t": "não ES default"
     },
     {
-      "q": "Corrija o mito sobre não ES default.",
+      "q": "O que a revisão de arquitetura faz nesse pedido?",
       "o": [
-        "Não comece por event sourcing num CRUD.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Comece guardando só eventos: assim o cadastro nasce preparado.",
+        "Guardar só eventos num cadastro comum é a escolha barata.",
+        "Recusar esse desenho é sinal de time sem maturidade.",
+        "Não comece guardando só eventos num cadastro comum: recuse."
       ],
-      "a": 0,
-      "w": "Raro por motivo.",
+      "a": 3,
+      "w": "Sem requisito de auditoria ou leitura que não caiba no modelo normal, é aluguel de plataforma.",
       "t": "não ES default"
     },
     {
-      "q": "No caderno, a respeito de não ES default: qual vale?",
+      "q": "Começar por esse desenho prepara o sistema?",
       "o": [
-        "Não comece por event sourcing num CRUD.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Não comece guardando só eventos num cadastro comum: recuse.",
+        "Comece guardando só eventos: assim o cadastro nasce preparado.",
+        "Guardar só eventos num cadastro comum é a escolha barata.",
+        "Recusar esse desenho é sinal de time sem maturidade."
       ],
       "a": 0,
-      "w": "Raro por motivo.",
+      "w": "Sem requisito de auditoria ou leitura que não caiba no modelo normal, é aluguel de plataforma.",
       "t": "não ES default"
     },
     {
-      "q": "Se perguntarem não ES default na mesa, qual frase é a verdadeira?",
+      "q": "Por que a aula chama isso de aluguel de plataforma?",
       "o": [
-        "Não comece por event sourcing num CRUD.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Comece guardando só eventos: assim o cadastro nasce preparado.",
+        "Guardar só eventos num cadastro comum é a escolha barata.",
+        "Recusar esse desenho é sinal de time sem maturidade.",
+        "Não comece guardando só eventos num cadastro comum: recuse."
       ],
-      "a": 0,
-      "w": "Raro por motivo.",
+      "a": 3,
+      "w": "Sem requisito de auditoria ou leitura que não caiba no modelo normal, é aluguel de plataforma.",
       "t": "não ES default"
     },
     {
-      "q": "Sobre CDC: qual afirmação está certa?",
+      "q": "CDC no banco dispensa operação?",
       "o": [
-        "CDC é um carteiro de outbox. Opera o conector.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "CDC só serve quando você controla a transação de negócio.",
+        "CDC no banco é outro jeito de publicar, e também precisa ser operada.",
+        "CDC no banco é mágica e dispensa operação.",
+        "CDC substitui o outbox em todos os casos."
       ],
-      "a": 0,
-      "w": "Debezium.",
+      "a": 1,
+      "w": "Serve quando o legado já grava e você não mexe no commit. Conector, schema e atraso são seus.",
       "t": "CDC"
     },
     {
-      "q": "Qual frase sobre CDC está certa?",
+      "q": "Quando usar CDC em vez de outbox?",
       "o": [
-        "CDC é um carteiro de outbox. Opera o conector.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "CDC no banco é outro jeito de publicar, e também precisa ser operada.",
+        "CDC no banco é mágica e dispensa operação.",
+        "CDC substitui o outbox em todos os casos.",
+        "CDC só serve quando você controla a transação de negócio."
       ],
       "a": 0,
-      "w": "Debezium.",
+      "w": "Serve quando o legado já grava e você não mexe no commit. Conector, schema e atraso são seus.",
       "t": "CDC"
     },
     {
-      "q": "CDC — o que acontece de verdade?",
+      "q": "O que você passa a operar com CDC?",
       "o": [
-        "CDC é um carteiro de outbox. Opera o conector.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "CDC só serve quando você controla a transação de negócio.",
+        "CDC no banco é outro jeito de publicar, e também precisa ser operada.",
+        "CDC no banco é mágica e dispensa operação.",
+        "CDC substitui o outbox em todos os casos."
       ],
-      "a": 0,
-      "w": "Debezium.",
+      "a": 1,
+      "w": "Serve quando o legado já grava e você não mexe no commit. Conector, schema e atraso são seus.",
       "t": "CDC"
     },
     {
-      "q": "Marque a leitura correta (CDC).",
+      "q": "CDC substitui o outbox sempre?",
       "o": [
-        "CDC é um carteiro de outbox. Opera o conector.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "CDC no banco é outro jeito de publicar, e também precisa ser operada.",
+        "CDC no banco é mágica e dispensa operação.",
+        "CDC substitui o outbox em todos os casos.",
+        "CDC só serve quando você controla a transação de negócio."
       ],
       "a": 0,
-      "w": "Debezium.",
+      "w": "Serve quando o legado já grava e você não mexe no commit. Conector, schema e atraso são seus.",
       "t": "CDC"
     },
     {
-      "q": "Corrija o mito sobre CDC.",
+      "q": "Você não pode mexer no commit do legado. Qual caminho?",
       "o": [
-        "CDC é um carteiro de outbox. Opera o conector.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "CDC no banco é outro jeito de publicar, e também precisa ser operada.",
+        "CDC no banco é mágica e dispensa operação.",
+        "CDC substitui o outbox em todos os casos.",
+        "CDC só serve quando você controla a transação de negócio."
       ],
       "a": 0,
-      "w": "Debezium.",
+      "w": "Serve quando o legado já grava e você não mexe no commit. Conector, schema e atraso são seus.",
       "t": "CDC"
     },
     {
-      "q": "No caderno, a respeito de CDC: qual vale?",
+      "q": "CDC é mágica?",
       "o": [
-        "CDC é um carteiro de outbox. Opera o conector.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "CDC só serve quando você controla a transação de negócio.",
+        "CDC no banco é outro jeito de publicar, e também precisa ser operada.",
+        "CDC no banco é mágica e dispensa operação.",
+        "CDC substitui o outbox em todos os casos."
       ],
-      "a": 0,
-      "w": "Debezium.",
+      "a": 1,
+      "w": "Serve quando o legado já grava e você não mexe no commit. Conector, schema e atraso são seus.",
       "t": "CDC"
     },
     {
-      "q": "Se perguntarem CDC na mesa, qual frase é a verdadeira?",
+      "q": "Quando o outbox é a escolha, e não o CDC?",
       "o": [
-        "CDC é um carteiro de outbox. Opera o conector.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "CDC só serve quando você controla a transação de negócio.",
+        "CDC no banco é outro jeito de publicar, e também precisa ser operada.",
+        "CDC no banco é mágica e dispensa operação.",
+        "CDC substitui o outbox em todos os casos."
       ],
-      "a": 0,
-      "w": "Debezium.",
+      "a": 1,
+      "w": "Serve quando o legado já grava e você não mexe no commit. Conector, schema e atraso são seus.",
       "t": "CDC"
     },
     {
-      "q": "Sobre invariante: qual afirmação está certa?",
+      "q": "Saldo e reserva podem esperar convergência eterna?",
       "o": [
-        "Invariante de dinheiro não espera “eventual” eterno.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Saldo e reserva não esperam convergência eterna: atraso não é venda a mais permanente.",
+        "Saldo e reserva podem esperar convergência por tempo indefinido.",
+        "Vender estoque que não existe é aceitável se depois converge.",
+        "Atraso até convergir e venda a mais permanente são a mesma coisa."
       ],
       "a": 0,
-      "w": "Disponibilidade vs consistência.",
+      "w": "Atraso até convergir é uma coisa. Vender estoque que não existe é outra. Chave e compensação seguram.",
       "t": "invariante"
     },
     {
-      "q": "Qual frase sobre invariante está certa?",
+      "q": "Atraso até convergir e vender a mais são a mesma coisa?",
       "o": [
-        "Invariante de dinheiro não espera “eventual” eterno.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Vender estoque que não existe é aceitável se depois converge.",
+        "Atraso até convergir e venda a mais permanente são a mesma coisa.",
+        "Saldo e reserva não esperam convergência eterna: atraso não é venda a mais permanente.",
+        "Saldo e reserva podem esperar convergência por tempo indefinido."
       ],
-      "a": 0,
-      "w": "Disponibilidade vs consistência.",
+      "a": 2,
+      "w": "Atraso até convergir é uma coisa. Vender estoque que não existe é outra. Chave e compensação seguram.",
       "t": "invariante"
     },
     {
-      "q": "Invariante — o que acontece de verdade?",
+      "q": "Vender estoque que não existe é aceitável se depois converge?",
       "o": [
-        "Invariante de dinheiro não espera “eventual” eterno.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Vender estoque que não existe é aceitável se depois converge.",
+        "Atraso até convergir e venda a mais permanente são a mesma coisa.",
+        "Saldo e reserva não esperam convergência eterna: atraso não é venda a mais permanente.",
+        "Saldo e reserva podem esperar convergência por tempo indefinido."
       ],
-      "a": 0,
-      "w": "Disponibilidade vs consistência.",
+      "a": 2,
+      "w": "Atraso até convergir é uma coisa. Vender estoque que não existe é outra. Chave e compensação seguram.",
       "t": "invariante"
     },
     {
-      "q": "Marque a leitura correta (invariante).",
+      "q": "O que segura o saldo além de fé?",
       "o": [
-        "Invariante de dinheiro não espera “eventual” eterno.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Saldo e reserva podem esperar convergência por tempo indefinido.",
+        "Vender estoque que não existe é aceitável se depois converge.",
+        "Atraso até convergir e venda a mais permanente são a mesma coisa.",
+        "Saldo e reserva não esperam convergência eterna: atraso não é venda a mais permanente."
       ],
-      "a": 0,
-      "w": "Disponibilidade vs consistência.",
+      "a": 3,
+      "w": "Atraso até convergir é uma coisa. Vender estoque que não existe é outra. Chave e compensação seguram.",
       "t": "invariante"
     },
     {
-      "q": "Corrija o mito sobre invariante.",
+      "q": "Qual invariante não aceita convergência indefinida?",
       "o": [
-        "Invariante de dinheiro não espera “eventual” eterno.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Vender estoque que não existe é aceitável se depois converge.",
+        "Atraso até convergir e venda a mais permanente são a mesma coisa.",
+        "Saldo e reserva não esperam convergência eterna: atraso não é venda a mais permanente.",
+        "Saldo e reserva podem esperar convergência por tempo indefinido."
       ],
-      "a": 0,
-      "w": "Disponibilidade vs consistência.",
+      "a": 2,
+      "w": "Atraso até convergir é uma coisa. Vender estoque que não existe é outra. Chave e compensação seguram.",
       "t": "invariante"
     },
     {
-      "q": "No caderno, a respeito de invariante: qual vale?",
+      "q": "Por que dinheiro é caso diferente?",
       "o": [
-        "Invariante de dinheiro não espera “eventual” eterno.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Saldo e reserva não esperam convergência eterna: atraso não é venda a mais permanente.",
+        "Saldo e reserva podem esperar convergência por tempo indefinido.",
+        "Vender estoque que não existe é aceitável se depois converge.",
+        "Atraso até convergir e venda a mais permanente são a mesma coisa."
       ],
       "a": 0,
-      "w": "Disponibilidade vs consistência.",
+      "w": "Atraso até convergir é uma coisa. Vender estoque que não existe é outra. Chave e compensação seguram.",
       "t": "invariante"
     },
     {
-      "q": "Se perguntarem invariante na mesa, qual frase é a verdadeira?",
+      "q": "Por quanto tempo o saldo pode ficar convergindo?",
       "o": [
-        "Invariante de dinheiro não espera “eventual” eterno.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Saldo e reserva não esperam convergência eterna: atraso não é venda a mais permanente.",
+        "Saldo e reserva podem esperar convergência por tempo indefinido.",
+        "Vender estoque que não existe é aceitável se depois converge.",
+        "Atraso até convergir e venda a mais permanente são a mesma coisa."
       ],
       "a": 0,
-      "w": "Disponibilidade vs consistência.",
+      "w": "Atraso até convergir é uma coisa. Vender estoque que não existe é outra. Chave e compensação seguram.",
       "t": "invariante"
     },
     {
-      "q": "Sobre aula: qual afirmação está certa?",
+      "q": "Banco e mensageria se casam numa transação?",
       "o": [
-        "Esta é a aula estrela: banco e broker não se casam sozinhos.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O envio da mensagem entra no commit do banco automaticamente.",
+        "A transação do banco cobre tudo que o serviço faz na requisição.",
+        "Banco e mensageria não se casam sozinhos numa transação.",
+        "Banco e mensageria se casam sozinhos numa transação só."
       ],
-      "a": 0,
-      "w": "Ligue com Kafka.",
+      "a": 2,
+      "w": "O envio da mensagem não entra no commit do banco. Por isso existe o outbox.",
       "t": "aula"
     },
     {
-      "q": "Qual frase sobre aula está certa?",
+      "q": "O envio da mensagem entra no commit do banco?",
       "o": [
-        "Esta é a aula estrela: banco e broker não se casam sozinhos.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O envio da mensagem entra no commit do banco automaticamente.",
+        "A transação do banco cobre tudo que o serviço faz na requisição.",
+        "Banco e mensageria não se casam sozinhos numa transação.",
+        "Banco e mensageria se casam sozinhos numa transação só."
       ],
-      "a": 0,
-      "w": "Ligue com Kafka.",
+      "a": 2,
+      "w": "O envio da mensagem não entra no commit do banco. Por isso existe o outbox.",
       "t": "aula"
     },
     {
-      "q": "Aula — o que acontece de verdade?",
+      "q": "Por que o outbox existe?",
       "o": [
-        "Esta é a aula estrela: banco e broker não se casam sozinhos.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O envio da mensagem entra no commit do banco automaticamente.",
+        "A transação do banco cobre tudo que o serviço faz na requisição.",
+        "Banco e mensageria não se casam sozinhos numa transação.",
+        "Banco e mensageria se casam sozinhos numa transação só."
       ],
-      "a": 0,
-      "w": "Ligue com Kafka.",
+      "a": 2,
+      "w": "O envio da mensagem não entra no commit do banco. Por isso existe o outbox.",
       "t": "aula"
     },
     {
-      "q": "Marque a leitura correta (aula).",
+      "q": "A transação do banco cobre o envio da mensagem?",
       "o": [
-        "Esta é a aula estrela: banco e broker não se casam sozinhos.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O envio da mensagem entra no commit do banco automaticamente.",
+        "A transação do banco cobre tudo que o serviço faz na requisição.",
+        "Banco e mensageria não se casam sozinhos numa transação.",
+        "Banco e mensageria se casam sozinhos numa transação só."
       ],
-      "a": 0,
-      "w": "Ligue com Kafka.",
+      "a": 2,
+      "w": "O envio da mensagem não entra no commit do banco. Por isso existe o outbox.",
       "t": "aula"
     },
     {
-      "q": "Corrija o mito sobre aula.",
+      "q": "O que a transação do banco cobre?",
       "o": [
-        "Esta é a aula estrela: banco e broker não se casam sozinhos.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O envio da mensagem entra no commit do banco automaticamente.",
+        "A transação do banco cobre tudo que o serviço faz na requisição.",
+        "Banco e mensageria não se casam sozinhos numa transação.",
+        "Banco e mensageria se casam sozinhos numa transação só."
       ],
-      "a": 0,
-      "w": "Ligue com Kafka.",
+      "a": 2,
+      "w": "O envio da mensagem não entra no commit do banco. Por isso existe o outbox.",
       "t": "aula"
     },
     {
-      "q": "No caderno, a respeito de aula: qual vale?",
+      "q": "Existe transação única entre banco e mensageria?",
       "o": [
-        "Esta é a aula estrela: banco e broker não se casam sozinhos.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "A transação do banco cobre tudo que o serviço faz na requisição.",
+        "Banco e mensageria não se casam sozinhos numa transação.",
+        "Banco e mensageria se casam sozinhos numa transação só.",
+        "O envio da mensagem entra no commit do banco automaticamente."
       ],
-      "a": 0,
-      "w": "Ligue com Kafka.",
+      "a": 1,
+      "w": "O envio da mensagem não entra no commit do banco. Por isso existe o outbox.",
       "t": "aula"
     },
     {
-      "q": "Se perguntarem aula na mesa, qual frase é a verdadeira?",
+      "q": "Qual é a frase central desta aula?",
       "o": [
-        "Esta é a aula estrela: banco e broker não se casam sozinhos.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "A transação do banco cobre tudo que o serviço faz na requisição.",
+        "Banco e mensageria não se casam sozinhos numa transação.",
+        "Banco e mensageria se casam sozinhos numa transação só.",
+        "O envio da mensagem entra no commit do banco automaticamente."
       ],
-      "a": 0,
-      "w": "Ligue com Kafka.",
+      "a": 1,
+      "w": "O envio da mensagem não entra no commit do banco. Por isso existe o outbox.",
       "t": "aula"
     },
     {
-      "q": "Sobre inbox tx: qual afirmação está certa?",
+      "q": "O que grava junto com o efeito no consumidor?",
       "o": [
-        "ID e efeito na mesma transação local do consumidor.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "No consumidor, grave o id e aplique o efeito na mesma transação local.",
+        "No consumidor, grave o id antes e aplique o efeito depois.",
+        "No consumidor, aplique o efeito e registre o id em outro momento.",
+        "O id e o efeito podem viver em bancos diferentes sem risco."
       ],
       "a": 0,
-      "w": "Senão esquece de aplicar.",
+      "w": "Se separar os dois, você marca como visto e esquece de aplicar, ou aplica duas vezes.",
       "t": "inbox tx"
     },
     {
-      "q": "Qual frase sobre inbox tx está certa?",
+      "q": "Por que id e efeito ficam na mesma transação?",
       "o": [
-        "ID e efeito na mesma transação local do consumidor.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "No consumidor, grave o id antes e aplique o efeito depois.",
+        "No consumidor, aplique o efeito e registre o id em outro momento.",
+        "O id e o efeito podem viver em bancos diferentes sem risco.",
+        "No consumidor, grave o id e aplique o efeito na mesma transação local."
       ],
-      "a": 0,
-      "w": "Senão esquece de aplicar.",
+      "a": 3,
+      "w": "Se separar os dois, você marca como visto e esquece de aplicar, ou aplica duas vezes.",
       "t": "inbox tx"
     },
     {
-      "q": "Inbox tx — o que acontece de verdade?",
+      "q": "O que acontece se você separar os dois?",
       "o": [
-        "ID e efeito na mesma transação local do consumidor.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "No consumidor, aplique o efeito e registre o id em outro momento.",
+        "O id e o efeito podem viver em bancos diferentes sem risco.",
+        "No consumidor, grave o id e aplique o efeito na mesma transação local.",
+        "No consumidor, grave o id antes e aplique o efeito depois."
       ],
-      "a": 0,
-      "w": "Senão esquece de aplicar.",
+      "a": 2,
+      "w": "Se separar os dois, você marca como visto e esquece de aplicar, ou aplica duas vezes.",
       "t": "inbox tx"
     },
     {
-      "q": "Marque a leitura correta (inbox tx).",
+      "q": "Marcar como visto antes de aplicar é seguro?",
       "o": [
-        "ID e efeito na mesma transação local do consumidor.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "No consumidor, aplique o efeito e registre o id em outro momento.",
+        "O id e o efeito podem viver em bancos diferentes sem risco.",
+        "No consumidor, grave o id e aplique o efeito na mesma transação local.",
+        "No consumidor, grave o id antes e aplique o efeito depois."
       ],
-      "a": 0,
-      "w": "Senão esquece de aplicar.",
+      "a": 2,
+      "w": "Se separar os dois, você marca como visto e esquece de aplicar, ou aplica duas vezes.",
       "t": "inbox tx"
     },
     {
-      "q": "Corrija o mito sobre inbox tx.",
+      "q": "Id e efeito podem ficar em bancos diferentes?",
       "o": [
-        "ID e efeito na mesma transação local do consumidor.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "No consumidor, grave o id e aplique o efeito na mesma transação local.",
+        "No consumidor, grave o id antes e aplique o efeito depois.",
+        "No consumidor, aplique o efeito e registre o id em outro momento.",
+        "O id e o efeito podem viver em bancos diferentes sem risco."
       ],
       "a": 0,
-      "w": "Senão esquece de aplicar.",
+      "w": "Se separar os dois, você marca como visto e esquece de aplicar, ou aplica duas vezes.",
       "t": "inbox tx"
     },
     {
-      "q": "No caderno, a respeito de inbox tx: qual vale?",
+      "q": "Como o consumidor evita aplicar duas vezes?",
       "o": [
-        "ID e efeito na mesma transação local do consumidor.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "No consumidor, aplique o efeito e registre o id em outro momento.",
+        "O id e o efeito podem viver em bancos diferentes sem risco.",
+        "No consumidor, grave o id e aplique o efeito na mesma transação local.",
+        "No consumidor, grave o id antes e aplique o efeito depois."
       ],
-      "a": 0,
-      "w": "Senão esquece de aplicar.",
+      "a": 2,
+      "w": "Se separar os dois, você marca como visto e esquece de aplicar, ou aplica duas vezes.",
       "t": "inbox tx"
     },
     {
-      "q": "Se perguntarem inbox tx na mesa, qual frase é a verdadeira?",
+      "q": "Você marcou como visto e não aplicou. O que faltou?",
       "o": [
-        "ID e efeito na mesma transação local do consumidor.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "No consumidor, aplique o efeito e registre o id em outro momento.",
+        "O id e o efeito podem viver em bancos diferentes sem risco.",
+        "No consumidor, grave o id e aplique o efeito na mesma transação local.",
+        "No consumidor, grave o id antes e aplique o efeito depois."
       ],
-      "a": 0,
-      "w": "Senão esquece de aplicar.",
+      "a": 2,
+      "w": "Se separar os dois, você marca como visto e esquece de aplicar, ou aplica duas vezes.",
       "t": "inbox tx"
     }
   ]

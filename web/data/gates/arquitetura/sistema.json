@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre todo: qual afirmação está certa?",
+      "q": "O que é sistema: o todo que entrega uma capacidade ou o repositório?",
       "o": [
-        "Sistema é o todo que entrega uma capacidade (cobrar e confirmar).",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Sistema é o repositório onde o código do time mora.",
+        "Sistema é o conjunto de arquivos de configuração do deploy.",
+        "Sistema é cada processo isolado, um por um, sem o todo.",
+        "Sistema é o todo que entrega uma capacidade: cobrar e confirmar o pedido."
       ],
-      "a": 0,
-      "w": "Não é o repo.",
+      "a": 3,
+      "w": "O repositório não cobra ninguém. Sistema é a capacidade entregue, não o lugar onde o código mora.",
       "t": "todo"
     },
     {
-      "q": "Qual frase sobre todo está certa?",
+      "q": "Cobrar e confirmar o pedido é a capacidade. Isso define o quê?",
       "o": [
-        "Sistema é o todo que entrega uma capacidade (cobrar e confirmar).",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Sistema é o todo que entrega uma capacidade: cobrar e confirmar o pedido.",
+        "Sistema é o repositório onde o código do time mora.",
+        "Sistema é o conjunto de arquivos de configuração do deploy.",
+        "Sistema é cada processo isolado, um por um, sem o todo."
       ],
       "a": 0,
-      "w": "Não é o repo.",
+      "w": "O repositório não cobra ninguém. Sistema é a capacidade entregue, não o lugar onde o código mora.",
       "t": "todo"
     },
     {
-      "q": "Todo — o que acontece de verdade?",
+      "q": "O repositório do time é o sistema?",
       "o": [
-        "Sistema é o todo que entrega uma capacidade (cobrar e confirmar).",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Sistema é o conjunto de arquivos de configuração do deploy.",
+        "Sistema é cada processo isolado, um por um, sem o todo.",
+        "Sistema é o todo que entrega uma capacidade: cobrar e confirmar o pedido.",
+        "Sistema é o repositório onde o código do time mora."
       ],
-      "a": 0,
-      "w": "Não é o repo.",
+      "a": 2,
+      "w": "O repositório não cobra ninguém. Sistema é a capacidade entregue, não o lugar onde o código mora.",
       "t": "todo"
     },
     {
-      "q": "Marque a leitura correta (todo).",
+      "q": "Sistema se define pela capacidade entregue ou pelo lugar do código?",
       "o": [
-        "Sistema é o todo que entrega uma capacidade (cobrar e confirmar).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Sistema é o conjunto de arquivos de configuração do deploy.",
+        "Sistema é cada processo isolado, um por um, sem o todo.",
+        "Sistema é o todo que entrega uma capacidade: cobrar e confirmar o pedido.",
+        "Sistema é o repositório onde o código do time mora."
       ],
-      "a": 0,
-      "w": "Não é o repo.",
+      "a": 2,
+      "w": "O repositório não cobra ninguém. Sistema é a capacidade entregue, não o lugar onde o código mora.",
       "t": "todo"
     },
     {
-      "q": "Corrija o mito sobre todo.",
+      "q": "Como nomear o sistema: pela entrega ao usuário ou pela pasta?",
       "o": [
-        "Sistema é o todo que entrega uma capacidade (cobrar e confirmar).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Sistema é o conjunto de arquivos de configuração do deploy.",
+        "Sistema é cada processo isolado, um por um, sem o todo.",
+        "Sistema é o todo que entrega uma capacidade: cobrar e confirmar o pedido.",
+        "Sistema é o repositório onde o código do time mora."
       ],
-      "a": 0,
-      "w": "Não é o repo.",
+      "a": 2,
+      "w": "O repositório não cobra ninguém. Sistema é a capacidade entregue, não o lugar onde o código mora.",
       "t": "todo"
     },
     {
-      "q": "No caderno, a respeito de todo: qual vale?",
+      "q": "O arquivo de configuração do deploy é o sistema?",
       "o": [
-        "Sistema é o todo que entrega uma capacidade (cobrar e confirmar).",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Sistema é o todo que entrega uma capacidade: cobrar e confirmar o pedido.",
+        "Sistema é o repositório onde o código do time mora.",
+        "Sistema é o conjunto de arquivos de configuração do deploy.",
+        "Sistema é cada processo isolado, um por um, sem o todo."
       ],
       "a": 0,
-      "w": "Não é o repo.",
+      "w": "O repositório não cobra ninguém. Sistema é a capacidade entregue, não o lugar onde o código mora.",
       "t": "todo"
     },
     {
-      "q": "Se perguntarem todo na mesa, qual frase é a verdadeira?",
+      "q": "Por que “sistema é o repo” está errado?",
       "o": [
-        "Sistema é o todo que entrega uma capacidade (cobrar e confirmar).",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Sistema é cada processo isolado, um por um, sem o todo.",
+        "Sistema é o todo que entrega uma capacidade: cobrar e confirmar o pedido.",
+        "Sistema é o repositório onde o código do time mora.",
+        "Sistema é o conjunto de arquivos de configuração do deploy."
       ],
-      "a": 0,
-      "w": "Não é o repo.",
+      "a": 1,
+      "w": "O repositório não cobra ninguém. Sistema é a capacidade entregue, não o lugar onde o código mora.",
       "t": "todo"
     },
     {
-      "q": "Sobre serviço: qual afirmação está certa?",
+      "q": "O que faz de um processo um serviço de verdade?",
       "o": [
-        "Serviço é processo deployável com fronteira: API ou tópico.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Serviço é processo deployável com fronteira própria: uma API ou um tópico.",
+        "Pasta no Git com hostname já é serviço de verdade.",
+        "Serviço é qualquer processo que sobe, com ou sem fronteira própria.",
+        "Serviço é o nome que aparece no arquivo de configuração."
       ],
       "a": 0,
-      "w": "Pasta no Git sem fronteira é módulo com DNS.",
+      "w": "Pasta no Git com hostname e sem fronteira própria é módulo com DNS, não serviço.",
       "t": "serviço"
     },
     {
-      "q": "Qual frase sobre serviço está certa?",
+      "q": "Pasta no Git com hostname já é serviço?",
       "o": [
-        "Serviço é processo deployável com fronteira: API ou tópico.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Serviço é processo deployável com fronteira própria: uma API ou um tópico.",
+        "Pasta no Git com hostname já é serviço de verdade.",
+        "Serviço é qualquer processo que sobe, com ou sem fronteira própria.",
+        "Serviço é o nome que aparece no arquivo de configuração."
       ],
       "a": 0,
-      "w": "Pasta no Git sem fronteira é módulo com DNS.",
+      "w": "Pasta no Git com hostname e sem fronteira própria é módulo com DNS, não serviço.",
       "t": "serviço"
     },
     {
-      "q": "Serviço — o que acontece de verdade?",
+      "q": "Serviço precisa de fronteira própria ou basta subir o processo?",
       "o": [
-        "Serviço é processo deployável com fronteira: API ou tópico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Serviço é qualquer processo que sobe, com ou sem fronteira própria.",
+        "Serviço é o nome que aparece no arquivo de configuração.",
+        "Serviço é processo deployável com fronteira própria: uma API ou um tópico.",
+        "Pasta no Git com hostname já é serviço de verdade."
       ],
-      "a": 0,
-      "w": "Pasta no Git sem fronteira é módulo com DNS.",
+      "a": 2,
+      "w": "Pasta no Git com hostname e sem fronteira própria é módulo com DNS, não serviço.",
       "t": "serviço"
     },
     {
-      "q": "Marque a leitura correta (serviço).",
+      "q": "Criaram a pasta, o deploy e o DNS. Falta o quê para ser serviço?",
       "o": [
-        "Serviço é processo deployável com fronteira: API ou tópico.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Pasta no Git com hostname já é serviço de verdade.",
+        "Serviço é qualquer processo que sobe, com ou sem fronteira própria.",
+        "Serviço é o nome que aparece no arquivo de configuração.",
+        "Serviço é processo deployável com fronteira própria: uma API ou um tópico."
       ],
-      "a": 0,
-      "w": "Pasta no Git sem fronteira é módulo com DNS.",
+      "a": 3,
+      "w": "Pasta no Git com hostname e sem fronteira própria é módulo com DNS, não serviço.",
       "t": "serviço"
     },
     {
-      "q": "Corrija o mito sobre serviço.",
+      "q": "O nome no arquivo de configuração transforma pasta em serviço?",
       "o": [
-        "Serviço é processo deployável com fronteira: API ou tópico.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Serviço é qualquer processo que sobe, com ou sem fronteira própria.",
+        "Serviço é o nome que aparece no arquivo de configuração.",
+        "Serviço é processo deployável com fronteira própria: uma API ou um tópico.",
+        "Pasta no Git com hostname já é serviço de verdade."
       ],
-      "a": 0,
-      "w": "Pasta no Git sem fronteira é módulo com DNS.",
+      "a": 2,
+      "w": "Pasta no Git com hostname e sem fronteira própria é módulo com DNS, não serviço.",
       "t": "serviço"
     },
     {
-      "q": "No caderno, a respeito de serviço: qual vale?",
+      "q": "Uma API ou um tópico próprio: por que isso importa para chamar de serviço?",
       "o": [
-        "Serviço é processo deployável com fronteira: API ou tópico.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Serviço é o nome que aparece no arquivo de configuração.",
+        "Serviço é processo deployável com fronteira própria: uma API ou um tópico.",
+        "Pasta no Git com hostname já é serviço de verdade.",
+        "Serviço é qualquer processo que sobe, com ou sem fronteira própria."
       ],
-      "a": 0,
-      "w": "Pasta no Git sem fronteira é módulo com DNS.",
+      "a": 1,
+      "w": "Pasta no Git com hostname e sem fronteira própria é módulo com DNS, não serviço.",
       "t": "serviço"
     },
     {
-      "q": "Se perguntarem serviço na mesa, qual frase é a verdadeira?",
+      "q": "Qual a diferença entre módulo com hostname e serviço?",
       "o": [
-        "Serviço é processo deployável com fronteira: API ou tópico.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Serviço é qualquer processo que sobe, com ou sem fronteira própria.",
+        "Serviço é o nome que aparece no arquivo de configuração.",
+        "Serviço é processo deployável com fronteira própria: uma API ou um tópico.",
+        "Pasta no Git com hostname já é serviço de verdade."
       ],
-      "a": 0,
-      "w": "Pasta no Git sem fronteira é módulo com DNS.",
+      "a": 2,
+      "w": "Pasta no Git com hostname e sem fronteira própria é módulo com DNS, não serviço.",
       "t": "serviço"
     },
     {
-      "q": "Sobre contrato: qual afirmação está certa?",
+      "q": "O que é contrato, do ponto de vista de quem consome?",
       "o": [
         "Contrato é o que o consumidor pode assumir. Quebrar é incidente.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Contrato é o código interno; o consumidor que se vire.",
+        "Quebrar o formato da resposta está ok se o produtor compilou.",
+        "Contrato é a promessa de uso de CPU, não o que a API entrega."
       ],
       "a": 0,
-      "w": "Código “certo” no produtor não salva.",
+      "w": "Código “certo” no produtor não salva. Campo sumiu, erro mudou, idempotência quebrou: o outro lado sentiu.",
       "t": "contrato"
     },
     {
-      "q": "Qual frase sobre contrato está certa?",
+      "q": "O produtor compilou e o formato da resposta mudou. Isso é incidente?",
       "o": [
-        "Contrato é o que o consumidor pode assumir. Quebrar é incidente.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Contrato é o código interno; o consumidor que se vire.",
+        "Quebrar o formato da resposta está ok se o produtor compilou.",
+        "Contrato é a promessa de uso de CPU, não o que a API entrega.",
+        "Contrato é o que o consumidor pode assumir. Quebrar é incidente."
       ],
-      "a": 0,
-      "w": "Código “certo” no produtor não salva.",
+      "a": 3,
+      "w": "Código “certo” no produtor não salva. Campo sumiu, erro mudou, idempotência quebrou: o outro lado sentiu.",
       "t": "contrato"
     },
     {
-      "q": "Contrato — o que acontece de verdade?",
+      "q": "Código interno “certo” salva se o consumidor quebrou?",
       "o": [
+        "Contrato é a promessa de uso de CPU, não o que a API entrega.",
         "Contrato é o que o consumidor pode assumir. Quebrar é incidente.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Contrato é o código interno; o consumidor que se vire.",
+        "Quebrar o formato da resposta está ok se o produtor compilou."
       ],
-      "a": 0,
-      "w": "Código “certo” no produtor não salva.",
+      "a": 1,
+      "w": "Código “certo” no produtor não salva. Campo sumiu, erro mudou, idempotência quebrou: o outro lado sentiu.",
       "t": "contrato"
     },
     {
-      "q": "Marque a leitura correta (contrato).",
+      "q": "Contrato é o que o outro lado pode assumir ou o que o seu repo faz?",
       "o": [
-        "Contrato é o que o consumidor pode assumir. Quebrar é incidente.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Contrato é o código interno; o consumidor que se vire.",
+        "Quebrar o formato da resposta está ok se o produtor compilou.",
+        "Contrato é a promessa de uso de CPU, não o que a API entrega.",
+        "Contrato é o que o consumidor pode assumir. Quebrar é incidente."
       ],
-      "a": 0,
-      "w": "Código “certo” no produtor não salva.",
+      "a": 3,
+      "w": "Código “certo” no produtor não salva. Campo sumiu, erro mudou, idempotência quebrou: o outro lado sentiu.",
       "t": "contrato"
     },
     {
-      "q": "Corrija o mito sobre contrato.",
+      "q": "Campo obrigatório sumiu. Bug interno ou quebra de contrato?",
       "o": [
-        "Contrato é o que o consumidor pode assumir. Quebrar é incidente.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Contrato é o código interno; o consumidor que se vire.",
+        "Quebrar o formato da resposta está ok se o produtor compilou.",
+        "Contrato é a promessa de uso de CPU, não o que a API entrega.",
+        "Contrato é o que o consumidor pode assumir. Quebrar é incidente."
       ],
-      "a": 0,
-      "w": "Código “certo” no produtor não salva.",
+      "a": 3,
+      "w": "Código “certo” no produtor não salva. Campo sumiu, erro mudou, idempotência quebrou: o outro lado sentiu.",
       "t": "contrato"
     },
     {
-      "q": "No caderno, a respeito de contrato: qual vale?",
+      "q": "Por que quebrar o contrato não é “só um refactor”?",
       "o": [
         "Contrato é o que o consumidor pode assumir. Quebrar é incidente.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Contrato é o código interno; o consumidor que se vire.",
+        "Quebrar o formato da resposta está ok se o produtor compilou.",
+        "Contrato é a promessa de uso de CPU, não o que a API entrega."
       ],
       "a": 0,
-      "w": "Código “certo” no produtor não salva.",
+      "w": "Código “certo” no produtor não salva. Campo sumiu, erro mudou, idempotência quebrou: o outro lado sentiu.",
       "t": "contrato"
     },
     {
-      "q": "Se perguntarem contrato na mesa, qual frase é a verdadeira?",
+      "q": "Quem define se o contrato foi quebrado: o produtor ou o consumidor?",
       "o": [
+        "Quebrar o formato da resposta está ok se o produtor compilou.",
+        "Contrato é a promessa de uso de CPU, não o que a API entrega.",
         "Contrato é o que o consumidor pode assumir. Quebrar é incidente.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Contrato é o código interno; o consumidor que se vire."
       ],
-      "a": 0,
-      "w": "Código “certo” no produtor não salva.",
+      "a": 2,
+      "w": "Código “certo” no produtor não salva. Campo sumiu, erro mudou, idempotência quebrou: o outro lado sentiu.",
       "t": "contrato"
     },
     {
-      "q": "Sobre dentro: qual afirmação está certa?",
+      "q": "Dentro da fronteira você muda à vontade. E fora dela?",
       "o": [
         "Dentro da fronteira você muda à vontade; fora, o contrato é lei.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Fora da fronteira você também muda à vontade; o contrato é interno.",
+        "Dentro da fronteira nada pode mudar sem avisar todo mundo.",
+        "Fronteira não muda nada: dentro e fora seguem a mesma regra."
       ],
       "a": 0,
-      "w": "Cardápio ≠ geladeira.",
+      "w": "O miolo é seu. O que o outro lado assume não muda sem versão e sem aviso.",
       "t": "dentro"
     },
     {
-      "q": "Qual frase sobre dentro está certa?",
+      "q": "O que é lei do lado de fora da fronteira?",
       "o": [
+        "Dentro da fronteira nada pode mudar sem avisar todo mundo.",
+        "Fronteira não muda nada: dentro e fora seguem a mesma regra.",
         "Dentro da fronteira você muda à vontade; fora, o contrato é lei.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Fora da fronteira você também muda à vontade; o contrato é interno."
       ],
-      "a": 0,
-      "w": "Cardápio ≠ geladeira.",
+      "a": 2,
+      "w": "O miolo é seu. O que o outro lado assume não muda sem versão e sem aviso.",
       "t": "dentro"
     },
     {
-      "q": "Dentro — o que acontece de verdade?",
+      "q": "Mudar o miolo do serviço exige aviso ao consumidor?",
       "o": [
+        "Fronteira não muda nada: dentro e fora seguem a mesma regra.",
         "Dentro da fronteira você muda à vontade; fora, o contrato é lei.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Fora da fronteira você também muda à vontade; o contrato é interno.",
+        "Dentro da fronteira nada pode mudar sem avisar todo mundo."
       ],
-      "a": 0,
-      "w": "Cardápio ≠ geladeira.",
+      "a": 1,
+      "w": "O miolo é seu. O que o outro lado assume não muda sem versão e sem aviso.",
       "t": "dentro"
     },
     {
-      "q": "Marque a leitura correta (dentro).",
+      "q": "Onde você tem liberdade de mudar e onde não tem?",
       "o": [
-        "Dentro da fronteira você muda à vontade; fora, o contrato é lei.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Fora da fronteira você também muda à vontade; o contrato é interno.",
+        "Dentro da fronteira nada pode mudar sem avisar todo mundo.",
+        "Fronteira não muda nada: dentro e fora seguem a mesma regra.",
+        "Dentro da fronteira você muda à vontade; fora, o contrato é lei."
       ],
-      "a": 0,
-      "w": "Cardápio ≠ geladeira.",
+      "a": 3,
+      "w": "O miolo é seu. O que o outro lado assume não muda sem versão e sem aviso.",
       "t": "dentro"
     },
     {
-      "q": "Corrija o mito sobre dentro.",
+      "q": "Fora da fronteira o contrato é sugestão ou lei?",
       "o": [
+        "Dentro da fronteira nada pode mudar sem avisar todo mundo.",
+        "Fronteira não muda nada: dentro e fora seguem a mesma regra.",
         "Dentro da fronteira você muda à vontade; fora, o contrato é lei.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Fora da fronteira você também muda à vontade; o contrato é interno."
       ],
-      "a": 0,
-      "w": "Cardápio ≠ geladeira.",
+      "a": 2,
+      "w": "O miolo é seu. O que o outro lado assume não muda sem versão e sem aviso.",
       "t": "dentro"
     },
     {
-      "q": "No caderno, a respeito de dentro: qual vale?",
+      "q": "Dentro e fora da fronteira seguem a mesma regra?",
       "o": [
+        "Fronteira não muda nada: dentro e fora seguem a mesma regra.",
         "Dentro da fronteira você muda à vontade; fora, o contrato é lei.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Fora da fronteira você também muda à vontade; o contrato é interno.",
+        "Dentro da fronteira nada pode mudar sem avisar todo mundo."
       ],
-      "a": 0,
-      "w": "Cardápio ≠ geladeira.",
+      "a": 1,
+      "w": "O miolo é seu. O que o outro lado assume não muda sem versão e sem aviso.",
       "t": "dentro"
     },
     {
-      "q": "Se perguntarem dentro na mesa, qual frase é a verdadeira?",
+      "q": "Por que a fronteira separa liberdade de obrigação?",
       "o": [
-        "Dentro da fronteira você muda à vontade; fora, o contrato é lei.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Fora da fronteira você também muda à vontade; o contrato é interno.",
+        "Dentro da fronteira nada pode mudar sem avisar todo mundo.",
+        "Fronteira não muda nada: dentro e fora seguem a mesma regra.",
+        "Dentro da fronteira você muda à vontade; fora, o contrato é lei."
       ],
-      "a": 0,
-      "w": "Cardápio ≠ geladeira.",
+      "a": 3,
+      "w": "O miolo é seu. O que o outro lado assume não muda sem versão e sem aviso.",
       "t": "dentro"
     },
     {
-      "q": "Sobre analogia: qual afirmação está certa?",
+      "q": "Sistema, componente e contrato: o que cada um significa?",
       "o": [
-        "Restaurante = sistema. Cozinha = componente. Cardápio = contrato.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Componente é o todo e sistema é a peça deployável.",
+        "Contrato é o fonte do produtor: quem consome precisa dele para integrar.",
+        "Sistema é o todo, componente é a peça deployável, contrato é o que o outro lado pode assumir.",
+        "Sistema, componente e contrato são três nomes para a mesma coisa."
       ],
-      "a": 0,
-      "w": "Cliente não entra na geladeira.",
+      "a": 2,
+      "w": "Três palavras, três papéis. Quem consome não precisa do seu fonte para usar o contrato.",
       "t": "analogia"
     },
     {
-      "q": "Qual frase sobre analogia está certa?",
+      "q": "Qual dos três é a peça deployável?",
       "o": [
-        "Restaurante = sistema. Cozinha = componente. Cardápio = contrato.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Sistema, componente e contrato são três nomes para a mesma coisa.",
+        "Componente é o todo e sistema é a peça deployável.",
+        "Contrato é o fonte do produtor: quem consome precisa dele para integrar.",
+        "Sistema é o todo, componente é a peça deployável, contrato é o que o outro lado pode assumir."
       ],
-      "a": 0,
-      "w": "Cliente não entra na geladeira.",
+      "a": 3,
+      "w": "Três palavras, três papéis. Quem consome não precisa do seu fonte para usar o contrato.",
       "t": "analogia"
     },
     {
-      "q": "Analogia — o que acontece de verdade?",
+      "q": "Contrato é o que o outro lado assume ou o seu código-fonte?",
       "o": [
-        "Restaurante = sistema. Cozinha = componente. Cardápio = contrato.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Sistema é o todo, componente é a peça deployável, contrato é o que o outro lado pode assumir.",
+        "Sistema, componente e contrato são três nomes para a mesma coisa.",
+        "Componente é o todo e sistema é a peça deployável.",
+        "Contrato é o fonte do produtor: quem consome precisa dele para integrar."
       ],
       "a": 0,
-      "w": "Cliente não entra na geladeira.",
+      "w": "Três palavras, três papéis. Quem consome não precisa do seu fonte para usar o contrato.",
       "t": "analogia"
     },
     {
-      "q": "Marque a leitura correta (analogia).",
+      "q": "Quem consome o contrato precisa do seu fonte?",
       "o": [
-        "Restaurante = sistema. Cozinha = componente. Cardápio = contrato.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Sistema, componente e contrato são três nomes para a mesma coisa.",
+        "Componente é o todo e sistema é a peça deployável.",
+        "Contrato é o fonte do produtor: quem consome precisa dele para integrar.",
+        "Sistema é o todo, componente é a peça deployável, contrato é o que o outro lado pode assumir."
       ],
-      "a": 0,
-      "w": "Cliente não entra na geladeira.",
+      "a": 3,
+      "w": "Três palavras, três papéis. Quem consome não precisa do seu fonte para usar o contrato.",
       "t": "analogia"
     },
     {
-      "q": "Corrija o mito sobre analogia.",
+      "q": "Sistema é o todo. E o componente?",
       "o": [
-        "Restaurante = sistema. Cozinha = componente. Cardápio = contrato.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Sistema, componente e contrato são três nomes para a mesma coisa.",
+        "Componente é o todo e sistema é a peça deployável.",
+        "Contrato é o fonte do produtor: quem consome precisa dele para integrar.",
+        "Sistema é o todo, componente é a peça deployável, contrato é o que o outro lado pode assumir."
       ],
-      "a": 0,
-      "w": "Cliente não entra na geladeira.",
+      "a": 3,
+      "w": "Três palavras, três papéis. Quem consome não precisa do seu fonte para usar o contrato.",
       "t": "analogia"
     },
     {
-      "q": "No caderno, a respeito de analogia: qual vale?",
+      "q": "Os três termos apontam para a mesma coisa?",
       "o": [
-        "Restaurante = sistema. Cozinha = componente. Cardápio = contrato.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Contrato é o fonte do produtor: quem consome precisa dele para integrar.",
+        "Sistema é o todo, componente é a peça deployável, contrato é o que o outro lado pode assumir.",
+        "Sistema, componente e contrato são três nomes para a mesma coisa.",
+        "Componente é o todo e sistema é a peça deployável."
       ],
-      "a": 0,
-      "w": "Cliente não entra na geladeira.",
+      "a": 1,
+      "w": "Três palavras, três papéis. Quem consome não precisa do seu fonte para usar o contrato.",
       "t": "analogia"
     },
     {
-      "q": "Se perguntarem analogia na mesa, qual frase é a verdadeira?",
+      "q": "Como separar o todo, a peça e a promessa?",
       "o": [
-        "Restaurante = sistema. Cozinha = componente. Cardápio = contrato.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Componente é o todo e sistema é a peça deployável.",
+        "Contrato é o fonte do produtor: quem consome precisa dele para integrar.",
+        "Sistema é o todo, componente é a peça deployável, contrato é o que o outro lado pode assumir.",
+        "Sistema, componente e contrato são três nomes para a mesma coisa."
       ],
-      "a": 0,
-      "w": "Cliente não entra na geladeira.",
+      "a": 2,
+      "w": "Três palavras, três papéis. Quem consome não precisa do seu fonte para usar o contrato.",
       "t": "analogia"
     },
     {
-      "q": "Sobre deploy: qual afirmação está certa?",
+      "q": "Quais duas fronteiras a aula exige para chamar de serviço?",
       "o": [
+        "Nem deploy nem dado importam: o nome do processo já basta.",
         "Sem fronteira de deploy e de dado, não chame de serviço.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Basta o deploy separado; o dado pode continuar o mesmo.",
+        "Basta o dado separado; o deploy pode continuar acoplado."
       ],
-      "a": 0,
-      "w": "Erro comum da mesa.",
+      "a": 1,
+      "w": "Se o deploy sai junto e o dado é o mesmo, a feature ainda muda os dois juntos. Isso é módulo.",
       "t": "deploy"
     },
     {
-      "q": "Qual frase sobre deploy está certa?",
+      "q": "Deploy separado e banco compartilhado: já é serviço?",
       "o": [
+        "Basta o dado separado; o deploy pode continuar acoplado.",
+        "Nem deploy nem dado importam: o nome do processo já basta.",
         "Sem fronteira de deploy e de dado, não chame de serviço.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Basta o deploy separado; o dado pode continuar o mesmo."
       ],
-      "a": 0,
-      "w": "Erro comum da mesa.",
+      "a": 2,
+      "w": "Se o deploy sai junto e o dado é o mesmo, a feature ainda muda os dois juntos. Isso é módulo.",
       "t": "deploy"
     },
     {
-      "q": "Deploy — o que acontece de verdade?",
+      "q": "Sem fronteira de dado, o processo é serviço?",
       "o": [
+        "Nem deploy nem dado importam: o nome do processo já basta.",
         "Sem fronteira de deploy e de dado, não chame de serviço.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Basta o deploy separado; o dado pode continuar o mesmo.",
+        "Basta o dado separado; o deploy pode continuar acoplado."
       ],
-      "a": 0,
-      "w": "Erro comum da mesa.",
+      "a": 1,
+      "w": "Se o deploy sai junto e o dado é o mesmo, a feature ainda muda os dois juntos. Isso é módulo.",
       "t": "deploy"
     },
     {
-      "q": "Marque a leitura correta (deploy).",
+      "q": "O que falta quando a feature muda os dois lados juntos?",
       "o": [
-        "Sem fronteira de deploy e de dado, não chame de serviço.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Basta o deploy separado; o dado pode continuar o mesmo.",
+        "Basta o dado separado; o deploy pode continuar acoplado.",
+        "Nem deploy nem dado importam: o nome do processo já basta.",
+        "Sem fronteira de deploy e de dado, não chame de serviço."
       ],
-      "a": 0,
-      "w": "Erro comum da mesa.",
+      "a": 3,
+      "w": "Se o deploy sai junto e o dado é o mesmo, a feature ainda muda os dois juntos. Isso é módulo.",
       "t": "deploy"
     },
     {
-      "q": "Corrija o mito sobre deploy.",
+      "q": "Fronteira de deploy sozinha basta?",
       "o": [
+        "Nem deploy nem dado importam: o nome do processo já basta.",
         "Sem fronteira de deploy e de dado, não chame de serviço.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Basta o deploy separado; o dado pode continuar o mesmo.",
+        "Basta o dado separado; o deploy pode continuar acoplado."
       ],
-      "a": 0,
-      "w": "Erro comum da mesa.",
+      "a": 1,
+      "w": "Se o deploy sai junto e o dado é o mesmo, a feature ainda muda os dois juntos. Isso é módulo.",
       "t": "deploy"
     },
     {
-      "q": "No caderno, a respeito de deploy: qual vale?",
+      "q": "Por que o dado entra na definição de serviço?",
       "o": [
+        "Basta o dado separado; o deploy pode continuar acoplado.",
+        "Nem deploy nem dado importam: o nome do processo já basta.",
         "Sem fronteira de deploy e de dado, não chame de serviço.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Basta o deploy separado; o dado pode continuar o mesmo."
       ],
-      "a": 0,
-      "w": "Erro comum da mesa.",
+      "a": 2,
+      "w": "Se o deploy sai junto e o dado é o mesmo, a feature ainda muda os dois juntos. Isso é módulo.",
       "t": "deploy"
     },
     {
-      "q": "Se perguntarem deploy na mesa, qual frase é a verdadeira?",
+      "q": "Deploy junto e dado junto: como se chama isso?",
       "o": [
+        "Basta o dado separado; o deploy pode continuar acoplado.",
+        "Nem deploy nem dado importam: o nome do processo já basta.",
         "Sem fronteira de deploy e de dado, não chame de serviço.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Basta o deploy separado; o dado pode continuar o mesmo."
       ],
-      "a": 0,
-      "w": "Erro comum da mesa.",
+      "a": 2,
+      "w": "Se o deploy sai junto e o dado é o mesmo, a feature ainda muda os dois juntos. Isso é módulo.",
       "t": "deploy"
     },
     {
-      "q": "Sobre versão: qual afirmação está certa?",
+      "q": "O que entra no contrato além dos campos?",
       "o": [
-        "Contrato inclui campos, erros, idempotência, versão.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Contrato é só a resposta de sucesso; erro e versão ficam fora.",
+        "Contrato inclui campos e nada mais; erro é detalhe interno.",
+        "Versão é enfeite de documentação; não faz parte do contrato.",
+        "Contrato inclui campos, erros, idempotência e versão — não só a resposta de sucesso."
       ],
-      "a": 0,
-      "w": "Não só o JSON feliz.",
+      "a": 3,
+      "w": "O caminho feliz é a parte fácil. O consumidor também assume o erro, a repetição e a versão.",
       "t": "versão"
     },
     {
-      "q": "Qual frase sobre versão está certa?",
+      "q": "A resposta de sucesso é o contrato inteiro?",
       "o": [
-        "Contrato inclui campos, erros, idempotência, versão.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Contrato inclui campos, erros, idempotência e versão — não só a resposta de sucesso.",
+        "Contrato é só a resposta de sucesso; erro e versão ficam fora.",
+        "Contrato inclui campos e nada mais; erro é detalhe interno.",
+        "Versão é enfeite de documentação; não faz parte do contrato."
       ],
       "a": 0,
-      "w": "Não só o JSON feliz.",
+      "w": "O caminho feliz é a parte fácil. O consumidor também assume o erro, a repetição e a versão.",
       "t": "versão"
     },
     {
-      "q": "Versão — o que acontece de verdade?",
+      "q": "Erro e versão fazem parte do contrato?",
       "o": [
-        "Contrato inclui campos, erros, idempotência, versão.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Contrato é só a resposta de sucesso; erro e versão ficam fora.",
+        "Contrato inclui campos e nada mais; erro é detalhe interno.",
+        "Versão é enfeite de documentação; não faz parte do contrato.",
+        "Contrato inclui campos, erros, idempotência e versão — não só a resposta de sucesso."
       ],
-      "a": 0,
-      "w": "Não só o JSON feliz.",
+      "a": 3,
+      "w": "O caminho feliz é a parte fácil. O consumidor também assume o erro, a repetição e a versão.",
       "t": "versão"
     },
     {
-      "q": "Marque a leitura correta (versão).",
+      "q": "O consumidor assume só o caminho feliz?",
       "o": [
-        "Contrato inclui campos, erros, idempotência, versão.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Contrato inclui campos, erros, idempotência e versão — não só a resposta de sucesso.",
+        "Contrato é só a resposta de sucesso; erro e versão ficam fora.",
+        "Contrato inclui campos e nada mais; erro é detalhe interno.",
+        "Versão é enfeite de documentação; não faz parte do contrato."
       ],
       "a": 0,
-      "w": "Não só o JSON feliz.",
+      "w": "O caminho feliz é a parte fácil. O consumidor também assume o erro, a repetição e a versão.",
       "t": "versão"
     },
     {
-      "q": "Corrija o mito sobre versão.",
+      "q": "Idempotência é detalhe interno ou parte do contrato?",
       "o": [
-        "Contrato inclui campos, erros, idempotência, versão.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Versão é enfeite de documentação; não faz parte do contrato.",
+        "Contrato inclui campos, erros, idempotência e versão — não só a resposta de sucesso.",
+        "Contrato é só a resposta de sucesso; erro e versão ficam fora.",
+        "Contrato inclui campos e nada mais; erro é detalhe interno."
       ],
-      "a": 0,
-      "w": "Não só o JSON feliz.",
+      "a": 1,
+      "w": "O caminho feliz é a parte fácil. O consumidor também assume o erro, a repetição e a versão.",
       "t": "versão"
     },
     {
-      "q": "No caderno, a respeito de versão: qual vale?",
+      "q": "Versão é enfeite de documentação ou item do contrato?",
       "o": [
-        "Contrato inclui campos, erros, idempotência, versão.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Contrato é só a resposta de sucesso; erro e versão ficam fora.",
+        "Contrato inclui campos e nada mais; erro é detalhe interno.",
+        "Versão é enfeite de documentação; não faz parte do contrato.",
+        "Contrato inclui campos, erros, idempotência e versão — não só a resposta de sucesso."
       ],
-      "a": 0,
-      "w": "Não só o JSON feliz.",
+      "a": 3,
+      "w": "O caminho feliz é a parte fácil. O consumidor também assume o erro, a repetição e a versão.",
       "t": "versão"
     },
     {
-      "q": "Se perguntarem versão na mesa, qual frase é a verdadeira?",
+      "q": "O contrato é só o campo, ou campo, erro, idempotência e versão?",
       "o": [
-        "Contrato inclui campos, erros, idempotência, versão.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Contrato é só a resposta de sucesso; erro e versão ficam fora.",
+        "Contrato inclui campos e nada mais; erro é detalhe interno.",
+        "Versão é enfeite de documentação; não faz parte do contrato.",
+        "Contrato inclui campos, erros, idempotência e versão — não só a resposta de sucesso."
       ],
-      "a": 0,
-      "w": "Não só o JSON feliz.",
+      "a": 3,
+      "w": "O caminho feliz é a parte fácil. O consumidor também assume o erro, a repetição e a versão.",
       "t": "versão"
     },
     {
-      "q": "Sobre capacidade: qual afirmação está certa?",
+      "q": "O que nomear no desenho: a capacidade de negócio ou a pasta?",
       "o": [
-        "Nomeie a capacidade de negócio, não a pasta.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O nome do arquivo de configuração já é a capacidade.",
+        "Nomeie pela pasta do repositório: é o que o time enxerga.",
+        "Capacidade e nome técnico são a mesma coisa na prática.",
+        "Nomeie a capacidade de negócio, não a pasta nem o arquivo."
       ],
-      "a": 0,
-      "w": "Checkout ≠ checkout-service.yaml.",
+      "a": 3,
+      "w": "Checkout é cobrar e confirmar. O nome do arquivo de configuração não cobra ninguém.",
       "t": "capacidade"
     },
     {
-      "q": "Qual frase sobre capacidade está certa?",
+      "q": "O nome do arquivo de configuração é a capacidade?",
       "o": [
-        "Nomeie a capacidade de negócio, não a pasta.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Nomeie pela pasta do repositório: é o que o time enxerga.",
+        "Capacidade e nome técnico são a mesma coisa na prática.",
+        "Nomeie a capacidade de negócio, não a pasta nem o arquivo.",
+        "O nome do arquivo de configuração já é a capacidade."
       ],
-      "a": 0,
-      "w": "Checkout ≠ checkout-service.yaml.",
+      "a": 2,
+      "w": "Checkout é cobrar e confirmar. O nome do arquivo de configuração não cobra ninguém.",
       "t": "capacidade"
     },
     {
-      "q": "Capacidade — o que acontece de verdade?",
+      "q": "Checkout é a pasta ou é cobrar e confirmar?",
       "o": [
-        "Nomeie a capacidade de negócio, não a pasta.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Nomeie a capacidade de negócio, não a pasta nem o arquivo.",
+        "O nome do arquivo de configuração já é a capacidade.",
+        "Nomeie pela pasta do repositório: é o que o time enxerga.",
+        "Capacidade e nome técnico são a mesma coisa na prática."
       ],
       "a": 0,
-      "w": "Checkout ≠ checkout-service.yaml.",
+      "w": "Checkout é cobrar e confirmar. O nome do arquivo de configuração não cobra ninguém.",
       "t": "capacidade"
     },
     {
-      "q": "Marque a leitura correta (capacidade).",
+      "q": "Como nomear a peça no quadro?",
       "o": [
-        "Nomeie a capacidade de negócio, não a pasta.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Nomeie a capacidade de negócio, não a pasta nem o arquivo.",
+        "O nome do arquivo de configuração já é a capacidade.",
+        "Nomeie pela pasta do repositório: é o que o time enxerga.",
+        "Capacidade e nome técnico são a mesma coisa na prática."
       ],
       "a": 0,
-      "w": "Checkout ≠ checkout-service.yaml.",
+      "w": "Checkout é cobrar e confirmar. O nome do arquivo de configuração não cobra ninguém.",
       "t": "capacidade"
     },
     {
-      "q": "Corrija o mito sobre capacidade.",
+      "q": "Nomear pela pasta do repositório funciona?",
       "o": [
-        "Nomeie a capacidade de negócio, não a pasta.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O nome do arquivo de configuração já é a capacidade.",
+        "Nomeie pela pasta do repositório: é o que o time enxerga.",
+        "Capacidade e nome técnico são a mesma coisa na prática.",
+        "Nomeie a capacidade de negócio, não a pasta nem o arquivo."
       ],
-      "a": 0,
-      "w": "Checkout ≠ checkout-service.yaml.",
+      "a": 3,
+      "w": "Checkout é cobrar e confirmar. O nome do arquivo de configuração não cobra ninguém.",
       "t": "capacidade"
     },
     {
-      "q": "No caderno, a respeito de capacidade: qual vale?",
+      "q": "Capacidade de negócio e nome técnico são a mesma coisa?",
       "o": [
-        "Nomeie a capacidade de negócio, não a pasta.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Nomeie pela pasta do repositório: é o que o time enxerga.",
+        "Capacidade e nome técnico são a mesma coisa na prática.",
+        "Nomeie a capacidade de negócio, não a pasta nem o arquivo.",
+        "O nome do arquivo de configuração já é a capacidade."
       ],
-      "a": 0,
-      "w": "Checkout ≠ checkout-service.yaml.",
+      "a": 2,
+      "w": "Checkout é cobrar e confirmar. O nome do arquivo de configuração não cobra ninguém.",
       "t": "capacidade"
     },
     {
-      "q": "Se perguntarem capacidade na mesa, qual frase é a verdadeira?",
+      "q": "Por que o nome da pasta não descreve a capacidade?",
       "o": [
-        "Nomeie a capacidade de negócio, não a pasta.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Nomeie pela pasta do repositório: é o que o time enxerga.",
+        "Capacidade e nome técnico são a mesma coisa na prática.",
+        "Nomeie a capacidade de negócio, não a pasta nem o arquivo.",
+        "O nome do arquivo de configuração já é a capacidade."
       ],
-      "a": 0,
-      "w": "Checkout ≠ checkout-service.yaml.",
+      "a": 2,
+      "w": "Checkout é cobrar e confirmar. O nome do arquivo de configuração não cobra ninguém.",
       "t": "capacidade"
     },
     {
-      "q": "Sobre módulo: qual afirmação está certa?",
+      "q": "Módulo bem separado num deploy único é serviço?",
       "o": [
-        "Módulo bem separado num deploy ainda é um sistema só.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Módulo bem separado num deploy único ainda é um sistema só — e pode ser excelente.",
+        "Módulo bem separado num deploy único já é microsserviço.",
+        "Módulo num deploy único é sempre um defeito a corrigir.",
+        "Se está bem separado, o deploy único deixou de ser um sistema só."
       ],
       "a": 0,
-      "w": "Isso pode ser excelente.",
+      "w": "Separar bem por dentro não vira serviço, mas não é defeito. Fronteira de código sem o preço da rede.",
       "t": "módulo"
     },
     {
-      "q": "Qual frase sobre módulo está certa?",
+      "q": "Separar bem por dentro já criou fronteira de deploy?",
       "o": [
-        "Módulo bem separado num deploy ainda é um sistema só.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Se está bem separado, o deploy único deixou de ser um sistema só.",
+        "Módulo bem separado num deploy único ainda é um sistema só — e pode ser excelente.",
+        "Módulo bem separado num deploy único já é microsserviço.",
+        "Módulo num deploy único é sempre um defeito a corrigir."
       ],
-      "a": 0,
-      "w": "Isso pode ser excelente.",
+      "a": 1,
+      "w": "Separar bem por dentro não vira serviço, mas não é defeito. Fronteira de código sem o preço da rede.",
       "t": "módulo"
     },
     {
-      "q": "Módulo — o que acontece de verdade?",
+      "q": "Módulo num deploy único é defeito?",
       "o": [
-        "Módulo bem separado num deploy ainda é um sistema só.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Módulo num deploy único é sempre um defeito a corrigir.",
+        "Se está bem separado, o deploy único deixou de ser um sistema só.",
+        "Módulo bem separado num deploy único ainda é um sistema só — e pode ser excelente.",
+        "Módulo bem separado num deploy único já é microsserviço."
       ],
-      "a": 0,
-      "w": "Isso pode ser excelente.",
+      "a": 2,
+      "w": "Separar bem por dentro não vira serviço, mas não é defeito. Fronteira de código sem o preço da rede.",
       "t": "módulo"
     },
     {
-      "q": "Marque a leitura correta (módulo).",
+      "q": "Módulos bem separados num deploy único: um sistema ou vários?",
       "o": [
-        "Módulo bem separado num deploy ainda é um sistema só.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Módulo num deploy único é sempre um defeito a corrigir.",
+        "Se está bem separado, o deploy único deixou de ser um sistema só.",
+        "Módulo bem separado num deploy único ainda é um sistema só — e pode ser excelente.",
+        "Módulo bem separado num deploy único já é microsserviço."
       ],
-      "a": 0,
-      "w": "Isso pode ser excelente.",
+      "a": 2,
+      "w": "Separar bem por dentro não vira serviço, mas não é defeito. Fronteira de código sem o preço da rede.",
       "t": "módulo"
     },
     {
-      "q": "Corrija o mito sobre módulo.",
+      "q": "Separação interna boa vira microsserviço?",
       "o": [
-        "Módulo bem separado num deploy ainda é um sistema só.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Se está bem separado, o deploy único deixou de ser um sistema só.",
+        "Módulo bem separado num deploy único ainda é um sistema só — e pode ser excelente.",
+        "Módulo bem separado num deploy único já é microsserviço.",
+        "Módulo num deploy único é sempre um defeito a corrigir."
       ],
-      "a": 0,
-      "w": "Isso pode ser excelente.",
+      "a": 1,
+      "w": "Separar bem por dentro não vira serviço, mas não é defeito. Fronteira de código sem o preço da rede.",
       "t": "módulo"
     },
     {
-      "q": "No caderno, a respeito de módulo: qual vale?",
+      "q": "Um deploy com módulos separados: isso pode ser excelente?",
       "o": [
-        "Módulo bem separado num deploy ainda é um sistema só.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Se está bem separado, o deploy único deixou de ser um sistema só.",
+        "Módulo bem separado num deploy único ainda é um sistema só — e pode ser excelente.",
+        "Módulo bem separado num deploy único já é microsserviço.",
+        "Módulo num deploy único é sempre um defeito a corrigir."
       ],
-      "a": 0,
-      "w": "Isso pode ser excelente.",
+      "a": 1,
+      "w": "Separar bem por dentro não vira serviço, mas não é defeito. Fronteira de código sem o preço da rede.",
       "t": "módulo"
     },
     {
-      "q": "Se perguntarem módulo na mesa, qual frase é a verdadeira?",
+      "q": "O que a separação interna dá e o que ela não dá?",
       "o": [
-        "Módulo bem separado num deploy ainda é um sistema só.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Módulo bem separado num deploy único já é microsserviço.",
+        "Módulo num deploy único é sempre um defeito a corrigir.",
+        "Se está bem separado, o deploy único deixou de ser um sistema só.",
+        "Módulo bem separado num deploy único ainda é um sistema só — e pode ser excelente."
       ],
-      "a": 0,
-      "w": "Isso pode ser excelente.",
+      "a": 3,
+      "w": "Separar bem por dentro não vira serviço, mas não é defeito. Fronteira de código sem o preço da rede.",
       "t": "módulo"
     },
     {
-      "q": "Sobre DNS: qual afirmação está certa?",
+      "q": "Vários deploys apontando para o mesmo banco: como se chama isso?",
       "o": [
-        "DNS + banco compartilhado = monolito distribuído.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Compartilhar o banco entre deploys é o melhor dos dois mundos.",
+        "O hostname próprio resolve o acoplamento do banco compartilhado.",
+        "Vários deploys com o mesmo banco é monolito distribuído: o pior dos dois mundos.",
+        "Vários deploys com o mesmo banco já é microsserviço de verdade."
       ],
-      "a": 0,
-      "w": "Pior dos mundos.",
+      "a": 2,
+      "w": "Você paga a rede do micro e continua com o casamento do banco. Release junto, schema junto, incidente junto.",
       "t": "DNS"
     },
     {
-      "q": "Qual frase sobre DNS está certa?",
+      "q": "Compartilhar o banco entre deploys é o melhor ou o pior dos dois mundos?",
       "o": [
-        "DNS + banco compartilhado = monolito distribuído.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Compartilhar o banco entre deploys é o melhor dos dois mundos.",
+        "O hostname próprio resolve o acoplamento do banco compartilhado.",
+        "Vários deploys com o mesmo banco é monolito distribuído: o pior dos dois mundos.",
+        "Vários deploys com o mesmo banco já é microsserviço de verdade."
       ],
-      "a": 0,
-      "w": "Pior dos mundos.",
+      "a": 2,
+      "w": "Você paga a rede do micro e continua com o casamento do banco. Release junto, schema junto, incidente junto.",
       "t": "DNS"
     },
     {
-      "q": "DNS — o que acontece de verdade?",
+      "q": "O hostname próprio resolve o banco compartilhado?",
       "o": [
-        "DNS + banco compartilhado = monolito distribuído.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O hostname próprio resolve o acoplamento do banco compartilhado.",
+        "Vários deploys com o mesmo banco é monolito distribuído: o pior dos dois mundos.",
+        "Vários deploys com o mesmo banco já é microsserviço de verdade.",
+        "Compartilhar o banco entre deploys é o melhor dos dois mundos."
       ],
-      "a": 0,
-      "w": "Pior dos mundos.",
+      "a": 1,
+      "w": "Você paga a rede do micro e continua com o casamento do banco. Release junto, schema junto, incidente junto.",
       "t": "DNS"
     },
     {
-      "q": "Marque a leitura correta (DNS).",
+      "q": "Que preço você paga com deploys separados e banco único?",
       "o": [
-        "DNS + banco compartilhado = monolito distribuído.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Vários deploys com o mesmo banco é monolito distribuído: o pior dos dois mundos.",
+        "Vários deploys com o mesmo banco já é microsserviço de verdade.",
+        "Compartilhar o banco entre deploys é o melhor dos dois mundos.",
+        "O hostname próprio resolve o acoplamento do banco compartilhado."
       ],
       "a": 0,
-      "w": "Pior dos mundos.",
+      "w": "Você paga a rede do micro e continua com o casamento do banco. Release junto, schema junto, incidente junto.",
       "t": "DNS"
     },
     {
-      "q": "Corrija o mito sobre DNS.",
+      "q": "Banco compartilhado entre deploys já é microsserviço?",
       "o": [
-        "DNS + banco compartilhado = monolito distribuído.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Vários deploys com o mesmo banco já é microsserviço de verdade.",
+        "Compartilhar o banco entre deploys é o melhor dos dois mundos.",
+        "O hostname próprio resolve o acoplamento do banco compartilhado.",
+        "Vários deploys com o mesmo banco é monolito distribuído: o pior dos dois mundos."
       ],
-      "a": 0,
-      "w": "Pior dos mundos.",
+      "a": 3,
+      "w": "Você paga a rede do micro e continua com o casamento do banco. Release junto, schema junto, incidente junto.",
       "t": "DNS"
     },
     {
-      "q": "No caderno, a respeito de DNS: qual vale?",
+      "q": "O que acontece com release e schema quando o banco é o mesmo?",
       "o": [
-        "DNS + banco compartilhado = monolito distribuído.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Compartilhar o banco entre deploys é o melhor dos dois mundos.",
+        "O hostname próprio resolve o acoplamento do banco compartilhado.",
+        "Vários deploys com o mesmo banco é monolito distribuído: o pior dos dois mundos.",
+        "Vários deploys com o mesmo banco já é microsserviço de verdade."
       ],
-      "a": 0,
-      "w": "Pior dos mundos.",
+      "a": 2,
+      "w": "Você paga a rede do micro e continua com o casamento do banco. Release junto, schema junto, incidente junto.",
       "t": "DNS"
     },
     {
-      "q": "Se perguntarem DNS na mesa, qual frase é a verdadeira?",
+      "q": "Por que monolito distribuído é pior que monolito?",
       "o": [
-        "DNS + banco compartilhado = monolito distribuído.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Vários deploys com o mesmo banco já é microsserviço de verdade.",
+        "Compartilhar o banco entre deploys é o melhor dos dois mundos.",
+        "O hostname próprio resolve o acoplamento do banco compartilhado.",
+        "Vários deploys com o mesmo banco é monolito distribuído: o pior dos dois mundos."
       ],
-      "a": 0,
-      "w": "Pior dos mundos.",
+      "a": 3,
+      "w": "Você paga a rede do micro e continua com o casamento do banco. Release junto, schema junto, incidente junto.",
       "t": "DNS"
     },
     {
-      "q": "Sobre tópico contrato: qual afirmação está certa?",
+      "q": "Tópico também é fronteira de contrato?",
       "o": [
-        "Tópico também é fronteira. Schema quebrado é incidente.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Tópico também é fronteira: schema quebrado é incidente, não “só um formato”.",
+        "Só API é fronteira; tópico é transporte interno sem contrato.",
+        "Schema de tópico quebrado é detalhe de formato, não incidente.",
+        "Tópico não tem consumidor com expectativa: publique como quiser."
       ],
       "a": 0,
-      "w": "Não só REST.",
+      "w": "A lei vale para o tópico igual à API. Quem consome o evento assume o schema.",
       "t": "tópico contrato"
     },
     {
-      "q": "Qual frase sobre tópico contrato está certa?",
+      "q": "Schema de tópico quebrado é incidente ou detalhe de formato?",
       "o": [
-        "Tópico também é fronteira. Schema quebrado é incidente.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Tópico não tem consumidor com expectativa: publique como quiser.",
+        "Tópico também é fronteira: schema quebrado é incidente, não “só um formato”.",
+        "Só API é fronteira; tópico é transporte interno sem contrato.",
+        "Schema de tópico quebrado é detalhe de formato, não incidente."
       ],
-      "a": 0,
-      "w": "Não só REST.",
+      "a": 1,
+      "w": "A lei vale para o tópico igual à API. Quem consome o evento assume o schema.",
       "t": "tópico contrato"
     },
     {
-      "q": "Tópico contrato — o que acontece de verdade?",
+      "q": "Só API tem contrato, ou o tópico também?",
       "o": [
-        "Tópico também é fronteira. Schema quebrado é incidente.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Tópico não tem consumidor com expectativa: publique como quiser.",
+        "Tópico também é fronteira: schema quebrado é incidente, não “só um formato”.",
+        "Só API é fronteira; tópico é transporte interno sem contrato.",
+        "Schema de tópico quebrado é detalhe de formato, não incidente."
       ],
-      "a": 0,
-      "w": "Não só REST.",
+      "a": 1,
+      "w": "A lei vale para o tópico igual à API. Quem consome o evento assume o schema.",
       "t": "tópico contrato"
     },
     {
-      "q": "Marque a leitura correta (tópico contrato).",
+      "q": "Quem consome um evento assume o schema?",
       "o": [
-        "Tópico também é fronteira. Schema quebrado é incidente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Tópico não tem consumidor com expectativa: publique como quiser.",
+        "Tópico também é fronteira: schema quebrado é incidente, não “só um formato”.",
+        "Só API é fronteira; tópico é transporte interno sem contrato.",
+        "Schema de tópico quebrado é detalhe de formato, não incidente."
       ],
-      "a": 0,
-      "w": "Não só REST.",
+      "a": 1,
+      "w": "A lei vale para o tópico igual à API. Quem consome o evento assume o schema.",
       "t": "tópico contrato"
     },
     {
-      "q": "Corrija o mito sobre tópico contrato.",
+      "q": "Publicar no tópico como quiser é aceitável?",
       "o": [
-        "Tópico também é fronteira. Schema quebrado é incidente.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Só API é fronteira; tópico é transporte interno sem contrato.",
+        "Schema de tópico quebrado é detalhe de formato, não incidente.",
+        "Tópico não tem consumidor com expectativa: publique como quiser.",
+        "Tópico também é fronteira: schema quebrado é incidente, não “só um formato”."
       ],
-      "a": 0,
-      "w": "Não só REST.",
+      "a": 3,
+      "w": "A lei vale para o tópico igual à API. Quem consome o evento assume o schema.",
       "t": "tópico contrato"
     },
     {
-      "q": "No caderno, a respeito de tópico contrato: qual vale?",
+      "q": "A lei do contrato vale para tópico?",
       "o": [
-        "Tópico também é fronteira. Schema quebrado é incidente.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Tópico também é fronteira: schema quebrado é incidente, não “só um formato”.",
+        "Só API é fronteira; tópico é transporte interno sem contrato.",
+        "Schema de tópico quebrado é detalhe de formato, não incidente.",
+        "Tópico não tem consumidor com expectativa: publique como quiser."
       ],
       "a": 0,
-      "w": "Não só REST.",
+      "w": "A lei vale para o tópico igual à API. Quem consome o evento assume o schema.",
       "t": "tópico contrato"
     },
     {
-      "q": "Se perguntarem tópico contrato na mesa, qual frase é a verdadeira?",
+      "q": "Por que tópico entra na mesma regra da API?",
       "o": [
-        "Tópico também é fronteira. Schema quebrado é incidente.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Tópico também é fronteira: schema quebrado é incidente, não “só um formato”.",
+        "Só API é fronteira; tópico é transporte interno sem contrato.",
+        "Schema de tópico quebrado é detalhe de formato, não incidente.",
+        "Tópico não tem consumidor com expectativa: publique como quiser."
       ],
       "a": 0,
-      "w": "Não só REST.",
+      "w": "A lei vale para o tópico igual à API. Quem consome o evento assume o schema.",
       "t": "tópico contrato"
     },
     {
-      "q": "Sobre dono: qual afirmação está certa?",
+      "q": "Fronteira precisa de dono?",
       "o": [
+        "Dono é papel de gestão; não muda a operação do contrato.",
         "Fronteira implica dono. Sem dono, ninguém opera o contrato.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Fronteira não precisa de dono: o time todo cuida junto.",
+        "O dono da fronteira é quem consome, não quem publica."
       ],
-      "a": 0,
-      "w": "Lead nomeia o dono.",
+      "a": 1,
+      "w": "Sem dono nomeado ninguém versiona, ninguém avisa, ninguém acorda quando quebra.",
       "t": "dono"
     },
     {
-      "q": "Qual frase sobre dono está certa?",
+      "q": "O que deixa de acontecer quando a fronteira não tem dono?",
       "o": [
+        "O dono da fronteira é quem consome, não quem publica.",
+        "Dono é papel de gestão; não muda a operação do contrato.",
         "Fronteira implica dono. Sem dono, ninguém opera o contrato.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Fronteira não precisa de dono: o time todo cuida junto."
       ],
-      "a": 0,
-      "w": "Lead nomeia o dono.",
+      "a": 2,
+      "w": "Sem dono nomeado ninguém versiona, ninguém avisa, ninguém acorda quando quebra.",
       "t": "dono"
     },
     {
-      "q": "Dono — o que acontece de verdade?",
+      "q": "Sem dono, quem versiona e quem avisa a mudança?",
       "o": [
         "Fronteira implica dono. Sem dono, ninguém opera o contrato.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Fronteira não precisa de dono: o time todo cuida junto.",
+        "O dono da fronteira é quem consome, não quem publica.",
+        "Dono é papel de gestão; não muda a operação do contrato."
       ],
       "a": 0,
-      "w": "Lead nomeia o dono.",
+      "w": "Sem dono nomeado ninguém versiona, ninguém avisa, ninguém acorda quando quebra.",
       "t": "dono"
     },
     {
-      "q": "Marque a leitura correta (dono).",
+      "q": "O dono da fronteira é quem publica ou quem consome?",
       "o": [
+        "O dono da fronteira é quem consome, não quem publica.",
+        "Dono é papel de gestão; não muda a operação do contrato.",
         "Fronteira implica dono. Sem dono, ninguém opera o contrato.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Fronteira não precisa de dono: o time todo cuida junto."
       ],
-      "a": 0,
-      "w": "Lead nomeia o dono.",
+      "a": 2,
+      "w": "Sem dono nomeado ninguém versiona, ninguém avisa, ninguém acorda quando quebra.",
       "t": "dono"
     },
     {
-      "q": "Corrija o mito sobre dono.",
+      "q": "Dono é papel de gestão ou parte de operar o contrato?",
       "o": [
+        "Dono é papel de gestão; não muda a operação do contrato.",
         "Fronteira implica dono. Sem dono, ninguém opera o contrato.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Fronteira não precisa de dono: o time todo cuida junto.",
+        "O dono da fronteira é quem consome, não quem publica."
       ],
-      "a": 0,
-      "w": "Lead nomeia o dono.",
+      "a": 1,
+      "w": "Sem dono nomeado ninguém versiona, ninguém avisa, ninguém acorda quando quebra.",
       "t": "dono"
     },
     {
-      "q": "No caderno, a respeito de dono: qual vale?",
+      "q": "Por que “o time todo cuida” não resolve a fronteira?",
       "o": [
+        "Dono é papel de gestão; não muda a operação do contrato.",
         "Fronteira implica dono. Sem dono, ninguém opera o contrato.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Fronteira não precisa de dono: o time todo cuida junto.",
+        "O dono da fronteira é quem consome, não quem publica."
       ],
-      "a": 0,
-      "w": "Lead nomeia o dono.",
+      "a": 1,
+      "w": "Sem dono nomeado ninguém versiona, ninguém avisa, ninguém acorda quando quebra.",
       "t": "dono"
     },
     {
-      "q": "Se perguntarem dono na mesa, qual frase é a verdadeira?",
+      "q": "Quem acorda quando o contrato quebra?",
       "o": [
         "Fronteira implica dono. Sem dono, ninguém opera o contrato.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Fronteira não precisa de dono: o time todo cuida junto.",
+        "O dono da fronteira é quem consome, não quem publica.",
+        "Dono é papel de gestão; não muda a operação do contrato."
       ],
       "a": 0,
-      "w": "Lead nomeia o dono.",
+      "w": "Sem dono nomeado ninguém versiona, ninguém avisa, ninguém acorda quando quebra.",
       "t": "dono"
     },
     {
-      "q": "Sobre vazamento: qual afirmação está certa?",
+      "q": "Expor a tabela interna como API é desenho maduro?",
       "o": [
-        "Expor tabela interna como API é geladeira aberta.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Expor a tabela interna como API é o desenho mais maduro.",
+        "Expor o schema interno economiza trabalho e não tem preço.",
+        "A tabela interna é o contrato natural: o consumidor deve conhecê-la.",
+        "Expor a tabela interna como API vaza o modelo e quebra a fronteira."
       ],
-      "a": 0,
-      "w": "Quebrou a analogia de propósito.",
+      "a": 3,
+      "w": "O consumidor passou a depender do seu schema interno. Agora você não muda o miolo sem avisar ninguém.",
       "t": "vazamento"
     },
     {
-      "q": "Qual frase sobre vazamento está certa?",
+      "q": "O que acontece com a fronteira quando você publica o schema interno?",
       "o": [
-        "Expor tabela interna como API é geladeira aberta.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Expor a tabela interna como API vaza o modelo e quebra a fronteira.",
+        "Expor a tabela interna como API é o desenho mais maduro.",
+        "Expor o schema interno economiza trabalho e não tem preço.",
+        "A tabela interna é o contrato natural: o consumidor deve conhecê-la."
       ],
       "a": 0,
-      "w": "Quebrou a analogia de propósito.",
+      "w": "O consumidor passou a depender do seu schema interno. Agora você não muda o miolo sem avisar ninguém.",
       "t": "vazamento"
     },
     {
-      "q": "Vazamento — o que acontece de verdade?",
+      "q": "Publicar a tabela interna economiza trabalho sem preço?",
       "o": [
-        "Expor tabela interna como API é geladeira aberta.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Expor a tabela interna como API vaza o modelo e quebra a fronteira.",
+        "Expor a tabela interna como API é o desenho mais maduro.",
+        "Expor o schema interno economiza trabalho e não tem preço.",
+        "A tabela interna é o contrato natural: o consumidor deve conhecê-la."
       ],
       "a": 0,
-      "w": "Quebrou a analogia de propósito.",
+      "w": "O consumidor passou a depender do seu schema interno. Agora você não muda o miolo sem avisar ninguém.",
       "t": "vazamento"
     },
     {
-      "q": "Marque a leitura correta (vazamento).",
+      "q": "A tabela interna é o contrato natural do serviço?",
       "o": [
-        "Expor tabela interna como API é geladeira aberta.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Expor a tabela interna como API é o desenho mais maduro.",
+        "Expor o schema interno economiza trabalho e não tem preço.",
+        "A tabela interna é o contrato natural: o consumidor deve conhecê-la.",
+        "Expor a tabela interna como API vaza o modelo e quebra a fronteira."
       ],
-      "a": 0,
-      "w": "Quebrou a analogia de propósito.",
+      "a": 3,
+      "w": "O consumidor passou a depender do seu schema interno. Agora você não muda o miolo sem avisar ninguém.",
       "t": "vazamento"
     },
     {
-      "q": "Corrija o mito sobre vazamento.",
+      "q": "Depois de vazar o modelo, você ainda muda o miolo livremente?",
       "o": [
-        "Expor tabela interna como API é geladeira aberta.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Expor a tabela interna como API é o desenho mais maduro.",
+        "Expor o schema interno economiza trabalho e não tem preço.",
+        "A tabela interna é o contrato natural: o consumidor deve conhecê-la.",
+        "Expor a tabela interna como API vaza o modelo e quebra a fronteira."
       ],
-      "a": 0,
-      "w": "Quebrou a analogia de propósito.",
+      "a": 3,
+      "w": "O consumidor passou a depender do seu schema interno. Agora você não muda o miolo sem avisar ninguém.",
       "t": "vazamento"
     },
     {
-      "q": "No caderno, a respeito de vazamento: qual vale?",
+      "q": "Por que expor o schema interno prende o produtor?",
       "o": [
-        "Expor tabela interna como API é geladeira aberta.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Expor o schema interno economiza trabalho e não tem preço.",
+        "A tabela interna é o contrato natural: o consumidor deve conhecê-la.",
+        "Expor a tabela interna como API vaza o modelo e quebra a fronteira.",
+        "Expor a tabela interna como API é o desenho mais maduro."
       ],
-      "a": 0,
-      "w": "Quebrou a analogia de propósito.",
+      "a": 2,
+      "w": "O consumidor passou a depender do seu schema interno. Agora você não muda o miolo sem avisar ninguém.",
       "t": "vazamento"
     },
     {
-      "q": "Se perguntarem vazamento na mesa, qual frase é a verdadeira?",
+      "q": "O consumidor deve conhecer sua tabela interna?",
       "o": [
-        "Expor tabela interna como API é geladeira aberta.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Expor a tabela interna como API é o desenho mais maduro.",
+        "Expor o schema interno economiza trabalho e não tem preço.",
+        "A tabela interna é o contrato natural: o consumidor deve conhecê-la.",
+        "Expor a tabela interna como API vaza o modelo e quebra a fronteira."
       ],
-      "a": 0,
-      "w": "Quebrou a analogia de propósito.",
+      "a": 3,
+      "w": "O consumidor passou a depender do seu schema interno. Agora você não muda o miolo sem avisar ninguém.",
       "t": "vazamento"
     },
     {
-      "q": "Sobre teste: qual afirmação está certa?",
+      "q": "O consumidor precisa do seu fonte para testar o contrato?",
       "o": [
-        "Contrato testável: o consumidor não precisa do seu fonte.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Contrato não é testável: só dá para descobrir em produção.",
+        "Contrato testável: o consumidor valida sem precisar do seu fonte.",
+        "Contrato testável exige o fonte do produtor no teste do consumidor.",
+        "Testar contrato é rodar o teste interno do produtor e ver o verde."
       ],
-      "a": 0,
-      "w": "Publicar OpenAPI/schema.",
+      "a": 1,
+      "w": "Publique a descrição da API ou o schema. Se o outro lado precisa do seu código para testar, não havia contrato.",
       "t": "teste"
     },
     {
-      "q": "Qual frase sobre teste está certa?",
+      "q": "O que torna um contrato testável?",
       "o": [
-        "Contrato testável: o consumidor não precisa do seu fonte.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Testar contrato é rodar o teste interno do produtor e ver o verde.",
+        "Contrato não é testável: só dá para descobrir em produção.",
+        "Contrato testável: o consumidor valida sem precisar do seu fonte.",
+        "Contrato testável exige o fonte do produtor no teste do consumidor."
       ],
-      "a": 0,
-      "w": "Publicar OpenAPI/schema.",
+      "a": 2,
+      "w": "Publique a descrição da API ou o schema. Se o outro lado precisa do seu código para testar, não havia contrato.",
       "t": "teste"
     },
     {
-      "q": "Teste — o que acontece de verdade?",
+      "q": "Rodar o teste interno do produtor valida o contrato?",
       "o": [
-        "Contrato testável: o consumidor não precisa do seu fonte.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Contrato testável exige o fonte do produtor no teste do consumidor.",
+        "Testar contrato é rodar o teste interno do produtor e ver o verde.",
+        "Contrato não é testável: só dá para descobrir em produção.",
+        "Contrato testável: o consumidor valida sem precisar do seu fonte."
       ],
-      "a": 0,
-      "w": "Publicar OpenAPI/schema.",
+      "a": 3,
+      "w": "Publique a descrição da API ou o schema. Se o outro lado precisa do seu código para testar, não havia contrato.",
       "t": "teste"
     },
     {
-      "q": "Marque a leitura correta (teste).",
+      "q": "Contrato só se descobre em produção?",
       "o": [
-        "Contrato testável: o consumidor não precisa do seu fonte.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Testar contrato é rodar o teste interno do produtor e ver o verde.",
+        "Contrato não é testável: só dá para descobrir em produção.",
+        "Contrato testável: o consumidor valida sem precisar do seu fonte.",
+        "Contrato testável exige o fonte do produtor no teste do consumidor."
       ],
-      "a": 0,
-      "w": "Publicar OpenAPI/schema.",
+      "a": 2,
+      "w": "Publique a descrição da API ou o schema. Se o outro lado precisa do seu código para testar, não havia contrato.",
       "t": "teste"
     },
     {
-      "q": "Corrija o mito sobre teste.",
+      "q": "O que publicar para o outro lado testar sem o seu código?",
       "o": [
-        "Contrato testável: o consumidor não precisa do seu fonte.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Contrato testável exige o fonte do produtor no teste do consumidor.",
+        "Testar contrato é rodar o teste interno do produtor e ver o verde.",
+        "Contrato não é testável: só dá para descobrir em produção.",
+        "Contrato testável: o consumidor valida sem precisar do seu fonte."
       ],
-      "a": 0,
-      "w": "Publicar OpenAPI/schema.",
+      "a": 3,
+      "w": "Publique a descrição da API ou o schema. Se o outro lado precisa do seu código para testar, não havia contrato.",
       "t": "teste"
     },
     {
-      "q": "No caderno, a respeito de teste: qual vale?",
+      "q": "Se o teste exige o seu fonte, havia contrato?",
       "o": [
-        "Contrato testável: o consumidor não precisa do seu fonte.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Contrato não é testável: só dá para descobrir em produção.",
+        "Contrato testável: o consumidor valida sem precisar do seu fonte.",
+        "Contrato testável exige o fonte do produtor no teste do consumidor.",
+        "Testar contrato é rodar o teste interno do produtor e ver o verde."
       ],
-      "a": 0,
-      "w": "Publicar OpenAPI/schema.",
+      "a": 1,
+      "w": "Publique a descrição da API ou o schema. Se o outro lado precisa do seu código para testar, não havia contrato.",
       "t": "teste"
     },
     {
-      "q": "Se perguntarem teste na mesa, qual frase é a verdadeira?",
+      "q": "Como o consumidor valida a promessa sem acesso ao miolo?",
       "o": [
-        "Contrato testável: o consumidor não precisa do seu fonte.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Contrato não é testável: só dá para descobrir em produção.",
+        "Contrato testável: o consumidor valida sem precisar do seu fonte.",
+        "Contrato testável exige o fonte do produtor no teste do consumidor.",
+        "Testar contrato é rodar o teste interno do produtor e ver o verde."
       ],
-      "a": 0,
-      "w": "Publicar OpenAPI/schema.",
+      "a": 1,
+      "w": "Publique a descrição da API ou o schema. Se o outro lado precisa do seu código para testar, não havia contrato.",
       "t": "teste"
     },
     {
-      "q": "Sobre incidente: qual afirmação está certa?",
+      "q": "Mudança incompatível sem versão é incidente mesmo com teste verde?",
       "o": [
-        "Mudança incompatível sem versão é incidente mesmo com teste verde interno.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Mudança incompatível sem versão é só um refactor mal comunicado.",
+        "Se o produtor não caiu, não houve incidente no sistema.",
+        "Mudança incompatível sem versão é incidente, mesmo com teste verde interno.",
+        "Teste verde interno prova que não houve incidente."
       ],
-      "a": 0,
-      "w": "O verde era o produtor.",
+      "a": 2,
+      "w": "O verde era do produtor. Quem sentiu foi o consumidor: campo sumiu, erro mudou, a repetição deixou de ser segura.",
       "t": "incidente"
     },
     {
-      "q": "Qual frase sobre incidente está certa?",
+      "q": "O teste verde do produtor prova que ninguém quebrou?",
       "o": [
-        "Mudança incompatível sem versão é incidente mesmo com teste verde interno.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Se o produtor não caiu, não houve incidente no sistema.",
+        "Mudança incompatível sem versão é incidente, mesmo com teste verde interno.",
+        "Teste verde interno prova que não houve incidente.",
+        "Mudança incompatível sem versão é só um refactor mal comunicado."
       ],
-      "a": 0,
-      "w": "O verde era o produtor.",
+      "a": 1,
+      "w": "O verde era do produtor. Quem sentiu foi o consumidor: campo sumiu, erro mudou, a repetição deixou de ser segura.",
       "t": "incidente"
     },
     {
-      "q": "Incidente — o que acontece de verdade?",
+      "q": "Quem sente a mudança incompatível?",
       "o": [
-        "Mudança incompatível sem versão é incidente mesmo com teste verde interno.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Mudança incompatível sem versão é incidente, mesmo com teste verde interno.",
+        "Teste verde interno prova que não houve incidente.",
+        "Mudança incompatível sem versão é só um refactor mal comunicado.",
+        "Se o produtor não caiu, não houve incidente no sistema."
       ],
       "a": 0,
-      "w": "O verde era o produtor.",
+      "w": "O verde era do produtor. Quem sentiu foi o consumidor: campo sumiu, erro mudou, a repetição deixou de ser segura.",
       "t": "incidente"
     },
     {
-      "q": "Marque a leitura correta (incidente).",
+      "q": "Chamar de refactor resolve a quebra sem versão?",
       "o": [
-        "Mudança incompatível sem versão é incidente mesmo com teste verde interno.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Teste verde interno prova que não houve incidente.",
+        "Mudança incompatível sem versão é só um refactor mal comunicado.",
+        "Se o produtor não caiu, não houve incidente no sistema.",
+        "Mudança incompatível sem versão é incidente, mesmo com teste verde interno."
       ],
-      "a": 0,
-      "w": "O verde era o produtor.",
+      "a": 3,
+      "w": "O verde era do produtor. Quem sentiu foi o consumidor: campo sumiu, erro mudou, a repetição deixou de ser segura.",
       "t": "incidente"
     },
     {
-      "q": "Corrija o mito sobre incidente.",
+      "q": "O produtor não caiu. Houve incidente?",
       "o": [
-        "Mudança incompatível sem versão é incidente mesmo com teste verde interno.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Mudança incompatível sem versão é só um refactor mal comunicado.",
+        "Se o produtor não caiu, não houve incidente no sistema.",
+        "Mudança incompatível sem versão é incidente, mesmo com teste verde interno.",
+        "Teste verde interno prova que não houve incidente."
       ],
-      "a": 0,
-      "w": "O verde era o produtor.",
+      "a": 2,
+      "w": "O verde era do produtor. Quem sentiu foi o consumidor: campo sumiu, erro mudou, a repetição deixou de ser segura.",
       "t": "incidente"
     },
     {
-      "q": "No caderno, a respeito de incidente: qual vale?",
+      "q": "O que faz de uma mudança um incidente?",
       "o": [
-        "Mudança incompatível sem versão é incidente mesmo com teste verde interno.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Se o produtor não caiu, não houve incidente no sistema.",
+        "Mudança incompatível sem versão é incidente, mesmo com teste verde interno.",
+        "Teste verde interno prova que não houve incidente.",
+        "Mudança incompatível sem versão é só um refactor mal comunicado."
       ],
-      "a": 0,
-      "w": "O verde era o produtor.",
+      "a": 1,
+      "w": "O verde era do produtor. Quem sentiu foi o consumidor: campo sumiu, erro mudou, a repetição deixou de ser segura.",
       "t": "incidente"
     },
     {
-      "q": "Se perguntarem incidente na mesa, qual frase é a verdadeira?",
+      "q": "Por que o verde interno não é prova de compatibilidade?",
       "o": [
-        "Mudança incompatível sem versão é incidente mesmo com teste verde interno.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Se o produtor não caiu, não houve incidente no sistema.",
+        "Mudança incompatível sem versão é incidente, mesmo com teste verde interno.",
+        "Teste verde interno prova que não houve incidente.",
+        "Mudança incompatível sem versão é só um refactor mal comunicado."
       ],
-      "a": 0,
-      "w": "O verde era o produtor.",
+      "a": 1,
+      "w": "O verde era do produtor. Quem sentiu foi o consumidor: campo sumiu, erro mudou, a repetição deixou de ser segura.",
       "t": "incidente"
     }
   ]

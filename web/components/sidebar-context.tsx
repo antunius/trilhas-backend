@@ -6,6 +6,9 @@ export type SidebarContextValue = {
   open: boolean;
   setOpen: (open: boolean) => void;
   toggle: () => void;
+  commandOpen?: boolean;
+  setCommandOpen?: (open: boolean) => void;
+  toggleCommand?: () => void;
 };
 
 export const SidebarContext = createContext<SidebarContextValue | null>(null);

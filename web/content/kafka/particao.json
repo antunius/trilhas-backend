@@ -1,0 +1,130 @@
+{
+  "beats": [
+    {
+      "id": "teto-quatro",
+      "kind": "cena",
+      "kicker": "Faturamento · 4 pods",
+      "title": "A4 entrou no grupo. Não existe P3.",
+      "body": "<p>Três partições no <code>pedidos.criados</code>. Quatro consumidores no mesmo <code>group.id</code>. A1, A2 e A3 pegam P0, P1 e P2. A4 fica olhando o teto.</p><p>Subir o 4º pod não drena lag. Uma partição = no máximo um membro ativo naquele grupo. Analytics, com um consumidor só, percorre as três partições sozinho — outro committed offset, outro group.id.</p>"
+    },
+    {
+      "id": "tres-colunas",
+      "kind": "explicar",
+      "title": "Três logs. Um tópico. O 4º sem partição.",
+      "html": "<p>Cada partição é um log independente em disco: segmentos (<code>.log</code> + índices) no broker líder. Offset 0, 1, 2… só existe <em>dentro</em> daquela partição. O líder recebe o ProduceRequest; followers copiam.</p><figure class=\"viz\"><img src=\"/diagrams/grupos-consumidores.svg\" alt=\"Três partições no topo. Setas laranja descem para A1, A2 e A3, um por partição. A4 fica à direita, ocioso, sem partição. Faixa verde embaixo: B1 sozinho lê as três partições.\" width=\"920\" height=\"560\"></figure><p>Laranja = faturamento, um por partição, A4 parado. Verde = analytics, um só nas três. os committed offsets não brigam: na mesma partição A pode estar no 80 e B no 12.</p><pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-topics.sh \\\n  --bootstrap-server localhost:9092 \\\n  --describe --topic pedidos.criados</pre><p><code>PartitionCount: 3</code> e três linhas Partition: 0, 1, 2 com o líder. Spring:</p><pre class=\"code\">TopicBuilder.name(\"pedidos.criados\")\n    .partitions(3)\n    .replicas(1)\n    .build();</pre><p><code>TopicConfig.java</code>, <code>lab.partitions: 3</code> no YAML.</p>"
+    },
+    {
+      "id": "ordem-local",
+      "kind": "explicar",
+      "title": "O 4 não é ID global. A key cola na partição.",
+      "html": "<p>Key <code>99</code> → partição 1, offset 4. PagamentoAprovado da mesma key → offset 5 na mesma partição. Faturamento lê 4 → 5. Pedido 40 pode estar na P0 no offset 4: outro mensagem.</p><figure class=\"viz\"><img src=\"/diagrams/pedido-99.svg\" alt=\"Cadeia: evento PedidoCriado com key 99 vai ao tópico pedidos, cai na partição 1 e vira offset 4 só daquela partição.\" width=\"900\" height=\"200\"></figure><p>Publicar sem key “para espalhar carga” no fluxo do 99: Criado / Pago / Enviado podem cair em partições diferentes. O consumidor pode ver Pago antes de Criado.</p><p>Produce no lab, anote a partição:</p><pre class=\"code\">curl -X POST \"http://localhost:8080/pedidos?pedidoId=99&amp;comKey=true\"</pre>"
+    },
+    {
+      "id": "lab-alter",
+      "kind": "explicar",
+      "title": "Criar 3. Alterar para 6 é mão única.",
+      "html": "<p>Suba o Compose e crie (ou descreva) o tópico:</p><pre class=\"code\">cd labs/kafka\ndocker compose up -d\n\ndocker compose exec kafka /opt/kafka/bin/kafka-topics.sh \\\n  --bootstrap-server localhost:9092 \\\n  --create --if-not-exists \\\n  --topic pedidos.criados \\\n  --partitions 3 --replication-factor 1</pre><p>Só depois de produzir com key <code>99</code> e anotar a partição — isso <em>quebra</em> a cola histórica:</p><pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-topics.sh \\\n  --bootstrap-server localhost:9092 \\\n  --alter --topic pedidos.criados --partitions 6</pre><p>Mais partições = mais arquivos, réplicas, memória, rebalance mais caro. Decida o N cedo. Caminho de produção para 12 partições: tópico novo, dual-write ou replay, consumidores migrando — não “só clicar em 12”.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Paralelismo é partição. Ordem é a mesma partição.",
+      "ganha": "3 partições: até 3 membros ativos no mesmo grupo. Outro group.id relê o log inteiro. Mesma key, mesmo N: ordem do pedido 99. Escala de escrita e de leitura (por grupo) acompanha o número de partições.",
+      "paga": "4 consumidores em 3 partições = 1 ocioso. Sem key, ordem do 99 some. Aumentar N redistribui keys e quebra a história da entidade. Kafka não diminui partições. Uma key vip esquenta uma partição — concurrency extra não drena.",
+      "quando": [
+        "Você combinou o N com o pico de membros do grupo",
+        "A entidade tem história: mesma key enquanto N não muda",
+        "Outro time precisa do mesmo fato — outro group.id, não outra fatia"
+      ],
+      "quandoNao": [
+        "Subir pod sem partição nova e esperar throughput",
+        "Publicar o fluxo do 99 sem key “para espalhar”",
+        "--alter para 6 no tópico de produção e achar que o 99 continua na mesma cadeira"
+      ]
+    },
+    {
+      "id": "quarto-pod",
+      "kind": "escolha",
+      "prompt": "Grupo faturamento, 3 partições. Você sobe o 4º pod. O que acontece?",
+      "options": [
+        {
+          "id": "ocioso",
+          "label": "Três trabalham. Um fica sem assignment",
+          "verdict": "bom",
+          "why": "Cada partição tem no máximo um dono no grupo. Sem P3, A4 é ocioso. Throughput do grupo não sobe."
+        },
+        {
+          "id": "fatia",
+          "label": "O Kafka fatia P0 ao meio e o 4º recebe metade",
+          "verdict": "ruim",
+          "why": "Não existe meia partição. A unidade de paralelismo é a partição inteira."
+        },
+        {
+          "id": "clona",
+          "label": "Os quatro leem as três partições em paralelo, 4× mais rápido",
+          "verdict": "ruim",
+          "why": "Isso duplicaria o Fetch no mesmo grupo. O protocolo não clona partição. Quem relê o log inteiro é outro group.id."
+        }
+      ]
+    },
+    {
+      "id": "ordem-global",
+      "kind": "escolha",
+      "prompt": "PedidoCriado e PagamentoAprovado do 99. O Kafka garante que o faturamento vê criar antes de pagar?",
+      "options": [
+        {
+          "id": "se-key",
+          "label": "Só se a mesma key cair na mesma partição — e N não mudar",
+          "verdict": "bom",
+          "why": "Ordem é a sequência de append no líder daquela partição. Sem key, os dois mensagens podem inverter. Offset 4 da P1 não é o 4 da P0."
+        },
+        {
+          "id": "topico",
+          "label": "Sim. Ordem global no tópico pedidos.criados",
+          "verdict": "ruim",
+          "why": "Não existe ordem global. três partições = três relógios. Pedido 40 pode ter offset 4 em outra partição — outro mensagem."
+        },
+        {
+          "id": "timestamp",
+          "label": "O timestamp do evento ordena, mesmo em partições diferentes",
+          "verdict": "ruim",
+          "why": "Timestamp não escolhe partição e não é a ordem de leitura. Dois producers no mesmo pedido: a ordem é a de chegada no líder, não a do relógio."
+        }
+      ]
+    },
+    {
+      "id": "subir-n",
+      "kind": "escolha",
+      "prompt": "Lag no faturamento. Alguém quer --alter --partitions 6. O que acontece com o pedido 99?",
+      "options": [
+        {
+          "id": "hash-novo",
+          "label": "hash(key) % 6. O 99 pode mudar de partição. A ordem histórica daquela entidade quebra",
+          "verdict": "bom",
+          "why": "N novo, módulo novo. mensagens velhos ficam onde estavam. Os novos podem ir para outra partição. Não dá para diminuir depois."
+        },
+        {
+          "id": "cola",
+          "label": "A key 99 continua na mesma partição. O hash não usa N",
+          "verdict": "ruim",
+          "why": "O particionador é murmur2(key) % numPartitions. Mudou N, mudou a partição."
+        },
+        {
+          "id": "volta",
+          "label": "Sobe para 6, drena o lag, volta para 3",
+          "verdict": "ruim",
+          "why": "A API não oferece --partitions 2 depois de 3. Recriar tópico apaga o log."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Ordem só dentro da partição. Offset 4 da P0 e da P1 são mensagens diferentes.",
+        "4 consumidores em 3 partições: um ocioso. Teto do grupo = número de partições.",
+        "Aumentar partições recalcula hash(key) % N. O 99 pode mudar de partição. Não diminui."
+      ]
+    }
+  ]
+}

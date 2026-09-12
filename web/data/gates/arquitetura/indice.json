@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre busca: qual afirmação está certa?",
+      "q": "O que o índice acelera e o que ele atrasa?",
       "o": [
+        "Índice acelera a busca e também a escrita.",
+        "Índice deixa a leitura mais lenta e a escrita mais rápida.",
         "Índice acelera aquele tipo de busca e deixa a escrita mais lenta.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Índice acelera todas as buscas da tabela igualmente."
       ],
-      "a": 0,
-      "w": "Analogia do remissivo.",
+      "a": 2,
+      "w": "Acelera aquela leitura, atrasa a escrita e come disco. É um contrato com preço.",
       "t": "busca"
     },
     {
-      "q": "Qual frase sobre busca está certa?",
+      "q": "Índice acelera todas as buscas da tabela?",
       "o": [
+        "Índice acelera a busca e também a escrita.",
+        "Índice deixa a leitura mais lenta e a escrita mais rápida.",
         "Índice acelera aquele tipo de busca e deixa a escrita mais lenta.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Índice acelera todas as buscas da tabela igualmente."
       ],
-      "a": 0,
-      "w": "Analogia do remissivo.",
+      "a": 2,
+      "w": "Acelera aquela leitura, atrasa a escrita e come disco. É um contrato com preço.",
       "t": "busca"
     },
     {
-      "q": "Busca — o que acontece de verdade?",
+      "q": "Criar índice melhora a escrita?",
       "o": [
         "Índice acelera aquele tipo de busca e deixa a escrita mais lenta.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Índice acelera todas as buscas da tabela igualmente.",
+        "Índice acelera a busca e também a escrita.",
+        "Índice deixa a leitura mais lenta e a escrita mais rápida."
       ],
       "a": 0,
-      "w": "Analogia do remissivo.",
+      "w": "Acelera aquela leitura, atrasa a escrita e come disco. É um contrato com preço.",
       "t": "busca"
     },
     {
-      "q": "Marque a leitura correta (busca).",
+      "q": "Qual o preço de criar um índice?",
       "o": [
         "Índice acelera aquele tipo de busca e deixa a escrita mais lenta.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Índice acelera todas as buscas da tabela igualmente.",
+        "Índice acelera a busca e também a escrita.",
+        "Índice deixa a leitura mais lenta e a escrita mais rápida."
       ],
       "a": 0,
-      "w": "Analogia do remissivo.",
+      "w": "Acelera aquela leitura, atrasa a escrita e come disco. É um contrato com preço.",
       "t": "busca"
     },
     {
-      "q": "Corrija o mito sobre busca.",
+      "q": "O índice acelera aquela busca. E as outras?",
       "o": [
+        "Índice deixa a leitura mais lenta e a escrita mais rápida.",
         "Índice acelera aquele tipo de busca e deixa a escrita mais lenta.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Índice acelera todas as buscas da tabela igualmente.",
+        "Índice acelera a busca e também a escrita."
       ],
-      "a": 0,
-      "w": "Analogia do remissivo.",
+      "a": 1,
+      "w": "Acelera aquela leitura, atrasa a escrita e come disco. É um contrato com preço.",
       "t": "busca"
     },
     {
-      "q": "No caderno, a respeito de busca: qual vale?",
+      "q": "Índice deixa a leitura mais lenta?",
       "o": [
+        "Índice deixa a leitura mais lenta e a escrita mais rápida.",
         "Índice acelera aquele tipo de busca e deixa a escrita mais lenta.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Índice acelera todas as buscas da tabela igualmente.",
+        "Índice acelera a busca e também a escrita."
       ],
-      "a": 0,
-      "w": "Analogia do remissivo.",
+      "a": 1,
+      "w": "Acelera aquela leitura, atrasa a escrita e come disco. É um contrato com preço.",
       "t": "busca"
     },
     {
-      "q": "Se perguntarem busca na mesa, qual frase é a verdadeira?",
+      "q": "Por que o índice é um contrato com preço?",
       "o": [
-        "Índice acelera aquele tipo de busca e deixa a escrita mais lenta.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Índice acelera todas as buscas da tabela igualmente.",
+        "Índice acelera a busca e também a escrita.",
+        "Índice deixa a leitura mais lenta e a escrita mais rápida.",
+        "Índice acelera aquele tipo de busca e deixa a escrita mais lenta."
       ],
-      "a": 0,
-      "w": "Analogia do remissivo.",
+      "a": 3,
+      "w": "Acelera aquela leitura, atrasa a escrita e come disco. É um contrato com preço.",
       "t": "busca"
     },
     {
-      "q": "Sobre espaço: qual afirmação está certa?",
+      "q": "Índice ocupa disco?",
       "o": [
-        "Ocupa espaço. Índice não usado é só custo.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Índice ocupa disco; índice que ninguém usa é só custo.",
+        "Índice não ocupa espaço em disco.",
+        "Índice ocioso não custa nada: só fica parado.",
+        "Índice ocioso melhora a escrita da tabela."
       ],
       "a": 0,
-      "w": "Dropar o ocioso.",
+      "w": "Ocioso é escrita mais disco sem retorno. Drope o que o EXPLAIN não usa.",
       "t": "espaço"
     },
     {
-      "q": "Qual frase sobre espaço está certa?",
+      "q": "Índice que ninguém usa custa algo?",
       "o": [
-        "Ocupa espaço. Índice não usado é só custo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Índice ocupa disco; índice que ninguém usa é só custo.",
+        "Índice não ocupa espaço em disco.",
+        "Índice ocioso não custa nada: só fica parado.",
+        "Índice ocioso melhora a escrita da tabela."
       ],
       "a": 0,
-      "w": "Dropar o ocioso.",
+      "w": "Ocioso é escrita mais disco sem retorno. Drope o que o EXPLAIN não usa.",
       "t": "espaço"
     },
     {
-      "q": "Espaço — o que acontece de verdade?",
+      "q": "O que fazer com o índice ocioso?",
       "o": [
-        "Ocupa espaço. Índice não usado é só custo.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Índice ocupa disco; índice que ninguém usa é só custo.",
+        "Índice não ocupa espaço em disco.",
+        "Índice ocioso não custa nada: só fica parado.",
+        "Índice ocioso melhora a escrita da tabela."
       ],
       "a": 0,
-      "w": "Dropar o ocioso.",
+      "w": "Ocioso é escrita mais disco sem retorno. Drope o que o EXPLAIN não usa.",
       "t": "espaço"
     },
     {
-      "q": "Marque a leitura correta (espaço).",
+      "q": "Índice ocioso melhora a escrita?",
       "o": [
-        "Ocupa espaço. Índice não usado é só custo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Índice ocupa disco; índice que ninguém usa é só custo.",
+        "Índice não ocupa espaço em disco.",
+        "Índice ocioso não custa nada: só fica parado.",
+        "Índice ocioso melhora a escrita da tabela."
       ],
       "a": 0,
-      "w": "Dropar o ocioso.",
+      "w": "Ocioso é escrita mais disco sem retorno. Drope o que o EXPLAIN não usa.",
       "t": "espaço"
     },
     {
-      "q": "Corrija o mito sobre espaço.",
+      "q": "Um índice parado no schema é neutro?",
       "o": [
-        "Ocupa espaço. Índice não usado é só custo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Índice ocioso melhora a escrita da tabela.",
+        "Índice ocupa disco; índice que ninguém usa é só custo.",
+        "Índice não ocupa espaço em disco.",
+        "Índice ocioso não custa nada: só fica parado."
       ],
-      "a": 0,
-      "w": "Dropar o ocioso.",
+      "a": 1,
+      "w": "Ocioso é escrita mais disco sem retorno. Drope o que o EXPLAIN não usa.",
       "t": "espaço"
     },
     {
-      "q": "No caderno, a respeito de espaço: qual vale?",
+      "q": "O que o índice ocioso cobra sem devolver?",
       "o": [
-        "Ocupa espaço. Índice não usado é só custo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Índice ocupa disco; índice que ninguém usa é só custo.",
+        "Índice não ocupa espaço em disco.",
+        "Índice ocioso não custa nada: só fica parado.",
+        "Índice ocioso melhora a escrita da tabela."
       ],
       "a": 0,
-      "w": "Dropar o ocioso.",
+      "w": "Ocioso é escrita mais disco sem retorno. Drope o que o EXPLAIN não usa.",
       "t": "espaço"
     },
     {
-      "q": "Se perguntarem espaço na mesa, qual frase é a verdadeira?",
+      "q": "Por que dropar índice não usado?",
       "o": [
-        "Ocupa espaço. Índice não usado é só custo.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Índice ocioso não custa nada: só fica parado.",
+        "Índice ocioso melhora a escrita da tabela.",
+        "Índice ocupa disco; índice que ninguém usa é só custo.",
+        "Índice não ocupa espaço em disco."
       ],
-      "a": 0,
-      "w": "Dropar o ocioso.",
+      "a": 2,
+      "w": "Ocioso é escrita mais disco sem retorno. Drope o que o EXPLAIN não usa.",
       "t": "espaço"
     },
     {
-      "q": "Sobre composto: qual afirmação está certa?",
+      "q": "O que define a ordem das colunas num índice composto?",
       "o": [
-        "Índice composto segue a ordem das colunas da query.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Índice composto funciona em qualquer ordem de colunas.",
+        "A ordem das colunas no índice composto é escolha estética.",
+        "Índice composto atende qualquer filtro sobre suas colunas.",
+        "Índice composto segue a ordem das colunas da query."
       ],
-      "a": 0,
-      "w": "Não adivinhe a ordem.",
+      "a": 3,
+      "w": "A ordem é a da cláusula, não um chute. Ordem errada e o índice não é usado.",
       "t": "composto"
     },
     {
-      "q": "Qual frase sobre composto está certa?",
+      "q": "Índice composto funciona em qualquer ordem?",
       "o": [
+        "Índice composto atende qualquer filtro sobre suas colunas.",
         "Índice composto segue a ordem das colunas da query.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Índice composto funciona em qualquer ordem de colunas.",
+        "A ordem das colunas no índice composto é escolha estética."
       ],
-      "a": 0,
-      "w": "Não adivinhe a ordem.",
+      "a": 1,
+      "w": "A ordem é a da cláusula, não um chute. Ordem errada e o índice não é usado.",
       "t": "composto"
     },
     {
-      "q": "Composto — o que acontece de verdade?",
+      "q": "A ordem das colunas é escolha estética?",
       "o": [
+        "A ordem das colunas no índice composto é escolha estética.",
+        "Índice composto atende qualquer filtro sobre suas colunas.",
         "Índice composto segue a ordem das colunas da query.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Índice composto funciona em qualquer ordem de colunas."
       ],
-      "a": 0,
-      "w": "Não adivinhe a ordem.",
+      "a": 2,
+      "w": "A ordem é a da cláusula, não um chute. Ordem errada e o índice não é usado.",
       "t": "composto"
     },
     {
-      "q": "Marque a leitura correta (composto).",
+      "q": "Você criou o composto na ordem errada. O que acontece?",
       "o": [
+        "Índice composto atende qualquer filtro sobre suas colunas.",
         "Índice composto segue a ordem das colunas da query.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Índice composto funciona em qualquer ordem de colunas.",
+        "A ordem das colunas no índice composto é escolha estética."
       ],
-      "a": 0,
-      "w": "Não adivinhe a ordem.",
+      "a": 1,
+      "w": "A ordem é a da cláusula, não um chute. Ordem errada e o índice não é usado.",
       "t": "composto"
     },
     {
-      "q": "Corrija o mito sobre composto.",
+      "q": "De onde vem a ordem das colunas do índice?",
       "o": [
         "Índice composto segue a ordem das colunas da query.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Índice composto funciona em qualquer ordem de colunas.",
+        "A ordem das colunas no índice composto é escolha estética.",
+        "Índice composto atende qualquer filtro sobre suas colunas."
       ],
       "a": 0,
-      "w": "Não adivinhe a ordem.",
+      "w": "A ordem é a da cláusula, não um chute. Ordem errada e o índice não é usado.",
       "t": "composto"
     },
     {
-      "q": "No caderno, a respeito de composto: qual vale?",
+      "q": "Índice composto atende qualquer filtro sobre suas colunas?",
       "o": [
+        "A ordem das colunas no índice composto é escolha estética.",
+        "Índice composto atende qualquer filtro sobre suas colunas.",
         "Índice composto segue a ordem das colunas da query.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Índice composto funciona em qualquer ordem de colunas."
       ],
-      "a": 0,
-      "w": "Não adivinhe a ordem.",
+      "a": 2,
+      "w": "A ordem é a da cláusula, não um chute. Ordem errada e o índice não é usado.",
       "t": "composto"
     },
     {
-      "q": "Se perguntarem composto na mesa, qual frase é a verdadeira?",
+      "q": "A query filtra e ordena. O índice segue o quê?",
       "o": [
-        "Índice composto segue a ordem das colunas da query.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Índice composto funciona em qualquer ordem de colunas.",
+        "A ordem das colunas no índice composto é escolha estética.",
+        "Índice composto atende qualquer filtro sobre suas colunas.",
+        "Índice composto segue a ordem das colunas da query."
       ],
-      "a": 0,
-      "w": "Não adivinhe a ordem.",
+      "a": 3,
+      "w": "A ordem é a da cláusula, não um chute. Ordem errada e o índice não é usado.",
       "t": "composto"
     },
     {
-      "q": "Sobre write: qual afirmação está certa?",
+      "q": "O que cada inserção faz com os índices?",
       "o": [
-        "Cada INSERT atualiza índices. Paginação “só mais um índice” tem preço.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Cada inserção atualiza os índices sem custo de tempo.",
+        "Cada inserção atualiza todos os índices: mais um índice tem preço no p99 de escrita.",
+        "A inserção atualiza só o índice principal da tabela.",
+        "Adicionar índices não afeta o p99 de escrita."
       ],
-      "a": 0,
-      "w": "Throughput de escrita.",
+      "a": 1,
+      "w": "Oito índices por precaução é o checkout financiando o relatório noturno.",
       "t": "write"
     },
     {
-      "q": "Qual frase sobre write está certa?",
+      "q": "Adicionar mais um índice afeta a escrita?",
       "o": [
-        "Cada INSERT atualiza índices. Paginação “só mais um índice” tem preço.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Adicionar índices não afeta o p99 de escrita.",
+        "Cada inserção atualiza os índices sem custo de tempo.",
+        "Cada inserção atualiza todos os índices: mais um índice tem preço no p99 de escrita.",
+        "A inserção atualiza só o índice principal da tabela."
       ],
-      "a": 0,
-      "w": "Throughput de escrita.",
+      "a": 2,
+      "w": "Oito índices por precaução é o checkout financiando o relatório noturno.",
       "t": "write"
     },
     {
-      "q": "Write — o que acontece de verdade?",
+      "q": "O que acontece com o p99 de escrita quando você cria índices?",
       "o": [
-        "Cada INSERT atualiza índices. Paginação “só mais um índice” tem preço.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A inserção atualiza só o índice principal da tabela.",
+        "Adicionar índices não afeta o p99 de escrita.",
+        "Cada inserção atualiza os índices sem custo de tempo.",
+        "Cada inserção atualiza todos os índices: mais um índice tem preço no p99 de escrita."
       ],
-      "a": 0,
-      "w": "Throughput de escrita.",
+      "a": 3,
+      "w": "Oito índices por precaução é o checkout financiando o relatório noturno.",
       "t": "write"
     },
     {
-      "q": "Marque a leitura correta (write).",
+      "q": "A inserção atualiza só o índice principal?",
       "o": [
-        "Cada INSERT atualiza índices. Paginação “só mais um índice” tem preço.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cada inserção atualiza todos os índices: mais um índice tem preço no p99 de escrita.",
+        "A inserção atualiza só o índice principal da tabela.",
+        "Adicionar índices não afeta o p99 de escrita.",
+        "Cada inserção atualiza os índices sem custo de tempo."
       ],
       "a": 0,
-      "w": "Throughput de escrita.",
+      "w": "Oito índices por precaução é o checkout financiando o relatório noturno.",
       "t": "write"
     },
     {
-      "q": "Corrija o mito sobre write.",
+      "q": "Oito índices por precaução: quem paga?",
       "o": [
-        "Cada INSERT atualiza índices. Paginação “só mais um índice” tem preço.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cada inserção atualiza todos os índices: mais um índice tem preço no p99 de escrita.",
+        "A inserção atualiza só o índice principal da tabela.",
+        "Adicionar índices não afeta o p99 de escrita.",
+        "Cada inserção atualiza os índices sem custo de tempo."
       ],
       "a": 0,
-      "w": "Throughput de escrita.",
+      "w": "Oito índices por precaução é o checkout financiando o relatório noturno.",
       "t": "write"
     },
     {
-      "q": "No caderno, a respeito de write: qual vale?",
+      "q": "Atualizar índice na inserção custa tempo?",
       "o": [
-        "Cada INSERT atualiza índices. Paginação “só mais um índice” tem preço.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Adicionar índices não afeta o p99 de escrita.",
+        "Cada inserção atualiza os índices sem custo de tempo.",
+        "Cada inserção atualiza todos os índices: mais um índice tem preço no p99 de escrita.",
+        "A inserção atualiza só o índice principal da tabela."
       ],
-      "a": 0,
-      "w": "Throughput de escrita.",
+      "a": 2,
+      "w": "Oito índices por precaução é o checkout financiando o relatório noturno.",
       "t": "write"
     },
     {
-      "q": "Se perguntarem write na mesa, qual frase é a verdadeira?",
+      "q": "Por que “só mais um índice” não é grátis?",
       "o": [
-        "Cada INSERT atualiza índices. Paginação “só mais um índice” tem preço.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Cada inserção atualiza os índices sem custo de tempo.",
+        "Cada inserção atualiza todos os índices: mais um índice tem preço no p99 de escrita.",
+        "A inserção atualiza só o índice principal da tabela.",
+        "Adicionar índices não afeta o p99 de escrita."
       ],
-      "a": 0,
-      "w": "Throughput de escrita.",
+      "a": 1,
+      "w": "Oito índices por precaução é o checkout financiando o relatório noturno.",
       "t": "write"
     },
     {
-      "q": "Sobre seletividade: qual afirmação está certa?",
+      "q": "Índice em coluna de dois valores ajuda?",
       "o": [
-        "Índice em coluna de 2 valores (boolean) muitas vezes não ajuda.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Índice em coluna de dois valores é sempre a melhor escolha.",
+        "A quantidade de valores distintos não afeta a utilidade do índice.",
+        "Coluna de dois valores é a mais seletiva que existe.",
+        "Índice em coluna de dois valores quase nunca ajuda sozinho."
       ],
-      "a": 0,
-      "w": "Seletividade.",
+      "a": 3,
+      "w": "Se metade da tabela tem aquele valor, o índice não discrimina nada e o banco vasculha igual.",
       "t": "seletividade"
     },
     {
-      "q": "Qual frase sobre seletividade está certa?",
+      "q": "Metade da tabela tem o mesmo valor. O índice discrimina?",
       "o": [
-        "Índice em coluna de 2 valores (boolean) muitas vezes não ajuda.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "A quantidade de valores distintos não afeta a utilidade do índice.",
+        "Coluna de dois valores é a mais seletiva que existe.",
+        "Índice em coluna de dois valores quase nunca ajuda sozinho.",
+        "Índice em coluna de dois valores é sempre a melhor escolha."
       ],
-      "a": 0,
-      "w": "Seletividade.",
+      "a": 2,
+      "w": "Se metade da tabela tem aquele valor, o índice não discrimina nada e o banco vasculha igual.",
       "t": "seletividade"
     },
     {
-      "q": "Seletividade — o que acontece de verdade?",
+      "q": "O que é seletividade de um índice?",
       "o": [
-        "Índice em coluna de 2 valores (boolean) muitas vezes não ajuda.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Coluna de dois valores é a mais seletiva que existe.",
+        "Índice em coluna de dois valores quase nunca ajuda sozinho.",
+        "Índice em coluna de dois valores é sempre a melhor escolha.",
+        "A quantidade de valores distintos não afeta a utilidade do índice."
       ],
-      "a": 0,
-      "w": "Seletividade.",
+      "a": 1,
+      "w": "Se metade da tabela tem aquele valor, o índice não discrimina nada e o banco vasculha igual.",
       "t": "seletividade"
     },
     {
-      "q": "Marque a leitura correta (seletividade).",
+      "q": "A quantidade de valores distintos importa no índice?",
       "o": [
-        "Índice em coluna de 2 valores (boolean) muitas vezes não ajuda.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Índice em coluna de dois valores quase nunca ajuda sozinho.",
+        "Índice em coluna de dois valores é sempre a melhor escolha.",
+        "A quantidade de valores distintos não afeta a utilidade do índice.",
+        "Coluna de dois valores é a mais seletiva que existe."
       ],
       "a": 0,
-      "w": "Seletividade.",
+      "w": "Se metade da tabela tem aquele valor, o índice não discrimina nada e o banco vasculha igual.",
       "t": "seletividade"
     },
     {
-      "q": "Corrija o mito sobre seletividade.",
+      "q": "Coluna de dois valores é seletiva?",
       "o": [
-        "Índice em coluna de 2 valores (boolean) muitas vezes não ajuda.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Índice em coluna de dois valores quase nunca ajuda sozinho.",
+        "Índice em coluna de dois valores é sempre a melhor escolha.",
+        "A quantidade de valores distintos não afeta a utilidade do índice.",
+        "Coluna de dois valores é a mais seletiva que existe."
       ],
       "a": 0,
-      "w": "Seletividade.",
+      "w": "Se metade da tabela tem aquele valor, o índice não discrimina nada e o banco vasculha igual.",
       "t": "seletividade"
     },
     {
-      "q": "No caderno, a respeito de seletividade: qual vale?",
+      "q": "Por que indexar status sozinho quase nunca paga?",
       "o": [
-        "Índice em coluna de 2 valores (boolean) muitas vezes não ajuda.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A quantidade de valores distintos não afeta a utilidade do índice.",
+        "Coluna de dois valores é a mais seletiva que existe.",
+        "Índice em coluna de dois valores quase nunca ajuda sozinho.",
+        "Índice em coluna de dois valores é sempre a melhor escolha."
       ],
-      "a": 0,
-      "w": "Seletividade.",
+      "a": 2,
+      "w": "Se metade da tabela tem aquele valor, o índice não discrimina nada e o banco vasculha igual.",
       "t": "seletividade"
     },
     {
-      "q": "Se perguntarem seletividade na mesa, qual frase é a verdadeira?",
+      "q": "Quando um índice não consegue filtrar nada?",
       "o": [
-        "Índice em coluna de 2 valores (boolean) muitas vezes não ajuda.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Coluna de dois valores é a mais seletiva que existe.",
+        "Índice em coluna de dois valores quase nunca ajuda sozinho.",
+        "Índice em coluna de dois valores é sempre a melhor escolha.",
+        "A quantidade de valores distintos não afeta a utilidade do índice."
       ],
-      "a": 0,
-      "w": "Seletividade.",
+      "a": 1,
+      "w": "Se metade da tabela tem aquele valor, o índice não discrimina nada e o banco vasculha igual.",
       "t": "seletividade"
     },
     {
-      "q": "Sobre covering: qual afirmação está certa?",
+      "q": "O que um índice que cobre a query evita?",
       "o": [
-        "Covering index evita lookup na heap se as colunas cabem.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Só o índice composto pode cobrir uma query.",
+        "Índice que cobre a query evita ir à tabela, se as colunas do SELECT couberem nele.",
+        "Índice que cobre a query é de graça: não cresce em disco.",
+        "Índice que cobre a query sempre precisa voltar à tabela."
       ],
-      "a": 0,
-      "w": "Tamanho vs ganho.",
+      "a": 1,
+      "w": "Tamanho contra ganho: o índice cresce, mas a leitura não precisa voltar à tabela.",
       "t": "covering"
     },
     {
-      "q": "Qual frase sobre covering está certa?",
+      "q": "Quando o índice consegue responder sem ir à tabela?",
       "o": [
-        "Covering index evita lookup na heap se as colunas cabem.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Índice que cobre a query evita ir à tabela, se as colunas do SELECT couberem nele.",
+        "Índice que cobre a query é de graça: não cresce em disco.",
+        "Índice que cobre a query sempre precisa voltar à tabela.",
+        "Só o índice composto pode cobrir uma query."
       ],
       "a": 0,
-      "w": "Tamanho vs ganho.",
+      "w": "Tamanho contra ganho: o índice cresce, mas a leitura não precisa voltar à tabela.",
       "t": "covering"
     },
     {
-      "q": "Covering — o que acontece de verdade?",
+      "q": "Índice que cobre a query é de graça?",
       "o": [
-        "Covering index evita lookup na heap se as colunas cabem.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Índice que cobre a query sempre precisa voltar à tabela.",
+        "Só o índice composto pode cobrir uma query.",
+        "Índice que cobre a query evita ir à tabela, se as colunas do SELECT couberem nele.",
+        "Índice que cobre a query é de graça: não cresce em disco."
       ],
-      "a": 0,
-      "w": "Tamanho vs ganho.",
+      "a": 2,
+      "w": "Tamanho contra ganho: o índice cresce, mas a leitura não precisa voltar à tabela.",
       "t": "covering"
     },
     {
-      "q": "Marque a leitura correta (covering).",
+      "q": "Qual o trade do índice que cobre a query?",
       "o": [
-        "Covering index evita lookup na heap se as colunas cabem.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Índice que cobre a query é de graça: não cresce em disco.",
+        "Índice que cobre a query sempre precisa voltar à tabela.",
+        "Só o índice composto pode cobrir uma query.",
+        "Índice que cobre a query evita ir à tabela, se as colunas do SELECT couberem nele."
       ],
-      "a": 0,
-      "w": "Tamanho vs ganho.",
+      "a": 3,
+      "w": "Tamanho contra ganho: o índice cresce, mas a leitura não precisa voltar à tabela.",
       "t": "covering"
     },
     {
-      "q": "Corrija o mito sobre covering.",
+      "q": "As colunas do SELECT cabem no índice. O que muda?",
       "o": [
-        "Covering index evita lookup na heap se as colunas cabem.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Índice que cobre a query é de graça: não cresce em disco.",
+        "Índice que cobre a query sempre precisa voltar à tabela.",
+        "Só o índice composto pode cobrir uma query.",
+        "Índice que cobre a query evita ir à tabela, se as colunas do SELECT couberem nele."
       ],
-      "a": 0,
-      "w": "Tamanho vs ganho.",
+      "a": 3,
+      "w": "Tamanho contra ganho: o índice cresce, mas a leitura não precisa voltar à tabela.",
       "t": "covering"
     },
     {
-      "q": "No caderno, a respeito de covering: qual vale?",
+      "q": "O índice que cobre a query cresce em disco?",
       "o": [
-        "Covering index evita lookup na heap se as colunas cabem.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Índice que cobre a query evita ir à tabela, se as colunas do SELECT couberem nele.",
+        "Índice que cobre a query é de graça: não cresce em disco.",
+        "Índice que cobre a query sempre precisa voltar à tabela.",
+        "Só o índice composto pode cobrir uma query."
       ],
       "a": 0,
-      "w": "Tamanho vs ganho.",
+      "w": "Tamanho contra ganho: o índice cresce, mas a leitura não precisa voltar à tabela.",
       "t": "covering"
     },
     {
-      "q": "Se perguntarem covering na mesa, qual frase é a verdadeira?",
+      "q": "Evitar a volta à tabela custa o quê?",
       "o": [
-        "Covering index evita lookup na heap se as colunas cabem.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Índice que cobre a query é de graça: não cresce em disco.",
+        "Índice que cobre a query sempre precisa voltar à tabela.",
+        "Só o índice composto pode cobrir uma query.",
+        "Índice que cobre a query evita ir à tabela, se as colunas do SELECT couberem nele."
       ],
-      "a": 0,
-      "w": "Tamanho vs ganho.",
+      "a": 3,
+      "w": "Tamanho contra ganho: o índice cresce, mas a leitura não precisa voltar à tabela.",
       "t": "covering"
     },
     {
-      "q": "Sobre não milagre: qual afirmação está certa?",
+      "q": "Índice conserta qualquer query lenta?",
       "o": [
-        "Índice não conserta N+1 nem full scan de relatório pesado sozinho.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Índice conserta qualquer query lenta do sistema.",
+        "Índice resolve relatório pesado sem nenhuma outra mudança.",
+        "Todo problema de leitura se resolve criando índice.",
+        "Índice não conserta query repetida em laço nem relatório pesado sozinho."
       ],
-      "a": 0,
-      "w": "Às vezes warehouse.",
+      "a": 3,
+      "w": "Às vezes o caminho é outro modelo de dados para análise, não mais um índice.",
       "t": "não milagre"
     },
     {
-      "q": "Qual frase sobre não milagre está certa?",
+      "q": "O relatório pesado se resolve só com índice?",
       "o": [
-        "Índice não conserta N+1 nem full scan de relatório pesado sozinho.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Todo problema de leitura se resolve criando índice.",
+        "Índice não conserta query repetida em laço nem relatório pesado sozinho.",
+        "Índice conserta qualquer query lenta do sistema.",
+        "Índice resolve relatório pesado sem nenhuma outra mudança."
       ],
-      "a": 0,
-      "w": "Às vezes warehouse.",
+      "a": 1,
+      "w": "Às vezes o caminho é outro modelo de dados para análise, não mais um índice.",
       "t": "não milagre"
     },
     {
-      "q": "Não milagre — o que acontece de verdade?",
+      "q": "Query repetida em laço: índice resolve?",
       "o": [
-        "Índice não conserta N+1 nem full scan de relatório pesado sozinho.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Todo problema de leitura se resolve criando índice.",
+        "Índice não conserta query repetida em laço nem relatório pesado sozinho.",
+        "Índice conserta qualquer query lenta do sistema.",
+        "Índice resolve relatório pesado sem nenhuma outra mudança."
       ],
-      "a": 0,
-      "w": "Às vezes warehouse.",
+      "a": 1,
+      "w": "Às vezes o caminho é outro modelo de dados para análise, não mais um índice.",
       "t": "não milagre"
     },
     {
-      "q": "Marque a leitura correta (não milagre).",
+      "q": "Quando o caminho não é mais um índice?",
       "o": [
-        "Índice não conserta N+1 nem full scan de relatório pesado sozinho.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Todo problema de leitura se resolve criando índice.",
+        "Índice não conserta query repetida em laço nem relatório pesado sozinho.",
+        "Índice conserta qualquer query lenta do sistema.",
+        "Índice resolve relatório pesado sem nenhuma outra mudança."
       ],
-      "a": 0,
-      "w": "Às vezes warehouse.",
+      "a": 1,
+      "w": "Às vezes o caminho é outro modelo de dados para análise, não mais um índice.",
       "t": "não milagre"
     },
     {
-      "q": "Corrija o mito sobre não milagre.",
+      "q": "Todo problema de leitura se resolve com índice?",
       "o": [
-        "Índice não conserta N+1 nem full scan de relatório pesado sozinho.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Índice resolve relatório pesado sem nenhuma outra mudança.",
+        "Todo problema de leitura se resolve criando índice.",
+        "Índice não conserta query repetida em laço nem relatório pesado sozinho.",
+        "Índice conserta qualquer query lenta do sistema."
       ],
-      "a": 0,
-      "w": "Às vezes warehouse.",
+      "a": 2,
+      "w": "Às vezes o caminho é outro modelo de dados para análise, não mais um índice.",
       "t": "não milagre"
     },
     {
-      "q": "No caderno, a respeito de não milagre: qual vale?",
+      "q": "Qual o limite do índice?",
       "o": [
-        "Índice não conserta N+1 nem full scan de relatório pesado sozinho.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Índice conserta qualquer query lenta do sistema.",
+        "Índice resolve relatório pesado sem nenhuma outra mudança.",
+        "Todo problema de leitura se resolve criando índice.",
+        "Índice não conserta query repetida em laço nem relatório pesado sozinho."
       ],
-      "a": 0,
-      "w": "Às vezes warehouse.",
+      "a": 3,
+      "w": "Às vezes o caminho é outro modelo de dados para análise, não mais um índice.",
       "t": "não milagre"
     },
     {
-      "q": "Se perguntarem não milagre na mesa, qual frase é a verdadeira?",
+      "q": "O que fazer quando o índice não basta no relatório?",
       "o": [
-        "Índice não conserta N+1 nem full scan de relatório pesado sozinho.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Índice não conserta query repetida em laço nem relatório pesado sozinho.",
+        "Índice conserta qualquer query lenta do sistema.",
+        "Índice resolve relatório pesado sem nenhuma outra mudança.",
+        "Todo problema de leitura se resolve criando índice."
       ],
       "a": 0,
-      "w": "Às vezes warehouse.",
+      "w": "Às vezes o caminho é outro modelo de dados para análise, não mais um índice.",
       "t": "não milagre"
     },
     {
-      "q": "Sobre EXPLAIN: qual afirmação está certa?",
+      "q": "O que olhar antes de criar um índice?",
       "o": [
-        "Olhe o plano. Chute de índice é fé.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O EXPLAIN não mostra se o índice foi usado.",
+        "Olhar o plano é passo opcional depois de criar o índice.",
+        "Olhe o EXPLAIN; chutar índice é fé.",
+        "Chutar o índice pela intuição funciona igual a olhar o plano."
       ],
-      "a": 0,
-      "w": "Mesa prática.",
+      "a": 2,
+      "w": "O plano mostra se o índice está sendo usado. Sem olhar, você paga e o banco ignora.",
       "t": "EXPLAIN"
     },
     {
-      "q": "Qual frase sobre EXPLAIN está certa?",
+      "q": "Chutar índice pela intuição funciona?",
       "o": [
-        "Olhe o plano. Chute de índice é fé.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Olhar o plano é passo opcional depois de criar o índice.",
+        "Olhe o EXPLAIN; chutar índice é fé.",
+        "Chutar o índice pela intuição funciona igual a olhar o plano.",
+        "O EXPLAIN não mostra se o índice foi usado."
       ],
-      "a": 0,
-      "w": "Mesa prática.",
+      "a": 1,
+      "w": "O plano mostra se o índice está sendo usado. Sem olhar, você paga e o banco ignora.",
       "t": "EXPLAIN"
     },
     {
-      "q": "EXPLAIN — o que acontece de verdade?",
+      "q": "O EXPLAIN mostra o quê sobre o índice?",
       "o": [
-        "Olhe o plano. Chute de índice é fé.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Olhe o EXPLAIN; chutar índice é fé.",
+        "Chutar o índice pela intuição funciona igual a olhar o plano.",
+        "O EXPLAIN não mostra se o índice foi usado.",
+        "Olhar o plano é passo opcional depois de criar o índice."
       ],
       "a": 0,
-      "w": "Mesa prática.",
+      "w": "O plano mostra se o índice está sendo usado. Sem olhar, você paga e o banco ignora.",
       "t": "EXPLAIN"
     },
     {
-      "q": "Marque a leitura correta (EXPLAIN).",
+      "q": "Você criou o índice e o banco ignorou. Como descobrir?",
       "o": [
-        "Olhe o plano. Chute de índice é fé.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Olhar o plano é passo opcional depois de criar o índice.",
+        "Olhe o EXPLAIN; chutar índice é fé.",
+        "Chutar o índice pela intuição funciona igual a olhar o plano.",
+        "O EXPLAIN não mostra se o índice foi usado."
       ],
-      "a": 0,
-      "w": "Mesa prática.",
+      "a": 1,
+      "w": "O plano mostra se o índice está sendo usado. Sem olhar, você paga e o banco ignora.",
       "t": "EXPLAIN"
     },
     {
-      "q": "Corrija o mito sobre EXPLAIN.",
+      "q": "Olhar o plano é opcional?",
       "o": [
-        "Olhe o plano. Chute de índice é fé.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O EXPLAIN não mostra se o índice foi usado.",
+        "Olhar o plano é passo opcional depois de criar o índice.",
+        "Olhe o EXPLAIN; chutar índice é fé.",
+        "Chutar o índice pela intuição funciona igual a olhar o plano."
       ],
-      "a": 0,
-      "w": "Mesa prática.",
+      "a": 2,
+      "w": "O plano mostra se o índice está sendo usado. Sem olhar, você paga e o banco ignora.",
       "t": "EXPLAIN"
     },
     {
-      "q": "No caderno, a respeito de EXPLAIN: qual vale?",
+      "q": "Por que esta aula chama o chute de fé?",
       "o": [
-        "Olhe o plano. Chute de índice é fé.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Chutar o índice pela intuição funciona igual a olhar o plano.",
+        "O EXPLAIN não mostra se o índice foi usado.",
+        "Olhar o plano é passo opcional depois de criar o índice.",
+        "Olhe o EXPLAIN; chutar índice é fé."
       ],
-      "a": 0,
-      "w": "Mesa prática.",
+      "a": 3,
+      "w": "O plano mostra se o índice está sendo usado. Sem olhar, você paga e o banco ignora.",
       "t": "EXPLAIN"
     },
     {
-      "q": "Se perguntarem EXPLAIN na mesa, qual frase é a verdadeira?",
+      "q": "Como saber se o índice está sendo usado?",
       "o": [
-        "Olhe o plano. Chute de índice é fé.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Olhar o plano é passo opcional depois de criar o índice.",
+        "Olhe o EXPLAIN; chutar índice é fé.",
+        "Chutar o índice pela intuição funciona igual a olhar o plano.",
+        "O EXPLAIN não mostra se o índice foi usado."
       ],
-      "a": 0,
-      "w": "Mesa prática.",
+      "a": 1,
+      "w": "O plano mostra se o índice está sendo usado. Sem olhar, você paga e o banco ignora.",
       "t": "EXPLAIN"
     },
     {
-      "q": "Sobre unique: qual afirmação está certa?",
+      "q": "O que unique junta num só recurso?",
       "o": [
-        "Unique é índice + invariante. Inbox de eventId vive disso.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Unique é só um índice comum, sem garantia de unicidade.",
+        "Unique garante unicidade mas não funciona como índice.",
+        "A inbox depende de verificação na aplicação, não de unique.",
+        "Unique é índice mais invariante: a inbox de eventId vive disso."
       ],
-      "a": 0,
-      "w": "Ligação com Kafka.",
+      "a": 3,
+      "w": "O banco garante que não entra duplicado. Não é fé, é constraint.",
       "t": "unique"
     },
     {
-      "q": "Qual frase sobre unique está certa?",
+      "q": "Quem garante que o eventId não entra duas vezes?",
       "o": [
-        "Unique é índice + invariante. Inbox de eventId vive disso.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Unique é índice mais invariante: a inbox de eventId vive disso.",
+        "Unique é só um índice comum, sem garantia de unicidade.",
+        "Unique garante unicidade mas não funciona como índice.",
+        "A inbox depende de verificação na aplicação, não de unique."
       ],
       "a": 0,
-      "w": "Ligação com Kafka.",
+      "w": "O banco garante que não entra duplicado. Não é fé, é constraint.",
       "t": "unique"
     },
     {
-      "q": "Unique — o que acontece de verdade?",
+      "q": "Unique é só índice ou também invariante?",
       "o": [
-        "Unique é índice + invariante. Inbox de eventId vive disso.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Unique é índice mais invariante: a inbox de eventId vive disso.",
+        "Unique é só um índice comum, sem garantia de unicidade.",
+        "Unique garante unicidade mas não funciona como índice.",
+        "A inbox depende de verificação na aplicação, não de unique."
       ],
       "a": 0,
-      "w": "Ligação com Kafka.",
+      "w": "O banco garante que não entra duplicado. Não é fé, é constraint.",
       "t": "unique"
     },
     {
-      "q": "Marque a leitura correta (unique).",
+      "q": "A inbox depende de verificação na aplicação?",
       "o": [
-        "Unique é índice + invariante. Inbox de eventId vive disso.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Unique é índice mais invariante: a inbox de eventId vive disso.",
+        "Unique é só um índice comum, sem garantia de unicidade.",
+        "Unique garante unicidade mas não funciona como índice.",
+        "A inbox depende de verificação na aplicação, não de unique."
       ],
       "a": 0,
-      "w": "Ligação com Kafka.",
+      "w": "O banco garante que não entra duplicado. Não é fé, é constraint.",
       "t": "unique"
     },
     {
-      "q": "Corrija o mito sobre unique.",
+      "q": "Unique funciona como índice também?",
       "o": [
-        "Unique é índice + invariante. Inbox de eventId vive disso.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A inbox depende de verificação na aplicação, não de unique.",
+        "Unique é índice mais invariante: a inbox de eventId vive disso.",
+        "Unique é só um índice comum, sem garantia de unicidade.",
+        "Unique garante unicidade mas não funciona como índice."
       ],
-      "a": 0,
-      "w": "Ligação com Kafka.",
+      "a": 1,
+      "w": "O banco garante que não entra duplicado. Não é fé, é constraint.",
       "t": "unique"
     },
     {
-      "q": "No caderno, a respeito de unique: qual vale?",
+      "q": "Como evitar duplicado sem depender de fé?",
       "o": [
-        "Unique é índice + invariante. Inbox de eventId vive disso.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Unique é só um índice comum, sem garantia de unicidade.",
+        "Unique garante unicidade mas não funciona como índice.",
+        "A inbox depende de verificação na aplicação, não de unique.",
+        "Unique é índice mais invariante: a inbox de eventId vive disso."
       ],
-      "a": 0,
-      "w": "Ligação com Kafka.",
+      "a": 3,
+      "w": "O banco garante que não entra duplicado. Não é fé, é constraint.",
       "t": "unique"
     },
     {
-      "q": "Se perguntarem unique na mesa, qual frase é a verdadeira?",
+      "q": "Qual recurso do banco a inbox usa?",
       "o": [
-        "Unique é índice + invariante. Inbox de eventId vive disso.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Unique é só um índice comum, sem garantia de unicidade.",
+        "Unique garante unicidade mas não funciona como índice.",
+        "A inbox depende de verificação na aplicação, não de unique.",
+        "Unique é índice mais invariante: a inbox de eventId vive disso."
       ],
-      "a": 0,
-      "w": "Ligação com Kafka.",
+      "a": 3,
+      "w": "O banco garante que não entra duplicado. Não é fé, é constraint.",
       "t": "unique"
     },
     {
-      "q": "Sobre manutenção: qual afirmação está certa?",
+      "q": "Reconstruir índice precisa de planejamento?",
       "o": [
-        "Rebuild/reindex é operação. Planeje.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Reconstruir índice é tarefa que o banco faz sozinho sem impacto.",
+        "Reconstruir índice é operação: planeje, não é só criar e esquecer.",
+        "Reconstruir índice é instantâneo e não precisa de planejamento.",
+        "Índice criado nunca precisa de manutenção."
       ],
-      "a": 0,
-      "w": "Não só CREATE.",
+      "a": 1,
+      "w": "Reconstruir custa tempo e recurso. Entra no calendário de operação.",
       "t": "manutenção"
     },
     {
-      "q": "Qual frase sobre manutenção está certa?",
+      "q": "Criar índice e esquecer funciona?",
       "o": [
-        "Rebuild/reindex é operação. Planeje.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Reconstruir índice é tarefa que o banco faz sozinho sem impacto.",
+        "Reconstruir índice é operação: planeje, não é só criar e esquecer.",
+        "Reconstruir índice é instantâneo e não precisa de planejamento.",
+        "Índice criado nunca precisa de manutenção."
       ],
-      "a": 0,
-      "w": "Não só CREATE.",
+      "a": 1,
+      "w": "Reconstruir custa tempo e recurso. Entra no calendário de operação.",
       "t": "manutenção"
     },
     {
-      "q": "Manutenção — o que acontece de verdade?",
+      "q": "O que a reconstrução de índice custa?",
       "o": [
-        "Rebuild/reindex é operação. Planeje.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Reconstruir índice é tarefa que o banco faz sozinho sem impacto.",
+        "Reconstruir índice é operação: planeje, não é só criar e esquecer.",
+        "Reconstruir índice é instantâneo e não precisa de planejamento.",
+        "Índice criado nunca precisa de manutenção."
       ],
-      "a": 0,
-      "w": "Não só CREATE.",
+      "a": 1,
+      "w": "Reconstruir custa tempo e recurso. Entra no calendário de operação.",
       "t": "manutenção"
     },
     {
-      "q": "Marque a leitura correta (manutenção).",
+      "q": "Índice criado precisa de manutenção?",
       "o": [
-        "Rebuild/reindex é operação. Planeje.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Índice criado nunca precisa de manutenção.",
+        "Reconstruir índice é tarefa que o banco faz sozinho sem impacto.",
+        "Reconstruir índice é operação: planeje, não é só criar e esquecer.",
+        "Reconstruir índice é instantâneo e não precisa de planejamento."
       ],
-      "a": 0,
-      "w": "Não só CREATE.",
+      "a": 2,
+      "w": "Reconstruir custa tempo e recurso. Entra no calendário de operação.",
       "t": "manutenção"
     },
     {
-      "q": "Corrija o mito sobre manutenção.",
+      "q": "Reconstruir índice é instantâneo?",
       "o": [
-        "Rebuild/reindex é operação. Planeje.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Reconstruir índice é instantâneo e não precisa de planejamento.",
+        "Índice criado nunca precisa de manutenção.",
+        "Reconstruir índice é tarefa que o banco faz sozinho sem impacto.",
+        "Reconstruir índice é operação: planeje, não é só criar e esquecer."
       ],
-      "a": 0,
-      "w": "Não só CREATE.",
+      "a": 3,
+      "w": "Reconstruir custa tempo e recurso. Entra no calendário de operação.",
       "t": "manutenção"
     },
     {
-      "q": "No caderno, a respeito de manutenção: qual vale?",
+      "q": "Onde a reconstrução de índice entra?",
       "o": [
-        "Rebuild/reindex é operação. Planeje.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Reconstruir índice é instantâneo e não precisa de planejamento.",
+        "Índice criado nunca precisa de manutenção.",
+        "Reconstruir índice é tarefa que o banco faz sozinho sem impacto.",
+        "Reconstruir índice é operação: planeje, não é só criar e esquecer."
       ],
-      "a": 0,
-      "w": "Não só CREATE.",
+      "a": 3,
+      "w": "Reconstruir custa tempo e recurso. Entra no calendário de operação.",
       "t": "manutenção"
     },
     {
-      "q": "Se perguntarem manutenção na mesa, qual frase é a verdadeira?",
+      "q": "O banco reconstrói índice sozinho sem impacto?",
       "o": [
-        "Rebuild/reindex é operação. Planeje.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Reconstruir índice é instantâneo e não precisa de planejamento.",
+        "Índice criado nunca precisa de manutenção.",
+        "Reconstruir índice é tarefa que o banco faz sozinho sem impacto.",
+        "Reconstruir índice é operação: planeje, não é só criar e esquecer."
       ],
-      "a": 0,
-      "w": "Não só CREATE.",
+      "a": 3,
+      "w": "Reconstruir custa tempo e recurso. Entra no calendário de operação.",
       "t": "manutenção"
     },
     {
-      "q": "Sobre leftmost: qual afirmação está certa?",
+      "q": "Um índice em (a, b, c) atende filtro só em c?",
       "o": [
-        "a,b,c não serve query só em c (em B-tree clássico).",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Índice composto atende filtro em qualquer coluna isolada.",
+        "Um índice em (a, b, c) não atende query que filtra só em c.",
+        "Um índice em (a, b, c) atende query que filtra só em c.",
+        "A posição da coluna no índice composto não importa para o filtro."
       ],
-      "a": 0,
-      "w": "Leftmost prefix.",
+      "a": 1,
+      "w": "O prefixo mais à esquerda manda. Sem a primeira coluna no filtro, o índice não entra.",
       "t": "leftmost"
     },
     {
-      "q": "Qual frase sobre leftmost está certa?",
+      "q": "Qual coluna precisa estar no filtro para o composto ser usado?",
       "o": [
-        "a,b,c não serve query só em c (em B-tree clássico).",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Índice composto atende filtro em qualquer coluna isolada.",
+        "Um índice em (a, b, c) não atende query que filtra só em c.",
+        "Um índice em (a, b, c) atende query que filtra só em c.",
+        "A posição da coluna no índice composto não importa para o filtro."
       ],
-      "a": 0,
-      "w": "Leftmost prefix.",
+      "a": 1,
+      "w": "O prefixo mais à esquerda manda. Sem a primeira coluna no filtro, o índice não entra.",
       "t": "leftmost"
     },
     {
-      "q": "Leftmost — o que acontece de verdade?",
+      "q": "O que é prefixo mais à esquerda?",
       "o": [
-        "a,b,c não serve query só em c (em B-tree clássico).",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Um índice em (a, b, c) não atende query que filtra só em c.",
+        "Um índice em (a, b, c) atende query que filtra só em c.",
+        "A posição da coluna no índice composto não importa para o filtro.",
+        "Índice composto atende filtro em qualquer coluna isolada."
       ],
       "a": 0,
-      "w": "Leftmost prefix.",
+      "w": "O prefixo mais à esquerda manda. Sem a primeira coluna no filtro, o índice não entra.",
       "t": "leftmost"
     },
     {
-      "q": "Marque a leitura correta (leftmost).",
+      "q": "A posição da coluna no composto importa?",
       "o": [
-        "a,b,c não serve query só em c (em B-tree clássico).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Um índice em (a, b, c) atende query que filtra só em c.",
+        "A posição da coluna no índice composto não importa para o filtro.",
+        "Índice composto atende filtro em qualquer coluna isolada.",
+        "Um índice em (a, b, c) não atende query que filtra só em c."
       ],
-      "a": 0,
-      "w": "Leftmost prefix.",
+      "a": 3,
+      "w": "O prefixo mais à esquerda manda. Sem a primeira coluna no filtro, o índice não entra.",
       "t": "leftmost"
     },
     {
-      "q": "Corrija o mito sobre leftmost.",
+      "q": "Você filtrou só pela última coluna do índice. Ele é usado?",
       "o": [
-        "a,b,c não serve query só em c (em B-tree clássico).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Um índice em (a, b, c) não atende query que filtra só em c.",
+        "Um índice em (a, b, c) atende query que filtra só em c.",
+        "A posição da coluna no índice composto não importa para o filtro.",
+        "Índice composto atende filtro em qualquer coluna isolada."
       ],
       "a": 0,
-      "w": "Leftmost prefix.",
+      "w": "O prefixo mais à esquerda manda. Sem a primeira coluna no filtro, o índice não entra.",
       "t": "leftmost"
     },
     {
-      "q": "No caderno, a respeito de leftmost: qual vale?",
+      "q": "Índice composto atende qualquer coluna isolada?",
       "o": [
-        "a,b,c não serve query só em c (em B-tree clássico).",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A posição da coluna no índice composto não importa para o filtro.",
+        "Índice composto atende filtro em qualquer coluna isolada.",
+        "Um índice em (a, b, c) não atende query que filtra só em c.",
+        "Um índice em (a, b, c) atende query que filtra só em c."
       ],
-      "a": 0,
-      "w": "Leftmost prefix.",
+      "a": 2,
+      "w": "O prefixo mais à esquerda manda. Sem a primeira coluna no filtro, o índice não entra.",
       "t": "leftmost"
     },
     {
-      "q": "Se perguntarem leftmost na mesa, qual frase é a verdadeira?",
+      "q": "Por que a primeira coluna do índice é especial?",
       "o": [
-        "a,b,c não serve query só em c (em B-tree clássico).",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Um índice em (a, b, c) não atende query que filtra só em c.",
+        "Um índice em (a, b, c) atende query que filtra só em c.",
+        "A posição da coluna no índice composto não importa para o filtro.",
+        "Índice composto atende filtro em qualquer coluna isolada."
       ],
       "a": 0,
-      "w": "Leftmost prefix.",
+      "w": "O prefixo mais à esquerda manda. Sem a primeira coluna no filtro, o índice não entra.",
       "t": "leftmost"
     },
     {
-      "q": "Sobre ORM: qual afirmação está certa?",
+      "q": "Chave estrangeira sem índice causa o quê em produção?",
       "o": [
-        "ORM sem índice na FK vira full scan em produção.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Chave estrangeira sem índice não afeta a performance da query.",
+        "A ferramenta de mapeamento cria os índices necessários sozinha.",
+        "Chave estrangeira sem índice vira full scan da tabela em produção.",
+        "Chave estrangeira já vem com índice automaticamente em todo banco."
       ],
-      "a": 0,
-      "w": "Review de schema.",
+      "a": 2,
+      "w": "O mapeamento gera a query, mas não cria o índice. Revise o schema.",
       "t": "ORM"
     },
     {
-      "q": "Qual frase sobre ORM está certa?",
+      "q": "A ferramenta de mapeamento cria os índices sozinha?",
       "o": [
-        "ORM sem índice na FK vira full scan em produção.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Chave estrangeira sem índice não afeta a performance da query.",
+        "A ferramenta de mapeamento cria os índices necessários sozinha.",
+        "Chave estrangeira sem índice vira full scan da tabela em produção.",
+        "Chave estrangeira já vem com índice automaticamente em todo banco."
       ],
-      "a": 0,
-      "w": "Review de schema.",
+      "a": 2,
+      "w": "O mapeamento gera a query, mas não cria o índice. Revise o schema.",
       "t": "ORM"
     },
     {
-      "q": "ORM — o que acontece de verdade?",
+      "q": "Chave estrangeira vem com índice automaticamente?",
       "o": [
-        "ORM sem índice na FK vira full scan em produção.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Chave estrangeira sem índice não afeta a performance da query.",
+        "A ferramenta de mapeamento cria os índices necessários sozinha.",
+        "Chave estrangeira sem índice vira full scan da tabela em produção.",
+        "Chave estrangeira já vem com índice automaticamente em todo banco."
       ],
-      "a": 0,
-      "w": "Review de schema.",
+      "a": 2,
+      "w": "O mapeamento gera a query, mas não cria o índice. Revise o schema.",
       "t": "ORM"
     },
     {
-      "q": "Marque a leitura correta (ORM).",
+      "q": "O que revisar para evitar full scan de tabela?",
       "o": [
-        "ORM sem índice na FK vira full scan em produção.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A ferramenta de mapeamento cria os índices necessários sozinha.",
+        "Chave estrangeira sem índice vira full scan da tabela em produção.",
+        "Chave estrangeira já vem com índice automaticamente em todo banco.",
+        "Chave estrangeira sem índice não afeta a performance da query."
       ],
-      "a": 0,
-      "w": "Review de schema.",
+      "a": 1,
+      "w": "O mapeamento gera a query, mas não cria o índice. Revise o schema.",
       "t": "ORM"
     },
     {
-      "q": "Corrija o mito sobre ORM.",
+      "q": "A query gerada pelo mapeamento garante índice?",
       "o": [
-        "ORM sem índice na FK vira full scan em produção.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Chave estrangeira sem índice não afeta a performance da query.",
+        "A ferramenta de mapeamento cria os índices necessários sozinha.",
+        "Chave estrangeira sem índice vira full scan da tabela em produção.",
+        "Chave estrangeira já vem com índice automaticamente em todo banco."
       ],
-      "a": 0,
-      "w": "Review de schema.",
+      "a": 2,
+      "w": "O mapeamento gera a query, mas não cria o índice. Revise o schema.",
       "t": "ORM"
     },
     {
-      "q": "No caderno, a respeito de ORM: qual vale?",
+      "q": "Chave estrangeira sem índice afeta performance?",
       "o": [
-        "ORM sem índice na FK vira full scan em produção.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Chave estrangeira sem índice não afeta a performance da query.",
+        "A ferramenta de mapeamento cria os índices necessários sozinha.",
+        "Chave estrangeira sem índice vira full scan da tabela em produção.",
+        "Chave estrangeira já vem com índice automaticamente em todo banco."
       ],
-      "a": 0,
-      "w": "Review de schema.",
+      "a": 2,
+      "w": "O mapeamento gera a query, mas não cria o índice. Revise o schema.",
       "t": "ORM"
     },
     {
-      "q": "Se perguntarem ORM na mesa, qual frase é a verdadeira?",
+      "q": "Onde esse problema aparece: em teste ou em produção?",
       "o": [
-        "ORM sem índice na FK vira full scan em produção.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A ferramenta de mapeamento cria os índices necessários sozinha.",
+        "Chave estrangeira sem índice vira full scan da tabela em produção.",
+        "Chave estrangeira já vem com índice automaticamente em todo banco.",
+        "Chave estrangeira sem índice não afeta a performance da query."
       ],
-      "a": 0,
-      "w": "Review de schema.",
+      "a": 1,
+      "w": "O mapeamento gera a query, mas não cria o índice. Revise o schema.",
       "t": "ORM"
     },
     {
-      "q": "Sobre SLO: qual afirmação está certa?",
+      "q": "O que o índice certo faz com o p99 daquela query?",
       "o": [
-        "Índice certo baixa p99 daquela query; índice demais sobe p99 de write.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Índice certo baixa o p99 daquela query; índice demais sobe o p99 de escrita.",
+        "Índice certo baixa o p99 de leitura e de escrita ao mesmo tempo.",
+        "A quantidade de índices não afeta o p99 de escrita.",
+        "Índice demais baixa o p99 de escrita também."
       ],
       "a": 0,
-      "w": "Trade.",
+      "w": "Os dois lados existem. Você troca tempo de leitura por tempo de escrita.",
       "t": "SLO"
     },
     {
-      "q": "Qual frase sobre SLO está certa?",
+      "q": "O que índice demais faz com o p99 de escrita?",
       "o": [
-        "Índice certo baixa p99 daquela query; índice demais sobe p99 de write.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A quantidade de índices não afeta o p99 de escrita.",
+        "Índice demais baixa o p99 de escrita também.",
+        "Índice certo baixa o p99 daquela query; índice demais sobe o p99 de escrita.",
+        "Índice certo baixa o p99 de leitura e de escrita ao mesmo tempo."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 2,
+      "w": "Os dois lados existem. Você troca tempo de leitura por tempo de escrita.",
       "t": "SLO"
     },
     {
-      "q": "SLO — o que acontece de verdade?",
+      "q": "Índice baixa os dois p99 ao mesmo tempo?",
       "o": [
-        "Índice certo baixa p99 daquela query; índice demais sobe p99 de write.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Índice certo baixa o p99 daquela query; índice demais sobe o p99 de escrita.",
+        "Índice certo baixa o p99 de leitura e de escrita ao mesmo tempo.",
+        "A quantidade de índices não afeta o p99 de escrita.",
+        "Índice demais baixa o p99 de escrita também."
       ],
       "a": 0,
-      "w": "Trade.",
+      "w": "Os dois lados existem. Você troca tempo de leitura por tempo de escrita.",
       "t": "SLO"
     },
     {
-      "q": "Marque a leitura correta (SLO).",
+      "q": "O que você troca ao criar índices?",
       "o": [
-        "Índice certo baixa p99 daquela query; índice demais sobe p99 de write.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Índice demais baixa o p99 de escrita também.",
+        "Índice certo baixa o p99 daquela query; índice demais sobe o p99 de escrita.",
+        "Índice certo baixa o p99 de leitura e de escrita ao mesmo tempo.",
+        "A quantidade de índices não afeta o p99 de escrita."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 1,
+      "w": "Os dois lados existem. Você troca tempo de leitura por tempo de escrita.",
       "t": "SLO"
     },
     {
-      "q": "Corrija o mito sobre SLO.",
+      "q": "A quantidade de índices afeta o p99 de escrita?",
       "o": [
-        "Índice certo baixa p99 daquela query; índice demais sobe p99 de write.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Índice demais baixa o p99 de escrita também.",
+        "Índice certo baixa o p99 daquela query; índice demais sobe o p99 de escrita.",
+        "Índice certo baixa o p99 de leitura e de escrita ao mesmo tempo.",
+        "A quantidade de índices não afeta o p99 de escrita."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 1,
+      "w": "Os dois lados existem. Você troca tempo de leitura por tempo de escrita.",
       "t": "SLO"
     },
     {
-      "q": "No caderno, a respeito de SLO: qual vale?",
+      "q": "Índice demais melhora a escrita?",
       "o": [
-        "Índice certo baixa p99 daquela query; índice demais sobe p99 de write.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Índice certo baixa o p99 de leitura e de escrita ao mesmo tempo.",
+        "A quantidade de índices não afeta o p99 de escrita.",
+        "Índice demais baixa o p99 de escrita também.",
+        "Índice certo baixa o p99 daquela query; índice demais sobe o p99 de escrita."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 3,
+      "w": "Os dois lados existem. Você troca tempo de leitura por tempo de escrita.",
       "t": "SLO"
     },
     {
-      "q": "Se perguntarem SLO na mesa, qual frase é a verdadeira?",
+      "q": "Qual o lado ruim de encher a tabela de índices?",
       "o": [
-        "Índice certo baixa p99 daquela query; índice demais sobe p99 de write.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Índice demais baixa o p99 de escrita também.",
+        "Índice certo baixa o p99 daquela query; índice demais sobe o p99 de escrita.",
+        "Índice certo baixa o p99 de leitura e de escrita ao mesmo tempo.",
+        "A quantidade de índices não afeta o p99 de escrita."
       ],
-      "a": 0,
-      "w": "Trade.",
+      "a": 1,
+      "w": "Os dois lados existem. Você troca tempo de leitura por tempo de escrita.",
       "t": "SLO"
     },
     {
-      "q": "Sobre parcial: qual afirmação está certa?",
+      "q": "O que o índice parcial cobre?",
       "o": [
-        "Índice parcial (WHERE status=open) se a query é isso.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Índice parcial cobre só as linhas da cláusula, quando a query é sempre aquela.",
+        "Índice parcial cobre a tabela inteira, só com nome diferente.",
+        "Índice parcial é maior que o índice completo.",
+        "Índice parcial serve mesmo quando a query varia toda hora."
       ],
       "a": 0,
-      "w": "Menor e mais honesto.",
+      "w": "Menor e mais honesto do que indexar a tabela inteira, se a cláusula não muda.",
       "t": "parcial"
     },
     {
-      "q": "Qual frase sobre parcial está certa?",
+      "q": "Quando vale usar índice parcial?",
       "o": [
-        "Índice parcial (WHERE status=open) se a query é isso.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Índice parcial serve mesmo quando a query varia toda hora.",
+        "Índice parcial cobre só as linhas da cláusula, quando a query é sempre aquela.",
+        "Índice parcial cobre a tabela inteira, só com nome diferente.",
+        "Índice parcial é maior que o índice completo."
       ],
-      "a": 0,
-      "w": "Menor e mais honesto.",
+      "a": 1,
+      "w": "Menor e mais honesto do que indexar a tabela inteira, se a cláusula não muda.",
       "t": "parcial"
     },
     {
-      "q": "Parcial — o que acontece de verdade?",
+      "q": "Índice parcial é maior ou menor que o completo?",
       "o": [
-        "Índice parcial (WHERE status=open) se a query é isso.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Índice parcial serve mesmo quando a query varia toda hora.",
+        "Índice parcial cobre só as linhas da cláusula, quando a query é sempre aquela.",
+        "Índice parcial cobre a tabela inteira, só com nome diferente.",
+        "Índice parcial é maior que o índice completo."
       ],
-      "a": 0,
-      "w": "Menor e mais honesto.",
+      "a": 1,
+      "w": "Menor e mais honesto do que indexar a tabela inteira, se a cláusula não muda.",
       "t": "parcial"
     },
     {
-      "q": "Marque a leitura correta (parcial).",
+      "q": "Índice parcial serve quando a query varia toda hora?",
       "o": [
-        "Índice parcial (WHERE status=open) se a query é isso.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Índice parcial serve mesmo quando a query varia toda hora.",
+        "Índice parcial cobre só as linhas da cláusula, quando a query é sempre aquela.",
+        "Índice parcial cobre a tabela inteira, só com nome diferente.",
+        "Índice parcial é maior que o índice completo."
       ],
-      "a": 0,
-      "w": "Menor e mais honesto.",
+      "a": 1,
+      "w": "Menor e mais honesto do que indexar a tabela inteira, se a cláusula não muda.",
       "t": "parcial"
     },
     {
-      "q": "Corrija o mito sobre parcial.",
+      "q": "Por que o índice parcial é mais honesto?",
       "o": [
-        "Índice parcial (WHERE status=open) se a query é isso.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Índice parcial é maior que o índice completo.",
+        "Índice parcial serve mesmo quando a query varia toda hora.",
+        "Índice parcial cobre só as linhas da cláusula, quando a query é sempre aquela.",
+        "Índice parcial cobre a tabela inteira, só com nome diferente."
       ],
-      "a": 0,
-      "w": "Menor e mais honesto.",
+      "a": 2,
+      "w": "Menor e mais honesto do que indexar a tabela inteira, se a cláusula não muda.",
       "t": "parcial"
     },
     {
-      "q": "No caderno, a respeito de parcial: qual vale?",
+      "q": "Índice parcial cobre a tabela inteira?",
       "o": [
-        "Índice parcial (WHERE status=open) se a query é isso.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Índice parcial cobre a tabela inteira, só com nome diferente.",
+        "Índice parcial é maior que o índice completo.",
+        "Índice parcial serve mesmo quando a query varia toda hora.",
+        "Índice parcial cobre só as linhas da cláusula, quando a query é sempre aquela."
       ],
-      "a": 0,
-      "w": "Menor e mais honesto.",
+      "a": 3,
+      "w": "Menor e mais honesto do que indexar a tabela inteira, se a cláusula não muda.",
       "t": "parcial"
     },
     {
-      "q": "Se perguntarem parcial na mesa, qual frase é a verdadeira?",
+      "q": "A cláusula sempre é a mesma. Qual índice cabe?",
       "o": [
-        "Índice parcial (WHERE status=open) se a query é isso.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Índice parcial é maior que o índice completo.",
+        "Índice parcial serve mesmo quando a query varia toda hora.",
+        "Índice parcial cobre só as linhas da cláusula, quando a query é sempre aquela.",
+        "Índice parcial cobre a tabela inteira, só com nome diferente."
       ],
-      "a": 0,
-      "w": "Menor e mais honesto.",
+      "a": 2,
+      "w": "Menor e mais honesto do que indexar a tabela inteira, se a cláusula não muda.",
       "t": "parcial"
     },
     {
-      "q": "Sobre aula escala: qual afirmação está certa?",
+      "q": "Na escala, o índice aparece junto com o quê?",
       "o": [
-        "Na aula de escala o índice entra junto com replicação e cache.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Índice deve ser pensado isolado, sem olhar réplica nem cache.",
+        "Índice substitui réplica e cache no desenho de escala.",
+        "Índice não tem relação com o desenho de escala.",
+        "Na aula de escala o índice entra junto com réplica e cache, não isolado da carga."
       ],
-      "a": 0,
-      "w": "Não isolado da carga.",
+      "a": 3,
+      "w": "Índice entra junto com réplica e cache. Pense na carga, não só na query.",
       "t": "aula escala"
     },
     {
-      "q": "Qual frase sobre aula escala está certa?",
+      "q": "Índice se pensa isolado da carga?",
       "o": [
-        "Na aula de escala o índice entra junto com replicação e cache.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Índice substitui réplica e cache no desenho de escala.",
+        "Índice não tem relação com o desenho de escala.",
+        "Na aula de escala o índice entra junto com réplica e cache, não isolado da carga.",
+        "Índice deve ser pensado isolado, sem olhar réplica nem cache."
       ],
-      "a": 0,
-      "w": "Não isolado da carga.",
+      "a": 2,
+      "w": "Índice entra junto com réplica e cache. Pense na carga, não só na query.",
       "t": "aula escala"
     },
     {
-      "q": "Aula escala — o que acontece de verdade?",
+      "q": "Índice substitui réplica e cache?",
       "o": [
-        "Na aula de escala o índice entra junto com replicação e cache.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Na aula de escala o índice entra junto com réplica e cache, não isolado da carga.",
+        "Índice deve ser pensado isolado, sem olhar réplica nem cache.",
+        "Índice substitui réplica e cache no desenho de escala.",
+        "Índice não tem relação com o desenho de escala."
       ],
       "a": 0,
-      "w": "Não isolado da carga.",
+      "w": "Índice entra junto com réplica e cache. Pense na carga, não só na query.",
       "t": "aula escala"
     },
     {
-      "q": "Marque a leitura correta (aula escala).",
+      "q": "O índice tem relação com o desenho de escala?",
       "o": [
-        "Na aula de escala o índice entra junto com replicação e cache.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Índice deve ser pensado isolado, sem olhar réplica nem cache.",
+        "Índice substitui réplica e cache no desenho de escala.",
+        "Índice não tem relação com o desenho de escala.",
+        "Na aula de escala o índice entra junto com réplica e cache, não isolado da carga."
       ],
-      "a": 0,
-      "w": "Não isolado da carga.",
+      "a": 3,
+      "w": "Índice entra junto com réplica e cache. Pense na carga, não só na query.",
       "t": "aula escala"
     },
     {
-      "q": "Corrija o mito sobre aula escala.",
+      "q": "Onde o índice entra no desenho de escala?",
       "o": [
-        "Na aula de escala o índice entra junto com replicação e cache.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Índice deve ser pensado isolado, sem olhar réplica nem cache.",
+        "Índice substitui réplica e cache no desenho de escala.",
+        "Índice não tem relação com o desenho de escala.",
+        "Na aula de escala o índice entra junto com réplica e cache, não isolado da carga."
       ],
-      "a": 0,
-      "w": "Não isolado da carga.",
+      "a": 3,
+      "w": "Índice entra junto com réplica e cache. Pense na carga, não só na query.",
       "t": "aula escala"
     },
     {
-      "q": "No caderno, a respeito de aula escala: qual vale?",
+      "q": "Pensar só na query basta?",
       "o": [
-        "Na aula de escala o índice entra junto com replicação e cache.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Índice substitui réplica e cache no desenho de escala.",
+        "Índice não tem relação com o desenho de escala.",
+        "Na aula de escala o índice entra junto com réplica e cache, não isolado da carga.",
+        "Índice deve ser pensado isolado, sem olhar réplica nem cache."
       ],
-      "a": 0,
-      "w": "Não isolado da carga.",
+      "a": 2,
+      "w": "Índice entra junto com réplica e cache. Pense na carga, não só na query.",
       "t": "aula escala"
     },
     {
-      "q": "Se perguntarem aula escala na mesa, qual frase é a verdadeira?",
+      "q": "Basta índice para resolver a leitura na escala?",
       "o": [
-        "Na aula de escala o índice entra junto com replicação e cache.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Índice deve ser pensado isolado, sem olhar réplica nem cache.",
+        "Índice substitui réplica e cache no desenho de escala.",
+        "Índice não tem relação com o desenho de escala.",
+        "Na aula de escala o índice entra junto com réplica e cache, não isolado da carga."
       ],
-      "a": 0,
-      "w": "Não isolado da carga.",
+      "a": 3,
+      "w": "Índice entra junto com réplica e cache. Pense na carga, não só na query.",
       "t": "aula escala"
     }
   ]

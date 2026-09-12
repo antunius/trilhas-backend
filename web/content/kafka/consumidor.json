@@ -1,0 +1,87 @@
+{
+  "beats": [
+    {
+      "id": "dois-crachas",
+      "kind": "cena",
+      "kicker": "Fan-out",
+      "title": "Mesmo PedidoCriado. Dois group.id. Dois committed offsets.",
+      "body": "<p>Faturamento cobra o 99. Analytics conta a conversão. Os dois fazem Fetch no líder das partições que o grupo lhes deu.</p><p><code>group.id</code> identifica o consumer group. Mesmo group.id: dividem as partições, não duplicam o evento. Outro group.id: relê o log do começo (ou do committed dele). Essa é a razão de o tópico não se chamar fila-do-faturamento.</p>"
+    },
+    {
+      "id": "listeners",
+      "kind": "explicar",
+      "title": "Dois listeners. concurrency não inventa partição.",
+      "html": "<p>Protocolo do grupo: join → assign partições → heartbeat. Fetch só nas partições atribuídas. Commit do offset — no lab, na mão.</p><pre class=\"code\">@KafkaListener(topics = \"pedidos.criados\", groupId = \"faturamento\")\npublic void faturamento(ConsumerRecord&lt;String, PedidoCriado&gt; rec, Acknowledgment ack) {\n    log.info(\"partition={} offset={} key={}\", rec.partition(), rec.offset(), rec.key());\n    ack.acknowledge();\n}\n\n@KafkaListener(topics = \"pedidos.criados\", groupId = \"analytics\")\npublic void analytics(...) { ... }</pre><p><code>concurrency: 3</code> no YAML = até 3 membros no mesmo grupo. Teto = 3 partições. Mais threads que partições = gente sem assignment.</p><p><code>PedidoConsumer.java</code>, <code>spring.kafka.consumer.group-id: faturamento</code> e <code>lab.analytics-group: analytics</code>. Escalar de verdade = mais partições <em>e</em> mais consumidores.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Mesmo grupo divide. Outro grupo relê. o commit é o efeito.",
+      "ganha": "Dois group.id no pedidos.criados: faturamento e analytics independentes. Mesmo group.id em 3 pods: paralelismo até o número de partições. Commit tarde + inbox: crash não perde e não cobra duas vezes no feliz.",
+      "paga": "Mesmo grupo para dois times = cada um vê metade. Commit cedo perde efeito. Commit tarde sem inbox duplica. concurrency maior que partições = thread ociosa. Escalar só com pod, sem partição nova, não aumenta throughput.",
+      "quando": [
+        "Mais de um efeito no mesmo fato — outro group.id",
+        "Mais throughput no mesmo efeito — mais membros no mesmo grupo, e partições que cheguem",
+        "Efeito de dinheiro: commit depois, inbox ligada"
+      ],
+      "quandoNao": [
+        "Dois produtos no mesmo group.id “para simplificar o YAML”",
+        "Auto-commit por relógio no faturamento",
+        "Subir 12 consumers em 3 partições e esperar 12×"
+      ]
+    },
+    {
+      "id": "mesmo-grupo",
+      "kind": "escolha",
+      "prompt": "Analytics pediu o PedidoCriado. O faturamento já consome com group.id=faturamento. O que você faz?",
+      "options": [
+        {
+          "id": "outro-grupo",
+          "label": "group.id=analytics. outro committed offset no mesmo tópico",
+          "verdict": "bom",
+          "why": "Fan-out. Cada time no próprio offset. A mensagem não some na leitura do outro."
+        },
+        {
+          "id": "mesmo",
+          "label": "Sobe o listener de analytics no mesmo group.id=faturamento",
+          "verdict": "ruim",
+          "why": "Eles passam a dividir partições. Metade dos pedidos 99 some para o analytics. A outra metade o faturamento nunca cobra."
+        },
+        {
+          "id": "http",
+          "label": "Faturamento, depois de cobrar, dá POST no analytics",
+          "verdict": "ruim",
+          "why": "Você reacoplou. Caiu o analytics, o faturamento “falha” ou esconde o fato. O log existia para isso."
+        }
+      ]
+    },
+    {
+      "id": "commit-quando",
+      "kind": "escolha",
+      "prompt": "O faturamento Fetchou o PedidoCriado 99. A API do cartão ainda não respondeu. Você commita agora?",
+      "options": [
+        {
+          "id": "cedo",
+          "label": "Sim. Auto-commit no relógio. Depois eu cobro",
+          "verdict": "ruim",
+          "why": "O committed offset andou. Crash. Ninguém relê. O 99 nunca foi cobrado."
+        },
+        {
+          "id": "tarde",
+          "label": "Não. Cobro (inbox) e só então ack.acknowledge()",
+          "verdict": "bom",
+          "why": "Crash relê. Inbox segura a segunda cobrança. É o preço certo no caminho de dinheiro."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Mesmo group.id divide partições. Outro group.id relê o tópico com o próprio committed offset.",
+        "Commit cedo perde o efeito. Commit tarde pode duplicar — inbox.",
+        "concurrency não cria partição. Teto do grupo = número de partições."
+      ]
+    }
+  ]
+}

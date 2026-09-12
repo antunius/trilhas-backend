@@ -1,0 +1,137 @@
+{
+  "beats": [
+    {
+      "id": "filme-rebalance",
+      "kind": "cena",
+      "kicker": "Lote 500",
+      "title": "Cada cartão leva 200 ms. O poll não volta. O coordenador acha que morreu.",
+      "body": "<p>Três pods, três partições. A1 processa o lote. Estoura <code>max.poll.interval.ms</code>. O coordenador tira A1, redistribui P0. A2 e A3 também param na dança. A1 volta, o lote recomeça — e estoura de novo.</p><p>Subir mais pods para “sair do rebalance” é mais dança no mesmo buraco. A correção é lote menor, trabalho mais rápido, intervalo com critério, ou <code>group.instance.id</code> no restart planejado.</p>"
+    },
+    {
+      "id": "o-que-dispara",
+      "kind": "explicar",
+      "title": "Join, leave, heartbeat, max.poll. Durante a dança clássica, Fetch zero.",
+      "html": "<p>Entrada/saída, heartbeat perdido, ou <code>max.poll.interval.ms</code>. Assignor eager: todas as partições revogadas. Cooperative sticky reduz a parada, não elimina. Heartbeat em thread separada já é o padrão do cliente moderno — sem poll, não te salva.</p><p>Cópia didática do lab (1 broker):</p><pre class=\"code\">spring.kafka.producer.acks: all\nspring.kafka.producer.properties.enable.idempotence: true\nspring.kafka.producer.properties.linger.ms: 5\nspring.kafka.consumer.max-poll-records: 50\nspring.kafka.consumer.properties.max.poll.interval.ms: 300000\nspring.kafka.consumer.properties.session.timeout.ms: 45000\nspring.kafka.listener.concurrency: 3\nspring.kafka.listener.ack-mode: manual</pre><p><code>application.yml</code>. <code>concurrency: 3</code> casa com 3 partições. 6 no YAML = 3 ociosos — lab 5. <code>group.instance.id</code> evita rebalance em restart planejado do mesmo pod. Cheque OOM: pod morto por memória também dispara a dança.</p>"
+    },
+    {
+      "id": "dlt",
+      "kind": "explicar",
+      "title": "Cemitério para o permanente. Retry para o oscila.",
+      "html": "<p>Mensagem que falha depois de N tentativas vai para um tópico separado, em vez de travar a partição (pílula venenosa: payload inválido no meio da partição).</p><p>Com DLT o 40 vai para <code>pedidos.DLT</code> e o committed offset da P0 anda para 41. Sem handler, JSON no console sem schema id — lab 6 — deixa a partição gritando.</p><p>Olhe: lag por partição, taxa de rebalance, tempo de processamento, taxa de erro, volume no DLT. Alerte em lag crescente e sustentado, não no pico de um segundo.</p>"
+    },
+    {
+      "id": "knobs",
+      "kind": "explicar",
+      "title": "O que cada knob realmente controla. Não as 200 chaves.",
+      "html": "<p><strong>Produtor.</strong> <code>acks</code> — durabilidade, não consumo. <code>enable.idempotence</code> — retry do mesmo producer. <code>retries</code> + <code>delivery.timeout.ms</code> — teto do send. <code>linger.ms</code> / <code>batch.size</code> — throughput contra latência. <code>compression.type</code> lz4/zstd. Com idempotência, <code>max.in.flight.requests.per.connection</code> até 5 ainda preserva ordem na partição.</p><p><strong>Consumidor.</strong> <code>max.poll.records</code> — lote enorme + cartão lento = rebalance. <code>max.poll.interval.ms</code> — quanto pode ficar sem poll. <code>session.timeout.ms</code> / <code>heartbeat.interval.ms</code> — pulso. <code>auto.offset.reset</code> só sem commit prévio (earliest vs latest). <code>fetch.min.bytes</code> / <code>fetch.max.wait.ms</code>. <code>enable.auto.commit</code> — no serviço de negócio, quase sempre manual.</p><p>Disco do líder cheio não é bug do <code>@KafkaListener</code>. Deploy rolling sem static membership gera rebalance extra. JSON quebrado não deve derrubar o listener inteiro — <code>ErrorHandlingDeserializer</code>.</p>"
+    },
+    {
+      "id": "runbook",
+      "kind": "explicar",
+      "title": "Quatro linhas de plantão.",
+      "html": "<ol><li><strong>Lag em todas as partições:</strong> produção subiu ou o consumidor ficou lento? Olhe o banco/API. Só então mais partições.</li><li><strong>Lag numa partição só:</strong> poison pill (erro no log) ou hot key. Não “dá scale” no grupo inteiro.</li><li><strong>Consumidores restartando:</strong> max.poll, OOM, deploy sem static membership.</li><li><strong>DLT enchendo:</strong> payload mudou? Schema incompatível? Ou timeout de banco no cemitério?</li></ol><p>Partição quente: uma partição recebe muito mais tráfego (cliente enorme, ou key constante). Sintoma: lag só nela, as outras em zero.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Diagnosticar custa ordem. Decorar knob custa o plantão.",
+      "ganha": "Lag por partição mostra se é o grupo inteiro ou uma partição. Lote que cabe no poll evita death loop. DLT libera a partição do veneno. Sticky e group.instance.id doem menos no restart. concurrency casa com N.",
+      "paga": "12 pods em 3 partições = teatro. ErrorHandler que manda qualquer exception ao DLT enterra o 99. max.poll.records 500 + cartão lento = expulsão em loop. Hot key não se cura com replica. Alerta no pico de 1 s é pager barulho.",
+      "quando": [
+        "Incidente: sintoma → produção vs consumo → dependência → hot key / veneno",
+        "Erro permanente vs transitório estão separados no handler",
+        "Você alerta lag sustentado por partição, não “consumer up”"
+      ],
+      "quandoNao": [
+        "Começar o plantão pelo linger.ms",
+        "Escalar o Deployment porque o lag total do grupo assustou",
+        "Retry infinito no JSON quebrado ou DLT no timeout de 2 s"
+      ]
+    },
+    {
+      "id": "coluna-ou-todas",
+      "kind": "escolha",
+      "kicker": "Plantão",
+      "prompt": "Lag 50_000. Você abre o describe do grupo. Qual o próximo movimento — o certo, não o reflexo?",
+      "options": [
+        {
+          "id": "por-particao",
+          "label": "Olho lag por partição. Todas atrasadas ≠ uma quente. Só então penso em scale",
+          "verdict": "bom",
+          "why": "Lag em todas: produção subiu ou o consumidor (banco, API) ficou lento. Lag numa só: poison pill ou hot key. Scale no Deployment inteiro não drena P1."
+        },
+        {
+          "id": "doze",
+          "label": "Sobe de 3 para 12 réplicas. O grupo absorve",
+          "verdict": "ruim",
+          "why": "Três partições: três trabalhadores. Nove ociosos. Se a partição quente é a da key vip, os 12 não fatiam essa partição."
+        },
+        {
+          "id": "linger",
+          "label": "Começo pelo linger.ms. Sintoma do usuário vem depois",
+          "verdict": "ruim",
+          "why": "Operar não é recitar knob. Incidente começa pelo que o faturamento sente, depois produção vs consumo, dependência, hot key."
+        }
+      ]
+    },
+    {
+      "id": "veneno-ou-timeout",
+      "kind": "escolha",
+      "prompt": "Offset 40 da P0 é {quebrado. No outro dia o Postgres oscila 2 segundos. Os dois vão para o DLT?",
+      "options": [
+        {
+          "id": "separar",
+          "label": "JSON quebrado: N tentativas e DLT. Timeout de banco: retry. Não misture",
+          "verdict": "bom",
+          "why": "Erro permanente trava a partição para sempre se você ficar gritando no mesmo offset. Erro transitório no cemitério enterra o pedido 99 de verdade."
+        },
+        {
+          "id": "tudo-dlt",
+          "label": "Qualquer exception → DLT. A partição nunca trava",
+          "verdict": "ruim",
+          "why": "Você enterrou cobrança recuperável. DLT enchendo no plantão: payload mudou, schema incompatível — ou alguém mandou timeout de banco para o cemitério."
+        },
+        {
+          "id": "tudo-retry",
+          "label": "Retry infinito nos dois. DLT é teatro",
+          "verdict": "ruim",
+          "why": "Poison pill sem handler: o listener daquela partição grita o mesmo erro; P1 e P2 podem seguir. Offset parado numa partição só = veneno ou hot key."
+        }
+      ]
+    },
+    {
+      "id": "doze-em-tres",
+      "kind": "escolha",
+      "prompt": "Produção 2_000/s. Consumo 400/s por partição saudável — ou 90% das keys são cliente-vip. Você sobe o Deployment para 12. Resolve?",
+      "options": [
+        {
+          "id": "nao",
+          "label": "Não. 12 em 3 partições: 9 ociosos. a partição do vip não se fati",
+          "verdict": "bom",
+          "why": "Kafka não rebalanceia carga dentro da partição. Correção da hot key: redesenhar a key (cuidado com ordem) ou splittar o trabalho depois da leitura. Lag nas três: mais partições + mais consumidores, ou acelerar a dependência."
+        },
+        {
+          "id": "sim",
+          "label": "Sim. Doze leitores paralelos drenam qualquer partição",
+          "verdict": "ruim",
+          "why": "O teto continua 3. concurrency não inventa P3…P11."
+        },
+        {
+          "id": "sticky",
+          "label": "Cooperative sticky espalha o vip nas 12 threads",
+          "verdict": "ruim",
+          "why": "Sticky reduz stop-the-world no rebalance. Não fati a key."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Lag em todas ≠ lag numa. Hot key e poison pill não se curam com 12 pods.",
+        "Lote lento sem poll: o cluster te expulsa, o lote recomeça. Diminui records, não “dá scale”.",
+        "JSON quebrado vai ao DLT. Timeout de banco retenta. concurrency 6 em 3 partições = 3 ociosos."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "beats": [
+    {
+      "id": "caixa",
+      "kind": "cena",
+      "kicker": "Black Friday",
+      "title": "O Grafana diz 40 ms. O cliente VIP espera 5 segundos.",
+      "body": "<p>Média de 40 ms. p50 de 22 ms. Um em cada cem checkouts leva 5 s — o carrinho grande, o cliente que mais compra, o que tem cupom + frete + estoque em três hops.</p><p>O time otimizou a média. Trocou o JSON por Protobuf. A cauda não se mexeu. A pergunta errada era “como deixar o servidor mais rápido”. A certa é: <strong>o que o usuário espera neste clique, e o que pode ir para o pipeline</strong>.</p>"
+    },
+    {
+      "id": "alavancas",
+      "kind": "widget",
+      "kicker": "Mexe aqui",
+      "title": "Três jeitos de “melhorar” — e o que cada um quebra",
+      "widget": "latencia",
+      "body": "<p>Menos hops no clique. Cache no dado que pode atrasar. Réplica local. Lote no pipeline, não no POST. Cada uma paga alguma coisa.</p>"
+    },
+    {
+      "id": "o-que-fazer",
+      "kind": "explicar",
+      "title": "O que de fato reduz latência",
+      "html": "<p>Não é “otimizar a arquitetura”. É cortar espera no caminho do clique.</p><ul class=\"tight\"><li><strong>Menos hops síncronos.</strong> Frete, cupom e estoque no mesmo POST: cada um entra no p99. Fan-out assíncrono no que não precisa da resposta.</li><li><strong>Dado perto.</strong> Réplica de leitura na mesma AZ, cache do catálogo, CDN no estático. O preço é dado velho.</li><li><strong>Menos trabalho no request.</strong> Índice na query certa, não em todas. Payload menor. Não abrir transação para o que pode ser leitura.</li><li><strong>Não lote no clique.</strong> <code>linger.ms</code>, flush, agregação: para o job, não para quem está olhando a tela.</li><li><strong>Réplica síncrona só onde a invariante exige.</strong> Saldo. Assento. Não o contador de curtidas.</li></ul><p>Throughput sobe com paralelismo, lote e mais máquinas. Latência desce com caminho curto. Os dois pedidos na mesma frase (“quero rápido e 50k/s no mesmo POST”) são uma mensagem para recusar o requisito.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "ganha": "p99 baixo: o clique volta. Máquinas a mais, cache, menos hops — o usuário sente.",
+      "paga": "Lote ↑ throughput ↓ espera da primeira mensagem. Réplica síncrona ↑ coerência ↓ ms no write. Cache ↑ velocidade ↓ stale. Cada hop a menos é um serviço que você deixou de consultar agora — e talvez precise consultar depois, eventual.",
+      "quando": [
+        "O usuário está olhando a tela (checkout, busca, saldo na hora do débito)",
+        "SLO escrito em percentil + recorte: p99 < 300 ms em 30 dias",
+        "Você sabe qual hop está na cauda (trace), não “o sistema está lento”"
+      ],
+      "quandoNao": [
+        "Job noturno, ETL, relatório fiscal — aí você quer throughput",
+        "Otimizar média / p50 e chamar de SLO",
+        "Adicionar Kafka no meio do GET de frete “para ficar rápido”"
+      ]
+    },
+    {
+      "id": "distinguir",
+      "kind": "escolha",
+      "prompt": "O relatório fiscal precisa processar 50 mil PedidoPago por minuto. O checkout precisa responder “pago” em menos de 300 ms. Como usar lote no relatório — e o que isso faz com o clique?",
+      "options": [
+        {
+          "id": "lote-clique",
+          "label": "Lote nos dois: linger.ms=50 no checkout e no fiscal",
+          "verdict": "ruim",
+          "why": "Lote no clique coloca a espera do lote na cara do cliente. Você comprou throughput com o cartão de crédito da UX."
+        },
+        {
+          "id": "lote-so-pipeline",
+          "label": "Lote só no pipeline fiscal. O clique continua síncrono e curto.",
+          "verdict": "bom",
+          "why": "Throughput é quantas por minuto. Latência é a vez de um. Agrupar envelopes no job fiscal sobe msgs/s. O POST /pagar não espera o lote."
+        },
+        {
+          "id": "media",
+          "label": "Acompanhar só a média. Se ela baixar, os dois requisitos cumpriram.",
+          "verdict": "ruim",
+          "why": "99 requests a 20 ms e 1 a 5 s dão média “ok”. O SLO de UX se escreve em p99. Quem tem mais dados mora na cauda."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Latência é a vez de um. Throughput é quantas por minuto. Lote sobe um e piora o outro.",
+        "SLO se escreve em p99. A média esconde o cliente com o carrinho grande.",
+        "No clique: corte hop, corte trabalho, aceite stale só onde a regra deixar. Lote fica no pipeline."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "beats": [
+    {
+      "id": "duas-marcas",
+      "kind": "explicar",
+      "title": "Offset 42 não é “já processei”.",
+      "html": "<p>O líder carimba um inteiro 64-bit na hora do append. Não vem no ProduceRequest. Offset 42 da partição 0 e offset 42 da partição 1 são mensagens diferentes.</p><p>A <strong>posição</strong> é o offset naquela partição. O <strong>committed offset</strong> do grupo é outra coisa: o grupo grava em tópico interno (<code>__consumer_offsets</code>) — “partição P, já processei até X”.</p><p>Crash → o grupo relê a partir desse X. Se nunca commitou, <code>auto.offset.reset</code> decide: <code>earliest</code> (início ainda retido) ou <code>latest</code> (só o ao vivo).</p>"
+    },
+    {
+      "id": "dois-times",
+      "kind": "cena",
+      "kicker": "Mesmo tópico",
+      "title": "Faturamento no 80. Analytics no 12. Os dois estão certos.",
+      "body": "<p>PedidoCriado do pedido 99 está no offset 40 da partição 2. A mensagem não some quando alguém lê.</p><p>Faturamento já passou. Analytics ainda está na semana. Cada <code>group.id</code> tem o próprio committed offset. Kafka não “entrega e esquece”. Quem lembra é o seu grupo.</p>"
+    },
+    {
+      "id": "lag",
+      "kind": "explicar",
+      "title": "CURRENT versus LOG-END. Isso é lag.",
+      "html": "<p>O listener do lab imprime o offset de cada mensagem. o committed offset do grupo:</p><pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-consumer-groups.sh \\\n  --bootstrap-server localhost:9092 \\\n  --group faturamento --describe</pre><p>partição CURRENT-OFFSET vs LOG-END-OFFSET = lag daquela partição.</p><p><code>PedidoConsumer</code> loga <code>offset=</code>. Commit manual: <code>spring.kafka.listener.ack-mode: manual</code> e <code>ack.acknowledge()</code> depois do log. Auto-commit por relógio é o committed offset andando sozinha.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "O committed offset é seu. O offset na partição é do líder.",
+      "ganha": "Dois grupos, dois committed offsets, mesmo PedidoCriado. Replay: você volta o committed offset. Lag visível. earliest no grupo novo lê o que a retenção ainda tem.",
+      "paga": "Commit cedo perde efeito. Commit tarde reprocessa — por isso inbox. latest no grupo novo pula o passado. earliest num tópico gordo é reler a Black Friday no boot.",
+      "quando": [
+        "Você precisa saber até onde o grupo foi (lag)",
+        "Crash deve reler o que não teve efeito",
+        "Grupo novo: earliest se o passado importa, latest se só o ao vivo"
+      ],
+      "quandoNao": [
+        "Tratar offset 42 como “já cobrei o pedido 99” — offset não é eventId",
+        "auto-commit no relógio e achar que o cartão foi cobrado",
+        "Achar que o produtor escolhe o offset no send"
+      ]
+    },
+    {
+      "id": "quando-gravar",
+      "kind": "escolha",
+      "prompt": "O listener do faturamento leu o PedidoCriado 99. Quando você commita o offset?",
+      "options": [
+        {
+          "id": "antes",
+          "label": "Commit no relógio, depois cobra o cartão",
+          "verdict": "ruim",
+          "why": "O committed offset avançou. O processo morre no meio da cobrança. Ninguém relê. Dinheiro perdido."
+        },
+        {
+          "id": "depois",
+          "label": "Cobra (com inbox) e só então ack.acknowledge()",
+          "verdict": "bom",
+          "why": "Crash relê. Inbox segura a duplicata. É o desenho do lab: ack-mode manual depois do efeito."
+        },
+        {
+          "id": "nunca",
+          "label": "Nunca commita. Sempre earliest, relê o tópico inteiro",
+          "verdict": "meio",
+          "why": "Útil uma vez, para replay. No consumidor de produção vira cobrar a semana de novo a cada restart."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Offset é o carimbo do líder na linha. Committed offset é o committed offset do grupo em __consumer_offsets.",
+        "Commit antes do efeito perde. Commit depois pode duplicar — inbox na aula de garantias.",
+        "Grupo novo sem commit: earliest relê o retido. latest começa no ao vivo."
+      ]
+    }
+  ]
+}

@@ -68,14 +68,14 @@ const kafkaDefs: LessonDef[] = [
     nav: "Offset",
     title: "Offset",
     description:
-      "Número da linha naquela coluna. Marca do grupo em __consumer_offsets, não na mensagem.",
+      "Offset na partição. Committed offset do grupo em __consumer_offsets, não na mensagem.",
   },
   {
     slug: "key",
     nav: "Key",
     title: "Key",
     description:
-      "Quem escolhe a coluna. Mesma key, mesma partição — até você aumentar o número de partições.",
+      "Quem escolhe a partição. Mesma key, mesma partição — até você aumentar o número de partições.",
   },
   {
     slug: "broker",
@@ -103,21 +103,21 @@ const kafkaDefs: LessonDef[] = [
     nav: "Consumidor",
     title: "Consumidor e consumer group",
     description:
-      "O crachá group.id. Mesmo grupo divide colunas; outro grupo lê o caderno de novo.",
+      "O group.id. Mesmo grupo divide partições; outro grupo relê o tópico.",
   },
   {
     slug: "rebalance",
     nav: "Rebalance",
     title: "Rebalance",
     description:
-      "O time para, redistribui colunas e só então volta. max.poll.interval e o loop de morte.",
+      "O grupo para, redistribui partições e só então volta. max.poll.interval e o loop de morte.",
   },
   {
     slug: "retencao",
     nav: "Retenção",
     title: "Segmento, retenção e compaction",
     description:
-      "O caderno não é eterno. Segmentos velhos vão embora — ou fica a última linha de cada key.",
+      "O log não é eterno. Segmentos velhos vão embora — ou fica o último valor de cada key.",
   },
   {
     slug: "garantias",
@@ -138,14 +138,14 @@ const kafkaDefs: LessonDef[] = [
     nav: "Schema Registry",
     title: "Schema Registry",
     description:
-      "Cartório de contratos. BACKWARD, campo opcional vs rename, e a evolução que o Registry recusa.",
+      "Schema Registry. BACKWARD, campo opcional vs rename, e a evolução que o Registry recusa.",
   },
   {
     slug: "outbox",
     nav: "Outbox",
     title: "Outbox e inbox",
     description:
-      "Banco e broker não compartilham transação mágica. Caixinha na mesma canetada, carteiro depois.",
+      "Banco e broker não compartilham transação. Tabela outbox na mesma transação, poller depois.",
   },
   {
     slug: "spring",
@@ -197,7 +197,7 @@ const arqDefs: LessonDef[] = [
     nav: "Disponibilidade",
     title: "Disponibilidade e consistência",
     description:
-      "Loja aberta versus estoque bater com a prateleira. Eventual não é mentira permanente.",
+      "Disponível versus consistente. Eventual não é mentira permanente.",
   },
   {
     slug: "cap",
@@ -211,35 +211,35 @@ const arqDefs: LessonDef[] = [
     nav: "ACID",
     title: "ACID vs mundo distribuído",
     description:
-      "Um caixa desfaz a venda. Dois caixas não compartilham a mesma borracha.",
+      "Rollback num resource manager. Dois bancos não compartilham a mesma transação.",
   },
   {
     slug: "monolito",
     nav: "Monolito",
     title: "Monolito, módulo e microsserviço",
     description:
-      "Um deploy modular é o default. Vários deploys com a mesma geladeira é o pior dos dois mundos.",
+      "Um deploy modular é o default. Vários deploys com o mesmo banco é o pior dos dois mundos.",
   },
   {
     slug: "sincrono",
     nav: "Síncrono",
     title: "Síncrono vs assíncrono",
     description:
-      "Ligar e esperar versus deixar recado. Consulta na cara do usuário não é tópico.",
+      "Chamar e esperar versus publicar e seguir. Consulta na cara do usuário não é tópico.",
   },
   {
     slug: "cache",
     nav: "Cache",
     title: "Cache",
     description:
-      "Post-it na mesa. Stampede, hot key e o custo de mostrar dado velho.",
+      "Atalho com TTL. Stampede, hot key e o custo de mostrar dado velho.",
   },
   {
     slug: "replicacao",
     nav: "Replicação",
     title: "Replicação vs sharding",
     description:
-      "Fotocópia do livro versus fatiar por letra. Lag de réplica e hot shard.",
+      "Cópia do mesmo dado versus fatiar o dataset. Lag de réplica e hot shard.",
   },
   {
     slug: "indice",
@@ -453,6 +453,7 @@ export function trackIdFromPath(path: string): SidebarTrack["id"] | undefined {
 
 export const allPublicPaths = [
   "/",
+  "/progress",
   ...kafkaNav.map((n) => n.href),
   ...arquiteturaNav.map((n) => n.href),
 ];

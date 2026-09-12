@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre disp: qual afirmação está certa?",
+      "q": "O que é disponibilidade, na definição desta aula?",
       "o": [
-        "Disponibilidade é a fração do tempo em que o sistema responde de forma útil.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Basta o processo estar no ar para o sistema contar como disponível.",
+        "Qualquer resposta que o servidor devolva conta, útil ou não.",
+        "Disponibilidade é o read ver o valor que o write gravou.",
+        "Disponibilidade é a fração do tempo em que o sistema responde de forma útil."
       ],
-      "a": 0,
-      "w": "Não é “o pod está up”.",
+      "a": 3,
+      "w": "Processo no ar devolvendo 500, ou 200 com saldo podre, não conta como disponível.",
       "t": "disp"
     },
     {
-      "q": "Qual frase sobre disp está certa?",
+      "q": "O processo está no ar e devolve 500. Isso conta como disponível?",
       "o": [
+        "Qualquer resposta que o servidor devolva conta, útil ou não.",
+        "Disponibilidade é o read ver o valor que o write gravou.",
         "Disponibilidade é a fração do tempo em que o sistema responde de forma útil.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Basta o processo estar no ar para o sistema contar como disponível."
       ],
-      "a": 0,
-      "w": "Não é “o pod está up”.",
+      "a": 2,
+      "w": "Processo no ar devolvendo 500, ou 200 com saldo podre, não conta como disponível.",
       "t": "disp"
     },
     {
-      "q": "Disp — o que acontece de verdade?",
+      "q": "Responder 200 com saldo podre conta como disponível?",
       "o": [
-        "Disponibilidade é a fração do tempo em que o sistema responde de forma útil.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Basta o processo estar no ar para o sistema contar como disponível.",
+        "Qualquer resposta que o servidor devolva conta, útil ou não.",
+        "Disponibilidade é o read ver o valor que o write gravou.",
+        "Disponibilidade é a fração do tempo em que o sistema responde de forma útil."
       ],
-      "a": 0,
-      "w": "Não é “o pod está up”.",
+      "a": 3,
+      "w": "Processo no ar devolvendo 500, ou 200 com saldo podre, não conta como disponível.",
       "t": "disp"
     },
     {
-      "q": "Marque a leitura correta (disp).",
+      "q": "Disponibilidade mede resposta útil ou processo no ar?",
       "o": [
         "Disponibilidade é a fração do tempo em que o sistema responde de forma útil.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Basta o processo estar no ar para o sistema contar como disponível.",
+        "Qualquer resposta que o servidor devolva conta, útil ou não.",
+        "Disponibilidade é o read ver o valor que o write gravou."
       ],
       "a": 0,
-      "w": "Não é “o pod está up”.",
+      "w": "Processo no ar devolvendo 500, ou 200 com saldo podre, não conta como disponível.",
       "t": "disp"
     },
     {
-      "q": "Corrija o mito sobre disp.",
+      "q": "Qual palavra esta aula acrescenta depois de “responde”?",
       "o": [
         "Disponibilidade é a fração do tempo em que o sistema responde de forma útil.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Basta o processo estar no ar para o sistema contar como disponível.",
+        "Qualquer resposta que o servidor devolva conta, útil ou não.",
+        "Disponibilidade é o read ver o valor que o write gravou."
       ],
       "a": 0,
-      "w": "Não é “o pod está up”.",
+      "w": "Processo no ar devolvendo 500, ou 200 com saldo podre, não conta como disponível.",
       "t": "disp"
     },
     {
-      "q": "No caderno, a respeito de disp: qual vale?",
+      "q": "Disponibilidade é o mesmo que o read ver o write?",
       "o": [
-        "Disponibilidade é a fração do tempo em que o sistema responde de forma útil.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Basta o processo estar no ar para o sistema contar como disponível.",
+        "Qualquer resposta que o servidor devolva conta, útil ou não.",
+        "Disponibilidade é o read ver o valor que o write gravou.",
+        "Disponibilidade é a fração do tempo em que o sistema responde de forma útil."
       ],
-      "a": 0,
-      "w": "Não é “o pod está up”.",
+      "a": 3,
+      "w": "Processo no ar devolvendo 500, ou 200 com saldo podre, não conta como disponível.",
       "t": "disp"
     },
     {
-      "q": "Se perguntarem disp na mesa, qual frase é a verdadeira?",
+      "q": "Por que o processo estar no ar não basta para medir disponibilidade?",
       "o": [
+        "Disponibilidade é o read ver o valor que o write gravou.",
         "Disponibilidade é a fração do tempo em que o sistema responde de forma útil.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Basta o processo estar no ar para o sistema contar como disponível.",
+        "Qualquer resposta que o servidor devolva conta, útil ou não."
       ],
-      "a": 0,
-      "w": "Não é “o pod está up”.",
+      "a": 1,
+      "w": "Processo no ar devolvendo 500, ou 200 com saldo podre, não conta como disponível.",
       "t": "disp"
     },
     {
-      "q": "Sobre noves: qual afirmação está certa?",
+      "q": "99% e 99,9% dão o mesmo downtime no ano?",
       "o": [
-        "99% ≠ 99,9%: a diferença é ordem de grandeza de downtime.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "A diferença entre 99% e 99,9% é de minutos no ano.",
+        "99% e 99,9% diferem em ordem de grandeza de downtime: dias contra horas no ano.",
+        "99% e 99,9% dão praticamente o mesmo downtime no ano.",
+        "Um nove a mais dobra o downtime permitido."
       ],
-      "a": 0,
-      "w": "Dois noves vs três.",
+      "a": 1,
+      "w": "Um nove a mais muda o downtime de dias para horas no ano. Não é quase a mesma coisa.",
       "t": "noves"
     },
     {
-      "q": "Qual frase sobre noves está certa?",
+      "q": "Qual a diferença de downtime entre dois noves e três noves?",
       "o": [
-        "99% ≠ 99,9%: a diferença é ordem de grandeza de downtime.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "99% e 99,9% dão praticamente o mesmo downtime no ano.",
+        "Um nove a mais dobra o downtime permitido.",
+        "A diferença entre 99% e 99,9% é de minutos no ano.",
+        "99% e 99,9% diferem em ordem de grandeza de downtime: dias contra horas no ano."
       ],
-      "a": 0,
-      "w": "Dois noves vs três.",
+      "a": 3,
+      "w": "Um nove a mais muda o downtime de dias para horas no ano. Não é quase a mesma coisa.",
       "t": "noves"
     },
     {
-      "q": "Noves — o que acontece de verdade?",
+      "q": "Um nove a mais no SLO muda o downtime em quanto?",
       "o": [
-        "99% ≠ 99,9%: a diferença é ordem de grandeza de downtime.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Um nove a mais dobra o downtime permitido.",
+        "A diferença entre 99% e 99,9% é de minutos no ano.",
+        "99% e 99,9% diferem em ordem de grandeza de downtime: dias contra horas no ano.",
+        "99% e 99,9% dão praticamente o mesmo downtime no ano."
       ],
-      "a": 0,
-      "w": "Dois noves vs três.",
+      "a": 2,
+      "w": "Um nove a mais muda o downtime de dias para horas no ano. Não é quase a mesma coisa.",
       "t": "noves"
     },
     {
-      "q": "Marque a leitura correta (noves).",
+      "q": "Dois noves e três noves são quase a mesma coisa?",
       "o": [
-        "99% ≠ 99,9%: a diferença é ordem de grandeza de downtime.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "99% e 99,9% dão praticamente o mesmo downtime no ano.",
+        "Um nove a mais dobra o downtime permitido.",
+        "A diferença entre 99% e 99,9% é de minutos no ano.",
+        "99% e 99,9% diferem em ordem de grandeza de downtime: dias contra horas no ano."
       ],
-      "a": 0,
-      "w": "Dois noves vs três.",
+      "a": 3,
+      "w": "Um nove a mais muda o downtime de dias para horas no ano. Não é quase a mesma coisa.",
       "t": "noves"
     },
     {
-      "q": "Corrija o mito sobre noves.",
+      "q": "De dias para horas: o que mudou no número de noves?",
       "o": [
-        "99% ≠ 99,9%: a diferença é ordem de grandeza de downtime.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "99% e 99,9% diferem em ordem de grandeza de downtime: dias contra horas no ano.",
+        "99% e 99,9% dão praticamente o mesmo downtime no ano.",
+        "Um nove a mais dobra o downtime permitido.",
+        "A diferença entre 99% e 99,9% é de minutos no ano."
       ],
       "a": 0,
-      "w": "Dois noves vs três.",
+      "w": "Um nove a mais muda o downtime de dias para horas no ano. Não é quase a mesma coisa.",
       "t": "noves"
     },
     {
-      "q": "No caderno, a respeito de noves: qual vale?",
+      "q": "Por que esta aula insiste que um nove a mais é caro?",
       "o": [
-        "99% ≠ 99,9%: a diferença é ordem de grandeza de downtime.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Um nove a mais dobra o downtime permitido.",
+        "A diferença entre 99% e 99,9% é de minutos no ano.",
+        "99% e 99,9% diferem em ordem de grandeza de downtime: dias contra horas no ano.",
+        "99% e 99,9% dão praticamente o mesmo downtime no ano."
       ],
-      "a": 0,
-      "w": "Dois noves vs três.",
+      "a": 2,
+      "w": "Um nove a mais muda o downtime de dias para horas no ano. Não é quase a mesma coisa.",
       "t": "noves"
     },
     {
-      "q": "Se perguntarem noves na mesa, qual frase é a verdadeira?",
+      "q": "A diferença entre 99% e 99,9% é de minutos?",
       "o": [
-        "99% ≠ 99,9%: a diferença é ordem de grandeza de downtime.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Um nove a mais dobra o downtime permitido.",
+        "A diferença entre 99% e 99,9% é de minutos no ano.",
+        "99% e 99,9% diferem em ordem de grandeza de downtime: dias contra horas no ano.",
+        "99% e 99,9% dão praticamente o mesmo downtime no ano."
       ],
-      "a": 0,
-      "w": "Dois noves vs três.",
+      "a": 2,
+      "w": "Um nove a mais muda o downtime de dias para horas no ano. Não é quase a mesma coisa.",
       "t": "noves"
     },
     {
-      "q": "Sobre forte: qual afirmação está certa?",
+      "q": "O que a consistência forte garante depois do write?",
       "o": [
-        "Consistência forte: depois do write, o read vê o novo valor (modelo simples).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Consistência forte quer dizer que o sistema nunca sai do ar.",
+        "Consistência forte: depois do write, o read vê o novo valor.",
+        "Consistência forte: o read pode ver o valor velho por alguns segundos.",
+        "Consistência forte é o sistema responder rápido depois do write."
       ],
-      "a": 0,
-      "w": "Réplica síncrona ajuda.",
+      "a": 1,
+      "w": "O read que vem depois do write enxerga o valor novo. É o modelo mais simples de raciocinar.",
       "t": "forte"
     },
     {
-      "q": "Qual frase sobre forte está certa?",
+      "q": "Você gravou. O read seguinte vê o valor novo ou pode ver o velho?",
       "o": [
-        "Consistência forte: depois do write, o read vê o novo valor (modelo simples).",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Consistência forte: depois do write, o read vê o novo valor.",
+        "Consistência forte: o read pode ver o valor velho por alguns segundos.",
+        "Consistência forte é o sistema responder rápido depois do write.",
+        "Consistência forte quer dizer que o sistema nunca sai do ar."
       ],
       "a": 0,
-      "w": "Réplica síncrona ajuda.",
+      "w": "O read que vem depois do write enxerga o valor novo. É o modelo mais simples de raciocinar.",
       "t": "forte"
     },
     {
-      "q": "Forte — o que acontece de verdade?",
+      "q": "Consistência forte fala de tempo de resposta ou do valor que o read enxerga?",
       "o": [
-        "Consistência forte: depois do write, o read vê o novo valor (modelo simples).",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Consistência forte: o read pode ver o valor velho por alguns segundos.",
+        "Consistência forte é o sistema responder rápido depois do write.",
+        "Consistência forte quer dizer que o sistema nunca sai do ar.",
+        "Consistência forte: depois do write, o read vê o novo valor."
       ],
-      "a": 0,
-      "w": "Réplica síncrona ajuda.",
+      "a": 3,
+      "w": "O read que vem depois do write enxerga o valor novo. É o modelo mais simples de raciocinar.",
       "t": "forte"
     },
     {
-      "q": "Marque a leitura correta (forte).",
+      "q": "Consistência forte é o sistema nunca sair do ar?",
       "o": [
-        "Consistência forte: depois do write, o read vê o novo valor (modelo simples).",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Consistência forte: depois do write, o read vê o novo valor.",
+        "Consistência forte: o read pode ver o valor velho por alguns segundos.",
+        "Consistência forte é o sistema responder rápido depois do write.",
+        "Consistência forte quer dizer que o sistema nunca sai do ar."
       ],
       "a": 0,
-      "w": "Réplica síncrona ajuda.",
+      "w": "O read que vem depois do write enxerga o valor novo. É o modelo mais simples de raciocinar.",
       "t": "forte"
     },
     {
-      "q": "Corrija o mito sobre forte.",
+      "q": "Depois do write, quando o valor novo aparece na consistência forte?",
       "o": [
-        "Consistência forte: depois do write, o read vê o novo valor (modelo simples).",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Consistência forte quer dizer que o sistema nunca sai do ar.",
+        "Consistência forte: depois do write, o read vê o novo valor.",
+        "Consistência forte: o read pode ver o valor velho por alguns segundos.",
+        "Consistência forte é o sistema responder rápido depois do write."
       ],
-      "a": 0,
-      "w": "Réplica síncrona ajuda.",
+      "a": 1,
+      "w": "O read que vem depois do write enxerga o valor novo. É o modelo mais simples de raciocinar.",
       "t": "forte"
     },
     {
-      "q": "No caderno, a respeito de forte: qual vale?",
+      "q": "Qual modelo é mais simples de raciocinar: forte ou eventual?",
       "o": [
-        "Consistência forte: depois do write, o read vê o novo valor (modelo simples).",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Consistência forte: o read pode ver o valor velho por alguns segundos.",
+        "Consistência forte é o sistema responder rápido depois do write.",
+        "Consistência forte quer dizer que o sistema nunca sai do ar.",
+        "Consistência forte: depois do write, o read vê o novo valor."
       ],
-      "a": 0,
-      "w": "Réplica síncrona ajuda.",
+      "a": 3,
+      "w": "O read que vem depois do write enxerga o valor novo. É o modelo mais simples de raciocinar.",
       "t": "forte"
     },
     {
-      "q": "Se perguntarem forte na mesa, qual frase é a verdadeira?",
+      "q": "Consistência forte permite ler o valor velho por alguns segundos?",
       "o": [
-        "Consistência forte: depois do write, o read vê o novo valor (modelo simples).",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Consistência forte quer dizer que o sistema nunca sai do ar.",
+        "Consistência forte: depois do write, o read vê o novo valor.",
+        "Consistência forte: o read pode ver o valor velho por alguns segundos.",
+        "Consistência forte é o sistema responder rápido depois do write."
       ],
-      "a": 0,
-      "w": "Réplica síncrona ajuda.",
+      "a": 1,
+      "w": "O read que vem depois do write enxerga o valor novo. É o modelo mais simples de raciocinar.",
       "t": "forte"
     },
     {
-      "q": "Sobre eventual: qual afirmação está certa?",
+      "q": "O que a consistência eventual promete?",
       "o": [
-        "Eventual: réplicas convergem; por um tempo podem divergir.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Eventual: as cópias podem divergir por um tempo e depois convergem.",
+        "Eventual quer dizer que as cópias nunca precisam convergir.",
+        "Eventual é a mesma coisa que consistência forte, só mais lenta.",
+        "Eventual autoriza quebrar a invariante enquanto não convergir."
       ],
       "a": 0,
-      "w": "Não é desculpa para nunca convergir.",
+      "w": "Eventual autoriza atraso até convergir. Não autoriza divergir para sempre.",
       "t": "eventual"
     },
     {
-      "q": "Qual frase sobre eventual está certa?",
+      "q": "Eventual autoriza divergir para sempre?",
       "o": [
-        "Eventual: réplicas convergem; por um tempo podem divergir.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Eventual: as cópias podem divergir por um tempo e depois convergem.",
+        "Eventual quer dizer que as cópias nunca precisam convergir.",
+        "Eventual é a mesma coisa que consistência forte, só mais lenta.",
+        "Eventual autoriza quebrar a invariante enquanto não convergir."
       ],
       "a": 0,
-      "w": "Não é desculpa para nunca convergir.",
+      "w": "Eventual autoriza atraso até convergir. Não autoriza divergir para sempre.",
       "t": "eventual"
     },
     {
-      "q": "Eventual — o que acontece de verdade?",
+      "q": "Por quanto tempo as cópias podem divergir no modelo eventual?",
       "o": [
-        "Eventual: réplicas convergem; por um tempo podem divergir.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Eventual é a mesma coisa que consistência forte, só mais lenta.",
+        "Eventual autoriza quebrar a invariante enquanto não convergir.",
+        "Eventual: as cópias podem divergir por um tempo e depois convergem.",
+        "Eventual quer dizer que as cópias nunca precisam convergir."
       ],
-      "a": 0,
-      "w": "Não é desculpa para nunca convergir.",
+      "a": 2,
+      "w": "Eventual autoriza atraso até convergir. Não autoriza divergir para sempre.",
       "t": "eventual"
     },
     {
-      "q": "Marque a leitura correta (eventual).",
+      "q": "Eventual e forte são a mesma coisa com velocidade diferente?",
       "o": [
-        "Eventual: réplicas convergem; por um tempo podem divergir.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Eventual quer dizer que as cópias nunca precisam convergir.",
+        "Eventual é a mesma coisa que consistência forte, só mais lenta.",
+        "Eventual autoriza quebrar a invariante enquanto não convergir.",
+        "Eventual: as cópias podem divergir por um tempo e depois convergem."
       ],
-      "a": 0,
-      "w": "Não é desculpa para nunca convergir.",
+      "a": 3,
+      "w": "Eventual autoriza atraso até convergir. Não autoriza divergir para sempre.",
       "t": "eventual"
     },
     {
-      "q": "Corrija o mito sobre eventual.",
+      "q": "Eventual autoriza quebrar a invariante no meio do caminho?",
       "o": [
-        "Eventual: réplicas convergem; por um tempo podem divergir.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Eventual quer dizer que as cópias nunca precisam convergir.",
+        "Eventual é a mesma coisa que consistência forte, só mais lenta.",
+        "Eventual autoriza quebrar a invariante enquanto não convergir.",
+        "Eventual: as cópias podem divergir por um tempo e depois convergem."
       ],
-      "a": 0,
-      "w": "Não é desculpa para nunca convergir.",
+      "a": 3,
+      "w": "Eventual autoriza atraso até convergir. Não autoriza divergir para sempre.",
       "t": "eventual"
     },
     {
-      "q": "No caderno, a respeito de eventual: qual vale?",
+      "q": "O que precisa acontecer no fim, no modelo eventual?",
       "o": [
-        "Eventual: réplicas convergem; por um tempo podem divergir.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Eventual: as cópias podem divergir por um tempo e depois convergem.",
+        "Eventual quer dizer que as cópias nunca precisam convergir.",
+        "Eventual é a mesma coisa que consistência forte, só mais lenta.",
+        "Eventual autoriza quebrar a invariante enquanto não convergir."
       ],
       "a": 0,
-      "w": "Não é desculpa para nunca convergir.",
+      "w": "Eventual autoriza atraso até convergir. Não autoriza divergir para sempre.",
       "t": "eventual"
     },
     {
-      "q": "Se perguntarem eventual na mesa, qual frase é a verdadeira?",
+      "q": "Se nunca converge, ainda é eventual?",
       "o": [
-        "Eventual: réplicas convergem; por um tempo podem divergir.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Eventual quer dizer que as cópias nunca precisam convergir.",
+        "Eventual é a mesma coisa que consistência forte, só mais lenta.",
+        "Eventual autoriza quebrar a invariante enquanto não convergir.",
+        "Eventual: as cópias podem divergir por um tempo e depois convergem."
       ],
-      "a": 0,
-      "w": "Não é desculpa para nunca convergir.",
+      "a": 3,
+      "w": "Eventual autoriza atraso até convergir. Não autoriza divergir para sempre.",
       "t": "eventual"
     },
     {
-      "q": "Sobre mentira: qual afirmação está certa?",
+      "q": "O checkout cobrou duas vezes e os dois commits ficaram. Isso é eventual?",
       "o": [
-        "Inconsistente de verdade: não converge ou viola invariante (cobrou duas vezes).",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Inconsistência de verdade é qualquer atraso de réplica acima de 200 ms.",
+        "Inconsistente de verdade: não converge, ou cobra duas vezes e os dois commits ficam.",
+        "Cobrar duas vezes e manter os dois commits é consistência eventual.",
+        "Todo dado divergente é inconsistência de verdade, mesmo que convirja depois."
       ],
-      "a": 0,
-      "w": "Eventual não autoriza isso.",
+      "a": 1,
+      "w": "Eventual não autoriza isso. Dois débitos permanentes não são atraso, são invariante quebrada.",
       "t": "mentira"
     },
     {
-      "q": "Qual frase sobre mentira está certa?",
+      "q": "O que caracteriza inconsistência de verdade?",
       "o": [
-        "Inconsistente de verdade: não converge ou viola invariante (cobrou duas vezes).",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Todo dado divergente é inconsistência de verdade, mesmo que convirja depois.",
+        "Inconsistência de verdade é qualquer atraso de réplica acima de 200 ms.",
+        "Inconsistente de verdade: não converge, ou cobra duas vezes e os dois commits ficam.",
+        "Cobrar duas vezes e manter os dois commits é consistência eventual."
       ],
-      "a": 0,
-      "w": "Eventual não autoriza isso.",
+      "a": 2,
+      "w": "Eventual não autoriza isso. Dois débitos permanentes não são atraso, são invariante quebrada.",
       "t": "mentira"
     },
     {
-      "q": "Mentira — o que acontece de verdade?",
+      "q": "Dois débitos permanentes: atraso de réplica ou invariante quebrada?",
       "o": [
-        "Inconsistente de verdade: não converge ou viola invariante (cobrou duas vezes).",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Inconsistente de verdade: não converge, ou cobra duas vezes e os dois commits ficam.",
+        "Cobrar duas vezes e manter os dois commits é consistência eventual.",
+        "Todo dado divergente é inconsistência de verdade, mesmo que convirja depois.",
+        "Inconsistência de verdade é qualquer atraso de réplica acima de 200 ms."
       ],
       "a": 0,
-      "w": "Eventual não autoriza isso.",
+      "w": "Eventual não autoriza isso. Dois débitos permanentes não são atraso, são invariante quebrada.",
       "t": "mentira"
     },
     {
-      "q": "Marque a leitura correta (mentira).",
+      "q": "Um dado que diverge e depois converge é inconsistência de verdade?",
       "o": [
-        "Inconsistente de verdade: não converge ou viola invariante (cobrou duas vezes).",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Cobrar duas vezes e manter os dois commits é consistência eventual.",
+        "Todo dado divergente é inconsistência de verdade, mesmo que convirja depois.",
+        "Inconsistência de verdade é qualquer atraso de réplica acima de 200 ms.",
+        "Inconsistente de verdade: não converge, ou cobra duas vezes e os dois commits ficam."
       ],
-      "a": 0,
-      "w": "Eventual não autoriza isso.",
+      "a": 3,
+      "w": "Eventual não autoriza isso. Dois débitos permanentes não são atraso, são invariante quebrada.",
       "t": "mentira"
     },
     {
-      "q": "Corrija o mito sobre mentira.",
+      "q": "Quando o time chama cobrança duplicada de eventual, o que ele erra?",
       "o": [
-        "Inconsistente de verdade: não converge ou viola invariante (cobrou duas vezes).",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Inconsistência de verdade é qualquer atraso de réplica acima de 200 ms.",
+        "Inconsistente de verdade: não converge, ou cobra duas vezes e os dois commits ficam.",
+        "Cobrar duas vezes e manter os dois commits é consistência eventual.",
+        "Todo dado divergente é inconsistência de verdade, mesmo que convirja depois."
       ],
-      "a": 0,
-      "w": "Eventual não autoriza isso.",
+      "a": 1,
+      "w": "Eventual não autoriza isso. Dois débitos permanentes não são atraso, são invariante quebrada.",
       "t": "mentira"
     },
     {
-      "q": "No caderno, a respeito de mentira: qual vale?",
+      "q": "Atraso de réplica de 200 ms é inconsistência de verdade?",
       "o": [
-        "Inconsistente de verdade: não converge ou viola invariante (cobrou duas vezes).",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Todo dado divergente é inconsistência de verdade, mesmo que convirja depois.",
+        "Inconsistência de verdade é qualquer atraso de réplica acima de 200 ms.",
+        "Inconsistente de verdade: não converge, ou cobra duas vezes e os dois commits ficam.",
+        "Cobrar duas vezes e manter os dois commits é consistência eventual."
       ],
-      "a": 0,
-      "w": "Eventual não autoriza isso.",
+      "a": 2,
+      "w": "Eventual não autoriza isso. Dois débitos permanentes não são atraso, são invariante quebrada.",
       "t": "mentira"
     },
     {
-      "q": "Se perguntarem mentira na mesa, qual frase é a verdadeira?",
+      "q": "O que fazer com a cobrança duplicada: chamar de eventual ou compensar?",
       "o": [
-        "Inconsistente de verdade: não converge ou viola invariante (cobrou duas vezes).",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cobrar duas vezes e manter os dois commits é consistência eventual.",
+        "Todo dado divergente é inconsistência de verdade, mesmo que convirja depois.",
+        "Inconsistência de verdade é qualquer atraso de réplica acima de 200 ms.",
+        "Inconsistente de verdade: não converge, ou cobra duas vezes e os dois commits ficam."
       ],
-      "a": 0,
-      "w": "Eventual não autoriza isso.",
+      "a": 3,
+      "w": "Eventual não autoriza isso. Dois débitos permanentes não são atraso, são invariante quebrada.",
       "t": "mentira"
     },
     {
-      "q": "Sobre loja: qual afirmação está certa?",
+      "q": "Disponibilidade e consistência são o mesmo eixo?",
       "o": [
-        "Loja aberta vs estoque bater com a prateleira. São eixos diferentes.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Se o sistema está disponível, o dado está consistente.",
+        "Consistência mede se o processo responde; disponibilidade mede se o valor está certo.",
+        "Disponibilidade e consistência são eixos diferentes: responder útil não é o read ver o write.",
+        "Os dois são o mesmo eixo com nomes diferentes."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "A loja aberta é um eixo. A etiqueta bater com a prateleira é outro. Responder e responder certo não são a mesma medida.",
       "t": "loja"
     },
     {
-      "q": "Qual frase sobre loja está certa?",
+      "q": "O sistema está disponível. O dado está certo por consequência?",
       "o": [
-        "Loja aberta vs estoque bater com a prateleira. São eixos diferentes.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Consistência mede se o processo responde; disponibilidade mede se o valor está certo.",
+        "Disponibilidade e consistência são eixos diferentes: responder útil não é o read ver o write.",
+        "Os dois são o mesmo eixo com nomes diferentes.",
+        "Se o sistema está disponível, o dado está consistente."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A loja aberta é um eixo. A etiqueta bater com a prateleira é outro. Responder e responder certo não são a mesma medida.",
       "t": "loja"
     },
     {
-      "q": "Loja — o que acontece de verdade?",
+      "q": "Qual eixo mede se o read vê o write?",
       "o": [
-        "Loja aberta vs estoque bater com a prateleira. São eixos diferentes.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Consistência mede se o processo responde; disponibilidade mede se o valor está certo.",
+        "Disponibilidade e consistência são eixos diferentes: responder útil não é o read ver o write.",
+        "Os dois são o mesmo eixo com nomes diferentes.",
+        "Se o sistema está disponível, o dado está consistente."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A loja aberta é um eixo. A etiqueta bater com a prateleira é outro. Responder e responder certo não são a mesma medida.",
       "t": "loja"
     },
     {
-      "q": "Marque a leitura correta (loja).",
+      "q": "Responder e responder certo são a mesma medida?",
       "o": [
-        "Loja aberta vs estoque bater com a prateleira. São eixos diferentes.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Se o sistema está disponível, o dado está consistente.",
+        "Consistência mede se o processo responde; disponibilidade mede se o valor está certo.",
+        "Disponibilidade e consistência são eixos diferentes: responder útil não é o read ver o write.",
+        "Os dois são o mesmo eixo com nomes diferentes."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "A loja aberta é um eixo. A etiqueta bater com a prateleira é outro. Responder e responder certo não são a mesma medida.",
       "t": "loja"
     },
     {
-      "q": "Corrija o mito sobre loja.",
+      "q": "A loja está aberta e a etiqueta está errada. Qual eixo falhou?",
       "o": [
-        "Loja aberta vs estoque bater com a prateleira. São eixos diferentes.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Consistência mede se o processo responde; disponibilidade mede se o valor está certo.",
+        "Disponibilidade e consistência são eixos diferentes: responder útil não é o read ver o write.",
+        "Os dois são o mesmo eixo com nomes diferentes.",
+        "Se o sistema está disponível, o dado está consistente."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A loja aberta é um eixo. A etiqueta bater com a prateleira é outro. Responder e responder certo não são a mesma medida.",
       "t": "loja"
     },
     {
-      "q": "No caderno, a respeito de loja: qual vale?",
+      "q": "Qual eixo mede se o sistema responde de forma útil?",
       "o": [
-        "Loja aberta vs estoque bater com a prateleira. São eixos diferentes.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Se o sistema está disponível, o dado está consistente.",
+        "Consistência mede se o processo responde; disponibilidade mede se o valor está certo.",
+        "Disponibilidade e consistência são eixos diferentes: responder útil não é o read ver o write.",
+        "Os dois são o mesmo eixo com nomes diferentes."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "A loja aberta é um eixo. A etiqueta bater com a prateleira é outro. Responder e responder certo não são a mesma medida.",
       "t": "loja"
     },
     {
-      "q": "Se perguntarem loja na mesa, qual frase é a verdadeira?",
+      "q": "Por que esta aula separa esses dois números?",
       "o": [
-        "Loja aberta vs estoque bater com a prateleira. São eixos diferentes.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Consistência mede se o processo responde; disponibilidade mede se o valor está certo.",
+        "Disponibilidade e consistência são eixos diferentes: responder útil não é o read ver o write.",
+        "Os dois são o mesmo eixo com nomes diferentes.",
+        "Se o sistema está disponível, o dado está consistente."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A loja aberta é um eixo. A etiqueta bater com a prateleira é outro. Responder e responder certo não são a mesma medida.",
       "t": "loja"
     },
     {
-      "q": "Sobre etiqueta: qual afirmação está certa?",
+      "q": "A etiqueta diz 12 e a prateleira é 14, para sempre. Isso é eventual?",
       "o": [
-        "Abrir com etiqueta errada para sempre não é eventual: é mentira.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Dado errado permanente não é eventual: é mentira. Eventual converge.",
+        "Dado errado permanente é eventual, desde que o time saiba.",
+        "Todo dado errado é mentira, mesmo o que se corrige em 2 segundos.",
+        "Dado errado que nunca se corrige é aceitável se o sistema responder rápido."
       ],
       "a": 0,
-      "w": "Tem que corrigir.",
+      "w": "Vender com o preço errado para sempre, sem ninguém corrigir, não é atraso de convergência.",
       "t": "etiqueta"
     },
     {
-      "q": "Qual frase sobre etiqueta está certa?",
+      "q": "O que separa eventual de mentira?",
       "o": [
-        "Abrir com etiqueta errada para sempre não é eventual: é mentira.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Todo dado errado é mentira, mesmo o que se corrige em 2 segundos.",
+        "Dado errado que nunca se corrige é aceitável se o sistema responder rápido.",
+        "Dado errado permanente não é eventual: é mentira. Eventual converge.",
+        "Dado errado permanente é eventual, desde que o time saiba."
       ],
-      "a": 0,
-      "w": "Tem que corrigir.",
+      "a": 2,
+      "w": "Vender com o preço errado para sempre, sem ninguém corrigir, não é atraso de convergência.",
       "t": "etiqueta"
     },
     {
-      "q": "Etiqueta — o que acontece de verdade?",
+      "q": "Dado errado que se corrige em 2 segundos é mentira?",
       "o": [
-        "Abrir com etiqueta errada para sempre não é eventual: é mentira.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Dado errado permanente é eventual, desde que o time saiba.",
+        "Todo dado errado é mentira, mesmo o que se corrige em 2 segundos.",
+        "Dado errado que nunca se corrige é aceitável se o sistema responder rápido.",
+        "Dado errado permanente não é eventual: é mentira. Eventual converge."
       ],
-      "a": 0,
-      "w": "Tem que corrigir.",
+      "a": 3,
+      "w": "Vender com o preço errado para sempre, sem ninguém corrigir, não é atraso de convergência.",
       "t": "etiqueta"
     },
     {
-      "q": "Marque a leitura correta (etiqueta).",
+      "q": "Ninguém corrige o preço errado. Como esta aula chama isso?",
       "o": [
-        "Abrir com etiqueta errada para sempre não é eventual: é mentira.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Todo dado errado é mentira, mesmo o que se corrige em 2 segundos.",
+        "Dado errado que nunca se corrige é aceitável se o sistema responder rápido.",
+        "Dado errado permanente não é eventual: é mentira. Eventual converge.",
+        "Dado errado permanente é eventual, desde que o time saiba."
       ],
-      "a": 0,
-      "w": "Tem que corrigir.",
+      "a": 2,
+      "w": "Vender com o preço errado para sempre, sem ninguém corrigir, não é atraso de convergência.",
       "t": "etiqueta"
     },
     {
-      "q": "Corrija o mito sobre etiqueta.",
+      "q": "Eventual exige convergência ou basta boa intenção?",
       "o": [
-        "Abrir com etiqueta errada para sempre não é eventual: é mentira.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Todo dado errado é mentira, mesmo o que se corrige em 2 segundos.",
+        "Dado errado que nunca se corrige é aceitável se o sistema responder rápido.",
+        "Dado errado permanente não é eventual: é mentira. Eventual converge.",
+        "Dado errado permanente é eventual, desde que o time saiba."
       ],
-      "a": 0,
-      "w": "Tem que corrigir.",
+      "a": 2,
+      "w": "Vender com o preço errado para sempre, sem ninguém corrigir, não é atraso de convergência.",
       "t": "etiqueta"
     },
     {
-      "q": "No caderno, a respeito de etiqueta: qual vale?",
+      "q": "Dado errado permanente vira aceitável se o sistema é rápido?",
       "o": [
-        "Abrir com etiqueta errada para sempre não é eventual: é mentira.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Todo dado errado é mentira, mesmo o que se corrige em 2 segundos.",
+        "Dado errado que nunca se corrige é aceitável se o sistema responder rápido.",
+        "Dado errado permanente não é eventual: é mentira. Eventual converge.",
+        "Dado errado permanente é eventual, desde que o time saiba."
       ],
-      "a": 0,
-      "w": "Tem que corrigir.",
+      "a": 2,
+      "w": "Vender com o preço errado para sempre, sem ninguém corrigir, não é atraso de convergência.",
       "t": "etiqueta"
     },
     {
-      "q": "Se perguntarem etiqueta na mesa, qual frase é a verdadeira?",
+      "q": "Por que “eventual” não cobre dado errado para sempre?",
       "o": [
-        "Abrir com etiqueta errada para sempre não é eventual: é mentira.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Dado errado permanente não é eventual: é mentira. Eventual converge.",
+        "Dado errado permanente é eventual, desde que o time saiba.",
+        "Todo dado errado é mentira, mesmo o que se corrige em 2 segundos.",
+        "Dado errado que nunca se corrige é aceitável se o sistema responder rápido."
       ],
       "a": 0,
-      "w": "Tem que corrigir.",
+      "w": "Vender com o preço errado para sempre, sem ninguém corrigir, não é atraso de convergência.",
       "t": "etiqueta"
     },
     {
-      "q": "Sobre SLO disp: qual afirmação está certa?",
+      "q": "O que um SLO de disponibilidade precisa ter além da porcentagem?",
       "o": [
-        "SLO de disponibilidade precisa de recorte e de o que conta como útil.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Basta a porcentagem: recorte de tempo não faz parte do SLO.",
+        "No SLO de disponibilidade, qualquer resposta do servidor conta como sucesso.",
+        "Definir o que é útil não importa: 200 é 200.",
+        "SLO de disponibilidade precisa de recorte de tempo e da definição do que conta como útil."
       ],
-      "a": 0,
-      "w": "500 não é útil.",
+      "a": 3,
+      "w": "Sem dizer o que é resposta útil, o 500 entra na conta como sucesso.",
       "t": "SLO disp"
     },
     {
-      "q": "Qual frase sobre SLO disp está certa?",
+      "q": "Sem definir resposta útil, o que entra na conta como sucesso?",
       "o": [
-        "SLO de disponibilidade precisa de recorte e de o que conta como útil.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "SLO de disponibilidade precisa de recorte de tempo e da definição do que conta como útil.",
+        "Basta a porcentagem: recorte de tempo não faz parte do SLO.",
+        "No SLO de disponibilidade, qualquer resposta do servidor conta como sucesso.",
+        "Definir o que é útil não importa: 200 é 200."
       ],
       "a": 0,
-      "w": "500 não é útil.",
+      "w": "Sem dizer o que é resposta útil, o 500 entra na conta como sucesso.",
       "t": "SLO disp"
     },
     {
-      "q": "SLO disp — o que acontece de verdade?",
+      "q": "O 500 conta como sucesso no SLO de disponibilidade?",
       "o": [
-        "SLO de disponibilidade precisa de recorte e de o que conta como útil.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Definir o que é útil não importa: 200 é 200.",
+        "SLO de disponibilidade precisa de recorte de tempo e da definição do que conta como útil.",
+        "Basta a porcentagem: recorte de tempo não faz parte do SLO.",
+        "No SLO de disponibilidade, qualquer resposta do servidor conta como sucesso."
       ],
-      "a": 0,
-      "w": "500 não é útil.",
+      "a": 1,
+      "w": "Sem dizer o que é resposta útil, o 500 entra na conta como sucesso.",
       "t": "SLO disp"
     },
     {
-      "q": "Marque a leitura correta (SLO disp).",
+      "q": "O recorte de tempo faz parte do SLO de disponibilidade?",
       "o": [
-        "SLO de disponibilidade precisa de recorte e de o que conta como útil.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Basta a porcentagem: recorte de tempo não faz parte do SLO.",
+        "No SLO de disponibilidade, qualquer resposta do servidor conta como sucesso.",
+        "Definir o que é útil não importa: 200 é 200.",
+        "SLO de disponibilidade precisa de recorte de tempo e da definição do que conta como útil."
       ],
-      "a": 0,
-      "w": "500 não é útil.",
+      "a": 3,
+      "w": "Sem dizer o que é resposta útil, o 500 entra na conta como sucesso.",
       "t": "SLO disp"
     },
     {
-      "q": "Corrija o mito sobre SLO disp.",
+      "q": "Por que esta aula pede a definição de útil no SLO?",
       "o": [
-        "SLO de disponibilidade precisa de recorte e de o que conta como útil.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Basta a porcentagem: recorte de tempo não faz parte do SLO.",
+        "No SLO de disponibilidade, qualquer resposta do servidor conta como sucesso.",
+        "Definir o que é útil não importa: 200 é 200.",
+        "SLO de disponibilidade precisa de recorte de tempo e da definição do que conta como útil."
       ],
-      "a": 0,
-      "w": "500 não é útil.",
+      "a": 3,
+      "w": "Sem dizer o que é resposta útil, o 500 entra na conta como sucesso.",
       "t": "SLO disp"
     },
     {
-      "q": "No caderno, a respeito de SLO disp: qual vale?",
+      "q": "Um SLO só com porcentagem está completo?",
       "o": [
-        "SLO de disponibilidade precisa de recorte e de o que conta como útil.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Definir o que é útil não importa: 200 é 200.",
+        "SLO de disponibilidade precisa de recorte de tempo e da definição do que conta como útil.",
+        "Basta a porcentagem: recorte de tempo não faz parte do SLO.",
+        "No SLO de disponibilidade, qualquer resposta do servidor conta como sucesso."
       ],
-      "a": 0,
-      "w": "500 não é útil.",
+      "a": 1,
+      "w": "Sem dizer o que é resposta útil, o 500 entra na conta como sucesso.",
       "t": "SLO disp"
     },
     {
-      "q": "Se perguntarem SLO disp na mesa, qual frase é a verdadeira?",
+      "q": "Quem decide o que conta como resposta útil?",
       "o": [
-        "SLO de disponibilidade precisa de recorte e de o que conta como útil.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "SLO de disponibilidade precisa de recorte de tempo e da definição do que conta como útil.",
+        "Basta a porcentagem: recorte de tempo não faz parte do SLO.",
+        "No SLO de disponibilidade, qualquer resposta do servidor conta como sucesso.",
+        "Definir o que é útil não importa: 200 é 200."
       ],
       "a": 0,
-      "w": "500 não é útil.",
+      "w": "Sem dizer o que é resposta útil, o 500 entra na conta como sucesso.",
       "t": "SLO disp"
     },
     {
-      "q": "Sobre lag réplica: qual afirmação está certa?",
+      "q": "Você gravou e leu a réplica. Por que não viu o valor novo?",
       "o": [
-        "Read-your-writes falha com réplica atrasada.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Read-your-writes falha quando você lê a réplica que ainda não recebeu o write.",
+        "Read-your-writes nunca falha: a réplica recebe o write na hora.",
+        "Ler a réplica atrasada é inconsistência de verdade, não lag.",
+        "Só quando o banco principal cai é que read-your-writes quebra."
       ],
       "a": 0,
-      "w": "Nomeie o lag.",
+      "w": "Isso é lag e tem nome. A pergunta madura: o usuário pode ver o valor velho por 200 ms, por 2 s, ou nunca?",
       "t": "lag réplica"
     },
     {
-      "q": "Qual frase sobre lag réplica está certa?",
+      "q": "O que é read-your-writes e quando ele falha?",
       "o": [
-        "Read-your-writes falha com réplica atrasada.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Ler a réplica atrasada é inconsistência de verdade, não lag.",
+        "Só quando o banco principal cai é que read-your-writes quebra.",
+        "Read-your-writes falha quando você lê a réplica que ainda não recebeu o write.",
+        "Read-your-writes nunca falha: a réplica recebe o write na hora."
       ],
-      "a": 0,
-      "w": "Nomeie o lag.",
+      "a": 2,
+      "w": "Isso é lag e tem nome. A pergunta madura: o usuário pode ver o valor velho por 200 ms, por 2 s, ou nunca?",
       "t": "lag réplica"
     },
     {
-      "q": "Lag réplica — o que acontece de verdade?",
+      "q": "Ler réplica atrasada é lag ou inconsistência de verdade?",
       "o": [
-        "Read-your-writes falha com réplica atrasada.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Só quando o banco principal cai é que read-your-writes quebra.",
+        "Read-your-writes falha quando você lê a réplica que ainda não recebeu o write.",
+        "Read-your-writes nunca falha: a réplica recebe o write na hora.",
+        "Ler a réplica atrasada é inconsistência de verdade, não lag."
       ],
-      "a": 0,
-      "w": "Nomeie o lag.",
+      "a": 1,
+      "w": "Isso é lag e tem nome. A pergunta madura: o usuário pode ver o valor velho por 200 ms, por 2 s, ou nunca?",
       "t": "lag réplica"
     },
     {
-      "q": "Marque a leitura correta (lag réplica).",
+      "q": "Qual pergunta madura você faz sobre o valor velho?",
       "o": [
-        "Read-your-writes falha com réplica atrasada.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Só quando o banco principal cai é que read-your-writes quebra.",
+        "Read-your-writes falha quando você lê a réplica que ainda não recebeu o write.",
+        "Read-your-writes nunca falha: a réplica recebe o write na hora.",
+        "Ler a réplica atrasada é inconsistência de verdade, não lag."
       ],
-      "a": 0,
-      "w": "Nomeie o lag.",
+      "a": 1,
+      "w": "Isso é lag e tem nome. A pergunta madura: o usuário pode ver o valor velho por 200 ms, por 2 s, ou nunca?",
       "t": "lag réplica"
     },
     {
-      "q": "Corrija o mito sobre lag réplica.",
+      "q": "A réplica recebe o write na hora?",
       "o": [
-        "Read-your-writes falha com réplica atrasada.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Só quando o banco principal cai é que read-your-writes quebra.",
+        "Read-your-writes falha quando você lê a réplica que ainda não recebeu o write.",
+        "Read-your-writes nunca falha: a réplica recebe o write na hora.",
+        "Ler a réplica atrasada é inconsistência de verdade, não lag."
       ],
-      "a": 0,
-      "w": "Nomeie o lag.",
+      "a": 1,
+      "w": "Isso é lag e tem nome. A pergunta madura: o usuário pode ver o valor velho por 200 ms, por 2 s, ou nunca?",
       "t": "lag réplica"
     },
     {
-      "q": "No caderno, a respeito de lag réplica: qual vale?",
+      "q": "Se o usuário nunca pode ver o valor velho, você usa réplica assíncrona no clique?",
       "o": [
-        "Read-your-writes falha com réplica atrasada.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Read-your-writes nunca falha: a réplica recebe o write na hora.",
+        "Ler a réplica atrasada é inconsistência de verdade, não lag.",
+        "Só quando o banco principal cai é que read-your-writes quebra.",
+        "Read-your-writes falha quando você lê a réplica que ainda não recebeu o write."
       ],
-      "a": 0,
-      "w": "Nomeie o lag.",
+      "a": 3,
+      "w": "Isso é lag e tem nome. A pergunta madura: o usuário pode ver o valor velho por 200 ms, por 2 s, ou nunca?",
       "t": "lag réplica"
     },
     {
-      "q": "Se perguntarem lag réplica na mesa, qual frase é a verdadeira?",
+      "q": "Read-your-writes só quebra quando o banco principal cai?",
       "o": [
-        "Read-your-writes falha com réplica atrasada.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Read-your-writes nunca falha: a réplica recebe o write na hora.",
+        "Ler a réplica atrasada é inconsistência de verdade, não lag.",
+        "Só quando o banco principal cai é que read-your-writes quebra.",
+        "Read-your-writes falha quando você lê a réplica que ainda não recebeu o write."
       ],
-      "a": 0,
-      "w": "Nomeie o lag.",
+      "a": 3,
+      "w": "Isso é lag e tem nome. A pergunta madura: o usuário pode ver o valor velho por 200 ms, por 2 s, ou nunca?",
       "t": "lag réplica"
     },
     {
-      "q": "Sobre invariante: qual afirmação está certa?",
+      "q": "Saldo negativo permanente é eventual?",
       "o": [
-        "Saldo negativo permanente não é “eventual”.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Saldo, assento e cupom não são invariantes: são campos comuns de banco.",
+        "Saldo negativo permanente não é eventual: compense ou bloqueie.",
+        "Saldo negativo permanente é eventual até alguém reclamar.",
+        "A invariante de saldo pode esperar dias para convergir."
       ],
-      "a": 0,
-      "w": "Compense ou bloqueie.",
+      "a": 1,
+      "w": "Saldo, assento e cupom de uso único são invariantes. Eventual não cobre invariante quebrada.",
       "t": "invariante"
     },
     {
-      "q": "Qual frase sobre invariante está certa?",
+      "q": "O que fazer com a invariante quebrada: esperar convergir ou compensar?",
       "o": [
-        "Saldo negativo permanente não é “eventual”.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A invariante de saldo pode esperar dias para convergir.",
+        "Saldo, assento e cupom não são invariantes: são campos comuns de banco.",
+        "Saldo negativo permanente não é eventual: compense ou bloqueie.",
+        "Saldo negativo permanente é eventual até alguém reclamar."
       ],
-      "a": 0,
-      "w": "Compense ou bloqueie.",
+      "a": 2,
+      "w": "Saldo, assento e cupom de uso único são invariantes. Eventual não cobre invariante quebrada.",
       "t": "invariante"
     },
     {
-      "q": "Invariante — o que acontece de verdade?",
+      "q": "Quais exemplos de invariante esta aula usa?",
       "o": [
-        "Saldo negativo permanente não é “eventual”.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A invariante de saldo pode esperar dias para convergir.",
+        "Saldo, assento e cupom não são invariantes: são campos comuns de banco.",
+        "Saldo negativo permanente não é eventual: compense ou bloqueie.",
+        "Saldo negativo permanente é eventual até alguém reclamar."
       ],
-      "a": 0,
-      "w": "Compense ou bloqueie.",
+      "a": 2,
+      "w": "Saldo, assento e cupom de uso único são invariantes. Eventual não cobre invariante quebrada.",
       "t": "invariante"
     },
     {
-      "q": "Marque a leitura correta (invariante).",
+      "q": "A invariante de saldo pode esperar dias para convergir?",
       "o": [
-        "Saldo negativo permanente não é “eventual”.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Saldo negativo permanente é eventual até alguém reclamar.",
+        "A invariante de saldo pode esperar dias para convergir.",
+        "Saldo, assento e cupom não são invariantes: são campos comuns de banco.",
+        "Saldo negativo permanente não é eventual: compense ou bloqueie."
       ],
-      "a": 0,
-      "w": "Compense ou bloqueie.",
+      "a": 3,
+      "w": "Saldo, assento e cupom de uso único são invariantes. Eventual não cobre invariante quebrada.",
       "t": "invariante"
     },
     {
-      "q": "Corrija o mito sobre invariante.",
+      "q": "Cupom de uso único é invariante ou campo comum?",
       "o": [
-        "Saldo negativo permanente não é “eventual”.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Saldo negativo permanente é eventual até alguém reclamar.",
+        "A invariante de saldo pode esperar dias para convergir.",
+        "Saldo, assento e cupom não são invariantes: são campos comuns de banco.",
+        "Saldo negativo permanente não é eventual: compense ou bloqueie."
       ],
-      "a": 0,
-      "w": "Compense ou bloqueie.",
+      "a": 3,
+      "w": "Saldo, assento e cupom de uso único são invariantes. Eventual não cobre invariante quebrada.",
       "t": "invariante"
     },
     {
-      "q": "No caderno, a respeito de invariante: qual vale?",
+      "q": "Eventual cobre invariante quebrada?",
       "o": [
-        "Saldo negativo permanente não é “eventual”.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Saldo negativo permanente não é eventual: compense ou bloqueie.",
+        "Saldo negativo permanente é eventual até alguém reclamar.",
+        "A invariante de saldo pode esperar dias para convergir.",
+        "Saldo, assento e cupom não são invariantes: são campos comuns de banco."
       ],
       "a": 0,
-      "w": "Compense ou bloqueie.",
+      "w": "Saldo, assento e cupom de uso único são invariantes. Eventual não cobre invariante quebrada.",
       "t": "invariante"
     },
     {
-      "q": "Se perguntarem invariante na mesa, qual frase é a verdadeira?",
+      "q": "Assento vendido duas vezes: eventual ou bloqueio?",
       "o": [
-        "Saldo negativo permanente não é “eventual”.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Saldo, assento e cupom não são invariantes: são campos comuns de banco.",
+        "Saldo negativo permanente não é eventual: compense ou bloqueie.",
+        "Saldo negativo permanente é eventual até alguém reclamar.",
+        "A invariante de saldo pode esperar dias para convergir."
       ],
-      "a": 0,
-      "w": "Compense ou bloqueie.",
+      "a": 1,
+      "w": "Saldo, assento e cupom de uso único são invariantes. Eventual não cobre invariante quebrada.",
       "t": "invariante"
     },
     {
-      "q": "Sobre útil: qual afirmação está certa?",
+      "q": "Responder 200 com dado podre é melhor que responder 503?",
       "o": [
-        "Responder 200 com dado podre pode ser pior que 503.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O conteúdo da resposta não muda o valor do código devolvido.",
+        "Responder 200 com dado podre pode ser pior que responder 503.",
+        "O 200 é sempre melhor que o 503, qualquer que seja o dado.",
+        "O 503 é sempre pior porque conta como indisponibilidade."
       ],
-      "a": 0,
-      "w": "Defina útil.",
+      "a": 1,
+      "w": "O 200 mentiroso engana o usuário e o painel ao mesmo tempo. O 503 pelo menos avisa que falhou.",
       "t": "útil"
     },
     {
-      "q": "Qual frase sobre útil está certa?",
+      "q": "Qual resposta engana o usuário e o painel ao mesmo tempo?",
       "o": [
-        "Responder 200 com dado podre pode ser pior que 503.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O conteúdo da resposta não muda o valor do código devolvido.",
+        "Responder 200 com dado podre pode ser pior que responder 503.",
+        "O 200 é sempre melhor que o 503, qualquer que seja o dado.",
+        "O 503 é sempre pior porque conta como indisponibilidade."
       ],
-      "a": 0,
-      "w": "Defina útil.",
+      "a": 1,
+      "w": "O 200 mentiroso engana o usuário e o painel ao mesmo tempo. O 503 pelo menos avisa que falhou.",
       "t": "útil"
     },
     {
-      "q": "Útil — o que acontece de verdade?",
+      "q": "Quando o 503 é preferível ao 200?",
       "o": [
-        "Responder 200 com dado podre pode ser pior que 503.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O 200 é sempre melhor que o 503, qualquer que seja o dado.",
+        "O 503 é sempre pior porque conta como indisponibilidade.",
+        "O conteúdo da resposta não muda o valor do código devolvido.",
+        "Responder 200 com dado podre pode ser pior que responder 503."
       ],
-      "a": 0,
-      "w": "Defina útil.",
+      "a": 3,
+      "w": "O 200 mentiroso engana o usuário e o painel ao mesmo tempo. O 503 pelo menos avisa que falhou.",
       "t": "útil"
     },
     {
-      "q": "Marque a leitura correta (útil).",
+      "q": "O conteúdo da resposta muda se ela foi útil?",
       "o": [
-        "Responder 200 com dado podre pode ser pior que 503.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Responder 200 com dado podre pode ser pior que responder 503.",
+        "O 200 é sempre melhor que o 503, qualquer que seja o dado.",
+        "O 503 é sempre pior porque conta como indisponibilidade.",
+        "O conteúdo da resposta não muda o valor do código devolvido."
       ],
       "a": 0,
-      "w": "Defina útil.",
+      "w": "O 200 mentiroso engana o usuário e o painel ao mesmo tempo. O 503 pelo menos avisa que falhou.",
       "t": "útil"
     },
     {
-      "q": "Corrija o mito sobre útil.",
+      "q": "O 200 é sempre melhor que o 503?",
       "o": [
-        "Responder 200 com dado podre pode ser pior que 503.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Responder 200 com dado podre pode ser pior que responder 503.",
+        "O 200 é sempre melhor que o 503, qualquer que seja o dado.",
+        "O 503 é sempre pior porque conta como indisponibilidade.",
+        "O conteúdo da resposta não muda o valor do código devolvido."
       ],
       "a": 0,
-      "w": "Defina útil.",
+      "w": "O 200 mentiroso engana o usuário e o painel ao mesmo tempo. O 503 pelo menos avisa que falhou.",
       "t": "útil"
     },
     {
-      "q": "No caderno, a respeito de útil: qual vale?",
+      "q": "Por que esta aula chama o 200 com dado podre de mentiroso?",
       "o": [
-        "Responder 200 com dado podre pode ser pior que 503.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O 503 é sempre pior porque conta como indisponibilidade.",
+        "O conteúdo da resposta não muda o valor do código devolvido.",
+        "Responder 200 com dado podre pode ser pior que responder 503.",
+        "O 200 é sempre melhor que o 503, qualquer que seja o dado."
       ],
-      "a": 0,
-      "w": "Defina útil.",
+      "a": 2,
+      "w": "O 200 mentiroso engana o usuário e o painel ao mesmo tempo. O 503 pelo menos avisa que falhou.",
       "t": "útil"
     },
     {
-      "q": "Se perguntarem útil na mesa, qual frase é a verdadeira?",
+      "q": "O painel viu 200. O usuário viu o quê?",
       "o": [
-        "Responder 200 com dado podre pode ser pior que 503.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O conteúdo da resposta não muda o valor do código devolvido.",
+        "Responder 200 com dado podre pode ser pior que responder 503.",
+        "O 200 é sempre melhor que o 503, qualquer que seja o dado.",
+        "O 503 é sempre pior porque conta como indisponibilidade."
       ],
-      "a": 0,
-      "w": "Defina útil.",
+      "a": 1,
+      "w": "O 200 mentiroso engana o usuário e o painel ao mesmo tempo. O 503 pelo menos avisa que falhou.",
       "t": "útil"
     },
     {
-      "q": "Sobre multi-AZ: qual afirmação está certa?",
+      "q": "Mais cópias sobem a disponibilidade. O que elas complicam?",
       "o": [
-        "Mais AZ sobe disponibilidade e complica consistência.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Mais cópias sobem a disponibilidade e complicam a consistência.",
+        "Mais cópias sobem a disponibilidade e também a consistência.",
+        "Mais cópias não mudam a chance de ler o valor velho.",
+        "Mais cópias derrubam a disponibilidade e melhoram a consistência."
       ],
       "a": 0,
-      "w": "Preço da seta.",
+      "w": "Mais cópias, mais chance de ler o valor velho. O número de noves sobe e o dado fica mais difícil.",
       "t": "multi-AZ"
     },
     {
-      "q": "Qual frase sobre multi-AZ está certa?",
+      "q": "Espalhar cópias melhora os dois eixos ao mesmo tempo?",
       "o": [
-        "Mais AZ sobe disponibilidade e complica consistência.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Mais cópias não mudam a chance de ler o valor velho.",
+        "Mais cópias derrubam a disponibilidade e melhoram a consistência.",
+        "Mais cópias sobem a disponibilidade e complicam a consistência.",
+        "Mais cópias sobem a disponibilidade e também a consistência."
       ],
-      "a": 0,
-      "w": "Preço da seta.",
+      "a": 2,
+      "w": "Mais cópias, mais chance de ler o valor velho. O número de noves sobe e o dado fica mais difícil.",
       "t": "multi-AZ"
     },
     {
-      "q": "Multi-AZ — o que acontece de verdade?",
+      "q": "Com mais cópias, a chance de ler o valor velho sobe ou desce?",
       "o": [
-        "Mais AZ sobe disponibilidade e complica consistência.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Mais cópias derrubam a disponibilidade e melhoram a consistência.",
+        "Mais cópias sobem a disponibilidade e complicam a consistência.",
+        "Mais cópias sobem a disponibilidade e também a consistência.",
+        "Mais cópias não mudam a chance de ler o valor velho."
       ],
-      "a": 0,
-      "w": "Preço da seta.",
+      "a": 1,
+      "w": "Mais cópias, mais chance de ler o valor velho. O número de noves sobe e o dado fica mais difícil.",
       "t": "multi-AZ"
     },
     {
-      "q": "Marque a leitura correta (multi-AZ).",
+      "q": "Qual o preço de subir o número de noves com mais cópias?",
       "o": [
-        "Mais AZ sobe disponibilidade e complica consistência.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Mais cópias sobem a disponibilidade e também a consistência.",
+        "Mais cópias não mudam a chance de ler o valor velho.",
+        "Mais cópias derrubam a disponibilidade e melhoram a consistência.",
+        "Mais cópias sobem a disponibilidade e complicam a consistência."
       ],
-      "a": 0,
-      "w": "Preço da seta.",
+      "a": 3,
+      "w": "Mais cópias, mais chance de ler o valor velho. O número de noves sobe e o dado fica mais difícil.",
       "t": "multi-AZ"
     },
     {
-      "q": "Corrija o mito sobre multi-AZ.",
+      "q": "Mais cópias derrubam a disponibilidade?",
       "o": [
-        "Mais AZ sobe disponibilidade e complica consistência.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Mais cópias sobem a disponibilidade e complicam a consistência.",
+        "Mais cópias sobem a disponibilidade e também a consistência.",
+        "Mais cópias não mudam a chance de ler o valor velho.",
+        "Mais cópias derrubam a disponibilidade e melhoram a consistência."
       ],
       "a": 0,
-      "w": "Preço da seta.",
+      "w": "Mais cópias, mais chance de ler o valor velho. O número de noves sobe e o dado fica mais difícil.",
       "t": "multi-AZ"
     },
     {
-      "q": "No caderno, a respeito de multi-AZ: qual vale?",
+      "q": "O que acontece com a consistência quando você espalha réplicas?",
       "o": [
-        "Mais AZ sobe disponibilidade e complica consistência.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Mais cópias sobem a disponibilidade e também a consistência.",
+        "Mais cópias não mudam a chance de ler o valor velho.",
+        "Mais cópias derrubam a disponibilidade e melhoram a consistência.",
+        "Mais cópias sobem a disponibilidade e complicam a consistência."
       ],
-      "a": 0,
-      "w": "Preço da seta.",
+      "a": 3,
+      "w": "Mais cópias, mais chance de ler o valor velho. O número de noves sobe e o dado fica mais difícil.",
       "t": "multi-AZ"
     },
     {
-      "q": "Se perguntarem multi-AZ na mesa, qual frase é a verdadeira?",
+      "q": "Por que mais cópias não é ganho de graça?",
       "o": [
-        "Mais AZ sobe disponibilidade e complica consistência.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Mais cópias sobem a disponibilidade e complicam a consistência.",
+        "Mais cópias sobem a disponibilidade e também a consistência.",
+        "Mais cópias não mudam a chance de ler o valor velho.",
+        "Mais cópias derrubam a disponibilidade e melhoram a consistência."
       ],
       "a": 0,
-      "w": "Preço da seta.",
+      "w": "Mais cópias, mais chance de ler o valor velho. O número de noves sobe e o dado fica mais difícil.",
       "t": "multi-AZ"
     },
     {
-      "q": "Sobre manutenção: qual afirmação está certa?",
+      "q": "Janela de manutenção entra na conta do downtime?",
       "o": [
-        "Janela de manutenção conta no downtime se o usuário não usa.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A janela conta só se durar mais de uma hora.",
+        "Mesmo com o usuário usando normalmente, a janela entra no downtime.",
+        "Janela de manutenção conta no downtime se o usuário de fora não consegue usar.",
+        "A janela nunca conta no downtime: foi combinada antes."
       ],
-      "a": 0,
-      "w": "Noves sinceros.",
+      "a": 2,
+      "w": "Combinar a janela com o time não tira aquele tempo da conta do usuário.",
       "t": "manutenção"
     },
     {
-      "q": "Qual frase sobre manutenção está certa?",
+      "q": "A janela foi combinada com o time. Ela sai da conta?",
       "o": [
-        "Janela de manutenção conta no downtime se o usuário não usa.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A janela nunca conta no downtime: foi combinada antes.",
+        "A janela conta só se durar mais de uma hora.",
+        "Mesmo com o usuário usando normalmente, a janela entra no downtime.",
+        "Janela de manutenção conta no downtime se o usuário de fora não consegue usar."
       ],
-      "a": 0,
-      "w": "Noves sinceros.",
+      "a": 3,
+      "w": "Combinar a janela com o time não tira aquele tempo da conta do usuário.",
       "t": "manutenção"
     },
     {
-      "q": "Manutenção — o que acontece de verdade?",
+      "q": "Quando a janela de manutenção conta como downtime?",
       "o": [
-        "Janela de manutenção conta no downtime se o usuário não usa.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Mesmo com o usuário usando normalmente, a janela entra no downtime.",
+        "Janela de manutenção conta no downtime se o usuário de fora não consegue usar.",
+        "A janela nunca conta no downtime: foi combinada antes.",
+        "A janela conta só se durar mais de uma hora."
       ],
-      "a": 0,
-      "w": "Noves sinceros.",
+      "a": 1,
+      "w": "Combinar a janela com o time não tira aquele tempo da conta do usuário.",
       "t": "manutenção"
     },
     {
-      "q": "Marque a leitura correta (manutenção).",
+      "q": "O usuário de fora não consegue usar durante a janela. Isso conta?",
       "o": [
-        "Janela de manutenção conta no downtime se o usuário não usa.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Mesmo com o usuário usando normalmente, a janela entra no downtime.",
+        "Janela de manutenção conta no downtime se o usuário de fora não consegue usar.",
+        "A janela nunca conta no downtime: foi combinada antes.",
+        "A janela conta só se durar mais de uma hora."
       ],
-      "a": 0,
-      "w": "Noves sinceros.",
+      "a": 1,
+      "w": "Combinar a janela com o time não tira aquele tempo da conta do usuário.",
       "t": "manutenção"
     },
     {
-      "q": "Corrija o mito sobre manutenção.",
+      "q": "Janela curta fica fora da conta?",
       "o": [
-        "Janela de manutenção conta no downtime se o usuário não usa.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A janela conta só se durar mais de uma hora.",
+        "Mesmo com o usuário usando normalmente, a janela entra no downtime.",
+        "Janela de manutenção conta no downtime se o usuário de fora não consegue usar.",
+        "A janela nunca conta no downtime: foi combinada antes."
       ],
-      "a": 0,
-      "w": "Noves sinceros.",
+      "a": 2,
+      "w": "Combinar a janela com o time não tira aquele tempo da conta do usuário.",
       "t": "manutenção"
     },
     {
-      "q": "No caderno, a respeito de manutenção: qual vale?",
+      "q": "Se o usuário continua usando durante a janela, ela conta?",
       "o": [
-        "Janela de manutenção conta no downtime se o usuário não usa.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "A janela nunca conta no downtime: foi combinada antes.",
+        "A janela conta só se durar mais de uma hora.",
+        "Mesmo com o usuário usando normalmente, a janela entra no downtime.",
+        "Janela de manutenção conta no downtime se o usuário de fora não consegue usar."
       ],
-      "a": 0,
-      "w": "Noves sinceros.",
+      "a": 3,
+      "w": "Combinar a janela com o time não tira aquele tempo da conta do usuário.",
       "t": "manutenção"
     },
     {
-      "q": "Se perguntarem manutenção na mesa, qual frase é a verdadeira?",
+      "q": "Por que esta aula inclui a janela no downtime?",
       "o": [
-        "Janela de manutenção conta no downtime se o usuário não usa.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A janela nunca conta no downtime: foi combinada antes.",
+        "A janela conta só se durar mais de uma hora.",
+        "Mesmo com o usuário usando normalmente, a janela entra no downtime.",
+        "Janela de manutenção conta no downtime se o usuário de fora não consegue usar."
       ],
-      "a": 0,
-      "w": "Noves sinceros.",
+      "a": 3,
+      "w": "Combinar a janela com o time não tira aquele tempo da conta do usuário.",
       "t": "manutenção"
     },
     {
-      "q": "Sobre degradação: qual afirmação está certa?",
+      "q": "Degradar a resposta ajuda ou atrapalha a disponibilidade útil?",
       "o": [
-        "Degradar (fallback) pode preservar disponibilidade útil.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Degradar a resposta pode preservar a disponibilidade útil.",
+        "Degradar a resposta sempre conta como indisponibilidade.",
+        "Degradar é o mesmo que devolver 500 para o usuário.",
+        "Só a resposta completa e fresca conta como disponibilidade útil."
       ],
       "a": 0,
-      "w": "Cardápio de ontem.",
+      "w": "Entregar a versão de ontem é resposta útil. Ganha do 500 e é honesto com o usuário.",
       "t": "degradação"
     },
     {
-      "q": "Qual frase sobre degradação está certa?",
+      "q": "Entregar a versão de ontem conta como resposta útil?",
       "o": [
-        "Degradar (fallback) pode preservar disponibilidade útil.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Só a resposta completa e fresca conta como disponibilidade útil.",
+        "Degradar a resposta pode preservar a disponibilidade útil.",
+        "Degradar a resposta sempre conta como indisponibilidade.",
+        "Degradar é o mesmo que devolver 500 para o usuário."
       ],
-      "a": 0,
-      "w": "Cardápio de ontem.",
+      "a": 1,
+      "w": "Entregar a versão de ontem é resposta útil. Ganha do 500 e é honesto com o usuário.",
       "t": "degradação"
     },
     {
-      "q": "Degradação — o que acontece de verdade?",
+      "q": "Degradar é o mesmo que devolver 500?",
       "o": [
-        "Degradar (fallback) pode preservar disponibilidade útil.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Degradar a resposta sempre conta como indisponibilidade.",
+        "Degradar é o mesmo que devolver 500 para o usuário.",
+        "Só a resposta completa e fresca conta como disponibilidade útil.",
+        "Degradar a resposta pode preservar a disponibilidade útil."
       ],
-      "a": 0,
-      "w": "Cardápio de ontem.",
+      "a": 3,
+      "w": "Entregar a versão de ontem é resposta útil. Ganha do 500 e é honesto com o usuário.",
       "t": "degradação"
     },
     {
-      "q": "Marque a leitura correta (degradação).",
+      "q": "Só a resposta completa e fresca conta como útil?",
       "o": [
-        "Degradar (fallback) pode preservar disponibilidade útil.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Degradar a resposta sempre conta como indisponibilidade.",
+        "Degradar é o mesmo que devolver 500 para o usuário.",
+        "Só a resposta completa e fresca conta como disponibilidade útil.",
+        "Degradar a resposta pode preservar a disponibilidade útil."
       ],
-      "a": 0,
-      "w": "Cardápio de ontem.",
+      "a": 3,
+      "w": "Entregar a versão de ontem é resposta útil. Ganha do 500 e é honesto com o usuário.",
       "t": "degradação"
     },
     {
-      "q": "Corrija o mito sobre degradação.",
+      "q": "O que a degradação preserva quando um pedaço caiu?",
       "o": [
-        "Degradar (fallback) pode preservar disponibilidade útil.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Degradar a resposta sempre conta como indisponibilidade.",
+        "Degradar é o mesmo que devolver 500 para o usuário.",
+        "Só a resposta completa e fresca conta como disponibilidade útil.",
+        "Degradar a resposta pode preservar a disponibilidade útil."
       ],
-      "a": 0,
-      "w": "Cardápio de ontem.",
+      "a": 3,
+      "w": "Entregar a versão de ontem é resposta útil. Ganha do 500 e é honesto com o usuário.",
       "t": "degradação"
     },
     {
-      "q": "No caderno, a respeito de degradação: qual vale?",
+      "q": "Qual a alternativa honesta ao 500 quando a dependência caiu?",
       "o": [
-        "Degradar (fallback) pode preservar disponibilidade útil.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Só a resposta completa e fresca conta como disponibilidade útil.",
+        "Degradar a resposta pode preservar a disponibilidade útil.",
+        "Degradar a resposta sempre conta como indisponibilidade.",
+        "Degradar é o mesmo que devolver 500 para o usuário."
       ],
-      "a": 0,
-      "w": "Cardápio de ontem.",
+      "a": 1,
+      "w": "Entregar a versão de ontem é resposta útil. Ganha do 500 e é honesto com o usuário.",
       "t": "degradação"
     },
     {
-      "q": "Se perguntarem degradação na mesa, qual frase é a verdadeira?",
+      "q": "Degradar sempre conta como indisponibilidade?",
       "o": [
-        "Degradar (fallback) pode preservar disponibilidade útil.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Degradar a resposta sempre conta como indisponibilidade.",
+        "Degradar é o mesmo que devolver 500 para o usuário.",
+        "Só a resposta completa e fresca conta como disponibilidade útil.",
+        "Degradar a resposta pode preservar a disponibilidade útil."
       ],
-      "a": 0,
-      "w": "Cardápio de ontem.",
+      "a": 3,
+      "w": "Entregar a versão de ontem é resposta útil. Ganha do 500 e é honesto com o usuário.",
       "t": "degradação"
     },
     {
-      "q": "Sobre métrica: qual afirmação está certa?",
+      "q": "O que medir para saber a disponibilidade real?",
       "o": [
-        "Meça sucesso útil, não só uptime de VM.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Meça o sucesso útil para o usuário, não só o tempo em que a máquina esteve no ar.",
+        "O tempo em que a máquina fica no ar é a melhor medida de disponibilidade.",
+        "Se a máquina está no ar, o sucesso do usuário está garantido.",
+        "Medir sucesso do usuário é inviável; use o tempo da máquina no ar."
       ],
       "a": 0,
-      "w": "SLI certo.",
+      "w": "Máquina no ar não é medida de disponibilidade útil. Meça o que o usuário conseguiu fazer.",
       "t": "métrica"
     },
     {
-      "q": "Qual frase sobre métrica está certa?",
+      "q": "O tempo da máquina no ar basta como medida de disponibilidade?",
       "o": [
-        "Meça sucesso útil, não só uptime de VM.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Se a máquina está no ar, o sucesso do usuário está garantido.",
+        "Medir sucesso do usuário é inviável; use o tempo da máquina no ar.",
+        "Meça o sucesso útil para o usuário, não só o tempo em que a máquina esteve no ar.",
+        "O tempo em que a máquina fica no ar é a melhor medida de disponibilidade."
       ],
-      "a": 0,
-      "w": "SLI certo.",
+      "a": 2,
+      "w": "Máquina no ar não é medida de disponibilidade útil. Meça o que o usuário conseguiu fazer.",
       "t": "métrica"
     },
     {
-      "q": "Métrica — o que acontece de verdade?",
+      "q": "A máquina está no ar. O usuário conseguiu fazer o que queria?",
       "o": [
-        "Meça sucesso útil, não só uptime de VM.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Medir sucesso do usuário é inviável; use o tempo da máquina no ar.",
+        "Meça o sucesso útil para o usuário, não só o tempo em que a máquina esteve no ar.",
+        "O tempo em que a máquina fica no ar é a melhor medida de disponibilidade.",
+        "Se a máquina está no ar, o sucesso do usuário está garantido."
       ],
-      "a": 0,
-      "w": "SLI certo.",
+      "a": 1,
+      "w": "Máquina no ar não é medida de disponibilidade útil. Meça o que o usuário conseguiu fazer.",
       "t": "métrica"
     },
     {
-      "q": "Marque a leitura correta (métrica).",
+      "q": "Qual medida esta aula prefere: sucesso útil ou máquina no ar?",
       "o": [
-        "Meça sucesso útil, não só uptime de VM.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O tempo em que a máquina fica no ar é a melhor medida de disponibilidade.",
+        "Se a máquina está no ar, o sucesso do usuário está garantido.",
+        "Medir sucesso do usuário é inviável; use o tempo da máquina no ar.",
+        "Meça o sucesso útil para o usuário, não só o tempo em que a máquina esteve no ar."
       ],
-      "a": 0,
-      "w": "SLI certo.",
+      "a": 3,
+      "w": "Máquina no ar não é medida de disponibilidade útil. Meça o que o usuário conseguiu fazer.",
       "t": "métrica"
     },
     {
-      "q": "Corrija o mito sobre métrica.",
+      "q": "Por que medir só a máquina no ar engana?",
       "o": [
-        "Meça sucesso útil, não só uptime de VM.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O tempo em que a máquina fica no ar é a melhor medida de disponibilidade.",
+        "Se a máquina está no ar, o sucesso do usuário está garantido.",
+        "Medir sucesso do usuário é inviável; use o tempo da máquina no ar.",
+        "Meça o sucesso útil para o usuário, não só o tempo em que a máquina esteve no ar."
       ],
-      "a": 0,
-      "w": "SLI certo.",
+      "a": 3,
+      "w": "Máquina no ar não é medida de disponibilidade útil. Meça o que o usuário conseguiu fazer.",
       "t": "métrica"
     },
     {
-      "q": "No caderno, a respeito de métrica: qual vale?",
+      "q": "O painel mostra a máquina no ar e o usuário reclama. Qual medida faltou?",
       "o": [
-        "Meça sucesso útil, não só uptime de VM.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O tempo em que a máquina fica no ar é a melhor medida de disponibilidade.",
+        "Se a máquina está no ar, o sucesso do usuário está garantido.",
+        "Medir sucesso do usuário é inviável; use o tempo da máquina no ar.",
+        "Meça o sucesso útil para o usuário, não só o tempo em que a máquina esteve no ar."
       ],
-      "a": 0,
-      "w": "SLI certo.",
+      "a": 3,
+      "w": "Máquina no ar não é medida de disponibilidade útil. Meça o que o usuário conseguiu fazer.",
       "t": "métrica"
     },
     {
-      "q": "Se perguntarem métrica na mesa, qual frase é a verdadeira?",
+      "q": "Medir sucesso do usuário é possível?",
       "o": [
-        "Meça sucesso útil, não só uptime de VM.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Se a máquina está no ar, o sucesso do usuário está garantido.",
+        "Medir sucesso do usuário é inviável; use o tempo da máquina no ar.",
+        "Meça o sucesso útil para o usuário, não só o tempo em que a máquina esteve no ar.",
+        "O tempo em que a máquina fica no ar é a melhor medida de disponibilidade."
       ],
-      "a": 0,
-      "w": "SLI certo.",
+      "a": 2,
+      "w": "Máquina no ar não é medida de disponibilidade útil. Meça o que o usuário conseguiu fazer.",
       "t": "métrica"
     }
   ]

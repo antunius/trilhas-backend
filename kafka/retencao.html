@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>retencao — Kafka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../trilhas.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="crumb"><a href="../index.html">Trilhas</a> · <a href="index.html">Kafka</a></p>
+      <div class="eyebrow">Trilha 4 · Kafka</div>
+      <h1>retencao</h1>
+      <p class="lede"></p>
+    </header>
+    <nav class="toc" aria-label="Índice"><a href="index.html">Início</a>
+      <a href="modelo-mental.html">Modelo mental</a>
+      <a href="evento.html">Evento</a>
+      <a href="topico.html">Tópico</a>
+      <a href="particao.html">Partição</a>
+      <a href="offset.html">Offset</a>
+      <a href="key.html">Key</a>
+      <a href="broker.html">Broker</a>
+      <a href="isr.html">ISR</a>
+      <a href="produtor.html">Produtor</a>
+      <a href="consumidor.html">Consumidor</a>
+      <a href="rebalance.html">Rebalance</a>
+      <a href="retencao.html">Retenção</a>
+      <a href="garantias.html">Garantias</a>
+      <a href="operacao.html">Operação</a>
+      <a href="schema.html">Schema Registry</a>
+      <a href="outbox.html">Outbox</a>
+      <a href="spring.html">Spring Kafka</a>
+      <a href="sintese.html">Síntese</a>
+      <a href="tech-lead.html">Tech Lead</a>
+      <a href="simulador.html">Simulador</a></nav>
+    <section class="week">
+<article class="term" id="retencao">
+        <div class="tag">Vocabulário</div>
+        <h3>Segmento, retenção e compaction</h3>
+        <p>
+          <strong>O que é.</strong> O log da partição não é um arquivo eterno: é uma fila de segmentos
+          (<code>00000000000000000000.log</code>, depois outro quando atinge <code>segment.bytes</code>).
+          <strong>Retenção</strong> (<code>retention.ms</code> / <code>retention.bytes</code>) apaga segmentos fechados que passaram do prazo.
+          Quem não commitou a tempo perdeu a linha (a menos que tenha copiado para outro lugar).
+          <strong>Compaction</strong> (<code>cleanup.policy=compact</code>): para cada key, o cleaner mantém o value mais recente;
+          tombstone (value nulo) pede para apagar a key. Serve changelog/CDC, não filme completo.
+        </p>
+        <p class="analogy">Analogia: o caderno é cortado em cadernos menores. Os velhos vão para o lixo — ou, na compaction, fica a última versão de cada pessoa.</p>
+        <p><strong>Na prática.</strong> Ver configs do tópico (incluindo retenção padrão do broker):</p>
+<pre class="code">docker compose exec kafka /opt/kafka/bin/kafka-configs.sh \
+  --bootstrap-server localhost:9092 \
+  --entity-type topics --entity-name pedidos.criados --describe</pre>
+        <p class="lab-ref"><strong>No lab.</strong> O tópico didático usa retenção padrão do Apache Kafka na imagem. Não trate o lab como backup.</p>
+        <div class="warn">
+          Kafka não é S3. Sem retenção infinita (cara e rara), o log esquece.
+          Compaction não te devolve os estados intermediários. Tombstone não é DELETE no Postgres.
+        </div>
+      </article>
+</section>
+
+    <footer>Trilha Kafka por tema.</footer>
+  </div>
+</body>
+</html>

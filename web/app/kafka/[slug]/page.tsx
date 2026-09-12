@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LessonShell } from "@/components/LessonShell";
 import { findLesson, kafkaLessons, kafkaNav } from "@/lib/catalog";
-import { lessonHtml } from "@/lib/content";
-import { loadGateBank } from "@/lib/load-gate-bank";
+import { lessonDoc } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -28,16 +27,14 @@ export default async function KafkaLessonPage({ params }: Props) {
   const { slug } = await params;
   const lesson = findLesson(kafkaLessons, slug);
   if (!lesson) notFound();
-  const html = lessonHtml("kafka", slug);
-  const questions = loadGateBank("kafka", slug);
+  const doc = lessonDoc("kafka", slug);
   return (
     <LessonShell
       trackHome="/kafka"
       trackLabel="Kafka"
       lesson={lesson}
       nav={kafkaNav}
-      html={html}
-      questions={questions}
+      doc={doc}
       footer="Trilha Kafka por tema, rumo a Tech Lead backend."
     />
   );

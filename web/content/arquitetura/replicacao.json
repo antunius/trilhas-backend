@@ -1,0 +1,73 @@
+{
+  "beats": [
+    {
+      "id": "gargalo",
+      "kind": "explicar",
+      "title": "Antes do desenho: leitura ou escrita?",
+      "html": "<p>Replicação e sharding resolvem dores diferentes. Desenhar os dois no quadro sem perguntar o gargalo é o erro da mesa.</p><p><strong>Replicação</strong> fotocopia o mesmo livro: lê em mais nós, um exemplar pode queimar, o primary ainda engole a escrita. <strong>Sharding</strong> fatia a enciclopédia por letra: escreve em paralelo; a letra A vira inferno se todo mundo se chama Ana. A chave é a decisão cara — reshard é migração, não `ALTER` de tarde.</p>"
+    },
+    {
+      "id": "gravei",
+      "kind": "cena",
+      "kicker": "Depois do save",
+      "title": "Gravei. Recarreguei. O saldo antigo ainda está na tela.",
+      "body": "<p>A escrita foi no primary. O GET foi na réplica. Replication lag. Read-your-writes quebrou. Sticky no master, sessão, ou “ler onde escreveu” — senão o usuário acha que o débito não entrou.</p><p>Promover a réplica no failover não é mágica: tem RPO e RTO. Writes que ainda não replicaram somem. Réplica cross-região traz latência e conflito — PACELC na cara, não “HA de graça”.</p>"
+    },
+    {
+      "id": "chave",
+      "kind": "explicar",
+      "title": "A chave é a decisão. O reshard é migração.",
+      "html": "<p>Hot shard: uma chave absorve o volume. Cross-shard: o JOIN atravessa dois pedaços e o desenho “escalou” no slide. Escolha a chave pelo acesso real (pedido_id, tenant), não pelo organograma.</p><p>Um primary + N réplicas continua honesto: failover e leitura. Multi-master e shard entram quando a escrita no primary é o teto — e você aceita o preço de rebalance, lag e query que não atravessa o mundo.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "ganha": "Réplica: mais leitura, failover de um nó, AZ a mais. Shard: mais escrita e volume, cada fatia cabe numa máquina.",
+      "paga": "Réplica: lag (“gravei e não vejo”), primary ainda é teto de write, failover com RPO. Shard: hot shard, query cross-shard, chave cara de reverter. Os dois juntos sem diagnosticar o gargalo pagam os dois aluguéis.",
+      "quando": [
+        "Gargalo é leitura ou um nó pode queimar → replicação, e nomeie o lag",
+        "Gargalo é escrita / tamanho do dataset → shard, e a chave atende o acesso",
+        "Você perguntou leitura vs escrita antes de desenhar as duas caixas"
+      ],
+      "quandoNao": [
+        "Dizer que réplica escala escrita linearmente",
+        "Shardear por nome de usuário ou por squad e torcer contra o hot shard",
+        "Chamar réplica de CQRS, ou consistent hashing de cura da celebridade"
+      ]
+    },
+    {
+      "id": "alavanca",
+      "kind": "escolha",
+      "prompt": "Catálogo lê 50× mais do que escreve. Checkout grava pedido+item disparado, e 80% dos writes são do mesmo seller celebrity. Réplica ou sharding — e qual preço?",
+      "options": [
+        {
+          "id": "so-repl",
+          "label": "Réplicas para os dois. Escrita escala linear com o número de réplicas.",
+          "verdict": "ruim",
+          "why": "Replicação não escala escrita linearmente. Um primary + N réplicas: o write ainda passa no primary. No celebrity você só copiou o gargalo."
+        },
+        {
+          "id": "cada-um",
+          "label": "Réplica no catálogo (leitura + failover). Shard no checkout, chave que não seja o seller quente.",
+          "verdict": "bom",
+          "why": "leitura e nó no chão: réplica. Escrita e volume: fatia. Chave = seller vira hot shard. Query cross-shard é join caro — a chave tem que atender o acesso."
+        },
+        {
+          "id": "hash",
+          "label": "Sharding nos dois com consistent hashing. Hot key some sozinha. Réplica é CQRS, então estamos cobertos.",
+          "verdict": "ruim",
+          "why": "Consistent hashing reduz rebalance ao subir nó; celebridade continua quente. Réplica de leitura não é CQRS — CQRS é modelo, não réplica."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Replicação: leitura e failover. O preço é lag. A escrita ainda passa no primary.",
+        "Sharding: escrita e volume. O preço é hot shard e query cross-shard. A chave é arquitetura.",
+        "Pergunte o gargalo antes do desenho. Réplica e fatia não são a mesma peça."
+      ]
+    }
+  ]
+}

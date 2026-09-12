@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre ordem: qual afirmação está certa?",
+      "q": "Qual a ordem das cinco peças de resiliência?",
       "o": [
-        "Timeout → retry+jitter → breaker → bulkhead → fallback.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A ordem é: timeout, retry com jitter, breaker, pool isolado, resposta degradada.",
+        "A ordem é: resposta degradada primeiro, timeout no fim se sobrar.",
+        "A ordem das cinco peças não importa: basta ter todas.",
+        "O breaker vem antes do timeout na ordem correta."
       ],
       "a": 0,
-      "w": "A ordem importa.",
+      "w": "A ordem não é enfeite. Inverter é teatro: resposta degradada sem timeout ainda prende a thread.",
       "t": "ordem"
     },
     {
-      "q": "Qual frase sobre ordem está certa?",
+      "q": "A ordem das cinco peças importa?",
       "o": [
-        "Timeout → retry+jitter → breaker → bulkhead → fallback.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O breaker vem antes do timeout na ordem correta.",
+        "A ordem é: timeout, retry com jitter, breaker, pool isolado, resposta degradada.",
+        "A ordem é: resposta degradada primeiro, timeout no fim se sobrar.",
+        "A ordem das cinco peças não importa: basta ter todas."
       ],
-      "a": 0,
-      "w": "A ordem importa.",
+      "a": 1,
+      "w": "A ordem não é enfeite. Inverter é teatro: resposta degradada sem timeout ainda prende a thread.",
       "t": "ordem"
     },
     {
-      "q": "Ordem — o que acontece de verdade?",
+      "q": "Qual peça vem primeiro?",
       "o": [
-        "Timeout → retry+jitter → breaker → bulkhead → fallback.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A ordem é: timeout, retry com jitter, breaker, pool isolado, resposta degradada.",
+        "A ordem é: resposta degradada primeiro, timeout no fim se sobrar.",
+        "A ordem das cinco peças não importa: basta ter todas.",
+        "O breaker vem antes do timeout na ordem correta."
       ],
       "a": 0,
-      "w": "A ordem importa.",
+      "w": "A ordem não é enfeite. Inverter é teatro: resposta degradada sem timeout ainda prende a thread.",
       "t": "ordem"
     },
     {
-      "q": "Marque a leitura correta (ordem).",
+      "q": "Qual peça vem por último?",
       "o": [
-        "Timeout → retry+jitter → breaker → bulkhead → fallback.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O breaker vem antes do timeout na ordem correta.",
+        "A ordem é: timeout, retry com jitter, breaker, pool isolado, resposta degradada.",
+        "A ordem é: resposta degradada primeiro, timeout no fim se sobrar.",
+        "A ordem das cinco peças não importa: basta ter todas."
       ],
-      "a": 0,
-      "w": "A ordem importa.",
+      "a": 1,
+      "w": "A ordem não é enfeite. Inverter é teatro: resposta degradada sem timeout ainda prende a thread.",
       "t": "ordem"
     },
     {
-      "q": "Corrija o mito sobre ordem.",
+      "q": "Colocar a resposta degradada na frente de tudo funciona?",
       "o": [
-        "Timeout → retry+jitter → breaker → bulkhead → fallback.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A ordem é: timeout, retry com jitter, breaker, pool isolado, resposta degradada.",
+        "A ordem é: resposta degradada primeiro, timeout no fim se sobrar.",
+        "A ordem das cinco peças não importa: basta ter todas.",
+        "O breaker vem antes do timeout na ordem correta."
       ],
       "a": 0,
-      "w": "A ordem importa.",
+      "w": "A ordem não é enfeite. Inverter é teatro: resposta degradada sem timeout ainda prende a thread.",
       "t": "ordem"
     },
     {
-      "q": "No caderno, a respeito de ordem: qual vale?",
+      "q": "Por que esta aula chama a ordem invertida de teatro?",
       "o": [
-        "Timeout → retry+jitter → breaker → bulkhead → fallback.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O breaker vem antes do timeout na ordem correta.",
+        "A ordem é: timeout, retry com jitter, breaker, pool isolado, resposta degradada.",
+        "A ordem é: resposta degradada primeiro, timeout no fim se sobrar.",
+        "A ordem das cinco peças não importa: basta ter todas."
       ],
-      "a": 0,
-      "w": "A ordem importa.",
+      "a": 1,
+      "w": "A ordem não é enfeite. Inverter é teatro: resposta degradada sem timeout ainda prende a thread.",
       "t": "ordem"
     },
     {
-      "q": "Se perguntarem ordem na mesa, qual frase é a verdadeira?",
+      "q": "O breaker vem antes do timeout?",
       "o": [
-        "Timeout → retry+jitter → breaker → bulkhead → fallback.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "A ordem é: resposta degradada primeiro, timeout no fim se sobrar.",
+        "A ordem das cinco peças não importa: basta ter todas.",
+        "O breaker vem antes do timeout na ordem correta.",
+        "A ordem é: timeout, retry com jitter, breaker, pool isolado, resposta degradada."
       ],
-      "a": 0,
-      "w": "A ordem importa.",
+      "a": 3,
+      "w": "A ordem não é enfeite. Inverter é teatro: resposta degradada sem timeout ainda prende a thread.",
       "t": "ordem"
     },
     {
-      "q": "Sobre timeout: qual afirmação está certa?",
+      "q": "O que acontece com a thread sem timeout?",
       "o": [
-        "Sem timeout, thread presa para sempre. Primeiro da lista.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Sem timeout a thread se solta sozinha depois de um tempo.",
+        "Timeout é a última peça a configurar.",
+        "Se a dependência é 99,9% boa, timeout é desnecessário.",
+        "Sem timeout a thread não se solta: é a primeira peça da lista."
       ],
-      "a": 0,
-      "w": "Despertador.",
+      "a": 3,
+      "w": "O 0,1% de chamadas lentas esgota o pool. Uma dependência lenta derruba quem chama.",
       "t": "timeout"
     },
     {
-      "q": "Qual frase sobre timeout está certa?",
+      "q": "Qual é a primeira peça de resiliência?",
       "o": [
-        "Sem timeout, thread presa para sempre. Primeiro da lista.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Sem timeout a thread não se solta: é a primeira peça da lista.",
+        "Sem timeout a thread se solta sozinha depois de um tempo.",
+        "Timeout é a última peça a configurar.",
+        "Se a dependência é 99,9% boa, timeout é desnecessário."
       ],
       "a": 0,
-      "w": "Despertador.",
+      "w": "O 0,1% de chamadas lentas esgota o pool. Uma dependência lenta derruba quem chama.",
       "t": "timeout"
     },
     {
-      "q": "Timeout — o que acontece de verdade?",
+      "q": "A dependência é 99,9% boa. Precisa de timeout?",
       "o": [
-        "Sem timeout, thread presa para sempre. Primeiro da lista.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Se a dependência é 99,9% boa, timeout é desnecessário.",
+        "Sem timeout a thread não se solta: é a primeira peça da lista.",
+        "Sem timeout a thread se solta sozinha depois de um tempo.",
+        "Timeout é a última peça a configurar."
       ],
-      "a": 0,
-      "w": "Despertador.",
+      "a": 1,
+      "w": "O 0,1% de chamadas lentas esgota o pool. Uma dependência lenta derruba quem chama.",
       "t": "timeout"
     },
     {
-      "q": "Marque a leitura correta (timeout).",
+      "q": "Como 0,1% de chamadas lentas derruba tudo?",
       "o": [
-        "Sem timeout, thread presa para sempre. Primeiro da lista.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Sem timeout a thread não se solta: é a primeira peça da lista.",
+        "Sem timeout a thread se solta sozinha depois de um tempo.",
+        "Timeout é a última peça a configurar.",
+        "Se a dependência é 99,9% boa, timeout é desnecessário."
       ],
       "a": 0,
-      "w": "Despertador.",
+      "w": "O 0,1% de chamadas lentas esgota o pool. Uma dependência lenta derruba quem chama.",
       "t": "timeout"
     },
     {
-      "q": "Corrija o mito sobre timeout.",
+      "q": "A thread se solta sozinha sem timeout?",
       "o": [
-        "Sem timeout, thread presa para sempre. Primeiro da lista.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Se a dependência é 99,9% boa, timeout é desnecessário.",
+        "Sem timeout a thread não se solta: é a primeira peça da lista.",
+        "Sem timeout a thread se solta sozinha depois de um tempo.",
+        "Timeout é a última peça a configurar."
       ],
-      "a": 0,
-      "w": "Despertador.",
+      "a": 1,
+      "w": "O 0,1% de chamadas lentas esgota o pool. Uma dependência lenta derruba quem chama.",
       "t": "timeout"
     },
     {
-      "q": "No caderno, a respeito de timeout: qual vale?",
+      "q": "Timeout é a última peça?",
       "o": [
-        "Sem timeout, thread presa para sempre. Primeiro da lista.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Sem timeout a thread não se solta: é a primeira peça da lista.",
+        "Sem timeout a thread se solta sozinha depois de um tempo.",
+        "Timeout é a última peça a configurar.",
+        "Se a dependência é 99,9% boa, timeout é desnecessário."
       ],
       "a": 0,
-      "w": "Despertador.",
+      "w": "O 0,1% de chamadas lentas esgota o pool. Uma dependência lenta derruba quem chama.",
       "t": "timeout"
     },
     {
-      "q": "Se perguntarem timeout na mesa, qual frase é a verdadeira?",
+      "q": "Por que uma dependência lenta derruba quem chama?",
       "o": [
-        "Sem timeout, thread presa para sempre. Primeiro da lista.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Timeout é a última peça a configurar.",
+        "Se a dependência é 99,9% boa, timeout é desnecessário.",
+        "Sem timeout a thread não se solta: é a primeira peça da lista.",
+        "Sem timeout a thread se solta sozinha depois de um tempo."
       ],
-      "a": 0,
-      "w": "Despertador.",
+      "a": 2,
+      "w": "O 0,1% de chamadas lentas esgota o pool. Uma dependência lenta derruba quem chama.",
       "t": "timeout"
     },
     {
-      "q": "Sobre retry: qual afirmação está certa?",
+      "q": "Quando vale tentar de novo?",
       "o": [
-        "Retry só em erro transitório + operação idempotente.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Retry é sempre seguro: o servidor sabe ignorar duplicata.",
+        "Erro permanente também merece retry até funcionar.",
+        "Tente de novo só em erro passageiro e em operação que pode repetir sem efeito.",
+        "Tente de novo em qualquer erro, inclusive cobrança sem idempotency-key."
       ],
-      "a": 0,
-      "w": "Senão duplica cobrança.",
+      "a": 2,
+      "w": "Retry em cobrança sem idempotency-key cobra o cliente duas vezes.",
       "t": "retry"
     },
     {
-      "q": "Qual frase sobre retry está certa?",
+      "q": "Retry em cobrança sem idempotency-key: o que acontece?",
       "o": [
-        "Retry só em erro transitório + operação idempotente.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Tente de novo só em erro passageiro e em operação que pode repetir sem efeito.",
+        "Tente de novo em qualquer erro, inclusive cobrança sem idempotency-key.",
+        "Retry é sempre seguro: o servidor sabe ignorar duplicata.",
+        "Erro permanente também merece retry até funcionar."
       ],
       "a": 0,
-      "w": "Senão duplica cobrança.",
+      "w": "Retry em cobrança sem idempotency-key cobra o cliente duas vezes.",
       "t": "retry"
     },
     {
-      "q": "Retry — o que acontece de verdade?",
+      "q": "Retry é sempre seguro?",
       "o": [
-        "Retry só em erro transitório + operação idempotente.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Erro permanente também merece retry até funcionar.",
+        "Tente de novo só em erro passageiro e em operação que pode repetir sem efeito.",
+        "Tente de novo em qualquer erro, inclusive cobrança sem idempotency-key.",
+        "Retry é sempre seguro: o servidor sabe ignorar duplicata."
       ],
-      "a": 0,
-      "w": "Senão duplica cobrança.",
+      "a": 1,
+      "w": "Retry em cobrança sem idempotency-key cobra o cliente duas vezes.",
       "t": "retry"
     },
     {
-      "q": "Marque a leitura correta (retry).",
+      "q": "Que tipo de erro merece retry?",
       "o": [
-        "Retry só em erro transitório + operação idempotente.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Tente de novo só em erro passageiro e em operação que pode repetir sem efeito.",
+        "Tente de novo em qualquer erro, inclusive cobrança sem idempotency-key.",
+        "Retry é sempre seguro: o servidor sabe ignorar duplicata.",
+        "Erro permanente também merece retry até funcionar."
       ],
       "a": 0,
-      "w": "Senão duplica cobrança.",
+      "w": "Retry em cobrança sem idempotency-key cobra o cliente duas vezes.",
       "t": "retry"
     },
     {
-      "q": "Corrija o mito sobre retry.",
+      "q": "Erro permanente merece retry?",
       "o": [
-        "Retry só em erro transitório + operação idempotente.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Tente de novo em qualquer erro, inclusive cobrança sem idempotency-key.",
+        "Retry é sempre seguro: o servidor sabe ignorar duplicata.",
+        "Erro permanente também merece retry até funcionar.",
+        "Tente de novo só em erro passageiro e em operação que pode repetir sem efeito."
       ],
-      "a": 0,
-      "w": "Senão duplica cobrança.",
+      "a": 3,
+      "w": "Retry em cobrança sem idempotency-key cobra o cliente duas vezes.",
       "t": "retry"
     },
     {
-      "q": "No caderno, a respeito de retry: qual vale?",
+      "q": "Que propriedade a operação precisa ter para repetir?",
       "o": [
-        "Retry só em erro transitório + operação idempotente.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Erro permanente também merece retry até funcionar.",
+        "Tente de novo só em erro passageiro e em operação que pode repetir sem efeito.",
+        "Tente de novo em qualquer erro, inclusive cobrança sem idempotency-key.",
+        "Retry é sempre seguro: o servidor sabe ignorar duplicata."
       ],
-      "a": 0,
-      "w": "Senão duplica cobrança.",
+      "a": 1,
+      "w": "Retry em cobrança sem idempotency-key cobra o cliente duas vezes.",
       "t": "retry"
     },
     {
-      "q": "Se perguntarem retry na mesa, qual frase é a verdadeira?",
+      "q": "Por que repetir cobrança é perigoso?",
       "o": [
-        "Retry só em erro transitório + operação idempotente.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Tente de novo só em erro passageiro e em operação que pode repetir sem efeito.",
+        "Tente de novo em qualquer erro, inclusive cobrança sem idempotency-key.",
+        "Retry é sempre seguro: o servidor sabe ignorar duplicata.",
+        "Erro permanente também merece retry até funcionar."
       ],
       "a": 0,
-      "w": "Senão duplica cobrança.",
+      "w": "Retry em cobrança sem idempotency-key cobra o cliente duas vezes.",
       "t": "retry"
     },
     {
-      "q": "Sobre jitter: qual afirmação está certa?",
+      "q": "Backoff sem jitter causa o quê?",
       "o": [
-        "Backoff sem jitter sincroniza a manada.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Backoff sem jitter sincroniza a manada de retries.",
+        "Backoff já espalha as tentativas sem precisar de jitter.",
+        "O jitter na espera atrasa a recuperação sem benefício.",
+        "Todos voltarem no mesmo instante não causa problema."
       ],
       "a": 0,
-      "w": "Aleatorize.",
+      "w": "Todos voltam no mesmo instante e derrubam de novo. O jitter espalha.",
       "t": "jitter"
     },
     {
-      "q": "Qual frase sobre jitter está certa?",
+      "q": "Para que serve o jitter na espera?",
       "o": [
-        "Backoff sem jitter sincroniza a manada.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Backoff já espalha as tentativas sem precisar de jitter.",
+        "O jitter na espera atrasa a recuperação sem benefício.",
+        "Todos voltarem no mesmo instante não causa problema.",
+        "Backoff sem jitter sincroniza a manada de retries."
       ],
-      "a": 0,
-      "w": "Aleatorize.",
+      "a": 3,
+      "w": "Todos voltam no mesmo instante e derrubam de novo. O jitter espalha.",
       "t": "jitter"
     },
     {
-      "q": "Jitter — o que acontece de verdade?",
+      "q": "Todos voltarem no mesmo instante é problema?",
       "o": [
-        "Backoff sem jitter sincroniza a manada.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Backoff já espalha as tentativas sem precisar de jitter.",
+        "O jitter na espera atrasa a recuperação sem benefício.",
+        "Todos voltarem no mesmo instante não causa problema.",
+        "Backoff sem jitter sincroniza a manada de retries."
       ],
-      "a": 0,
-      "w": "Aleatorize.",
+      "a": 3,
+      "w": "Todos voltam no mesmo instante e derrubam de novo. O jitter espalha.",
       "t": "jitter"
     },
     {
-      "q": "Marque a leitura correta (jitter).",
+      "q": "Backoff basta para espalhar as tentativas?",
       "o": [
-        "Backoff sem jitter sincroniza a manada.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Backoff já espalha as tentativas sem precisar de jitter.",
+        "O jitter na espera atrasa a recuperação sem benefício.",
+        "Todos voltarem no mesmo instante não causa problema.",
+        "Backoff sem jitter sincroniza a manada de retries."
       ],
-      "a": 0,
-      "w": "Aleatorize.",
+      "a": 3,
+      "w": "Todos voltam no mesmo instante e derrubam de novo. O jitter espalha.",
       "t": "jitter"
     },
     {
-      "q": "Corrija o mito sobre jitter.",
+      "q": "O que sincroniza a manada de retries?",
       "o": [
-        "Backoff sem jitter sincroniza a manada.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Backoff já espalha as tentativas sem precisar de jitter.",
+        "O jitter na espera atrasa a recuperação sem benefício.",
+        "Todos voltarem no mesmo instante não causa problema.",
+        "Backoff sem jitter sincroniza a manada de retries."
       ],
-      "a": 0,
-      "w": "Aleatorize.",
+      "a": 3,
+      "w": "Todos voltam no mesmo instante e derrubam de novo. O jitter espalha.",
       "t": "jitter"
     },
     {
-      "q": "No caderno, a respeito de jitter: qual vale?",
+      "q": "O jitter atrasa a recuperação?",
       "o": [
-        "Backoff sem jitter sincroniza a manada.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Todos voltarem no mesmo instante não causa problema.",
+        "Backoff sem jitter sincroniza a manada de retries.",
+        "Backoff já espalha as tentativas sem precisar de jitter.",
+        "O jitter na espera atrasa a recuperação sem benefício."
       ],
-      "a": 0,
-      "w": "Aleatorize.",
+      "a": 1,
+      "w": "Todos voltam no mesmo instante e derrubam de novo. O jitter espalha.",
       "t": "jitter"
     },
     {
-      "q": "Se perguntarem jitter na mesa, qual frase é a verdadeira?",
+      "q": "Como evitar que as tentativas cheguem juntas?",
       "o": [
-        "Backoff sem jitter sincroniza a manada.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Todos voltarem no mesmo instante não causa problema.",
+        "Backoff sem jitter sincroniza a manada de retries.",
+        "Backoff já espalha as tentativas sem precisar de jitter.",
+        "O jitter na espera atrasa a recuperação sem benefício."
       ],
-      "a": 0,
-      "w": "Aleatorize.",
+      "a": 1,
+      "w": "Todos voltam no mesmo instante e derrubam de novo. O jitter espalha.",
       "t": "jitter"
     },
     {
-      "q": "Sobre breaker: qual afirmação está certa?",
+      "q": "O que o breaker faz quando a dependência morre?",
       "o": [
-        "Breaker para de martelar o morto.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Aberto significa que o breaker está passando o tráfego normalmente.",
+        "O breaker para de ligar para quem está morto: falha rápido em vez de esperar.",
+        "O breaker continua tentando todas as chamadas enquanto a dependência está fora.",
+        "O breaker conserta a dependência que está fora do ar."
       ],
-      "a": 0,
-      "w": "Fecha o circuito.",
+      "a": 1,
+      "w": "Fechado passa, aberto falha na hora, half-open testa com poucas chamadas.",
       "t": "breaker"
     },
     {
-      "q": "Qual frase sobre breaker está certa?",
+      "q": "Falhar rápido é melhor que esperar? Por quê?",
       "o": [
-        "Breaker para de martelar o morto.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O breaker conserta a dependência que está fora do ar.",
+        "Aberto significa que o breaker está passando o tráfego normalmente.",
+        "O breaker para de ligar para quem está morto: falha rápido em vez de esperar.",
+        "O breaker continua tentando todas as chamadas enquanto a dependência está fora."
       ],
-      "a": 0,
-      "w": "Fecha o circuito.",
+      "a": 2,
+      "w": "Fechado passa, aberto falha na hora, half-open testa com poucas chamadas.",
       "t": "breaker"
     },
     {
-      "q": "Breaker — o que acontece de verdade?",
+      "q": "Quais são os três estados do breaker?",
       "o": [
-        "Breaker para de martelar o morto.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O breaker continua tentando todas as chamadas enquanto a dependência está fora.",
+        "O breaker conserta a dependência que está fora do ar.",
+        "Aberto significa que o breaker está passando o tráfego normalmente.",
+        "O breaker para de ligar para quem está morto: falha rápido em vez de esperar."
       ],
-      "a": 0,
-      "w": "Fecha o circuito.",
+      "a": 3,
+      "w": "Fechado passa, aberto falha na hora, half-open testa com poucas chamadas.",
       "t": "breaker"
     },
     {
-      "q": "Marque a leitura correta (breaker).",
+      "q": "Aberto significa passar o tráfego?",
       "o": [
-        "Breaker para de martelar o morto.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O breaker continua tentando todas as chamadas enquanto a dependência está fora.",
+        "O breaker conserta a dependência que está fora do ar.",
+        "Aberto significa que o breaker está passando o tráfego normalmente.",
+        "O breaker para de ligar para quem está morto: falha rápido em vez de esperar."
       ],
-      "a": 0,
-      "w": "Fecha o circuito.",
+      "a": 3,
+      "w": "Fechado passa, aberto falha na hora, half-open testa com poucas chamadas.",
       "t": "breaker"
     },
     {
-      "q": "Corrija o mito sobre breaker.",
+      "q": "O breaker conserta a dependência?",
       "o": [
-        "Breaker para de martelar o morto.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O breaker para de ligar para quem está morto: falha rápido em vez de esperar.",
+        "O breaker continua tentando todas as chamadas enquanto a dependência está fora.",
+        "O breaker conserta a dependência que está fora do ar.",
+        "Aberto significa que o breaker está passando o tráfego normalmente."
       ],
       "a": 0,
-      "w": "Fecha o circuito.",
+      "w": "Fechado passa, aberto falha na hora, half-open testa com poucas chamadas.",
       "t": "breaker"
     },
     {
-      "q": "No caderno, a respeito de breaker: qual vale?",
+      "q": "O que o breaker evita que você faça com o morto?",
       "o": [
-        "Breaker para de martelar o morto.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O breaker continua tentando todas as chamadas enquanto a dependência está fora.",
+        "O breaker conserta a dependência que está fora do ar.",
+        "Aberto significa que o breaker está passando o tráfego normalmente.",
+        "O breaker para de ligar para quem está morto: falha rápido em vez de esperar."
       ],
-      "a": 0,
-      "w": "Fecha o circuito.",
+      "a": 3,
+      "w": "Fechado passa, aberto falha na hora, half-open testa com poucas chamadas.",
       "t": "breaker"
     },
     {
-      "q": "Se perguntarem breaker na mesa, qual frase é a verdadeira?",
+      "q": "No estado aberto, o que acontece com a chamada?",
       "o": [
-        "Breaker para de martelar o morto.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O breaker continua tentando todas as chamadas enquanto a dependência está fora.",
+        "O breaker conserta a dependência que está fora do ar.",
+        "Aberto significa que o breaker está passando o tráfego normalmente.",
+        "O breaker para de ligar para quem está morto: falha rápido em vez de esperar."
       ],
-      "a": 0,
-      "w": "Fecha o circuito.",
+      "a": 3,
+      "w": "Fechado passa, aberto falha na hora, half-open testa com poucas chamadas.",
       "t": "breaker"
     },
     {
-      "q": "Sobre bulkhead: qual afirmação está certa?",
+      "q": "O que o pool isolado por dependência protege?",
       "o": [
-        "Pool isolado por dependência. Um telefone não ocupa todas as linhas.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Um pool único para todas as dependências dá o mesmo isolamento.",
+        "Isolamento de falha é adicionar uma biblioteca no projeto.",
+        "Pool isolado torna a dependência lenta mais rápida.",
+        "Pool isolado por dependência: uma dependência lenta não esgota as threads das outras."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 3,
+      "w": "Sem isolamento, a dependência lenta come todas as linhas e as outras esperam na fila.",
       "t": "bulkhead"
     },
     {
-      "q": "Qual frase sobre bulkhead está certa?",
+      "q": "Um pool único dá o mesmo isolamento?",
       "o": [
-        "Pool isolado por dependência. Um telefone não ocupa todas as linhas.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Pool isolado por dependência: uma dependência lenta não esgota as threads das outras.",
+        "Um pool único para todas as dependências dá o mesmo isolamento.",
+        "Isolamento de falha é adicionar uma biblioteca no projeto.",
+        "Pool isolado torna a dependência lenta mais rápida."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "Sem isolamento, a dependência lenta come todas as linhas e as outras esperam na fila.",
       "t": "bulkhead"
     },
     {
-      "q": "Bulkhead — o que acontece de verdade?",
+      "q": "A dependência lenta pode comer as threads das outras?",
       "o": [
-        "Pool isolado por dependência. Um telefone não ocupa todas as linhas.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Pool isolado por dependência: uma dependência lenta não esgota as threads das outras.",
+        "Um pool único para todas as dependências dá o mesmo isolamento.",
+        "Isolamento de falha é adicionar uma biblioteca no projeto.",
+        "Pool isolado torna a dependência lenta mais rápida."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "Sem isolamento, a dependência lenta come todas as linhas e as outras esperam na fila.",
       "t": "bulkhead"
     },
     {
-      "q": "Marque a leitura correta (bulkhead).",
+      "q": "Isolamento de falha é instalar uma biblioteca?",
       "o": [
-        "Pool isolado por dependência. Um telefone não ocupa todas as linhas.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Um pool único para todas as dependências dá o mesmo isolamento.",
+        "Isolamento de falha é adicionar uma biblioteca no projeto.",
+        "Pool isolado torna a dependência lenta mais rápida.",
+        "Pool isolado por dependência: uma dependência lenta não esgota as threads das outras."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 3,
+      "w": "Sem isolamento, a dependência lenta come todas as linhas e as outras esperam na fila.",
       "t": "bulkhead"
     },
     {
-      "q": "Corrija o mito sobre bulkhead.",
+      "q": "Pool isolado deixa a dependência lenta mais rápida?",
       "o": [
-        "Pool isolado por dependência. Um telefone não ocupa todas as linhas.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Isolamento de falha é adicionar uma biblioteca no projeto.",
+        "Pool isolado torna a dependência lenta mais rápida.",
+        "Pool isolado por dependência: uma dependência lenta não esgota as threads das outras.",
+        "Um pool único para todas as dependências dá o mesmo isolamento."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "Sem isolamento, a dependência lenta come todas as linhas e as outras esperam na fila.",
       "t": "bulkhead"
     },
     {
-      "q": "No caderno, a respeito de bulkhead: qual vale?",
+      "q": "Por que separar pools por dependência?",
       "o": [
-        "Pool isolado por dependência. Um telefone não ocupa todas as linhas.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Isolamento de falha é adicionar uma biblioteca no projeto.",
+        "Pool isolado torna a dependência lenta mais rápida.",
+        "Pool isolado por dependência: uma dependência lenta não esgota as threads das outras.",
+        "Um pool único para todas as dependências dá o mesmo isolamento."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "Sem isolamento, a dependência lenta come todas as linhas e as outras esperam na fila.",
       "t": "bulkhead"
     },
     {
-      "q": "Se perguntarem bulkhead na mesa, qual frase é a verdadeira?",
+      "q": "Você tem timeout mas um pool só. Onde ainda dói?",
       "o": [
-        "Pool isolado por dependência. Um telefone não ocupa todas as linhas.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Pool isolado por dependência: uma dependência lenta não esgota as threads das outras.",
+        "Um pool único para todas as dependências dá o mesmo isolamento.",
+        "Isolamento de falha é adicionar uma biblioteca no projeto.",
+        "Pool isolado torna a dependência lenta mais rápida."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "Sem isolamento, a dependência lenta come todas as linhas e as outras esperam na fila.",
       "t": "bulkhead"
     },
     {
-      "q": "Sobre fallback: qual afirmação está certa?",
+      "q": "Qual é a última peça da ordem?",
       "o": [
-        "Degradar em vez de 500. Cardápio de ontem.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Devolver erro genérico é sempre mais honesto que degradar.",
+        "Resposta degradada é a última peça: entregue algo honesto em vez de erro genérico.",
+        "Resposta degradada é a primeira peça a configurar.",
+        "Resposta degradada dispensa timeout, porque já protege a thread."
       ],
-      "a": 0,
-      "w": "Por último.",
+      "a": 1,
+      "w": "Cache, valor padrão, revisão manual. Degradar é melhor que devolver erro para todo mundo.",
       "t": "fallback"
     },
     {
-      "q": "Qual frase sobre fallback está certa?",
+      "q": "O que a resposta degradada entrega no lugar do erro?",
       "o": [
-        "Degradar em vez de 500. Cardápio de ontem.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Resposta degradada dispensa timeout, porque já protege a thread.",
+        "Devolver erro genérico é sempre mais honesto que degradar.",
+        "Resposta degradada é a última peça: entregue algo honesto em vez de erro genérico.",
+        "Resposta degradada é a primeira peça a configurar."
       ],
-      "a": 0,
-      "w": "Por último.",
+      "a": 2,
+      "w": "Cache, valor padrão, revisão manual. Degradar é melhor que devolver erro para todo mundo.",
       "t": "fallback"
     },
     {
-      "q": "Fallback — o que acontece de verdade?",
+      "q": "Resposta degradada dispensa timeout?",
       "o": [
-        "Degradar em vez de 500. Cardápio de ontem.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Resposta degradada dispensa timeout, porque já protege a thread.",
+        "Devolver erro genérico é sempre mais honesto que degradar.",
+        "Resposta degradada é a última peça: entregue algo honesto em vez de erro genérico.",
+        "Resposta degradada é a primeira peça a configurar."
       ],
-      "a": 0,
-      "w": "Por último.",
+      "a": 2,
+      "w": "Cache, valor padrão, revisão manual. Degradar é melhor que devolver erro para todo mundo.",
       "t": "fallback"
     },
     {
-      "q": "Marque a leitura correta (fallback).",
+      "q": "Que formas de resposta degradada a aula cita?",
       "o": [
-        "Degradar em vez de 500. Cardápio de ontem.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Resposta degradada é a primeira peça a configurar.",
+        "Resposta degradada dispensa timeout, porque já protege a thread.",
+        "Devolver erro genérico é sempre mais honesto que degradar.",
+        "Resposta degradada é a última peça: entregue algo honesto em vez de erro genérico."
       ],
-      "a": 0,
-      "w": "Por último.",
+      "a": 3,
+      "w": "Cache, valor padrão, revisão manual. Degradar é melhor que devolver erro para todo mundo.",
       "t": "fallback"
     },
     {
-      "q": "Corrija o mito sobre fallback.",
+      "q": "Resposta degradada é a primeira peça?",
       "o": [
-        "Degradar em vez de 500. Cardápio de ontem.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Resposta degradada dispensa timeout, porque já protege a thread.",
+        "Devolver erro genérico é sempre mais honesto que degradar.",
+        "Resposta degradada é a última peça: entregue algo honesto em vez de erro genérico.",
+        "Resposta degradada é a primeira peça a configurar."
       ],
-      "a": 0,
-      "w": "Por último.",
+      "a": 2,
+      "w": "Cache, valor padrão, revisão manual. Degradar é melhor que devolver erro para todo mundo.",
       "t": "fallback"
     },
     {
-      "q": "No caderno, a respeito de fallback: qual vale?",
+      "q": "Degradar ou devolver erro genérico: o que a aula prefere?",
       "o": [
-        "Degradar em vez de 500. Cardápio de ontem.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Resposta degradada dispensa timeout, porque já protege a thread.",
+        "Devolver erro genérico é sempre mais honesto que degradar.",
+        "Resposta degradada é a última peça: entregue algo honesto em vez de erro genérico.",
+        "Resposta degradada é a primeira peça a configurar."
       ],
-      "a": 0,
-      "w": "Por último.",
+      "a": 2,
+      "w": "Cache, valor padrão, revisão manual. Degradar é melhor que devolver erro para todo mundo.",
       "t": "fallback"
     },
     {
-      "q": "Se perguntarem fallback na mesa, qual frase é a verdadeira?",
+      "q": "Por que degradar em vez de falhar?",
       "o": [
-        "Degradar em vez de 500. Cardápio de ontem.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Resposta degradada é a última peça: entregue algo honesto em vez de erro genérico.",
+        "Resposta degradada é a primeira peça a configurar.",
+        "Resposta degradada dispensa timeout, porque já protege a thread.",
+        "Devolver erro genérico é sempre mais honesto que degradar."
       ],
       "a": 0,
-      "w": "Por último.",
+      "w": "Cache, valor padrão, revisão manual. Degradar é melhor que devolver erro para todo mundo.",
       "t": "fallback"
     },
     {
-      "q": "Sobre retry sem limite: qual afirmação está certa?",
+      "q": "Retry sem teto e sem breaker causa o quê?",
       "o": [
-        "Retry sem limite e sem breaker vira queda total.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Retry sem teto acelera a recuperação da dependência.",
+        "Retry sem teto não muda a carga sobre a dependência.",
+        "Só o breaker importa: o teto de tentativas é detalhe.",
+        "Retry sem teto e sem breaker transforma degradação em queda total."
       ],
-      "a": 0,
-      "w": "Warn da aula.",
+      "a": 3,
+      "w": "Duzentos clientes repetindo na hora multiplicam a carga em cima de quem já está no chão.",
       "t": "retry sem limite"
     },
     {
-      "q": "Qual frase sobre retry sem limite está certa?",
+      "q": "Repetir sem limite acelera a recuperação?",
       "o": [
-        "Retry sem limite e sem breaker vira queda total.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Retry sem teto e sem breaker transforma degradação em queda total.",
+        "Retry sem teto acelera a recuperação da dependência.",
+        "Retry sem teto não muda a carga sobre a dependência.",
+        "Só o breaker importa: o teto de tentativas é detalhe."
       ],
       "a": 0,
-      "w": "Warn da aula.",
+      "w": "Duzentos clientes repetindo na hora multiplicam a carga em cima de quem já está no chão.",
       "t": "retry sem limite"
     },
     {
-      "q": "Retry sem limite — o que acontece de verdade?",
+      "q": "O que acontece com a carga quando todos repetem na hora?",
       "o": [
-        "Retry sem limite e sem breaker vira queda total.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Retry sem teto não muda a carga sobre a dependência.",
+        "Só o breaker importa: o teto de tentativas é detalhe.",
+        "Retry sem teto e sem breaker transforma degradação em queda total.",
+        "Retry sem teto acelera a recuperação da dependência."
       ],
-      "a": 0,
-      "w": "Warn da aula.",
+      "a": 2,
+      "w": "Duzentos clientes repetindo na hora multiplicam a carga em cima de quem já está no chão.",
       "t": "retry sem limite"
     },
     {
-      "q": "Marque a leitura correta (retry sem limite).",
+      "q": "Retry sem teto muda a carga na dependência?",
       "o": [
-        "Retry sem limite e sem breaker vira queda total.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Só o breaker importa: o teto de tentativas é detalhe.",
+        "Retry sem teto e sem breaker transforma degradação em queda total.",
+        "Retry sem teto acelera a recuperação da dependência.",
+        "Retry sem teto não muda a carga sobre a dependência."
       ],
-      "a": 0,
-      "w": "Warn da aula.",
+      "a": 1,
+      "w": "Duzentos clientes repetindo na hora multiplicam a carga em cima de quem já está no chão.",
       "t": "retry sem limite"
     },
     {
-      "q": "Corrija o mito sobre retry sem limite.",
+      "q": "O teto de tentativas é detalhe?",
       "o": [
-        "Retry sem limite e sem breaker vira queda total.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Retry sem teto acelera a recuperação da dependência.",
+        "Retry sem teto não muda a carga sobre a dependência.",
+        "Só o breaker importa: o teto de tentativas é detalhe.",
+        "Retry sem teto e sem breaker transforma degradação em queda total."
       ],
-      "a": 0,
-      "w": "Warn da aula.",
+      "a": 3,
+      "w": "Duzentos clientes repetindo na hora multiplicam a carga em cima de quem já está no chão.",
       "t": "retry sem limite"
     },
     {
-      "q": "No caderno, a respeito de retry sem limite: qual vale?",
+      "q": "Como a degradação vira queda total?",
       "o": [
-        "Retry sem limite e sem breaker vira queda total.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Retry sem teto não muda a carga sobre a dependência.",
+        "Só o breaker importa: o teto de tentativas é detalhe.",
+        "Retry sem teto e sem breaker transforma degradação em queda total.",
+        "Retry sem teto acelera a recuperação da dependência."
       ],
-      "a": 0,
-      "w": "Warn da aula.",
+      "a": 2,
+      "w": "Duzentos clientes repetindo na hora multiplicam a carga em cima de quem já está no chão.",
       "t": "retry sem limite"
     },
     {
-      "q": "Se perguntarem retry sem limite na mesa, qual frase é a verdadeira?",
+      "q": "Duzentos clientes repetindo: qual o efeito na dependência?",
       "o": [
-        "Retry sem limite e sem breaker vira queda total.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Retry sem teto acelera a recuperação da dependência.",
+        "Retry sem teto não muda a carga sobre a dependência.",
+        "Só o breaker importa: o teto de tentativas é detalhe.",
+        "Retry sem teto e sem breaker transforma degradação em queda total."
       ],
-      "a": 0,
-      "w": "Warn da aula.",
+      "a": 3,
+      "w": "Duzentos clientes repetindo na hora multiplicam a carga em cima de quem já está no chão.",
       "t": "retry sem limite"
     },
     {
-      "q": "Sobre gateway: qual afirmação está certa?",
+      "q": "O que o gateway faz?",
       "o": [
-        "Gateway/BFF: auth, rate limit, agregação. Não a regra de checkout.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O gateway faz autenticação, rate limit e roteamento, não a regra do negócio.",
+        "O gateway é o lugar certo para a regra de desconto.",
+        "O gateway que faz autenticação e rota já é a cozinha de um cliente.",
+        "Autenticação e rate limit devem morar no serviço de negócio."
       ],
       "a": 0,
-      "w": "Fronteira.",
+      "w": "Regra de desconto no gateway vira um segundo monolito, agora no meio do caminho.",
       "t": "gateway"
     },
     {
-      "q": "Qual frase sobre gateway está certa?",
+      "q": "A regra de desconto mora no gateway?",
       "o": [
-        "Gateway/BFF: auth, rate limit, agregação. Não a regra de checkout.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O gateway faz autenticação, rate limit e roteamento, não a regra do negócio.",
+        "O gateway é o lugar certo para a regra de desconto.",
+        "O gateway que faz autenticação e rota já é a cozinha de um cliente.",
+        "Autenticação e rate limit devem morar no serviço de negócio."
       ],
       "a": 0,
-      "w": "Fronteira.",
+      "w": "Regra de desconto no gateway vira um segundo monolito, agora no meio do caminho.",
       "t": "gateway"
     },
     {
-      "q": "Gateway — o que acontece de verdade?",
+      "q": "O que acontece quando a regra do negócio vai para a porta?",
       "o": [
-        "Gateway/BFF: auth, rate limit, agregação. Não a regra de checkout.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O gateway faz autenticação, rate limit e roteamento, não a regra do negócio.",
+        "O gateway é o lugar certo para a regra de desconto.",
+        "O gateway que faz autenticação e rota já é a cozinha de um cliente.",
+        "Autenticação e rate limit devem morar no serviço de negócio."
       ],
       "a": 0,
-      "w": "Fronteira.",
+      "w": "Regra de desconto no gateway vira um segundo monolito, agora no meio do caminho.",
       "t": "gateway"
     },
     {
-      "q": "Marque a leitura correta (gateway).",
+      "q": "Autenticação e rate limit moram onde?",
       "o": [
-        "Gateway/BFF: auth, rate limit, agregação. Não a regra de checkout.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Autenticação e rate limit devem morar no serviço de negócio.",
+        "O gateway faz autenticação, rate limit e roteamento, não a regra do negócio.",
+        "O gateway é o lugar certo para a regra de desconto.",
+        "O gateway que faz autenticação e rota já é a cozinha de um cliente."
       ],
-      "a": 0,
-      "w": "Fronteira.",
+      "a": 1,
+      "w": "Regra de desconto no gateway vira um segundo monolito, agora no meio do caminho.",
       "t": "gateway"
     },
     {
-      "q": "Corrija o mito sobre gateway.",
+      "q": "O gateway é a cozinha de um cliente?",
       "o": [
-        "Gateway/BFF: auth, rate limit, agregação. Não a regra de checkout.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O gateway faz autenticação, rate limit e roteamento, não a regra do negócio.",
+        "O gateway é o lugar certo para a regra de desconto.",
+        "O gateway que faz autenticação e rota já é a cozinha de um cliente.",
+        "Autenticação e rate limit devem morar no serviço de negócio."
       ],
       "a": 0,
-      "w": "Fronteira.",
+      "w": "Regra de desconto no gateway vira um segundo monolito, agora no meio do caminho.",
       "t": "gateway"
     },
     {
-      "q": "No caderno, a respeito de gateway: qual vale?",
+      "q": "Quais responsabilidades cabem no gateway?",
       "o": [
-        "Gateway/BFF: auth, rate limit, agregação. Não a regra de checkout.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O gateway faz autenticação, rate limit e roteamento, não a regra do negócio.",
+        "O gateway é o lugar certo para a regra de desconto.",
+        "O gateway que faz autenticação e rota já é a cozinha de um cliente.",
+        "Autenticação e rate limit devem morar no serviço de negócio."
       ],
       "a": 0,
-      "w": "Fronteira.",
+      "w": "Regra de desconto no gateway vira um segundo monolito, agora no meio do caminho.",
       "t": "gateway"
     },
     {
-      "q": "Se perguntarem gateway na mesa, qual frase é a verdadeira?",
+      "q": "Por que regra na porta vira segundo monolito?",
       "o": [
-        "Gateway/BFF: auth, rate limit, agregação. Não a regra de checkout.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O gateway que faz autenticação e rota já é a cozinha de um cliente.",
+        "Autenticação e rate limit devem morar no serviço de negócio.",
+        "O gateway faz autenticação, rate limit e roteamento, não a regra do negócio.",
+        "O gateway é o lugar certo para a regra de desconto."
       ],
-      "a": 0,
-      "w": "Fronteira.",
+      "a": 2,
+      "w": "Regra de desconto no gateway vira um segundo monolito, agora no meio do caminho.",
       "t": "gateway"
     },
     {
-      "q": "Sobre API evolução: qual afirmação está certa?",
+      "q": "Como evoluir a interface sem quebrar quem consome?",
       "o": [
-        "Evoluir API sem quebrar consumidor: versão, campos opcionais.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Evoluir a interface sem quebrar quem consome: campo novo opcional, remoção só com versão.",
+        "Evoluir a interface é renomear campo à vontade: o consumidor se adapta.",
+        "Campo novo precisa ser obrigatório para o contrato ficar claro.",
+        "Remover campo em uso não afeta quem já consome a interface."
       ],
       "a": 0,
-      "w": "Contrato.",
+      "w": "Remover campo em uso quebra o aplicativo da loja. Contrato é lei, versão não é enfeite.",
       "t": "API evolução"
     },
     {
-      "q": "Qual frase sobre API evolução está certa?",
+      "q": "Campo novo entra obrigatório ou opcional?",
       "o": [
-        "Evoluir API sem quebrar consumidor: versão, campos opcionais.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Remover campo em uso não afeta quem já consome a interface.",
+        "Evoluir a interface sem quebrar quem consome: campo novo opcional, remoção só com versão.",
+        "Evoluir a interface é renomear campo à vontade: o consumidor se adapta.",
+        "Campo novo precisa ser obrigatório para o contrato ficar claro."
       ],
-      "a": 0,
-      "w": "Contrato.",
+      "a": 1,
+      "w": "Remover campo em uso quebra o aplicativo da loja. Contrato é lei, versão não é enfeite.",
       "t": "API evolução"
     },
     {
-      "q": "API evolução — o que acontece de verdade?",
+      "q": "Remover campo em uso é seguro?",
       "o": [
-        "Evoluir API sem quebrar consumidor: versão, campos opcionais.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Campo novo precisa ser obrigatório para o contrato ficar claro.",
+        "Remover campo em uso não afeta quem já consome a interface.",
+        "Evoluir a interface sem quebrar quem consome: campo novo opcional, remoção só com versão.",
+        "Evoluir a interface é renomear campo à vontade: o consumidor se adapta."
       ],
-      "a": 0,
-      "w": "Contrato.",
+      "a": 2,
+      "w": "Remover campo em uso quebra o aplicativo da loja. Contrato é lei, versão não é enfeite.",
       "t": "API evolução"
     },
     {
-      "q": "Marque a leitura correta (API evolução).",
+      "q": "Renomear campo à vontade funciona?",
       "o": [
-        "Evoluir API sem quebrar consumidor: versão, campos opcionais.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Evoluir a interface sem quebrar quem consome: campo novo opcional, remoção só com versão.",
+        "Evoluir a interface é renomear campo à vontade: o consumidor se adapta.",
+        "Campo novo precisa ser obrigatório para o contrato ficar claro.",
+        "Remover campo em uso não afeta quem já consome a interface."
       ],
       "a": 0,
-      "w": "Contrato.",
+      "w": "Remover campo em uso quebra o aplicativo da loja. Contrato é lei, versão não é enfeite.",
       "t": "API evolução"
     },
     {
-      "q": "Corrija o mito sobre API evolução.",
+      "q": "O que exige versão nova?",
       "o": [
-        "Evoluir API sem quebrar consumidor: versão, campos opcionais.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Remover campo em uso não afeta quem já consome a interface.",
+        "Evoluir a interface sem quebrar quem consome: campo novo opcional, remoção só com versão.",
+        "Evoluir a interface é renomear campo à vontade: o consumidor se adapta.",
+        "Campo novo precisa ser obrigatório para o contrato ficar claro."
       ],
-      "a": 0,
-      "w": "Contrato.",
+      "a": 1,
+      "w": "Remover campo em uso quebra o aplicativo da loja. Contrato é lei, versão não é enfeite.",
       "t": "API evolução"
     },
     {
-      "q": "No caderno, a respeito de API evolução: qual vale?",
+      "q": "Campo novo precisa ser obrigatório?",
       "o": [
-        "Evoluir API sem quebrar consumidor: versão, campos opcionais.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Remover campo em uso não afeta quem já consome a interface.",
+        "Evoluir a interface sem quebrar quem consome: campo novo opcional, remoção só com versão.",
+        "Evoluir a interface é renomear campo à vontade: o consumidor se adapta.",
+        "Campo novo precisa ser obrigatório para o contrato ficar claro."
       ],
-      "a": 0,
-      "w": "Contrato.",
+      "a": 1,
+      "w": "Remover campo em uso quebra o aplicativo da loja. Contrato é lei, versão não é enfeite.",
       "t": "API evolução"
     },
     {
-      "q": "Se perguntarem API evolução na mesa, qual frase é a verdadeira?",
+      "q": "Quem paga a conta de remover campo em uso?",
       "o": [
-        "Evoluir API sem quebrar consumidor: versão, campos opcionais.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Evoluir a interface sem quebrar quem consome: campo novo opcional, remoção só com versão.",
+        "Evoluir a interface é renomear campo à vontade: o consumidor se adapta.",
+        "Campo novo precisa ser obrigatório para o contrato ficar claro.",
+        "Remover campo em uso não afeta quem já consome a interface."
       ],
       "a": 0,
-      "w": "Contrato.",
+      "w": "Remover campo em uso quebra o aplicativo da loja. Contrato é lei, versão não é enfeite.",
       "t": "API evolução"
     },
     {
-      "q": "Sobre timeout cadeia: qual afirmação está certa?",
+      "q": "Como o timeout de quem chama se relaciona com os seguintes?",
       "o": [
-        "Timeout do caller < soma dos callees, senão todo mundo espera o último.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O timeout de quem chama não tem relação com os serviços seguintes.",
+        "O timeout de quem chama não pode ser maior que a soma de quem é chamado.",
+        "O timeout de quem chama deve ser maior que a soma de quem é chamado.",
+        "Cada serviço escolhe seu timeout sem olhar a cadeia."
       ],
-      "a": 0,
-      "w": "Orçamento de tempo.",
+      "a": 1,
+      "w": "Senão quem chama espera um serviço que já desistiu. É orçamento de tempo, não número solto.",
       "t": "timeout cadeia"
     },
     {
-      "q": "Qual frase sobre timeout cadeia está certa?",
+      "q": "Cada serviço escolhe seu timeout isolado?",
       "o": [
-        "Timeout do caller < soma dos callees, senão todo mundo espera o último.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Cada serviço escolhe seu timeout sem olhar a cadeia.",
+        "O timeout de quem chama não tem relação com os serviços seguintes.",
+        "O timeout de quem chama não pode ser maior que a soma de quem é chamado.",
+        "O timeout de quem chama deve ser maior que a soma de quem é chamado."
       ],
-      "a": 0,
-      "w": "Orçamento de tempo.",
+      "a": 2,
+      "w": "Senão quem chama espera um serviço que já desistiu. É orçamento de tempo, não número solto.",
       "t": "timeout cadeia"
     },
     {
-      "q": "Timeout cadeia — o que acontece de verdade?",
+      "q": "O que é orçamento de tempo na cadeia?",
       "o": [
-        "Timeout do caller < soma dos callees, senão todo mundo espera o último.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O timeout de quem chama deve ser maior que a soma de quem é chamado.",
+        "Cada serviço escolhe seu timeout sem olhar a cadeia.",
+        "O timeout de quem chama não tem relação com os serviços seguintes.",
+        "O timeout de quem chama não pode ser maior que a soma de quem é chamado."
       ],
-      "a": 0,
-      "w": "Orçamento de tempo.",
+      "a": 3,
+      "w": "Senão quem chama espera um serviço que já desistiu. É orçamento de tempo, não número solto.",
       "t": "timeout cadeia"
     },
     {
-      "q": "Marque a leitura correta (timeout cadeia).",
+      "q": "O que acontece se quem chama espera mais que a soma?",
       "o": [
-        "Timeout do caller < soma dos callees, senão todo mundo espera o último.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O timeout de quem chama não pode ser maior que a soma de quem é chamado.",
+        "O timeout de quem chama deve ser maior que a soma de quem é chamado.",
+        "Cada serviço escolhe seu timeout sem olhar a cadeia.",
+        "O timeout de quem chama não tem relação com os serviços seguintes."
       ],
       "a": 0,
-      "w": "Orçamento de tempo.",
+      "w": "Senão quem chama espera um serviço que já desistiu. É orçamento de tempo, não número solto.",
       "t": "timeout cadeia"
     },
     {
-      "q": "Corrija o mito sobre timeout cadeia.",
+      "q": "O timeout de quem chama pode ser maior que a soma?",
       "o": [
-        "Timeout do caller < soma dos callees, senão todo mundo espera o último.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O timeout de quem chama não tem relação com os serviços seguintes.",
+        "O timeout de quem chama não pode ser maior que a soma de quem é chamado.",
+        "O timeout de quem chama deve ser maior que a soma de quem é chamado.",
+        "Cada serviço escolhe seu timeout sem olhar a cadeia."
       ],
-      "a": 0,
-      "w": "Orçamento de tempo.",
+      "a": 1,
+      "w": "Senão quem chama espera um serviço que já desistiu. É orçamento de tempo, não número solto.",
       "t": "timeout cadeia"
     },
     {
-      "q": "No caderno, a respeito de timeout cadeia: qual vale?",
+      "q": "Você espera um serviço que já desistiu. Por quê?",
       "o": [
-        "Timeout do caller < soma dos callees, senão todo mundo espera o último.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cada serviço escolhe seu timeout sem olhar a cadeia.",
+        "O timeout de quem chama não tem relação com os serviços seguintes.",
+        "O timeout de quem chama não pode ser maior que a soma de quem é chamado.",
+        "O timeout de quem chama deve ser maior que a soma de quem é chamado."
       ],
-      "a": 0,
-      "w": "Orçamento de tempo.",
+      "a": 2,
+      "w": "Senão quem chama espera um serviço que já desistiu. É orçamento de tempo, não número solto.",
       "t": "timeout cadeia"
     },
     {
-      "q": "Se perguntarem timeout cadeia na mesa, qual frase é a verdadeira?",
+      "q": "Qual o teto do timeout de quem chama?",
       "o": [
-        "Timeout do caller < soma dos callees, senão todo mundo espera o último.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O timeout de quem chama não tem relação com os serviços seguintes.",
+        "O timeout de quem chama não pode ser maior que a soma de quem é chamado.",
+        "O timeout de quem chama deve ser maior que a soma de quem é chamado.",
+        "Cada serviço escolhe seu timeout sem olhar a cadeia."
       ],
-      "a": 0,
-      "w": "Orçamento de tempo.",
+      "a": 1,
+      "w": "Senão quem chama espera um serviço que já desistiu. É orçamento de tempo, não número solto.",
       "t": "timeout cadeia"
     },
     {
-      "q": "Sobre 429: qual afirmação está certa?",
+      "q": "Quem o rate limit protege?",
       "o": [
-        "Rate limit é resiliência do sistema contra o cliente, e vice-versa.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Rate limit só protege o sistema, nunca o cliente.",
+        "Rate limit deve ser aplicado também na checagem de saúde.",
+        "Rate limit é enfeite: o cliente sempre se comporta.",
+        "Rate limit protege o sistema do cliente e o cliente do sistema."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 3,
+      "w": "Devolva o código de excesso com o tempo de espera. Não limite a checagem de saúde.",
       "t": "429"
     },
     {
-      "q": "Qual frase sobre 429 está certa?",
+      "q": "O que devolver quando o cliente passa do limite?",
       "o": [
-        "Rate limit é resiliência do sistema contra o cliente, e vice-versa.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Rate limit protege o sistema do cliente e o cliente do sistema.",
+        "Rate limit só protege o sistema, nunca o cliente.",
+        "Rate limit deve ser aplicado também na checagem de saúde.",
+        "Rate limit é enfeite: o cliente sempre se comporta."
       ],
       "a": 0,
-      "w": "Catálogo.",
+      "w": "Devolva o código de excesso com o tempo de espera. Não limite a checagem de saúde.",
       "t": "429"
     },
     {
-      "q": "429 — o que acontece de verdade?",
+      "q": "A checagem de saúde deve ser limitada?",
       "o": [
-        "Rate limit é resiliência do sistema contra o cliente, e vice-versa.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Rate limit deve ser aplicado também na checagem de saúde.",
+        "Rate limit é enfeite: o cliente sempre se comporta.",
+        "Rate limit protege o sistema do cliente e o cliente do sistema.",
+        "Rate limit só protege o sistema, nunca o cliente."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 2,
+      "w": "Devolva o código de excesso com o tempo de espera. Não limite a checagem de saúde.",
       "t": "429"
     },
     {
-      "q": "Marque a leitura correta (429).",
+      "q": "Rate limit protege só o sistema?",
       "o": [
-        "Rate limit é resiliência do sistema contra o cliente, e vice-versa.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Rate limit é enfeite: o cliente sempre se comporta.",
+        "Rate limit protege o sistema do cliente e o cliente do sistema.",
+        "Rate limit só protege o sistema, nunca o cliente.",
+        "Rate limit deve ser aplicado também na checagem de saúde."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Devolva o código de excesso com o tempo de espera. Não limite a checagem de saúde.",
       "t": "429"
     },
     {
-      "q": "Corrija o mito sobre 429.",
+      "q": "Além do código de excesso, o que informar ao cliente?",
       "o": [
-        "Rate limit é resiliência do sistema contra o cliente, e vice-versa.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Rate limit é enfeite: o cliente sempre se comporta.",
+        "Rate limit protege o sistema do cliente e o cliente do sistema.",
+        "Rate limit só protege o sistema, nunca o cliente.",
+        "Rate limit deve ser aplicado também na checagem de saúde."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Devolva o código de excesso com o tempo de espera. Não limite a checagem de saúde.",
       "t": "429"
     },
     {
-      "q": "No caderno, a respeito de 429: qual vale?",
+      "q": "Rate limit é enfeite?",
       "o": [
-        "Rate limit é resiliência do sistema contra o cliente, e vice-versa.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Rate limit só protege o sistema, nunca o cliente.",
+        "Rate limit deve ser aplicado também na checagem de saúde.",
+        "Rate limit é enfeite: o cliente sempre se comporta.",
+        "Rate limit protege o sistema do cliente e o cliente do sistema."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 3,
+      "w": "Devolva o código de excesso com o tempo de espera. Não limite a checagem de saúde.",
       "t": "429"
     },
     {
-      "q": "Se perguntarem 429 na mesa, qual frase é a verdadeira?",
+      "q": "Por que o limite protege os dois lados?",
       "o": [
-        "Rate limit é resiliência do sistema contra o cliente, e vice-versa.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Rate limit deve ser aplicado também na checagem de saúde.",
+        "Rate limit é enfeite: o cliente sempre se comporta.",
+        "Rate limit protege o sistema do cliente e o cliente do sistema.",
+        "Rate limit só protege o sistema, nunca o cliente."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 2,
+      "w": "Devolva o código de excesso com o tempo de espera. Não limite a checagem de saúde.",
       "t": "429"
     },
     {
-      "q": "Sobre idempotente GET: qual afirmação está certa?",
+      "q": "Leitura e cobrança merecem a mesma defesa?",
       "o": [
-        "GET é idempotente; POST de pagamento não. Retry diferente.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A defesa contra retry é a mesma para qualquer operação.",
+        "Uma leitura pode ser repetida sem efeito; uma cobrança não. A defesa é diferente.",
+        "Leitura e cobrança podem ser repetidas com a mesma tranquilidade.",
+        "Uma cobrança pode ser repetida sem efeito, igual à leitura."
       ],
-      "a": 0,
-      "w": "HTTP.",
+      "a": 1,
+      "w": "Repetir leitura de catálogo talvez. Repetir cobrança, só com idempotency-key.",
       "t": "idempotente GET"
     },
     {
-      "q": "Qual frase sobre idempotente GET está certa?",
+      "q": "Qual operação pode ser repetida sem efeito?",
       "o": [
-        "GET é idempotente; POST de pagamento não. Retry diferente.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Leitura e cobrança podem ser repetidas com a mesma tranquilidade.",
+        "Uma cobrança pode ser repetida sem efeito, igual à leitura.",
+        "A defesa contra retry é a mesma para qualquer operação.",
+        "Uma leitura pode ser repetida sem efeito; uma cobrança não. A defesa é diferente."
       ],
-      "a": 0,
-      "w": "HTTP.",
+      "a": 3,
+      "w": "Repetir leitura de catálogo talvez. Repetir cobrança, só com idempotency-key.",
       "t": "idempotente GET"
     },
     {
-      "q": "Idempotente GET — o que acontece de verdade?",
+      "q": "Repetir cobrança exige o quê?",
       "o": [
-        "GET é idempotente; POST de pagamento não. Retry diferente.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Uma cobrança pode ser repetida sem efeito, igual à leitura.",
+        "A defesa contra retry é a mesma para qualquer operação.",
+        "Uma leitura pode ser repetida sem efeito; uma cobrança não. A defesa é diferente.",
+        "Leitura e cobrança podem ser repetidas com a mesma tranquilidade."
       ],
-      "a": 0,
-      "w": "HTTP.",
+      "a": 2,
+      "w": "Repetir leitura de catálogo talvez. Repetir cobrança, só com idempotency-key.",
       "t": "idempotente GET"
     },
     {
-      "q": "Marque a leitura correta (idempotente GET).",
+      "q": "Uma cobrança pode ser repetida sem efeito?",
       "o": [
-        "GET é idempotente; POST de pagamento não. Retry diferente.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Uma cobrança pode ser repetida sem efeito, igual à leitura.",
+        "A defesa contra retry é a mesma para qualquer operação.",
+        "Uma leitura pode ser repetida sem efeito; uma cobrança não. A defesa é diferente.",
+        "Leitura e cobrança podem ser repetidas com a mesma tranquilidade."
       ],
-      "a": 0,
-      "w": "HTTP.",
+      "a": 2,
+      "w": "Repetir leitura de catálogo talvez. Repetir cobrança, só com idempotency-key.",
       "t": "idempotente GET"
     },
     {
-      "q": "Corrija o mito sobre idempotente GET.",
+      "q": "A defesa contra retry é igual para tudo?",
       "o": [
-        "GET é idempotente; POST de pagamento não. Retry diferente.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Uma leitura pode ser repetida sem efeito; uma cobrança não. A defesa é diferente.",
+        "Leitura e cobrança podem ser repetidas com a mesma tranquilidade.",
+        "Uma cobrança pode ser repetida sem efeito, igual à leitura.",
+        "A defesa contra retry é a mesma para qualquer operação."
       ],
       "a": 0,
-      "w": "HTTP.",
+      "w": "Repetir leitura de catálogo talvez. Repetir cobrança, só com idempotency-key.",
       "t": "idempotente GET"
     },
     {
-      "q": "No caderno, a respeito de idempotente GET: qual vale?",
+      "q": "Por que catálogo e pagamento se tratam diferente?",
       "o": [
-        "GET é idempotente; POST de pagamento não. Retry diferente.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Leitura e cobrança podem ser repetidas com a mesma tranquilidade.",
+        "Uma cobrança pode ser repetida sem efeito, igual à leitura.",
+        "A defesa contra retry é a mesma para qualquer operação.",
+        "Uma leitura pode ser repetida sem efeito; uma cobrança não. A defesa é diferente."
       ],
-      "a": 0,
-      "w": "HTTP.",
+      "a": 3,
+      "w": "Repetir leitura de catálogo talvez. Repetir cobrança, só com idempotency-key.",
       "t": "idempotente GET"
     },
     {
-      "q": "Se perguntarem idempotente GET na mesa, qual frase é a verdadeira?",
+      "q": "Que operação nunca deve repetir sem chave?",
       "o": [
-        "GET é idempotente; POST de pagamento não. Retry diferente.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Uma leitura pode ser repetida sem efeito; uma cobrança não. A defesa é diferente.",
+        "Leitura e cobrança podem ser repetidas com a mesma tranquilidade.",
+        "Uma cobrança pode ser repetida sem efeito, igual à leitura.",
+        "A defesa contra retry é a mesma para qualquer operação."
       ],
       "a": 0,
-      "w": "HTTP.",
+      "w": "Repetir leitura de catálogo talvez. Repetir cobrança, só com idempotency-key.",
       "t": "idempotente GET"
     },
     {
-      "q": "Sobre circuit half: qual afirmação está certa?",
+      "q": "O que o half-open faz?",
       "o": [
-        "Half-open prova se o morto voltou, com poucas requests.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O half-open mantém o circuito fechado até alguém reiniciar.",
+        "Não existe estado intermediário: o breaker só abre ou fecha.",
+        "O half-open prova com poucas chamadas se a dependência voltou.",
+        "O half-open libera todo o tráfego para testar de uma vez."
       ],
-      "a": 0,
-      "w": "Não abra tudo de uma vez.",
+      "a": 2,
+      "w": "Liberar tudo de uma vez para testar é a tempestade de tentativas com nome de padrão.",
       "t": "circuit half"
     },
     {
-      "q": "Qual frase sobre circuit half está certa?",
+      "q": "Liberar todo o tráfego para testar se voltou funciona?",
       "o": [
-        "Half-open prova se o morto voltou, com poucas requests.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Não existe estado intermediário: o breaker só abre ou fecha.",
+        "O half-open prova com poucas chamadas se a dependência voltou.",
+        "O half-open libera todo o tráfego para testar de uma vez.",
+        "O half-open mantém o circuito fechado até alguém reiniciar."
       ],
-      "a": 0,
-      "w": "Não abra tudo de uma vez.",
+      "a": 1,
+      "w": "Liberar tudo de uma vez para testar é a tempestade de tentativas com nome de padrão.",
       "t": "circuit half"
     },
     {
-      "q": "Circuit half — o que acontece de verdade?",
+      "q": "O half-open testa com muitas ou poucas chamadas?",
       "o": [
-        "Half-open prova se o morto voltou, com poucas requests.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O half-open libera todo o tráfego para testar de uma vez.",
+        "O half-open mantém o circuito fechado até alguém reiniciar.",
+        "Não existe estado intermediário: o breaker só abre ou fecha.",
+        "O half-open prova com poucas chamadas se a dependência voltou."
       ],
-      "a": 0,
-      "w": "Não abra tudo de uma vez.",
+      "a": 3,
+      "w": "Liberar tudo de uma vez para testar é a tempestade de tentativas com nome de padrão.",
       "t": "circuit half"
     },
     {
-      "q": "Marque a leitura correta (circuit half).",
+      "q": "Existe estado intermediário no breaker?",
       "o": [
-        "Half-open prova se o morto voltou, com poucas requests.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O half-open libera todo o tráfego para testar de uma vez.",
+        "O half-open mantém o circuito fechado até alguém reiniciar.",
+        "Não existe estado intermediário: o breaker só abre ou fecha.",
+        "O half-open prova com poucas chamadas se a dependência voltou."
       ],
-      "a": 0,
-      "w": "Não abra tudo de uma vez.",
+      "a": 3,
+      "w": "Liberar tudo de uma vez para testar é a tempestade de tentativas com nome de padrão.",
       "t": "circuit half"
     },
     {
-      "q": "Corrija o mito sobre circuit half.",
+      "q": "Como o breaker descobre que a dependência voltou?",
       "o": [
-        "Half-open prova se o morto voltou, com poucas requests.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O half-open mantém o circuito fechado até alguém reiniciar.",
+        "Não existe estado intermediário: o breaker só abre ou fecha.",
+        "O half-open prova com poucas chamadas se a dependência voltou.",
+        "O half-open libera todo o tráfego para testar de uma vez."
       ],
-      "a": 0,
-      "w": "Não abra tudo de uma vez.",
+      "a": 2,
+      "w": "Liberar tudo de uma vez para testar é a tempestade de tentativas com nome de padrão.",
       "t": "circuit half"
     },
     {
-      "q": "No caderno, a respeito de circuit half: qual vale?",
+      "q": "O half-open espera alguém reiniciar?",
       "o": [
-        "Half-open prova se o morto voltou, com poucas requests.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "O half-open prova com poucas chamadas se a dependência voltou.",
+        "O half-open libera todo o tráfego para testar de uma vez.",
+        "O half-open mantém o circuito fechado até alguém reiniciar.",
+        "Não existe estado intermediário: o breaker só abre ou fecha."
       ],
       "a": 0,
-      "w": "Não abra tudo de uma vez.",
+      "w": "Liberar tudo de uma vez para testar é a tempestade de tentativas com nome de padrão.",
       "t": "circuit half"
     },
     {
-      "q": "Se perguntarem circuit half na mesa, qual frase é a verdadeira?",
+      "q": "Por que abrir tudo no half-open é tempestade?",
       "o": [
-        "Half-open prova se o morto voltou, com poucas requests.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O half-open prova com poucas chamadas se a dependência voltou.",
+        "O half-open libera todo o tráfego para testar de uma vez.",
+        "O half-open mantém o circuito fechado até alguém reiniciar.",
+        "Não existe estado intermediário: o breaker só abre ou fecha."
       ],
       "a": 0,
-      "w": "Não abra tudo de uma vez.",
+      "w": "Liberar tudo de uma vez para testar é a tempestade de tentativas com nome de padrão.",
       "t": "circuit half"
     },
     {
-      "q": "Sobre sincronia: qual afirmação está certa?",
+      "q": "Esta aula troca o canal síncrono por mensagem?",
       "o": [
-        "Resiliência síncrona não substitui timeout. Discovery não é timeout.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Esta aula troca todo canal síncrono por mensagem.",
+        "Resiliência síncrona substitui o timeout por discovery.",
+        "Consulta na cara do usuário deveria virar mensagem para ficar resiliente.",
+        "Esta aula não troca o canal: ela impede o canal síncrono de derrubar a casa."
       ],
-      "a": 0,
-      "w": "Peças certas.",
+      "a": 3,
+      "w": "Consulta na cara continua chamada direta, com despertador. Aviso por e-mail continua mensagem.",
       "t": "sincronia"
     },
     {
-      "q": "Qual frase sobre sincronia está certa?",
+      "q": "Qual o objetivo desta aula sobre o canal síncrono?",
       "o": [
-        "Resiliência síncrona não substitui timeout. Discovery não é timeout.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Esta aula troca todo canal síncrono por mensagem.",
+        "Resiliência síncrona substitui o timeout por discovery.",
+        "Consulta na cara do usuário deveria virar mensagem para ficar resiliente.",
+        "Esta aula não troca o canal: ela impede o canal síncrono de derrubar a casa."
       ],
-      "a": 0,
-      "w": "Peças certas.",
+      "a": 3,
+      "w": "Consulta na cara continua chamada direta, com despertador. Aviso por e-mail continua mensagem.",
       "t": "sincronia"
     },
     {
-      "q": "Sincronia — o que acontece de verdade?",
+      "q": "Discovery substitui o timeout?",
       "o": [
-        "Resiliência síncrona não substitui timeout. Discovery não é timeout.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Consulta na cara do usuário deveria virar mensagem para ficar resiliente.",
+        "Esta aula não troca o canal: ela impede o canal síncrono de derrubar a casa.",
+        "Esta aula troca todo canal síncrono por mensagem.",
+        "Resiliência síncrona substitui o timeout por discovery."
       ],
-      "a": 0,
-      "w": "Peças certas.",
+      "a": 1,
+      "w": "Consulta na cara continua chamada direta, com despertador. Aviso por e-mail continua mensagem.",
       "t": "sincronia"
     },
     {
-      "q": "Marque a leitura correta (sincronia).",
+      "q": "Consulta na cara do usuário deve virar mensagem?",
       "o": [
-        "Resiliência síncrona não substitui timeout. Discovery não é timeout.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Esta aula não troca o canal: ela impede o canal síncrono de derrubar a casa.",
+        "Esta aula troca todo canal síncrono por mensagem.",
+        "Resiliência síncrona substitui o timeout por discovery.",
+        "Consulta na cara do usuário deveria virar mensagem para ficar resiliente."
       ],
       "a": 0,
-      "w": "Peças certas.",
+      "w": "Consulta na cara continua chamada direta, com despertador. Aviso por e-mail continua mensagem.",
       "t": "sincronia"
     },
     {
-      "q": "Corrija o mito sobre sincronia.",
+      "q": "O que continua síncrono depois desta aula?",
       "o": [
-        "Resiliência síncrona não substitui timeout. Discovery não é timeout.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Consulta na cara do usuário deveria virar mensagem para ficar resiliente.",
+        "Esta aula não troca o canal: ela impede o canal síncrono de derrubar a casa.",
+        "Esta aula troca todo canal síncrono por mensagem.",
+        "Resiliência síncrona substitui o timeout por discovery."
       ],
-      "a": 0,
-      "w": "Peças certas.",
+      "a": 1,
+      "w": "Consulta na cara continua chamada direta, com despertador. Aviso por e-mail continua mensagem.",
       "t": "sincronia"
     },
     {
-      "q": "No caderno, a respeito de sincronia: qual vale?",
+      "q": "O que continua mensagem depois desta aula?",
       "o": [
-        "Resiliência síncrona não substitui timeout. Discovery não é timeout.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Consulta na cara do usuário deveria virar mensagem para ficar resiliente.",
+        "Esta aula não troca o canal: ela impede o canal síncrono de derrubar a casa.",
+        "Esta aula troca todo canal síncrono por mensagem.",
+        "Resiliência síncrona substitui o timeout por discovery."
       ],
-      "a": 0,
-      "w": "Peças certas.",
+      "a": 1,
+      "w": "Consulta na cara continua chamada direta, com despertador. Aviso por e-mail continua mensagem.",
       "t": "sincronia"
     },
     {
-      "q": "Se perguntarem sincronia na mesa, qual frase é a verdadeira?",
+      "q": "Resiliência muda o canal ou protege o canal?",
       "o": [
-        "Resiliência síncrona não substitui timeout. Discovery não é timeout.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Consulta na cara do usuário deveria virar mensagem para ficar resiliente.",
+        "Esta aula não troca o canal: ela impede o canal síncrono de derrubar a casa.",
+        "Esta aula troca todo canal síncrono por mensagem.",
+        "Resiliência síncrona substitui o timeout por discovery."
       ],
-      "a": 0,
-      "w": "Peças certas.",
+      "a": 1,
+      "w": "Consulta na cara continua chamada direta, com despertador. Aviso por e-mail continua mensagem.",
       "t": "sincronia"
     }
   ]

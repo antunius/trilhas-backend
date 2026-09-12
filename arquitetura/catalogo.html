@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Catálogo — Arquitetura</title>
+  <title>catalogo — Arquitetura</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../trilhas.css" />
-  
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
       <p class="crumb"><a href="../index.html">Trilhas</a> · <a href="index.html">Arquitetura</a></p>
       <div class="eyebrow">Trilha 7 · Arquitetura</div>
-      <h1>Catálogo de componentes</h1>
-      <p class="lede">API, escala, cache, storage, pipelines e comentários — uma peça por vez.</p>
+      <h1>catalogo</h1>
+      <p class="lede"></p>
     </header>
     <nav class="toc" aria-label="Índice"><a href="index.html">Início</a>
-      <a href="fundamentos.html">Fundamentos</a>
-      <a href="semana-1.html">Semana 1</a>
-      <a href="semana-2.html">Semana 2</a>
-      <a href="semana-3.html">Semana 3</a>
-      <a href="semana-4.html">Semana 4</a>
-      <a href="semana-5.html">Semana 5</a>
-      <a href="system-design.html">Design 6–8</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="sistema.html">Sistema</a>
+      <a href="latencia.html">Latência</a>
+      <a href="disponibilidade.html">Disponibilidade</a>
+      <a href="cap.html">CAP</a>
+      <a href="acid.html">ACID</a>
+      <a href="monolito.html">Monolito</a>
+      <a href="sincrono.html">Síncrono</a>
+      <a href="cache.html">Cache</a>
+      <a href="replicacao.html">Replicação</a>
+      <a href="indice.html">Índice</a>
+      <a href="escala.html">Escala</a>
+      <a href="resiliencia.html">Resiliência</a>
+      <a href="decomposicao.html">Decomposição</a>
+      <a href="dados.html">Dados</a>
+      <a href="observabilidade.html">Observabilidade</a>
+      <a href="system-design.html">System design</a>
       <a href="staff.html">Nível Staff</a>
       <a href="catalogo.html">Catálogo</a>
       <a href="referencia.html">Arquiteto</a>
@@ -178,7 +187,7 @@
           <p><strong>Two-stage:</strong> a API só aceita o trabalho (valida, persiste intenção, 202) e um worker faz o pesado (vídeo, PDF, PSP). É o padrão do pagamento nesta trilha. <strong>Fan-in:</strong> vários produtores, um agregador (contagem, redução). <strong>CDC:</strong> o log do banco vira evento (Debezium) quando você não controla o writer ou já tem o dado sem outbox. Outbox quando você controla a transação de negócio. CDC quando o legado já escreve e você não pode mudar o commit.</p>
         </article>
       </div>
-      <div class="callout">Fila “clássica” (SQS/Rabbit) vs log (Kafka): ver <a href="../kafka/">trilha Kafka</a>. Redis como fila: serve volume baixo e job curto; não é o caderno de replay. Arquiteto não troca Kafka por Redis List “porque é mais simples” se o requisito é reprocessar 3 dias.</div>
+      <div class="callout">Fila “clássica” (SQS/Rabbit) vs log (Kafka): ver <a href="/kafka">trilha Kafka</a>. Redis como fila: serve volume baixo e job curto; não é o caderno de replay. Arquiteto não troca Kafka por Redis List “porque é mais simples” se o requisito é reprocessar 3 dias.</div>
 
       <h3 id="pipeline">Batch e stream — nível arquiteto</h3>
       <p>Unix pipeline e MapReduce são a mesma ideia: fatiar o arquivo, mapear, juntar. Spark é MapReduce que cabe na memória com DAG. Flink/Kafka Streams são o primo que não espera o dia acabar.</p>
@@ -255,13 +264,8 @@
         </ul>
       </article>
     </section>
-    <nav class="pager"><a href="staff.html">← Nível Staff</a><a class="next" href="referencia.html">Virar arquiteto →</a></nav>
-    <footer>
-      Baseado no plano da Trilha 7 — Arquitetura e Microsserviços (8 semanas, sessão longa no sábado + leitura).
-      Pré-requisito útil: trilhas de Kafka e Kubernetes já em andamento.
-      Recursos: Designing Data-Intensive Applications (Kleppmann); Building Microservices (Sam Newman, 2ª ed.); microservices.io (Chris Richardson); Fundamentals of Software Architecture (Richards &amp; Ford); modelo C4 em c4model.com.
-    </footer>
+
+    <footer>Trilha Arquitetura por tema.</footer>
   </div>
-  
 </body>
 </html>

@@ -7,7 +7,6 @@ import { GateWall } from "@/components/GateWall";
 import { arquiteturaNav, arquiteturaSimulador, neighbors } from "@/lib/catalog";
 import { articleJsonLd, pageMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
-import quiz from "@/data/arquitetura-quiz.json";
 import Link from "next/link";
 
 export const metadata: Metadata = pageMetadata({
@@ -28,27 +27,50 @@ export default function ArquiteturaQuizPage() {
           url: `${SITE_URL}${arquiteturaSimulador.path}`,
         })}
       />
-      <header className="hero">
-        <p className="crumb">
-          <Link href="/">Trilhas</Link> · <Link href="/arquitetura">Arquitetura</Link>
-        </p>
-        <div className="eyebrow">{arquiteturaSimulador.eyebrow}</div>
-        <h1>{arquiteturaSimulador.title}</h1>
-        <p className="lede">{arquiteturaSimulador.description}</p>
-      </header>
+      <Link href="/arquitetura" className="page-back">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="19" y1="12" x2="5" y2="12" />
+          <polyline points="12 19 5 12 12 5" />
+        </svg>
+        Arquitetura
+      </Link>
+
+      <div className="page-head">
+        <div className="page-icon" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </svg>
+        </div>
+        <div>
+          <h1>{arquiteturaSimulador.title}</h1>
+          <p className="page-sub">{arquiteturaSimulador.description}</p>
+        </div>
+      </div>
+
       <GateWall path={arquiteturaSimulador.path} nav={arquiteturaNav}>
-        <section id="simulador" className="week prose">
-          <h2>Simulador de entrevista — 60 perguntas</h2>
-          <p>
-            Uma pergunta por vez, como na mesa. Sem gabarito embaixo. No fim, só o mapa
-            de temas.
-          </p>
-          <Quiz
-            storeKey="trilha-arquitetura-quiz-v3"
-            trackKey="arquitetura"
-            topics={quiz.topics}
-            questions={quiz.questions}
-          />
+        <section id="simulador" className="article-content">
+          <Quiz trackKey="arquitetura" />
         </section>
         <Pager prev={prev} />
       </GateWall>

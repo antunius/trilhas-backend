@@ -1,0 +1,68 @@
+{
+  "beats": [
+    {
+      "id": "disco-sumiu",
+      "kind": "cena",
+      "kicker": "Um broker",
+      "title": "O disco do líder sumiu. replication.factor era 1.",
+      "body": "<p>PedidoCriado do 99 estava só ali. A partição sumiu com o disco. <code>acks=all</code> tinha ACK. ACK de um ISR de um.</p><p>No lab isso é didático: Produce/Fetch funcionam. Durabilidade de produção, não. Follower atrasado não entra na eleição. Só quem está no ISR.</p>"
+    },
+    {
+      "id": "o-que-e",
+      "kind": "explicar",
+      "title": "Líder escreve. ISR está em dia. Controller promove o ISR.",
+      "html": "<p>Cada partição tem um líder (Produce e Fetch clássicos passam nele) e followers que copiam o log.</p><p><strong>ISR</strong> = réplicas cujo LEO (log end offset) está em dia com o líder, dentro de <code>replica.lag.time.max.ms</code>. Líder morre → o controller promove alguém do ISR — não o follower atrasado.</p><p><code>acks=all</code> no producer = só ACK quando o ISR (no mínimo <code>min.insync.replicas</code>) gravou.</p><p>O producer do lab pede esse caminho mesmo com um broker:</p><pre class=\"code\">spring.kafka.producer.acks: all\nspring.kafka.producer.properties.enable.idempotence: true</pre><p><code>pedido-service/src/main/resources/application.yml</code>. Idempotência evita duplicata do <em>producer</em>. Não impede o consumidor de cobrar duas vezes.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "acks=all não é “não duplica cobrança”.",
+      "ganha": "ISR em dia + acks=all: o fato sobrevive à morte do líder. Controller promove quem copiou. Você não relê o vazio.",
+      "paga": "Cada ACK espera mais disco → latência no produce. ISR encolhe abaixo de min.insync.replicas → o líder recusa escrita. replication.factor=1: o disco some, a partição some. acks=all não impede cobrar duas vezes — isso é inbox no consumidor.",
+      "quando": [
+        "Perder o PedidoCriado 99 é incidente (dinheiro, estoque)",
+        "Há réplica de verdade, não o container único do lab",
+        "Você aceita milissegundos a mais no send"
+      ],
+      "quandoNao": [
+        "replication.factor=1 em produção e achar que acks=all salvou",
+        "Métrica de clique que pode sumir — aí acks=1 (ou até 0) pode ser o preço certo",
+        "Confundir ACK do ISR com “o cartão foi cobrado uma vez”"
+      ]
+    },
+    {
+      "id": "acks",
+      "kind": "escolha",
+      "prompt": "PedidoCriado 99 é dinheiro. Quantos discos precisam gravar antes do checkout respirar?",
+      "options": [
+        {
+          "id": "all",
+          "label": "acks=all, min.insync.replicas=2, replication.factor=3",
+          "verdict": "bom",
+          "why": "O ACK espera o ISR. Caiu o líder, ainda tem cópia em dia. Você comprou durabilidade com milissegundos."
+        },
+        {
+          "id": "um",
+          "label": "acks=1. O líder gravou, o checkout segue",
+          "verdict": "meio",
+          "why": "Mais rápido. Se o líder morre antes dos followers, o 99 some. Analytics nunca viu. Faturamento também não."
+        },
+        {
+          "id": "zero",
+          "label": "acks=0. Fire and forget. Latência mínima",
+          "verdict": "ruim",
+          "why": "O send “foi”. O disco talvez não. PedidoCriado de cobrança não se joga no escuro."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "ISR é quem está em dia com o líder. Eleição só promove o ISR.",
+        "acks=all espera o ISR e compra durabilidade com latência. factor=1 não imita produção.",
+        "ACK do cluster não é cobrança única. Duplicata do consumidor é outra aula."
+      ]
+    }
+  ]
+}

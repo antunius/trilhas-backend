@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>latencia — Arquitetura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../trilhas.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="crumb"><a href="../index.html">Trilhas</a> · <a href="index.html">Arquitetura</a></p>
+      <div class="eyebrow">Trilha 7 · Arquitetura</div>
+      <h1>latencia</h1>
+      <p class="lede"></p>
+    </header>
+    <nav class="toc" aria-label="Índice"><a href="index.html">Início</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="sistema.html">Sistema</a>
+      <a href="latencia.html">Latência</a>
+      <a href="disponibilidade.html">Disponibilidade</a>
+      <a href="cap.html">CAP</a>
+      <a href="acid.html">ACID</a>
+      <a href="monolito.html">Monolito</a>
+      <a href="sincrono.html">Síncrono</a>
+      <a href="cache.html">Cache</a>
+      <a href="replicacao.html">Replicação</a>
+      <a href="indice.html">Índice</a>
+      <a href="escala.html">Escala</a>
+      <a href="resiliencia.html">Resiliência</a>
+      <a href="decomposicao.html">Decomposição</a>
+      <a href="dados.html">Dados</a>
+      <a href="observabilidade.html">Observabilidade</a>
+      <a href="system-design.html">System design</a>
+      <a href="staff.html">Nível Staff</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="referencia.html">Arquiteto</a>
+      <a href="simulador.html">Simulador</a></nav>
+    <section class="week">
+<article class="term" id="latencia">
+        <div class="tag">Vocabulário</div>
+        <h3>Latência, throughput e percentil</h3>
+        <p class="analogy">Analogia: latência é o tempo da sua vez no caixa. Throughput é quantas pessoas o supermercado atende por hora. Média esconde a fila do caixa lento.</p>
+        <p><strong>Latência</strong> é o tempo de <em>uma</em> operação (ida e volta). <strong>Throughput</strong> é quantas operações por unidade de tempo. <strong>p99</strong> = 99% das requests abaixo daquele valor; a cauda é o 1% restante. SLO se escreve em percentil + recorte de tempo. Melhorar um pode piorar o outro.</p>
+        <div class="warn">Erro comum: otimizar a média. Usuários com mais dados (os mais valiosos) costumam estar na cauda.</div>
+      </article>
+</section>
+
+    <footer>Trilha Arquitetura por tema.</footer>
+  </div>
+</body>
+</html>

@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre hash: qual afirmação está certa?",
+      "q": "Como o particionador padrão escolhe a partição?",
       "o": [
         "Particionador padrão: murmur2(key) % numPartitions.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Sem key o sticky partitioner ainda ordena por pedido."
       ],
       "a": 0,
-      "w": "Mesma key + mesmo N → mesma coluna.",
+      "w": "Mesma key + mesmo N → mesma partição.",
       "t": "hash"
     },
     {
-      "q": "Qual frase sobre hash está certa?",
+      "q": "Como o particionador padrão escolhe a partição — verdade ou mito?",
       "o": [
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
         "Particionador padrão: murmur2(key) % numPartitions.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
-      "a": 0,
-      "w": "Mesma key + mesmo N → mesma coluna.",
+      "a": 2,
+      "w": "Mesma key + mesmo N → mesma partição.",
       "t": "hash"
     },
     {
-      "q": "Hash — o que acontece de verdade?",
+      "q": "Como o particionador padrão escolhe a partição — o que acontece de verdade?",
       "o": [
         "Particionador padrão: murmur2(key) % numPartitions.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip."
       ],
       "a": 0,
-      "w": "Mesma key + mesmo N → mesma coluna.",
+      "w": "Mesma key + mesmo N → mesma partição.",
       "t": "hash"
     },
     {
-      "q": "Marque a leitura correta (hash).",
+      "q": "Na prática: Como o particionador padrão escolhe a partição?",
       "o": [
-        "Particionador padrão: murmur2(key) % numPartitions.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "Particionador padrão: murmur2(key) % numPartitions."
       ],
-      "a": 0,
-      "w": "Mesma key + mesmo N → mesma coluna.",
+      "a": 3,
+      "w": "Mesma key + mesmo N → mesma partição.",
       "t": "hash"
     },
     {
-      "q": "Corrija o mito sobre hash.",
+      "q": "Como o particionador padrão escolhe a partição — como funciona?",
       "o": [
-        "Particionador padrão: murmur2(key) % numPartitions.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Particionador padrão: murmur2(key) % numPartitions."
       ],
-      "a": 0,
-      "w": "Mesma key + mesmo N → mesma coluna.",
+      "a": 3,
+      "w": "Mesma key + mesmo N → mesma partição.",
       "t": "hash"
     },
     {
-      "q": "No caderno, a respeito de hash: qual vale?",
+      "q": "Se perguntarem: Como o particionador padrão escolhe a partição?",
       "o": [
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
         "Particionador padrão: murmur2(key) % numPartitions.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
-      "a": 0,
-      "w": "Mesma key + mesmo N → mesma coluna.",
+      "a": 2,
+      "w": "Mesma key + mesmo N → mesma partição.",
       "t": "hash"
     },
     {
-      "q": "Se perguntarem hash na mesa, qual frase é a verdadeira?",
+      "q": "Como o particionador padrão escolhe a partição — o que vale aqui?",
       "o": [
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Key nula faz o broker escolher a ordem do pedido 99.",
         "Particionador padrão: murmur2(key) % numPartitions.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
-      "a": 0,
-      "w": "Mesma key + mesmo N → mesma coluna.",
+      "a": 2,
+      "w": "Mesma key + mesmo N → mesma partição.",
       "t": "hash"
     },
     {
-      "q": "Sobre ordem: qual afirmação está certa?",
+      "q": "Por que a key = pedidoId cola Criado e Pago na mesma partição?",
       "o": [
-        "Key = pedidoId cola Criado e Pago na mesma coluna, na ordem do append.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "Key = pedidoId cola Criado e Pago na mesma partição, na ordem do append.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Key nula faz o broker escolher a ordem do pedido 99."
+      ],
+      "a": 1,
+      "w": "Sem key, Pago pode aparecer antes de Criado.",
+      "t": "ordem"
+    },
+    {
+      "q": "Por que a key = pedidoId cola Criado e Pago na mesma partição — verdade ou mito?",
+      "o": [
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "Key = pedidoId cola Criado e Pago na mesma partição, na ordem do append."
+      ],
+      "a": 3,
+      "w": "Sem key, Pago pode aparecer antes de Criado.",
+      "t": "ordem"
+    },
+    {
+      "q": "Por que a key = pedidoId cola Criado e Pago na mesma partição — o que acontece de verdade?",
+      "o": [
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key = pedidoId cola Criado e Pago na mesma partição, na ordem do append.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "No consumer, key e partition não aparecem; só o JSON."
+      ],
+      "a": 1,
+      "w": "Sem key, Pago pode aparecer antes de Criado.",
+      "t": "ordem"
+    },
+    {
+      "q": "Na prática: Por que a key = pedidoId cola Criado e Pago na mesma partição?",
+      "o": [
+        "Key = pedidoId cola Criado e Pago na mesma partição, na ordem do append.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito."
       ],
       "a": 0,
       "w": "Sem key, Pago pode aparecer antes de Criado.",
       "t": "ordem"
     },
     {
-      "q": "Qual frase sobre ordem está certa?",
+      "q": "Por que a key = pedidoId cola Criado e Pago na mesma partição — como funciona?",
       "o": [
-        "Key = pedidoId cola Criado e Pago na mesma coluna, na ordem do append.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "Key = pedidoId cola Criado e Pago na mesma partição, na ordem do append.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Sem key, Pago pode aparecer antes de Criado.",
       "t": "ordem"
     },
     {
-      "q": "Ordem — o que acontece de verdade?",
+      "q": "Se perguntarem: Por que a key = pedidoId cola Criado e Pago na mesma partição?",
       "o": [
-        "Key = pedidoId cola Criado e Pago na mesma coluna, na ordem do append.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "Key = pedidoId cola Criado e Pago na mesma partição, na ordem do append."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Sem key, Pago pode aparecer antes de Criado.",
       "t": "ordem"
     },
     {
-      "q": "Marque a leitura correta (ordem).",
+      "q": "Por que a key = pedidoId cola Criado e Pago na mesma partição — o que vale aqui?",
       "o": [
-        "Key = pedidoId cola Criado e Pago na mesma coluna, na ordem do append.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Key = pedidoId cola Criado e Pago na mesma partição, na ordem do append."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Sem key, Pago pode aparecer antes de Criado.",
       "t": "ordem"
     },
     {
-      "q": "Corrija o mito sobre ordem.",
+      "q": "Produce sem key ordena os eventos do pedido 99?",
       "o": [
-        "Key = pedidoId cola Criado e Pago na mesma coluna, na ordem do append.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Sem key, Pago pode aparecer antes de Criado.",
-      "t": "ordem"
-    },
-    {
-      "q": "No caderno, a respeito de ordem: qual vale?",
-      "o": [
-        "Key = pedidoId cola Criado e Pago na mesma coluna, na ordem do append.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "Sem key, Pago pode aparecer antes de Criado.",
-      "t": "ordem"
-    },
-    {
-      "q": "Se perguntarem ordem na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Key = pedidoId cola Criado e Pago na mesma coluna, na ordem do append.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Sem key, Pago pode aparecer antes de Criado.",
-      "t": "ordem"
-    },
-    {
-      "q": "Sobre sem key: qual afirmação está certa?",
-      "o": [
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
         "Sem key o sticky partitioner espalha para batch, não ordena por pedido.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "O contrato é o JSON; a key do envelope Kafka não conta."
       ],
-      "a": 0,
-      "w": "Lab 1 mostra partition saltando.",
+      "a": 1,
+      "w": "Sem key, partition= salta entre partições.",
       "t": "sem key"
     },
     {
-      "q": "Qual frase sobre sem key está certa?",
+      "q": "Produce sem key ordena os eventos do pedido 99 — verdade ou mito?",
       "o": [
-        "Sem key o sticky partitioner espalha para batch, não ordena por pedido.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "Sem key o sticky partitioner espalha para batch, não ordena por pedido."
       ],
-      "a": 0,
-      "w": "Lab 1 mostra partition saltando.",
+      "a": 3,
+      "w": "Sem key, partition= salta entre partições.",
       "t": "sem key"
     },
     {
-      "q": "Sem key — o que acontece de verdade?",
+      "q": "Produce sem key ordena os eventos do pedido 99 — o que acontece de verdade?",
       "o": [
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
         "Sem key o sticky partitioner espalha para batch, não ordena por pedido.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
-      "a": 0,
-      "w": "Lab 1 mostra partition saltando.",
+      "a": 1,
+      "w": "Sem key, partition= salta entre partições.",
       "t": "sem key"
     },
     {
-      "q": "Marque a leitura correta (sem key).",
+      "q": "Na prática: Produce sem key ordena os eventos do pedido 99?",
       "o": [
         "Sem key o sticky partitioner espalha para batch, não ordena por pedido.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "UUID novo a cada evento mantém a ordem por entidade."
       ],
       "a": 0,
-      "w": "Lab 1 mostra partition saltando.",
+      "w": "Sem key, partition= salta entre partições.",
       "t": "sem key"
     },
     {
-      "q": "Corrija o mito sobre sem key.",
+      "q": "Produce sem key ordena os eventos do pedido 99 — como funciona?",
       "o": [
         "Sem key o sticky partitioner espalha para batch, não ordena por pedido.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip."
       ],
       "a": 0,
-      "w": "Lab 1 mostra partition saltando.",
+      "w": "Sem key, partition= salta entre partições.",
       "t": "sem key"
     },
     {
-      "q": "No caderno, a respeito de sem key: qual vale?",
+      "q": "Se perguntarem: Produce sem key ordena os eventos do pedido 99?",
       "o": [
-        "Sem key o sticky partitioner espalha para batch, não ordena por pedido.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "Sem key o sticky partitioner espalha para batch, não ordena por pedido."
       ],
-      "a": 0,
-      "w": "Lab 1 mostra partition saltando.",
+      "a": 3,
+      "w": "Sem key, partition= salta entre partições.",
       "t": "sem key"
     },
     {
-      "q": "Se perguntarem sem key na mesa, qual frase é a verdadeira?",
+      "q": "Produce sem key ordena os eventos do pedido 99 — o que vale aqui?",
       "o": [
-        "Sem key o sticky partitioner espalha para batch, não ordena por pedido.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Sem key o sticky partitioner espalha para batch, não ordena por pedido."
       ],
-      "a": 0,
-      "w": "Lab 1 mostra partition saltando.",
+      "a": 3,
+      "w": "Sem key, partition= salta entre partições.",
       "t": "sem key"
     },
     {
-      "q": "Sobre UUID: qual afirmação está certa?",
+      "q": "Key = UUID novo a cada evento: o que acontece com a ordem do pedido?",
+      "o": [
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Key = UUID novo a cada evento destrói ordem por entidade.",
+        "UUID novo a cada evento mantém a ordem por entidade."
+      ],
+      "a": 2,
+      "w": "Use o ID estável do pedido.",
+      "t": "UUID"
+    },
+    {
+      "q": "Key = UUID novo a cada evento: o que acontece com a ordem do pedido — verdade ou mito?",
       "o": [
         "Key = UUID novo a cada evento destrói ordem por entidade.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Key nula faz o broker escolher a ordem do pedido 99."
       ],
       "a": 0,
       "w": "Use o ID estável do pedido.",
       "t": "UUID"
     },
     {
-      "q": "Qual frase sobre UUID está certa?",
+      "q": "Key = UUID novo a cada evento: o que acontece com a ordem do pedido — o que acontece de verdade?",
+      "o": [
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "Key = UUID novo a cada evento destrói ordem por entidade.",
+        "UUID novo a cada evento mantém a ordem por entidade."
+      ],
+      "a": 2,
+      "w": "Use o ID estável do pedido.",
+      "t": "UUID"
+    },
+    {
+      "q": "Na prática: Key = UUID novo a cada evento: o que acontece com a ordem do pedido?",
+      "o": [
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "Key = UUID novo a cada evento destrói ordem por entidade."
+      ],
+      "a": 3,
+      "w": "Use o ID estável do pedido.",
+      "t": "UUID"
+    },
+    {
+      "q": "Key = UUID novo a cada evento: o que acontece com a ordem do pedido — como funciona?",
+      "o": [
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key = UUID novo a cada evento destrói ordem por entidade.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "No consumer, key e partition não aparecem; só o JSON."
+      ],
+      "a": 1,
+      "w": "Use o ID estável do pedido.",
+      "t": "UUID"
+    },
+    {
+      "q": "Se perguntarem: Key = UUID novo a cada evento: o que acontece com a ordem do pedido?",
       "o": [
         "Key = UUID novo a cada evento destrói ordem por entidade.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito."
       ],
       "a": 0,
       "w": "Use o ID estável do pedido.",
       "t": "UUID"
     },
     {
-      "q": "UUID — o que acontece de verdade?",
+      "q": "Key = UUID novo a cada evento: o que acontece com a ordem do pedido — o que vale aqui?",
       "o": [
         "Key = UUID novo a cada evento destrói ordem por entidade.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "O lote ignora a key; todos os pedidos vão sem key."
       ],
       "a": 0,
       "w": "Use o ID estável do pedido.",
       "t": "UUID"
     },
     {
-      "q": "Marque a leitura correta (UUID).",
+      "q": "Sempre a mesma key (ou um cliente gigante) cria o quê?",
       "o": [
-        "Key = UUID novo a cada evento destrói ordem por entidade.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Use o ID estável do pedido.",
-      "t": "UUID"
-    },
-    {
-      "q": "Corrija o mito sobre UUID.",
-      "o": [
-        "Key = UUID novo a cada evento destrói ordem por entidade.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Use o ID estável do pedido.",
-      "t": "UUID"
-    },
-    {
-      "q": "No caderno, a respeito de UUID: qual vale?",
-      "o": [
-        "Key = UUID novo a cada evento destrói ordem por entidade.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Use o ID estável do pedido.",
-      "t": "UUID"
-    },
-    {
-      "q": "Se perguntarem UUID na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Key = UUID novo a cada evento destrói ordem por entidade.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Use o ID estável do pedido.",
-      "t": "UUID"
-    },
-    {
-      "q": "Sobre hot: qual afirmação está certa?",
-      "o": [
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
         "Sempre a mesma key (ou um cliente gigante) cria partição quente.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "O lote ignora a key; todos os pedidos vão sem key."
       ],
-      "a": 0,
-      "w": "Concurrency não drena a coluna do vip.",
+      "a": 1,
+      "w": "Concurrency não drena a partição do vip.",
       "t": "hot"
     },
     {
-      "q": "Qual frase sobre hot está certa?",
+      "q": "Sempre a mesma key (ou um cliente gigante) cria o quê — verdade ou mito?",
       "o": [
-        "Sempre a mesma key (ou um cliente gigante) cria partição quente.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Sempre a mesma key (ou um cliente gigante) cria partição quente."
       ],
-      "a": 0,
-      "w": "Concurrency não drena a coluna do vip.",
+      "a": 3,
+      "w": "Concurrency não drena a partição do vip.",
       "t": "hot"
     },
     {
-      "q": "Hot — o que acontece de verdade?",
+      "q": "Sempre a mesma key (ou um cliente gigante) cria o quê — o que acontece de verdade?",
       "o": [
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
         "Sempre a mesma key (ou um cliente gigante) cria partição quente.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "O contrato é o JSON; a key do envelope Kafka não conta."
       ],
-      "a": 0,
-      "w": "Concurrency não drena a coluna do vip.",
+      "a": 1,
+      "w": "Concurrency não drena a partição do vip.",
       "t": "hot"
     },
     {
-      "q": "Marque a leitura correta (hot).",
+      "q": "Na prática: Sempre a mesma key (ou um cliente gigante) cria o quê?",
       "o": [
         "Sempre a mesma key (ou um cliente gigante) cria partição quente.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
       "a": 0,
-      "w": "Concurrency não drena a coluna do vip.",
+      "w": "Concurrency não drena a partição do vip.",
       "t": "hot"
     },
     {
-      "q": "Corrija o mito sobre hot.",
+      "q": "Sempre a mesma key (ou um cliente gigante) cria o quê — como funciona?",
       "o": [
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
         "Sempre a mesma key (ou um cliente gigante) cria partição quente.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip."
       ],
-      "a": 0,
-      "w": "Concurrency não drena a coluna do vip.",
+      "a": 2,
+      "w": "Concurrency não drena a partição do vip.",
       "t": "hot"
     },
     {
-      "q": "No caderno, a respeito de hot: qual vale?",
+      "q": "Se perguntarem: Sempre a mesma key (ou um cliente gigante) cria o quê?",
       "o": [
-        "Sempre a mesma key (ou um cliente gigante) cria partição quente.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "Sempre a mesma key (ou um cliente gigante) cria partição quente."
       ],
-      "a": 0,
-      "w": "Concurrency não drena a coluna do vip.",
+      "a": 3,
+      "w": "Concurrency não drena a partição do vip.",
       "t": "hot"
     },
     {
-      "q": "Se perguntarem hot na mesa, qual frase é a verdadeira?",
+      "q": "Sempre a mesma key (ou um cliente gigante) cria o quê — o que vale aqui?",
       "o": [
-        "Sempre a mesma key (ou um cliente gigante) cria partição quente.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Sempre a mesma key (ou um cliente gigante) cria partição quente."
       ],
-      "a": 0,
-      "w": "Concurrency não drena a coluna do vip.",
+      "a": 3,
+      "w": "Concurrency não drena a partição do vip.",
       "t": "hot"
     },
     {
-      "q": "Sobre send: qual afirmação está certa?",
+      "q": "No Spring, qual argumento do send é a key?",
+      "o": [
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "No Spring, o segundo argumento do send é a key."
+      ],
+      "a": 3,
+      "w": "kafka.send(topic, pedidoId, evento).",
+      "t": "send"
+    },
+    {
+      "q": "No Spring, qual argumento do send é a key — verdade ou mito?",
+      "o": [
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "No Spring, o segundo argumento do send é a key.",
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip."
+      ],
+      "a": 1,
+      "w": "kafka.send(topic, pedidoId, evento).",
+      "t": "send"
+    },
+    {
+      "q": "No Spring, qual argumento do send é a key — o que acontece de verdade?",
+      "o": [
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "No Spring, o segundo argumento do send é a key."
+      ],
+      "a": 3,
+      "w": "kafka.send(topic, pedidoId, evento).",
+      "t": "send"
+    },
+    {
+      "q": "Na prática: No Spring, qual argumento do send é a key?",
+      "o": [
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "No Spring, o segundo argumento do send é a key.",
+        "No Spring a key vai no JSON; o send só tem tópico e value."
+      ],
+      "a": 2,
+      "w": "kafka.send(topic, pedidoId, evento).",
+      "t": "send"
+    },
+    {
+      "q": "No Spring, qual argumento do send é a key — como funciona?",
       "o": [
         "No Spring, o segundo argumento do send é a key.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "Key = timestamp cola a história do 99 na mesma partição."
       ],
       "a": 0,
       "w": "kafka.send(topic, pedidoId, evento).",
       "t": "send"
     },
     {
-      "q": "Qual frase sobre send está certa?",
+      "q": "Se perguntarem: No Spring, qual argumento do send é a key?",
       "o": [
+        "No consumer, key e partition não aparecem; só o JSON.",
         "No Spring, o segundo argumento do send é a key.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "Key = timestamp cola a história do 99 na mesma partição."
       ],
-      "a": 0,
+      "a": 1,
       "w": "kafka.send(topic, pedidoId, evento).",
       "t": "send"
     },
     {
-      "q": "Send — o que acontece de verdade?",
+      "q": "No Spring, qual argumento do send é a key — o que vale aqui?",
       "o": [
+        "O particionador lê a key de dentro do JSON, não do envelope.",
         "No Spring, o segundo argumento do send é a key.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "No consumer, key e partition não aparecem; só o JSON."
       ],
-      "a": 0,
+      "a": 1,
       "w": "kafka.send(topic, pedidoId, evento).",
       "t": "send"
     },
     {
-      "q": "Marque a leitura correta (send).",
+      "q": "POST /pedidos?comKey=true manda o quê como key?",
       "o": [
-        "No Spring, o segundo argumento do send é a key.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "POST /pedidos?comKey=true manda pedidoId como key."
       ],
-      "a": 0,
-      "w": "kafka.send(topic, pedidoId, evento).",
-      "t": "send"
-    },
-    {
-      "q": "Corrija o mito sobre send.",
-      "o": [
-        "No Spring, o segundo argumento do send é a key.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "kafka.send(topic, pedidoId, evento).",
-      "t": "send"
-    },
-    {
-      "q": "No caderno, a respeito de send: qual vale?",
-      "o": [
-        "No Spring, o segundo argumento do send é a key.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "kafka.send(topic, pedidoId, evento).",
-      "t": "send"
-    },
-    {
-      "q": "Se perguntarem send na mesa, qual frase é a verdadeira?",
-      "o": [
-        "No Spring, o segundo argumento do send é a key.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "kafka.send(topic, pedidoId, evento).",
-      "t": "send"
-    },
-    {
-      "q": "Sobre HTTP: qual afirmação está certa?",
-      "o": [
-        "POST /pedidos?comKey=true manda pedidoId como key.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "comKey=false é o lab sem ordem.",
+      "a": 3,
+      "w": "comKey=false é produce sem ordem por pedido.",
       "t": "HTTP"
     },
     {
-      "q": "Qual frase sobre HTTP está certa?",
+      "q": "POST /pedidos?comKey=true manda o quê como key — verdade ou mito?",
       "o": [
+        "O lote ignora a key; todos os pedidos vão sem key.",
         "POST /pedidos?comKey=true manda pedidoId como key.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito."
       ],
-      "a": 0,
-      "w": "comKey=false é o lab sem ordem.",
+      "a": 1,
+      "w": "comKey=false é produce sem ordem por pedido.",
       "t": "HTTP"
     },
     {
-      "q": "HTTP — o que acontece de verdade?",
+      "q": "POST /pedidos?comKey=true manda o quê como key — o que acontece de verdade?",
       "o": [
-        "POST /pedidos?comKey=true manda pedidoId como key.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "POST /pedidos?comKey=true manda pedidoId como key."
       ],
-      "a": 0,
-      "w": "comKey=false é o lab sem ordem.",
+      "a": 3,
+      "w": "comKey=false é produce sem ordem por pedido.",
       "t": "HTTP"
     },
     {
-      "q": "Marque a leitura correta (HTTP).",
+      "q": "Na prática: POST /pedidos?comKey=true manda o quê como key?",
       "o": [
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
         "POST /pedidos?comKey=true manda pedidoId como key.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId."
       ],
-      "a": 0,
-      "w": "comKey=false é o lab sem ordem.",
+      "a": 2,
+      "w": "comKey=false é produce sem ordem por pedido.",
       "t": "HTTP"
     },
     {
-      "q": "Corrija o mito sobre HTTP.",
+      "q": "POST /pedidos?comKey=true manda o quê como key — como funciona?",
       "o": [
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
         "POST /pedidos?comKey=true manda pedidoId como key.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId."
       ],
-      "a": 0,
-      "w": "comKey=false é o lab sem ordem.",
+      "a": 2,
+      "w": "comKey=false é produce sem ordem por pedido.",
       "t": "HTTP"
     },
     {
-      "q": "No caderno, a respeito de HTTP: qual vale?",
+      "q": "Se perguntarem: POST /pedidos?comKey=true manda o quê como key?",
       "o": [
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
         "POST /pedidos?comKey=true manda pedidoId como key.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto."
       ],
-      "a": 0,
-      "w": "comKey=false é o lab sem ordem.",
+      "a": 1,
+      "w": "comKey=false é produce sem ordem por pedido.",
       "t": "HTTP"
     },
     {
-      "q": "Se perguntarem HTTP na mesa, qual frase é a verdadeira?",
+      "q": "POST /pedidos?comKey=true manda o quê como key — o que vale aqui?",
       "o": [
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
         "POST /pedidos?comKey=true manda pedidoId como key.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
-      "a": 0,
-      "w": "comKey=false é o lab sem ordem.",
+      "a": 1,
+      "w": "comKey=false é produce sem ordem por pedido.",
       "t": "HTTP"
     },
     {
-      "q": "Sobre N muda: qual afirmação está certa?",
+      "q": "Se o número de partições muda, a mesma key continua na mesma partição?",
       "o": [
-        "Se N de partições muda, a mesma key pode ir para outra coluna.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "Se N de partições muda, a mesma key pode ir para outra partição.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre."
+      ],
+      "a": 2,
+      "w": "Por isso decidir N cedo.",
+      "t": "N muda"
+    },
+    {
+      "q": "Se o número de partições muda, a mesma key continua na mesma partição — verdade ou mito?",
+      "o": [
+        "Se N de partições muda, a mesma key pode ir para outra partição.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "UUID novo a cada evento mantém a ordem por entidade."
       ],
       "a": 0,
       "w": "Por isso decidir N cedo.",
       "t": "N muda"
     },
     {
-      "q": "Qual frase sobre N muda está certa?",
+      "q": "Se o número de partições muda, a mesma key continua na mesma partição — o que acontece de verdade?",
       "o": [
-        "Se N de partições muda, a mesma key pode ir para outra coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "Se N de partições muda, a mesma key pode ir para outra partição.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre."
+      ],
+      "a": 2,
+      "w": "Por isso decidir N cedo.",
+      "t": "N muda"
+    },
+    {
+      "q": "Na prática: Se o número de partições muda, a mesma key continua na mesma partição?",
+      "o": [
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "Se N de partições muda, a mesma key pode ir para outra partição.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip."
+      ],
+      "a": 1,
+      "w": "Por isso decidir N cedo.",
+      "t": "N muda"
+    },
+    {
+      "q": "Se o número de partições muda, a mesma key continua na mesma partição — como funciona?",
+      "o": [
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Se N de partições muda, a mesma key pode ir para outra partição."
+      ],
+      "a": 3,
+      "w": "Por isso decidir N cedo.",
+      "t": "N muda"
+    },
+    {
+      "q": "Se perguntarem: Se o número de partições muda, a mesma key continua na mesma partição?",
+      "o": [
+        "Se N de partições muda, a mesma key pode ir para outra partição.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Key nula faz o broker escolher a ordem do pedido 99."
       ],
       "a": 0,
       "w": "Por isso decidir N cedo.",
       "t": "N muda"
     },
     {
-      "q": "N muda — o que acontece de verdade?",
+      "q": "Se o número de partições muda, a mesma key continua na mesma partição — o que vale aqui?",
       "o": [
-        "Se N de partições muda, a mesma key pode ir para outra coluna.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Se N de partições muda, a mesma key pode ir para outra partição.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "Key = timestamp cola a história do 99 na mesma partição."
       ],
       "a": 0,
       "w": "Por isso decidir N cedo.",
       "t": "N muda"
     },
     {
-      "q": "Marque a leitura correta (N muda).",
+      "q": "Mandar key nula no send produz com a key do pedido?",
       "o": [
-        "Se N de partições muda, a mesma key pode ir para outra coluna.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "send(..., null, evento) é produce sem key."
       ],
-      "a": 0,
-      "w": "Por isso decidir N cedo.",
-      "t": "N muda"
-    },
-    {
-      "q": "Corrija o mito sobre N muda.",
-      "o": [
-        "Se N de partições muda, a mesma key pode ir para outra coluna.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Por isso decidir N cedo.",
-      "t": "N muda"
-    },
-    {
-      "q": "No caderno, a respeito de N muda: qual vale?",
-      "o": [
-        "Se N de partições muda, a mesma key pode ir para outra coluna.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Por isso decidir N cedo.",
-      "t": "N muda"
-    },
-    {
-      "q": "Se perguntarem N muda na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Se N de partições muda, a mesma key pode ir para outra coluna.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Por isso decidir N cedo.",
-      "t": "N muda"
-    },
-    {
-      "q": "Sobre null: qual afirmação está certa?",
-      "o": [
-        "send(..., null, evento) é produce sem key.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
+      "a": 3,
       "w": "Não invente key “para o broker escolher ordem”.",
       "t": "null"
     },
     {
-      "q": "Qual frase sobre null está certa?",
+      "q": "Mandar key nula no send produz com a key do pedido — verdade ou mito?",
       "o": [
+        "O particionador lê a key de dentro do JSON, não do envelope.",
         "send(..., null, evento) é produce sem key.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "No consumer, key e partition não aparecem; só o JSON."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não invente key “para o broker escolher ordem”.",
       "t": "null"
     },
     {
-      "q": "Null — o que acontece de verdade?",
+      "q": "Mandar key nula no send produz com a key do pedido — o que acontece de verdade?",
       "o": [
-        "send(..., null, evento) é produce sem key.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "send(..., null, evento) é produce sem key."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não invente key “para o broker escolher ordem”.",
       "t": "null"
     },
     {
-      "q": "Marque a leitura correta (null).",
+      "q": "Na prática: Mandar key nula no send produz com a key do pedido?",
       "o": [
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "O lote ignora a key; todos os pedidos vão sem key.",
         "send(..., null, evento) é produce sem key.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Key nula faz o broker escolher a ordem do pedido 99."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Não invente key “para o broker escolher ordem”.",
       "t": "null"
     },
     {
-      "q": "Corrija o mito sobre null.",
+      "q": "Mandar key nula no send produz com a key do pedido — como funciona?",
       "o": [
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
         "send(..., null, evento) é produce sem key.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Key nula faz o broker escolher a ordem do pedido 99."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Não invente key “para o broker escolher ordem”.",
       "t": "null"
     },
     {
-      "q": "No caderno, a respeito de null: qual vale?",
+      "q": "Se perguntarem: Mandar key nula no send produz com a key do pedido?",
       "o": [
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
         "send(..., null, evento) é produce sem key.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não invente key “para o broker escolher ordem”.",
       "t": "null"
     },
     {
-      "q": "Se perguntarem null na mesa, qual frase é a verdadeira?",
+      "q": "Mandar key nula no send produz com a key do pedido — o que vale aqui?",
       "o": [
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
         "send(..., null, evento) é produce sem key.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "O contrato é o JSON; a key do envelope Kafka não conta."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Não invente key “para o broker escolher ordem”.",
       "t": "null"
     },
     {
-      "q": "Sobre timestamp: qual afirmação está certa?",
+      "q": "Usar timestamp como key cola a história do pedido 99?",
       "o": [
-        "Key = timestamp espalha a história do 99 em colunas aleatórias.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "Key = timestamp espalha a história do 99 em partições aleatórias."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Timestamp não é identidade.",
       "t": "timestamp"
     },
     {
-      "q": "Qual frase sobre timestamp está certa?",
+      "q": "Usar timestamp como key cola a história do pedido 99 — verdade ou mito?",
       "o": [
-        "Key = timestamp espalha a história do 99 em colunas aleatórias.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Key = timestamp espalha a história do 99 em partições aleatórias.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Timestamp não é identidade.",
       "t": "timestamp"
     },
     {
-      "q": "Timestamp — o que acontece de verdade?",
+      "q": "Usar timestamp como key cola a história do pedido 99 — o que acontece de verdade?",
       "o": [
-        "Key = timestamp espalha a história do 99 em colunas aleatórias.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "Key = timestamp espalha a história do 99 em partições aleatórias."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Timestamp não é identidade.",
       "t": "timestamp"
     },
     {
-      "q": "Marque a leitura correta (timestamp).",
+      "q": "Na prática: Usar timestamp como key cola a história do pedido 99?",
       "o": [
-        "Key = timestamp espalha a história do 99 em colunas aleatórias.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Key = timestamp espalha a história do 99 em partições aleatórias.",
+        "Key = timestamp cola a história do 99 na mesma partição."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Timestamp não é identidade.",
       "t": "timestamp"
     },
     {
-      "q": "Corrija o mito sobre timestamp.",
+      "q": "Usar timestamp como key cola a história do pedido 99 — como funciona?",
       "o": [
-        "Key = timestamp espalha a história do 99 em colunas aleatórias.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "Key = timestamp espalha a história do 99 em partições aleatórias.",
+        "Key = timestamp cola a história do 99 na mesma partição."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Timestamp não é identidade.",
       "t": "timestamp"
     },
     {
-      "q": "No caderno, a respeito de timestamp: qual vale?",
+      "q": "Se perguntarem: Usar timestamp como key cola a história do pedido 99?",
       "o": [
-        "Key = timestamp espalha a história do 99 em colunas aleatórias.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "Key = timestamp espalha a história do 99 em partições aleatórias.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Timestamp não é identidade.",
       "t": "timestamp"
     },
     {
-      "q": "Se perguntarem timestamp na mesa, qual frase é a verdadeira?",
+      "q": "Usar timestamp como key cola a história do pedido 99 — o que vale aqui?",
       "o": [
-        "Key = timestamp espalha a história do 99 em colunas aleatórias.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Key = timestamp espalha a história do 99 em partições aleatórias.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "No Spring a key vai no JSON; o send só tem tópico e value."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Timestamp não é identidade.",
       "t": "timestamp"
     },
     {
-      "q": "Sobre log: qual afirmação está certa?",
+      "q": "No consumer, vale olhar key e partition juntos?",
       "o": [
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
         "No consumer, olhe key= e partition= juntos.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "No consumer, key e partition não aparecem; só o JSON."
       ],
-      "a": 0,
-      "w": "PedidoConsumer já imprime isso.",
+      "a": 2,
+      "w": "O @KafkaListener deve imprimir isso.",
       "t": "log"
     },
     {
-      "q": "Qual frase sobre log está certa?",
+      "q": "No consumer, vale olhar key e partition juntos — verdade ou mito?",
       "o": [
         "No consumer, olhe key= e partition= juntos.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Key nula faz o broker escolher a ordem do pedido 99."
       ],
       "a": 0,
-      "w": "PedidoConsumer já imprime isso.",
+      "w": "O @KafkaListener deve imprimir isso.",
       "t": "log"
     },
     {
-      "q": "Log — o que acontece de verdade?",
+      "q": "No consumer, vale olhar key e partition juntos — o que acontece de verdade?",
       "o": [
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
         "No consumer, olhe key= e partition= juntos.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "No consumer, key e partition não aparecem; só o JSON."
       ],
-      "a": 0,
-      "w": "PedidoConsumer já imprime isso.",
+      "a": 2,
+      "w": "O @KafkaListener deve imprimir isso.",
       "t": "log"
     },
     {
-      "q": "Marque a leitura correta (log).",
+      "q": "Na prática: No consumer, vale olhar key e partition juntos?",
       "o": [
-        "No consumer, olhe key= e partition= juntos.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "Key = timestamp cola a história do 99 na mesma partição.",
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "No consumer, olhe key= e partition= juntos."
       ],
-      "a": 0,
-      "w": "PedidoConsumer já imprime isso.",
+      "a": 3,
+      "w": "O @KafkaListener deve imprimir isso.",
       "t": "log"
     },
     {
-      "q": "Corrija o mito sobre log.",
+      "q": "No consumer, vale olhar key e partition juntos — como funciona?",
       "o": [
-        "No consumer, olhe key= e partition= juntos.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "No consumer, olhe key= e partition= juntos."
       ],
-      "a": 0,
-      "w": "PedidoConsumer já imprime isso.",
+      "a": 3,
+      "w": "O @KafkaListener deve imprimir isso.",
       "t": "log"
     },
     {
-      "q": "No caderno, a respeito de log: qual vale?",
+      "q": "Se perguntarem: No consumer, vale olhar key e partition juntos?",
       "o": [
         "No consumer, olhe key= e partition= juntos.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "O lote ignora a key; todos os pedidos vão sem key."
       ],
       "a": 0,
-      "w": "PedidoConsumer já imprime isso.",
+      "w": "O @KafkaListener deve imprimir isso.",
       "t": "log"
     },
     {
-      "q": "Se perguntarem log na mesa, qual frase é a verdadeira?",
+      "q": "No consumer, vale olhar key e partition juntos — o que vale aqui?",
       "o": [
         "No consumer, olhe key= e partition= juntos.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor."
       ],
       "a": 0,
-      "w": "PedidoConsumer já imprime isso.",
+      "w": "O @KafkaListener deve imprimir isso.",
       "t": "log"
     },
     {
-      "q": "Sobre bytes: qual afirmação está certa?",
+      "q": "A key de particionamento é um campo mágico dentro do JSON?",
       "o": [
         "Key são bytes opcionais no record, não um campo mágico do JSON.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta."
       ],
       "a": 0,
       "w": "O particionador vê a key do envelope.",
       "t": "bytes"
     },
     {
-      "q": "Qual frase sobre bytes está certa?",
+      "q": "A key de particionamento é um campo mágico dentro do JSON — verdade ou mito?",
+      "o": [
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "Key são bytes opcionais no record, não um campo mágico do JSON.",
+        "O particionador lê a key de dentro do JSON, não do envelope."
+      ],
+      "a": 2,
+      "w": "O particionador vê a key do envelope.",
+      "t": "bytes"
+    },
+    {
+      "q": "A key de particionamento é um campo mágico dentro do JSON — o que acontece de verdade?",
       "o": [
         "Key são bytes opcionais no record, não um campo mágico do JSON.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N."
       ],
       "a": 0,
       "w": "O particionador vê a key do envelope.",
       "t": "bytes"
     },
     {
-      "q": "Bytes — o que acontece de verdade?",
+      "q": "Na prática: A key de particionamento é um campo mágico dentro do JSON?",
       "o": [
-        "Key são bytes opcionais no record, não um campo mágico do JSON.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Key são bytes opcionais no record, não um campo mágico do JSON."
       ],
-      "a": 0,
+      "a": 3,
       "w": "O particionador vê a key do envelope.",
       "t": "bytes"
     },
     {
-      "q": "Marque a leitura correta (bytes).",
+      "q": "A key de particionamento é um campo mágico dentro do JSON — como funciona?",
       "o": [
+        "Sem key o sticky partitioner ainda ordena por pedido.",
         "Key são bytes opcionais no record, não um campo mágico do JSON.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados."
       ],
-      "a": 0,
+      "a": 1,
       "w": "O particionador vê a key do envelope.",
       "t": "bytes"
     },
     {
-      "q": "Corrija o mito sobre bytes.",
+      "q": "Se perguntarem: A key de particionamento é um campo mágico dentro do JSON?",
       "o": [
+        "Sem key o sticky partitioner ainda ordena por pedido.",
+        "UUID novo a cada evento mantém a ordem por entidade.",
         "Key são bytes opcionais no record, não um campo mágico do JSON.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O particionador lê a key de dentro do JSON, não do envelope."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O particionador vê a key do envelope.",
       "t": "bytes"
     },
     {
-      "q": "No caderno, a respeito de bytes: qual vale?",
+      "q": "A key de particionamento é um campo mágico dentro do JSON — o que vale aqui?",
       "o": [
+        "UUID novo a cada evento mantém a ordem por entidade.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
         "Key são bytes opcionais no record, não um campo mágico do JSON.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O particionador lê a key de dentro do JSON, não do envelope."
       ],
-      "a": 0,
+      "a": 2,
       "w": "O particionador vê a key do envelope.",
       "t": "bytes"
     },
     {
-      "q": "Se perguntarem bytes na mesa, qual frase é a verdadeira?",
+      "q": "A key do evento cola a história do mesmo pedido na mesma partição?",
       "o": [
-        "Key são bytes opcionais no record, não um campo mágico do JSON.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "Sempre a mesma key espalha a carga; concurrency drena a partição do vip.",
+        "No Spring a key vai no JSON; o send só tem tópico e value.",
+        "A key cola a história de uma entidade na mesma partição, na ordem do append."
       ],
-      "a": 0,
-      "w": "O particionador vê a key do envelope.",
-      "t": "bytes"
-    },
-    {
-      "q": "Sobre família: qual afirmação está certa?",
-      "o": [
-        "Analogia: sobrenome na lista — a família Silva na mesma coluna.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "História em ordem naquela coluna.",
+      "a": 3,
+      "w": "História em ordem naquela partição.",
       "t": "família"
     },
     {
-      "q": "Qual frase sobre família está certa?",
+      "q": "A key do evento cola a história do mesmo pedido na mesma partição — verdade ou mito?",
       "o": [
-        "Analogia: sobrenome na lista — a família Silva na mesma coluna.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "A key cola a história de uma entidade na mesma partição, na ordem do append.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "No Spring a key vai no JSON; o send só tem tópico e value."
       ],
-      "a": 0,
-      "w": "História em ordem naquela coluna.",
+      "a": 1,
+      "w": "História em ordem naquela partição.",
       "t": "família"
     },
     {
-      "q": "Família — o que acontece de verdade?",
+      "q": "A key do evento cola a história do mesmo pedido na mesma partição — o que acontece de verdade?",
       "o": [
-        "Analogia: sobrenome na lista — a família Silva na mesma coluna.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "comKey=true manda UUID aleatório; comKey=false manda pedidoId.",
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "A key cola a história de uma entidade na mesma partição, na ordem do append."
       ],
-      "a": 0,
-      "w": "História em ordem naquela coluna.",
+      "a": 3,
+      "w": "História em ordem naquela partição.",
       "t": "família"
     },
     {
-      "q": "Marque a leitura correta (família).",
+      "q": "Na prática: A key do evento cola a história do mesmo pedido na mesma partição?",
       "o": [
-        "Analogia: sobrenome na lista — a família Silva na mesma coluna.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Se N muda, a mesma key permanece na partição antiga para sempre.",
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "A key cola a história de uma entidade na mesma partição, na ordem do append.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito."
       ],
-      "a": 0,
-      "w": "História em ordem naquela coluna.",
+      "a": 2,
+      "w": "História em ordem naquela partição.",
       "t": "família"
     },
     {
-      "q": "Corrija o mito sobre família.",
+      "q": "A key do evento cola a história do mesmo pedido na mesma partição — como funciona?",
       "o": [
-        "Analogia: sobrenome na lista — a família Silva na mesma coluna.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "A key cola a história de uma entidade na mesma partição, na ordem do append.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "Key nula faz o broker escolher a ordem do pedido 99.",
+        "Key = timestamp cola a história do 99 na mesma partição."
       ],
       "a": 0,
-      "w": "História em ordem naquela coluna.",
+      "w": "História em ordem naquela partição.",
       "t": "família"
     },
     {
-      "q": "No caderno, a respeito de família: qual vale?",
+      "q": "Se perguntarem: A key do evento cola a história do mesmo pedido na mesma partição?",
       "o": [
-        "Analogia: sobrenome na lista — a família Silva na mesma coluna.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "No consumer, key e partition não aparecem; só o JSON.",
+        "A key cola a história de uma entidade na mesma partição, na ordem do append.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "Key = timestamp cola a história do 99 na mesma partição."
       ],
-      "a": 0,
-      "w": "História em ordem naquela coluna.",
+      "a": 1,
+      "w": "História em ordem naquela partição.",
       "t": "família"
     },
     {
-      "q": "Se perguntarem família na mesa, qual frase é a verdadeira?",
+      "q": "A key do evento cola a história do mesmo pedido na mesma partição — o que vale aqui?",
       "o": [
-        "Analogia: sobrenome na lista — a família Silva na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "A key cola a história de uma entidade na mesma partição, na ordem do append.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "No consumer, key e partition não aparecem; só o JSON."
       ],
-      "a": 0,
-      "w": "História em ordem naquela coluna.",
+      "a": 1,
+      "w": "História em ordem naquela partição.",
       "t": "família"
     },
     {
-      "q": "Sobre lote: qual afirmação está certa?",
+      "q": "Num lote de pedidos, mandar cada pedidoId como key cola a história de cada pedido?",
       "o": [
         "POST /pedidos/lote?comKey=true cola cada pedidoId.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "O particionador lê a key de dentro do JSON, não do envelope.",
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito."
       ],
       "a": 0,
-      "w": "Lab 1 pede os dois modos.",
+      "w": "Compare lote com e sem key no log.",
       "t": "lote"
     },
     {
-      "q": "Qual frase sobre lote está certa?",
+      "q": "Num lote de pedidos, mandar cada pedidoId como key cola a história de cada pedido — verdade ou mito?",
       "o": [
+        "Key espalha o mesmo pedidoId em partições aleatórias de propósito.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
         "POST /pedidos/lote?comKey=true cola cada pedidoId.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O lote ignora a key; todos os pedidos vão sem key."
       ],
-      "a": 0,
-      "w": "Lab 1 pede os dois modos.",
+      "a": 2,
+      "w": "Compare lote com e sem key no log.",
       "t": "lote"
     },
     {
-      "q": "Lote — o que acontece de verdade?",
+      "q": "Num lote de pedidos, mandar cada pedidoId como key cola a história de cada pedido — o que acontece de verdade?",
       "o": [
         "POST /pedidos/lote?comKey=true cola cada pedidoId.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta."
       ],
       "a": 0,
-      "w": "Lab 1 pede os dois modos.",
+      "w": "Compare lote com e sem key no log.",
       "t": "lote"
     },
     {
-      "q": "Marque a leitura correta (lote).",
+      "q": "Na prática: Num lote de pedidos, mandar cada pedidoId como key cola a história de cada pedido?",
       "o": [
-        "POST /pedidos/lote?comKey=true cola cada pedidoId.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "POST /pedidos/lote?comKey=true cola cada pedidoId."
       ],
-      "a": 0,
-      "w": "Lab 1 pede os dois modos.",
+      "a": 3,
+      "w": "Compare lote com e sem key no log.",
       "t": "lote"
     },
     {
-      "q": "Corrija o mito sobre lote.",
+      "q": "Num lote de pedidos, mandar cada pedidoId como key cola a história de cada pedido — como funciona?",
       "o": [
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
         "POST /pedidos/lote?comKey=true cola cada pedidoId.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O lote ignora a key; todos os pedidos vão sem key.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto."
       ],
-      "a": 0,
-      "w": "Lab 1 pede os dois modos.",
+      "a": 1,
+      "w": "Compare lote com e sem key no log.",
       "t": "lote"
     },
     {
-      "q": "No caderno, a respeito de lote: qual vale?",
+      "q": "Se perguntarem: Num lote de pedidos, mandar cada pedidoId como key cola a história de cada pedido?",
       "o": [
+        "A partição é aleatória mesmo com a mesma key e o mesmo N.",
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
         "POST /pedidos/lote?comKey=true cola cada pedidoId.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O lote ignora a key; todos os pedidos vão sem key."
       ],
-      "a": 0,
-      "w": "Lab 1 pede os dois modos.",
+      "a": 2,
+      "w": "Compare lote com e sem key no log.",
       "t": "lote"
     },
     {
-      "q": "Se perguntarem lote na mesa, qual frase é a verdadeira?",
+      "q": "Num lote de pedidos, mandar cada pedidoId como key cola a história de cada pedido — o que vale aqui?",
       "o": [
+        "Sem key, Pago e Criado do 99 ainda nascem ordenados.",
+        "Sem key o sticky partitioner ainda ordena por pedido.",
         "POST /pedidos/lote?comKey=true cola cada pedidoId.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O lote ignora a key; todos os pedidos vão sem key."
       ],
-      "a": 0,
-      "w": "Lab 1 pede os dois modos.",
+      "a": 2,
+      "w": "Compare lote com e sem key no log.",
       "t": "lote"
     },
     {
-      "q": "Sobre contrato: qual afirmação está certa?",
+      "q": "A key do PedidoCriado é detalhe interno ou parte do contrato?",
       "o": [
         "A key faz parte do contrato do tópico, não é detalhe de performance.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto."
       ],
       "a": 0,
-      "w": "Mude a key e você muda a ordem.",
+      "w": "Quem consome assume: mesma key, mesma partição, mesma ordem. Trocar a key sem avisar quebra essa promessa.",
       "t": "contrato"
     },
     {
-      "q": "Qual frase sobre contrato está certa?",
+      "q": "Se o time mudar a key de pedidoId para UUID, o que quebra para quem consome?",
       "o": [
-        "A key faz parte do contrato do tópico, não é detalhe de performance.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "A key faz parte do contrato do tópico, não é detalhe de performance."
       ],
-      "a": 0,
-      "w": "Mude a key e você muda a ordem.",
+      "a": 3,
+      "w": "Quem consome assume: mesma key, mesma partição, mesma ordem. Trocar a key sem avisar quebra essa promessa.",
       "t": "contrato"
     },
     {
-      "q": "Contrato — o que acontece de verdade?",
+      "q": "Por que a key não é “só performance”?",
       "o": [
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
         "A key faz parte do contrato do tópico, não é detalhe de performance.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor."
       ],
-      "a": 0,
-      "w": "Mude a key e você muda a ordem.",
+      "a": 2,
+      "w": "Quem consome assume: mesma key, mesma partição, mesma ordem. Trocar a key sem avisar quebra essa promessa.",
       "t": "contrato"
     },
     {
-      "q": "Marque a leitura correta (contrato).",
+      "q": "O consumidor pode assumir que o pedido 99 permanece na mesma partição. De onde vem isso?",
       "o": [
-        "A key faz parte do contrato do tópico, não é detalhe de performance.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "A key faz parte do contrato do tópico, não é detalhe de performance."
       ],
-      "a": 0,
-      "w": "Mude a key e você muda a ordem.",
+      "a": 3,
+      "w": "Quem consome assume: mesma key, mesma partição, mesma ordem. Trocar a key sem avisar quebra essa promessa.",
       "t": "contrato"
     },
     {
-      "q": "Corrija o mito sobre contrato.",
+      "q": "Contrato do tópico: schema, nome… e a key?",
       "o": [
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
         "A key faz parte do contrato do tópico, não é detalhe de performance.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor."
       ],
-      "a": 0,
-      "w": "Mude a key e você muda a ordem.",
+      "a": 2,
+      "w": "Quem consome assume: mesma key, mesma partição, mesma ordem. Trocar a key sem avisar quebra essa promessa.",
       "t": "contrato"
     },
     {
-      "q": "No caderno, a respeito de contrato: qual vale?",
+      "q": "Mudar a key sem versionar o contrato: o que acontece com a ordem?",
       "o": [
-        "A key faz parte do contrato do tópico, não é detalhe de performance.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor.",
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
+        "A key faz parte do contrato do tópico, não é detalhe de performance."
       ],
-      "a": 0,
-      "w": "Mude a key e você muda a ordem.",
+      "a": 3,
+      "w": "Quem consome assume: mesma key, mesma partição, mesma ordem. Trocar a key sem avisar quebra essa promessa.",
       "t": "contrato"
     },
     {
-      "q": "Se perguntarem contrato na mesa, qual frase é a verdadeira?",
+      "q": "A key mora no envelope Kafka. Isso é contrato ou implementação escondida?",
       "o": [
+        "O contrato é o JSON; a key do envelope Kafka não conta.",
+        "Pedido 99 pode ir com key nula num dia e pedidoId no outro, sem impacto.",
         "A key faz parte do contrato do tópico, não é detalhe de performance.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "A key é só tuning de throughput; pode mudar sem avisar o consumidor."
       ],
-      "a": 0,
-      "w": "Mude a key e você muda a ordem.",
+      "a": 2,
+      "w": "Quem consome assume: mesma key, mesma partição, mesma ordem. Trocar a key sem avisar quebra essa promessa.",
       "t": "contrato"
     }
   ]

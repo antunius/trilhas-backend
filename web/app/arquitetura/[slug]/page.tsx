@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LessonShell } from "@/components/LessonShell";
 import { arquiteturaLessons, arquiteturaNav, findLesson } from "@/lib/catalog";
-import { lessonHtml } from "@/lib/content";
-import { loadGateBank } from "@/lib/load-gate-bank";
+import { lessonDoc } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -28,16 +27,14 @@ export default async function ArquiteturaLessonPage({ params }: Props) {
   const { slug } = await params;
   const lesson = findLesson(arquiteturaLessons, slug);
   if (!lesson) notFound();
-  const html = lessonHtml("arquitetura", slug);
-  const questions = loadGateBank("arquitetura", slug);
+  const doc = lessonDoc("arquitetura", slug);
   return (
     <LessonShell
       trackHome="/arquitetura"
       trackLabel="Arquitetura"
       lesson={lesson}
       nav={arquiteturaNav}
-      html={html}
-      questions={questions}
+      doc={doc}
       footer="Trilha de Arquitetura por tema, rumo a Arquiteto de Software."
     />
   );

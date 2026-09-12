@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-source",
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${sourceSans.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
         <AppShell>{children}</AppShell>
       </body>

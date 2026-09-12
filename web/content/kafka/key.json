@@ -1,0 +1,68 @@
+{
+  "beats": [
+    {
+      "id": "fora-de-ordem",
+      "kind": "cena",
+      "kicker": "Pedido 99",
+      "title": "Cancelou antes de criar. A key era um UUID novo.",
+      "body": "<p>PedidoCriado e PedidoCancelado do 99 caíram em partições diferentes. O faturamento leu o cancelamento primeiro. Tentou estornar o que ainda não cobrou.</p><p>Key não é o <code>eventId</code> da inbox. Key é o sobrenome da entidade: <code>pedidoId</code>. Mesma key, mesmo N de partições, mesma partição, ordem daquele pedido.</p>"
+    },
+    {
+      "id": "particionador",
+      "kind": "explicar",
+      "title": "murmur2. Sticky. Hot partition.",
+      "html": "<p>Particionador padrão: <code>Utils.toPositive(murmur2(key)) % numPartitions</code>. Mesma key + mesmo N → mesma partição. Sem key, sticky: uma partição por um tempo, para batch — não rodízio justo por mensagem.</p><p>O segundo argumento do <code>send</code> é a key. No lab, <code>pedidoId</code>:</p><pre class=\"code\">kafka.send(\"pedidos.criados\", pedidoId, evento);\n// sem key (lab 1):\nkafka.send(\"pedidos.criados\", null, evento);</pre><p>HTTP equivalente:</p><pre class=\"code\">curl -X POST \"http://localhost:8080/pedidos?pedidoId=99&amp;comKey=true\"\ncurl -X POST \"http://localhost:8080/pedidos/lote?comKey=false&amp;n=9\"</pre><p><code>PedidoProducer.publicar(..., comKey)</code>. No log: <code>partition=</code> e <code>key=</code>.</p><p>Um cliente gigante com a mesma key — ou uma key só para todo mundo — cria partição quente: uma partição com lag, as outras zeradas.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Ordem custa partição. partição custa calor.",
+      "ganha": "Key do pedido: ordem daquele 99. Faturamento não cancela o que ainda não criou. Sticky sem key: batch maior, menos ProduceRequest.",
+      "paga": "Sem key: PedidoCriado e PedidoCancelado podem inverter. UUID/timestamp na key: mesma inversão, com cara de “bem distribuído”. Uma key só (ou um cliente enorme): hot partition. Mudar o N de partições quebra o mapeamento antigo.",
+      "quando": [
+        "A entidade tem história em ordem (pedido, conta, assinatura)",
+        "Faturamento e estoque precisam ver criar antes de cancelar",
+        "Você aceita que um cliente enorme esquente uma partição"
+      ],
+      "quandoNao": [
+        "Eventos independentes, ordem irrelevante, você quer só throughput",
+        "Key = UUID ou timestamp “para espalhar”",
+        "Uma key global para o tópico inteiro"
+      ]
+    },
+    {
+      "id": "qual-key",
+      "kind": "escolha",
+      "prompt": "O checkout publica os fatos do pedido 99. Qual key você põe no send?",
+      "options": [
+        {
+          "id": "pedido-id",
+          "label": "pedidoId. Sempre 99, em PedidoCriado e PedidoCancelado",
+          "verdict": "bom",
+          "why": "Ordem da entidade. Faturamento vê criar, depois cancelar. O murmur2 cai na mesma partição."
+        },
+        {
+          "id": "uuid",
+          "label": "UUID novo a cada evento — “fica bem distribuído”",
+          "verdict": "ruim",
+          "why": "Distribui. Destrói ordem. Timestamp na key faz a mesma besteira. A inbox até evita cobrança dupla; não conserta cancelar antes de criar."
+        },
+        {
+          "id": "sem-key",
+          "label": "null. O sticky partitioner espalha para batchar",
+          "verdict": "meio",
+          "why": "Throughput. Sem ordem por pedido. No lab 1 isso é de propósito: você olha partition= pulando. Não use no checkout de verdade."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Key escolhe a partição. Mesma key, mesmo N, ordem da entidade.",
+        "UUID ou timestamp na key destrói ordem. Sem key o sticky batcha e embaralha o pedido 99.",
+        "Key demais igual = partição quente. Olhe partition= e key= no lab."
+      ]
+    }
+  ]
+}

@@ -86,13 +86,13 @@ export function CadernoKafka() {
   }
 
   let live =
-    "Escreva um recado. A key escolhe a coluna. Cada time tem a própria marca “já li até aqui”.";
+    "Escreva uma mensagem. A key escolhe a partição. Cada group.id tem o próprio committed offset.";
   if (flying) {
     live = `PedidoCriado ${flying.key} voa para a P${flying.partition} — hash(${flying.key}) % 3.`;
   } else if (last) {
     const unreadFat = fat[last.partition] < logs[last.partition].length;
     const unreadAna = ana[last.partition] < logs[last.partition].length;
-    live = `O recado caiu na P${last.partition}. Faturamento ${
+    live = `A mensagem caiu na P${last.partition}. Faturamento ${
       unreadFat ? "ainda não leu" : "já passou"
     }; analytics ${unreadAna ? "ainda não leu" : "já passou"}.`;
   }
@@ -102,8 +102,10 @@ export function CadernoKafka() {
       <div className="tag">Interativo</div>
       <h3>O cluster em movimento</h3>
       <p className="analogy">
-        O checkout escreve no caderno. A key escolhe a coluna. Faturamento e analytics
-        leem o mesmo caderno com marcas diferentes.
+        O log anexa e não apaga na leitura. Daqui pra frente os nomes são
+        tópico, partição e committed offset. O cluster só guarda o log — não
+        cobra o cartão. A key escolhe a partição. Faturamento e analytics leem o
+        mesmo tópico, cada um no próprio offset.
       </p>
       <div className="caderno-actions">
         {WRITES.map((w) => (
@@ -144,7 +146,7 @@ export function CadernoKafka() {
           </div>
         ) : null}
         <div className="cluster-topic">
-          <span className="kicker">Tópico pedidos · três colunas</span>
+          <span className="kicker">Tópico pedidos · três partições</span>
         </div>
         <div className="cluster-lanes">
           {logs.map((msgs, i) => (
@@ -156,7 +158,7 @@ export function CadernoKafka() {
             >
               <strong className="col-title">P{i}</strong>
               <span className="cluster-lane-hint">
-                {focus === i ? "coluna focada" : `hash % 3 = ${i}`}
+                {focus === i ? "partição focada" : `hash % 3 = ${i}`}
               </span>
               <div className="cluster-log">
                 {msgs.map((m, j) => (
@@ -182,11 +184,11 @@ export function CadernoKafka() {
         <div className="cluster-groups">
           <div>
             <span className="kicker">Grupo faturamento</span>
-            <strong>em cada coluna, uma marca “já li até aqui”</strong>
+            <strong>em cada partição, o committed offset do grupo</strong>
           </div>
           <div>
             <span className="kicker">Grupo analytics</span>
-            <strong>outra marca, outro ritmo</strong>
+            <strong>outro committed offset, outro ritmo</strong>
           </div>
         </div>
       </div>

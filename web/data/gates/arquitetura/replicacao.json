@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre foto: qual afirmação está certa?",
+      "q": "O que a replicação copia entre os nós?",
       "o": [
-        "Replicação = fotocópia do livro: lê mais, um exemplar pode queimar.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Replicação faz a escrita escalar junto com o número de nós.",
+        "Replicação elimina o primary: qualquer nó aceita escrita igual.",
+        "Replicação copia as mesmas linhas: lê em mais nós, um nó pode queimar, mas a escrita ainda passa no primary.",
+        "Replicação divide as linhas entre os nós, cada um com uma parte."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "O preço é o lag entre primary e réplica. Replicação não escala escrita linearmente.",
       "t": "foto"
     },
     {
-      "q": "Qual frase sobre foto está certa?",
+      "q": "Com replicação, por onde a escrita ainda passa?",
       "o": [
-        "Replicação = fotocópia do livro: lê mais, um exemplar pode queimar.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Replicação faz a escrita escalar junto com o número de nós.",
+        "Replicação elimina o primary: qualquer nó aceita escrita igual.",
+        "Replicação copia as mesmas linhas: lê em mais nós, um nó pode queimar, mas a escrita ainda passa no primary.",
+        "Replicação divide as linhas entre os nós, cada um com uma parte."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "O preço é o lag entre primary e réplica. Replicação não escala escrita linearmente.",
       "t": "foto"
     },
     {
-      "q": "Foto — o que acontece de verdade?",
+      "q": "Replicação resolve leitura ou escrita?",
       "o": [
-        "Replicação = fotocópia do livro: lê mais, um exemplar pode queimar.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Replicação copia as mesmas linhas: lê em mais nós, um nó pode queimar, mas a escrita ainda passa no primary.",
+        "Replicação divide as linhas entre os nós, cada um com uma parte.",
+        "Replicação faz a escrita escalar junto com o número de nós.",
+        "Replicação elimina o primary: qualquer nó aceita escrita igual."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "O preço é o lag entre primary e réplica. Replicação não escala escrita linearmente.",
       "t": "foto"
     },
     {
-      "q": "Marque a leitura correta (foto).",
+      "q": "Replicação divide as linhas entre os nós?",
       "o": [
-        "Replicação = fotocópia do livro: lê mais, um exemplar pode queimar.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Replicação elimina o primary: qualquer nó aceita escrita igual.",
+        "Replicação copia as mesmas linhas: lê em mais nós, um nó pode queimar, mas a escrita ainda passa no primary.",
+        "Replicação divide as linhas entre os nós, cada um com uma parte.",
+        "Replicação faz a escrita escalar junto com o número de nós."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 1,
+      "w": "O preço é o lag entre primary e réplica. Replicação não escala escrita linearmente.",
       "t": "foto"
     },
     {
-      "q": "Corrija o mito sobre foto.",
+      "q": "Adicionar réplicas escala a escrita?",
       "o": [
-        "Replicação = fotocópia do livro: lê mais, um exemplar pode queimar.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Replicação copia as mesmas linhas: lê em mais nós, um nó pode queimar, mas a escrita ainda passa no primary.",
+        "Replicação divide as linhas entre os nós, cada um com uma parte.",
+        "Replicação faz a escrita escalar junto com o número de nós.",
+        "Replicação elimina o primary: qualquer nó aceita escrita igual."
       ],
       "a": 0,
-      "w": "Analogia.",
+      "w": "O preço é o lag entre primary e réplica. Replicação não escala escrita linearmente.",
       "t": "foto"
     },
     {
-      "q": "No caderno, a respeito de foto: qual vale?",
+      "q": "Qual o preço da replicação?",
       "o": [
-        "Replicação = fotocópia do livro: lê mais, um exemplar pode queimar.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Replicação divide as linhas entre os nós, cada um com uma parte.",
+        "Replicação faz a escrita escalar junto com o número de nós.",
+        "Replicação elimina o primary: qualquer nó aceita escrita igual.",
+        "Replicação copia as mesmas linhas: lê em mais nós, um nó pode queimar, mas a escrita ainda passa no primary."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 3,
+      "w": "O preço é o lag entre primary e réplica. Replicação não escala escrita linearmente.",
       "t": "foto"
     },
     {
-      "q": "Se perguntarem foto na mesa, qual frase é a verdadeira?",
+      "q": "Um nó queimou. A replicação ajuda?",
       "o": [
-        "Replicação = fotocópia do livro: lê mais, um exemplar pode queimar.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Replicação elimina o primary: qualquer nó aceita escrita igual.",
+        "Replicação copia as mesmas linhas: lê em mais nós, um nó pode queimar, mas a escrita ainda passa no primary.",
+        "Replicação divide as linhas entre os nós, cada um com uma parte.",
+        "Replicação faz a escrita escalar junto com o número de nós."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 1,
+      "w": "O preço é o lag entre primary e réplica. Replicação não escala escrita linearmente.",
       "t": "foto"
     },
     {
-      "q": "Sobre fatia: qual afirmação está certa?",
+      "q": "O que o sharding faz com o dataset?",
       "o": [
-        "Sharding = fatiar por letra: escreve mais; a letra A vira inferno.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Sharding copia o dataset inteiro para cada nó.",
+        "Sharding resolve leitura, não escrita.",
+        "Sharding elimina o risco de um pedaço concentrar o volume.",
+        "Sharding fatia o dataset: escreve em paralelo, mas chave ruim vira pedaço quente."
       ],
-      "a": 0,
-      "w": "Hot shard.",
+      "a": 3,
+      "w": "Não é a mesma peça que réplica. A chave é a decisão cara de reverter.",
       "t": "fatia"
     },
     {
-      "q": "Qual frase sobre fatia está certa?",
+      "q": "Sharding resolve leitura ou escrita?",
       "o": [
-        "Sharding = fatiar por letra: escreve mais; a letra A vira inferno.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Sharding fatia o dataset: escreve em paralelo, mas chave ruim vira pedaço quente.",
+        "Sharding copia o dataset inteiro para cada nó.",
+        "Sharding resolve leitura, não escrita.",
+        "Sharding elimina o risco de um pedaço concentrar o volume."
       ],
       "a": 0,
-      "w": "Hot shard.",
+      "w": "Não é a mesma peça que réplica. A chave é a decisão cara de reverter.",
       "t": "fatia"
     },
     {
-      "q": "Fatia — o que acontece de verdade?",
+      "q": "Qual o risco de uma chave ruim no sharding?",
       "o": [
-        "Sharding = fatiar por letra: escreve mais; a letra A vira inferno.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Sharding resolve leitura, não escrita.",
+        "Sharding elimina o risco de um pedaço concentrar o volume.",
+        "Sharding fatia o dataset: escreve em paralelo, mas chave ruim vira pedaço quente.",
+        "Sharding copia o dataset inteiro para cada nó."
       ],
-      "a": 0,
-      "w": "Hot shard.",
+      "a": 2,
+      "w": "Não é a mesma peça que réplica. A chave é a decisão cara de reverter.",
       "t": "fatia"
     },
     {
-      "q": "Marque a leitura correta (fatia).",
+      "q": "Sharding copia o dataset inteiro para cada nó?",
       "o": [
-        "Sharding = fatiar por letra: escreve mais; a letra A vira inferno.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Sharding fatia o dataset: escreve em paralelo, mas chave ruim vira pedaço quente.",
+        "Sharding copia o dataset inteiro para cada nó.",
+        "Sharding resolve leitura, não escrita.",
+        "Sharding elimina o risco de um pedaço concentrar o volume."
       ],
       "a": 0,
-      "w": "Hot shard.",
+      "w": "Não é a mesma peça que réplica. A chave é a decisão cara de reverter.",
       "t": "fatia"
     },
     {
-      "q": "Corrija o mito sobre fatia.",
+      "q": "Sharding e replicação fazem a mesma coisa?",
       "o": [
-        "Sharding = fatiar por letra: escreve mais; a letra A vira inferno.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Sharding elimina o risco de um pedaço concentrar o volume.",
+        "Sharding fatia o dataset: escreve em paralelo, mas chave ruim vira pedaço quente.",
+        "Sharding copia o dataset inteiro para cada nó.",
+        "Sharding resolve leitura, não escrita."
       ],
-      "a": 0,
-      "w": "Hot shard.",
+      "a": 1,
+      "w": "Não é a mesma peça que réplica. A chave é a decisão cara de reverter.",
       "t": "fatia"
     },
     {
-      "q": "No caderno, a respeito de fatia: qual vale?",
+      "q": "O que é a decisão cara no sharding?",
       "o": [
-        "Sharding = fatiar por letra: escreve mais; a letra A vira inferno.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Sharding copia o dataset inteiro para cada nó.",
+        "Sharding resolve leitura, não escrita.",
+        "Sharding elimina o risco de um pedaço concentrar o volume.",
+        "Sharding fatia o dataset: escreve em paralelo, mas chave ruim vira pedaço quente."
       ],
-      "a": 0,
-      "w": "Hot shard.",
+      "a": 3,
+      "w": "Não é a mesma peça que réplica. A chave é a decisão cara de reverter.",
       "t": "fatia"
     },
     {
-      "q": "Se perguntarem fatia na mesa, qual frase é a verdadeira?",
+      "q": "Sharding elimina o pedaço quente?",
       "o": [
-        "Sharding = fatiar por letra: escreve mais; a letra A vira inferno.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Sharding copia o dataset inteiro para cada nó.",
+        "Sharding resolve leitura, não escrita.",
+        "Sharding elimina o risco de um pedaço concentrar o volume.",
+        "Sharding fatia o dataset: escreve em paralelo, mas chave ruim vira pedaço quente."
       ],
-      "a": 0,
-      "w": "Hot shard.",
+      "a": 3,
+      "w": "Não é a mesma peça que réplica. A chave é a decisão cara de reverter.",
       "t": "fatia"
     },
     {
-      "q": "Sobre leitura: qual afirmação está certa?",
+      "q": "O que a replicação resolve?",
       "o": [
-        "Replicação resolve leitura e falha de um nó. Custo: replication lag.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Replicação resolve escrita e volume do dataset.",
+        "Replicação não tem custo: as réplicas ficam sempre iguais ao primary.",
+        "Replicação resolve leitura e elimina qualquer lag de propagação.",
+        "Replicação resolve leitura e falha de um nó; o custo é o lag entre primary e réplica."
       ],
-      "a": 0,
-      "w": "Gravei e não vejo.",
+      "a": 3,
+      "w": "Gravei e não vejo: esse é o lag da réplica. Nomeie o lag no desenho.",
       "t": "leitura"
     },
     {
-      "q": "Qual frase sobre leitura está certa?",
+      "q": "Qual o custo da replicação?",
       "o": [
-        "Replicação resolve leitura e falha de um nó. Custo: replication lag.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Replicação resolve leitura e elimina qualquer lag de propagação.",
+        "Replicação resolve leitura e falha de um nó; o custo é o lag entre primary e réplica.",
+        "Replicação resolve escrita e volume do dataset.",
+        "Replicação não tem custo: as réplicas ficam sempre iguais ao primary."
       ],
-      "a": 0,
-      "w": "Gravei e não vejo.",
+      "a": 1,
+      "w": "Gravei e não vejo: esse é o lag da réplica. Nomeie o lag no desenho.",
       "t": "leitura"
     },
     {
-      "q": "Leitura — o que acontece de verdade?",
+      "q": "Gravei e não vejo. Qual o nome disso?",
       "o": [
-        "Replicação resolve leitura e falha de um nó. Custo: replication lag.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Replicação resolve escrita e volume do dataset.",
+        "Replicação não tem custo: as réplicas ficam sempre iguais ao primary.",
+        "Replicação resolve leitura e elimina qualquer lag de propagação.",
+        "Replicação resolve leitura e falha de um nó; o custo é o lag entre primary e réplica."
       ],
-      "a": 0,
-      "w": "Gravei e não vejo.",
+      "a": 3,
+      "w": "Gravei e não vejo: esse é o lag da réplica. Nomeie o lag no desenho.",
       "t": "leitura"
     },
     {
-      "q": "Marque a leitura correta (leitura).",
+      "q": "Replicação resolve volume de escrita?",
       "o": [
-        "Replicação resolve leitura e falha de um nó. Custo: replication lag.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Replicação resolve leitura e falha de um nó; o custo é o lag entre primary e réplica.",
+        "Replicação resolve escrita e volume do dataset.",
+        "Replicação não tem custo: as réplicas ficam sempre iguais ao primary.",
+        "Replicação resolve leitura e elimina qualquer lag de propagação."
       ],
       "a": 0,
-      "w": "Gravei e não vejo.",
+      "w": "Gravei e não vejo: esse é o lag da réplica. Nomeie o lag no desenho.",
       "t": "leitura"
     },
     {
-      "q": "Corrija o mito sobre leitura.",
+      "q": "As réplicas ficam sempre iguais ao primary?",
       "o": [
-        "Replicação resolve leitura e falha de um nó. Custo: replication lag.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Replicação não tem custo: as réplicas ficam sempre iguais ao primary.",
+        "Replicação resolve leitura e elimina qualquer lag de propagação.",
+        "Replicação resolve leitura e falha de um nó; o custo é o lag entre primary e réplica.",
+        "Replicação resolve escrita e volume do dataset."
       ],
-      "a": 0,
-      "w": "Gravei e não vejo.",
+      "a": 2,
+      "w": "Gravei e não vejo: esse é o lag da réplica. Nomeie o lag no desenho.",
       "t": "leitura"
     },
     {
-      "q": "No caderno, a respeito de leitura: qual vale?",
+      "q": "Um nó caiu. A replicação cobre isso?",
       "o": [
-        "Replicação resolve leitura e falha de um nó. Custo: replication lag.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Replicação resolve leitura e elimina qualquer lag de propagação.",
+        "Replicação resolve leitura e falha de um nó; o custo é o lag entre primary e réplica.",
+        "Replicação resolve escrita e volume do dataset.",
+        "Replicação não tem custo: as réplicas ficam sempre iguais ao primary."
       ],
-      "a": 0,
-      "w": "Gravei e não vejo.",
+      "a": 1,
+      "w": "Gravei e não vejo: esse é o lag da réplica. Nomeie o lag no desenho.",
       "t": "leitura"
     },
     {
-      "q": "Se perguntarem leitura na mesa, qual frase é a verdadeira?",
+      "q": "O que nomear no desenho quando você põe réplica?",
       "o": [
-        "Replicação resolve leitura e falha de um nó. Custo: replication lag.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Replicação resolve leitura e falha de um nó; o custo é o lag entre primary e réplica.",
+        "Replicação resolve escrita e volume do dataset.",
+        "Replicação não tem custo: as réplicas ficam sempre iguais ao primary.",
+        "Replicação resolve leitura e elimina qualquer lag de propagação."
       ],
       "a": 0,
-      "w": "Gravei e não vejo.",
+      "w": "Gravei e não vejo: esse é o lag da réplica. Nomeie o lag no desenho.",
       "t": "leitura"
     },
     {
-      "q": "Sobre escrita: qual afirmação está certa?",
+      "q": "O que o sharding resolve?",
       "o": [
-        "Sharding resolve escrita e volume. Chave ruim = cross-shard doloroso.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Sharding funciona igual com qualquer chave escolhida.",
+        "Sharding elimina queries que atravessam pedaços.",
+        "Sharding resolve escrita e volume; chave ruim faz a query atravessar pedaços.",
+        "Sharding resolve leitura e falha de um nó."
       ],
-      "a": 0,
-      "w": "A chave é a decisão difícil.",
+      "a": 2,
+      "w": "A chave é a decisão difícil: ela tem que atender o acesso real, não o organograma.",
       "t": "escrita"
     },
     {
-      "q": "Qual frase sobre escrita está certa?",
+      "q": "Qual a decisão difícil no sharding?",
       "o": [
-        "Sharding resolve escrita e volume. Chave ruim = cross-shard doloroso.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Sharding resolve escrita e volume; chave ruim faz a query atravessar pedaços.",
+        "Sharding resolve leitura e falha de um nó.",
+        "Sharding funciona igual com qualquer chave escolhida.",
+        "Sharding elimina queries que atravessam pedaços."
       ],
       "a": 0,
-      "w": "A chave é a decisão difícil.",
+      "w": "A chave é a decisão difícil: ela tem que atender o acesso real, não o organograma.",
       "t": "escrita"
     },
     {
-      "q": "Escrita — o que acontece de verdade?",
+      "q": "Chave ruim faz a query fazer o quê?",
       "o": [
-        "Sharding resolve escrita e volume. Chave ruim = cross-shard doloroso.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Sharding funciona igual com qualquer chave escolhida.",
+        "Sharding elimina queries que atravessam pedaços.",
+        "Sharding resolve escrita e volume; chave ruim faz a query atravessar pedaços.",
+        "Sharding resolve leitura e falha de um nó."
       ],
-      "a": 0,
-      "w": "A chave é a decisão difícil.",
+      "a": 2,
+      "w": "A chave é a decisão difícil: ela tem que atender o acesso real, não o organograma.",
       "t": "escrita"
     },
     {
-      "q": "Marque a leitura correta (escrita).",
+      "q": "Sharding resolve falha de um nó?",
       "o": [
-        "Sharding resolve escrita e volume. Chave ruim = cross-shard doloroso.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Sharding elimina queries que atravessam pedaços.",
+        "Sharding resolve escrita e volume; chave ruim faz a query atravessar pedaços.",
+        "Sharding resolve leitura e falha de um nó.",
+        "Sharding funciona igual com qualquer chave escolhida."
       ],
-      "a": 0,
-      "w": "A chave é a decisão difícil.",
+      "a": 1,
+      "w": "A chave é a decisão difícil: ela tem que atender o acesso real, não o organograma.",
       "t": "escrita"
     },
     {
-      "q": "Corrija o mito sobre escrita.",
+      "q": "Qualquer chave serve para shardear?",
       "o": [
-        "Sharding resolve escrita e volume. Chave ruim = cross-shard doloroso.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Sharding elimina queries que atravessam pedaços.",
+        "Sharding resolve escrita e volume; chave ruim faz a query atravessar pedaços.",
+        "Sharding resolve leitura e falha de um nó.",
+        "Sharding funciona igual com qualquer chave escolhida."
       ],
-      "a": 0,
-      "w": "A chave é a decisão difícil.",
+      "a": 1,
+      "w": "A chave é a decisão difícil: ela tem que atender o acesso real, não o organograma.",
       "t": "escrita"
     },
     {
-      "q": "No caderno, a respeito de escrita: qual vale?",
+      "q": "O que a chave precisa atender?",
       "o": [
-        "Sharding resolve escrita e volume. Chave ruim = cross-shard doloroso.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Sharding resolve leitura e falha de um nó.",
+        "Sharding funciona igual com qualquer chave escolhida.",
+        "Sharding elimina queries que atravessam pedaços.",
+        "Sharding resolve escrita e volume; chave ruim faz a query atravessar pedaços."
       ],
-      "a": 0,
-      "w": "A chave é a decisão difícil.",
+      "a": 3,
+      "w": "A chave é a decisão difícil: ela tem que atender o acesso real, não o organograma.",
       "t": "escrita"
     },
     {
-      "q": "Se perguntarem escrita na mesa, qual frase é a verdadeira?",
+      "q": "Escolher a chave pelo organograma: acerto ou erro?",
       "o": [
-        "Sharding resolve escrita e volume. Chave ruim = cross-shard doloroso.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Sharding funciona igual com qualquer chave escolhida.",
+        "Sharding elimina queries que atravessam pedaços.",
+        "Sharding resolve escrita e volume; chave ruim faz a query atravessar pedaços.",
+        "Sharding resolve leitura e falha de um nó."
       ],
-      "a": 0,
-      "w": "A chave é a decisão difícil.",
+      "a": 2,
+      "w": "A chave é a decisão difícil: ela tem que atender o acesso real, não o organograma.",
       "t": "escrita"
     },
     {
-      "q": "Sobre lag: qual afirmação está certa?",
+      "q": "Quando read-your-writes quebra?",
       "o": [
-        "Read-your-writes quebra com réplica atrasada.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Read-your-writes quebra só quando o primary cai.",
+        "Read-your-writes quebra quando a leitura vai para a réplica atrasada.",
+        "Read-your-writes nunca quebra com replicação assíncrona.",
+        "Read-your-writes se resolve adicionando mais réplicas."
       ],
-      "a": 0,
-      "w": "Sticky master ou session.",
+      "a": 1,
+      "w": "Defesa: ler onde escreveu, sessão, ou leitura no primary para aquele usuário.",
       "t": "lag"
     },
     {
-      "q": "Qual frase sobre lag está certa?",
+      "q": "Você gravou no primary e leu na réplica. O que aparece?",
       "o": [
-        "Read-your-writes quebra com réplica atrasada.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Read-your-writes quebra quando a leitura vai para a réplica atrasada.",
+        "Read-your-writes nunca quebra com replicação assíncrona.",
+        "Read-your-writes se resolve adicionando mais réplicas.",
+        "Read-your-writes quebra só quando o primary cai."
       ],
       "a": 0,
-      "w": "Sticky master ou session.",
+      "w": "Defesa: ler onde escreveu, sessão, ou leitura no primary para aquele usuário.",
       "t": "lag"
     },
     {
-      "q": "Lag — o que acontece de verdade?",
+      "q": "Como defender o read-your-writes?",
       "o": [
-        "Read-your-writes quebra com réplica atrasada.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Read-your-writes nunca quebra com replicação assíncrona.",
+        "Read-your-writes se resolve adicionando mais réplicas.",
+        "Read-your-writes quebra só quando o primary cai.",
+        "Read-your-writes quebra quando a leitura vai para a réplica atrasada."
       ],
-      "a": 0,
-      "w": "Sticky master ou session.",
+      "a": 3,
+      "w": "Defesa: ler onde escreveu, sessão, ou leitura no primary para aquele usuário.",
       "t": "lag"
     },
     {
-      "q": "Marque a leitura correta (lag).",
+      "q": "Mais réplicas resolvem o read-your-writes?",
       "o": [
-        "Read-your-writes quebra com réplica atrasada.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Read-your-writes quebra quando a leitura vai para a réplica atrasada.",
+        "Read-your-writes nunca quebra com replicação assíncrona.",
+        "Read-your-writes se resolve adicionando mais réplicas.",
+        "Read-your-writes quebra só quando o primary cai."
       ],
       "a": 0,
-      "w": "Sticky master ou session.",
+      "w": "Defesa: ler onde escreveu, sessão, ou leitura no primary para aquele usuário.",
       "t": "lag"
     },
     {
-      "q": "Corrija o mito sobre lag.",
+      "q": "Read-your-writes quebra só quando o primary cai?",
       "o": [
-        "Read-your-writes quebra com réplica atrasada.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Read-your-writes quebra só quando o primary cai.",
+        "Read-your-writes quebra quando a leitura vai para a réplica atrasada.",
+        "Read-your-writes nunca quebra com replicação assíncrona.",
+        "Read-your-writes se resolve adicionando mais réplicas."
       ],
-      "a": 0,
-      "w": "Sticky master ou session.",
+      "a": 1,
+      "w": "Defesa: ler onde escreveu, sessão, ou leitura no primary para aquele usuário.",
       "t": "lag"
     },
     {
-      "q": "No caderno, a respeito de lag: qual vale?",
+      "q": "O usuário acha que o débito não entrou. Por quê?",
       "o": [
-        "Read-your-writes quebra com réplica atrasada.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Read-your-writes quebra só quando o primary cai.",
+        "Read-your-writes quebra quando a leitura vai para a réplica atrasada.",
+        "Read-your-writes nunca quebra com replicação assíncrona.",
+        "Read-your-writes se resolve adicionando mais réplicas."
       ],
-      "a": 0,
-      "w": "Sticky master ou session.",
+      "a": 1,
+      "w": "Defesa: ler onde escreveu, sessão, ou leitura no primary para aquele usuário.",
       "t": "lag"
     },
     {
-      "q": "Se perguntarem lag na mesa, qual frase é a verdadeira?",
+      "q": "Ler onde escreveu serve para quê?",
       "o": [
-        "Read-your-writes quebra com réplica atrasada.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Read-your-writes quebra quando a leitura vai para a réplica atrasada.",
+        "Read-your-writes nunca quebra com replicação assíncrona.",
+        "Read-your-writes se resolve adicionando mais réplicas.",
+        "Read-your-writes quebra só quando o primary cai."
       ],
       "a": 0,
-      "w": "Sticky master ou session.",
+      "w": "Defesa: ler onde escreveu, sessão, ou leitura no primary para aquele usuário.",
       "t": "lag"
     },
     {
-      "q": "Sobre Ana: qual afirmação está certa?",
+      "q": "O que acontece quando uma chave absorve todo o volume?",
       "o": [
-        "Todo mundo se chama Ana: o shard A pega fogo.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Distribuir a chave por hash elimina a hot key sozinha.",
+        "Réplica de leitura resolve pedaço quente: é o mesmo mecanismo.",
+        "Pedaço quente: uma chave absorve o volume e aquele pedaço pega fogo.",
+        "A hot key se espalha sozinha; o pedaço não sente nada."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "A chave é a decisão. Reshard é migração, não uma alteração de tarde.",
       "t": "Ana"
     },
     {
-      "q": "Qual frase sobre Ana está certa?",
+      "q": "Como se chama o pedaço que recebe a maior parte da escrita?",
       "o": [
-        "Todo mundo se chama Ana: o shard A pega fogo.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Distribuir a chave por hash elimina a hot key sozinha.",
+        "Réplica de leitura resolve pedaço quente: é o mesmo mecanismo.",
+        "Pedaço quente: uma chave absorve o volume e aquele pedaço pega fogo.",
+        "A hot key se espalha sozinha; o pedaço não sente nada."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "A chave é a decisão. Reshard é migração, não uma alteração de tarde.",
       "t": "Ana"
     },
     {
-      "q": "Ana — o que acontece de verdade?",
+      "q": "A hot key se espalha sozinha entre os pedaços?",
       "o": [
-        "Todo mundo se chama Ana: o shard A pega fogo.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Réplica de leitura resolve pedaço quente: é o mesmo mecanismo.",
+        "Pedaço quente: uma chave absorve o volume e aquele pedaço pega fogo.",
+        "A hot key se espalha sozinha; o pedaço não sente nada.",
+        "Distribuir a chave por hash elimina a hot key sozinha."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A chave é a decisão. Reshard é migração, não uma alteração de tarde.",
       "t": "Ana"
     },
     {
-      "q": "Marque a leitura correta (Ana).",
+      "q": "Réplica de leitura resolve pedaço quente?",
       "o": [
-        "Todo mundo se chama Ana: o shard A pega fogo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Distribuir a chave por hash elimina a hot key sozinha.",
+        "Réplica de leitura resolve pedaço quente: é o mesmo mecanismo.",
+        "Pedaço quente: uma chave absorve o volume e aquele pedaço pega fogo.",
+        "A hot key se espalha sozinha; o pedaço não sente nada."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 2,
+      "w": "A chave é a decisão. Reshard é migração, não uma alteração de tarde.",
       "t": "Ana"
     },
     {
-      "q": "Corrija o mito sobre Ana.",
+      "q": "Espalhar a chave por hash resolve a celebridade sozinho?",
       "o": [
-        "Todo mundo se chama Ana: o shard A pega fogo.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Réplica de leitura resolve pedaço quente: é o mesmo mecanismo.",
+        "Pedaço quente: uma chave absorve o volume e aquele pedaço pega fogo.",
+        "A hot key se espalha sozinha; o pedaço não sente nada.",
+        "Distribuir a chave por hash elimina a hot key sozinha."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A chave é a decisão. Reshard é migração, não uma alteração de tarde.",
       "t": "Ana"
     },
     {
-      "q": "No caderno, a respeito de Ana: qual vale?",
+      "q": "Reshard é migração ou ajuste rápido?",
       "o": [
-        "Todo mundo se chama Ana: o shard A pega fogo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Réplica de leitura resolve pedaço quente: é o mesmo mecanismo.",
+        "Pedaço quente: uma chave absorve o volume e aquele pedaço pega fogo.",
+        "A hot key se espalha sozinha; o pedaço não sente nada.",
+        "Distribuir a chave por hash elimina a hot key sozinha."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A chave é a decisão. Reshard é migração, não uma alteração de tarde.",
       "t": "Ana"
     },
     {
-      "q": "Se perguntarem Ana na mesa, qual frase é a verdadeira?",
+      "q": "80% dos writes vêm do mesmo cliente. Qual o problema?",
       "o": [
-        "Todo mundo se chama Ana: o shard A pega fogo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Réplica de leitura resolve pedaço quente: é o mesmo mecanismo.",
+        "Pedaço quente: uma chave absorve o volume e aquele pedaço pega fogo.",
+        "A hot key se espalha sozinha; o pedaço não sente nada.",
+        "Distribuir a chave por hash elimina a hot key sozinha."
       ],
-      "a": 0,
-      "w": "Analogia da aula.",
+      "a": 1,
+      "w": "A chave é a decisão. Reshard é migração, não uma alteração de tarde.",
       "t": "Ana"
     },
     {
-      "q": "Sobre não inverso: qual afirmação está certa?",
+      "q": "Replicação escala escrita linearmente?",
       "o": [
-        "Não diga que replicação escala escrita linearmente. Não é o mecanismo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Replicação não escala escrita linearmente: o primary continua sendo o teto.",
+        "Replicação escala escrita linearmente com o número de réplicas.",
+        "Com replicação o primary deixa de ser o teto de escrita.",
+        "Replicação e sharding escalam escrita da mesma forma."
       ],
       "a": 0,
-      "w": "Primary ainda é gargalo clássico.",
+      "w": "Copiar as linhas não divide a escrita. Para dividir escrita você fatia o dataset.",
       "t": "não inverso"
     },
     {
-      "q": "Qual frase sobre não inverso está certa?",
+      "q": "Quem continua sendo o teto de escrita com replicação?",
       "o": [
-        "Não diga que replicação escala escrita linearmente. Não é o mecanismo.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Replicação não escala escrita linearmente: o primary continua sendo o teto.",
+        "Replicação escala escrita linearmente com o número de réplicas.",
+        "Com replicação o primary deixa de ser o teto de escrita.",
+        "Replicação e sharding escalam escrita da mesma forma."
       ],
       "a": 0,
-      "w": "Primary ainda é gargalo clássico.",
+      "w": "Copiar as linhas não divide a escrita. Para dividir escrita você fatia o dataset.",
       "t": "não inverso"
     },
     {
-      "q": "Não inverso — o que acontece de verdade?",
+      "q": "Adicionei dez réplicas. A escrita dobrou?",
       "o": [
-        "Não diga que replicação escala escrita linearmente. Não é o mecanismo.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Replicação e sharding escalam escrita da mesma forma.",
+        "Replicação não escala escrita linearmente: o primary continua sendo o teto.",
+        "Replicação escala escrita linearmente com o número de réplicas.",
+        "Com replicação o primary deixa de ser o teto de escrita."
       ],
-      "a": 0,
-      "w": "Primary ainda é gargalo clássico.",
+      "a": 1,
+      "w": "Copiar as linhas não divide a escrita. Para dividir escrita você fatia o dataset.",
       "t": "não inverso"
     },
     {
-      "q": "Marque a leitura correta (não inverso).",
+      "q": "O que divide a escrita, se não é a réplica?",
       "o": [
-        "Não diga que replicação escala escrita linearmente. Não é o mecanismo.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Com replicação o primary deixa de ser o teto de escrita.",
+        "Replicação e sharding escalam escrita da mesma forma.",
+        "Replicação não escala escrita linearmente: o primary continua sendo o teto.",
+        "Replicação escala escrita linearmente com o número de réplicas."
       ],
-      "a": 0,
-      "w": "Primary ainda é gargalo clássico.",
+      "a": 2,
+      "w": "Copiar as linhas não divide a escrita. Para dividir escrita você fatia o dataset.",
       "t": "não inverso"
     },
     {
-      "q": "Corrija o mito sobre não inverso.",
+      "q": "Replicação e sharding escalam escrita igual?",
       "o": [
-        "Não diga que replicação escala escrita linearmente. Não é o mecanismo.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Com replicação o primary deixa de ser o teto de escrita.",
+        "Replicação e sharding escalam escrita da mesma forma.",
+        "Replicação não escala escrita linearmente: o primary continua sendo o teto.",
+        "Replicação escala escrita linearmente com o número de réplicas."
       ],
-      "a": 0,
-      "w": "Primary ainda é gargalo clássico.",
+      "a": 2,
+      "w": "Copiar as linhas não divide a escrita. Para dividir escrita você fatia o dataset.",
       "t": "não inverso"
     },
     {
-      "q": "No caderno, a respeito de não inverso: qual vale?",
+      "q": "Copiar as linhas divide o trabalho de escrever?",
       "o": [
-        "Não diga que replicação escala escrita linearmente. Não é o mecanismo.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Replicação e sharding escalam escrita da mesma forma.",
+        "Replicação não escala escrita linearmente: o primary continua sendo o teto.",
+        "Replicação escala escrita linearmente com o número de réplicas.",
+        "Com replicação o primary deixa de ser o teto de escrita."
       ],
-      "a": 0,
-      "w": "Primary ainda é gargalo clássico.",
+      "a": 1,
+      "w": "Copiar as linhas não divide a escrita. Para dividir escrita você fatia o dataset.",
       "t": "não inverso"
     },
     {
-      "q": "Se perguntarem não inverso na mesa, qual frase é a verdadeira?",
+      "q": "Qual afirmação sobre réplica esta aula recusa?",
       "o": [
-        "Não diga que replicação escala escrita linearmente. Não é o mecanismo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Replicação e sharding escalam escrita da mesma forma.",
+        "Replicação não escala escrita linearmente: o primary continua sendo o teto.",
+        "Replicação escala escrita linearmente com o número de réplicas.",
+        "Com replicação o primary deixa de ser o teto de escrita."
       ],
-      "a": 0,
-      "w": "Primary ainda é gargalo clássico.",
+      "a": 1,
+      "w": "Copiar as linhas não divide a escrita. Para dividir escrita você fatia o dataset.",
       "t": "não inverso"
     },
     {
-      "q": "Sobre failover: qual afirmação está certa?",
+      "q": "O que pode sumir quando você promove uma réplica?",
       "o": [
-        "Promover réplica: RPO/RTO, não mágica.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Failover garante que todos os writes já estavam replicados.",
+        "RPO e RTO só existem em backup, não em failover.",
+        "Promover réplica tem RPO e RTO: writes que não replicaram podem sumir.",
+        "Promover réplica é instantâneo e não perde nenhum write."
       ],
-      "a": 0,
-      "w": "Pode perder writes não replicados.",
+      "a": 2,
+      "w": "Failover não é mágica. Existe janela de perda e tempo de recuperação.",
       "t": "failover"
     },
     {
-      "q": "Qual frase sobre failover está certa?",
+      "q": "Failover é instantâneo e sem perda?",
       "o": [
-        "Promover réplica: RPO/RTO, não mágica.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "RPO e RTO só existem em backup, não em failover.",
+        "Promover réplica tem RPO e RTO: writes que não replicaram podem sumir.",
+        "Promover réplica é instantâneo e não perde nenhum write.",
+        "Failover garante que todos os writes já estavam replicados."
       ],
-      "a": 0,
-      "w": "Pode perder writes não replicados.",
+      "a": 1,
+      "w": "Failover não é mágica. Existe janela de perda e tempo de recuperação.",
       "t": "failover"
     },
     {
-      "q": "Failover — o que acontece de verdade?",
+      "q": "Que dois números descrevem o custo do failover?",
       "o": [
-        "Promover réplica: RPO/RTO, não mágica.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "RPO e RTO só existem em backup, não em failover.",
+        "Promover réplica tem RPO e RTO: writes que não replicaram podem sumir.",
+        "Promover réplica é instantâneo e não perde nenhum write.",
+        "Failover garante que todos os writes já estavam replicados."
       ],
-      "a": 0,
-      "w": "Pode perder writes não replicados.",
+      "a": 1,
+      "w": "Failover não é mágica. Existe janela de perda e tempo de recuperação.",
       "t": "failover"
     },
     {
-      "q": "Marque a leitura correta (failover).",
+      "q": "Writes que não replicaram: o que acontece com eles?",
       "o": [
-        "Promover réplica: RPO/RTO, não mágica.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Failover garante que todos os writes já estavam replicados.",
+        "RPO e RTO só existem em backup, não em failover.",
+        "Promover réplica tem RPO e RTO: writes que não replicaram podem sumir.",
+        "Promover réplica é instantâneo e não perde nenhum write."
       ],
-      "a": 0,
-      "w": "Pode perder writes não replicados.",
+      "a": 2,
+      "w": "Failover não é mágica. Existe janela de perda e tempo de recuperação.",
       "t": "failover"
     },
     {
-      "q": "Corrija o mito sobre failover.",
+      "q": "Promover réplica é mágica?",
       "o": [
-        "Promover réplica: RPO/RTO, não mágica.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Promover réplica tem RPO e RTO: writes que não replicaram podem sumir.",
+        "Promover réplica é instantâneo e não perde nenhum write.",
+        "Failover garante que todos os writes já estavam replicados.",
+        "RPO e RTO só existem em backup, não em failover."
       ],
       "a": 0,
-      "w": "Pode perder writes não replicados.",
+      "w": "Failover não é mágica. Existe janela de perda e tempo de recuperação.",
       "t": "failover"
     },
     {
-      "q": "No caderno, a respeito de failover: qual vale?",
+      "q": "RPO e RTO existem no failover?",
       "o": [
-        "Promover réplica: RPO/RTO, não mágica.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Failover garante que todos os writes já estavam replicados.",
+        "RPO e RTO só existem em backup, não em failover.",
+        "Promover réplica tem RPO e RTO: writes que não replicaram podem sumir.",
+        "Promover réplica é instantâneo e não perde nenhum write."
       ],
-      "a": 0,
-      "w": "Pode perder writes não replicados.",
+      "a": 2,
+      "w": "Failover não é mágica. Existe janela de perda e tempo de recuperação.",
       "t": "failover"
     },
     {
-      "q": "Se perguntarem failover na mesa, qual frase é a verdadeira?",
+      "q": "Qual janela você aceita ao promover uma réplica?",
       "o": [
-        "Promover réplica: RPO/RTO, não mágica.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Promover réplica é instantâneo e não perde nenhum write.",
+        "Failover garante que todos os writes já estavam replicados.",
+        "RPO e RTO só existem em backup, não em failover.",
+        "Promover réplica tem RPO e RTO: writes que não replicaram podem sumir."
       ],
-      "a": 0,
-      "w": "Pode perder writes não replicados.",
+      "a": 3,
+      "w": "Failover não é mágica. Existe janela de perda e tempo de recuperação.",
       "t": "failover"
     },
     {
-      "q": "Sobre cross: qual afirmação está certa?",
+      "q": "Query cross-shard custa o quê?",
       "o": [
-        "Query cross-shard é join caro. Evite no desenho.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Query cross-shard é tão barata quanto a local.",
+        "Query cross-shard é o objetivo do sharding.",
+        "O sharding elimina automaticamente as queries cross-shard.",
+        "Query cross-shard é junção cara: evite no desenho."
       ],
-      "a": 0,
-      "w": "Chave que atende o acesso.",
+      "a": 3,
+      "w": "A junção atravessa dois pedaços e o desenho só escalou no slide. Escolha a chave que atende o acesso.",
       "t": "cross"
     },
     {
-      "q": "Qual frase sobre cross está certa?",
+      "q": "Por que evitar junção cross-shard?",
       "o": [
-        "Query cross-shard é join caro. Evite no desenho.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Query cross-shard é tão barata quanto a local.",
+        "Query cross-shard é o objetivo do sharding.",
+        "O sharding elimina automaticamente as queries cross-shard.",
+        "Query cross-shard é junção cara: evite no desenho."
       ],
-      "a": 0,
-      "w": "Chave que atende o acesso.",
+      "a": 3,
+      "w": "A junção atravessa dois pedaços e o desenho só escalou no slide. Escolha a chave que atende o acesso.",
       "t": "cross"
     },
     {
-      "q": "Cross — o que acontece de verdade?",
+      "q": "O sharding elimina a query cross-shard?",
       "o": [
-        "Query cross-shard é join caro. Evite no desenho.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O sharding elimina automaticamente as queries cross-shard.",
+        "Query cross-shard é junção cara: evite no desenho.",
+        "Query cross-shard é tão barata quanto a local.",
+        "Query cross-shard é o objetivo do sharding."
       ],
-      "a": 0,
-      "w": "Chave que atende o acesso.",
+      "a": 1,
+      "w": "A junção atravessa dois pedaços e o desenho só escalou no slide. Escolha a chave que atende o acesso.",
       "t": "cross"
     },
     {
-      "q": "Marque a leitura correta (cross).",
+      "q": "A query cross-shard é o objetivo do sharding?",
       "o": [
-        "Query cross-shard é join caro. Evite no desenho.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Query cross-shard é o objetivo do sharding.",
+        "O sharding elimina automaticamente as queries cross-shard.",
+        "Query cross-shard é junção cara: evite no desenho.",
+        "Query cross-shard é tão barata quanto a local."
       ],
-      "a": 0,
-      "w": "Chave que atende o acesso.",
+      "a": 2,
+      "w": "A junção atravessa dois pedaços e o desenho só escalou no slide. Escolha a chave que atende o acesso.",
       "t": "cross"
     },
     {
-      "q": "Corrija o mito sobre cross.",
+      "q": "Como evitar a junção cara cross-shard?",
       "o": [
-        "Query cross-shard é join caro. Evite no desenho.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O sharding elimina automaticamente as queries cross-shard.",
+        "Query cross-shard é junção cara: evite no desenho.",
+        "Query cross-shard é tão barata quanto a local.",
+        "Query cross-shard é o objetivo do sharding."
       ],
-      "a": 0,
-      "w": "Chave que atende o acesso.",
+      "a": 1,
+      "w": "A junção atravessa dois pedaços e o desenho só escalou no slide. Escolha a chave que atende o acesso.",
       "t": "cross"
     },
     {
-      "q": "No caderno, a respeito de cross: qual vale?",
+      "q": "O desenho escalou no slide. E na query?",
       "o": [
-        "Query cross-shard é join caro. Evite no desenho.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Query cross-shard é junção cara: evite no desenho.",
+        "Query cross-shard é tão barata quanto a local.",
+        "Query cross-shard é o objetivo do sharding.",
+        "O sharding elimina automaticamente as queries cross-shard."
       ],
       "a": 0,
-      "w": "Chave que atende o acesso.",
+      "w": "A junção atravessa dois pedaços e o desenho só escalou no slide. Escolha a chave que atende o acesso.",
       "t": "cross"
     },
     {
-      "q": "Se perguntarem cross na mesa, qual frase é a verdadeira?",
+      "q": "Que chave evita atravessar pedaços?",
       "o": [
-        "Query cross-shard é join caro. Evite no desenho.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O sharding elimina automaticamente as queries cross-shard.",
+        "Query cross-shard é junção cara: evite no desenho.",
+        "Query cross-shard é tão barata quanto a local.",
+        "Query cross-shard é o objetivo do sharding."
       ],
-      "a": 0,
-      "w": "Chave que atende o acesso.",
+      "a": 1,
+      "w": "A junção atravessa dois pedaços e o desenho só escalou no slide. Escolha a chave que atende o acesso.",
       "t": "cross"
     },
     {
-      "q": "Sobre CQRS: qual afirmação está certa?",
+      "q": "Réplica de leitura é CQRS?",
       "o": [
-        "Réplica de leitura ≠ CQRS completo. CQRS é modelo diferente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Réplica de leitura é exatamente o que se chama CQRS.",
+        "CQRS é o nome técnico de réplica de leitura.",
+        "CQRS e réplica copiam o mesmo modelo de dados.",
+        "Réplica de leitura não é CQRS: CQRS é modelo diferente para leitura e escrita."
       ],
-      "a": 0,
-      "w": "Aula de dados.",
+      "a": 3,
+      "w": "Réplica copia o mesmo modelo. CQRS separa os modelos, e isso é bem mais caro.",
       "t": "CQRS"
     },
     {
-      "q": "Qual frase sobre CQRS está certa?",
+      "q": "O que CQRS separa que a réplica não separa?",
       "o": [
-        "Réplica de leitura ≠ CQRS completo. CQRS é modelo diferente.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Réplica de leitura é exatamente o que se chama CQRS.",
+        "CQRS é o nome técnico de réplica de leitura.",
+        "CQRS e réplica copiam o mesmo modelo de dados.",
+        "Réplica de leitura não é CQRS: CQRS é modelo diferente para leitura e escrita."
       ],
-      "a": 0,
-      "w": "Aula de dados.",
+      "a": 3,
+      "w": "Réplica copia o mesmo modelo. CQRS separa os modelos, e isso é bem mais caro.",
       "t": "CQRS"
     },
     {
-      "q": "CQRS — o que acontece de verdade?",
+      "q": "CQRS é outro nome para réplica de leitura?",
       "o": [
-        "Réplica de leitura ≠ CQRS completo. CQRS é modelo diferente.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "CQRS e réplica copiam o mesmo modelo de dados.",
+        "Réplica de leitura não é CQRS: CQRS é modelo diferente para leitura e escrita.",
+        "Réplica de leitura é exatamente o que se chama CQRS.",
+        "CQRS é o nome técnico de réplica de leitura."
       ],
-      "a": 0,
-      "w": "Aula de dados.",
+      "a": 1,
+      "w": "Réplica copia o mesmo modelo. CQRS separa os modelos, e isso é bem mais caro.",
       "t": "CQRS"
     },
     {
-      "q": "Marque a leitura correta (CQRS).",
+      "q": "A réplica copia o mesmo modelo ou cria outro?",
       "o": [
-        "Réplica de leitura ≠ CQRS completo. CQRS é modelo diferente.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Réplica de leitura é exatamente o que se chama CQRS.",
+        "CQRS é o nome técnico de réplica de leitura.",
+        "CQRS e réplica copiam o mesmo modelo de dados.",
+        "Réplica de leitura não é CQRS: CQRS é modelo diferente para leitura e escrita."
       ],
-      "a": 0,
-      "w": "Aula de dados.",
+      "a": 3,
+      "w": "Réplica copia o mesmo modelo. CQRS separa os modelos, e isso é bem mais caro.",
       "t": "CQRS"
     },
     {
-      "q": "Corrija o mito sobre CQRS.",
+      "q": "Qual é mais caro: réplica de leitura ou CQRS?",
       "o": [
-        "Réplica de leitura ≠ CQRS completo. CQRS é modelo diferente.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "CQRS e réplica copiam o mesmo modelo de dados.",
+        "Réplica de leitura não é CQRS: CQRS é modelo diferente para leitura e escrita.",
+        "Réplica de leitura é exatamente o que se chama CQRS.",
+        "CQRS é o nome técnico de réplica de leitura."
       ],
-      "a": 0,
-      "w": "Aula de dados.",
+      "a": 1,
+      "w": "Réplica copia o mesmo modelo. CQRS separa os modelos, e isso é bem mais caro.",
       "t": "CQRS"
     },
     {
-      "q": "No caderno, a respeito de CQRS: qual vale?",
+      "q": "O que define CQRS?",
       "o": [
-        "Réplica de leitura ≠ CQRS completo. CQRS é modelo diferente.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "CQRS é o nome técnico de réplica de leitura.",
+        "CQRS e réplica copiam o mesmo modelo de dados.",
+        "Réplica de leitura não é CQRS: CQRS é modelo diferente para leitura e escrita.",
+        "Réplica de leitura é exatamente o que se chama CQRS."
       ],
-      "a": 0,
-      "w": "Aula de dados.",
+      "a": 2,
+      "w": "Réplica copia o mesmo modelo. CQRS separa os modelos, e isso é bem mais caro.",
       "t": "CQRS"
     },
     {
-      "q": "Se perguntarem CQRS na mesa, qual frase é a verdadeira?",
+      "q": "Chamar réplica de CQRS: acerto ou erro?",
       "o": [
-        "Réplica de leitura ≠ CQRS completo. CQRS é modelo diferente.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "CQRS é o nome técnico de réplica de leitura.",
+        "CQRS e réplica copiam o mesmo modelo de dados.",
+        "Réplica de leitura não é CQRS: CQRS é modelo diferente para leitura e escrita.",
+        "Réplica de leitura é exatamente o que se chama CQRS."
       ],
-      "a": 0,
-      "w": "Aula de dados.",
+      "a": 2,
+      "w": "Réplica copia o mesmo modelo. CQRS separa os modelos, e isso é bem mais caro.",
       "t": "CQRS"
     },
     {
-      "q": "Sobre hash: qual afirmação está certa?",
+      "q": "O que distribuir por hash melhora?",
       "o": [
-        "Consistent hashing reduz rebalance ao subir nó, não elimina hot key.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Distribuir por hash resolve rebalance e hot key ao mesmo tempo.",
+        "Distribuir por hash reduz o rebalance ao subir um nó, mas não cura a hot key.",
+        "Distribuir por hash faz a hot key deixar de concentrar acesso.",
+        "Distribuir por hash não muda nada quando você sobe um nó."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Subir um nó move menos dado. A chave de celebridade continua quente no mesmo pedaço.",
       "t": "hash"
     },
     {
-      "q": "Qual frase sobre hash está certa?",
+      "q": "Distribuir por hash cura a hot key?",
       "o": [
-        "Consistent hashing reduz rebalance ao subir nó, não elimina hot key.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Distribuir por hash faz a hot key deixar de concentrar acesso.",
+        "Distribuir por hash não muda nada quando você sobe um nó.",
+        "Distribuir por hash resolve rebalance e hot key ao mesmo tempo.",
+        "Distribuir por hash reduz o rebalance ao subir um nó, mas não cura a hot key."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 3,
+      "w": "Subir um nó move menos dado. A chave de celebridade continua quente no mesmo pedaço.",
       "t": "hash"
     },
     {
-      "q": "Hash — o que acontece de verdade?",
+      "q": "Você subiu um nó novo. O que o hash faz pelo rebalance?",
       "o": [
-        "Consistent hashing reduz rebalance ao subir nó, não elimina hot key.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Distribuir por hash resolve rebalance e hot key ao mesmo tempo.",
+        "Distribuir por hash reduz o rebalance ao subir um nó, mas não cura a hot key.",
+        "Distribuir por hash faz a hot key deixar de concentrar acesso.",
+        "Distribuir por hash não muda nada quando você sobe um nó."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Subir um nó move menos dado. A chave de celebridade continua quente no mesmo pedaço.",
       "t": "hash"
     },
     {
-      "q": "Marque a leitura correta (hash).",
+      "q": "A chave de celebridade continua quente depois do hash?",
       "o": [
-        "Consistent hashing reduz rebalance ao subir nó, não elimina hot key.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Distribuir por hash não muda nada quando você sobe um nó.",
+        "Distribuir por hash resolve rebalance e hot key ao mesmo tempo.",
+        "Distribuir por hash reduz o rebalance ao subir um nó, mas não cura a hot key.",
+        "Distribuir por hash faz a hot key deixar de concentrar acesso."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 2,
+      "w": "Subir um nó move menos dado. A chave de celebridade continua quente no mesmo pedaço.",
       "t": "hash"
     },
     {
-      "q": "Corrija o mito sobre hash.",
+      "q": "O hash resolve rebalance e hot key juntos?",
       "o": [
-        "Consistent hashing reduz rebalance ao subir nó, não elimina hot key.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Distribuir por hash resolve rebalance e hot key ao mesmo tempo.",
+        "Distribuir por hash reduz o rebalance ao subir um nó, mas não cura a hot key.",
+        "Distribuir por hash faz a hot key deixar de concentrar acesso.",
+        "Distribuir por hash não muda nada quando você sobe um nó."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Subir um nó move menos dado. A chave de celebridade continua quente no mesmo pedaço.",
       "t": "hash"
     },
     {
-      "q": "No caderno, a respeito de hash: qual vale?",
+      "q": "Qual problema o hash não resolve?",
       "o": [
-        "Consistent hashing reduz rebalance ao subir nó, não elimina hot key.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Distribuir por hash resolve rebalance e hot key ao mesmo tempo.",
+        "Distribuir por hash reduz o rebalance ao subir um nó, mas não cura a hot key.",
+        "Distribuir por hash faz a hot key deixar de concentrar acesso.",
+        "Distribuir por hash não muda nada quando você sobe um nó."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Subir um nó move menos dado. A chave de celebridade continua quente no mesmo pedaço.",
       "t": "hash"
     },
     {
-      "q": "Se perguntarem hash na mesa, qual frase é a verdadeira?",
+      "q": "Distribuir por hash muda algo ao subir um nó?",
       "o": [
-        "Consistent hashing reduz rebalance ao subir nó, não elimina hot key.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Distribuir por hash resolve rebalance e hot key ao mesmo tempo.",
+        "Distribuir por hash reduz o rebalance ao subir um nó, mas não cura a hot key.",
+        "Distribuir por hash faz a hot key deixar de concentrar acesso.",
+        "Distribuir por hash não muda nada quando você sobe um nó."
       ],
-      "a": 0,
-      "w": "Catálogo.",
+      "a": 1,
+      "w": "Subir um nó move menos dado. A chave de celebridade continua quente no mesmo pedaço.",
       "t": "hash"
     },
     {
-      "q": "Sobre multi-região: qual afirmação está certa?",
+      "q": "O que a réplica em outra região traz de preço?",
       "o": [
-        "Réplica cross-região: latência e conflito. PACELC na cara.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Réplica em outra região traz latência e conflito: é PACELC na cara.",
+        "Réplica em outra região é disponibilidade de graça, sem preço.",
+        "Réplica em outra região elimina conflito entre cópias.",
+        "Distância entre regiões não afeta a latência da replicação."
       ],
       "a": 0,
-      "w": "Staff.",
+      "w": "Distância custa milissegundos e abre espaço para conflito. Não é disponibilidade de graça.",
       "t": "multi-região"
     },
     {
-      "q": "Qual frase sobre multi-região está certa?",
+      "q": "Réplica em outra região é disponibilidade de graça?",
       "o": [
-        "Réplica cross-região: latência e conflito. PACELC na cara.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Réplica em outra região elimina conflito entre cópias.",
+        "Distância entre regiões não afeta a latência da replicação.",
+        "Réplica em outra região traz latência e conflito: é PACELC na cara.",
+        "Réplica em outra região é disponibilidade de graça, sem preço."
       ],
-      "a": 0,
-      "w": "Staff.",
+      "a": 2,
+      "w": "Distância custa milissegundos e abre espaço para conflito. Não é disponibilidade de graça.",
       "t": "multi-região"
     },
     {
-      "q": "Multi-região — o que acontece de verdade?",
+      "q": "Qual teorema aparece quando você replica entre regiões?",
       "o": [
-        "Réplica cross-região: latência e conflito. PACELC na cara.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Distância entre regiões não afeta a latência da replicação.",
+        "Réplica em outra região traz latência e conflito: é PACELC na cara.",
+        "Réplica em outra região é disponibilidade de graça, sem preço.",
+        "Réplica em outra região elimina conflito entre cópias."
       ],
-      "a": 0,
-      "w": "Staff.",
+      "a": 1,
+      "w": "Distância custa milissegundos e abre espaço para conflito. Não é disponibilidade de graça.",
       "t": "multi-região"
     },
     {
-      "q": "Marque a leitura correta (multi-região).",
+      "q": "A distância entre regiões afeta a latência?",
       "o": [
-        "Réplica cross-região: latência e conflito. PACELC na cara.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Réplica em outra região elimina conflito entre cópias.",
+        "Distância entre regiões não afeta a latência da replicação.",
+        "Réplica em outra região traz latência e conflito: é PACELC na cara.",
+        "Réplica em outra região é disponibilidade de graça, sem preço."
       ],
-      "a": 0,
-      "w": "Staff.",
+      "a": 2,
+      "w": "Distância custa milissegundos e abre espaço para conflito. Não é disponibilidade de graça.",
       "t": "multi-região"
     },
     {
-      "q": "Corrija o mito sobre multi-região.",
+      "q": "Réplica em outra região elimina conflito?",
       "o": [
-        "Réplica cross-região: latência e conflito. PACELC na cara.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Distância entre regiões não afeta a latência da replicação.",
+        "Réplica em outra região traz latência e conflito: é PACELC na cara.",
+        "Réplica em outra região é disponibilidade de graça, sem preço.",
+        "Réplica em outra região elimina conflito entre cópias."
       ],
-      "a": 0,
-      "w": "Staff.",
+      "a": 1,
+      "w": "Distância custa milissegundos e abre espaço para conflito. Não é disponibilidade de graça.",
       "t": "multi-região"
     },
     {
-      "q": "No caderno, a respeito de multi-região: qual vale?",
+      "q": "O que a distância custa na replicação?",
       "o": [
-        "Réplica cross-região: latência e conflito. PACELC na cara.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Réplica em outra região traz latência e conflito: é PACELC na cara.",
+        "Réplica em outra região é disponibilidade de graça, sem preço.",
+        "Réplica em outra região elimina conflito entre cópias.",
+        "Distância entre regiões não afeta a latência da replicação."
       ],
       "a": 0,
-      "w": "Staff.",
+      "w": "Distância custa milissegundos e abre espaço para conflito. Não é disponibilidade de graça.",
       "t": "multi-região"
     },
     {
-      "q": "Se perguntarem multi-região na mesa, qual frase é a verdadeira?",
+      "q": "Espalhar réplicas pelo mundo cobra o quê?",
       "o": [
-        "Réplica cross-região: latência e conflito. PACELC na cara.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Réplica em outra região traz latência e conflito: é PACELC na cara.",
+        "Réplica em outra região é disponibilidade de graça, sem preço.",
+        "Réplica em outra região elimina conflito entre cópias.",
+        "Distância entre regiões não afeta a latência da replicação."
       ],
       "a": 0,
-      "w": "Staff.",
+      "w": "Distância custa milissegundos e abre espaço para conflito. Não é disponibilidade de graça.",
       "t": "multi-região"
     },
     {
-      "q": "Sobre escolha: qual afirmação está certa?",
+      "q": "O gargalo é de leitura ou de escrita: isso vem antes ou depois do desenho?",
       "o": [
-        "Primeiro pergunte se o gargalo é leitura ou escrita.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Leitura e escrita pedem a mesma peça, então o diagnóstico sobra.",
+        "Leitura pede réplica; escrita e volume pedem sharding. Diagnostique o gargalo antes de desenhar os dois.",
+        "Desenhe réplica e shard juntos e depois descubra o gargalo.",
+        "O gargalo não importa: réplica e sharding resolvem tudo."
       ],
-      "a": 0,
-      "w": "Senão desenha os dois errado.",
+      "a": 1,
+      "w": "Sem diagnosticar o gargalo você desenha as duas caixas e paga os dois aluguéis.",
       "t": "escolha"
     },
     {
-      "q": "Qual frase sobre escolha está certa?",
+      "q": "Você desenhou réplica e shard sem diagnosticar. O que paga?",
       "o": [
-        "Primeiro pergunte se o gargalo é leitura ou escrita.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Leitura e escrita pedem a mesma peça, então o diagnóstico sobra.",
+        "Leitura pede réplica; escrita e volume pedem sharding. Diagnostique o gargalo antes de desenhar os dois.",
+        "Desenhe réplica e shard juntos e depois descubra o gargalo.",
+        "O gargalo não importa: réplica e sharding resolvem tudo."
       ],
-      "a": 0,
-      "w": "Senão desenha os dois errado.",
+      "a": 1,
+      "w": "Sem diagnosticar o gargalo você desenha as duas caixas e paga os dois aluguéis.",
       "t": "escolha"
     },
     {
-      "q": "Escolha — o que acontece de verdade?",
+      "q": "Leitura e escrita pedem a mesma peça: réplica ou sharding?",
       "o": [
-        "Primeiro pergunte se o gargalo é leitura ou escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Leitura e escrita pedem a mesma peça, então o diagnóstico sobra.",
+        "Leitura pede réplica; escrita e volume pedem sharding. Diagnostique o gargalo antes de desenhar os dois.",
+        "Desenhe réplica e shard juntos e depois descubra o gargalo.",
+        "O gargalo não importa: réplica e sharding resolvem tudo."
       ],
-      "a": 0,
-      "w": "Senão desenha os dois errado.",
+      "a": 1,
+      "w": "Sem diagnosticar o gargalo você desenha as duas caixas e paga os dois aluguéis.",
       "t": "escolha"
     },
     {
-      "q": "Marque a leitura correta (escolha).",
+      "q": "O gargalo importa na escolha entre réplica e sharding?",
       "o": [
-        "Primeiro pergunte se o gargalo é leitura ou escrita.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O gargalo não importa: réplica e sharding resolvem tudo.",
+        "Leitura e escrita pedem a mesma peça, então o diagnóstico sobra.",
+        "Leitura pede réplica; escrita e volume pedem sharding. Diagnostique o gargalo antes de desenhar os dois.",
+        "Desenhe réplica e shard juntos e depois descubra o gargalo."
       ],
-      "a": 0,
-      "w": "Senão desenha os dois errado.",
+      "a": 2,
+      "w": "Sem diagnosticar o gargalo você desenha as duas caixas e paga os dois aluguéis.",
       "t": "escolha"
     },
     {
-      "q": "Corrija o mito sobre escolha.",
+      "q": "Qual o erro da mesa nesta aula?",
       "o": [
-        "Primeiro pergunte se o gargalo é leitura ou escrita.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O gargalo não importa: réplica e sharding resolvem tudo.",
+        "Leitura e escrita pedem a mesma peça, então o diagnóstico sobra.",
+        "Leitura pede réplica; escrita e volume pedem sharding. Diagnostique o gargalo antes de desenhar os dois.",
+        "Desenhe réplica e shard juntos e depois descubra o gargalo."
       ],
-      "a": 0,
-      "w": "Senão desenha os dois errado.",
+      "a": 2,
+      "w": "Sem diagnosticar o gargalo você desenha as duas caixas e paga os dois aluguéis.",
       "t": "escolha"
     },
     {
-      "q": "No caderno, a respeito de escolha: qual vale?",
+      "q": "Réplica e sharding resolvem a mesma dor?",
       "o": [
-        "Primeiro pergunte se o gargalo é leitura ou escrita.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O gargalo não importa: réplica e sharding resolvem tudo.",
+        "Leitura e escrita pedem a mesma peça, então o diagnóstico sobra.",
+        "Leitura pede réplica; escrita e volume pedem sharding. Diagnostique o gargalo antes de desenhar os dois.",
+        "Desenhe réplica e shard juntos e depois descubra o gargalo."
       ],
-      "a": 0,
-      "w": "Senão desenha os dois errado.",
+      "a": 2,
+      "w": "Sem diagnosticar o gargalo você desenha as duas caixas e paga os dois aluguéis.",
       "t": "escolha"
     },
     {
-      "q": "Se perguntarem escolha na mesa, qual frase é a verdadeira?",
+      "q": "Como saber se você precisa de réplica ou de fatia?",
       "o": [
-        "Primeiro pergunte se o gargalo é leitura ou escrita.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Leitura pede réplica; escrita e volume pedem sharding. Diagnostique o gargalo antes de desenhar os dois.",
+        "Desenhe réplica e shard juntos e depois descubra o gargalo.",
+        "O gargalo não importa: réplica e sharding resolvem tudo.",
+        "Leitura e escrita pedem a mesma peça, então o diagnóstico sobra."
       ],
       "a": 0,
-      "w": "Senão desenha os dois errado.",
+      "w": "Sem diagnosticar o gargalo você desenha as duas caixas e paga os dois aluguéis.",
       "t": "escolha"
     },
     {
-      "q": "Sobre único primary: qual afirmação está certa?",
+      "q": "Com um primary e várias réplicas, por onde passa a escrita?",
       "o": [
-        "Um primary + N réplicas: escrita ainda passa no primary.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Com um primary e várias réplicas, a escrita ainda passa toda no primary.",
+        "A escrita se divide entre todas as réplicas nesse desenho.",
+        "Com várias réplicas o primary deixa de receber escrita.",
+        "Esse desenho resolve leitura, failover e escrita ao mesmo tempo."
       ],
       "a": 0,
-      "w": "Limite honesto.",
+      "w": "Esse desenho é honesto para leitura e failover. Para escrita, o primary é o teto.",
       "t": "único primary"
     },
     {
-      "q": "Qual frase sobre único primary está certa?",
+      "q": "Esse desenho é honesto para o quê?",
       "o": [
-        "Um primary + N réplicas: escrita ainda passa no primary.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Com várias réplicas o primary deixa de receber escrita.",
+        "Esse desenho resolve leitura, failover e escrita ao mesmo tempo.",
+        "Com um primary e várias réplicas, a escrita ainda passa toda no primary.",
+        "A escrita se divide entre todas as réplicas nesse desenho."
       ],
-      "a": 0,
-      "w": "Limite honesto.",
+      "a": 2,
+      "w": "Esse desenho é honesto para leitura e failover. Para escrita, o primary é o teto.",
       "t": "único primary"
     },
     {
-      "q": "Único primary — o que acontece de verdade?",
+      "q": "A escrita se divide entre as réplicas?",
       "o": [
-        "Um primary + N réplicas: escrita ainda passa no primary.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Com várias réplicas o primary deixa de receber escrita.",
+        "Esse desenho resolve leitura, failover e escrita ao mesmo tempo.",
+        "Com um primary e várias réplicas, a escrita ainda passa toda no primary.",
+        "A escrita se divide entre todas as réplicas nesse desenho."
       ],
-      "a": 0,
-      "w": "Limite honesto.",
+      "a": 2,
+      "w": "Esse desenho é honesto para leitura e failover. Para escrita, o primary é o teto.",
       "t": "único primary"
     },
     {
-      "q": "Marque a leitura correta (único primary).",
+      "q": "O primary deixa de receber escrita quando você adiciona réplicas?",
       "o": [
-        "Um primary + N réplicas: escrita ainda passa no primary.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Esse desenho resolve leitura, failover e escrita ao mesmo tempo.",
+        "Com um primary e várias réplicas, a escrita ainda passa toda no primary.",
+        "A escrita se divide entre todas as réplicas nesse desenho.",
+        "Com várias réplicas o primary deixa de receber escrita."
       ],
-      "a": 0,
-      "w": "Limite honesto.",
+      "a": 1,
+      "w": "Esse desenho é honesto para leitura e failover. Para escrita, o primary é o teto.",
       "t": "único primary"
     },
     {
-      "q": "Corrija o mito sobre único primary.",
+      "q": "Um primary com N réplicas resolve escrita?",
       "o": [
-        "Um primary + N réplicas: escrita ainda passa no primary.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A escrita se divide entre todas as réplicas nesse desenho.",
+        "Com várias réplicas o primary deixa de receber escrita.",
+        "Esse desenho resolve leitura, failover e escrita ao mesmo tempo.",
+        "Com um primary e várias réplicas, a escrita ainda passa toda no primary."
       ],
-      "a": 0,
-      "w": "Limite honesto.",
+      "a": 3,
+      "w": "Esse desenho é honesto para leitura e failover. Para escrita, o primary é o teto.",
       "t": "único primary"
     },
     {
-      "q": "No caderno, a respeito de único primary: qual vale?",
+      "q": "Para que serve o desenho de um primary com várias réplicas?",
       "o": [
-        "Um primary + N réplicas: escrita ainda passa no primary.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Com várias réplicas o primary deixa de receber escrita.",
+        "Esse desenho resolve leitura, failover e escrita ao mesmo tempo.",
+        "Com um primary e várias réplicas, a escrita ainda passa toda no primary.",
+        "A escrita se divide entre todas as réplicas nesse desenho."
       ],
-      "a": 0,
-      "w": "Limite honesto.",
+      "a": 2,
+      "w": "Esse desenho é honesto para leitura e failover. Para escrita, o primary é o teto.",
       "t": "único primary"
     },
     {
-      "q": "Se perguntarem único primary na mesa, qual frase é a verdadeira?",
+      "q": "Qual o teto de escrita nesse desenho?",
       "o": [
-        "Um primary + N réplicas: escrita ainda passa no primary.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Com um primary e várias réplicas, a escrita ainda passa toda no primary.",
+        "A escrita se divide entre todas as réplicas nesse desenho.",
+        "Com várias réplicas o primary deixa de receber escrita.",
+        "Esse desenho resolve leitura, failover e escrita ao mesmo tempo."
       ],
       "a": 0,
-      "w": "Limite honesto.",
+      "w": "Esse desenho é honesto para leitura e failover. Para escrita, o primary é o teto.",
       "t": "único primary"
     },
     {
-      "q": "Sobre rebalance shard: qual afirmação está certa?",
+      "q": "Reshard é ajuste rápido ou migração?",
       "o": [
-        "Reshard é migração cara. Escolha a chave como decisão de arquitetura.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A chave pode ser trocada depois sem custo.",
+        "Reshard é operação automática que o banco resolve sozinho.",
+        "Reshard é migração cara: escolha a chave como decisão de arquitetura.",
+        "Reshard é uma alteração rápida, feita numa tarde."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 2,
+      "w": "Trocar a chave depois move dados por semanas. É caro de reverter.",
       "t": "rebalance shard"
     },
     {
-      "q": "Qual frase sobre rebalance shard está certa?",
+      "q": "Trocar a chave depois custa o quê?",
       "o": [
-        "Reshard é migração cara. Escolha a chave como decisão de arquitetura.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Reshard é migração cara: escolha a chave como decisão de arquitetura.",
+        "Reshard é uma alteração rápida, feita numa tarde.",
+        "A chave pode ser trocada depois sem custo.",
+        "Reshard é operação automática que o banco resolve sozinho."
       ],
       "a": 0,
-      "w": "Cara de reverter.",
+      "w": "Trocar a chave depois move dados por semanas. É caro de reverter.",
       "t": "rebalance shard"
     },
     {
-      "q": "Rebalance shard — o que acontece de verdade?",
+      "q": "Por que a chave é decisão de arquitetura?",
       "o": [
-        "Reshard é migração cara. Escolha a chave como decisão de arquitetura.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Reshard é uma alteração rápida, feita numa tarde.",
+        "A chave pode ser trocada depois sem custo.",
+        "Reshard é operação automática que o banco resolve sozinho.",
+        "Reshard é migração cara: escolha a chave como decisão de arquitetura."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 3,
+      "w": "Trocar a chave depois move dados por semanas. É caro de reverter.",
       "t": "rebalance shard"
     },
     {
-      "q": "Marque a leitura correta (rebalance shard).",
+      "q": "A chave pode ser trocada sem custo?",
       "o": [
-        "Reshard é migração cara. Escolha a chave como decisão de arquitetura.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Reshard é operação automática que o banco resolve sozinho.",
+        "Reshard é migração cara: escolha a chave como decisão de arquitetura.",
+        "Reshard é uma alteração rápida, feita numa tarde.",
+        "A chave pode ser trocada depois sem custo."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 1,
+      "w": "Trocar a chave depois move dados por semanas. É caro de reverter.",
       "t": "rebalance shard"
     },
     {
-      "q": "Corrija o mito sobre rebalance shard.",
+      "q": "Reshard é automático?",
       "o": [
-        "Reshard é migração cara. Escolha a chave como decisão de arquitetura.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A chave pode ser trocada depois sem custo.",
+        "Reshard é operação automática que o banco resolve sozinho.",
+        "Reshard é migração cara: escolha a chave como decisão de arquitetura.",
+        "Reshard é uma alteração rápida, feita numa tarde."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 2,
+      "w": "Trocar a chave depois move dados por semanas. É caro de reverter.",
       "t": "rebalance shard"
     },
     {
-      "q": "No caderno, a respeito de rebalance shard: qual vale?",
+      "q": "Mover os dados num reshard leva quanto tempo?",
       "o": [
-        "Reshard é migração cara. Escolha a chave como decisão de arquitetura.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A chave pode ser trocada depois sem custo.",
+        "Reshard é operação automática que o banco resolve sozinho.",
+        "Reshard é migração cara: escolha a chave como decisão de arquitetura.",
+        "Reshard é uma alteração rápida, feita numa tarde."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 2,
+      "w": "Trocar a chave depois move dados por semanas. É caro de reverter.",
       "t": "rebalance shard"
     },
     {
-      "q": "Se perguntarem rebalance shard na mesa, qual frase é a verdadeira?",
+      "q": "O que faz da chave uma decisão cara de reverter?",
       "o": [
-        "Reshard é migração cara. Escolha a chave como decisão de arquitetura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Reshard é operação automática que o banco resolve sozinho.",
+        "Reshard é migração cara: escolha a chave como decisão de arquitetura.",
+        "Reshard é uma alteração rápida, feita numa tarde.",
+        "A chave pode ser trocada depois sem custo."
       ],
-      "a": 0,
-      "w": "Cara de reverter.",
+      "a": 1,
+      "w": "Trocar a chave depois move dados por semanas. É caro de reverter.",
       "t": "rebalance shard"
     }
   ]

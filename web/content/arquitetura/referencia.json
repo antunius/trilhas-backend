@@ -1,0 +1,111 @@
+{
+  "beats": [
+    {
+      "id": "quadro",
+      "kind": "cena",
+      "kicker": "Referência",
+      "title": "Não é quem recita CAP. É quem segura o p99 sem pânico.",
+      "body": "<p>Explica o mapa no quadro. Recusa microsserviço quando o time ainda não tem fronteira. Usa o desenho como ferramenta de contrato, falha e custo — não medalha no currículo.</p><p>O endpoint “funciona no meu serviço” é o chão. O próximo degrau: API e tópico são contratos entre times. Sem dono, cada squad inventa um payload e o grafo vira acoplamento invisível.</p>"
+    },
+    {
+      "id": "tres-degraus",
+      "kind": "explicar",
+      "title": "De feature a dono. De merge a operação. De padrão a não.",
+      "html": "<ul class=\"tight\"><li><strong>Fronteira</strong> — semântica, versão, dono do dado, o que o retry faz. Contrato entre times, não “passou no meu teste”.</li><li><strong>Operação</strong> — qual o SLO? Quem acorda? O budget do trimestre aguenta o canário? Reprocessar o dia D é runbook ou oração? Sem isso o sistema é hobby em produção. Quem desenha pergunta o pager.</li><li><strong>Recusa</strong> — a peça da moda só entra com requisito. Ensinar o mapa usuário → SLO → falha, não o stack da semana.</li></ul>"
+    },
+    {
+      "id": "decisoes",
+      "kind": "explicar",
+      "title": "A pergunta que o arquiteto faz",
+      "html": "<table class=\"compare\"><thead><tr><th>Decisão</th><th>Pergunta</th><th>Fraca vs forte</th></tr></thead><tbody><tr><td>Decomposição</td><td>O time precisa soltar sozinho? Fronteiras estáveis?</td><td>Fraca: “micro porque escala”. Forte: modular até o contexto pedir; banco próprio ou nem extraia.</td></tr><tr><td>Consistência</td><td>2 s atrasado custa o quê? Duplicar é pior que recusar?</td><td>Fraca: “eventual em tudo”. Forte: assento/saldo fortes; feed eventual; nomeia o modelo.</td></tr><tr><td>Comunicação</td><td>O usuário espera? O efeito pode depois?</td><td>Fraca: “event-driven”. Forte: sync na cara; async no fato; timeout no sync.</td></tr><tr><td>Dados</td><td>Banco e fila precisam commitar juntos?</td><td>Fraca: <code>save(); send();</code> Forte: outbox; saga com compensação visível.</td></tr><tr><td>Falha</td><td>Blast radius desta célula/região/PSP?</td><td>Fraca: “tem réplica”. Forte: timeout, bulkhead, shedding, célula, RPO/RTO.</td></tr><tr><td>SLO / custo</td><td>Quantos noves o produto paga?</td><td>Fraca: “cinco noves”. Forte: 99,9% e o budget em minutos; o que desliga no pico.</td></tr></tbody></table>"
+    },
+    {
+      "id": "como-te-veem",
+      "kind": "explicar",
+      "title": "Como o time te vê como referência",
+      "html": "<ol class=\"tight\"><li>Ensine o mapa no quadro até um pleno desenhar sozinho.</li><li>ADRs curtos. Recuse RFC sem trade-off nomeado.</li><li>Runbook de p99 e de “PSP caiu” antes do incidente, não no Slack às 3h.</li><li>A pessoa que diz não ao décimo serviço e sim ao outbox no lugar certo.</li><li>Depois de cada incidente, uma página: o que o modelo previa, o que o time não mediu.</li></ol><p>Entrevista de arquiteto não pede definição de latência. Pede o sistema atual com trade-offs em 3 min; a decisão mais difícil e o custo; incidente da detecção ao que mudou no desenho; p99 de 3 s passo a passo; como convence o time a <em>não</em> adotar a moda; como o distribuído não perde dado — e onde ainda pode duplicar.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Contrato e custo versus medalha",
+      "ganha": "Dono de fronteira. Operação com SLO e pager. Não com alternativa. ADR que registra o recusado. Menos peças. Fitness. O mapa ensinado.",
+      "paga": "Recitar CAP. Empurrar micro cedo. RFC de boxes. Wiki sem dono. Mais logos. Cache como saldo. Kafka no frete. Saga no slide sem compensação. Desenhar sem quem acorda.",
+      "quando": [
+        "A decisão gruda: dado, contrato, falha, custo, blast radius",
+        "Você mede (SLI) e escreve (ADR) o que não escolheu",
+        "O time consegue repetir o mapa e o runbook sem você na sala"
+      ],
+      "quandoNao": [
+        "Referência = stack da moda e diagrama no currículo",
+        "Shared db como “evolução”; aposta sem SLI; não sem preço",
+        "Glossário no lugar de julgamento — isso ainda é júnior consciente"
+      ]
+    },
+    {
+      "id": "regua",
+      "kind": "explicar",
+      "title": "Régua honesta",
+      "html": "<p>Saber o glossário = júnior consciente. Ligar timeout + outbox + SLO = pleno. Decidir fronteiras, recusar moda, escrever ADR, isolar blast radius e fechar com “escolhi X, o custo é Y” = o arquiteto que a mesa contrata.</p><p>Treine no simulador. Se errar o bloco de julgamento, o gap não é vocabulário — é decisão.</p>"
+    },
+    {
+      "id": "recusar-micro",
+      "kind": "escolha",
+      "prompt": "Time de oito, domínio instável. A sala quer dez serviços “porque escala”. Recusar é medo — ou o trabalho?",
+      "options": [
+        {
+          "id": "medo",
+          "label": "Recusar micro cedo é medo. Referência empurra o corte. Mais logos, desenho melhor.",
+          "verdict": "ruim",
+          "why": "O atalho medíocre é Kafka + K8s + dez serviços em toda reunião. O atalho de arquiteto: monolito modular; HTTP na cara; invariante de dinheiro sem “eventual e reza”; CQRS em CRUD, não."
+        },
+        {
+          "id": "nao-com-preco",
+          "label": "Não, com alternativa e preço: modular agora; extrai quando o contexto pedir; banco próprio ou nem extraia. Menos peças se o contrato aguentar.",
+          "verdict": "bom",
+          "why": "Dizer não sem alternativa é muro. Dizer não com o custo nomeado é o ofício. Shared db não é evolução da fronteira — é regressão."
+        },
+        {
+          "id": "kafka-frete",
+          "label": "Kafka no GET de frete. Cache como verdade do saldo. Saga sem compensação no slide. Julgamento certo: moderno.",
+          "verdict": "ruim",
+          "why": "GET de frete é sync. Cache de saldo é incidente. Saga sem compensação desenhada não é saga. O julgamento da referência é o contrário da moda."
+        }
+      ]
+    },
+    {
+      "id": "adr-rfc",
+      "kind": "escolha",
+      "prompt": "RFC com um desenho bonito, uma opção só, wiki eterno sem dono. Review de arquiteto: o que é bandeira vermelha — e o que você exige?",
+      "options": [
+        {
+          "id": "boxes",
+          "label": "Olho só as boxes. Falha, operação e custo sobram. ADR registra a decisão feliz; o recusado não entra.",
+          "verdict": "ruim",
+          "why": "“Não há alternativa” é bandeira. Consequências incluem o que você não escolheu. Wiki sem dono perde para ADR de uma página."
+        },
+        {
+          "id": "checklist",
+          "label": "NFR com ordem de grandeza (QPS, p99, consistência, regiões). Duas opções reais. Dono e contrato. Caminho de falha. SLI e alerta de sintoma. Blast radius. Fitness daqui a seis meses.",
+          "verdict": "bom",
+          "why": "O arquiteto recusa o RFC se faltar. Aposta sem SLI ainda não é arquitetura — é opinião. Medir é o ofício."
+        },
+        {
+          "id": "muro",
+          "label": "Digo não sem alternativa nem preço. O desenho congelado é a régua; não falo o que faria com mais tempo.",
+          "verdict": "ruim",
+          "why": "Não sem preço é muro. A mesa cobra o que faria diferente. Evoluir em voz alta é fluência, não fraqueza."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Referência explica o mapa, recusa micro cedo com preço, e opera com SLO e pager.",
+        "ADR registra o recusado. RFC sem falha, dono e fitness não passa.",
+        "Menos peças. Consistência é produto. Fechar com “escolhi X, o custo é Y”."
+      ]
+    }
+  ]
+}

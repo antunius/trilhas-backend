@@ -3,6 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
+import {
+  Search,
+  Zap,
+  Boxes,
+  ChevronRight,
+  CheckCircle2,
+  Circle,
+  Lock,
+} from "lucide-react";
 import { useSidebar } from "@/components/sidebar-context";
 import {
   isTrackHome,
@@ -12,10 +21,19 @@ import {
 } from "@/lib/catalog";
 import {
   isLessonUnlocked,
+  isProgressHydrated,
   loadProgress,
   passedPaths,
   trackProgress,
 } from "@/lib/progress";
+import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function AppSidebar() {
   const path = usePathname();
@@ -43,6 +61,7 @@ export function AppSidebar() {
 
   useEffect(() => {
     function sync() {
+      if (!isProgressHydrated()) return;
       const state = loadProgress();
       setPassed(passedPaths(state));
       const active = sidebarTracks.find((t) => t.id === activeTrackId);
@@ -69,7 +88,7 @@ export function AppSidebar() {
             items: trackHit
               ? group.items
               : group.items.filter((item) =>
-                  item.label.toLowerCase().includes(q),
+                  item.label.toLowerCase().includes(q)
                 ),
           }))
           .filter((group) => group.items.length > 0);
@@ -84,56 +103,68 @@ export function AppSidebar() {
 
   const levelLabel = activeTrackId
     ? sidebarTracks.find((t) => t.id === activeTrackId)?.label
-    : "Trilhas";
+    : "Visão Geral";
 
   return (
-    <aside
-      id="site-sidebar"
-      className={`app-sidebar${open ? " open" : ""}`}
-      data-track={activeTrackId}
-      aria-label="Trilhas e conteúdos"
-    >
-      <div className="sidebar-progress">
-        <p className="sidebar-level">
-          {activeTrackId ? `Você está em ${levelLabel}` : "Duas trilhas"}
-        </p>
-        <div className="home-progress">
-          <div className="bar" aria-hidden="true">
-            <i style={{ width: `${progress.pct}%` }} />
+    <TooltipProvider delayDuration={300}>
+      <aside
+        id="site-sidebar"
+        className={`app-sidebar${open ? " open" : ""}`}
+        data-track={activeTrackId}
+        aria-label="Trilhas e conteúdos"
+      >
+        {/* Progress Card */}
+        <div className="sidebar-progress p-4 border-b border-border/80">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+              {levelLabel}
+            </span>
+            <Badge variant="secondary" className="text-[11px] font-mono px-1.5 py-0">
+              {progress.pct}%
+            </Badge>
           </div>
-          <p>
-            {progress.pct}% · {progress.done} de {progress.total} aulas
+          <Progress value={progress.pct} className="h-1.5 bg-secondary" />
+          <p className="mt-2 text-xs text-muted-foreground">
+            {progress.done} de {progress.total} aulas concluídas
           </p>
         </div>
-      </div>
 
-      <div className="sidebar-search">
-        <input
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Buscar…"
-          aria-label="Buscar aula"
-        />
-      </div>
+        {/* Filter / Search Bar */}
+        <div className="sidebar-search p-3 border-b border-border/80">
+          <div className="relative flex items-center">
+            <Search className="w-3.5 h-3.5 absolute left-2.5 text-muted-foreground pointer-events-none" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Filtrar aulas..."
+              aria-label="Buscar aula"
+              className="w-full bg-secondary/50 border border-border/60 rounded-md py-1.5 pl-8 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+            />
+          </div>
+        </div>
 
-      <nav className="sidebar-tree">
-        {filtered.map((track) => (
-          <TrackBlock
-            key={track.id}
-            track={track}
-            expanded={Boolean(q) || Boolean(openTracks[track.id])}
-            onToggle={() => toggleTrack(track.id)}
-            activeHref={path}
-            passed={passed}
-            onNavigate={() => setOpen(false)}
-          />
-        ))}
-        {filtered.length === 0 ? (
-          <p className="sidebar-empty">Nada encontrado.</p>
-        ) : null}
-      </nav>
-    </aside>
+        {/* Navigation Tree */}
+        <nav className="sidebar-tree custom-scrollbar">
+          {filtered.map((track) => (
+            <TrackBlock
+              key={track.id}
+              track={track}
+              expanded={Boolean(q) || Boolean(openTracks[track.id])}
+              onToggle={() => toggleTrack(track.id)}
+              activeHref={path}
+              passed={passed}
+              onNavigate={() => setOpen(false)}
+            />
+          ))}
+          {filtered.length === 0 ? (
+            <p className="sidebar-empty text-xs text-muted-foreground p-4 text-center">
+              Nenhuma aula encontrada.
+            </p>
+          ) : null}
+        </nav>
+      </aside>
+    </TooltipProvider>
   );
 }
 
@@ -153,57 +184,83 @@ function TrackBlock({
   onNavigate: () => void;
 }) {
   const panelId = `sidebar-${track.id}`;
+  const isKafka = track.id === "kafka";
+
   return (
     <div className="sidebar-track" data-track={track.id}>
       <button
         type="button"
-        className="sidebar-track-btn"
+        className="sidebar-track-btn w-full flex items-center justify-between px-3 py-2 text-sm font-medium hover:bg-secondary/40 transition-colors"
         aria-expanded={expanded}
         aria-controls={panelId}
         onClick={onToggle}
       >
-        <span>{track.label}</span>
-        <span className={`chevron${expanded ? " open" : ""}`} aria-hidden="true">
-          ›
+        <span className="flex items-center gap-2">
+          {isKafka ? (
+            <Zap className="w-4 h-4 text-amber-400 shrink-0" />
+          ) : (
+            <Boxes className="w-4 h-4 text-indigo-400 shrink-0" />
+          )}
+          <span>{track.label}</span>
         </span>
+        <ChevronRight
+          className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${
+            expanded ? "rotate-90" : ""
+          }`}
+          aria-hidden="true"
+        />
       </button>
+
       {expanded ? (
         <div id={panelId} className="sidebar-groups">
           {track.groups.map((group) => (
             <div key={group.label} className="sidebar-group">
-              <p className="sidebar-group-label">{group.label}</p>
-              <ul>
+              <p className="sidebar-group-label text-[11px] font-semibold text-muted-foreground/80 uppercase tracking-wider px-3 pt-3 pb-1">
+                {group.label}
+              </p>
+              <ul className="space-y-0.5">
                 {group.items.map((item) => {
                   const active = activeHref === item.href;
                   const done = passed.has(item.href) || isTrackHome(item.href);
                   const unlocked = isLessonUnlocked(track.nav, item.href, passed);
-                  const className = `sidebar-link${active ? " active" : ""}${
-                    unlocked ? "" : " locked"
-                  }`;
+
                   return (
                     <li key={item.href}>
                       {unlocked ? (
                         <Link
                           href={item.href}
-                          className={className}
+                          className={`sidebar-link flex items-center gap-2 px-3 py-1.5 text-xs rounded-md transition-colors ${
+                            active
+                              ? "active bg-primary/15 text-primary font-medium"
+                              : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                          }`}
                           aria-current={active ? "page" : undefined}
                           onClick={onNavigate}
                         >
-                          <span
-                            className={`dot${done ? " done" : ""}`}
-                            aria-hidden="true"
-                          />
-                          {item.label}
+                          {done ? (
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          ) : (
+                            <Circle className="w-3 h-3 text-muted-foreground/60 shrink-0" />
+                          )}
+                          <span className="truncate">{item.label}</span>
                         </Link>
                       ) : (
-                        <span
-                          className={className}
-                          aria-disabled="true"
-                          title="Passe o simulador da aula anterior (4 de 5)"
-                        >
-                          <span className="dot" aria-hidden="true" />
-                          {item.label}
-                        </span>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span
+                              className="sidebar-link locked flex items-center gap-2 px-3 py-1.5 text-xs rounded-md text-muted-foreground/40 cursor-not-allowed select-none"
+                              aria-disabled="true"
+                            >
+                              <Lock className="w-3 h-3 text-muted-foreground/40 shrink-0" />
+                              <span className="truncate">{item.label}</span>
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side="right">
+                            <p className="text-xs">
+                              Passe o simulador da aula anterior (4 de 5) para desbloquear.
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
                       )}
                     </li>
                   );

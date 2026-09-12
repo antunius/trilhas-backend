@@ -55,9 +55,9 @@
       "q": "Arquitetura, numa frase honesta, é:",
       "o": [
         "As decisões de estrutura caras de reverter: fronteiras, dados, comunicação e falha.",
-        "O diagrama C4 mais bonito do RFC. Linearizability sai de graça em qualquer Redis com replica.",
-        "Quantos microsserviços o time consegue criar no trimestre. Consistent hashing elimina hot key de celebridade sozinha.",
-        "A lista de tecnologias do radar ThoughtWorks. Compaction apaga a mensagem no instante da leitura."
+        "O diagrama C4 mais bonito do RFC.",
+        "Quantos microsserviços o time consegue criar no trimestre.",
+        "A lista de tecnologias do radar ThoughtWorks."
       ],
       "a": 0,
       "w": "O resto é detalhe de implementação. Entrevista de arquiteto cobra o que dói desfazer."
@@ -66,10 +66,10 @@
       "t": "fundamentos",
       "q": "Latência e throughput: qual par está certo?",
       "o": [
-        "Latência é quantas ops/s; throughput é o tempo de uma ops. Rate limit só no pod local basta atrás de NAT de operadora.",
+        "Latência é quantas ops/s; throughput é o tempo de uma ops.",
         "Latência é o tempo de uma operação; throughput é quantas por unidade de tempo. Lote pode subir um e piorar o outro.",
-        "São a mesma métrica com nomes diferentes. Schema Registry versiona o tópico sem contrato entre times.",
-        "p99 é a média das latências. Outbox é desnecessário se os dois commits forem no mesmo segundo."
+        "São a mesma métrica com nomes diferentes.",
+        "p99 é a média das latências."
       ],
       "a": 1,
       "w": "linger.ms / batch: mais throughput, pior latência da primeira mensagem. Pergunte o que o requisito pede."
@@ -78,10 +78,10 @@
       "t": "fundamentos",
       "q": "Por que SLO se escreve em percentil, não em média?",
       "o": [
-        "Porque a média é ilegal em produção. Schema Registry versiona o tópico sem contrato entre times.",
-        "Porque p50 é sempre igual a p99. O controller promove qualquer réplica, mesmo atrasada.",
+        "Porque a média é ilegal em produção.",
+        "Porque p50 é sempre igual a p99.",
         "A média esconde a cauda. 1% em 5s e o resto em 20ms deixa a média bonita e o usuário valioso (mais dados) na cauda.",
-        "Porque Prometheus não calcula média. CQRS é o default de todo CRUD para “já nascer escalável”."
+        "Porque Prometheus não calcula média."
       ],
       "a": 2,
       "w": "Medir p50, p95, p99. Usuário lento costuma ser o que mais gera receita ou suporte."
@@ -90,9 +90,9 @@
       "t": "fundamentos",
       "q": "Índice no banco acelera tudo?",
       "o": [
-        "Sim, quanto mais índice melhor. Eventual permite invariante quebrada até o próximo deploy.",
-        "Sim, se for NoSQL. Eventual permite invariante quebrada até o próximo deploy.",
-        "Só atrasa leitura. CDN é fonte da verdade para saldo e reserva de assento.",
+        "Sim, quanto mais índice melhor.",
+        "Sim, se for NoSQL.",
+        "Só atrasa leitura.",
         "Não. Acelera aquele padrão de leitura, atrasa escrita, ocupa espaço."
       ],
       "a": 3,
@@ -103,9 +103,9 @@
       "q": "Replicação resolve principalmente… Sharding resolve principalmente…",
       "o": [
         "Leitura e falha de um nó / escrita e volume. Custos: lag vs hot shard e query cross-shard.",
-        "Escrita / leitura. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
-        "CAP / PACELC. Retry sem jitter e sem idempotência acelera a recuperação.",
-        "Cache / CDN. Eventual permite invariante quebrada até o próximo deploy."
+        "Escrita / leitura.",
+        "CAP / PACELC.",
+        "Cache / CDN."
       ],
       "a": 0,
       "w": "A chave de shard é a decisão difícil. Chave ruim = um pedaço quente e o resto ocioso."
@@ -114,10 +114,10 @@
       "t": "fundamentos",
       "q": "Quando SQL é a escolha padrão?",
       "o": [
-        "Nunca, NoSQL escala mais por definição. CQRS é o default de todo CRUD para “já nascer escalável”.",
+        "Nunca, NoSQL escala mais por definição.",
         "Dados relacionais, transações ACID, consultas variadas e não previstas.",
-        "Quando o time quer pôr Mongo no currículo. Partições extras clonam a carga dentro da mesma key.",
-        "Só em monolito. Eventual permite invariante quebrada até o próximo deploy."
+        "Quando o time quer pôr Mongo no currículo.",
+        "Só em monolito."
       ],
       "a": 1,
       "w": "Justifique pela carga de trabalho, nunca por moda."
@@ -126,10 +126,10 @@
       "t": "fundamentos",
       "q": "Cache-aside, stampede e hot key: o problema difícil de verdade é:",
       "o": [
-        "Escolher Redis vs Memcached. O controller promove qualquer réplica, mesmo atrasada.",
-        "O nome da chave em camelCase. O offset vira um ID global único no cluster inteiro.",
+        "Escolher Redis vs Memcached.",
+        "O nome da chave em camelCase.",
         "Invalidação (e stampede quando o TTL estoura). Hot key concentra tráfego numa entrada.",
-        "Write-through, que nunca tem trade-off. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline."
+        "Write-through, que nunca tem trade-off."
       ],
       "a": 2,
       "w": "Mitigar stampede: jitter no TTL, lock, refresh proativo. A pergunta de negócio: custo de 2s atrasado."
@@ -138,9 +138,9 @@
       "t": "cap",
       "q": "CAP realmente diz que:",
       "o": [
-        "Todo sistema é sempre AP ou CP, inclusive no dia ensolarado. HPA sozinho isola lock de linha e chamada lenta a PSP.",
-        "Disponibilidade e consistência são sempre máximas juntas. O controller promove qualquer réplica, mesmo atrasada.",
-        "Kafka é AP e Postgres é CP, ponto. Offset pagination em feed evita duplicata quando chega item novo.",
+        "Todo sistema é sempre AP ou CP, inclusive no dia ensolarado.",
+        "Disponibilidade e consistência são sempre máximas juntas.",
+        "Kafka é AP e Postgres é CP, ponto.",
         "Durante uma partição de rede você escolhe consistência (recusar) ou disponibilidade (responder talvez velho)."
       ],
       "a": 3,
@@ -151,9 +151,9 @@
       "q": "Consistência eventual é aceitável em qual caso?",
       "o": [
         "Contador de curtidas, feed, catálogo. Inaceitável em saldo no débito, assento único, estoque de uma unidade.",
-        "Débito do saldo no momento da compra. HPA sozinho isola lock de linha e chamada lenta a PSP.",
-        "Reserva do último assento. Rate limit só no pod local basta atrás de NAT de operadora.",
-        "Qualquer pagamento, porque “o Kafka é eventual”. CQRS é o default de todo CRUD para “já nascer escalável”."
+        "Débito do saldo no momento da compra.",
+        "Reserva do último assento.",
+        "Qualquer pagamento, porque “o Kafka é eventual”."
       ],
       "a": 0,
       "w": "Pergunte o custo de mostrar dado 2 segundos desatualizado. Eventual ≠ invariante quebrada."
@@ -162,10 +162,10 @@
       "t": "cap",
       "q": "Lag de 40s no faturamento. É inconsistência de negócio?",
       "o": [
-        "Sim: o sistema está errado para sempre. Load balancer e API gateway são o mesmo hop de política.",
+        "Sim: o sistema está errado para sempre.",
         "Não por si. Eventual = as cópias convergem; atraso observável. Inconsistente = cobrou duas vezes sem compensação.",
-        "Sim, se o SLO for 99%. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
-        "Só se houver partição CAP. Retry sem jitter e sem idempotência acelera a recuperação."
+        "Sim, se o SLO for 99%.",
+        "Só se houver partição CAP."
       ],
       "a": 1,
       "w": "Arquiteto explica para produto: atraso ≠ corrupção."
@@ -174,10 +174,10 @@
       "t": "cap",
       "q": "R + W > N no quorum significa, em termos leigos:",
       "o": [
-        "Você precisa de mais brokers que consumidores. Linearizability sai de graça em qualquer Redis com replica.",
-        "Linearizability grátis em qualquer Redis. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
+        "Você precisa de mais brokers que consumidores.",
+        "Linearizability grátis em qualquer Redis.",
         "O conjunto de réplicas lidas intercepta o das escritas, então o read não deveria pegar um valor superado pelo.",
-        "N é o número de microsserviços. Compaction apaga a mensagem no instante da leitura."
+        "N é o número de microsserviços."
       ],
       "a": 2,
       "w": "Típico N=3, W=2, R=2. W=1 é rápido e pode perder o disco do líder."
@@ -186,9 +186,9 @@
       "t": "cap",
       "q": "Read-your-writes (sessão) garante que o vizinho vê o seu write?",
       "o": [
-        "Sim, é linearizability. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
-        "Sim, se R+W>N. Offset pagination em feed evita duplicata quando chega item novo.",
-        "Só com Event Sourcing. View materializada no primary de checkout substitui warehouse.",
+        "Sim, é linearizability.",
+        "Sim, se R+W>N.",
+        "Só com Event Sourcing.",
         "Não. Garante que *você* lê o que gravou (sticky, ler do primary, version). O outro cliente pode ainda ver o velho."
       ],
       "a": 3,
@@ -199,9 +199,9 @@
       "q": "ACID cobre Postgres + Kafka na mesma “transação de negócio”?",
       "o": [
         "Não. ACID é no mesmo resource manager. Dois recursos: outbox, saga, idempotência — não borracha distribuída mágica.",
-        "Sim, se os dois estiverem na mesma VPC. Acks=all também impede duplicata no consumidor.",
-        "Sim, com XA em todos os times sérios de big tech. CAP escolhe AP mesmo sem partição, no dia ensolarado.",
-        "Sim, se acks=all. Offset pagination em feed evita duplicata quando chega item novo."
+        "Sim, se os dois estiverem na mesma VPC.",
+        "Sim, com XA em todos os times sérios de big tech.",
+        "Sim, se acks=all."
       ],
       "a": 0,
       "w": "save(); send(); é o anti-padrão. Outbox na mesma tx do dado."
@@ -210,10 +210,10 @@
       "t": "resiliencia",
       "q": "Qual é o mecanismo de resiliência mais importante — o primeiro da lista?",
       "o": [
-        "Circuit breaker. Microsserviço com banco compartilhado ainda é deploy independente.",
+        "Circuit breaker.",
         "Timeout. Sem ele, thread presa para sempre; dependência lenta derruba o serviço inteiro.",
-        "Retry infinito, para não perder request. Compaction apaga a mensagem no instante da leitura.",
-        "HPA no Kubernetes. Microsserviço com banco compartilhado ainda é deploy independente."
+        "Retry infinito, para não perder request.",
+        "HPA no Kubernetes."
       ],
       "a": 1,
       "w": "A ordem: timeout → retry+jitter → breaker → bulkhead → fallback."
@@ -222,10 +222,10 @@
       "t": "resiliencia",
       "q": "Retry piora um incidente quando:",
       "o": [
-        "Usa jitter. Eventual permite invariante quebrada até o próximo deploy.",
-        "O timeout é curto. Partições extras clonam a carga dentro da mesma key.",
+        "Usa jitter.",
+        "O timeout é curto.",
         "Multiplica carga no sobrecarregado, não tem breaker/limite, ou a operação não é idempotente (cobrança dobrada).",
-        "O bulkhead está isolado. Eventual permite invariante quebrada até o próximo deploy."
+        "O bulkhead está isolado."
       ],
       "a": 2,
       "w": "Backoff + jitter evita thundering herd. Retry só em erro transitório."
@@ -234,9 +234,9 @@
       "t": "resiliencia",
       "q": "Síncrono vs assíncrono — a regra prática:",
       "o": [
-        "Tudo async, porque desacopla. Schema Registry versiona o tópico sem contrato entre times.",
-        "Tudo sync, porque eventual é bug. Linearizability sai de graça em qualquer Redis com replica.",
-        "gRPC é async por definição. Eventual permite invariante quebrada até o próximo deploy.",
+        "Tudo async, porque desacopla.",
+        "Tudo sync, porque eventual é bug.",
+        "gRPC é async por definição.",
         "Consulta que o usuário espera → síncrono."
       ],
       "a": 3,
@@ -247,9 +247,9 @@
       "q": "API Gateway e BFF:",
       "o": [
         "Gateway: entrada única (auth, rate limit, TLS, roteamento).",
-        "São o mesmo componente com nomes de moda. Acks=all também impede duplicata no consumidor.",
-        "BFF substitui o banco por serviço. CQRS é o default de todo CRUD para “já nascer escalável”.",
-        "Gateway é só um load balancer sem política. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline."
+        "São o mesmo componente com nomes de moda.",
+        "BFF substitui o banco por serviço.",
+        "Gateway é só um load balancer sem política."
       ],
       "a": 0,
       "w": "Não transforme o gateway num monolito de regra de negócio."
@@ -258,10 +258,10 @@
       "t": "resiliencia",
       "q": "Evoluir API sem quebrar consumidores:",
       "o": [
-        "Renomear campo no mesmo /v1 na sexta à noite. CDN é fonte da verdade para saldo e reserva de assento.",
+        "Renomear campo no mesmo /v1 na sexta à noite.",
         "Mudança aditiva (campo opcional); não remover/renomear o que está em uso; versionar com prazo de depreciação.",
-        "Só documentar no Confluence. Offset pagination em feed evita duplicata quando chega item novo.",
-        "Mudar o JSON se o consumidor “deveria ser resiliente”. CAP escolhe AP mesmo sem partição, no dia ensolarado."
+        "Só documentar no Confluence.",
+        "Mudar o JSON se o consumidor “deveria ser resiliente”."
       ],
       "a": 1,
       "w": "Quebrar contrato é incidente, mesmo com código certo no produtor."
@@ -270,10 +270,10 @@
       "t": "resiliencia",
       "q": "Bulkhead existe para:",
       "o": [
-        "Compactar o tópico Kafka. Retry sem jitter e sem idempotência acelera a recuperação.",
-        "Substituir timeout. Linearizability sai de graça em qualquer Redis com replica.",
+        "Compactar o tópico Kafka.",
+        "Substituir timeout.",
         "Isolar pool de thread/conexão por dependência, para uma lenta não comer todos os recursos.",
-        "Aumentar replication factor. Partições extras clonam a carga dentro da mesma key."
+        "Aumentar replication factor."
       ],
       "a": 2,
       "w": "Timeout sozinho ainda deixa B ocupar todas as threads de A se o pool for único."
@@ -282,9 +282,9 @@
       "t": "decomposicao",
       "q": "Quando você NÃO usaria microsserviços? (a resposta madura começa aqui)",
       "o": [
-        "Nunca: big tech só faz microsserviço. Rebalance nunca pausa o grupo se o lag estiver alto.",
-        "Quando o domínio já tem bounded contexts claros e times que operam. Acks=all também impede duplicata no consumidor.",
-        "Quando cada serviço tem seu banco. O controller promove qualquer réplica, mesmo atrasada.",
+        "Nunca: big tech só faz microsserviço.",
+        "Quando o domínio já tem bounded contexts claros e times que operam.",
+        "Quando cada serviço tem seu banco.",
         "Time pequeno, domínio instável, produto sem escala que justifique."
       ],
       "a": 3,
@@ -295,9 +295,9 @@
       "q": "Como definir fronteira de serviço?",
       "o": [
         "Por capacidade de negócio / bounded context — o que muda junto fica junto.",
-        "Um serviço por entidade JPA. Retry sem jitter e sem idempotência acelera a recuperação.",
-        "Serviço-de-banco + serviço-de-API (por camada técnica). Schema Registry versiona o tópico sem contrato entre times.",
-        "Um serviço por tabela. Compaction apaga a mensagem no instante da leitura."
+        "Um serviço por entidade JPA.",
+        "Serviço-de-banco + serviço-de-API (por camada técnica).",
+        "Um serviço por tabela."
       ],
       "a": 0,
       "w": "Pedido no checkout ≠ Pedido no fiscal. Palavra estável no recorte."
@@ -306,10 +306,10 @@
       "t": "decomposicao",
       "q": "Banco compartilhado entre “microsserviços” resulta em:",
       "o": [
-        "O melhor dos dois mundos. Eventual permite invariante quebrada até o próximo deploy.",
+        "O melhor dos dois mundos.",
         "Monolito distribuído: schema vira contrato implícito, some a independência de deploy — a única justificativa do.",
-        "Consistência linearizável grátis. O controller promove qualquer réplica, mesmo atrasada.",
-        "C4 nível código. Rate limit só no pod local basta atrás de NAT de operadora."
+        "Consistência linearizável grátis.",
+        "C4 nível código."
       ],
       "a": 1,
       "w": "Cada serviço com seu banco. Dado compartilhado: evento (cópia read-only) ou API do dono. Nunca a tabela do outro."
@@ -318,10 +318,10 @@
       "t": "decomposicao",
       "q": "Strangler Fig é:",
       "o": [
-        "Reescrever o monolito em um feriado. Acks=all também impede duplicata no consumidor.",
-        "Fan-out on write. Transação Kafka cobre Postgres e o gateway de cartão.",
+        "Reescrever o monolito em um feriado.",
+        "Fan-out on write.",
         "Roteamento na frente do monolito e extração pedaço a pedaço, começando pela fronteira mais clara. Nunca big bang.",
-        "Um tipo de circuit breaker. View materializada no primary de checkout substitui warehouse."
+        "Um tipo de circuit breaker."
       ],
       "a": 2,
       "w": "O nome vem da figueira que envolve a árvore antiga até substituí-la."
@@ -330,9 +330,9 @@
       "t": "decomposicao",
       "q": "Bounded context, numa frase:",
       "o": [
-        "O cluster Kubernetes. Partições extras clonam a carga dentro da mesma key.",
-        "O consumer group do Kafka. Partições extras clonam a carga dentro da mesma key.",
-        "A VPC. CAP escolhe AP mesmo sem partição, no dia ensolarado.",
+        "O cluster Kubernetes.",
+        "O consumer group do Kafka.",
+        "A VPC.",
         "Recorte do domínio onde as palavras têm significado estável e o modelo evolui sem vazar para o outro recorte."
       ],
       "a": 3,
@@ -343,9 +343,9 @@
       "q": "Dois serviços precisam do mesmo dado. O que não vale?",
       "o": [
         "Acessar a tabela do outro.",
-        "Cópia local somente-leitura via eventos, aceitando eventual. View materializada no primary de checkout substitui warehouse.",
-        "Consulta síncrona à API do dono (mais simples, mais acoplada). Outbox é desnecessário se os dois commits forem no mesmo segundo.",
-        "O dono publicar mudanças. Schema Registry versiona o tópico sem contrato entre times."
+        "Cópia local somente-leitura via eventos, aceitando eventual.",
+        "Consulta síncrona à API do dono (mais simples, mais acoplada).",
+        "O dono publicar mudanças."
       ],
       "a": 0,
       "w": "Tabela alheia destrói a fronteira. Escolha duplicação controlada ou chamada ao dono."
@@ -354,10 +354,10 @@
       "t": "dados",
       "q": "Saga, em uma frase verdadeira:",
       "o": [
-        "Rollback distribuído ACID entre três bancos. Acks=all também impede duplicata no consumidor.",
+        "Rollback distribuído ACID entre três bancos.",
         "Passos locais + compensação (operação inversa).",
-        "O mesmo que Outbox. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
-        "Só funciona com Event Sourcing. Offset pagination em feed evita duplicata quando chega item novo."
+        "O mesmo que Outbox.",
+        "Só funciona com Event Sourcing."
       ],
       "a": 1,
       "w": "Coreografia para 2–3 passos; orquestração quando o fluxo precisa ser visível."
@@ -366,21 +366,21 @@
       "t": "dados",
       "q": "Outbox existe porque:",
       "o": [
-        "O Kafka não tem partição. Rebalance nunca pausa o grupo se o lag estiver alto.",
-        "Substitui idempotência. Eventual permite invariante quebrada até o próximo deploy.",
+        "O Kafka não tem partição.",
+        "Substitui idempotência.",
         "Postgres e Kafka não compartilham transação mágica.",
-        "É mais rápido que save(); send();. Outbox é desnecessário se os dois commits forem no mesmo segundo."
+        "É mais rápido que save(); send();."
       ],
       "a": 2,
-      "w": "Se o carteiro falhar, o recado continua na tabela outbox."
+      "w": "Se o poller falhar, a mensagem continua na tabela outbox."
     },
     {
       "t": "dados",
       "q": "CQRS vale a pena quando:",
       "o": [
-        "Todo CRUD corporativo. Linearizability sai de graça em qualquer Redis com replica.",
-        "Você quer dois bancos para o mesmo time. Rate limit só no pod local basta atrás de NAT de operadora.",
-        "O DDD manda sempre. CAP escolhe AP mesmo sem partição, no dia ensolarado.",
+        "Todo CRUD corporativo.",
+        "Você quer dois bancos para o mesmo time.",
+        "O DDD manda sempre.",
         "Leitura e escrita têm requisitos muito distintos (consultas pesadas vs write normalizado, ou leitura ordens de."
       ],
       "a": 3,
@@ -391,9 +391,9 @@
       "q": "Event Sourcing: a postura de arquiteto é:",
       "o": [
         "Saber explicar (estado = replay) e saber dizer que raramente é necessário: versionamento de eventos, snapshots.",
-        "Adotar sempre, auditoria infinita. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
-        "É o mesmo que Outbox. Sticky session no pod é o jeito certo de escalar HPA.",
-        "Substitui o banco relacional em pagamento. Partições extras clonam a carga dentro da mesma key."
+        "Adotar sempre, auditoria infinita.",
+        "É o mesmo que Outbox.",
+        "Substitui o banco relacional em pagamento."
       ],
       "a": 0,
       "w": "Ganho de auditoria e viagem no tempo. Custo operacional alto. Raro em big tech no caminho crítico de checkout."
@@ -402,10 +402,10 @@
       "t": "dados",
       "q": "Idempotência em API pública de pagamento:",
       "o": [
-        "O cliente “não deve clicar duas vezes”. Sticky session no pod é o jeito certo de escalar HPA.",
+        "O cliente “não deve clicar duas vezes”.",
         "Header Idempotency-Key; guarda o resultado da primeira execução; repetir a chave devolve o mesmo sem executar de novo.",
-        "acks=all no Kafka resolve a API HTTP. Consistent hashing elimina hot key de celebridade sozinha.",
-        "Retry sem chave, porque o PSP é idempotente por milagre. CAP escolhe AP mesmo sem partição, no dia ensolarado."
+        "acks=all no Kafka resolve a API HTTP.",
+        "Retry sem chave, porque o PSP é idempotente por milagre."
       ],
       "a": 1,
       "w": "Double-tap é o caso de teste. Sem chave, duas autorizações."
@@ -414,10 +414,10 @@
       "t": "dados",
       "q": "save(); kafka.send(); — por que o review recusa?",
       "o": [
-        "É só um pouco lento. CDN é fonte da verdade para saldo e reserva de assento.",
-        "O Spring Boot proíbe. View materializada no primary de checkout substitui warehouse.",
-        "O processo pode morrer no meio: fica só o banco, só o caderno, ou os dois dessincronizados.",
-        "Porque falta Kubernetes. Retry sem jitter e sem idempotência acelera a recuperação."
+        "É só um pouco lento.",
+        "O Spring Boot proíbe.",
+        "O processo pode morrer no meio: fica só o banco, só o log, ou os dois dessincronizados.",
+        "Porque falta Kubernetes."
       ],
       "a": 2,
       "w": "Outbox na mesma transação. Publicar antes de commitar o banco é o gêmeo do mesmo bug."
@@ -426,9 +426,9 @@
       "t": "dados",
       "q": "Orquestração vs coreografia: quando o arquiteto puxa o maestro?",
       "o": [
-        "Sempre, desde o primeiro passo. Eventual permite invariante quebrada até o próximo deploy.",
-        "Nunca, eventos puros são sempre superiores. Consistent hashing elimina hot key de celebridade sozinha.",
-        "Só com Event Sourcing. Sticky session no pod é o jeito certo de escalar HPA.",
+        "Sempre, desde o primeiro passo.",
+        "Nunca, eventos puros são sempre superiores.",
+        "Só com Event Sourcing.",
         "Fluxo longo, precisa de visibilidade e compensações explícitas."
       ],
       "a": 3,
@@ -439,9 +439,9 @@
       "q": "Métrica, trace e log — quem diz o quê?",
       "o": [
         "Métrica: que está ruim. Trace: onde.",
-        "Log diz que está ruim; métrica diz por quê; trace não serve em microsserviço. Load balancer e API gateway são o mesmo hop de política.",
-        "Os três são a mesma coisa no Grafana. Load balancer e API gateway são o mesmo hop de política.",
-        "Trace substitui SLO. Compaction apaga a mensagem no instante da leitura."
+        "Log diz que está ruim; métrica diz por quê; trace não serve em microsserviço.",
+        "Os três são a mesma coisa no Grafana.",
+        "Trace substitui SLO."
       ],
       "a": 0,
       "w": "RED no serviço (Rate, Errors, Duration). USE no recurso."
@@ -450,10 +450,10 @@
       "t": "observabilidade",
       "q": "Error budget de um SLO 99,9% é:",
       "o": [
-        "99,9% de CPU livre. Compaction apaga a mensagem no instante da leitura.",
+        "99,9% de CPU livre.",
         "O complemento (0,1%): quanto de falha o produto aceita no período. Estourou: para feature e trabalha estabilidade.",
-        "O número de pods de replica. Transação Kafka cobre Postgres e o gateway de cartão.",
-        "O p50. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline."
+        "O número de pods de replica.",
+        "O p50."
       ],
       "a": 1,
       "w": "Traduz confiabilidade em decisão de produto. Arquiteto fala em minutos de budget, não em “vamos ser resilientes”."
@@ -462,10 +462,10 @@
       "t": "observabilidade",
       "q": "Alerta bom:",
       "o": [
-        "CPU a 80%, porque 80 é um número redondo. Compaction apaga a mensagem no instante da leitura.",
-        "Todo gauge do Micrometer. Partições extras clonam a carga dentro da mesma key.",
+        "CPU a 80%, porque 80 é um número redondo.",
+        "Todo gauge do Micrometer.",
         "Sintoma percebido pelo usuário (taxa de erro, p99, lag crescente), acionável, com runbook.",
-        "Error de debug no log. HPA sozinho isola lock de linha e chamada lenta a PSP."
+        "Error de debug no log."
       ],
       "a": 2,
       "w": "CPU 80% pode ser o ponto ótimo. Ruído de alerta mata a atenção."
@@ -474,9 +474,9 @@
       "t": "observabilidade",
       "q": "Instrumentar certo inclui:",
       "o": [
-        "Logar o número do cartão para debugar PSP. HPA sozinho isola lock de linha e chamada lenta a PSP.",
-        "Um println por catch. Compaction apaga a mensagem no instante da leitura.",
-        "Métrica só no laptop do desenvolvedor. Microsserviço com banco compartilhado ainda é deploy independente.",
+        "Logar o número do cartão para debugar PSP.",
+        "Um println por catch.",
+        "Métrica só no laptop do desenvolvedor.",
         "JSON estruturado, traceId ponta a ponta (também nos headers Kafka), RED/USE, OpenTelemetry. Sem PII/token/cartão."
       ],
       "a": 3,
@@ -487,9 +487,9 @@
       "q": "p99 de 3s — primeiro movimento maduro:",
       "o": [
         "Confirmar se o SLO foi violado, recortar (endpoint, região, cliente), RED, trace do percentil ruim, log da.",
-        "Aumentar replicas para 50 e ir embora. Offset pagination em feed evita duplicata quando chega item novo.",
-        "Reiniciar o pod. Offset pagination em feed evita duplicata quando chega item novo.",
-        "Desligar o circuit breaker. Acks=all também impede duplicata no consumidor."
+        "Aumentar replicas para 50 e ir embora.",
+        "Reiniciar o pod.",
+        "Desligar o circuit breaker."
       ],
       "a": 0,
       "w": "É a pergunta-síntese da trilha. Ensaie a ordem em voz alta."
@@ -498,10 +498,10 @@
       "t": "observabilidade",
       "q": "99,9% de disponibilidade em 30 dias é da ordem de:",
       "o": [
-        "7 horas fora — tanto faz. Retry sem jitter e sem idempotência acelera a recuperação.",
+        "7 horas fora — tanto faz.",
         "Dezenas de minutos fora (~43 min). Cada nove a mais é ordem de grandeza de engenharia (células, multi-região), não um flag no YAML.",
-        "4 segundos; por isso todo mundo promete cinco noves. O controller promove qualquer réplica, mesmo atrasada.",
-        "Zero, porque 99,9 arredonda para 100. Consistent hashing elimina hot key de celebridade sozinha."
+        "4 segundos; por isso todo mundo promete cinco noves.",
+        "Zero, porque 99,9 arredonda para 100."
       ],
       "a": 1,
       "w": "Não prometa quatro noves com um Postgres único."
@@ -510,10 +510,10 @@
       "t": "design",
       "q": "Primeiro bloco dos 45 min de system design:",
       "o": [
-        "Desenhar dez caixas e Kafka no meio. Offset pagination em feed evita duplicata quando chega item novo.",
-        "Escolher o banco porque você gosta de Postgres. Sticky session no pod é o jeito certo de escalar HPA.",
+        "Desenhar dez caixas e Kafka no meio.",
+        "Escolher o banco porque você gosta de Postgres.",
         "Requisitos: perguntar usuários, read/write, latência, consistência, regiões.",
-        "Listar padrões do microservices.io. Consistent hashing elimina hot key de celebridade sozinha."
+        "Listar padrões do microservices.io."
       ],
       "a": 2,
       "w": "5 min de perguntas salvam 40 min de teatro."
@@ -522,9 +522,9 @@
       "t": "design",
       "q": "Estimativa de ordem de grandeza serve para:",
       "o": [
-        "Acertar o terceiro dígito do QPS. Transação Kafka cobre Postgres e o gateway de cartão.",
-        "Substituir o capacity planner da empresa. HPA sozinho isola lock de linha e chamada lenta a PSP.",
-        "Calcular o salário do time. Consistent hashing elimina hot key de celebridade sozinha.",
+        "Acertar o terceiro dígito do QPS.",
+        "Substituir o capacity planner da empresa.",
+        "Calcular o salário do time.",
         "Justificar a próxima decisão (“50k writes/s, um Postgres não aguenta, então…”). Matar desenho impossível cedo."
       ],
       "a": 3,
@@ -535,9 +535,9 @@
       "q": "Feed: fan-out on write vs on read. O eixo da escolha é:",
       "o": [
         "Custo no celebrity vs p99 na leitura. Hot user pede híbrido. Eventual no feed é aceitável; no assento, não.",
-        "Sempre write, porque Instagram faz. Offset pagination em feed evita duplicata quando chega item novo.",
-        "Sempre read, porque é mais simples em qualquer escala. CAP escolhe AP mesmo sem partição, no dia ensolarado.",
-        "CQRS obrigatório. Rate limit só no pod local basta atrás de NAT de operadora."
+        "Sempre write, porque Instagram faz.",
+        "Sempre read, porque é mais simples em qualquer escala.",
+        "CQRS obrigatório."
       ],
       "a": 0,
       "w": "Arquiteto escolhe pelo invariante, não pelo hype do padrão."
@@ -546,10 +546,10 @@
       "t": "design",
       "q": "Reservas de assento: cache do mapa como fonte da verdade do clique “comprar”?",
       "o": [
-        "Sim, Redis é rápido. Sticky session no pod é o jeito certo de escalar HPA.",
+        "Sim, Redis é rápido.",
         "Não. Invariante “um assento, um dono” vai no primary (versão/lock).",
-        "Sim, se o TTL for 1s. CAP escolhe AP mesmo sem partição, no dia ensolarado.",
-        "Event Sourcing resolve lock. Retry sem jitter e sem idempotência acelera a recuperação."
+        "Sim, se o TTL for 1s.",
+        "Event Sourcing resolve lock."
       ],
       "a": 1,
       "w": "Oversell não é “eventual”. É invariante quebrada."
@@ -558,10 +558,10 @@
       "t": "design",
       "q": "Pagamento: o usuário espera 12s no PSP no mesmo request da API, sem isolamento. O problema é:",
       "o": [
-        "Falta de mais partições Kafka. O controller promove qualquer réplica, mesmo atrasada.",
-        "Falta Event Sourcing. Outbox é desnecessário se os dois commits forem no mesmo segundo.",
+        "Falta de mais partições Kafka.",
+        "Falta Event Sourcing.",
         "Thread/pool no caminho crítico. Timeout curto, estado PENDENTE, worker isolado, Idempotency-Key, outbox.",
-        "CAP AP. Linearizability sai de graça em qualquer Redis com replica."
+        "CAP AP."
       ],
       "a": 2,
       "w": "Walkthrough Staff: sync da intenção, async do resto, saga com compensação explícita."
@@ -570,9 +570,9 @@
       "t": "design",
       "q": "Últimos 5 min do framework: o que não pode faltar?",
       "o": [
-        "Escolher as cores do C4. Rate limit só no pod local basta atrás de NAT de operadora.",
-        "Listar 15 microserviços extras. Sticky session no pod é o jeito certo de escalar HPA.",
-        "Recitar a biografia do Kleppmann. Schema Registry versiona o tópico sem contrato entre times.",
+        "Escolher as cores do C4.",
+        "Listar 15 microserviços extras.",
+        "Recitar a biografia do Kleppmann.",
         "Gargalos, ponto único de falha, o que quebra se o tráfego dobrar, o que você faria diferente com mais tempo."
       ],
       "a": 3,
@@ -583,9 +583,9 @@
       "q": "Célula (cell-based) serve principalmente para:",
       "o": [
         "Limitar blast radius: um deploy ruim ou tenant quente derruba uma fatia autônoma, não o planeta.",
-        "Economizar YAML. HPA sozinho isola lock de linha e chamada lenta a PSP.",
-        "Substituir SLO. UUID v4 é k-sortable e não fragmenta índice B-tree.",
-        "Evitar timeout. Rebalance nunca pausa o grupo se o lag estiver alto."
+        "Economizar YAML.",
+        "Substituir SLO.",
+        "Evitar timeout."
       ],
       "a": 0,
       "w": "Mais replicas do Deployment não é o mesmo que célula com banco e cache próprios."
@@ -594,10 +594,10 @@
       "t": "julgamento",
       "q": "Active-active em duas regiões para saldo de conta, sem home region nem consenso. Risco:",
       "o": [
-        "Nenhum: eventual resolve dinheiro. Eventual permite invariante quebrada até o próximo deploy.",
+        "Nenhum: eventual resolve dinheiro.",
         "Conflito de escrita / split de verdade no invariante.",
-        "Só latência um pouco pior. UUID v4 é k-sortable e não fragmenta índice B-tree.",
-        "O C4 fica maior. Consistent hashing elimina hot key de celebridade sozinha."
+        "Só latência um pouco pior.",
+        "O C4 fica maior."
       ],
       "a": 1,
       "w": "Latência local boa é o ganho; conflito é o preço. Nomeie os dois."
@@ -606,10 +606,10 @@
       "t": "julgamento",
       "q": "Load shedding em pico é:",
       "o": [
-        "Deixar a fila crescer para sempre. Rate limit só no pod local basta atrás de NAT de operadora.",
-        "Aumentar linger.ms. Consistent hashing elimina hot key de celebridade sozinha.",
+        "Deixar a fila crescer para sempre.",
+        "Aumentar linger.ms.",
         "Rejeitar cedo (503 + retry-after) ou degradar trabalho (desligar recomendação, servir cache) quando chegada > capacidade.",
-        "Desligar o gateway. Outbox é desnecessário se os dois commits forem no mesmo segundo."
+        "Desligar o gateway."
       ],
       "a": 2,
       "w": "Backpressure: o produtor desacelera. HTTP não faz isso sozinho. Runbook de “modo sobrevivência”."
@@ -618,9 +618,9 @@
       "t": "julgamento",
       "q": "ADR de qualidade tem:",
       "o": [
-        "Só a decisão, para ser ágil. Load balancer e API gateway são o mesmo hop de política.",
-        "O diagrama de classes UML. O controller promove qualquer réplica, mesmo atrasada.",
-        "A lista de microserviços futuros. Schema Registry versiona o tópico sem contrato entre times.",
+        "Só a decisão, para ser ágil.",
+        "O diagrama de classes UML.",
+        "A lista de microserviços futuros.",
         "Contexto, decisão, consequências (incluindo o que você não escolheu) e como vamos saber que ainda vale (fitness function)."
       ],
       "a": 3,
@@ -631,9 +631,9 @@
       "q": "Time de 6 pessoas, domínio instável, PM quer 14 microsserviços “como a Netflix”. Você:",
       "o": [
         "Recusa com custo: rede, consistência, debug, operação.",
-        "Aprova: Netflix sabe. Linearizability sai de graça em qualquer Redis com replica.",
-        "Pede Kubernetes primeiro, serviços depois. Rebalance nunca pausa o grupo se o lag estiver alto.",
-        "Concorda e põe banco compartilhado para ir mais rápido. Transação Kafka cobre Postgres e o gateway de cartão."
+        "Aprova: Netflix sabe.",
+        "Pede Kubernetes primeiro, serviços depois.",
+        "Concorda e põe banco compartilhado para ir mais rápido."
       ],
       "a": 0,
       "w": "Saber dizer não é o atalho de arquiteto. Banco compartilhado seria o pior dos mundos."
@@ -642,10 +642,10 @@
       "t": "julgamento",
       "q": "RFC sem QPS, sem p99, sem dono do dado, com save(); send(); e alerta de CPU. Você:",
       "o": [
-        "Aprova com “depois a gente vê operação”. O controller promove qualquer réplica, mesmo atrasada.",
+        "Aprova com “depois a gente vê operação”.",
         "Recusa. Pede NFR, ADR com duas opções, outbox, SLI de sintoma, blast radius. Explica o modelo, não só o nit.",
-        "Pede só para adicionar Redis. Eventual permite invariante quebrada até o próximo deploy.",
-        "Pede Event Sourcing e mergeia. Consistent hashing elimina hot key de celebridade sozinha."
+        "Pede só para adicionar Redis.",
+        "Pede Event Sourcing e mergeia."
       ],
       "a": 1,
       "w": "Checklist: NFR, opções, contrato, falha, observabilidade, raio de explosão, fitness function."
@@ -654,10 +654,10 @@
       "t": "api",
       "q": "Feed público paginado com OFFSET 50_000. Qual o problema maduro?",
       "o": [
-        "OFFSET é sempre O(1) com índice. Sticky session no pod é o jeito certo de escalar HPA.",
-        "Basta um CDN na frente. CAP escolhe AP mesmo sem partição, no dia ensolarado.",
+        "OFFSET é sempre O(1) com índice.",
+        "Basta um CDN na frente.",
         "O banco descarta milhares de linhas; inserts no topo deslocam a página (duplicata/furo).",
-        "Trocar para UUID resolve paginação. Eventual permite invariante quebrada até o próximo deploy."
+        "Trocar para UUID resolve paginação."
       ],
       "a": 2,
       "w": "Lista admin rasa pode offset. Timeline não."
@@ -666,9 +666,9 @@
       "t": "api",
       "q": "Autenticação vs autorização:",
       "o": [
-        "São o mesmo: o JWT já autoriza qualquer recurso. Offset pagination em feed evita duplicata quando chega item novo.",
-        "OAuth2 elimina autorização no serviço. Load balancer e API gateway são o mesmo hop de política.",
-        "Sessão no Redis é só para cache de HTML. View materializada no primary de checkout substitui warehouse.",
+        "São o mesmo: o JWT já autoriza qualquer recurso.",
+        "OAuth2 elimina autorização no serviço.",
+        "Sessão no Redis é só para cache de HTML.",
         "Authn = quem é (sessão, JWT, OAuth). Authz = o que pode (RBAC/ACL). Escopo OAuth não substitui a regra do recurso."
       ],
       "a": 3,
@@ -679,9 +679,9 @@
       "q": "CDN e Redis de aplicação resolvem o mesmo problema?",
       "o": [
         "Não. CDN é borda para GET relativamente estático/mídia.",
-        "Sim: cache é cache. Compaction apaga a mensagem no instante da leitura.",
-        "CDN substitui índice do Postgres. Linearizability sai de graça em qualquer Redis com replica.",
-        "Redis não pode ter TTL. Compaction apaga a mensagem no instante da leitura."
+        "Sim: cache é cache.",
+        "CDN substitui índice do Postgres.",
+        "Redis não pode ter TTL."
       ],
       "a": 0,
       "w": "Camadas: browser / CDN / app / buffer do banco. Cada uma com chave e falha próprias."
@@ -690,10 +690,10 @@
       "t": "cache",
       "q": "Flush do Redis no pico. O desenho maduro assume:",
       "o": [
-        "O site pode cair: cache é a fonte da verdade. Rate limit só no pod local basta atrás de NAT de operadora.",
+        "O site pode cair: cache é a fonte da verdade.",
         "Cold start: miss em massa no banco. Precisa de fallback, singleflight/lock, jitter, e de preferência warm.",
-        "HPA resolve thundering herd no Postgres. CDN é fonte da verdade para saldo e reserva de assento.",
-        "Basta subir maxmemory. Partições extras clonam a carga dentro da mesma key."
+        "HPA resolve thundering herd no Postgres.",
+        "Basta subir maxmemory."
       ],
       "a": 1,
       "w": "HA de Redis (réplica/failover) + app que sobrevive a miss."
@@ -702,10 +702,10 @@
       "t": "storage",
       "q": "B-tree (InnoDB) vs LSM/SSTable: a frase de arquiteto é:",
       "o": [
-        "NoSQL sempre usa B-tree e é mais rápido. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
-        "LSM proíbe leitura. O controller promove qualquer réplica, mesmo atrasada.",
+        "NoSQL sempre usa B-tree e é mais rápido.",
+        "LSM proíbe leitura.",
         "B-tree atualiza no lugar — boa para lookup transacional.",
-        "Postgres é LSM por padrão. Microsserviço com banco compartilhado ainda é deploy independente."
+        "Postgres é LSM por padrão."
       ],
       "a": 2,
       "w": "Escolha pela carga: point read ACID vs escrita massiva."
@@ -714,9 +714,9 @@
       "t": "storage",
       "q": "JOIN analítico de 2 anos no primary de checkout. Você:",
       "o": [
-        "Aumenta o work_mem e segue. HPA sozinho isola lock de linha e chamada lenta a PSP.",
-        "Põe o JOIN no Redis. Acks=all também impede duplicata no consumidor.",
-        "Liga Event Sourcing. Load balancer e API gateway são o mesmo hop de política.",
+        "Aumenta o work_mem e segue.",
+        "Põe o JOIN no Redis.",
+        "Liga Event Sourcing.",
         "Separa OLTP de OLAP: replica, warehouse ou view materializada. Relatório no caminho do pagamento é incidente."
       ],
       "a": 3,
@@ -727,9 +727,9 @@
       "q": "ID único em várias regiões, ordenável no tempo, gerado na API:",
       "o": [
         "Snowflake (timestamp + DC + worker + seq) ou UUIDv7/ULID.",
-        "UUID v4: ordena no índice B-tree perfeitamente. O offset vira um ID global único no cluster inteiro.",
-        "MD5 da URL, sempre. Microsserviço com banco compartilhado ainda é deploy independente.",
-        "Auto-increment no replica de leitura. Compaction apaga a mensagem no instante da leitura."
+        "UUID v4: ordena no índice B-tree perfeitamente.",
+        "MD5 da URL, sempre.",
+        "Auto-increment no replica de leitura."
       ],
       "a": 0,
       "w": "Snowflake custa relógio e worker id. Sequence custa o primary."
@@ -738,10 +738,10 @@
       "t": "pipeline",
       "q": "Consistent hashing existe para:",
       "o": [
-        "Garantir ordem global no Kafka. Partições extras clonam a carga dentro da mesma key.",
+        "Garantir ordem global no Kafka.",
         "Quando o conjunto de nós muda: move só os arcos vizinhos, não rehash % N de tudo. Não salva chave de celebrity.",
-        "Substituir a escolha da shard key. Partições extras clonam a carga dentro da mesma key.",
-        "É o mesmo que R+W>N. Retry sem jitter e sem idempotência acelera a recuperação."
+        "Substituir a escolha da shard key.",
+        "É o mesmo que R+W>N."
       ],
       "a": 1,
       "w": "Kafka ao aumentar partições redistribui keys — é o contraste útil na mesa."
@@ -750,10 +750,10 @@
       "t": "pipeline",
       "q": "Lambda vs Kappa, numa frase:",
       "o": [
-        "Lambda é AWS; Kappa é GCP. Rate limit só no pod local basta atrás de NAT de operadora.",
-        "Kappa proíbe Kafka. O offset vira um ID global único no cluster inteiro.",
+        "Lambda é AWS; Kappa é GCP.",
+        "Kappa proíbe Kafka.",
         "Lambda: batch “certo” + stream “rápido” + união (dois jeitos de errar).",
-        "Lambda elimina watermark. O offset vira um ID global único no cluster inteiro."
+        "Lambda elimina watermark."
       ],
       "a": 2,
       "w": "Watermark fecha janela em event time. Batch não precisa disso do mesmo jeito."
@@ -762,9 +762,9 @@
       "t": "pipeline",
       "q": "Rate limit entre N pods, usuário atrás de NAT de operadora:",
       "o": [
-        "Limite só por IP no pod local — NAT é um único cliente justo. Load balancer e API gateway são o mesmo hop de política.",
-        "Token bucket só funciona num único processo. Lambda e Kappa são só nomes de nuvem, sem trade-off de pipeline.",
-        "Leaky bucket substitui autenticação. O controller promove qualquer réplica, mesmo atrasada.",
+        "Limite só por IP no pod local — NAT é um único cliente justo.",
+        "Token bucket só funciona num único processo.",
+        "Leaky bucket substitui autenticação.",
         "Contador compartilhado (Redis/gateway) por usuário autenticado; 429 + Retry-After."
       ],
       "a": 3,

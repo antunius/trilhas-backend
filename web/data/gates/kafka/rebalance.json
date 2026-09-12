@@ -1,1262 +1,1262 @@
 {
   "questions": [
     {
-      "q": "Sobre o que é: qual afirmação está certa?",
+      "q": "Rebalance no consumer group: o que é e o que dispara?",
+      "o": [
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Coordenador redistribui partições entre membros do grupo.",
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe."
+      ],
+      "a": 1,
+      "w": "Join, leave, heartbeat perdido, max.poll estourado.",
+      "t": "o que é"
+    },
+    {
+      "q": "Rebalance no consumer group: o que é e o que dispara — verdade ou mito?",
+      "o": [
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Coordenador redistribui partições entre membros do grupo."
+      ],
+      "a": 3,
+      "w": "Join, leave, heartbeat perdido, max.poll estourado.",
+      "t": "o que é"
+    },
+    {
+      "q": "Rebalance no consumer group: o que é e o que dispara — o que acontece de verdade?",
+      "o": [
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Coordenador redistribui partições entre membros do grupo.",
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "group.instance.id força rebalance a cada restart do mesmo pod."
+      ],
+      "a": 1,
+      "w": "Join, leave, heartbeat perdido, max.poll estourado.",
+      "t": "o que é"
+    },
+    {
+      "q": "Na prática: Rebalance no consumer group: o que é e o que dispara?",
       "o": [
         "Coordenador redistribui partições entre membros do grupo.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance."
       ],
       "a": 0,
       "w": "Join, leave, heartbeat perdido, max.poll estourado.",
       "t": "o que é"
     },
     {
-      "q": "Qual frase sobre o que é está certa?",
+      "q": "Rebalance no consumer group: o que é e o que dispara — como funciona?",
       "o": [
         "Coordenador redistribui partições entre membros do grupo.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Restart do Spring nunca loga revoked / assigned."
       ],
       "a": 0,
       "w": "Join, leave, heartbeat perdido, max.poll estourado.",
       "t": "o que é"
     },
     {
-      "q": "O que é — o que acontece de verdade?",
+      "q": "Se perguntarem: Rebalance no consumer group: o que é e o que dispara?",
       "o": [
-        "Coordenador redistribui partições entre membros do grupo.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "Coordenador redistribui partições entre membros do grupo."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Join, leave, heartbeat perdido, max.poll estourado.",
       "t": "o que é"
     },
     {
-      "q": "Marque a leitura correta (o que é).",
+      "q": "Rebalance no consumer group: o que é e o que dispara — o que vale aqui?",
       "o": [
-        "Coordenador redistribui partições entre membros do grupo.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Coordenador redistribui partições entre membros do grupo."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Join, leave, heartbeat perdido, max.poll estourado.",
       "t": "o que é"
     },
     {
-      "q": "Corrija o mito sobre o que é.",
-      "o": [
-        "Coordenador redistribui partições entre membros do grupo.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Join, leave, heartbeat perdido, max.poll estourado.",
-      "t": "o que é"
-    },
-    {
-      "q": "No caderno, a respeito de o que é: qual vale?",
-      "o": [
-        "Coordenador redistribui partições entre membros do grupo.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Join, leave, heartbeat perdido, max.poll estourado.",
-      "t": "o que é"
-    },
-    {
-      "q": "Se perguntarem o que é na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Coordenador redistribui partições entre membros do grupo.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Join, leave, heartbeat perdido, max.poll estourado.",
-      "t": "o que é"
-    },
-    {
-      "q": "Sobre eager: qual afirmação está certa?",
+      "q": "No assignor clássico, o Fetch continua durante o rebalance?",
       "o": [
         "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "concurrency 3 cria a 4ª partição para o quarto membro."
       ],
       "a": 0,
       "w": "Stop-the-world do grupo.",
       "t": "eager"
     },
     {
-      "q": "Qual frase sobre eager está certa?",
+      "q": "No assignor clássico, o Fetch continua durante o rebalance — verdade ou mito?",
+      "o": [
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe."
+      ],
+      "a": 2,
+      "w": "Stop-the-world do grupo.",
+      "t": "eager"
+    },
+    {
+      "q": "No assignor clássico, o Fetch continua durante o rebalance — o que acontece de verdade?",
       "o": [
         "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros."
       ],
       "a": 0,
       "w": "Stop-the-world do grupo.",
       "t": "eager"
     },
     {
-      "q": "Eager — o que acontece de verdade?",
+      "q": "Na prática: No assignor clássico, o Fetch continua durante o rebalance?",
       "o": [
-        "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Assignor clássico revoga todas as partições; Fetch para até o novo assignment."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Stop-the-world do grupo.",
       "t": "eager"
     },
     {
-      "q": "Marque a leitura correta (eager).",
+      "q": "No assignor clássico, o Fetch continua durante o rebalance — como funciona?",
       "o": [
-        "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "Assignor clássico revoga todas as partições; Fetch para até o novo assignment."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Stop-the-world do grupo.",
       "t": "eager"
     },
     {
-      "q": "Corrija o mito sobre eager.",
+      "q": "Se perguntarem: No assignor clássico, o Fetch continua durante o rebalance?",
       "o": [
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "max-poll-records alto encurta o processamento e evita rebalance.",
         "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Stop-the-world do grupo.",
       "t": "eager"
     },
     {
-      "q": "No caderno, a respeito de eager: qual vale?",
+      "q": "No assignor clássico, o Fetch continua durante o rebalance — o que vale aqui?",
       "o": [
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições.",
         "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Stop-the-world do grupo.",
       "t": "eager"
     },
     {
-      "q": "Se perguntarem eager na mesa, qual frase é a verdadeira?",
+      "q": "Cooperative sticky elimina a parada do grupo?",
       "o": [
-        "Assignor clássico revoga todas as partições; Fetch para até o novo assignment.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Cooperative sticky reduz a parada, não elimina.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Rebalance é o producer redistribuir keys entre partições."
       ],
-      "a": 0,
-      "w": "Stop-the-world do grupo.",
-      "t": "eager"
+      "a": 1,
+      "w": "Ainda há revogação incremental.",
+      "t": "cooperative"
     },
     {
-      "q": "Sobre cooperative: qual afirmação está certa?",
+      "q": "Cooperative sticky elimina a parada do grupo — verdade ou mito?",
+      "o": [
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Cooperative sticky reduz a parada, não elimina."
+      ],
+      "a": 3,
+      "w": "Ainda há revogação incremental.",
+      "t": "cooperative"
+    },
+    {
+      "q": "Cooperative sticky elimina a parada do grupo — o que acontece de verdade?",
+      "o": [
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Cooperative sticky reduz a parada, não elimina.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "group.instance.id força rebalance a cada restart do mesmo pod."
+      ],
+      "a": 1,
+      "w": "Ainda há revogação incremental.",
+      "t": "cooperative"
+    },
+    {
+      "q": "Na prática: Cooperative sticky elimina a parada do grupo?",
       "o": [
         "Cooperative sticky reduz a parada, não elimina.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance."
       ],
       "a": 0,
       "w": "Ainda há revogação incremental.",
       "t": "cooperative"
     },
     {
-      "q": "Qual frase sobre cooperative está certa?",
+      "q": "Cooperative sticky elimina a parada do grupo — como funciona?",
       "o": [
         "Cooperative sticky reduz a parada, não elimina.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Restart do Spring nunca loga revoked / assigned."
       ],
       "a": 0,
       "w": "Ainda há revogação incremental.",
       "t": "cooperative"
     },
     {
-      "q": "Cooperative — o que acontece de verdade?",
+      "q": "Se perguntarem: Cooperative sticky elimina a parada do grupo?",
       "o": [
-        "Cooperative sticky reduz a parada, não elimina.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "Cooperative sticky reduz a parada, não elimina."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Ainda há revogação incremental.",
       "t": "cooperative"
     },
     {
-      "q": "Marque a leitura correta (cooperative).",
+      "q": "Cooperative sticky elimina a parada do grupo — o que vale aqui?",
       "o": [
-        "Cooperative sticky reduz a parada, não elimina.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Cooperative sticky reduz a parada, não elimina."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Ainda há revogação incremental.",
       "t": "cooperative"
     },
     {
-      "q": "Corrija o mito sobre cooperative.",
-      "o": [
-        "Cooperative sticky reduz a parada, não elimina.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Ainda há revogação incremental.",
-      "t": "cooperative"
-    },
-    {
-      "q": "No caderno, a respeito de cooperative: qual vale?",
-      "o": [
-        "Cooperative sticky reduz a parada, não elimina.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Ainda há revogação incremental.",
-      "t": "cooperative"
-    },
-    {
-      "q": "Se perguntarem cooperative na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Cooperative sticky reduz a parada, não elimina.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Ainda há revogação incremental.",
-      "t": "cooperative"
-    },
-    {
-      "q": "Sobre static: qual afirmação está certa?",
+      "q": "A config group.instance.id serve para quê num restart planejado do mesmo pod?",
       "o": [
         "group.instance.id evita rebalance em restart planejado do mesmo pod.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "concurrency 3 cria a 4ª partição para o quarto membro."
       ],
       "a": 0,
       "w": "Static membership.",
       "t": "static"
     },
     {
-      "q": "Qual frase sobre static está certa?",
+      "q": "A config group.instance.id serve para quê num restart planejado do mesmo pod — verdade ou mito?",
+      "o": [
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "group.instance.id evita rebalance em restart planejado do mesmo pod.",
+        "group.instance.id força rebalance a cada restart do mesmo pod."
+      ],
+      "a": 2,
+      "w": "Static membership.",
+      "t": "static"
+    },
+    {
+      "q": "A config group.instance.id serve para quê num restart planejado do mesmo pod — o que acontece de verdade?",
       "o": [
         "group.instance.id evita rebalance em restart planejado do mesmo pod.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros."
       ],
       "a": 0,
       "w": "Static membership.",
       "t": "static"
     },
     {
-      "q": "Static — o que acontece de verdade?",
+      "q": "Na prática: A config group.instance.id serve para quê num restart planejado do mesmo pod?",
       "o": [
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
         "group.instance.id evita rebalance em restart planejado do mesmo pod.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Static membership.",
       "t": "static"
     },
     {
-      "q": "Marque a leitura correta (static).",
+      "q": "A config group.instance.id serve para quê num restart planejado do mesmo pod — como funciona?",
       "o": [
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
         "group.instance.id evita rebalance em restart planejado do mesmo pod.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Static membership.",
       "t": "static"
     },
     {
-      "q": "Corrija o mito sobre static.",
+      "q": "Se perguntarem: A config group.instance.id serve para quê num restart planejado do mesmo pod?",
       "o": [
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "max-poll-records alto encurta o processamento e evita rebalance.",
         "group.instance.id evita rebalance em restart planejado do mesmo pod.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "group.instance.id força rebalance a cada restart do mesmo pod."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Static membership.",
       "t": "static"
     },
     {
-      "q": "No caderno, a respeito de static: qual vale?",
+      "q": "A config group.instance.id serve para quê num restart planejado do mesmo pod — o que vale aqui?",
       "o": [
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições.",
         "group.instance.id evita rebalance em restart planejado do mesmo pod.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "group.instance.id força rebalance a cada restart do mesmo pod."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Static membership.",
       "t": "static"
     },
     {
-      "q": "Se perguntarem static na mesa, qual frase é a verdadeira?",
+      "q": "Processar demais sem poll novo: o cluster pensa o quê?",
       "o": [
-        "group.instance.id evita rebalance em restart planejado do mesmo pod.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Processar demais sem poll novo → o cluster acha que você morreu.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições."
       ],
-      "a": 0,
-      "w": "Static membership.",
-      "t": "static"
+      "a": 1,
+      "w": "Lote enorme + cartão lento.",
+      "t": "max.poll"
     },
     {
-      "q": "Sobre max.poll: qual afirmação está certa?",
+      "q": "Processar demais sem poll novo: o cluster pensa o quê — verdade ou mito?",
+      "o": [
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Processar demais sem poll novo → o cluster acha que você morreu."
+      ],
+      "a": 3,
+      "w": "Lote enorme + cartão lento.",
+      "t": "max.poll"
+    },
+    {
+      "q": "Processar demais sem poll novo: o cluster pensa o quê — o que acontece de verdade?",
+      "o": [
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Processar demais sem poll novo → o cluster acha que você morreu.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Cooperative sticky elimina rebalance; não há revogação."
+      ],
+      "a": 1,
+      "w": "Lote enorme + cartão lento.",
+      "t": "max.poll"
+    },
+    {
+      "q": "Na prática: Processar demais sem poll novo: o cluster pensa o quê?",
+      "o": [
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Processar demais sem poll novo → o cluster acha que você morreu.",
+        "Lote enorme + cartão lento nunca dispara rebalance."
+      ],
+      "a": 2,
+      "w": "Lote enorme + cartão lento.",
+      "t": "max.poll"
+    },
+    {
+      "q": "Processar demais sem poll novo: o cluster pensa o quê — como funciona?",
       "o": [
         "Processar demais sem poll novo → o cluster acha que você morreu.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Restart do Spring nunca loga revoked / assigned."
       ],
       "a": 0,
       "w": "Lote enorme + cartão lento.",
       "t": "max.poll"
     },
     {
-      "q": "Qual frase sobre max.poll está certa?",
+      "q": "Se perguntarem: Processar demais sem poll novo: o cluster pensa o quê?",
       "o": [
-        "Processar demais sem poll novo → o cluster acha que você morreu.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "Processar demais sem poll novo → o cluster acha que você morreu."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Lote enorme + cartão lento.",
       "t": "max.poll"
     },
     {
-      "q": "Max.poll — o que acontece de verdade?",
+      "q": "Processar demais sem poll novo: o cluster pensa o quê — o que vale aqui?",
       "o": [
-        "Processar demais sem poll novo → o cluster acha que você morreu.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Processar demais sem poll novo → o cluster acha que você morreu."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Lote enorme + cartão lento.",
       "t": "max.poll"
     },
     {
-      "q": "Marque a leitura correta (max.poll).",
+      "q": "Rebalance no meio do lote lento tende a gerar o quê?",
       "o": [
-        "Processar demais sem poll novo → o cluster acha que você morreu.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "Rebalance no meio do lote → o lote recomeça → loop."
       ],
-      "a": 0,
-      "w": "Lote enorme + cartão lento.",
-      "t": "max.poll"
+      "a": 3,
+      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
+      "t": "loop"
     },
     {
-      "q": "Corrija o mito sobre max.poll.",
+      "q": "Rebalance no meio do lote lento tende a gerar o quê — verdade ou mito?",
       "o": [
-        "Processar demais sem poll novo → o cluster acha que você morreu.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance no meio do lote → o lote recomeça → loop.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "concurrency 3 cria a 4ª partição para o quarto membro."
       ],
-      "a": 0,
-      "w": "Lote enorme + cartão lento.",
-      "t": "max.poll"
+      "a": 1,
+      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
+      "t": "loop"
     },
     {
-      "q": "No caderno, a respeito de max.poll: qual vale?",
+      "q": "Rebalance no meio do lote lento tende a gerar o quê — o que acontece de verdade?",
       "o": [
-        "Processar demais sem poll novo → o cluster acha que você morreu.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Rebalance no meio do lote → o lote recomeça → loop."
       ],
-      "a": 0,
-      "w": "Lote enorme + cartão lento.",
-      "t": "max.poll"
+      "a": 3,
+      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
+      "t": "loop"
     },
     {
-      "q": "Se perguntarem max.poll na mesa, qual frase é a verdadeira?",
+      "q": "Na prática: Rebalance no meio do lote lento tende a gerar o quê?",
       "o": [
-        "Processar demais sem poll novo → o cluster acha que você morreu.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Rebalance no meio do lote → o lote recomeça → loop.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance."
       ],
-      "a": 0,
-      "w": "Lote enorme + cartão lento.",
-      "t": "max.poll"
+      "a": 2,
+      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
+      "t": "loop"
     },
     {
-      "q": "Sobre loop: qual afirmação está certa?",
+      "q": "Rebalance no meio do lote lento tende a gerar o quê — como funciona?",
       "o": [
         "Rebalance no meio do lote → o lote recomeça → loop.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam."
       ],
       "a": 0,
       "w": "Subir pods não quebra o ciclo se o lote continua lento.",
       "t": "loop"
     },
     {
-      "q": "Qual frase sobre loop está certa?",
+      "q": "Se perguntarem: Rebalance no meio do lote lento tende a gerar o quê?",
       "o": [
+        "max-poll-records alto encurta o processamento e evita rebalance.",
         "Rebalance no meio do lote → o lote recomeça → loop.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Subir pods não quebra o ciclo se o lote continua lento.",
       "t": "loop"
     },
     {
-      "q": "Loop — o que acontece de verdade?",
+      "q": "Rebalance no meio do lote lento tende a gerar o quê — o que vale aqui?",
       "o": [
+        "Rebalance é o producer redistribuir keys entre partições.",
         "Rebalance no meio do lote → o lote recomeça → loop.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "max-poll-records alto encurta o processamento e evita rebalance."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Subir pods não quebra o ciclo se o lote continua lento.",
       "t": "loop"
     },
     {
-      "q": "Marque a leitura correta (loop).",
+      "q": "Reiniciar o consumidor Spring: o que os logs de rebalance mostram?",
       "o": [
-        "Rebalance no meio do lote → o lote recomeça → loop.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
-      "t": "loop"
-    },
-    {
-      "q": "Corrija o mito sobre loop.",
-      "o": [
-        "Rebalance no meio do lote → o lote recomeça → loop.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
-      "t": "loop"
-    },
-    {
-      "q": "No caderno, a respeito de loop: qual vale?",
-      "o": [
-        "Rebalance no meio do lote → o lote recomeça → loop.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
-      "t": "loop"
-    },
-    {
-      "q": "Se perguntarem loop na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Rebalance no meio do lote → o lote recomeça → loop.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Subir pods não quebra o ciclo se o lote continua lento.",
-      "t": "loop"
-    },
-    {
-      "q": "Sobre lab kill: qual afirmação está certa?",
-      "o": [
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
         "Ctrl+C no Spring e subi de novo: logs revoked / assigned.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Restart do Spring nunca loga revoked / assigned."
       ],
-      "a": 0,
-      "w": "Lab 4.",
+      "a": 2,
+      "w": "Restart dispara rebalance visível.",
       "t": "lab kill"
     },
     {
-      "q": "Qual frase sobre lab kill está certa?",
+      "q": "Reiniciar o consumidor Spring: o que os logs de rebalance mostram — verdade ou mito?",
       "o": [
         "Ctrl+C no Spring e subi de novo: logs revoked / assigned.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Cooperative sticky elimina rebalance; não há revogação."
       ],
       "a": 0,
-      "w": "Lab 4.",
+      "w": "Restart dispara rebalance visível.",
       "t": "lab kill"
     },
     {
-      "q": "Lab kill — o que acontece de verdade?",
+      "q": "Reiniciar o consumidor Spring: o que os logs de rebalance mostram — o que acontece de verdade?",
       "o": [
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
         "Ctrl+C no Spring e subi de novo: logs revoked / assigned.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Restart do Spring nunca loga revoked / assigned."
       ],
-      "a": 0,
-      "w": "Lab 4.",
+      "a": 2,
+      "w": "Restart dispara rebalance visível.",
       "t": "lab kill"
     },
     {
-      "q": "Marque a leitura correta (lab kill).",
+      "q": "Na prática: Reiniciar o consumidor Spring: o que os logs de rebalance mostram?",
       "o": [
-        "Ctrl+C no Spring e subi de novo: logs revoked / assigned.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Restart do Spring nunca loga revoked / assigned.",
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Ctrl+C no Spring e subi de novo: logs revoked / assigned."
       ],
-      "a": 0,
-      "w": "Lab 4.",
+      "a": 3,
+      "w": "Restart dispara rebalance visível.",
       "t": "lab kill"
     },
     {
-      "q": "Corrija o mito sobre lab kill.",
+      "q": "Reiniciar o consumidor Spring: o que os logs de rebalance mostram — como funciona?",
       "o": [
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
         "Ctrl+C no Spring e subi de novo: logs revoked / assigned.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Lote enorme + cartão lento nunca dispara rebalance."
       ],
-      "a": 0,
-      "w": "Lab 4.",
+      "a": 1,
+      "w": "Restart dispara rebalance visível.",
       "t": "lab kill"
     },
     {
-      "q": "No caderno, a respeito de lab kill: qual vale?",
+      "q": "Se perguntarem: Reiniciar o consumidor Spring: o que os logs de rebalance mostram?",
       "o": [
         "Ctrl+C no Spring e subi de novo: logs revoked / assigned.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Essas configs do YAML não disparam rebalance; ignore-as."
       ],
       "a": 0,
-      "w": "Lab 4.",
+      "w": "Restart dispara rebalance visível.",
       "t": "lab kill"
     },
     {
-      "q": "Se perguntarem lab kill na mesa, qual frase é a verdadeira?",
+      "q": "Reiniciar o consumidor Spring: o que os logs de rebalance mostram — o que vale aqui?",
       "o": [
         "Ctrl+C no Spring e subi de novo: logs revoked / assigned.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "No eager o time troca partições em silêncio, sem parar a leitura."
       ],
       "a": 0,
-      "w": "Lab 4.",
+      "w": "Restart dispara rebalance visível.",
       "t": "lab kill"
     },
     {
-      "q": "Sobre YAML: qual afirmação está certa?",
+      "q": "As configs max.poll.interval.ms e session.timeout.ms importam no diagnóstico de rebalance?",
+      "o": [
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
+        "Essas configs do YAML não disparam rebalance; ignore-as."
+      ],
+      "a": 2,
+      "w": "application.yml.",
+      "t": "YAML"
+    },
+    {
+      "q": "As configs max.poll.interval.ms e session.timeout.ms importam no diagnóstico de rebalance — verdade ou mito?",
       "o": [
         "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM."
       ],
       "a": 0,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "Qual frase sobre YAML está certa?",
+      "q": "As configs max.poll.interval.ms e session.timeout.ms importam no diagnóstico de rebalance — o que acontece de verdade?",
+      "o": [
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
+        "Essas configs do YAML não disparam rebalance; ignore-as."
+      ],
+      "a": 2,
+      "w": "application.yml.",
+      "t": "YAML"
+    },
+    {
+      "q": "Na prática: As configs max.poll.interval.ms e session.timeout.ms importam no diagnóstico de rebalance?",
+      "o": [
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico."
+      ],
+      "a": 3,
+      "w": "application.yml.",
+      "t": "YAML"
+    },
+    {
+      "q": "As configs max.poll.interval.ms e session.timeout.ms importam no diagnóstico de rebalance — como funciona?",
+      "o": [
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe."
+      ],
+      "a": 1,
+      "w": "application.yml.",
+      "t": "YAML"
+    },
+    {
+      "q": "Se perguntarem: As configs max.poll.interval.ms e session.timeout.ms importam no diagnóstico de rebalance?",
       "o": [
         "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "max-poll-records alto encurta o processamento e evita rebalance."
       ],
       "a": 0,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "YAML — o que acontece de verdade?",
+      "q": "As configs max.poll.interval.ms e session.timeout.ms importam no diagnóstico de rebalance — o que vale aqui?",
       "o": [
         "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições."
       ],
       "a": 0,
       "w": "application.yml.",
       "t": "YAML"
     },
     {
-      "q": "Marque a leitura correta (YAML).",
+      "q": "No rebalance eager, um membro troca as partições em silêncio?",
       "o": [
-        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "O grupo para a leitura, redistribui as partições e só então volta.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Rebalance é o producer redistribuir keys entre partições."
       ],
-      "a": 0,
-      "w": "application.yml.",
-      "t": "YAML"
+      "a": 1,
+      "w": "Não é “um pod troca em silêncio” no eager.",
+      "t": "analogia"
     },
     {
-      "q": "Corrija o mito sobre YAML.",
+      "q": "No rebalance eager, um membro troca as partições em silêncio — verdade ou mito?",
       "o": [
-        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "O grupo para a leitura, redistribui as partições e só então volta."
       ],
-      "a": 0,
-      "w": "application.yml.",
-      "t": "YAML"
+      "a": 3,
+      "w": "Não é “um pod troca em silêncio” no eager.",
+      "t": "analogia"
     },
     {
-      "q": "No caderno, a respeito de YAML: qual vale?",
+      "q": "No rebalance eager, um membro troca as partições em silêncio — o que acontece de verdade?",
       "o": [
-        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "O grupo para a leitura, redistribui as partições e só então volta.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Cooperative sticky elimina rebalance; não há revogação."
       ],
-      "a": 0,
-      "w": "application.yml.",
-      "t": "YAML"
+      "a": 1,
+      "w": "Não é “um pod troca em silêncio” no eager.",
+      "t": "analogia"
     },
     {
-      "q": "Se perguntarem YAML na mesa, qual frase é a verdadeira?",
+      "q": "Na prática: No rebalance eager, um membro troca as partições em silêncio?",
       "o": [
-        "max.poll.interval.ms e session.timeout.ms disparam o diagnóstico.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "application.yml.",
-      "t": "YAML"
-    },
-    {
-      "q": "Sobre analogia: qual afirmação está certa?",
-      "o": [
-        "O time para a leitura, redistribui as colunas e só então volta.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "O grupo para a leitura, redistribui as partições e só então volta.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Lote enorme + cartão lento nunca dispara rebalance."
       ],
       "a": 0,
       "w": "Não é “um pod troca em silêncio” no eager.",
       "t": "analogia"
     },
     {
-      "q": "Qual frase sobre analogia está certa?",
+      "q": "No rebalance eager, um membro troca as partições em silêncio — como funciona?",
       "o": [
-        "O time para a leitura, redistribui as colunas e só então volta.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "O grupo para a leitura, redistribui as partições e só então volta.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance."
       ],
       "a": 0,
       "w": "Não é “um pod troca em silêncio” no eager.",
       "t": "analogia"
     },
     {
-      "q": "Analogia — o que acontece de verdade?",
+      "q": "Se perguntarem: No rebalance eager, um membro troca as partições em silêncio?",
       "o": [
-        "O time para a leitura, redistribui as colunas e só então volta.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Restart do Spring nunca loga revoked / assigned.",
+        "O grupo para a leitura, redistribui as partições e só então volta."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não é “um pod troca em silêncio” no eager.",
       "t": "analogia"
     },
     {
-      "q": "Marque a leitura correta (analogia).",
+      "q": "No rebalance eager, um membro troca as partições em silêncio — o que vale aqui?",
       "o": [
-        "O time para a leitura, redistribui as colunas e só então volta.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "O grupo para a leitura, redistribui as partições e só então volta."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Não é “um pod troca em silêncio” no eager.",
       "t": "analogia"
     },
     {
-      "q": "Corrija o mito sobre analogia.",
+      "q": "Concurrency 3 no listener cria uma 4ª partição no rebalance?",
       "o": [
-        "O time para a leitura, redistribui as colunas e só então volta.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Não é “um pod troca em silêncio” no eager.",
-      "t": "analogia"
-    },
-    {
-      "q": "No caderno, a respeito de analogia: qual vale?",
-      "o": [
-        "O time para a leitura, redistribui as colunas e só então volta.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
-      ],
-      "a": 0,
-      "w": "Não é “um pod troca em silêncio” no eager.",
-      "t": "analogia"
-    },
-    {
-      "q": "Se perguntarem analogia na mesa, qual frase é a verdadeira?",
-      "o": [
-        "O time para a leitura, redistribui as colunas e só então volta.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
-      ],
-      "a": 0,
-      "w": "Não é “um pod troca em silêncio” no eager.",
-      "t": "analogia"
-    },
-    {
-      "q": "Sobre concurrency: qual afirmação está certa?",
-      "o": [
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
         "concurrency 3 = três membros: rebalance entre eles nas 3 partições.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "Essas configs do YAML não disparam rebalance; ignore-as."
       ],
-      "a": 0,
-      "w": "Não cria 4ª coluna.",
+      "a": 1,
+      "w": "Não cria 4ª partição.",
       "t": "concurrency"
     },
     {
-      "q": "Qual frase sobre concurrency está certa?",
+      "q": "Concurrency 3 no listener cria uma 4ª partição no rebalance — verdade ou mito?",
       "o": [
-        "concurrency 3 = três membros: rebalance entre eles nas 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "concurrency 3 = três membros: rebalance entre eles nas 3 partições."
       ],
-      "a": 0,
-      "w": "Não cria 4ª coluna.",
+      "a": 3,
+      "w": "Não cria 4ª partição.",
       "t": "concurrency"
     },
     {
-      "q": "Concurrency — o que acontece de verdade?",
+      "q": "Concurrency 3 no listener cria uma 4ª partição no rebalance — o que acontece de verdade?",
       "o": [
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
         "concurrency 3 = três membros: rebalance entre eles nas 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM."
       ],
-      "a": 0,
-      "w": "Não cria 4ª coluna.",
+      "a": 1,
+      "w": "Não cria 4ª partição.",
       "t": "concurrency"
     },
     {
-      "q": "Marque a leitura correta (concurrency).",
+      "q": "Na prática: Concurrency 3 no listener cria uma 4ª partição no rebalance?",
       "o": [
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
         "concurrency 3 = três membros: rebalance entre eles nas 3 partições.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "concurrency 3 cria a 4ª partição para o quarto membro."
       ],
-      "a": 0,
-      "w": "Não cria 4ª coluna.",
+      "a": 2,
+      "w": "Não cria 4ª partição.",
       "t": "concurrency"
     },
     {
-      "q": "Corrija o mito sobre concurrency.",
+      "q": "Concurrency 3 no listener cria uma 4ª partição no rebalance — como funciona?",
       "o": [
         "concurrency 3 = três membros: rebalance entre eles nas 3 partições.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam."
       ],
       "a": 0,
-      "w": "Não cria 4ª coluna.",
+      "w": "Não cria 4ª partição.",
       "t": "concurrency"
     },
     {
-      "q": "No caderno, a respeito de concurrency: qual vale?",
+      "q": "Se perguntarem: Concurrency 3 no listener cria uma 4ª partição no rebalance?",
       "o": [
-        "concurrency 3 = três membros: rebalance entre eles nas 3 partições.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "concurrency 3 = três membros: rebalance entre eles nas 3 partições."
       ],
-      "a": 0,
-      "w": "Não cria 4ª coluna.",
+      "a": 3,
+      "w": "Não cria 4ª partição.",
       "t": "concurrency"
     },
     {
-      "q": "Se perguntarem concurrency na mesa, qual frase é a verdadeira?",
+      "q": "Concurrency 3 no listener cria uma 4ª partição no rebalance — o que vale aqui?",
       "o": [
-        "concurrency 3 = três membros: rebalance entre eles nas 3 partições.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "concurrency 3 = três membros: rebalance entre eles nas 3 partições."
       ],
-      "a": 0,
-      "w": "Não cria 4ª coluna.",
+      "a": 3,
+      "w": "Não cria 4ª partição.",
       "t": "concurrency"
     },
     {
-      "q": "Sobre heartbeat: qual afirmação está certa?",
+      "q": "GC longo pode parecer morte e disparar rebalance?",
       "o": [
-        "Heartbeat perdido = leave involuntário = rebalance.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Heartbeat perdido = leave involuntário = rebalance."
       ],
-      "a": 0,
+      "a": 3,
       "w": "GC longo parece morte.",
       "t": "heartbeat"
     },
     {
-      "q": "Qual frase sobre heartbeat está certa?",
+      "q": "GC longo pode parecer morte e disparar rebalance — verdade ou mito?",
       "o": [
+        "Cooperative sticky elimina rebalance; não há revogação.",
         "Heartbeat perdido = leave involuntário = rebalance.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe."
       ],
-      "a": 0,
+      "a": 1,
       "w": "GC longo parece morte.",
       "t": "heartbeat"
     },
     {
-      "q": "Heartbeat — o que acontece de verdade?",
+      "q": "GC longo pode parecer morte e disparar rebalance — o que acontece de verdade?",
       "o": [
-        "Heartbeat perdido = leave involuntário = rebalance.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Heartbeat perdido = leave involuntário = rebalance."
       ],
-      "a": 0,
+      "a": 3,
       "w": "GC longo parece morte.",
       "t": "heartbeat"
     },
     {
-      "q": "Marque a leitura correta (heartbeat).",
+      "q": "Na prática: GC longo pode parecer morte e disparar rebalance?",
       "o": [
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
         "Heartbeat perdido = leave involuntário = rebalance.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM."
       ],
-      "a": 0,
+      "a": 2,
       "w": "GC longo parece morte.",
       "t": "heartbeat"
     },
     {
-      "q": "Corrija o mito sobre heartbeat.",
+      "q": "GC longo pode parecer morte e disparar rebalance — como funciona?",
       "o": [
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
         "Heartbeat perdido = leave involuntário = rebalance.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM."
       ],
-      "a": 0,
+      "a": 2,
       "w": "GC longo parece morte.",
       "t": "heartbeat"
     },
     {
-      "q": "No caderno, a respeito de heartbeat: qual vale?",
+      "q": "Se perguntarem: GC longo pode parecer morte e disparar rebalance?",
       "o": [
+        "Restart do Spring nunca loga revoked / assigned.",
         "Heartbeat perdido = leave involuntário = rebalance.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance."
       ],
-      "a": 0,
+      "a": 1,
       "w": "GC longo parece morte.",
       "t": "heartbeat"
     },
     {
-      "q": "Se perguntarem heartbeat na mesa, qual frase é a verdadeira?",
+      "q": "GC longo pode parecer morte e disparar rebalance — o que vale aqui?",
       "o": [
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
         "Heartbeat perdido = leave involuntário = rebalance.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Restart do Spring nunca loga revoked / assigned."
       ],
-      "a": 0,
+      "a": 1,
       "w": "GC longo parece morte.",
       "t": "heartbeat"
     },
     {
-      "q": "Sobre não escala: qual afirmação está certa?",
+      "q": "Rebalance aumenta throughput se N de partições já é o teto?",
+      "o": [
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Rebalance não aumenta throughput se N de partições é o teto.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros."
+      ],
+      "a": 2,
+      "w": "Diagnóstico de operação.",
+      "t": "não escala"
+    },
+    {
+      "q": "Rebalance aumenta throughput se N de partições já é o teto — verdade ou mito?",
       "o": [
         "Rebalance não aumenta throughput se N de partições é o teto.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "concurrency 3 cria a 4ª partição para o quarto membro."
       ],
       "a": 0,
       "w": "Diagnóstico de operação.",
       "t": "não escala"
     },
     {
-      "q": "Qual frase sobre não escala está certa?",
+      "q": "Rebalance aumenta throughput se N de partições já é o teto — o que acontece de verdade?",
+      "o": [
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Rebalance não aumenta throughput se N de partições é o teto.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros."
+      ],
+      "a": 2,
+      "w": "Diagnóstico de operação.",
+      "t": "não escala"
+    },
+    {
+      "q": "Na prática: Rebalance aumenta throughput se N de partições já é o teto?",
+      "o": [
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Rebalance não aumenta throughput se N de partições é o teto."
+      ],
+      "a": 3,
+      "w": "Diagnóstico de operação.",
+      "t": "não escala"
+    },
+    {
+      "q": "Rebalance aumenta throughput se N de partições já é o teto — como funciona?",
+      "o": [
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "Rebalance não aumenta throughput se N de partições é o teto."
+      ],
+      "a": 3,
+      "w": "Diagnóstico de operação.",
+      "t": "não escala"
+    },
+    {
+      "q": "Se perguntarem: Rebalance aumenta throughput se N de partições já é o teto?",
       "o": [
         "Rebalance não aumenta throughput se N de partições é o teto.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "max-poll-records alto encurta o processamento e evita rebalance."
       ],
       "a": 0,
       "w": "Diagnóstico de operação.",
       "t": "não escala"
     },
     {
-      "q": "Não escala — o que acontece de verdade?",
+      "q": "Rebalance aumenta throughput se N de partições já é o teto — o que vale aqui?",
       "o": [
         "Rebalance não aumenta throughput se N de partições é o teto.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições."
       ],
       "a": 0,
       "w": "Diagnóstico de operação.",
       "t": "não escala"
     },
     {
-      "q": "Marque a leitura correta (não escala).",
+      "q": "Durante rebalance clássico o Fetch daquelas partições continua?",
       "o": [
-        "Rebalance não aumenta throughput se N de partições é o teto.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Durante rebalance clássico o Fetch daquelas partições para.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Rebalance é o producer redistribuir keys entre partições."
       ],
-      "a": 0,
-      "w": "Diagnóstico de operação.",
-      "t": "não escala"
+      "a": 1,
+      "w": "Lag sobe na janela.",
+      "t": "pause"
     },
     {
-      "q": "Corrija o mito sobre não escala.",
+      "q": "Durante rebalance clássico o Fetch daquelas partições continua — verdade ou mito?",
       "o": [
-        "Rebalance não aumenta throughput se N de partições é o teto.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "Durante rebalance clássico o Fetch daquelas partições para."
       ],
-      "a": 0,
-      "w": "Diagnóstico de operação.",
-      "t": "não escala"
+      "a": 3,
+      "w": "Lag sobe na janela.",
+      "t": "pause"
     },
     {
-      "q": "No caderno, a respeito de não escala: qual vale?",
+      "q": "Durante rebalance clássico o Fetch daquelas partições continua — o que acontece de verdade?",
       "o": [
-        "Rebalance não aumenta throughput se N de partições é o teto.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Durante rebalance clássico o Fetch daquelas partições para.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Cooperative sticky elimina rebalance; não há revogação."
       ],
-      "a": 0,
-      "w": "Diagnóstico de operação.",
-      "t": "não escala"
+      "a": 1,
+      "w": "Lag sobe na janela.",
+      "t": "pause"
     },
     {
-      "q": "Se perguntarem não escala na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Rebalance não aumenta throughput se N de partições é o teto.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
-      ],
-      "a": 0,
-      "w": "Diagnóstico de operação.",
-      "t": "não escala"
-    },
-    {
-      "q": "Sobre pause: qual afirmação está certa?",
+      "q": "Na prática: Durante rebalance clássico o Fetch daquelas partições continua?",
       "o": [
         "Durante rebalance clássico o Fetch daquelas partições para.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "group.instance.id força rebalance a cada restart do mesmo pod.",
+        "Lote enorme + cartão lento nunca dispara rebalance."
       ],
       "a": 0,
       "w": "Lag sobe na janela.",
       "t": "pause"
     },
     {
-      "q": "Qual frase sobre pause está certa?",
+      "q": "Durante rebalance clássico o Fetch daquelas partições continua — como funciona?",
       "o": [
         "Durante rebalance clássico o Fetch daquelas partições para.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance."
       ],
       "a": 0,
       "w": "Lag sobe na janela.",
       "t": "pause"
     },
     {
-      "q": "Pause — o que acontece de verdade?",
+      "q": "Se perguntarem: Durante rebalance clássico o Fetch daquelas partições continua?",
       "o": [
-        "Durante rebalance clássico o Fetch daquelas partições para.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Durante rebalance clássico o Fetch daquelas partições para."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Lag sobe na janela.",
       "t": "pause"
     },
     {
-      "q": "Marque a leitura correta (pause).",
+      "q": "Durante rebalance clássico o Fetch daquelas partições continua — o que vale aqui?",
       "o": [
-        "Durante rebalance clássico o Fetch daquelas partições para.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "Durante rebalance clássico o Fetch daquelas partições para."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Lag sobe na janela.",
       "t": "pause"
     },
     {
-      "q": "Corrija o mito sobre pause.",
+      "q": "Novo membro no grupo dispara redistribuição?",
       "o": [
-        "Durante rebalance clássico o Fetch daquelas partições para.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "Novo membro no grupo dispara redistribuição.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam."
       ],
-      "a": 0,
-      "w": "Lag sobe na janela.",
-      "t": "pause"
+      "a": 2,
+      "w": "Deploy rolling mal afinado = rebalance extra.",
+      "t": "join"
     },
     {
-      "q": "No caderno, a respeito de pause: qual vale?",
-      "o": [
-        "Durante rebalance clássico o Fetch daquelas partições para.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "Lag sobe na janela.",
-      "t": "pause"
-    },
-    {
-      "q": "Se perguntarem pause na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Durante rebalance clássico o Fetch daquelas partições para.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
-      ],
-      "a": 0,
-      "w": "Lag sobe na janela.",
-      "t": "pause"
-    },
-    {
-      "q": "Sobre join: qual afirmação está certa?",
+      "q": "Novo membro no grupo dispara redistribuição — verdade ou mito?",
       "o": [
         "Novo membro no grupo dispara redistribuição.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "No eager o time troca partições em silêncio, sem parar a leitura.",
+        "concurrency 3 cria a 4ª partição para o quarto membro."
       ],
       "a": 0,
       "w": "Deploy rolling mal afinado = rebalance extra.",
       "t": "join"
     },
     {
-      "q": "Qual frase sobre join está certa?",
+      "q": "Novo membro no grupo dispara redistribuição — o que acontece de verdade?",
+      "o": [
+        "concurrency 3 cria a 4ª partição para o quarto membro.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM.",
+        "Novo membro no grupo dispara redistribuição.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam."
+      ],
+      "a": 2,
+      "w": "Deploy rolling mal afinado = rebalance extra.",
+      "t": "join"
+    },
+    {
+      "q": "Na prática: Novo membro no grupo dispara redistribuição?",
+      "o": [
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Novo membro no grupo dispara redistribuição.",
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "GC longo não parece morte; heartbeat ignora pausa da JVM."
+      ],
+      "a": 1,
+      "w": "Deploy rolling mal afinado = rebalance extra.",
+      "t": "join"
+    },
+    {
+      "q": "Novo membro no grupo dispara redistribuição — como funciona?",
+      "o": [
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "Rebalance aumenta throughput mesmo com 3 partições e 3 membros.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "Novo membro no grupo dispara redistribuição."
+      ],
+      "a": 3,
+      "w": "Deploy rolling mal afinado = rebalance extra.",
+      "t": "join"
+    },
+    {
+      "q": "Se perguntarem: Novo membro no grupo dispara redistribuição?",
       "o": [
         "Novo membro no grupo dispara redistribuição.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "Durante rebalance clássico o Fetch não para; lag não sobe.",
+        "max-poll-records alto encurta o processamento e evita rebalance."
       ],
       "a": 0,
       "w": "Deploy rolling mal afinado = rebalance extra.",
       "t": "join"
     },
     {
-      "q": "Join — o que acontece de verdade?",
+      "q": "Novo membro no grupo dispara redistribuição — o que vale aqui?",
       "o": [
         "Novo membro no grupo dispara redistribuição.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Novo membro entra sem rebalance; as partições ficam onde estavam.",
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições."
       ],
       "a": 0,
       "w": "Deploy rolling mal afinado = rebalance extra.",
       "t": "join"
     },
     {
-      "q": "Marque a leitura correta (join).",
-      "o": [
-        "Novo membro no grupo dispara redistribuição.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Deploy rolling mal afinado = rebalance extra.",
-      "t": "join"
-    },
-    {
-      "q": "Corrija o mito sobre join.",
-      "o": [
-        "Novo membro no grupo dispara redistribuição.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Deploy rolling mal afinado = rebalance extra.",
-      "t": "join"
-    },
-    {
-      "q": "No caderno, a respeito de join: qual vale?",
-      "o": [
-        "Novo membro no grupo dispara redistribuição.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Deploy rolling mal afinado = rebalance extra.",
-      "t": "join"
-    },
-    {
-      "q": "Se perguntarem join na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Novo membro no grupo dispara redistribuição.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Deploy rolling mal afinado = rebalance extra.",
-      "t": "join"
-    },
-    {
-      "q": "Sobre poll records: qual afirmação está certa?",
+      "q": "A config max-poll-records alto demais alonga o processamento e o quê mais?",
       "o": [
         "max-poll-records alto demais alonga o processamento sem poll.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Rebalance é o producer redistribuir keys entre partições.",
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe."
       ],
       "a": 0,
       "w": "Ajuste com o tempo do efeito.",
       "t": "poll records"
     },
     {
-      "q": "Qual frase sobre poll records está certa?",
+      "q": "A config max-poll-records alto demais alonga o processamento e o quê mais — verdade ou mito?",
+      "o": [
+        "Rebalance eager não pausa o Fetch; o grupo nem percebe.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "max-poll-records alto demais alonga o processamento sem poll.",
+        "max-poll-records alto encurta o processamento e evita rebalance."
+      ],
+      "a": 2,
+      "w": "Ajuste com o tempo do efeito.",
+      "t": "poll records"
+    },
+    {
+      "q": "A config max-poll-records alto demais alonga o processamento e o quê mais — o que acontece de verdade?",
       "o": [
         "max-poll-records alto demais alonga o processamento sem poll.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Cooperative sticky elimina rebalance; não há revogação.",
+        "group.instance.id força rebalance a cada restart do mesmo pod."
       ],
       "a": 0,
       "w": "Ajuste com o tempo do efeito.",
       "t": "poll records"
     },
     {
-      "q": "Poll records — o que acontece de verdade?",
+      "q": "Na prática: A config max-poll-records alto demais alonga o processamento e o quê mais?",
       "o": [
+        "Lote enorme + cartão lento nunca dispara rebalance.",
         "max-poll-records alto demais alonga o processamento sem poll.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "group.instance.id força rebalance a cada restart do mesmo pod."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Ajuste com o tempo do efeito.",
       "t": "poll records"
     },
     {
-      "q": "Marque a leitura correta (poll records).",
+      "q": "A config max-poll-records alto demais alonga o processamento e o quê mais — como funciona?",
       "o": [
-        "max-poll-records alto demais alonga o processamento sem poll.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "max-poll-records alto encurta o processamento e evita rebalance.",
+        "Lote enorme + cartão lento nunca dispara rebalance.",
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "max-poll-records alto demais alonga o processamento sem poll."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Ajuste com o tempo do efeito.",
       "t": "poll records"
     },
     {
-      "q": "Corrija o mito sobre poll records.",
+      "q": "Se perguntarem: A config max-poll-records alto demais alonga o processamento e o quê mais?",
       "o": [
+        "Subir pods quebra sozinho o loop de lote lento + rebalance.",
+        "Restart do Spring nunca loga revoked / assigned.",
         "max-poll-records alto demais alonga o processamento sem poll.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "max-poll-records alto encurta o processamento e evita rebalance."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Ajuste com o tempo do efeito.",
       "t": "poll records"
     },
     {
-      "q": "No caderno, a respeito de poll records: qual vale?",
+      "q": "A config max-poll-records alto demais alonga o processamento e o quê mais — o que vale aqui?",
       "o": [
+        "Restart do Spring nunca loga revoked / assigned.",
+        "Essas configs do YAML não disparam rebalance; ignore-as.",
         "max-poll-records alto demais alonga o processamento sem poll.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "max-poll-records alto encurta o processamento e evita rebalance."
       ],
-      "a": 0,
-      "w": "Ajuste com o tempo do efeito.",
-      "t": "poll records"
-    },
-    {
-      "q": "Se perguntarem poll records na mesa, qual frase é a verdadeira?",
-      "o": [
-        "max-poll-records alto demais alonga o processamento sem poll.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
+      "a": 2,
       "w": "Ajuste com o tempo do efeito.",
       "t": "poll records"
     }

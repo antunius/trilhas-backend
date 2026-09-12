@@ -1,0 +1,74 @@
+{
+  "beats": [
+    {
+      "id": "preco-cafe",
+      "kind": "cena",
+      "kicker": "Catálogo",
+      "title": "O post-it na mesa diz R$ 12. O estoque já mudou para R$ 14.",
+      "body": "<p>A vendedora não desce ao depósito a cada pergunta. Tem um post-it. Rápido. Se ninguém rasgou quando o preço mudou, ela mente para o cliente.</p><p>Cache é isso. Não é “Redis porque escala”. É um atalho com data de validade — e a pergunta madura é <strong>qual o custo de mostrar 2 segundos atrasado</strong>.</p>"
+    },
+    {
+      "id": "lab",
+      "kind": "widget",
+      "kicker": "Laboratório",
+      "title": "Sobe o hit. Vê se a regra sobrevive.",
+      "widget": "cache"
+    },
+    {
+      "id": "estrategias",
+      "kind": "explicar",
+      "title": "Aside, through, behind — o preço, não a lista",
+      "html": "<p><strong>Cache-aside</strong> (o default): a app pergunta no cache; miss → banco → preenche. Você controla o que entra. Miss + mil requests = stampede.</p><p><strong>Write-through:</strong> escreve nos dois. Mais coerente, write mais lento. Ainda precisa invalidar réplica de cache se houver mais de um nó.</p><p><strong>Write-behind:</strong> escreve no cache e persiste depois. Rápido. Se o processo morrer, o banco nunca soube. Quase nunca no débito.</p><p>Riscos que a lista de padrões esconde: <strong>stampede</strong> (TTL estoura junto — jitter, lock, refresh proativo), <strong>hot key</strong> (um produto na capa, um Redis), <strong>invalidação</strong> (o problema difícil: quem invalida o cache?).</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "ganha": "Leitura barata. Banco respira. p99 do catálogo, sessão, feed cai.",
+      "paga": "Dado velho até o TTL ou a invalidação. Stampede no expire. Mais uma peça para operar. Write-behind troca durabilidade por ms. Invalidação errada é mentira permanente — isso não é “eventual”.",
+      "quando": [
+        "Leitura muito maior que escrita",
+        "Stale de segundos (às vezes minutos) não quebra invariante",
+        "Catálogo, sessão, HTML, feed, “quantos viram”"
+      ],
+      "quandoNao": [
+        "Saldo no instante do débito",
+        "Assento, cupom de uso único, idempotência de cobrança",
+        "Dado que muda o tempo todo e o TTL teria que ser 200 ms — aí o cache não paga o aluguel"
+      ]
+    },
+    {
+      "id": "onde",
+      "kind": "escolha",
+      "prompt": "Onde você põe cache de verdade — e onde o hit ratio bonito é incidente?",
+      "options": [
+        {
+          "id": "saldo",
+          "label": "Saldo da conta 99 no débito, TTL 60 s. Hit de 95%.",
+          "verdict": "ruim",
+          "why": "Dois débitos no mesmo minuto leem R$ 100 duas vezes. O cache mentiu. Invariante de dinheiro não aceita stale."
+        },
+        {
+          "id": "catalogo",
+          "label": "Nome e preço do produto 44, TTL 60 s, invalidação no write do admin.",
+          "verdict": "bom",
+          "why": "Dois segundos de preço velho no catálogo quase nunca quebram o checkout. Stampede e invalidação ainda existem — mas a regra de negócio aguenta."
+        },
+        {
+          "id": "assento",
+          "label": "Assento 14A no voo, cache-aside, “se estiver no Redis está livre”.",
+          "verdict": "ruim",
+          "why": "Dois clientes compram o mesmo assento. Reserva é invariante, não feed. A fonte da verdade é o banco (ou um lock), não o cache."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "A pergunta não é “tem Redis?”. É “o que custa mostrar 2 s atrasado?”",
+        "Cache-aside é o default. Write-behind é velocidade contra durabilidade.",
+        "Hit alto no saldo é incidente. Hit alto no catálogo é o desenho certo — até o stampede."
+      ]
+    }
+  ]
+}

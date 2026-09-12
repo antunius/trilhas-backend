@@ -1,1264 +1,1264 @@
 {
   "questions": [
     {
-      "q": "Sobre cara: qual afirmação está certa?",
+      "q": "Arquitetura é o desenho no quadro ou o conjunto de decisões caras de reverter?",
       "o": [
+        "Arquitetura é a escolha das tecnologias da moda antes de qualquer requisito.",
         "Arquitetura é o conjunto de decisões caras de reverter.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Arquitetura é o diagrama: quanto mais caixas no quadro, mais arquitetura.",
+        "Arquitetura é a contagem de serviços que o time conseguiu subir."
       ],
-      "a": 0,
-      "w": "Não é diagrama bonito nem contagem de serviços.",
+      "a": 1,
+      "w": "Não é o diagrama nem a contagem de serviços. O que gruda: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair.",
       "t": "cara"
     },
     {
-      "q": "Qual frase sobre cara está certa?",
+      "q": "O que define arquitetura: o diagrama bonito ou o custo de desfazer a decisão?",
       "o": [
+        "Arquitetura é a escolha das tecnologias da moda antes de qualquer requisito.",
         "Arquitetura é o conjunto de decisões caras de reverter.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Arquitetura é o diagrama: quanto mais caixas no quadro, mais arquitetura.",
+        "Arquitetura é a contagem de serviços que o time conseguiu subir."
       ],
-      "a": 0,
-      "w": "Não é diagrama bonito nem contagem de serviços.",
+      "a": 1,
+      "w": "Não é o diagrama nem a contagem de serviços. O que gruda: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair.",
       "t": "cara"
     },
     {
-      "q": "Cara — o que acontece de verdade?",
+      "q": "Contar quantos serviços o desenho tem já é descrever a arquitetura?",
       "o": [
         "Arquitetura é o conjunto de decisões caras de reverter.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Arquitetura é o diagrama: quanto mais caixas no quadro, mais arquitetura.",
+        "Arquitetura é a contagem de serviços que o time conseguiu subir.",
+        "Arquitetura é a escolha das tecnologias da moda antes de qualquer requisito."
       ],
       "a": 0,
-      "w": "Não é diagrama bonito nem contagem de serviços.",
+      "w": "Não é o diagrama nem a contagem de serviços. O que gruda: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair.",
       "t": "cara"
     },
     {
-      "q": "Marque a leitura correta (cara).",
+      "q": "Onde mora o dado e quem fala com quem: isso é arquitetura ou enfeite de desenho?",
       "o": [
-        "Arquitetura é o conjunto de decisões caras de reverter.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Arquitetura é o diagrama: quanto mais caixas no quadro, mais arquitetura.",
+        "Arquitetura é a contagem de serviços que o time conseguiu subir.",
+        "Arquitetura é a escolha das tecnologias da moda antes de qualquer requisito.",
+        "Arquitetura é o conjunto de decisões caras de reverter."
       ],
-      "a": 0,
-      "w": "Não é diagrama bonito nem contagem de serviços.",
+      "a": 3,
+      "w": "Não é o diagrama nem a contagem de serviços. O que gruda: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair.",
       "t": "cara"
     },
     {
-      "q": "Corrija o mito sobre cara.",
+      "q": "Se a decisão é fácil de desfazer, ela era arquitetura?",
       "o": [
-        "Arquitetura é o conjunto de decisões caras de reverter.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Arquitetura é o diagrama: quanto mais caixas no quadro, mais arquitetura.",
+        "Arquitetura é a contagem de serviços que o time conseguiu subir.",
+        "Arquitetura é a escolha das tecnologias da moda antes de qualquer requisito.",
+        "Arquitetura é o conjunto de decisões caras de reverter."
       ],
-      "a": 0,
-      "w": "Não é diagrama bonito nem contagem de serviços.",
+      "a": 3,
+      "w": "Não é o diagrama nem a contagem de serviços. O que gruda: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair.",
       "t": "cara"
     },
     {
-      "q": "No caderno, a respeito de cara: qual vale?",
+      "q": "O que o arquiteto olha primeiro: a beleza do diagrama ou o preço de reverter?",
       "o": [
+        "Arquitetura é a escolha das tecnologias da moda antes de qualquer requisito.",
         "Arquitetura é o conjunto de decisões caras de reverter.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Arquitetura é o diagrama: quanto mais caixas no quadro, mais arquitetura.",
+        "Arquitetura é a contagem de serviços que o time conseguiu subir."
       ],
-      "a": 0,
-      "w": "Não é diagrama bonito nem contagem de serviços.",
+      "a": 1,
+      "w": "Não é o diagrama nem a contagem de serviços. O que gruda: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair.",
       "t": "cara"
     },
     {
-      "q": "Se perguntarem cara na mesa, qual frase é a verdadeira?",
+      "q": "Dez caixas no quadro provam arquitetura?",
       "o": [
+        "Arquitetura é a escolha das tecnologias da moda antes de qualquer requisito.",
         "Arquitetura é o conjunto de decisões caras de reverter.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Arquitetura é o diagrama: quanto mais caixas no quadro, mais arquitetura.",
+        "Arquitetura é a contagem de serviços que o time conseguiu subir."
       ],
-      "a": 0,
-      "w": "Não é diagrama bonito nem contagem de serviços.",
+      "a": 1,
+      "w": "Não é o diagrama nem a contagem de serviços. O que gruda: onde mora o dado, quem fala com quem, o que acontece se um pedaço cair.",
       "t": "cara"
     },
     {
-      "q": "Sobre régua: qual afirmação está certa?",
+      "q": "Na régua da aula, o que o arquiteto descreve que o júnior não descreve?",
       "o": [
-        "Arquiteto nomeia o que não pode quebrar, o custo e o que faria diferente.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Arquiteto nomeia o que não pode quebrar, o custo de reverter e o que faria diferente.",
+        "Arquiteto descreve o que o sistema faz; isso já é o nível mais alto.",
+        "Arquiteto explica como as peças se falam e para aí.",
+        "Arquiteto lista as tecnologias que domina e o tempo de casa."
       ],
       "a": 0,
-      "w": "Júnior descreve o que faz; pleno como se fala.",
+      "w": "Júnior descreve o que o sistema faz; pleno descreve como as peças se falam. O arquiteto acrescenta o que não pode quebrar e o preço, com ordem de grandeza.",
       "t": "régua"
     },
     {
-      "q": "Qual frase sobre régua está certa?",
+      "q": "Júnior diz o que o sistema faz. O arquiteto diz o quê?",
       "o": [
-        "Arquiteto nomeia o que não pode quebrar, o custo e o que faria diferente.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Arquiteto nomeia o que não pode quebrar, o custo de reverter e o que faria diferente.",
+        "Arquiteto descreve o que o sistema faz; isso já é o nível mais alto.",
+        "Arquiteto explica como as peças se falam e para aí.",
+        "Arquiteto lista as tecnologias que domina e o tempo de casa."
       ],
       "a": 0,
-      "w": "Júnior descreve o que faz; pleno como se fala.",
+      "w": "Júnior descreve o que o sistema faz; pleno descreve como as peças se falam. O arquiteto acrescenta o que não pode quebrar e o preço, com ordem de grandeza.",
       "t": "régua"
     },
     {
-      "q": "Régua — o que acontece de verdade?",
+      "q": "O que separa pleno de arquiteto na descrição do sistema?",
       "o": [
-        "Arquiteto nomeia o que não pode quebrar, o custo e o que faria diferente.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Arquiteto explica como as peças se falam e para aí.",
+        "Arquiteto lista as tecnologias que domina e o tempo de casa.",
+        "Arquiteto nomeia o que não pode quebrar, o custo de reverter e o que faria diferente.",
+        "Arquiteto descreve o que o sistema faz; isso já é o nível mais alto."
       ],
-      "a": 0,
-      "w": "Júnior descreve o que faz; pleno como se fala.",
+      "a": 2,
+      "w": "Júnior descreve o que o sistema faz; pleno descreve como as peças se falam. O arquiteto acrescenta o que não pode quebrar e o preço, com ordem de grandeza.",
       "t": "régua"
     },
     {
-      "q": "Marque a leitura correta (régua).",
+      "q": "Descrever como as peças se falam já é resposta de arquiteto?",
       "o": [
-        "Arquiteto nomeia o que não pode quebrar, o custo e o que faria diferente.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Arquiteto nomeia o que não pode quebrar, o custo de reverter e o que faria diferente.",
+        "Arquiteto descreve o que o sistema faz; isso já é o nível mais alto.",
+        "Arquiteto explica como as peças se falam e para aí.",
+        "Arquiteto lista as tecnologias que domina e o tempo de casa."
       ],
       "a": 0,
-      "w": "Júnior descreve o que faz; pleno como se fala.",
+      "w": "Júnior descreve o que o sistema faz; pleno descreve como as peças se falam. O arquiteto acrescenta o que não pode quebrar e o preço, com ordem de grandeza.",
       "t": "régua"
     },
     {
-      "q": "Corrija o mito sobre régua.",
+      "q": "Quem descreve só a função do sistema está em que nível da régua?",
       "o": [
-        "Arquiteto nomeia o que não pode quebrar, o custo e o que faria diferente.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Arquiteto explica como as peças se falam e para aí.",
+        "Arquiteto lista as tecnologias que domina e o tempo de casa.",
+        "Arquiteto nomeia o que não pode quebrar, o custo de reverter e o que faria diferente.",
+        "Arquiteto descreve o que o sistema faz; isso já é o nível mais alto."
       ],
-      "a": 0,
-      "w": "Júnior descreve o que faz; pleno como se fala.",
+      "a": 2,
+      "w": "Júnior descreve o que o sistema faz; pleno descreve como as peças se falam. O arquiteto acrescenta o que não pode quebrar e o preço, com ordem de grandeza.",
       "t": "régua"
     },
     {
-      "q": "No caderno, a respeito de régua: qual vale?",
+      "q": "O que o arquiteto acrescenta além de explicar o funcionamento?",
       "o": [
-        "Arquiteto nomeia o que não pode quebrar, o custo e o que faria diferente.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Arquiteto lista as tecnologias que domina e o tempo de casa.",
+        "Arquiteto nomeia o que não pode quebrar, o custo de reverter e o que faria diferente.",
+        "Arquiteto descreve o que o sistema faz; isso já é o nível mais alto.",
+        "Arquiteto explica como as peças se falam e para aí."
       ],
-      "a": 0,
-      "w": "Júnior descreve o que faz; pleno como se fala.",
+      "a": 1,
+      "w": "Júnior descreve o que o sistema faz; pleno descreve como as peças se falam. O arquiteto acrescenta o que não pode quebrar e o preço, com ordem de grandeza.",
       "t": "régua"
     },
     {
-      "q": "Se perguntarem régua na mesa, qual frase é a verdadeira?",
+      "q": "Listar as tecnologias que você domina é a régua de arquiteto?",
       "o": [
-        "Arquiteto nomeia o que não pode quebrar, o custo e o que faria diferente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Arquiteto descreve o que o sistema faz; isso já é o nível mais alto.",
+        "Arquiteto explica como as peças se falam e para aí.",
+        "Arquiteto lista as tecnologias que domina e o tempo de casa.",
+        "Arquiteto nomeia o que não pode quebrar, o custo de reverter e o que faria diferente."
       ],
-      "a": 0,
-      "w": "Júnior descreve o que faz; pleno como se fala.",
+      "a": 3,
+      "w": "Júnior descreve o que o sistema faz; pleno descreve como as peças se falam. O arquiteto acrescenta o que não pode quebrar e o preço, com ordem de grandeza.",
       "t": "régua"
     },
     {
-      "q": "Sobre caixas: qual afirmação está certa?",
+      "q": "Você tem 30 segundos e pedem o checkout. Sair desenhando caixas é resposta forte?",
       "o": [
-        "Sair desenhando caixas e recitar AP sem requisitos é resposta fraca.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Sair desenhando caixas rápido é resposta forte: mostra repertório.",
+        "Requisitos vêm no fim, se sobrar tempo; o desenho pontua primeiro.",
+        "Recitar a sigla da moda substitui perguntar usuários e números.",
+        "Sair desenhando caixas e recitar siglas sem pedir requisitos é resposta fraca."
       ],
-      "a": 0,
-      "w": "Pergunte usuários, p99, consistência.",
+      "a": 3,
+      "w": "Pergunte quantos usuários, leitura ou escrita, o p99 e se o débito pode atrasar. Sem isso a seta entrou de graça.",
       "t": "caixas"
     },
     {
-      "q": "Qual frase sobre caixas está certa?",
+      "q": "Desenhar serviços antes de perguntar quantos usuários: isso pontua na mesa?",
       "o": [
-        "Sair desenhando caixas e recitar AP sem requisitos é resposta fraca.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Requisitos vêm no fim, se sobrar tempo; o desenho pontua primeiro.",
+        "Recitar a sigla da moda substitui perguntar usuários e números.",
+        "Sair desenhando caixas e recitar siglas sem pedir requisitos é resposta fraca.",
+        "Sair desenhando caixas rápido é resposta forte: mostra repertório."
       ],
-      "a": 0,
-      "w": "Pergunte usuários, p99, consistência.",
+      "a": 2,
+      "w": "Pergunte quantos usuários, leitura ou escrita, o p99 e se o débito pode atrasar. Sem isso a seta entrou de graça.",
       "t": "caixas"
     },
     {
-      "q": "Caixas — o que acontece de verdade?",
+      "q": "O que vem primeiro: as caixas no quadro ou as perguntas de requisito?",
       "o": [
-        "Sair desenhando caixas e recitar AP sem requisitos é resposta fraca.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Requisitos vêm no fim, se sobrar tempo; o desenho pontua primeiro.",
+        "Recitar a sigla da moda substitui perguntar usuários e números.",
+        "Sair desenhando caixas e recitar siglas sem pedir requisitos é resposta fraca.",
+        "Sair desenhando caixas rápido é resposta forte: mostra repertório."
       ],
-      "a": 0,
-      "w": "Pergunte usuários, p99, consistência.",
+      "a": 2,
+      "w": "Pergunte quantos usuários, leitura ou escrita, o p99 e se o débito pode atrasar. Sem isso a seta entrou de graça.",
       "t": "caixas"
     },
     {
-      "q": "Marque a leitura correta (caixas).",
+      "q": "Recitar siglas sem número na mesa é resposta de arquiteto?",
       "o": [
-        "Sair desenhando caixas e recitar AP sem requisitos é resposta fraca.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Sair desenhando caixas rápido é resposta forte: mostra repertório.",
+        "Requisitos vêm no fim, se sobrar tempo; o desenho pontua primeiro.",
+        "Recitar a sigla da moda substitui perguntar usuários e números.",
+        "Sair desenhando caixas e recitar siglas sem pedir requisitos é resposta fraca."
       ],
-      "a": 0,
-      "w": "Pergunte usuários, p99, consistência.",
+      "a": 3,
+      "w": "Pergunte quantos usuários, leitura ou escrita, o p99 e se o débito pode atrasar. Sem isso a seta entrou de graça.",
       "t": "caixas"
     },
     {
-      "q": "Corrija o mito sobre caixas.",
+      "q": "Na mesa, o que fazer nos primeiros 30 segundos do checkout?",
       "o": [
-        "Sair desenhando caixas e recitar AP sem requisitos é resposta fraca.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Sair desenhando caixas rápido é resposta forte: mostra repertório.",
+        "Requisitos vêm no fim, se sobrar tempo; o desenho pontua primeiro.",
+        "Recitar a sigla da moda substitui perguntar usuários e números.",
+        "Sair desenhando caixas e recitar siglas sem pedir requisitos é resposta fraca."
       ],
-      "a": 0,
-      "w": "Pergunte usuários, p99, consistência.",
+      "a": 3,
+      "w": "Pergunte quantos usuários, leitura ou escrita, o p99 e se o débito pode atrasar. Sem isso a seta entrou de graça.",
       "t": "caixas"
     },
     {
-      "q": "No caderno, a respeito de caixas: qual vale?",
+      "q": "Requisitos no fim, se sobrar tempo: isso funciona na entrevista?",
       "o": [
-        "Sair desenhando caixas e recitar AP sem requisitos é resposta fraca.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Sair desenhando caixas e recitar siglas sem pedir requisitos é resposta fraca.",
+        "Sair desenhando caixas rápido é resposta forte: mostra repertório.",
+        "Requisitos vêm no fim, se sobrar tempo; o desenho pontua primeiro.",
+        "Recitar a sigla da moda substitui perguntar usuários e números."
       ],
       "a": 0,
-      "w": "Pergunte usuários, p99, consistência.",
+      "w": "Pergunte quantos usuários, leitura ou escrita, o p99 e se o débito pode atrasar. Sem isso a seta entrou de graça.",
       "t": "caixas"
     },
     {
-      "q": "Se perguntarem caixas na mesa, qual frase é a verdadeira?",
+      "q": "Por que sair desenhando caixas é considerado resposta fraca?",
       "o": [
-        "Sair desenhando caixas e recitar AP sem requisitos é resposta fraca.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Recitar a sigla da moda substitui perguntar usuários e números.",
+        "Sair desenhando caixas e recitar siglas sem pedir requisitos é resposta fraca.",
+        "Sair desenhando caixas rápido é resposta forte: mostra repertório.",
+        "Requisitos vêm no fim, se sobrar tempo; o desenho pontua primeiro."
       ],
-      "a": 0,
-      "w": "Pergunte usuários, p99, consistência.",
+      "a": 1,
+      "w": "Pergunte quantos usuários, leitura ou escrita, o p99 e se o débito pode atrasar. Sem isso a seta entrou de graça.",
       "t": "caixas"
     },
     {
-      "q": "Sobre caminho: qual afirmação está certa?",
+      "q": "No esqueleto da aula, por onde a conversa começa?",
       "o": [
-        "Comece pelo que o usuário sente e desça: API, serviço, dado, falha.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "A ordem do esqueleto não importa; o que conta é ter todas as caixas.",
+        "Comece pelo que o usuário sente e desça: latência, API, serviço, dado, falha.",
+        "Comece pela ferramenta de mensageria e suba até o usuário.",
+        "Comece pelo banco: onde mora o dado é a primeira camada do esqueleto."
       ],
-      "a": 0,
-      "w": "Não comece no Kafka.",
+      "a": 1,
+      "w": "A conversa começa no usuário, não na ferramenta. O esqueleto desce até a falha; a tecnologia entra depois dos requisitos.",
       "t": "caminho"
     },
     {
-      "q": "Qual frase sobre caminho está certa?",
+      "q": "O desenho começa no usuário ou na ferramenta de mensageria?",
       "o": [
-        "Comece pelo que o usuário sente e desça: API, serviço, dado, falha.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A ordem do esqueleto não importa; o que conta é ter todas as caixas.",
+        "Comece pelo que o usuário sente e desça: latência, API, serviço, dado, falha.",
+        "Comece pela ferramenta de mensageria e suba até o usuário.",
+        "Comece pelo banco: onde mora o dado é a primeira camada do esqueleto."
       ],
-      "a": 0,
-      "w": "Não comece no Kafka.",
+      "a": 1,
+      "w": "A conversa começa no usuário, não na ferramenta. O esqueleto desce até a falha; a tecnologia entra depois dos requisitos.",
       "t": "caminho"
     },
     {
-      "q": "Caminho — o que acontece de verdade?",
+      "q": "Qual a ordem do esqueleto: usuário primeiro ou dado primeiro?",
       "o": [
-        "Comece pelo que o usuário sente e desça: API, serviço, dado, falha.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A ordem do esqueleto não importa; o que conta é ter todas as caixas.",
+        "Comece pelo que o usuário sente e desça: latência, API, serviço, dado, falha.",
+        "Comece pela ferramenta de mensageria e suba até o usuário.",
+        "Comece pelo banco: onde mora o dado é a primeira camada do esqueleto."
       ],
-      "a": 0,
-      "w": "Não comece no Kafka.",
+      "a": 1,
+      "w": "A conversa começa no usuário, não na ferramenta. O esqueleto desce até a falha; a tecnologia entra depois dos requisitos.",
       "t": "caminho"
     },
     {
-      "q": "Marque a leitura correta (caminho).",
+      "q": "A conversa de arquitetura começa no que o usuário sente. E depois?",
       "o": [
-        "Comece pelo que o usuário sente e desça: API, serviço, dado, falha.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Comece pela ferramenta de mensageria e suba até o usuário.",
+        "Comece pelo banco: onde mora o dado é a primeira camada do esqueleto.",
+        "A ordem do esqueleto não importa; o que conta é ter todas as caixas.",
+        "Comece pelo que o usuário sente e desça: latência, API, serviço, dado, falha."
       ],
-      "a": 0,
-      "w": "Não comece no Kafka.",
+      "a": 3,
+      "w": "A conversa começa no usuário, não na ferramenta. O esqueleto desce até a falha; a tecnologia entra depois dos requisitos.",
       "t": "caminho"
     },
     {
-      "q": "Corrija o mito sobre caminho.",
+      "q": "Começar o desenho pela tecnologia escolhida é o caminho da aula?",
       "o": [
-        "Comece pelo que o usuário sente e desça: API, serviço, dado, falha.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Comece pela ferramenta de mensageria e suba até o usuário.",
+        "Comece pelo banco: onde mora o dado é a primeira camada do esqueleto.",
+        "A ordem do esqueleto não importa; o que conta é ter todas as caixas.",
+        "Comece pelo que o usuário sente e desça: latência, API, serviço, dado, falha."
       ],
-      "a": 0,
-      "w": "Não comece no Kafka.",
+      "a": 3,
+      "w": "A conversa começa no usuário, não na ferramenta. O esqueleto desce até a falha; a tecnologia entra depois dos requisitos.",
       "t": "caminho"
     },
     {
-      "q": "No caderno, a respeito de caminho: qual vale?",
+      "q": "O que o esqueleto pede antes de falar de serviço e dado?",
       "o": [
-        "Comece pelo que o usuário sente e desça: API, serviço, dado, falha.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "A ordem do esqueleto não importa; o que conta é ter todas as caixas.",
+        "Comece pelo que o usuário sente e desça: latência, API, serviço, dado, falha.",
+        "Comece pela ferramenta de mensageria e suba até o usuário.",
+        "Comece pelo banco: onde mora o dado é a primeira camada do esqueleto."
       ],
-      "a": 0,
-      "w": "Não comece no Kafka.",
+      "a": 1,
+      "w": "A conversa começa no usuário, não na ferramenta. O esqueleto desce até a falha; a tecnologia entra depois dos requisitos.",
       "t": "caminho"
     },
     {
-      "q": "Se perguntarem caminho na mesa, qual frase é a verdadeira?",
+      "q": "Por onde descer: do que o usuário sente até a falha, ou o contrário?",
       "o": [
-        "Comece pelo que o usuário sente e desça: API, serviço, dado, falha.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Comece pelo banco: onde mora o dado é a primeira camada do esqueleto.",
+        "A ordem do esqueleto não importa; o que conta é ter todas as caixas.",
+        "Comece pelo que o usuário sente e desça: latência, API, serviço, dado, falha.",
+        "Comece pela ferramenta de mensageria e suba até o usuário."
       ],
-      "a": 0,
-      "w": "Não comece no Kafka.",
+      "a": 2,
+      "w": "A conversa começa no usuário, não na ferramenta. O esqueleto desce até a falha; a tecnologia entra depois dos requisitos.",
       "t": "caminho"
     },
     {
-      "q": "Sobre lote: qual afirmação está certa?",
+      "q": "Juntar mensagens e enviar de uma vez sobe o total por segundo. O que piora?",
       "o": [
-        "Lote sobe throughput e piora latência da primeira mensagem.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Lote sobe o total por segundo e também melhora a primeira mensagem.",
+        "Lote é ganho de graça: não piora nenhum número do desenho.",
+        "Lote piora o total por segundo e melhora a primeira mensagem.",
+        "Lote sobe o total por segundo e piora a latência da primeira mensagem."
       ],
-      "a": 0,
-      "w": "Peça o requisito: 50ms ou 50k writes/s?",
+      "a": 3,
+      "w": "Lote é juntar várias mensagens e enviar de uma vez. Peça o requisito antes: p99 de 50 ms ou 50 mil escritas por segundo? Os dois números não sobem juntos.",
       "t": "lote"
     },
     {
-      "q": "Qual frase sobre lote está certa?",
+      "q": "Lote melhora o volume e piora o quê?",
       "o": [
-        "Lote sobe throughput e piora latência da primeira mensagem.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Lote é ganho de graça: não piora nenhum número do desenho.",
+        "Lote piora o total por segundo e melhora a primeira mensagem.",
+        "Lote sobe o total por segundo e piora a latência da primeira mensagem.",
+        "Lote sobe o total por segundo e também melhora a primeira mensagem."
       ],
-      "a": 0,
-      "w": "Peça o requisito: 50ms ou 50k writes/s?",
+      "a": 2,
+      "w": "Lote é juntar várias mensagens e enviar de uma vez. Peça o requisito antes: p99 de 50 ms ou 50 mil escritas por segundo? Os dois números não sobem juntos.",
       "t": "lote"
     },
     {
-      "q": "Lote — o que acontece de verdade?",
+      "q": "Ao juntar mensagens em lote, quem paga a conta: o volume total ou a primeira mensagem?",
       "o": [
-        "Lote sobe throughput e piora latência da primeira mensagem.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Lote sobe o total por segundo e piora a latência da primeira mensagem.",
+        "Lote sobe o total por segundo e também melhora a primeira mensagem.",
+        "Lote é ganho de graça: não piora nenhum número do desenho.",
+        "Lote piora o total por segundo e melhora a primeira mensagem."
       ],
       "a": 0,
-      "w": "Peça o requisito: 50ms ou 50k writes/s?",
+      "w": "Lote é juntar várias mensagens e enviar de uma vez. Peça o requisito antes: p99 de 50 ms ou 50 mil escritas por segundo? Os dois números não sobem juntos.",
       "t": "lote"
     },
     {
-      "q": "Marque a leitura correta (lote).",
+      "q": "Lote é ganho de graça no desenho?",
       "o": [
-        "Lote sobe throughput e piora latência da primeira mensagem.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Lote sobe o total por segundo e piora a latência da primeira mensagem.",
+        "Lote sobe o total por segundo e também melhora a primeira mensagem.",
+        "Lote é ganho de graça: não piora nenhum número do desenho.",
+        "Lote piora o total por segundo e melhora a primeira mensagem."
       ],
       "a": 0,
-      "w": "Peça o requisito: 50ms ou 50k writes/s?",
+      "w": "Lote é juntar várias mensagens e enviar de uma vez. Peça o requisito antes: p99 de 50 ms ou 50 mil escritas por segundo? Os dois números não sobem juntos.",
       "t": "lote"
     },
     {
-      "q": "Corrija o mito sobre lote.",
+      "q": "Enviar as mensagens agrupadas piora o total por segundo?",
       "o": [
-        "Lote sobe throughput e piora latência da primeira mensagem.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Lote é ganho de graça: não piora nenhum número do desenho.",
+        "Lote piora o total por segundo e melhora a primeira mensagem.",
+        "Lote sobe o total por segundo e piora a latência da primeira mensagem.",
+        "Lote sobe o total por segundo e também melhora a primeira mensagem."
       ],
-      "a": 0,
-      "w": "Peça o requisito: 50ms ou 50k writes/s?",
+      "a": 2,
+      "w": "Lote é juntar várias mensagens e enviar de uma vez. Peça o requisito antes: p99 de 50 ms ou 50 mil escritas por segundo? Os dois números não sobem juntos.",
       "t": "lote"
     },
     {
-      "q": "No caderno, a respeito de lote: qual vale?",
+      "q": "Lote sobe o total por segundo. E o tempo da primeira mensagem?",
       "o": [
-        "Lote sobe throughput e piora latência da primeira mensagem.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Lote sobe o total por segundo e piora a latência da primeira mensagem.",
+        "Lote sobe o total por segundo e também melhora a primeira mensagem.",
+        "Lote é ganho de graça: não piora nenhum número do desenho.",
+        "Lote piora o total por segundo e melhora a primeira mensagem."
       ],
       "a": 0,
-      "w": "Peça o requisito: 50ms ou 50k writes/s?",
+      "w": "Lote é juntar várias mensagens e enviar de uma vez. Peça o requisito antes: p99 de 50 ms ou 50 mil escritas por segundo? Os dois números não sobem juntos.",
       "t": "lote"
     },
     {
-      "q": "Se perguntarem lote na mesa, qual frase é a verdadeira?",
+      "q": "Por que lote não é só vantagem?",
       "o": [
-        "Lote sobe throughput e piora latência da primeira mensagem.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Lote sobe o total por segundo e piora a latência da primeira mensagem.",
+        "Lote sobe o total por segundo e também melhora a primeira mensagem.",
+        "Lote é ganho de graça: não piora nenhum número do desenho.",
+        "Lote piora o total por segundo e melhora a primeira mensagem."
       ],
       "a": 0,
-      "w": "Peça o requisito: 50ms ou 50k writes/s?",
+      "w": "Lote é juntar várias mensagens e enviar de uma vez. Peça o requisito antes: p99 de 50 ms ou 50 mil escritas por segundo? Os dois números não sobem juntos.",
       "t": "lote"
     },
     {
-      "q": "Sobre micro preço: qual afirmação está certa?",
+      "q": "Microsserviço sobe a autonomia do time. O que desce?",
       "o": [
-        "Microsserviço aumenta autonomia e diminui simplicidade de debug.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Microsserviço aumenta a autonomia do time e diminui a simplicidade de debug.",
+        "Microsserviço sobe autonomia e também facilita o debug.",
+        "Microsserviço não tem preço: é ganho técnico puro.",
+        "Microsserviço desce a autonomia do time e simplifica o debug."
       ],
       "a": 0,
-      "w": "Escolha organizacional.",
+      "w": "Preço técnico alto para um ganho organizacional. Quem paga é o dia do incidente, quando a investigação atravessa vários processos.",
       "t": "micro preço"
     },
     {
-      "q": "Qual frase sobre micro preço está certa?",
+      "q": "O que o microsserviço cobra em troca da autonomia?",
       "o": [
-        "Microsserviço aumenta autonomia e diminui simplicidade de debug.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Microsserviço não tem preço: é ganho técnico puro.",
+        "Microsserviço desce a autonomia do time e simplifica o debug.",
+        "Microsserviço aumenta a autonomia do time e diminui a simplicidade de debug.",
+        "Microsserviço sobe autonomia e também facilita o debug."
       ],
-      "a": 0,
-      "w": "Escolha organizacional.",
+      "a": 2,
+      "w": "Preço técnico alto para um ganho organizacional. Quem paga é o dia do incidente, quando a investigação atravessa vários processos.",
       "t": "micro preço"
     },
     {
-      "q": "Micro preço — o que acontece de verdade?",
+      "q": "Separar em microsserviços facilita o debug?",
       "o": [
-        "Microsserviço aumenta autonomia e diminui simplicidade de debug.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Microsserviço desce a autonomia do time e simplifica o debug.",
+        "Microsserviço aumenta a autonomia do time e diminui a simplicidade de debug.",
+        "Microsserviço sobe autonomia e também facilita o debug.",
+        "Microsserviço não tem preço: é ganho técnico puro."
       ],
-      "a": 0,
-      "w": "Escolha organizacional.",
+      "a": 1,
+      "w": "Preço técnico alto para um ganho organizacional. Quem paga é o dia do incidente, quando a investigação atravessa vários processos.",
       "t": "micro preço"
     },
     {
-      "q": "Marque a leitura correta (micro preço).",
+      "q": "Microsserviço é ganho técnico puro ou tem preço?",
       "o": [
-        "Microsserviço aumenta autonomia e diminui simplicidade de debug.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Microsserviço sobe autonomia e também facilita o debug.",
+        "Microsserviço não tem preço: é ganho técnico puro.",
+        "Microsserviço desce a autonomia do time e simplifica o debug.",
+        "Microsserviço aumenta a autonomia do time e diminui a simplicidade de debug."
       ],
-      "a": 0,
-      "w": "Escolha organizacional.",
+      "a": 3,
+      "w": "Preço técnico alto para um ganho organizacional. Quem paga é o dia do incidente, quando a investigação atravessa vários processos.",
       "t": "micro preço"
     },
     {
-      "q": "Corrija o mito sobre micro preço.",
+      "q": "Autonomia sobe com micro. E a simplicidade de investigar um erro?",
       "o": [
-        "Microsserviço aumenta autonomia e diminui simplicidade de debug.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Microsserviço desce a autonomia do time e simplifica o debug.",
+        "Microsserviço aumenta a autonomia do time e diminui a simplicidade de debug.",
+        "Microsserviço sobe autonomia e também facilita o debug.",
+        "Microsserviço não tem preço: é ganho técnico puro."
       ],
-      "a": 0,
-      "w": "Escolha organizacional.",
+      "a": 1,
+      "w": "Preço técnico alto para um ganho organizacional. Quem paga é o dia do incidente, quando a investigação atravessa vários processos.",
       "t": "micro preço"
     },
     {
-      "q": "No caderno, a respeito de micro preço: qual vale?",
+      "q": "Qual o preço do microsserviço no dia do incidente?",
       "o": [
-        "Microsserviço aumenta autonomia e diminui simplicidade de debug.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Microsserviço não tem preço: é ganho técnico puro.",
+        "Microsserviço desce a autonomia do time e simplifica o debug.",
+        "Microsserviço aumenta a autonomia do time e diminui a simplicidade de debug.",
+        "Microsserviço sobe autonomia e também facilita o debug."
       ],
-      "a": 0,
-      "w": "Escolha organizacional.",
+      "a": 2,
+      "w": "Preço técnico alto para um ganho organizacional. Quem paga é o dia do incidente, quando a investigação atravessa vários processos.",
       "t": "micro preço"
     },
     {
-      "q": "Se perguntarem micro preço na mesa, qual frase é a verdadeira?",
+      "q": "Micro melhora autonomia e debug ao mesmo tempo?",
       "o": [
-        "Microsserviço aumenta autonomia e diminui simplicidade de debug.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Microsserviço não tem preço: é ganho técnico puro.",
+        "Microsserviço desce a autonomia do time e simplifica o debug.",
+        "Microsserviço aumenta a autonomia do time e diminui a simplicidade de debug.",
+        "Microsserviço sobe autonomia e também facilita o debug."
       ],
-      "a": 0,
-      "w": "Escolha organizacional.",
+      "a": 2,
+      "w": "Preço técnico alto para um ganho organizacional. Quem paga é o dia do incidente, quando a investigação atravessa vários processos.",
       "t": "micro preço"
     },
     {
-      "q": "Sobre cache preço: qual afirmação está certa?",
+      "q": "Cache deixa a leitura mais rápida. Qual o risco que sobe junto?",
       "o": [
-        "Cache aumenta velocidade e o risco de dado velho.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Cache aumenta a velocidade e aumenta o risco de dado velho.",
+        "Cache sobe a velocidade e elimina o risco de dado velho.",
+        "Cache é ganho de graça: nenhum número do desenho piora.",
+        "Cache deixa a leitura mais lenta e o dado sempre atual."
       ],
       "a": 0,
-      "w": "Qual o custo de 2 segundos atrasado?",
+      "w": "A pergunta madura não é o quanto acelera: é qual o custo de mostrar a informação 2 segundos atrasada.",
       "t": "cache preço"
     },
     {
-      "q": "Qual frase sobre cache preço está certa?",
+      "q": "O que o cache cobra em troca da velocidade?",
       "o": [
-        "Cache aumenta velocidade e o risco de dado velho.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Cache sobe a velocidade e elimina o risco de dado velho.",
+        "Cache é ganho de graça: nenhum número do desenho piora.",
+        "Cache deixa a leitura mais lenta e o dado sempre atual.",
+        "Cache aumenta a velocidade e aumenta o risco de dado velho."
       ],
-      "a": 0,
-      "w": "Qual o custo de 2 segundos atrasado?",
+      "a": 3,
+      "w": "A pergunta madura não é o quanto acelera: é qual o custo de mostrar a informação 2 segundos atrasada.",
       "t": "cache preço"
     },
     {
-      "q": "Cache preço — o que acontece de verdade?",
+      "q": "Cache é ganho de graça no desenho?",
       "o": [
-        "Cache aumenta velocidade e o risco de dado velho.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Cache deixa a leitura mais lenta e o dado sempre atual.",
+        "Cache aumenta a velocidade e aumenta o risco de dado velho.",
+        "Cache sobe a velocidade e elimina o risco de dado velho.",
+        "Cache é ganho de graça: nenhum número do desenho piora."
       ],
-      "a": 0,
-      "w": "Qual o custo de 2 segundos atrasado?",
+      "a": 1,
+      "w": "A pergunta madura não é o quanto acelera: é qual o custo de mostrar a informação 2 segundos atrasada.",
       "t": "cache preço"
     },
     {
-      "q": "Marque a leitura correta (cache preço).",
+      "q": "Qual a pergunta madura antes de pôr cache no quadro?",
       "o": [
-        "Cache aumenta velocidade e o risco de dado velho.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Cache é ganho de graça: nenhum número do desenho piora.",
+        "Cache deixa a leitura mais lenta e o dado sempre atual.",
+        "Cache aumenta a velocidade e aumenta o risco de dado velho.",
+        "Cache sobe a velocidade e elimina o risco de dado velho."
       ],
-      "a": 0,
-      "w": "Qual o custo de 2 segundos atrasado?",
+      "a": 2,
+      "w": "A pergunta madura não é o quanto acelera: é qual o custo de mostrar a informação 2 segundos atrasada.",
       "t": "cache preço"
     },
     {
-      "q": "Corrija o mito sobre cache preço.",
+      "q": "Cache sobe a velocidade. E a chance de mostrar dado velho?",
       "o": [
-        "Cache aumenta velocidade e o risco de dado velho.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Cache é ganho de graça: nenhum número do desenho piora.",
+        "Cache deixa a leitura mais lenta e o dado sempre atual.",
+        "Cache aumenta a velocidade e aumenta o risco de dado velho.",
+        "Cache sobe a velocidade e elimina o risco de dado velho."
       ],
-      "a": 0,
-      "w": "Qual o custo de 2 segundos atrasado?",
+      "a": 2,
+      "w": "A pergunta madura não é o quanto acelera: é qual o custo de mostrar a informação 2 segundos atrasada.",
       "t": "cache preço"
     },
     {
-      "q": "No caderno, a respeito de cache preço: qual vale?",
+      "q": "Ligar cache pode fazer o usuário ver informação desatualizada?",
       "o": [
-        "Cache aumenta velocidade e o risco de dado velho.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Cache sobe a velocidade e elimina o risco de dado velho.",
+        "Cache é ganho de graça: nenhum número do desenho piora.",
+        "Cache deixa a leitura mais lenta e o dado sempre atual.",
+        "Cache aumenta a velocidade e aumenta o risco de dado velho."
       ],
-      "a": 0,
-      "w": "Qual o custo de 2 segundos atrasado?",
+      "a": 3,
+      "w": "A pergunta madura não é o quanto acelera: é qual o custo de mostrar a informação 2 segundos atrasada.",
       "t": "cache preço"
     },
     {
-      "q": "Se perguntarem cache preço na mesa, qual frase é a verdadeira?",
+      "q": "Por que cache não é só vantagem?",
       "o": [
-        "Cache aumenta velocidade e o risco de dado velho.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Cache deixa a leitura mais lenta e o dado sempre atual.",
+        "Cache aumenta a velocidade e aumenta o risco de dado velho.",
+        "Cache sobe a velocidade e elimina o risco de dado velho.",
+        "Cache é ganho de graça: nenhum número do desenho piora."
       ],
-      "a": 0,
-      "w": "Qual o custo de 2 segundos atrasado?",
+      "a": 1,
+      "w": "A pergunta madura não é o quanto acelera: é qual o custo de mostrar a informação 2 segundos atrasada.",
       "t": "cache preço"
     },
     {
-      "q": "Sobre default: qual afirmação está certa?",
+      "q": "Qual o ponto de partida honesto: monolito modular ou microsserviço?",
       "o": [
+        "Monolito modular só vale para projeto pequeno; o default é dividir.",
         "Monolito modular é o default até o domínio e o time pedirem outra coisa.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O default é microsserviço; monolito modular é a exceção.",
+        "O default segue a moda do mercado, não o domínio nem o time."
       ],
-      "a": 0,
-      "w": "Não o contrário.",
+      "a": 1,
+      "w": "Inverter o default custa rede, observabilidade e consistência. Saia do monolito modular quando o domínio e o time pedirem, não quando a moda pedir.",
       "t": "default"
     },
     {
-      "q": "Qual frase sobre default está certa?",
+      "q": "Microsserviço é o default do desenho?",
       "o": [
         "Monolito modular é o default até o domínio e o time pedirem outra coisa.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O default é microsserviço; monolito modular é a exceção.",
+        "O default segue a moda do mercado, não o domínio nem o time.",
+        "Monolito modular só vale para projeto pequeno; o default é dividir."
       ],
       "a": 0,
-      "w": "Não o contrário.",
+      "w": "Inverter o default custa rede, observabilidade e consistência. Saia do monolito modular quando o domínio e o time pedirem, não quando a moda pedir.",
       "t": "default"
     },
     {
-      "q": "Default — o que acontece de verdade?",
+      "q": "Até quando o monolito modular continua sendo a escolha padrão?",
       "o": [
-        "Monolito modular é o default até o domínio e o time pedirem outra coisa.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O default é microsserviço; monolito modular é a exceção.",
+        "O default segue a moda do mercado, não o domínio nem o time.",
+        "Monolito modular só vale para projeto pequeno; o default é dividir.",
+        "Monolito modular é o default até o domínio e o time pedirem outra coisa."
       ],
-      "a": 0,
-      "w": "Não o contrário.",
+      "a": 3,
+      "w": "Inverter o default custa rede, observabilidade e consistência. Saia do monolito modular quando o domínio e o time pedirem, não quando a moda pedir.",
       "t": "default"
     },
     {
-      "q": "Marque a leitura correta (default).",
+      "q": "Quem pede a saída do monolito modular: a moda ou o domínio e o time?",
       "o": [
         "Monolito modular é o default até o domínio e o time pedirem outra coisa.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O default é microsserviço; monolito modular é a exceção.",
+        "O default segue a moda do mercado, não o domínio nem o time.",
+        "Monolito modular só vale para projeto pequeno; o default é dividir."
       ],
       "a": 0,
-      "w": "Não o contrário.",
+      "w": "Inverter o default custa rede, observabilidade e consistência. Saia do monolito modular quando o domínio e o time pedirem, não quando a moda pedir.",
       "t": "default"
     },
     {
-      "q": "Corrija o mito sobre default.",
+      "q": "Começar em microsserviço é o default da aula?",
       "o": [
-        "Monolito modular é o default até o domínio e o time pedirem outra coisa.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O default é microsserviço; monolito modular é a exceção.",
+        "O default segue a moda do mercado, não o domínio nem o time.",
+        "Monolito modular só vale para projeto pequeno; o default é dividir.",
+        "Monolito modular é o default até o domínio e o time pedirem outra coisa."
       ],
-      "a": 0,
-      "w": "Não o contrário.",
+      "a": 3,
+      "w": "Inverter o default custa rede, observabilidade e consistência. Saia do monolito modular quando o domínio e o time pedirem, não quando a moda pedir.",
       "t": "default"
     },
     {
-      "q": "No caderno, a respeito de default: qual vale?",
+      "q": "O default é monolito modular. O que muda esse default?",
       "o": [
         "Monolito modular é o default até o domínio e o time pedirem outra coisa.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O default é microsserviço; monolito modular é a exceção.",
+        "O default segue a moda do mercado, não o domínio nem o time.",
+        "Monolito modular só vale para projeto pequeno; o default é dividir."
       ],
       "a": 0,
-      "w": "Não o contrário.",
+      "w": "Inverter o default custa rede, observabilidade e consistência. Saia do monolito modular quando o domínio e o time pedirem, não quando a moda pedir.",
       "t": "default"
     },
     {
-      "q": "Se perguntarem default na mesa, qual frase é a verdadeira?",
+      "q": "Sem o domínio e o time pedirem, sai do monolito modular?",
       "o": [
-        "Monolito modular é o default até o domínio e o time pedirem outra coisa.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O default é microsserviço; monolito modular é a exceção.",
+        "O default segue a moda do mercado, não o domínio nem o time.",
+        "Monolito modular só vale para projeto pequeno; o default é dividir.",
+        "Monolito modular é o default até o domínio e o time pedirem outra coisa."
       ],
-      "a": 0,
-      "w": "Não o contrário.",
+      "a": 3,
+      "w": "Inverter o default custa rede, observabilidade e consistência. Saia do monolito modular quando o domínio e o time pedirem, não quando a moda pedir.",
       "t": "default"
     },
     {
-      "q": "Sobre peças vs juízo: qual afirmação está certa?",
+      "q": "Decorar o catálogo de peças substitui o juízo de arquitetura?",
       "o": [
-        "Catálogo de peças ≠ julgamento. Esta trilha é o juízo.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Memorizar o catálogo de tecnologias já é o julgamento de arquiteto.",
+        "Comece encaixando o stack da moda; requisitos vêm no fim.",
+        "A lista de peças substitui perguntar o que recusar no desenho.",
+        "Arquitetura é o juízo: o que perguntar, o que recusar, o preço de cada seta. Catálogo de peças não substitui isso."
       ],
-      "a": 0,
-      "w": "Kafka profundo está na trilha irmã.",
+      "a": 3,
+      "w": "Memorizar o stack não é desenhar. Comece no usuário e no requisito; a peça entra depois, com o custo nomeado.",
       "t": "peças vs juízo"
     },
     {
-      "q": "Qual frase sobre peças vs juízo está certa?",
+      "q": "Na mesa, memorizar o stack da moda já é arquitetura?",
       "o": [
-        "Catálogo de peças ≠ julgamento. Esta trilha é o juízo.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Arquitetura é o juízo: o que perguntar, o que recusar, o preço de cada seta. Catálogo de peças não substitui isso.",
+        "Memorizar o catálogo de tecnologias já é o julgamento de arquiteto.",
+        "Comece encaixando o stack da moda; requisitos vêm no fim.",
+        "A lista de peças substitui perguntar o que recusar no desenho."
       ],
       "a": 0,
-      "w": "Kafka profundo está na trilha irmã.",
+      "w": "Memorizar o stack não é desenhar. Comece no usuário e no requisito; a peça entra depois, com o custo nomeado.",
       "t": "peças vs juízo"
     },
     {
-      "q": "Peças vs juízo — o que acontece de verdade?",
+      "q": "O que vale mais: a lista de tecnologias ou saber o que perguntar e recusar?",
       "o": [
-        "Catálogo de peças ≠ julgamento. Esta trilha é o juízo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A lista de peças substitui perguntar o que recusar no desenho.",
+        "Arquitetura é o juízo: o que perguntar, o que recusar, o preço de cada seta. Catálogo de peças não substitui isso.",
+        "Memorizar o catálogo de tecnologias já é o julgamento de arquiteto.",
+        "Comece encaixando o stack da moda; requisitos vêm no fim."
       ],
-      "a": 0,
-      "w": "Kafka profundo está na trilha irmã.",
+      "a": 1,
+      "w": "Memorizar o stack não é desenhar. Comece no usuário e no requisito; a peça entra depois, com o custo nomeado.",
       "t": "peças vs juízo"
     },
     {
-      "q": "Marque a leitura correta (peças vs juízo).",
+      "q": "Desenhar dez caixas no quadro já prova julgamento?",
       "o": [
-        "Catálogo de peças ≠ julgamento. Esta trilha é o juízo.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "A lista de peças substitui perguntar o que recusar no desenho.",
+        "Arquitetura é o juízo: o que perguntar, o que recusar, o preço de cada seta. Catálogo de peças não substitui isso.",
+        "Memorizar o catálogo de tecnologias já é o julgamento de arquiteto.",
+        "Comece encaixando o stack da moda; requisitos vêm no fim."
       ],
-      "a": 0,
-      "w": "Kafka profundo está na trilha irmã.",
+      "a": 1,
+      "w": "Memorizar o stack não é desenhar. Comece no usuário e no requisito; a peça entra depois, com o custo nomeado.",
       "t": "peças vs juízo"
     },
     {
-      "q": "Corrija o mito sobre peças vs juízo.",
+      "q": "Ter as peças no quadro dispensa nomear o preço de cada seta?",
       "o": [
-        "Catálogo de peças ≠ julgamento. Esta trilha é o juízo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "A lista de peças substitui perguntar o que recusar no desenho.",
+        "Arquitetura é o juízo: o que perguntar, o que recusar, o preço de cada seta. Catálogo de peças não substitui isso.",
+        "Memorizar o catálogo de tecnologias já é o julgamento de arquiteto.",
+        "Comece encaixando o stack da moda; requisitos vêm no fim."
       ],
-      "a": 0,
-      "w": "Kafka profundo está na trilha irmã.",
+      "a": 1,
+      "w": "Memorizar o stack não é desenhar. Comece no usuário e no requisito; a peça entra depois, com o custo nomeado.",
       "t": "peças vs juízo"
     },
     {
-      "q": "No caderno, a respeito de peças vs juízo: qual vale?",
+      "q": "Arquitetura é escolher tecnologias ou decidir o que é caro de reverter?",
       "o": [
-        "Catálogo de peças ≠ julgamento. Esta trilha é o juízo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Arquitetura é o juízo: o que perguntar, o que recusar, o preço de cada seta. Catálogo de peças não substitui isso.",
+        "Memorizar o catálogo de tecnologias já é o julgamento de arquiteto.",
+        "Comece encaixando o stack da moda; requisitos vêm no fim.",
+        "A lista de peças substitui perguntar o que recusar no desenho."
       ],
       "a": 0,
-      "w": "Kafka profundo está na trilha irmã.",
+      "w": "Memorizar o stack não é desenhar. Comece no usuário e no requisito; a peça entra depois, com o custo nomeado.",
       "t": "peças vs juízo"
     },
     {
-      "q": "Se perguntarem peças vs juízo na mesa, qual frase é a verdadeira?",
+      "q": "A tecnologia entra antes ou depois do caminho que o usuário sente?",
       "o": [
-        "Catálogo de peças ≠ julgamento. Esta trilha é o juízo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Memorizar o catálogo de tecnologias já é o julgamento de arquiteto.",
+        "Comece encaixando o stack da moda; requisitos vêm no fim.",
+        "A lista de peças substitui perguntar o que recusar no desenho.",
+        "Arquitetura é o juízo: o que perguntar, o que recusar, o preço de cada seta. Catálogo de peças não substitui isso."
       ],
-      "a": 0,
-      "w": "Kafka profundo está na trilha irmã.",
+      "a": 3,
+      "w": "Memorizar o stack não é desenhar. Comece no usuário e no requisito; a peça entra depois, com o custo nomeado.",
       "t": "peças vs juízo"
     },
     {
-      "q": "Sobre números: qual afirmação está certa?",
+      "q": "Sem número na mesa, o que a sua resposta é?",
       "o": [
         "Fale ordem de grandeza em voz alta. Sem número é opinião.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Sem número a resposta ainda é decisão técnica sólida.",
+        "Só vale falar número se for exato; ordem de grandeza não conta.",
+        "Guarde o número na cabeça; falar em voz alta não muda nada."
       ],
       "a": 0,
-      "w": "Mesa de arquiteto.",
+      "w": "Não precisa de precisão: ordem de grandeza dita em voz alta já muda o desenho. Guardar o número na cabeça não conta.",
       "t": "números"
     },
     {
-      "q": "Qual frase sobre números está certa?",
+      "q": "Por que dizer a ordem de grandeza em voz alta muda o desenho?",
       "o": [
+        "Guarde o número na cabeça; falar em voz alta não muda nada.",
         "Fale ordem de grandeza em voz alta. Sem número é opinião.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Sem número a resposta ainda é decisão técnica sólida.",
+        "Só vale falar número se for exato; ordem de grandeza não conta."
       ],
-      "a": 0,
-      "w": "Mesa de arquiteto.",
+      "a": 1,
+      "w": "Não precisa de precisão: ordem de grandeza dita em voz alta já muda o desenho. Guardar o número na cabeça não conta.",
       "t": "números"
     },
     {
-      "q": "Números — o que acontece de verdade?",
+      "q": "Precisa de precisão exata ou de ordem de grandeza na entrevista?",
       "o": [
+        "Guarde o número na cabeça; falar em voz alta não muda nada.",
         "Fale ordem de grandeza em voz alta. Sem número é opinião.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Sem número a resposta ainda é decisão técnica sólida.",
+        "Só vale falar número se for exato; ordem de grandeza não conta."
       ],
-      "a": 0,
-      "w": "Mesa de arquiteto.",
+      "a": 1,
+      "w": "Não precisa de precisão: ordem de grandeza dita em voz alta já muda o desenho. Guardar o número na cabeça não conta.",
       "t": "números"
     },
     {
-      "q": "Marque a leitura correta (números).",
+      "q": "Dizer “rápido” e “muito acesso” já serve como requisito?",
       "o": [
+        "Só vale falar número se for exato; ordem de grandeza não conta.",
+        "Guarde o número na cabeça; falar em voz alta não muda nada.",
         "Fale ordem de grandeza em voz alta. Sem número é opinião.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Sem número a resposta ainda é decisão técnica sólida."
       ],
-      "a": 0,
-      "w": "Mesa de arquiteto.",
+      "a": 2,
+      "w": "Não precisa de precisão: ordem de grandeza dita em voz alta já muda o desenho. Guardar o número na cabeça não conta.",
       "t": "números"
     },
     {
-      "q": "Corrija o mito sobre números.",
+      "q": "O que fazer com o número: guardar na cabeça ou falar em voz alta?",
       "o": [
+        "Guarde o número na cabeça; falar em voz alta não muda nada.",
         "Fale ordem de grandeza em voz alta. Sem número é opinião.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Sem número a resposta ainda é decisão técnica sólida.",
+        "Só vale falar número se for exato; ordem de grandeza não conta."
       ],
-      "a": 0,
-      "w": "Mesa de arquiteto.",
+      "a": 1,
+      "w": "Não precisa de precisão: ordem de grandeza dita em voz alta já muda o desenho. Guardar o número na cabeça não conta.",
       "t": "números"
     },
     {
-      "q": "No caderno, a respeito de números: qual vale?",
+      "q": "Sem número, a escolha de arquitetura é decisão ou opinião?",
       "o": [
+        "Guarde o número na cabeça; falar em voz alta não muda nada.",
         "Fale ordem de grandeza em voz alta. Sem número é opinião.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Sem número a resposta ainda é decisão técnica sólida.",
+        "Só vale falar número se for exato; ordem de grandeza não conta."
       ],
-      "a": 0,
-      "w": "Mesa de arquiteto.",
+      "a": 1,
+      "w": "Não precisa de precisão: ordem de grandeza dita em voz alta já muda o desenho. Guardar o número na cabeça não conta.",
       "t": "números"
     },
     {
-      "q": "Se perguntarem números na mesa, qual frase é a verdadeira?",
+      "q": "Ordem de grandeza em voz alta: enfeite ou parte da resposta?",
       "o": [
         "Fale ordem de grandeza em voz alta. Sem número é opinião.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Sem número a resposta ainda é decisão técnica sólida.",
+        "Só vale falar número se for exato; ordem de grandeza não conta.",
+        "Guarde o número na cabeça; falar em voz alta não muda nada."
       ],
       "a": 0,
-      "w": "Mesa de arquiteto.",
+      "w": "Não precisa de precisão: ordem de grandeza dita em voz alta já muda o desenho. Guardar o número na cabeça não conta.",
       "t": "números"
     },
     {
-      "q": "Sobre seta: qual afirmação está certa?",
+      "q": "Uma seta nova no desenho entra de graça?",
       "o": [
-        "Toda seta no desenho tem preço. Nomeie.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O preço da seta aparece sozinho na operação; não precisa nomear.",
+        "Toda seta no desenho tem preço. Nomeie o preço.",
+        "Seta é ligação de desenho: entra de graça e não cobra nada.",
+        "Só as setas de tecnologia nova têm preço; as demais são neutras."
       ],
-      "a": 0,
-      "w": "Não desenhe de graça.",
+      "a": 1,
+      "w": "Seta que entra de graça no quadro volta como incidente depois. Lote, micro e cache são três setas com preço conhecido.",
       "t": "seta"
     },
     {
-      "q": "Qual frase sobre seta está certa?",
+      "q": "O que fazer com o preço de cada seta que você desenha?",
       "o": [
-        "Toda seta no desenho tem preço. Nomeie.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Só as setas de tecnologia nova têm preço; as demais são neutras.",
+        "O preço da seta aparece sozinho na operação; não precisa nomear.",
+        "Toda seta no desenho tem preço. Nomeie o preço.",
+        "Seta é ligação de desenho: entra de graça e não cobra nada."
       ],
-      "a": 0,
-      "w": "Não desenhe de graça.",
+      "a": 2,
+      "w": "Seta que entra de graça no quadro volta como incidente depois. Lote, micro e cache são três setas com preço conhecido.",
       "t": "seta"
     },
     {
-      "q": "Seta — o que acontece de verdade?",
+      "q": "Ligar duas caixas no quadro custa algo?",
       "o": [
-        "Toda seta no desenho tem preço. Nomeie.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Toda seta no desenho tem preço. Nomeie o preço.",
+        "Seta é ligação de desenho: entra de graça e não cobra nada.",
+        "Só as setas de tecnologia nova têm preço; as demais são neutras.",
+        "O preço da seta aparece sozinho na operação; não precisa nomear."
       ],
       "a": 0,
-      "w": "Não desenhe de graça.",
+      "w": "Seta que entra de graça no quadro volta como incidente depois. Lote, micro e cache são três setas com preço conhecido.",
       "t": "seta"
     },
     {
-      "q": "Marque a leitura correta (seta).",
+      "q": "Toda seta tem preço. O que a aula pede que você faça com ele?",
       "o": [
-        "Toda seta no desenho tem preço. Nomeie.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Só as setas de tecnologia nova têm preço; as demais são neutras.",
+        "O preço da seta aparece sozinho na operação; não precisa nomear.",
+        "Toda seta no desenho tem preço. Nomeie o preço.",
+        "Seta é ligação de desenho: entra de graça e não cobra nada."
       ],
-      "a": 0,
-      "w": "Não desenhe de graça.",
+      "a": 2,
+      "w": "Seta que entra de graça no quadro volta como incidente depois. Lote, micro e cache são três setas com preço conhecido.",
       "t": "seta"
     },
     {
-      "q": "Corrija o mito sobre seta.",
+      "q": "Desenhar a seta e seguir sem comentar o custo é resposta completa?",
       "o": [
-        "Toda seta no desenho tem preço. Nomeie.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O preço da seta aparece sozinho na operação; não precisa nomear.",
+        "Toda seta no desenho tem preço. Nomeie o preço.",
+        "Seta é ligação de desenho: entra de graça e não cobra nada.",
+        "Só as setas de tecnologia nova têm preço; as demais são neutras."
       ],
-      "a": 0,
-      "w": "Não desenhe de graça.",
+      "a": 1,
+      "w": "Seta que entra de graça no quadro volta como incidente depois. Lote, micro e cache são três setas com preço conhecido.",
       "t": "seta"
     },
     {
-      "q": "No caderno, a respeito de seta: qual vale?",
+      "q": "As setas de tecnologia nova têm preço e as outras são neutras?",
       "o": [
-        "Toda seta no desenho tem preço. Nomeie.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Seta é ligação de desenho: entra de graça e não cobra nada.",
+        "Só as setas de tecnologia nova têm preço; as demais são neutras.",
+        "O preço da seta aparece sozinho na operação; não precisa nomear.",
+        "Toda seta no desenho tem preço. Nomeie o preço."
       ],
-      "a": 0,
-      "w": "Não desenhe de graça.",
+      "a": 3,
+      "w": "Seta que entra de graça no quadro volta como incidente depois. Lote, micro e cache são três setas com preço conhecido.",
       "t": "seta"
     },
     {
-      "q": "Se perguntarem seta na mesa, qual frase é a verdadeira?",
+      "q": "Por que a seta “de graça” volta como incidente depois?",
       "o": [
-        "Toda seta no desenho tem preço. Nomeie.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Toda seta no desenho tem preço. Nomeie o preço.",
+        "Seta é ligação de desenho: entra de graça e não cobra nada.",
+        "Só as setas de tecnologia nova têm preço; as demais são neutras.",
+        "O preço da seta aparece sozinho na operação; não precisa nomear."
       ],
       "a": 0,
-      "w": "Não desenhe de graça.",
+      "w": "Seta que entra de graça no quadro volta como incidente depois. Lote, micro e cache são três setas com preço conhecido.",
       "t": "seta"
     },
     {
-      "q": "Sobre NFR: qual afirmação está certa?",
+      "q": "Na camada de latência, o número que vale é a média ou o p99?",
       "o": [
-        "p99, erro, dado errado — não a média.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Só a média importa; erro e dado errado ficam fora do requisito.",
+        "Percentil é detalhe de operação; o requisito se escreve na média.",
+        "O requisito de latência se escreve em p99, erro e dado errado — não na média.",
+        "A média é o número certo para requisito de latência."
       ],
-      "a": 0,
-      "w": "Quem sente é a cauda.",
+      "a": 2,
+      "w": "A média esconde quem sofre. Quem sente o sistema lento é a ponta de cima, e ela não aparece no número do meio.",
       "t": "NFR"
     },
     {
-      "q": "Qual frase sobre NFR está certa?",
+      "q": "Qual número descreve o que o usuário mais lento sente?",
       "o": [
-        "p99, erro, dado errado — não a média.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Só a média importa; erro e dado errado ficam fora do requisito.",
+        "Percentil é detalhe de operação; o requisito se escreve na média.",
+        "O requisito de latência se escreve em p99, erro e dado errado — não na média.",
+        "A média é o número certo para requisito de latência."
       ],
-      "a": 0,
-      "w": "Quem sente é a cauda.",
+      "a": 2,
+      "w": "A média esconde quem sofre. Quem sente o sistema lento é a ponta de cima, e ela não aparece no número do meio.",
       "t": "NFR"
     },
     {
-      "q": "NFR — o que acontece de verdade?",
+      "q": "A média do painel serve como requisito de latência?",
       "o": [
-        "p99, erro, dado errado — não a média.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "A média é o número certo para requisito de latência.",
+        "Só a média importa; erro e dado errado ficam fora do requisito.",
+        "Percentil é detalhe de operação; o requisito se escreve na média.",
+        "O requisito de latência se escreve em p99, erro e dado errado — não na média."
       ],
-      "a": 0,
-      "w": "Quem sente é a cauda.",
+      "a": 3,
+      "w": "A média esconde quem sofre. Quem sente o sistema lento é a ponta de cima, e ela não aparece no número do meio.",
       "t": "NFR"
     },
     {
-      "q": "Marque a leitura correta (NFR).",
+      "q": "O que entra na camada de latência além do p99?",
       "o": [
-        "p99, erro, dado errado — não a média.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Só a média importa; erro e dado errado ficam fora do requisito.",
+        "Percentil é detalhe de operação; o requisito se escreve na média.",
+        "O requisito de latência se escreve em p99, erro e dado errado — não na média.",
+        "A média é o número certo para requisito de latência."
       ],
-      "a": 0,
-      "w": "Quem sente é a cauda.",
+      "a": 2,
+      "w": "A média esconde quem sofre. Quem sente o sistema lento é a ponta de cima, e ela não aparece no número do meio.",
       "t": "NFR"
     },
     {
-      "q": "Corrija o mito sobre NFR.",
+      "q": "Medir pela média esconde qual parte dos usuários?",
       "o": [
-        "p99, erro, dado errado — não a média.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "A média é o número certo para requisito de latência.",
+        "Só a média importa; erro e dado errado ficam fora do requisito.",
+        "Percentil é detalhe de operação; o requisito se escreve na média.",
+        "O requisito de latência se escreve em p99, erro e dado errado — não na média."
       ],
-      "a": 0,
-      "w": "Quem sente é a cauda.",
+      "a": 3,
+      "w": "A média esconde quem sofre. Quem sente o sistema lento é a ponta de cima, e ela não aparece no número do meio.",
       "t": "NFR"
     },
     {
-      "q": "No caderno, a respeito de NFR: qual vale?",
+      "q": "Requisito de latência se escreve em média ou em percentil?",
       "o": [
-        "p99, erro, dado errado — não a média.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Só a média importa; erro e dado errado ficam fora do requisito.",
+        "Percentil é detalhe de operação; o requisito se escreve na média.",
+        "O requisito de latência se escreve em p99, erro e dado errado — não na média.",
+        "A média é o número certo para requisito de latência."
       ],
-      "a": 0,
-      "w": "Quem sente é a cauda.",
+      "a": 2,
+      "w": "A média esconde quem sofre. Quem sente o sistema lento é a ponta de cima, e ela não aparece no número do meio.",
       "t": "NFR"
     },
     {
-      "q": "Se perguntarem NFR na mesa, qual frase é a verdadeira?",
+      "q": "Erro e dado errado contam como requisito nessa camada?",
       "o": [
-        "p99, erro, dado errado — não a média.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A média é o número certo para requisito de latência.",
+        "Só a média importa; erro e dado errado ficam fora do requisito.",
+        "Percentil é detalhe de operação; o requisito se escreve na média.",
+        "O requisito de latência se escreve em p99, erro e dado errado — não na média."
       ],
-      "a": 0,
-      "w": "Quem sente é a cauda.",
+      "a": 3,
+      "w": "A média esconde quem sofre. Quem sente o sistema lento é a ponta de cima, e ela não aparece no número do meio.",
       "t": "NFR"
     },
     {
-      "q": "Sobre esqueleto: qual afirmação está certa?",
+      "q": "Desenhar o esqueleto leva 30 segundos ou meia hora?",
       "o": [
-        "Na entrevista desenhe o esqueleto em 30s; stack depois dos requisitos.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Esqueleto e stack entram juntos, sem ordem definida.",
+        "Na entrevista desenhe o esqueleto em 30 segundos; o stack entra depois dos requisitos.",
+        "O stack entra primeiro; o esqueleto vem depois, se sobrar tempo.",
+        "O esqueleto precisa de meia hora para ficar honesto."
       ],
-      "a": 0,
-      "w": "Memorize o caminho.",
+      "a": 1,
+      "w": "O esqueleto é usuário, latência, API, serviço, dado e falha. Cabe em 30 segundos justamente porque não tem tecnologia dentro.",
       "t": "esqueleto"
     },
     {
-      "q": "Qual frase sobre esqueleto está certa?",
+      "q": "O stack entra antes ou depois dos requisitos?",
       "o": [
-        "Na entrevista desenhe o esqueleto em 30s; stack depois dos requisitos.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O esqueleto precisa de meia hora para ficar honesto.",
+        "Esqueleto e stack entram juntos, sem ordem definida.",
+        "Na entrevista desenhe o esqueleto em 30 segundos; o stack entra depois dos requisitos.",
+        "O stack entra primeiro; o esqueleto vem depois, se sobrar tempo."
       ],
-      "a": 0,
-      "w": "Memorize o caminho.",
+      "a": 2,
+      "w": "O esqueleto é usuário, latência, API, serviço, dado e falha. Cabe em 30 segundos justamente porque não tem tecnologia dentro.",
       "t": "esqueleto"
     },
     {
-      "q": "Esqueleto — o que acontece de verdade?",
+      "q": "O esqueleto cabe em 30 segundos ou precisa da aula inteira?",
       "o": [
-        "Na entrevista desenhe o esqueleto em 30s; stack depois dos requisitos.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Esqueleto e stack entram juntos, sem ordem definida.",
+        "Na entrevista desenhe o esqueleto em 30 segundos; o stack entra depois dos requisitos.",
+        "O stack entra primeiro; o esqueleto vem depois, se sobrar tempo.",
+        "O esqueleto precisa de meia hora para ficar honesto."
       ],
-      "a": 0,
-      "w": "Memorize o caminho.",
+      "a": 1,
+      "w": "O esqueleto é usuário, latência, API, serviço, dado e falha. Cabe em 30 segundos justamente porque não tem tecnologia dentro.",
       "t": "esqueleto"
     },
     {
-      "q": "Marque a leitura correta (esqueleto).",
+      "q": "Na mesa, desenhe o esqueleto primeiro. E a escolha de tecnologia?",
       "o": [
-        "Na entrevista desenhe o esqueleto em 30s; stack depois dos requisitos.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Esqueleto e stack entram juntos, sem ordem definida.",
+        "Na entrevista desenhe o esqueleto em 30 segundos; o stack entra depois dos requisitos.",
+        "O stack entra primeiro; o esqueleto vem depois, se sobrar tempo.",
+        "O esqueleto precisa de meia hora para ficar honesto."
       ],
-      "a": 0,
-      "w": "Memorize o caminho.",
+      "a": 1,
+      "w": "O esqueleto é usuário, latência, API, serviço, dado e falha. Cabe em 30 segundos justamente porque não tem tecnologia dentro.",
       "t": "esqueleto"
     },
     {
-      "q": "Corrija o mito sobre esqueleto.",
+      "q": "Requisitos antes do stack: por que essa ordem?",
       "o": [
-        "Na entrevista desenhe o esqueleto em 30s; stack depois dos requisitos.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O stack entra primeiro; o esqueleto vem depois, se sobrar tempo.",
+        "O esqueleto precisa de meia hora para ficar honesto.",
+        "Esqueleto e stack entram juntos, sem ordem definida.",
+        "Na entrevista desenhe o esqueleto em 30 segundos; o stack entra depois dos requisitos."
       ],
-      "a": 0,
-      "w": "Memorize o caminho.",
+      "a": 3,
+      "w": "O esqueleto é usuário, latência, API, serviço, dado e falha. Cabe em 30 segundos justamente porque não tem tecnologia dentro.",
       "t": "esqueleto"
     },
     {
-      "q": "No caderno, a respeito de esqueleto: qual vale?",
+      "q": "O que cabe em 30 segundos: o esqueleto ou o catálogo de peças?",
       "o": [
-        "Na entrevista desenhe o esqueleto em 30s; stack depois dos requisitos.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O esqueleto precisa de meia hora para ficar honesto.",
+        "Esqueleto e stack entram juntos, sem ordem definida.",
+        "Na entrevista desenhe o esqueleto em 30 segundos; o stack entra depois dos requisitos.",
+        "O stack entra primeiro; o esqueleto vem depois, se sobrar tempo."
       ],
-      "a": 0,
-      "w": "Memorize o caminho.",
+      "a": 2,
+      "w": "O esqueleto é usuário, latência, API, serviço, dado e falha. Cabe em 30 segundos justamente porque não tem tecnologia dentro.",
       "t": "esqueleto"
     },
     {
-      "q": "Se perguntarem esqueleto na mesa, qual frase é a verdadeira?",
+      "q": "Depois do esqueleto em 30 segundos, o que entra no desenho?",
       "o": [
-        "Na entrevista desenhe o esqueleto em 30s; stack depois dos requisitos.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Na entrevista desenhe o esqueleto em 30 segundos; o stack entra depois dos requisitos.",
+        "O stack entra primeiro; o esqueleto vem depois, se sobrar tempo.",
+        "O esqueleto precisa de meia hora para ficar honesto.",
+        "Esqueleto e stack entram juntos, sem ordem definida."
       ],
       "a": 0,
-      "w": "Memorize o caminho.",
+      "w": "O esqueleto é usuário, latência, API, serviço, dado e falha. Cabe em 30 segundos justamente porque não tem tecnologia dentro.",
       "t": "esqueleto"
     },
     {
-      "q": "Sobre fronteira: qual afirmação está certa?",
+      "q": "No esqueleto, cada camada é decisão de fronteira ou carimbo de tecnologia?",
       "o": [
         "Cada camada é decisão de fronteira, não carimbo de tecnologia.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "A camada é o carimbo: o nome da tecnologia já define o papel.",
+        "Fronteira é detalhe; o que importa é qual tecnologia a camada usa.",
+        "Colocar o nome no quadro já basta; a fronteira se resolve depois."
       ],
       "a": 0,
-      "w": "Gateway não é a regra de checkout.",
+      "w": "A camada existe para dizer o que cruza a borda e o que fica dentro. Escrever o nome de uma ferramenta no quadro não decide nada.",
       "t": "fronteira"
     },
     {
-      "q": "Qual frase sobre fronteira está certa?",
+      "q": "Colocar o nome da tecnologia na camada já define o papel dela?",
       "o": [
+        "Colocar o nome no quadro já basta; a fronteira se resolve depois.",
         "Cada camada é decisão de fronteira, não carimbo de tecnologia.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A camada é o carimbo: o nome da tecnologia já define o papel.",
+        "Fronteira é detalhe; o que importa é qual tecnologia a camada usa."
       ],
-      "a": 0,
-      "w": "Gateway não é a regra de checkout.",
+      "a": 1,
+      "w": "A camada existe para dizer o que cruza a borda e o que fica dentro. Escrever o nome de uma ferramenta no quadro não decide nada.",
       "t": "fronteira"
     },
     {
-      "q": "Fronteira — o que acontece de verdade?",
+      "q": "A camada no quadro decide o que entra e sai, ou é só o nome da ferramenta?",
       "o": [
-        "Cada camada é decisão de fronteira, não carimbo de tecnologia.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "A camada é o carimbo: o nome da tecnologia já define o papel.",
+        "Fronteira é detalhe; o que importa é qual tecnologia a camada usa.",
+        "Colocar o nome no quadro já basta; a fronteira se resolve depois.",
+        "Cada camada é decisão de fronteira, não carimbo de tecnologia."
       ],
-      "a": 0,
-      "w": "Gateway não é a regra de checkout.",
+      "a": 3,
+      "w": "A camada existe para dizer o que cruza a borda e o que fica dentro. Escrever o nome de uma ferramenta no quadro não decide nada.",
       "t": "fronteira"
     },
     {
-      "q": "Marque a leitura correta (fronteira).",
+      "q": "Carimbo de tecnologia no diagrama é a mesma coisa que decisão de fronteira?",
       "o": [
-        "Cada camada é decisão de fronteira, não carimbo de tecnologia.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "A camada é o carimbo: o nome da tecnologia já define o papel.",
+        "Fronteira é detalhe; o que importa é qual tecnologia a camada usa.",
+        "Colocar o nome no quadro já basta; a fronteira se resolve depois.",
+        "Cada camada é decisão de fronteira, não carimbo de tecnologia."
       ],
-      "a": 0,
-      "w": "Gateway não é a regra de checkout.",
+      "a": 3,
+      "w": "A camada existe para dizer o que cruza a borda e o que fica dentro. Escrever o nome de uma ferramenta no quadro não decide nada.",
       "t": "fronteira"
     },
     {
-      "q": "Corrija o mito sobre fronteira.",
+      "q": "O que faz a camada: o nome que você escolheu ou a decisão do que cruza a borda?",
       "o": [
         "Cada camada é decisão de fronteira, não carimbo de tecnologia.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "A camada é o carimbo: o nome da tecnologia já define o papel.",
+        "Fronteira é detalhe; o que importa é qual tecnologia a camada usa.",
+        "Colocar o nome no quadro já basta; a fronteira se resolve depois."
       ],
       "a": 0,
-      "w": "Gateway não é a regra de checkout.",
+      "w": "A camada existe para dizer o que cruza a borda e o que fica dentro. Escrever o nome de uma ferramenta no quadro não decide nada.",
       "t": "fronteira"
     },
     {
-      "q": "No caderno, a respeito de fronteira: qual vale?",
+      "q": "No esqueleto, camada é sobre a ferramenta ou sobre a fronteira?",
       "o": [
+        "Fronteira é detalhe; o que importa é qual tecnologia a camada usa.",
+        "Colocar o nome no quadro já basta; a fronteira se resolve depois.",
         "Cada camada é decisão de fronteira, não carimbo de tecnologia.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "A camada é o carimbo: o nome da tecnologia já define o papel."
       ],
-      "a": 0,
-      "w": "Gateway não é a regra de checkout.",
+      "a": 2,
+      "w": "A camada existe para dizer o que cruza a borda e o que fica dentro. Escrever o nome de uma ferramenta no quadro não decide nada.",
       "t": "fronteira"
     },
     {
-      "q": "Se perguntarem fronteira na mesa, qual frase é a verdadeira?",
+      "q": "Trocar o nome da tecnologia muda a decisão de fronteira da camada?",
       "o": [
+        "Colocar o nome no quadro já basta; a fronteira se resolve depois.",
         "Cada camada é decisão de fronteira, não carimbo de tecnologia.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "A camada é o carimbo: o nome da tecnologia já define o papel.",
+        "Fronteira é detalhe; o que importa é qual tecnologia a camada usa."
       ],
-      "a": 0,
-      "w": "Gateway não é a regra de checkout.",
+      "a": 1,
+      "w": "A camada existe para dizer o que cruza a borda e o que fica dentro. Escrever o nome de uma ferramenta no quadro não decide nada.",
       "t": "fronteira"
     },
     {
-      "q": "Sobre labs: qual afirmação está certa?",
+      "q": "Se a decisão reverte numa sprint, ela era arquitetura?",
       "o": [
-        "Labs de Redis/Kafka não se copiam aqui; apontam para as trilhas certas.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Se a decisão reverte numa sprint, ainda não era arquitetura. Onde mora o dado e quem cai junto grudam.",
+        "Trocar o formato interno de uma resposta já é decisão cara de reverter.",
+        "Se reverte numa sprint ainda era arquitetura: tudo no quadro conta.",
+        "Contar serviços no diagrama é o que gruda; onde mora o dado é detalhe."
       ],
       "a": 0,
-      "w": "Não inflar a página.",
-      "t": "labs"
+      "w": "Trocar o formato interno de uma resposta reverte fácil. Dono do dado e “quem cai junto” custam um trimestre para desfazer.",
+      "t": "gruda"
     },
     {
-      "q": "Qual frase sobre labs está certa?",
+      "q": "O que gruda: onde mora o dado ou o formato interno da resposta?",
       "o": [
-        "Labs de Redis/Kafka não se copiam aqui; apontam para as trilhas certas.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Contar serviços no diagrama é o que gruda; onde mora o dado é detalhe.",
+        "Se a decisão reverte numa sprint, ainda não era arquitetura. Onde mora o dado e quem cai junto grudam.",
+        "Trocar o formato interno de uma resposta já é decisão cara de reverter.",
+        "Se reverte numa sprint ainda era arquitetura: tudo no quadro conta."
       ],
-      "a": 0,
-      "w": "Não inflar a página.",
-      "t": "labs"
+      "a": 1,
+      "w": "Trocar o formato interno de uma resposta reverte fácil. Dono do dado e “quem cai junto” custam um trimestre para desfazer.",
+      "t": "gruda"
     },
     {
-      "q": "Labs — o que acontece de verdade?",
+      "q": "Contar serviços no quadro é decisão cara de reverter?",
       "o": [
-        "Labs de Redis/Kafka não se copiam aqui; apontam para as trilhas certas.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Se reverte numa sprint ainda era arquitetura: tudo no quadro conta.",
+        "Contar serviços no diagrama é o que gruda; onde mora o dado é detalhe.",
+        "Se a decisão reverte numa sprint, ainda não era arquitetura. Onde mora o dado e quem cai junto grudam.",
+        "Trocar o formato interno de uma resposta já é decisão cara de reverter."
       ],
-      "a": 0,
-      "w": "Não inflar a página.",
-      "t": "labs"
+      "a": 2,
+      "w": "Trocar o formato interno de uma resposta reverte fácil. Dono do dado e “quem cai junto” custam um trimestre para desfazer.",
+      "t": "gruda"
     },
     {
-      "q": "Marque a leitura correta (labs).",
+      "q": "Trocar o formato interno de uma resposta custa um trimestre?",
       "o": [
-        "Labs de Redis/Kafka não se copiam aqui; apontam para as trilhas certas.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Contar serviços no diagrama é o que gruda; onde mora o dado é detalhe.",
+        "Se a decisão reverte numa sprint, ainda não era arquitetura. Onde mora o dado e quem cai junto grudam.",
+        "Trocar o formato interno de uma resposta já é decisão cara de reverter.",
+        "Se reverte numa sprint ainda era arquitetura: tudo no quadro conta."
       ],
-      "a": 0,
-      "w": "Não inflar a página.",
-      "t": "labs"
+      "a": 1,
+      "w": "Trocar o formato interno de uma resposta reverte fácil. Dono do dado e “quem cai junto” custam um trimestre para desfazer.",
+      "t": "gruda"
     },
     {
-      "q": "Corrija o mito sobre labs.",
+      "q": "“Quem cai junto” é arquitetura ou detalhe de implementação?",
       "o": [
-        "Labs de Redis/Kafka não se copiam aqui; apontam para as trilhas certas.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Contar serviços no diagrama é o que gruda; onde mora o dado é detalhe.",
+        "Se a decisão reverte numa sprint, ainda não era arquitetura. Onde mora o dado e quem cai junto grudam.",
+        "Trocar o formato interno de uma resposta já é decisão cara de reverter.",
+        "Se reverte numa sprint ainda era arquitetura: tudo no quadro conta."
       ],
-      "a": 0,
-      "w": "Não inflar a página.",
-      "t": "labs"
+      "a": 1,
+      "w": "Trocar o formato interno de uma resposta reverte fácil. Dono do dado e “quem cai junto” custam um trimestre para desfazer.",
+      "t": "gruda"
     },
     {
-      "q": "No caderno, a respeito de labs: qual vale?",
+      "q": "O que o arquiteto protege: o que é caro de reverter ou o diagrama bonito?",
       "o": [
-        "Labs de Redis/Kafka não se copiam aqui; apontam para as trilhas certas.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Trocar o formato interno de uma resposta já é decisão cara de reverter.",
+        "Se reverte numa sprint ainda era arquitetura: tudo no quadro conta.",
+        "Contar serviços no diagrama é o que gruda; onde mora o dado é detalhe.",
+        "Se a decisão reverte numa sprint, ainda não era arquitetura. Onde mora o dado e quem cai junto grudam."
       ],
-      "a": 0,
-      "w": "Não inflar a página.",
-      "t": "labs"
+      "a": 3,
+      "w": "Trocar o formato interno de uma resposta reverte fácil. Dono do dado e “quem cai junto” custam um trimestre para desfazer.",
+      "t": "gruda"
     },
     {
-      "q": "Se perguntarem labs na mesa, qual frase é a verdadeira?",
+      "q": "Onde mora o dado gruda. O formato interno da resposta também?",
       "o": [
-        "Labs de Redis/Kafka não se copiam aqui; apontam para as trilhas certas.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Contar serviços no diagrama é o que gruda; onde mora o dado é detalhe.",
+        "Se a decisão reverte numa sprint, ainda não era arquitetura. Onde mora o dado e quem cai junto grudam.",
+        "Trocar o formato interno de uma resposta já é decisão cara de reverter.",
+        "Se reverte numa sprint ainda era arquitetura: tudo no quadro conta."
       ],
-      "a": 0,
-      "w": "Não inflar a página.",
-      "t": "labs"
+      "a": 1,
+      "w": "Trocar o formato interno de uma resposta reverte fácil. Dono do dado e “quem cai junto” custam um trimestre para desfazer.",
+      "t": "gruda"
     }
   ]
 }

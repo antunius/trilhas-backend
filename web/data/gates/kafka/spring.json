@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre fiação: qual afirmação está certa?",
+      "q": "Spring Kafka muda o modelo do log?",
       "o": [
         "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
       ],
       "a": 0,
-      "w": "O modelo continua o caderno.",
+      "w": "O modelo continua o log.",
       "t": "fiação"
     },
     {
-      "q": "Qual frase sobre fiação está certa?",
+      "q": "Spring Kafka muda o modelo do log — verdade ou mito?",
       "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
         "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
       ],
-      "a": 0,
-      "w": "O modelo continua o caderno.",
+      "a": 2,
+      "w": "O modelo continua o log.",
       "t": "fiação"
     },
     {
-      "q": "Fiação — o que acontece de verdade?",
+      "q": "Spring Kafka muda o modelo do log — o que acontece de verdade?",
       "o": [
         "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack."
       ],
       "a": 0,
-      "w": "O modelo continua o caderno.",
+      "w": "O modelo continua o log.",
       "t": "fiação"
     },
     {
-      "q": "Marque a leitura correta (fiação).",
+      "q": "Na prática: Spring Kafka muda o modelo do log?",
       "o": [
-        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log.",
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack."
       ],
-      "a": 0,
-      "w": "O modelo continua o caderno.",
+      "a": 3,
+      "w": "O modelo continua o log.",
       "t": "fiação"
     },
     {
-      "q": "Corrija o mito sobre fiação.",
+      "q": "Spring Kafka muda o modelo do log — como funciona?",
       "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
         "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Lote sem key não mostra partition= no log."
       ],
-      "a": 0,
-      "w": "O modelo continua o caderno.",
+      "a": 1,
+      "w": "O modelo continua o log.",
       "t": "fiação"
     },
     {
-      "q": "No caderno, a respeito de fiação: qual vale?",
+      "q": "Se perguntarem: Spring Kafka muda o modelo do log?",
       "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
         "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
       ],
-      "a": 0,
-      "w": "O modelo continua o caderno.",
+      "a": 2,
+      "w": "O modelo continua o log.",
       "t": "fiação"
     },
     {
-      "q": "Se perguntarem fiação na mesa, qual frase é a verdadeira?",
+      "q": "Spring Kafka muda o modelo do log — o que vale aqui?",
       "o": [
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key.",
         "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
       ],
-      "a": 0,
-      "w": "O modelo continua o caderno.",
+      "a": 2,
+      "w": "O modelo continua o log.",
       "t": "fiação"
     },
     {
-      "q": "Sobre template: qual afirmação está certa?",
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece?",
       "o": [
         "KafkaTemplate.write: tópico, key, value.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha."
       ],
       "a": 0,
       "w": "Sem key some a ordem do 99.",
       "t": "template"
     },
     {
-      "q": "Qual frase sobre template está certa?",
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — verdade ou mito?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 2,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — o que acontece de verdade?",
       "o": [
         "KafkaTemplate.write: tópico, key, value.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale."
       ],
       "a": 0,
       "w": "Sem key some a ordem do 99.",
       "t": "template"
     },
     {
-      "q": "Template — o que acontece de verdade?",
+      "q": "Na prática: KafkaTemplate sem key: a ordem do 99 permanece?",
       "o": [
+        "O Spring obriga Avro; JSON Schema não entra.",
         "KafkaTemplate.write: tópico, key, value.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Sem key some a ordem do 99.",
       "t": "template"
     },
     {
-      "q": "Marque a leitura correta (template).",
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — como funciona?",
       "o": [
+        "Morrer antes do ack some com a mensagem para sempre.",
         "KafkaTemplate.write: tópico, key, value.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "O Spring obriga Avro; JSON Schema não entra."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Sem key some a ordem do 99.",
       "t": "template"
     },
     {
-      "q": "Corrija o mito sobre template.",
+      "q": "Se perguntarem: KafkaTemplate sem key: a ordem do 99 permanece?",
       "o": [
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
         "KafkaTemplate.write: tópico, key, value.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "KafkaTemplate sem key mantém a ordem do 99."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Sem key some a ordem do 99.",
       "t": "template"
     },
     {
-      "q": "No caderno, a respeito de template: qual vale?",
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — o que vale aqui?",
       "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
         "KafkaTemplate.write: tópico, key, value.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "KafkaTemplate sem key mantém a ordem do 99."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Sem key some a ordem do 99.",
       "t": "template"
     },
     {
-      "q": "Se perguntarem template na mesa, qual frase é a verdadeira?",
+      "q": "Mudar o groupId do @KafkaListener faz o quê?",
       "o": [
-        "KafkaTemplate.write: tópico, key, value.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "@KafkaListener com groupId define o consumer group."
       ],
-      "a": 0,
-      "w": "Sem key some a ordem do 99.",
-      "t": "template"
+      "a": 3,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
     },
     {
-      "q": "Sobre listener: qual afirmação está certa?",
+      "q": "Mudar o groupId do @KafkaListener faz o quê — verdade ou mito?",
       "o": [
-        "@KafkaListener com groupId é o crachá.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 1,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Mudar o groupId do @KafkaListener faz o quê — o que acontece de verdade?",
+      "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "@KafkaListener com groupId define o consumer group."
+      ],
+      "a": 3,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Na prática: Mudar o groupId do @KafkaListener faz o quê?",
+      "o": [
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
+      ],
+      "a": 2,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Mudar o groupId do @KafkaListener faz o quê — como funciona?",
+      "o": [
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
       ],
       "a": 0,
       "w": "Mude o groupId e você lê de novo.",
       "t": "listener"
     },
     {
-      "q": "Qual frase sobre listener está certa?",
+      "q": "Se perguntarem: Mudar o groupId do @KafkaListener faz o quê?",
       "o": [
-        "@KafkaListener com groupId é o crachá.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Com Kafka parado o pedido não grava no banco.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Mude o groupId e você lê de novo.",
       "t": "listener"
     },
     {
-      "q": "Listener — o que acontece de verdade?",
+      "q": "Mudar o groupId do @KafkaListener faz o quê — o que vale aqui?",
       "o": [
-        "@KafkaListener com groupId é o crachá.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Subir concurrency drena a partição da hot key.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Com Kafka parado o pedido não grava no banco."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Mude o groupId e você lê de novo.",
       "t": "listener"
     },
     {
-      "q": "Marque a leitura correta (listener).",
+      "q": "Concurrency 6 em 3 partições: quantos ociosos?",
       "o": [
-        "@KafkaListener com groupId é o crachá.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "concurrency 6 em 3 partições: 3 ociosos.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Subir concurrency drena a partição da hot key."
       ],
-      "a": 0,
-      "w": "Mude o groupId e você lê de novo.",
-      "t": "listener"
+      "a": 1,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
     },
     {
-      "q": "Corrija o mito sobre listener.",
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — verdade ou mito?",
       "o": [
-        "@KafkaListener com groupId é o crachá.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "concurrency 6 em 3 partições: 3 ociosos."
       ],
-      "a": 0,
-      "w": "Mude o groupId e você lê de novo.",
-      "t": "listener"
+      "a": 3,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
     },
     {
-      "q": "No caderno, a respeito de listener: qual vale?",
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — o que acontece de verdade?",
       "o": [
-        "@KafkaListener com groupId é o crachá.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "concurrency 6 em 3 partições: 3 ociosos.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
       ],
-      "a": 0,
-      "w": "Mude o groupId e você lê de novo.",
-      "t": "listener"
+      "a": 1,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
     },
     {
-      "q": "Se perguntarem listener na mesa, qual frase é a verdadeira?",
+      "q": "Na prática: Concurrency 6 em 3 partições: quantos ociosos?",
       "o": [
-        "@KafkaListener com groupId é o crachá.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "concurrency 6 em 3 partições: 3 ociosos.",
+        "concurrency 6 em 3 partições: zero ociosos."
       ],
-      "a": 0,
-      "w": "Mude o groupId e você lê de novo.",
-      "t": "listener"
+      "a": 2,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
     },
     {
-      "q": "Sobre concurrency teto: qual afirmação está certa?",
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — como funciona?",
       "o": [
         "concurrency 6 em 3 partições: 3 ociosos.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
       "a": 0,
       "w": "min(concurrency, partitions).",
       "t": "concurrency teto"
     },
     {
-      "q": "Qual frase sobre concurrency teto está certa?",
+      "q": "Se perguntarem: Concurrency 6 em 3 partições: quantos ociosos?",
       "o": [
-        "concurrency 6 em 3 partições: 3 ociosos.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "concurrency 6 em 3 partições: 3 ociosos."
       ],
-      "a": 0,
+      "a": 3,
       "w": "min(concurrency, partitions).",
       "t": "concurrency teto"
     },
     {
-      "q": "Concurrency teto — o que acontece de verdade?",
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — o que vale aqui?",
       "o": [
-        "concurrency 6 em 3 partições: 3 ociosos.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "concurrency 6 em 3 partições: 3 ociosos."
       ],
-      "a": 0,
+      "a": 3,
       "w": "min(concurrency, partitions).",
       "t": "concurrency teto"
     },
     {
-      "q": "Marque a leitura correta (concurrency teto).",
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito?",
       "o": [
-        "concurrency 6 em 3 partições: 3 ociosos.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem."
       ],
-      "a": 0,
-      "w": "min(concurrency, partitions).",
-      "t": "concurrency teto"
-    },
-    {
-      "q": "Corrija o mito sobre concurrency teto.",
-      "o": [
-        "concurrency 6 em 3 partições: 3 ociosos.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "min(concurrency, partitions).",
-      "t": "concurrency teto"
-    },
-    {
-      "q": "No caderno, a respeito de concurrency teto: qual vale?",
-      "o": [
-        "concurrency 6 em 3 partições: 3 ociosos.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "min(concurrency, partitions).",
-      "t": "concurrency teto"
-    },
-    {
-      "q": "Se perguntarem concurrency teto na mesa, qual frase é a verdadeira?",
-      "o": [
-        "concurrency 6 em 3 partições: 3 ociosos.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "min(concurrency, partitions).",
-      "t": "concurrency teto"
-    },
-    {
-      "q": "Sobre AckMode: qual afirmação está certa?",
-      "o": [
-        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada recado.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "Lab usa manual.",
+      "a": 3,
+      "w": "MANUAL chama ack depois do efeito.",
       "t": "AckMode"
     },
     {
-      "q": "Qual frase sobre AckMode está certa?",
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — verdade ou mito?",
       "o": [
-        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada recado.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "KafkaTemplate sem key mantém a ordem do 99."
       ],
-      "a": 0,
-      "w": "Lab usa manual.",
+      "a": 1,
+      "w": "MANUAL chama ack depois do efeito.",
       "t": "AckMode"
     },
     {
-      "q": "AckMode — o que acontece de verdade?",
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — o que acontece de verdade?",
       "o": [
-        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada recado.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem."
       ],
-      "a": 0,
-      "w": "Lab usa manual.",
+      "a": 3,
+      "w": "MANUAL chama ack depois do efeito.",
       "t": "AckMode"
     },
     {
-      "q": "Marque a leitura correta (AckMode).",
+      "q": "Na prática: AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito?",
       "o": [
-        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada recado.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Lote sem key não mostra partition= no log.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack."
       ],
-      "a": 0,
-      "w": "Lab usa manual.",
+      "a": 2,
+      "w": "MANUAL chama ack depois do efeito.",
       "t": "AckMode"
     },
     {
-      "q": "Corrija o mito sobre AckMode.",
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — como funciona?",
       "o": [
-        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada recado.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack."
       ],
-      "a": 0,
-      "w": "Lab usa manual.",
+      "a": 2,
+      "w": "MANUAL chama ack depois do efeito.",
       "t": "AckMode"
     },
     {
-      "q": "No caderno, a respeito de AckMode: qual vale?",
+      "q": "Se perguntarem: AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito?",
       "o": [
-        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada recado.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Com Kafka parado o pedido não grava no banco.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
       ],
-      "a": 0,
-      "w": "Lab usa manual.",
+      "a": 1,
+      "w": "MANUAL chama ack depois do efeito.",
       "t": "AckMode"
     },
     {
-      "q": "Se perguntarem AckMode na mesa, qual frase é a verdadeira?",
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — o que vale aqui?",
       "o": [
-        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada recado.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Subir concurrency drena a partição da hot key.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Com Kafka parado o pedido não grava no banco."
       ],
-      "a": 0,
-      "w": "Lab usa manual.",
+      "a": 1,
+      "w": "MANUAL chama ack depois do efeito.",
       "t": "AckMode"
     },
     {
-      "q": "Sobre lab 1: qual afirmação está certa?",
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição?",
       "o": [
-        "POST /pedidos/lote com e sem key; olhe partition= no log.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log.",
+        "Subir concurrency drena a partição da hot key."
       ],
-      "a": 0,
-      "w": "PedidoController.",
+      "a": 1,
+      "w": "KafkaTemplate.send com e sem key.",
       "t": "lab 1"
     },
     {
-      "q": "Qual frase sobre lab 1 está certa?",
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — verdade ou mito?",
       "o": [
-        "POST /pedidos/lote com e sem key; olhe partition= no log.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Lote sem key não mostra partition= no log.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Lote com e sem key; olhe partition= no log."
       ],
-      "a": 0,
-      "w": "PedidoController.",
+      "a": 3,
+      "w": "KafkaTemplate.send com e sem key.",
       "t": "lab 1"
     },
     {
-      "q": "Lab 1 — o que acontece de verdade?",
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — o que acontece de verdade?",
       "o": [
-        "POST /pedidos/lote com e sem key; olhe partition= no log.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
       ],
-      "a": 0,
-      "w": "PedidoController.",
+      "a": 1,
+      "w": "KafkaTemplate.send com e sem key.",
       "t": "lab 1"
     },
     {
-      "q": "Marque a leitura correta (lab 1).",
+      "q": "Na prática: Lote de pedidos com e sem key: o que você vê no log da partição?",
       "o": [
-        "POST /pedidos/lote com e sem key; olhe partition= no log.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log."
       ],
-      "a": 0,
-      "w": "PedidoController.",
+      "a": 2,
+      "w": "KafkaTemplate.send com e sem key.",
       "t": "lab 1"
     },
     {
-      "q": "Corrija o mito sobre lab 1.",
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — como funciona?",
       "o": [
-        "POST /pedidos/lote com e sem key; olhe partition= no log.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
       "a": 0,
-      "w": "PedidoController.",
+      "w": "KafkaTemplate.send com e sem key.",
       "t": "lab 1"
     },
     {
-      "q": "No caderno, a respeito de lab 1: qual vale?",
+      "q": "Se perguntarem: Lote de pedidos com e sem key: o que você vê no log da partição?",
       "o": [
-        "POST /pedidos/lote com e sem key; olhe partition= no log.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Lote sem key não mostra partition= no log.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Lote com e sem key; olhe partition= no log."
       ],
-      "a": 0,
-      "w": "PedidoController.",
+      "a": 3,
+      "w": "KafkaTemplate.send com e sem key.",
       "t": "lab 1"
     },
     {
-      "q": "Se perguntarem lab 1 na mesa, qual frase é a verdadeira?",
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — o que vale aqui?",
       "o": [
-        "POST /pedidos/lote com e sem key; olhe partition= no log.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Lote sem key não mostra partition= no log.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Lote com e sem key; olhe partition= no log."
       ],
-      "a": 0,
-      "w": "PedidoController.",
+      "a": 3,
+      "w": "KafkaTemplate.send com e sem key.",
       "t": "lab 1"
     },
     {
-      "q": "Sobre lab 3: qual afirmação está certa?",
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens?",
       "o": [
-        "Dois grupos no mesmo app: mesmas 9 linhas, marcas independentes.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes."
+      ],
+      "a": 3,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — verdade ou mito?",
+      "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 1,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — o que acontece de verdade?",
+      "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes."
+      ],
+      "a": 3,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Na prática: Dois consumer groups no mesmo tópico veem as mesmas mensagens?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
+      ],
+      "a": 2,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — como funciona?",
+      "o": [
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log."
       ],
       "a": 0,
       "w": "consumer-groups --describe.",
       "t": "lab 3"
     },
     {
-      "q": "Qual frase sobre lab 3 está certa?",
+      "q": "Se perguntarem: Dois consumer groups no mesmo tópico veem as mesmas mensagens?",
       "o": [
-        "Dois grupos no mesmo app: mesmas 9 linhas, marcas independentes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Com Kafka parado o pedido não grava no banco.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Lote sem key não mostra partition= no log."
       ],
-      "a": 0,
+      "a": 1,
       "w": "consumer-groups --describe.",
       "t": "lab 3"
     },
     {
-      "q": "Lab 3 — o que acontece de verdade?",
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — o que vale aqui?",
       "o": [
-        "Dois grupos no mesmo app: mesmas 9 linhas, marcas independentes.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Subir concurrency drena a partição da hot key.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco."
       ],
-      "a": 0,
+      "a": 1,
       "w": "consumer-groups --describe.",
       "t": "lab 3"
     },
     {
-      "q": "Marque a leitura correta (lab 3).",
+      "q": "Com outbox e Kafka parado, o pedido vai para onde?",
       "o": [
-        "Dois grupos no mesmo app: mesmas 9 linhas, marcas independentes.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Outbox com Kafka parado: pedido no banco, poller depois."
       ],
-      "a": 0,
-      "w": "consumer-groups --describe.",
-      "t": "lab 3"
-    },
-    {
-      "q": "Corrija o mito sobre lab 3.",
-      "o": [
-        "Dois grupos no mesmo app: mesmas 9 linhas, marcas independentes.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "consumer-groups --describe.",
-      "t": "lab 3"
-    },
-    {
-      "q": "No caderno, a respeito de lab 3: qual vale?",
-      "o": [
-        "Dois grupos no mesmo app: mesmas 9 linhas, marcas independentes.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "consumer-groups --describe.",
-      "t": "lab 3"
-    },
-    {
-      "q": "Se perguntarem lab 3 na mesa, qual frase é a verdadeira?",
-      "o": [
-        "Dois grupos no mesmo app: mesmas 9 linhas, marcas independentes.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
-      ],
-      "a": 0,
-      "w": "consumer-groups --describe.",
-      "t": "lab 3"
-    },
-    {
-      "q": "Sobre lab 8: qual afirmação está certa?",
-      "o": [
-        "Outbox com Kafka parado: pedido na H2, carteiro depois.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
-      ],
-      "a": 0,
-      "w": "POST /pedidos/outbox.",
+      "a": 3,
+      "w": "POST via outbox não espera o broker no commit.",
       "t": "lab 8"
     },
     {
-      "q": "Qual frase sobre lab 8 está certa?",
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — verdade ou mito?",
       "o": [
-        "Outbox com Kafka parado: pedido na H2, carteiro depois.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha."
       ],
-      "a": 0,
-      "w": "POST /pedidos/outbox.",
+      "a": 1,
+      "w": "POST via outbox não espera o broker no commit.",
       "t": "lab 8"
     },
     {
-      "q": "Lab 8 — o que acontece de verdade?",
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — o que acontece de verdade?",
       "o": [
-        "Outbox com Kafka parado: pedido na H2, carteiro depois.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Com Kafka parado o pedido não grava no banco.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Outbox com Kafka parado: pedido no banco, poller depois."
       ],
-      "a": 0,
-      "w": "POST /pedidos/outbox.",
+      "a": 3,
+      "w": "POST via outbox não espera o broker no commit.",
       "t": "lab 8"
     },
     {
-      "q": "Marque a leitura correta (lab 8).",
+      "q": "Na prática: Com outbox e Kafka parado, o pedido vai para onde?",
       "o": [
-        "Outbox com Kafka parado: pedido na H2, carteiro depois.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco."
       ],
-      "a": 0,
-      "w": "POST /pedidos/outbox.",
+      "a": 2,
+      "w": "POST via outbox não espera o broker no commit.",
       "t": "lab 8"
     },
     {
-      "q": "Corrija o mito sobre lab 8.",
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — como funciona?",
       "o": [
-        "Outbox com Kafka parado: pedido na H2, carteiro depois.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
       "a": 0,
-      "w": "POST /pedidos/outbox.",
+      "w": "POST via outbox não espera o broker no commit.",
       "t": "lab 8"
     },
     {
-      "q": "No caderno, a respeito de lab 8: qual vale?",
+      "q": "Se perguntarem: Com outbox e Kafka parado, o pedido vai para onde?",
       "o": [
-        "Outbox com Kafka parado: pedido na H2, carteiro depois.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
-      "a": 0,
-      "w": "POST /pedidos/outbox.",
+      "a": 1,
+      "w": "POST via outbox não espera o broker no commit.",
       "t": "lab 8"
     },
     {
-      "q": "Se perguntarem lab 8 na mesa, qual frase é a verdadeira?",
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — o que vale aqui?",
       "o": [
-        "Outbox com Kafka parado: pedido na H2, carteiro depois.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos."
       ],
-      "a": 0,
-      "w": "POST /pedidos/outbox.",
+      "a": 1,
+      "w": "POST via outbox não espera o broker no commit.",
       "t": "lab 8"
     },
     {
-      "q": "Sobre lab 9: qual afirmação está certa?",
+      "q": "Hot key concentrando volume: subir concurrency drena a partição?",
       "o": [
-        "Hot key vip: uma coluna atrasada.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99."
       ],
       "a": 0,
       "w": "Subir concurrency não drena.",
       "t": "lab 9"
     },
     {
-      "q": "Qual frase sobre lab 9 está certa?",
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — verdade ou mito?",
       "o": [
-        "Hot key vip: uma coluna atrasada.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 2,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — o que acontece de verdade?",
+      "o": [
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos."
       ],
       "a": 0,
       "w": "Subir concurrency não drena.",
       "t": "lab 9"
     },
     {
-      "q": "Lab 9 — o que acontece de verdade?",
+      "q": "Na prática: Hot key concentrando volume: subir concurrency drena a partição?",
       "o": [
-        "Hot key vip: uma coluna atrasada.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Subir concurrency drena a partição da hot key.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Hot key vip: uma partição atrasada."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Subir concurrency não drena.",
       "t": "lab 9"
     },
     {
-      "q": "Marque a leitura correta (lab 9).",
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — como funciona?",
       "o": [
-        "Hot key vip: uma coluna atrasada.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Lote sem key não mostra partition= no log.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key.",
+        "AckMode é sempre BATCH; você não chama ack."
       ],
-      "a": 0,
+      "a": 1,
       "w": "Subir concurrency não drena.",
       "t": "lab 9"
     },
     {
-      "q": "Corrija o mito sobre lab 9.",
+      "q": "Se perguntarem: Hot key concentrando volume: subir concurrency drena a partição?",
       "o": [
-        "Hot key vip: uma coluna atrasada.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Subir concurrency não drena.",
       "t": "lab 9"
     },
     {
-      "q": "No caderno, a respeito de lab 9: qual vale?",
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — o que vale aqui?",
       "o": [
-        "Hot key vip: uma coluna atrasada.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key."
       ],
-      "a": 0,
+      "a": 2,
       "w": "Subir concurrency não drena.",
       "t": "lab 9"
     },
     {
-      "q": "Se perguntarem lab 9 na mesa, qual frase é a verdadeira?",
+      "q": "JSON quebrado deve derrubar o listener inteiro?",
       "o": [
-        "Hot key vip: uma coluna atrasada.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado não deve derrubar o listener inteiro.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Com Kafka parado o pedido não grava no banco."
       ],
-      "a": 0,
-      "w": "Subir concurrency não drena.",
-      "t": "lab 9"
+      "a": 1,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
     },
     {
-      "q": "Sobre ErrorHandling: qual afirmação está certa?",
+      "q": "JSON quebrado deve derrubar o listener inteiro — verdade ou mito?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Subir concurrency drena a partição da hot key.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "JSON quebrado não deve derrubar o listener inteiro."
+      ],
+      "a": 3,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "JSON quebrado deve derrubar o listener inteiro — o que acontece de verdade?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "JSON quebrado não deve derrubar o listener inteiro.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
+      ],
+      "a": 1,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "Na prática: JSON quebrado deve derrubar o listener inteiro?",
       "o": [
         "JSON quebrado não deve derrubar o listener inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra."
       ],
       "a": 0,
       "w": "ErrorHandlingDeserializer.",
       "t": "ErrorHandling"
     },
     {
-      "q": "Qual frase sobre ErrorHandling está certa?",
+      "q": "JSON quebrado deve derrubar o listener inteiro — como funciona?",
       "o": [
         "JSON quebrado não deve derrubar o listener inteiro.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
       "a": 0,
       "w": "ErrorHandlingDeserializer.",
       "t": "ErrorHandling"
     },
     {
-      "q": "ErrorHandling — o que acontece de verdade?",
+      "q": "Se perguntarem: JSON quebrado deve derrubar o listener inteiro?",
       "o": [
-        "JSON quebrado não deve derrubar o listener inteiro.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "JSON quebrado não deve derrubar o listener inteiro."
       ],
-      "a": 0,
+      "a": 3,
       "w": "ErrorHandlingDeserializer.",
       "t": "ErrorHandling"
     },
     {
-      "q": "Marque a leitura correta (ErrorHandling).",
+      "q": "JSON quebrado deve derrubar o listener inteiro — o que vale aqui?",
       "o": [
-        "JSON quebrado não deve derrubar o listener inteiro.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "JSON quebrado não deve derrubar o listener inteiro."
       ],
-      "a": 0,
+      "a": 3,
       "w": "ErrorHandlingDeserializer.",
       "t": "ErrorHandling"
     },
     {
-      "q": "Corrija o mito sobre ErrorHandling.",
+      "q": "Erro permanente depois das tentativas vai para onde?",
       "o": [
-        "JSON quebrado não deve derrubar o listener inteiro.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
       ],
-      "a": 0,
-      "w": "ErrorHandlingDeserializer.",
-      "t": "ErrorHandling"
+      "a": 1,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
     },
     {
-      "q": "No caderno, a respeito de ErrorHandling: qual vale?",
+      "q": "Erro permanente depois das tentativas vai para onde — verdade ou mito?",
       "o": [
-        "JSON quebrado não deve derrubar o listener inteiro.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas."
       ],
-      "a": 0,
-      "w": "ErrorHandlingDeserializer.",
-      "t": "ErrorHandling"
+      "a": 3,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
     },
     {
-      "q": "Se perguntarem ErrorHandling na mesa, qual frase é a verdadeira?",
+      "q": "Erro permanente depois das tentativas vai para onde — o que acontece de verdade?",
       "o": [
-        "JSON quebrado não deve derrubar o listener inteiro.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
       ],
-      "a": 0,
-      "w": "ErrorHandlingDeserializer.",
-      "t": "ErrorHandling"
+      "a": 1,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
     },
     {
-      "q": "Sobre DLT: qual afirmação está certa?",
+      "q": "Na prática: Erro permanente depois das tentativas vai para onde?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
+      ],
+      "a": 2,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Erro permanente depois das tentativas vai para onde — como funciona?",
       "o": [
         "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log."
       ],
       "a": 0,
       "w": "Erro permanente vai ao cemitério.",
       "t": "DLT"
     },
     {
-      "q": "Qual frase sobre DLT está certa?",
+      "q": "Se perguntarem: Erro permanente depois das tentativas vai para onde?",
       "o": [
-        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Erro permanente vai ao cemitério.",
       "t": "DLT"
     },
     {
-      "q": "DLT — o que acontece de verdade?",
+      "q": "Erro permanente depois das tentativas vai para onde — o que vale aqui?",
       "o": [
-        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas."
       ],
-      "a": 0,
+      "a": 3,
       "w": "Erro permanente vai ao cemitério.",
       "t": "DLT"
     },
     {
-      "q": "Marque a leitura correta (DLT).",
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset)?",
       "o": [
-        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker."
       ],
-      "a": 0,
-      "w": "Erro permanente vai ao cemitério.",
-      "t": "DLT"
-    },
-    {
-      "q": "Corrija o mito sobre DLT.",
-      "o": [
-        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
-      ],
-      "a": 0,
-      "w": "Erro permanente vai ao cemitério.",
-      "t": "DLT"
-    },
-    {
-      "q": "No caderno, a respeito de DLT: qual vale?",
-      "o": [
-        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
-      ],
-      "a": 0,
-      "w": "Erro permanente vai ao cemitério.",
-      "t": "DLT"
-    },
-    {
-      "q": "Se perguntarem DLT na mesa, qual frase é a verdadeira?",
-      "o": [
-        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
-      ],
-      "a": 0,
-      "w": "Erro permanente vai ao cemitério.",
-      "t": "DLT"
-    },
-    {
-      "q": "Sobre um repo: qual afirmação está certa?",
-      "o": [
-        "Os 9 labs apontam para labs/kafka, não para um segundo projeto.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
-      ],
-      "a": 0,
-      "w": "Abra X, rode Y, olhe Z.",
+      "a": 3,
+      "w": "Template e listener são fiação, não outro Kafka.",
       "t": "um repo"
     },
     {
-      "q": "Qual frase sobre um repo está certa?",
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — verdade ou mito?",
       "o": [
-        "Os 9 labs apontam para labs/kafka, não para um segundo projeto.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Subir concurrency drena a partição da hot key."
       ],
-      "a": 0,
-      "w": "Abra X, rode Y, olhe Z.",
+      "a": 1,
+      "w": "Template e listener são fiação, não outro Kafka.",
       "t": "um repo"
     },
     {
-      "q": "Um repo — o que acontece de verdade?",
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — o que acontece de verdade?",
       "o": [
-        "Os 9 labs apontam para labs/kafka, não para um segundo projeto.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker."
       ],
-      "a": 0,
-      "w": "Abra X, rode Y, olhe Z.",
+      "a": 3,
+      "w": "Template e listener são fiação, não outro Kafka.",
       "t": "um repo"
     },
     {
-      "q": "Marque a leitura correta (um repo).",
+      "q": "Na prática: Spring Kafka muda o modelo do log (tópico, partição, offset)?",
       "o": [
-        "Os 9 labs apontam para labs/kafka, não para um segundo projeto.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "O Spring obriga Avro; JSON Schema não entra."
       ],
       "a": 0,
-      "w": "Abra X, rode Y, olhe Z.",
+      "w": "Template e listener são fiação, não outro Kafka.",
       "t": "um repo"
     },
     {
-      "q": "Corrija o mito sobre um repo.",
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — como funciona?",
       "o": [
-        "Os 9 labs apontam para labs/kafka, não para um segundo projeto.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
       "a": 0,
-      "w": "Abra X, rode Y, olhe Z.",
+      "w": "Template e listener são fiação, não outro Kafka.",
       "t": "um repo"
     },
     {
-      "q": "No caderno, a respeito de um repo: qual vale?",
+      "q": "Se perguntarem: Spring Kafka muda o modelo do log (tópico, partição, offset)?",
       "o": [
-        "Os 9 labs apontam para labs/kafka, não para um segundo projeto.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
-      "a": 0,
-      "w": "Abra X, rode Y, olhe Z.",
+      "a": 1,
+      "w": "Template e listener são fiação, não outro Kafka.",
       "t": "um repo"
     },
     {
-      "q": "Se perguntarem um repo na mesa, qual frase é a verdadeira?",
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — o que vale aqui?",
       "o": [
-        "Os 9 labs apontam para labs/kafka, não para um segundo projeto.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos."
       ],
-      "a": 0,
-      "w": "Abra X, rode Y, olhe Z.",
+      "a": 1,
+      "w": "Template e listener são fiação, não outro Kafka.",
       "t": "um repo"
     },
     {
-      "q": "Sobre serializer: qual afirmação está certa?",
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro?",
       "o": [
-        "JSON Schema + Registry no lab, não Avro obrigatório.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
       ],
-      "a": 0,
-      "w": "pom Confluent.",
+      "a": 1,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
       "t": "serializer"
     },
     {
-      "q": "Qual frase sobre serializer está certa?",
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — verdade ou mito?",
       "o": [
-        "JSON Schema + Registry no lab, não Avro obrigatório.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "JSON Schema + Registry basta; Avro não é obrigatório."
       ],
-      "a": 0,
-      "w": "pom Confluent.",
+      "a": 3,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
       "t": "serializer"
     },
     {
-      "q": "Serializer — o que acontece de verdade?",
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — o que acontece de verdade?",
       "o": [
-        "JSON Schema + Registry no lab, não Avro obrigatório.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
       ],
-      "a": 0,
-      "w": "pom Confluent.",
+      "a": 1,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
       "t": "serializer"
     },
     {
-      "q": "Marque a leitura correta (serializer).",
+      "q": "Na prática: JSON Schema + Registry basta, ou o Spring obriga Avro?",
       "o": [
-        "JSON Schema + Registry no lab, não Avro obrigatório.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack."
       ],
       "a": 0,
-      "w": "pom Confluent.",
+      "w": "pom Confluent com kafka-json-schema-serializer.",
       "t": "serializer"
     },
     {
-      "q": "Corrija o mito sobre serializer.",
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — como funciona?",
       "o": [
-        "JSON Schema + Registry no lab, não Avro obrigatório.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log.",
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra."
       ],
-      "a": 0,
-      "w": "pom Confluent.",
+      "a": 2,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
       "t": "serializer"
     },
     {
-      "q": "No caderno, a respeito de serializer: qual vale?",
+      "q": "Se perguntarem: JSON Schema + Registry basta, ou o Spring obriga Avro?",
       "o": [
-        "JSON Schema + Registry no lab, não Avro obrigatório.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "JSON Schema + Registry basta; Avro não é obrigatório."
       ],
-      "a": 0,
-      "w": "pom Confluent.",
+      "a": 3,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
       "t": "serializer"
     },
     {
-      "q": "Se perguntarem serializer na mesa, qual frase é a verdadeira?",
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — o que vale aqui?",
       "o": [
-        "JSON Schema + Registry no lab, não Avro obrigatório.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "JSON Schema + Registry basta; Avro não é obrigatório."
       ],
-      "a": 0,
-      "w": "pom Confluent.",
+      "a": 3,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
       "t": "serializer"
     },
     {
-      "q": "Sobre kill ack: qual afirmação está certa?",
+      "q": "Processo morto antes do ack: a mensagem volta no restart?",
       "o": [
         "System.exit antes do ack: at-least-once no restart.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key."
       ],
       "a": 0,
-      "w": "Lab 7.",
+      "w": "O grupo relê a mensagem não commitada.",
       "t": "kill ack"
     },
     {
-      "q": "Qual frase sobre kill ack está certa?",
+      "q": "Processo morto antes do ack: a mensagem volta no restart — verdade ou mito?",
       "o": [
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
         "System.exit antes do ack: at-least-once no restart.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
-      "a": 0,
-      "w": "Lab 7.",
+      "a": 2,
+      "w": "O grupo relê a mensagem não commitada.",
       "t": "kill ack"
     },
     {
-      "q": "Kill ack — o que acontece de verdade?",
+      "q": "Processo morto antes do ack: a mensagem volta no restart — o que acontece de verdade?",
       "o": [
         "System.exit antes do ack: at-least-once no restart.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
       ],
       "a": 0,
-      "w": "Lab 7.",
+      "w": "O grupo relê a mensagem não commitada.",
       "t": "kill ack"
     },
     {
-      "q": "Marque a leitura correta (kill ack).",
+      "q": "Na prática: Processo morto antes do ack: a mensagem volta no restart?",
       "o": [
-        "System.exit antes do ack: at-least-once no restart.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "System.exit antes do ack: at-least-once no restart."
       ],
-      "a": 0,
-      "w": "Lab 7.",
+      "a": 3,
+      "w": "O grupo relê a mensagem não commitada.",
       "t": "kill ack"
     },
     {
-      "q": "Corrija o mito sobre kill ack.",
+      "q": "Processo morto antes do ack: a mensagem volta no restart — como funciona?",
       "o": [
-        "System.exit antes do ack: at-least-once no restart.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Commit automático anda a marca só depois do efeito no banco."
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "System.exit antes do ack: at-least-once no restart."
       ],
-      "a": 0,
-      "w": "Lab 7.",
+      "a": 3,
+      "w": "O grupo relê a mensagem não commitada.",
       "t": "kill ack"
     },
     {
-      "q": "No caderno, a respeito de kill ack: qual vale?",
+      "q": "Se perguntarem: Processo morto antes do ack: a mensagem volta no restart?",
       "o": [
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
         "System.exit antes do ack: at-least-once no restart.",
-        "ZooKeeper é obrigatório em todo cluster novo.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna."
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
-      "a": 0,
-      "w": "Lab 7.",
+      "a": 2,
+      "w": "O grupo relê a mensagem não commitada.",
       "t": "kill ack"
     },
     {
-      "q": "Se perguntarem kill ack na mesa, qual frase é a verdadeira?",
+      "q": "Processo morto antes do ack: a mensagem volta no restart — o que vale aqui?",
       "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
         "System.exit antes do ack: at-least-once no restart.",
-        "Schema Registry é um tópico interno, não um HTTP.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "A mensagem some da partição quando qualquer consumidor lê."
+        "Morrer antes do ack some com a mensagem para sempre."
       ],
-      "a": 0,
-      "w": "Lab 7.",
+      "a": 2,
+      "w": "O grupo relê a mensagem não commitada.",
       "t": "kill ack"
     },
     {
-      "q": "Sobre README: qual afirmação está certa?",
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring?",
       "o": [
-        "README do lab tem compose, tópico, curl e schema que falha.",
-        "Commit automático anda a marca só depois do efeito no banco.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "Offset é um UUID global único no cluster inteiro."
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
       ],
-      "a": 0,
-      "w": "As páginas citam os mesmos comandos.",
+      "a": 1,
+      "w": "As tópicos citam os mesmos comandos.",
       "t": "README"
     },
     {
-      "q": "Qual frase sobre README está certa?",
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — verdade ou mito?",
       "o": [
-        "README do lab tem compose, tópico, curl e schema que falha.",
-        "Sem key o pedido 99 ainda fica ordenado na mesma coluna.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "acks=all impede a API do cartão de cobrar duas vezes."
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers)."
       ],
-      "a": 0,
-      "w": "As páginas citam os mesmos comandos.",
+      "a": 3,
+      "w": "As tópicos citam os mesmos comandos.",
       "t": "README"
     },
     {
-      "q": "README — o que acontece de verdade?",
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — o que acontece de verdade?",
       "o": [
-        "README do lab tem compose, tópico, curl e schema que falha.",
-        "A mensagem some da partição quando qualquer consumidor lê.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
       ],
-      "a": 0,
-      "w": "As páginas citam os mesmos comandos.",
+      "a": 1,
+      "w": "As tópicos citam os mesmos comandos.",
       "t": "README"
     },
     {
-      "q": "Marque a leitura correta (README).",
+      "q": "Na prática: Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring?",
       "o": [
-        "README do lab tem compose, tópico, curl e schema que falha.",
-        "Offset é um UUID global único no cluster inteiro.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Kafka executa a regra de negócio no broker."
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos."
       ],
-      "a": 0,
-      "w": "As páginas citam os mesmos comandos.",
+      "a": 2,
+      "w": "As tópicos citam os mesmos comandos.",
       "t": "README"
     },
     {
-      "q": "Corrija o mito sobre README.",
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — como funciona?",
       "o": [
-        "README do lab tem compose, tópico, curl e schema que falha.",
-        "acks=all impede a API do cartão de cobrar duas vezes.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Ordem é global no tópico, da primeira à última linha."
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log."
       ],
       "a": 0,
-      "w": "As páginas citam os mesmos comandos.",
+      "w": "As tópicos citam os mesmos comandos.",
       "t": "README"
     },
     {
-      "q": "No caderno, a respeito de README: qual vale?",
+      "q": "Se perguntarem: Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring?",
       "o": [
-        "README do lab tem compose, tópico, curl e schema que falha.",
-        "Mais pods no grupo sempre drenam lag, mesmo com 3 partições.",
-        "Kafka executa a regra de negócio no broker.",
-        "ZooKeeper é obrigatório em todo cluster novo."
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers)."
       ],
-      "a": 0,
-      "w": "As páginas citam os mesmos comandos.",
+      "a": 3,
+      "w": "As tópicos citam os mesmos comandos.",
       "t": "README"
     },
     {
-      "q": "Se perguntarem README na mesa, qual frase é a verdadeira?",
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — o que vale aqui?",
       "o": [
-        "README do lab tem compose, tópico, curl e schema que falha.",
-        "Kafka executa a regra de negócio no broker.",
-        "Ordem é global no tópico, da primeira à última linha.",
-        "Schema Registry é um tópico interno, não um HTTP."
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers)."
       ],
-      "a": 0,
-      "w": "As páginas citam os mesmos comandos.",
+      "a": 3,
+      "w": "As tópicos citam os mesmos comandos.",
       "t": "README"
     }
   ]

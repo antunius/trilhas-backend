@@ -1,1263 +1,1263 @@
 {
   "questions": [
     {
-      "q": "Sobre um deploy: qual afirmação está certa?",
+      "q": "O que é monolito, na definição desta aula?",
       "o": [
-        "Monolito: um deploy. Pode ser modular — default até pedir outra coisa.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Monolito modular é a exceção; micro é o ponto de partida.",
+        "Monolito é um deploy, e pode ser modular: é o default até pedirem outra coisa.",
+        "Monolito é sempre código embolado, sem módulos separados.",
+        "Monolito quer dizer vários deploys que compartilham o banco."
       ],
-      "a": 0,
-      "w": "Casa com cômodos.",
+      "a": 1,
+      "w": "Módulos que não se atravessam dentro de um processo. Fronteira de código sem o preço da rede.",
       "t": "um deploy"
     },
     {
-      "q": "Qual frase sobre um deploy está certa?",
+      "q": "Monolito pode ser modular?",
       "o": [
-        "Monolito: um deploy. Pode ser modular — default até pedir outra coisa.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Monolito modular é a exceção; micro é o ponto de partida.",
+        "Monolito é um deploy, e pode ser modular: é o default até pedirem outra coisa.",
+        "Monolito é sempre código embolado, sem módulos separados.",
+        "Monolito quer dizer vários deploys que compartilham o banco."
       ],
-      "a": 0,
-      "w": "Casa com cômodos.",
+      "a": 1,
+      "w": "Módulos que não se atravessam dentro de um processo. Fronteira de código sem o preço da rede.",
       "t": "um deploy"
     },
     {
-      "q": "Um deploy — o que acontece de verdade?",
+      "q": "Um deploy com módulos que não se atravessam: como se chama?",
       "o": [
-        "Monolito: um deploy. Pode ser modular — default até pedir outra coisa.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Monolito é sempre código embolado, sem módulos separados.",
+        "Monolito quer dizer vários deploys que compartilham o banco.",
+        "Monolito modular é a exceção; micro é o ponto de partida.",
+        "Monolito é um deploy, e pode ser modular: é o default até pedirem outra coisa."
       ],
-      "a": 0,
-      "w": "Casa com cômodos.",
+      "a": 3,
+      "w": "Módulos que não se atravessam dentro de um processo. Fronteira de código sem o preço da rede.",
       "t": "um deploy"
     },
     {
-      "q": "Marque a leitura correta (um deploy).",
+      "q": "Monolito quer dizer código embolado?",
       "o": [
-        "Monolito: um deploy. Pode ser modular — default até pedir outra coisa.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Monolito quer dizer vários deploys que compartilham o banco.",
+        "Monolito modular é a exceção; micro é o ponto de partida.",
+        "Monolito é um deploy, e pode ser modular: é o default até pedirem outra coisa.",
+        "Monolito é sempre código embolado, sem módulos separados."
       ],
-      "a": 0,
-      "w": "Casa com cômodos.",
+      "a": 2,
+      "w": "Módulos que não se atravessam dentro de um processo. Fronteira de código sem o preço da rede.",
       "t": "um deploy"
     },
     {
-      "q": "Corrija o mito sobre um deploy.",
+      "q": "Qual é o default desta aula?",
       "o": [
-        "Monolito: um deploy. Pode ser modular — default até pedir outra coisa.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Monolito quer dizer vários deploys que compartilham o banco.",
+        "Monolito modular é a exceção; micro é o ponto de partida.",
+        "Monolito é um deploy, e pode ser modular: é o default até pedirem outra coisa.",
+        "Monolito é sempre código embolado, sem módulos separados."
       ],
-      "a": 0,
-      "w": "Casa com cômodos.",
+      "a": 2,
+      "w": "Módulos que não se atravessam dentro de um processo. Fronteira de código sem o preço da rede.",
       "t": "um deploy"
     },
     {
-      "q": "No caderno, a respeito de um deploy: qual vale?",
+      "q": "Módulos separados num único deploy custam preço de rede?",
       "o": [
-        "Monolito: um deploy. Pode ser modular — default até pedir outra coisa.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Monolito é um deploy, e pode ser modular: é o default até pedirem outra coisa.",
+        "Monolito é sempre código embolado, sem módulos separados.",
+        "Monolito quer dizer vários deploys que compartilham o banco.",
+        "Monolito modular é a exceção; micro é o ponto de partida."
       ],
       "a": 0,
-      "w": "Casa com cômodos.",
+      "w": "Módulos que não se atravessam dentro de um processo. Fronteira de código sem o preço da rede.",
       "t": "um deploy"
     },
     {
-      "q": "Se perguntarem um deploy na mesa, qual frase é a verdadeira?",
+      "q": "Monolito é vários deploys no mesmo banco?",
       "o": [
-        "Monolito: um deploy. Pode ser modular — default até pedir outra coisa.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Monolito modular é a exceção; micro é o ponto de partida.",
+        "Monolito é um deploy, e pode ser modular: é o default até pedirem outra coisa.",
+        "Monolito é sempre código embolado, sem módulos separados.",
+        "Monolito quer dizer vários deploys que compartilham o banco."
       ],
-      "a": 0,
-      "w": "Casa com cômodos.",
+      "a": 1,
+      "w": "Módulos que não se atravessam dentro de um processo. Fronteira de código sem o preço da rede.",
       "t": "um deploy"
     },
     {
-      "q": "Sobre micro: qual afirmação está certa?",
+      "q": "O que define um microsserviço de verdade?",
       "o": [
-        "Microsserviço: deploy independente, banco próprio, time capaz de operar.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Microsserviço é o serviço pequeno em número de linhas de código.",
+        "Microsserviço é deploy independente, banco próprio e time capaz de operar.",
+        "Microsserviço é qualquer pasta que virou um deploy separado.",
+        "Deploy independente já basta, mesmo compartilhando o banco."
       ],
-      "a": 0,
-      "w": "Apartamento com chave e geladeira.",
+      "a": 1,
+      "w": "Três pernas: deploy que sobe sozinho, dado que o vizinho não altera, gente que acorda quando aquele pedaço cai.",
       "t": "micro"
     },
     {
-      "q": "Qual frase sobre micro está certa?",
+      "q": "Quais são as três pernas do microsserviço?",
       "o": [
-        "Microsserviço: deploy independente, banco próprio, time capaz de operar.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Microsserviço é qualquer pasta que virou um deploy separado.",
+        "Deploy independente já basta, mesmo compartilhando o banco.",
+        "Microsserviço é o serviço pequeno em número de linhas de código.",
+        "Microsserviço é deploy independente, banco próprio e time capaz de operar."
       ],
-      "a": 0,
-      "w": "Apartamento com chave e geladeira.",
+      "a": 3,
+      "w": "Três pernas: deploy que sobe sozinho, dado que o vizinho não altera, gente que acorda quando aquele pedaço cai.",
       "t": "micro"
     },
     {
-      "q": "Micro — o que acontece de verdade?",
+      "q": "Deploy separado com banco compartilhado é microsserviço?",
       "o": [
-        "Microsserviço: deploy independente, banco próprio, time capaz de operar.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Deploy independente já basta, mesmo compartilhando o banco.",
+        "Microsserviço é o serviço pequeno em número de linhas de código.",
+        "Microsserviço é deploy independente, banco próprio e time capaz de operar.",
+        "Microsserviço é qualquer pasta que virou um deploy separado."
       ],
-      "a": 0,
-      "w": "Apartamento com chave e geladeira.",
+      "a": 2,
+      "w": "Três pernas: deploy que sobe sozinho, dado que o vizinho não altera, gente que acorda quando aquele pedaço cai.",
       "t": "micro"
     },
     {
-      "q": "Marque a leitura correta (micro).",
+      "q": "Microsserviço se define por tamanho de código?",
       "o": [
-        "Microsserviço: deploy independente, banco próprio, time capaz de operar.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Deploy independente já basta, mesmo compartilhando o banco.",
+        "Microsserviço é o serviço pequeno em número de linhas de código.",
+        "Microsserviço é deploy independente, banco próprio e time capaz de operar.",
+        "Microsserviço é qualquer pasta que virou um deploy separado."
       ],
-      "a": 0,
-      "w": "Apartamento com chave e geladeira.",
+      "a": 2,
+      "w": "Três pernas: deploy que sobe sozinho, dado que o vizinho não altera, gente que acorda quando aquele pedaço cai.",
       "t": "micro"
     },
     {
-      "q": "Corrija o mito sobre micro.",
+      "q": "Falta o time que opera. Ainda é microsserviço?",
       "o": [
-        "Microsserviço: deploy independente, banco próprio, time capaz de operar.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Microsserviço é deploy independente, banco próprio e time capaz de operar.",
+        "Microsserviço é qualquer pasta que virou um deploy separado.",
+        "Deploy independente já basta, mesmo compartilhando o banco.",
+        "Microsserviço é o serviço pequeno em número de linhas de código."
       ],
       "a": 0,
-      "w": "Apartamento com chave e geladeira.",
+      "w": "Três pernas: deploy que sobe sozinho, dado que o vizinho não altera, gente que acorda quando aquele pedaço cai.",
       "t": "micro"
     },
     {
-      "q": "No caderno, a respeito de micro: qual vale?",
+      "q": "Uma pasta que virou deploy separado já é serviço?",
       "o": [
-        "Microsserviço: deploy independente, banco próprio, time capaz de operar.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Microsserviço é qualquer pasta que virou um deploy separado.",
+        "Deploy independente já basta, mesmo compartilhando o banco.",
+        "Microsserviço é o serviço pequeno em número de linhas de código.",
+        "Microsserviço é deploy independente, banco próprio e time capaz de operar."
       ],
-      "a": 0,
-      "w": "Apartamento com chave e geladeira.",
+      "a": 3,
+      "w": "Três pernas: deploy que sobe sozinho, dado que o vizinho não altera, gente que acorda quando aquele pedaço cai.",
       "t": "micro"
     },
     {
-      "q": "Se perguntarem micro na mesa, qual frase é a verdadeira?",
+      "q": "Quem precisa acordar quando o serviço cai?",
       "o": [
-        "Microsserviço: deploy independente, banco próprio, time capaz de operar.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Microsserviço é deploy independente, banco próprio e time capaz de operar.",
+        "Microsserviço é qualquer pasta que virou um deploy separado.",
+        "Deploy independente já basta, mesmo compartilhando o banco.",
+        "Microsserviço é o serviço pequeno em número de linhas de código."
       ],
       "a": 0,
-      "w": "Apartamento com chave e geladeira.",
+      "w": "Três pernas: deploy que sobe sozinho, dado que o vizinho não altera, gente que acorda quando aquele pedaço cai.",
       "t": "micro"
     },
     {
-      "q": "Sobre pior: qual afirmação está certa?",
+      "q": "Vários deploys e o mesmo banco: como se chama esse desenho?",
       "o": [
-        "Vários deploys e a mesma geladeira = monolito distribuído.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Vários deploys com o mesmo banco é monolito distribuído.",
+        "Esse é exatamente o desenho de microsserviço.",
+        "Esse desenho é o melhor dos dois mundos.",
+        "Compartilhar o banco entre deploys não muda nada em relação ao monolito."
       ],
       "a": 0,
-      "w": "Pior dos dois mundos.",
+      "w": "Pior dos dois mundos: você paga o preço da rede e não recebe a autonomia.",
       "t": "pior"
     },
     {
-      "q": "Qual frase sobre pior está certa?",
+      "q": "O que você paga e o que não recebe no monolito distribuído?",
       "o": [
-        "Vários deploys e a mesma geladeira = monolito distribuído.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Esse desenho é o melhor dos dois mundos.",
+        "Compartilhar o banco entre deploys não muda nada em relação ao monolito.",
+        "Vários deploys com o mesmo banco é monolito distribuído.",
+        "Esse é exatamente o desenho de microsserviço."
       ],
-      "a": 0,
-      "w": "Pior dos dois mundos.",
+      "a": 2,
+      "w": "Pior dos dois mundos: você paga o preço da rede e não recebe a autonomia.",
       "t": "pior"
     },
     {
-      "q": "Pior — o que acontece de verdade?",
+      "q": "Vários deploys com banco compartilhado é microsserviço?",
       "o": [
-        "Vários deploys e a mesma geladeira = monolito distribuído.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Vários deploys com o mesmo banco é monolito distribuído.",
+        "Esse é exatamente o desenho de microsserviço.",
+        "Esse desenho é o melhor dos dois mundos.",
+        "Compartilhar o banco entre deploys não muda nada em relação ao monolito."
       ],
       "a": 0,
-      "w": "Pior dos dois mundos.",
+      "w": "Pior dos dois mundos: você paga o preço da rede e não recebe a autonomia.",
       "t": "pior"
     },
     {
-      "q": "Marque a leitura correta (pior).",
+      "q": "Por que esta aula chama esse desenho de pior dos dois mundos?",
       "o": [
-        "Vários deploys e a mesma geladeira = monolito distribuído.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Vários deploys com o mesmo banco é monolito distribuído.",
+        "Esse é exatamente o desenho de microsserviço.",
+        "Esse desenho é o melhor dos dois mundos.",
+        "Compartilhar o banco entre deploys não muda nada em relação ao monolito."
       ],
       "a": 0,
-      "w": "Pior dos dois mundos.",
+      "w": "Pior dos dois mundos: você paga o preço da rede e não recebe a autonomia.",
       "t": "pior"
     },
     {
-      "q": "Corrija o mito sobre pior.",
+      "q": "Compartilhar o banco entre deploys traz autonomia?",
       "o": [
-        "Vários deploys e a mesma geladeira = monolito distribuído.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Esse desenho é o melhor dos dois mundos.",
+        "Compartilhar o banco entre deploys não muda nada em relação ao monolito.",
+        "Vários deploys com o mesmo banco é monolito distribuído.",
+        "Esse é exatamente o desenho de microsserviço."
       ],
-      "a": 0,
-      "w": "Pior dos dois mundos.",
+      "a": 2,
+      "w": "Pior dos dois mundos: você paga o preço da rede e não recebe a autonomia.",
       "t": "pior"
     },
     {
-      "q": "No caderno, a respeito de pior: qual vale?",
+      "q": "Qual o desenho do meio que esta aula recusa?",
       "o": [
-        "Vários deploys e a mesma geladeira = monolito distribuído.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Compartilhar o banco entre deploys não muda nada em relação ao monolito.",
+        "Vários deploys com o mesmo banco é monolito distribuído.",
+        "Esse é exatamente o desenho de microsserviço.",
+        "Esse desenho é o melhor dos dois mundos."
       ],
-      "a": 0,
-      "w": "Pior dos dois mundos.",
+      "a": 1,
+      "w": "Pior dos dois mundos: você paga o preço da rede e não recebe a autonomia.",
       "t": "pior"
     },
     {
-      "q": "Se perguntarem pior na mesa, qual frase é a verdadeira?",
+      "q": "Você separou os deploys e manteve o banco. O que ganhou?",
       "o": [
-        "Vários deploys e a mesma geladeira = monolito distribuído.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Esse desenho é o melhor dos dois mundos.",
+        "Compartilhar o banco entre deploys não muda nada em relação ao monolito.",
+        "Vários deploys com o mesmo banco é monolito distribuído.",
+        "Esse é exatamente o desenho de microsserviço."
       ],
-      "a": 0,
-      "w": "Pior dos dois mundos.",
+      "a": 2,
+      "w": "Pior dos dois mundos: você paga o preço da rede e não recebe a autonomia.",
       "t": "pior"
     },
     {
-      "q": "Sobre preço: qual afirmação está certa?",
+      "q": "O que o microsserviço cobra?",
       "o": [
-        "Preço do micro: rede, observabilidade, consistência distribuída.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O preço do microsserviço é rede, observabilidade, consistência distribuída e operação.",
+        "O preço do microsserviço é só reorganizar as pastas do projeto.",
+        "Microsserviço não tem preço: é ganho técnico em todas as frentes.",
+        "O preço do microsserviço é apenas o tempo de escrever mais YAML."
       ],
       "a": 0,
-      "w": "Não é só pasta.",
+      "w": "Hop no p99, trace obrigatório, saga no lugar do COMMIT único, debug que atravessa serviços.",
       "t": "preço"
     },
     {
-      "q": "Qual frase sobre preço está certa?",
+      "q": "Qual o preço do hop de rede no p99?",
       "o": [
-        "Preço do micro: rede, observabilidade, consistência distribuída.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O preço do microsserviço é apenas o tempo de escrever mais YAML.",
+        "O preço do microsserviço é rede, observabilidade, consistência distribuída e operação.",
+        "O preço do microsserviço é só reorganizar as pastas do projeto.",
+        "Microsserviço não tem preço: é ganho técnico em todas as frentes."
       ],
-      "a": 0,
-      "w": "Não é só pasta.",
+      "a": 1,
+      "w": "Hop no p99, trace obrigatório, saga no lugar do COMMIT único, debug que atravessa serviços.",
       "t": "preço"
     },
     {
-      "q": "Preço — o que acontece de verdade?",
+      "q": "O que entra no lugar do COMMIT único quando você separa serviços?",
       "o": [
-        "Preço do micro: rede, observabilidade, consistência distribuída.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O preço do microsserviço é só reorganizar as pastas do projeto.",
+        "Microsserviço não tem preço: é ganho técnico em todas as frentes.",
+        "O preço do microsserviço é apenas o tempo de escrever mais YAML.",
+        "O preço do microsserviço é rede, observabilidade, consistência distribuída e operação."
       ],
-      "a": 0,
-      "w": "Não é só pasta.",
+      "a": 3,
+      "w": "Hop no p99, trace obrigatório, saga no lugar do COMMIT único, debug que atravessa serviços.",
       "t": "preço"
     },
     {
-      "q": "Marque a leitura correta (preço).",
+      "q": "Microsserviço tem preço ou é ganho em todas as frentes?",
       "o": [
-        "Preço do micro: rede, observabilidade, consistência distribuída.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O preço do microsserviço é apenas o tempo de escrever mais YAML.",
+        "O preço do microsserviço é rede, observabilidade, consistência distribuída e operação.",
+        "O preço do microsserviço é só reorganizar as pastas do projeto.",
+        "Microsserviço não tem preço: é ganho técnico em todas as frentes."
       ],
-      "a": 0,
-      "w": "Não é só pasta.",
+      "a": 1,
+      "w": "Hop no p99, trace obrigatório, saga no lugar do COMMIT único, debug que atravessa serviços.",
       "t": "preço"
     },
     {
-      "q": "Corrija o mito sobre preço.",
+      "q": "Separar em serviços é só reorganizar pastas?",
       "o": [
-        "Preço do micro: rede, observabilidade, consistência distribuída.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O preço do microsserviço é só reorganizar as pastas do projeto.",
+        "Microsserviço não tem preço: é ganho técnico em todas as frentes.",
+        "O preço do microsserviço é apenas o tempo de escrever mais YAML.",
+        "O preço do microsserviço é rede, observabilidade, consistência distribuída e operação."
       ],
-      "a": 0,
-      "w": "Não é só pasta.",
+      "a": 3,
+      "w": "Hop no p99, trace obrigatório, saga no lugar do COMMIT único, debug que atravessa serviços.",
       "t": "preço"
     },
     {
-      "q": "No caderno, a respeito de preço: qual vale?",
+      "q": "Por que observabilidade deixa de ser opcional no micro?",
       "o": [
-        "Preço do micro: rede, observabilidade, consistência distribuída.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Microsserviço não tem preço: é ganho técnico em todas as frentes.",
+        "O preço do microsserviço é apenas o tempo de escrever mais YAML.",
+        "O preço do microsserviço é rede, observabilidade, consistência distribuída e operação.",
+        "O preço do microsserviço é só reorganizar as pastas do projeto."
       ],
-      "a": 0,
-      "w": "Não é só pasta.",
+      "a": 2,
+      "w": "Hop no p99, trace obrigatório, saga no lugar do COMMIT único, debug que atravessa serviços.",
       "t": "preço"
     },
     {
-      "q": "Se perguntarem preço na mesa, qual frase é a verdadeira?",
+      "q": "O debug muda quando você separa em serviços?",
       "o": [
-        "Preço do micro: rede, observabilidade, consistência distribuída.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O preço do microsserviço é apenas o tempo de escrever mais YAML.",
+        "O preço do microsserviço é rede, observabilidade, consistência distribuída e operação.",
+        "O preço do microsserviço é só reorganizar as pastas do projeto.",
+        "Microsserviço não tem preço: é ganho técnico em todas as frentes."
       ],
-      "a": 0,
-      "w": "Não é só pasta.",
+      "a": 1,
+      "w": "Hop no p99, trace obrigatório, saga no lugar do COMMIT único, debug que atravessa serviços.",
       "t": "preço"
     },
     {
-      "q": "Sobre org: qual afirmação está certa?",
+      "q": "Microsserviço é escolha organizacional ou medalha técnica?",
       "o": [
-        "Micro é escolha organizacional, não medalha técnica.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Microsserviço é escolha organizacional, não medalha técnica.",
+        "Microsserviço é medalha técnica: quem usa está mais avançado.",
+        "Microsserviço é decisão puramente técnica, sem relação com o time.",
+        "Microsserviço é obrigatório em qualquer sistema que queira escalar."
       ],
       "a": 0,
-      "w": "Time e domínio pedem.",
+      "w": "O time e o domínio pedem, ou não pedem. Não é troféu de maturidade.",
       "t": "org"
     },
     {
-      "q": "Qual frase sobre org está certa?",
+      "q": "Quem pede microsserviço?",
       "o": [
-        "Micro é escolha organizacional, não medalha técnica.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Microsserviço é escolha organizacional, não medalha técnica.",
+        "Microsserviço é medalha técnica: quem usa está mais avançado.",
+        "Microsserviço é decisão puramente técnica, sem relação com o time.",
+        "Microsserviço é obrigatório em qualquer sistema que queira escalar."
       ],
       "a": 0,
-      "w": "Time e domínio pedem.",
+      "w": "O time e o domínio pedem, ou não pedem. Não é troféu de maturidade.",
       "t": "org"
     },
     {
-      "q": "Org — o que acontece de verdade?",
+      "q": "Usar microsserviço prova maturidade técnica?",
       "o": [
-        "Micro é escolha organizacional, não medalha técnica.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Microsserviço é decisão puramente técnica, sem relação com o time.",
+        "Microsserviço é obrigatório em qualquer sistema que queira escalar.",
+        "Microsserviço é escolha organizacional, não medalha técnica.",
+        "Microsserviço é medalha técnica: quem usa está mais avançado."
       ],
-      "a": 0,
-      "w": "Time e domínio pedem.",
+      "a": 2,
+      "w": "O time e o domínio pedem, ou não pedem. Não é troféu de maturidade.",
       "t": "org"
     },
     {
-      "q": "Marque a leitura correta (org).",
+      "q": "A decisão de micro tem relação com o time?",
       "o": [
-        "Micro é escolha organizacional, não medalha técnica.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Microsserviço é decisão puramente técnica, sem relação com o time.",
+        "Microsserviço é obrigatório em qualquer sistema que queira escalar.",
+        "Microsserviço é escolha organizacional, não medalha técnica.",
+        "Microsserviço é medalha técnica: quem usa está mais avançado."
       ],
-      "a": 0,
-      "w": "Time e domínio pedem.",
+      "a": 2,
+      "w": "O time e o domínio pedem, ou não pedem. Não é troféu de maturidade.",
       "t": "org"
     },
     {
-      "q": "Corrija o mito sobre org.",
+      "q": "Microsserviço é obrigatório para escalar?",
       "o": [
-        "Micro é escolha organizacional, não medalha técnica.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Microsserviço é medalha técnica: quem usa está mais avançado.",
+        "Microsserviço é decisão puramente técnica, sem relação com o time.",
+        "Microsserviço é obrigatório em qualquer sistema que queira escalar.",
+        "Microsserviço é escolha organizacional, não medalha técnica."
       ],
-      "a": 0,
-      "w": "Time e domínio pedem.",
+      "a": 3,
+      "w": "O time e o domínio pedem, ou não pedem. Não é troféu de maturidade.",
       "t": "org"
     },
     {
-      "q": "No caderno, a respeito de org: qual vale?",
+      "q": "O que precisa pedir antes de você separar?",
       "o": [
-        "Micro é escolha organizacional, não medalha técnica.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Microsserviço é obrigatório em qualquer sistema que queira escalar.",
+        "Microsserviço é escolha organizacional, não medalha técnica.",
+        "Microsserviço é medalha técnica: quem usa está mais avançado.",
+        "Microsserviço é decisão puramente técnica, sem relação com o time."
       ],
-      "a": 0,
-      "w": "Time e domínio pedem.",
+      "a": 1,
+      "w": "O time e o domínio pedem, ou não pedem. Não é troféu de maturidade.",
       "t": "org"
     },
     {
-      "q": "Se perguntarem org na mesa, qual frase é a verdadeira?",
+      "q": "Por que esta aula recusa a ideia de troféu?",
       "o": [
-        "Micro é escolha organizacional, não medalha técnica.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Microsserviço é escolha organizacional, não medalha técnica.",
+        "Microsserviço é medalha técnica: quem usa está mais avançado.",
+        "Microsserviço é decisão puramente técnica, sem relação com o time.",
+        "Microsserviço é obrigatório em qualquer sistema que queira escalar."
       ],
       "a": 0,
-      "w": "Time e domínio pedem.",
+      "w": "O time e o domínio pedem, ou não pedem. Não é troféu de maturidade.",
       "t": "org"
     },
     {
-      "q": "Sobre features 3 repos: qual afirmação está certa?",
+      "q": "Toda feature muda três repos. O que isso diz sobre o corte?",
       "o": [
-        "Toda feature muda três repos juntos: você não decompôs de verdade.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Toda feature em três repos é sinal de decomposição bem feita.",
+        "Mudar três repos por feature é normal em qualquer microsserviço.",
+        "O número de repos que a feature toca não diz nada sobre o corte.",
+        "Se toda feature muda três repos juntos, você não decompôs de verdade."
       ],
-      "a": 0,
-      "w": "Acoplamento de release.",
+      "a": 3,
+      "w": "O release continua acoplado. Você espalhou o deploy sem separar o domínio.",
       "t": "features 3 repos"
     },
     {
-      "q": "Qual frase sobre features 3 repos está certa?",
+      "q": "Release acoplado em três repos é decomposição bem feita?",
       "o": [
-        "Toda feature muda três repos juntos: você não decompôs de verdade.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Mudar três repos por feature é normal em qualquer microsserviço.",
+        "O número de repos que a feature toca não diz nada sobre o corte.",
+        "Se toda feature muda três repos juntos, você não decompôs de verdade.",
+        "Toda feature em três repos é sinal de decomposição bem feita."
       ],
-      "a": 0,
-      "w": "Acoplamento de release.",
+      "a": 2,
+      "w": "O release continua acoplado. Você espalhou o deploy sem separar o domínio.",
       "t": "features 3 repos"
     },
     {
-      "q": "Features 3 repos — o que acontece de verdade?",
+      "q": "O que aconteceu quando a feature sempre atravessa três repos?",
       "o": [
-        "Toda feature muda três repos juntos: você não decompôs de verdade.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Mudar três repos por feature é normal em qualquer microsserviço.",
+        "O número de repos que a feature toca não diz nada sobre o corte.",
+        "Se toda feature muda três repos juntos, você não decompôs de verdade.",
+        "Toda feature em três repos é sinal de decomposição bem feita."
       ],
-      "a": 0,
-      "w": "Acoplamento de release.",
+      "a": 2,
+      "w": "O release continua acoplado. Você espalhou o deploy sem separar o domínio.",
       "t": "features 3 repos"
     },
     {
-      "q": "Marque a leitura correta (features 3 repos).",
+      "q": "Mudar três repos por feature é normal no micro?",
       "o": [
-        "Toda feature muda três repos juntos: você não decompôs de verdade.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O número de repos que a feature toca não diz nada sobre o corte.",
+        "Se toda feature muda três repos juntos, você não decompôs de verdade.",
+        "Toda feature em três repos é sinal de decomposição bem feita.",
+        "Mudar três repos por feature é normal em qualquer microsserviço."
       ],
-      "a": 0,
-      "w": "Acoplamento de release.",
+      "a": 1,
+      "w": "O release continua acoplado. Você espalhou o deploy sem separar o domínio.",
       "t": "features 3 repos"
     },
     {
-      "q": "Corrija o mito sobre features 3 repos.",
+      "q": "O número de repos que a feature toca diz algo sobre o corte?",
       "o": [
-        "Toda feature muda três repos juntos: você não decompôs de verdade.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Mudar três repos por feature é normal em qualquer microsserviço.",
+        "O número de repos que a feature toca não diz nada sobre o corte.",
+        "Se toda feature muda três repos juntos, você não decompôs de verdade.",
+        "Toda feature em três repos é sinal de decomposição bem feita."
       ],
-      "a": 0,
-      "w": "Acoplamento de release.",
+      "a": 2,
+      "w": "O release continua acoplado. Você espalhou o deploy sem separar o domínio.",
       "t": "features 3 repos"
     },
     {
-      "q": "No caderno, a respeito de features 3 repos: qual vale?",
+      "q": "Você espalhou o deploy mas não separou o quê?",
       "o": [
-        "Toda feature muda três repos juntos: você não decompôs de verdade.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Se toda feature muda três repos juntos, você não decompôs de verdade.",
+        "Toda feature em três repos é sinal de decomposição bem feita.",
+        "Mudar três repos por feature é normal em qualquer microsserviço.",
+        "O número de repos que a feature toca não diz nada sobre o corte."
       ],
       "a": 0,
-      "w": "Acoplamento de release.",
+      "w": "O release continua acoplado. Você espalhou o deploy sem separar o domínio.",
       "t": "features 3 repos"
     },
     {
-      "q": "Se perguntarem features 3 repos na mesa, qual frase é a verdadeira?",
+      "q": "Como saber que a decomposição foi teatro?",
       "o": [
-        "Toda feature muda três repos juntos: você não decompôs de verdade.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Se toda feature muda três repos juntos, você não decompôs de verdade.",
+        "Toda feature em três repos é sinal de decomposição bem feita.",
+        "Mudar três repos por feature é normal em qualquer microsserviço.",
+        "O número de repos que a feature toca não diz nada sobre o corte."
       ],
       "a": 0,
-      "w": "Acoplamento de release.",
+      "w": "O release continua acoplado. Você espalhou o deploy sem separar o domínio.",
       "t": "features 3 repos"
     },
     {
-      "q": "Sobre modular: qual afirmação está certa?",
+      "q": "O que os módulos no monolito oferecem?",
       "o": [
         "Módulos no monolito dão fronteira de código sem o preço da rede.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Módulos no monolito cobram o mesmo preço de rede que microsserviços.",
+        "Módulos no monolito não criam fronteira nenhuma.",
+        "Módulos no monolito exigem um banco por módulo."
       ],
       "a": 0,
-      "w": "Comece aqui.",
+      "w": "Um processo para depurar, módulos com dono. A fronteira existe sem hop de rede no meio.",
       "t": "modular"
     },
     {
-      "q": "Qual frase sobre modular está certa?",
+      "q": "Módulo no monolito cobra preço de rede?",
       "o": [
+        "Módulos no monolito não criam fronteira nenhuma.",
+        "Módulos no monolito exigem um banco por módulo.",
         "Módulos no monolito dão fronteira de código sem o preço da rede.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Módulos no monolito cobram o mesmo preço de rede que microsserviços."
       ],
-      "a": 0,
-      "w": "Comece aqui.",
+      "a": 2,
+      "w": "Um processo para depurar, módulos com dono. A fronteira existe sem hop de rede no meio.",
       "t": "modular"
     },
     {
-      "q": "Modular — o que acontece de verdade?",
+      "q": "Fronteira de código sem hop de rede: como se consegue?",
       "o": [
-        "Módulos no monolito dão fronteira de código sem o preço da rede.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Módulos no monolito cobram o mesmo preço de rede que microsserviços.",
+        "Módulos no monolito não criam fronteira nenhuma.",
+        "Módulos no monolito exigem um banco por módulo.",
+        "Módulos no monolito dão fronteira de código sem o preço da rede."
       ],
-      "a": 0,
-      "w": "Comece aqui.",
+      "a": 3,
+      "w": "Um processo para depurar, módulos com dono. A fronteira existe sem hop de rede no meio.",
       "t": "modular"
     },
     {
-      "q": "Marque a leitura correta (modular).",
+      "q": "Módulos no monolito criam fronteira?",
       "o": [
+        "Módulos no monolito não criam fronteira nenhuma.",
+        "Módulos no monolito exigem um banco por módulo.",
         "Módulos no monolito dão fronteira de código sem o preço da rede.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Módulos no monolito cobram o mesmo preço de rede que microsserviços."
       ],
-      "a": 0,
-      "w": "Comece aqui.",
+      "a": 2,
+      "w": "Um processo para depurar, módulos com dono. A fronteira existe sem hop de rede no meio.",
       "t": "modular"
     },
     {
-      "q": "Corrija o mito sobre modular.",
+      "q": "Um monolito modular roda em quantos processos?",
       "o": [
+        "Módulos no monolito não criam fronteira nenhuma.",
+        "Módulos no monolito exigem um banco por módulo.",
         "Módulos no monolito dão fronteira de código sem o preço da rede.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Módulos no monolito cobram o mesmo preço de rede que microsserviços."
       ],
-      "a": 0,
-      "w": "Comece aqui.",
+      "a": 2,
+      "w": "Um processo para depurar, módulos com dono. A fronteira existe sem hop de rede no meio.",
       "t": "modular"
     },
     {
-      "q": "No caderno, a respeito de modular: qual vale?",
+      "q": "Módulo no monolito precisa de banco próprio?",
       "o": [
+        "Módulos no monolito exigem um banco por módulo.",
         "Módulos no monolito dão fronteira de código sem o preço da rede.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Módulos no monolito cobram o mesmo preço de rede que microsserviços.",
+        "Módulos no monolito não criam fronteira nenhuma."
       ],
-      "a": 0,
-      "w": "Comece aqui.",
+      "a": 1,
+      "w": "Um processo para depurar, módulos com dono. A fronteira existe sem hop de rede no meio.",
       "t": "modular"
     },
     {
-      "q": "Se perguntarem modular na mesa, qual frase é a verdadeira?",
+      "q": "Qual a vantagem do módulo sobre o serviço separado?",
       "o": [
-        "Módulos no monolito dão fronteira de código sem o preço da rede.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Módulos no monolito cobram o mesmo preço de rede que microsserviços.",
+        "Módulos no monolito não criam fronteira nenhuma.",
+        "Módulos no monolito exigem um banco por módulo.",
+        "Módulos no monolito dão fronteira de código sem o preço da rede."
       ],
-      "a": 0,
-      "w": "Comece aqui.",
+      "a": 3,
+      "w": "Um processo para depurar, módulos com dono. A fronteira existe sem hop de rede no meio.",
       "t": "modular"
     },
     {
-      "q": "Sobre quando: qual afirmação está certa?",
+      "q": "Quando não usar microsserviço?",
       "o": [
-        "Quando não usar micro: time pequeno, domínio incerto, operação frágil.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Não use microsserviço com time pequeno, domínio incerto e operação frágil.",
+        "Time pequeno e domínio incerto são o cenário ideal para microsserviço.",
+        "Operação frágil não influencia a decisão de separar em serviços.",
+        "Microsserviço cedo evita o monolito eterno, independente do time."
       ],
       "a": 0,
-      "w": "Aula de decomposição.",
+      "w": "Time de oito, checkout mudando toda semana, ninguém carrega o pager: o desenho é monolito modular.",
       "t": "quando"
     },
     {
-      "q": "Qual frase sobre quando está certa?",
+      "q": "Time de oito, domínio incerto, ninguém carrega o pager. Qual desenho?",
       "o": [
-        "Quando não usar micro: time pequeno, domínio incerto, operação frágil.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Não use microsserviço com time pequeno, domínio incerto e operação frágil.",
+        "Time pequeno e domínio incerto são o cenário ideal para microsserviço.",
+        "Operação frágil não influencia a decisão de separar em serviços.",
+        "Microsserviço cedo evita o monolito eterno, independente do time."
       ],
       "a": 0,
-      "w": "Aula de decomposição.",
+      "w": "Time de oito, checkout mudando toda semana, ninguém carrega o pager: o desenho é monolito modular.",
       "t": "quando"
     },
     {
-      "q": "Quando — o que acontece de verdade?",
+      "q": "Domínio incerto favorece separar em serviços?",
       "o": [
-        "Quando não usar micro: time pequeno, domínio incerto, operação frágil.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Time pequeno e domínio incerto são o cenário ideal para microsserviço.",
+        "Operação frágil não influencia a decisão de separar em serviços.",
+        "Microsserviço cedo evita o monolito eterno, independente do time.",
+        "Não use microsserviço com time pequeno, domínio incerto e operação frágil."
       ],
-      "a": 0,
-      "w": "Aula de decomposição.",
+      "a": 3,
+      "w": "Time de oito, checkout mudando toda semana, ninguém carrega o pager: o desenho é monolito modular.",
       "t": "quando"
     },
     {
-      "q": "Marque a leitura correta (quando).",
+      "q": "Operação frágil influencia a decisão de separar?",
       "o": [
-        "Quando não usar micro: time pequeno, domínio incerto, operação frágil.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Não use microsserviço com time pequeno, domínio incerto e operação frágil.",
+        "Time pequeno e domínio incerto são o cenário ideal para microsserviço.",
+        "Operação frágil não influencia a decisão de separar em serviços.",
+        "Microsserviço cedo evita o monolito eterno, independente do time."
       ],
       "a": 0,
-      "w": "Aula de decomposição.",
+      "w": "Time de oito, checkout mudando toda semana, ninguém carrega o pager: o desenho é monolito modular.",
       "t": "quando"
     },
     {
-      "q": "Corrija o mito sobre quando.",
+      "q": "Microsserviço cedo evita o monolito eterno?",
       "o": [
-        "Quando não usar micro: time pequeno, domínio incerto, operação frágil.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Operação frágil não influencia a decisão de separar em serviços.",
+        "Microsserviço cedo evita o monolito eterno, independente do time.",
+        "Não use microsserviço com time pequeno, domínio incerto e operação frágil.",
+        "Time pequeno e domínio incerto são o cenário ideal para microsserviço."
       ],
-      "a": 0,
-      "w": "Aula de decomposição.",
+      "a": 2,
+      "w": "Time de oito, checkout mudando toda semana, ninguém carrega o pager: o desenho é monolito modular.",
       "t": "quando"
     },
     {
-      "q": "No caderno, a respeito de quando: qual vale?",
+      "q": "Que três sinais dizem para ficar no monolito modular?",
       "o": [
-        "Quando não usar micro: time pequeno, domínio incerto, operação frágil.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Não use microsserviço com time pequeno, domínio incerto e operação frágil.",
+        "Time pequeno e domínio incerto são o cenário ideal para microsserviço.",
+        "Operação frágil não influencia a decisão de separar em serviços.",
+        "Microsserviço cedo evita o monolito eterno, independente do time."
       ],
       "a": 0,
-      "w": "Aula de decomposição.",
+      "w": "Time de oito, checkout mudando toda semana, ninguém carrega o pager: o desenho é monolito modular.",
       "t": "quando"
     },
     {
-      "q": "Se perguntarem quando na mesa, qual frase é a verdadeira?",
+      "q": "O lead quer oito serviços no primeiro trimestre. O que pesar?",
       "o": [
-        "Quando não usar micro: time pequeno, domínio incerto, operação frágil.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Não use microsserviço com time pequeno, domínio incerto e operação frágil.",
+        "Time pequeno e domínio incerto são o cenário ideal para microsserviço.",
+        "Operação frágil não influencia a decisão de separar em serviços.",
+        "Microsserviço cedo evita o monolito eterno, independente do time."
       ],
       "a": 0,
-      "w": "Aula de decomposição.",
+      "w": "Time de oito, checkout mudando toda semana, ninguém carrega o pager: o desenho é monolito modular.",
       "t": "quando"
     },
     {
-      "q": "Sobre strangler: qual afirmação está certa?",
+      "q": "O que Strangler Fig propõe?",
       "o": [
-        "Strangler Fig extrai com calma, não reescreve tudo numa sprint.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Strangler Fig é reescrever o sistema inteiro numa sprint.",
+        "Strangler Fig é apagar o legado e começar do zero.",
+        "Strangler Fig é subir todos os serviços novos de uma vez.",
+        "Strangler Fig extrai com calma; não reescreve tudo numa sprint."
       ],
-      "a": 0,
-      "w": "Caminho maduro.",
+      "a": 3,
+      "w": "Um pedaço por vez, com fachada na frente do que já existe. Não é big bang.",
       "t": "strangler"
     },
     {
-      "q": "Qual frase sobre strangler está certa?",
+      "q": "Strangler Fig é reescrever tudo de uma vez?",
       "o": [
-        "Strangler Fig extrai com calma, não reescreve tudo numa sprint.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Strangler Fig extrai com calma; não reescreve tudo numa sprint.",
+        "Strangler Fig é reescrever o sistema inteiro numa sprint.",
+        "Strangler Fig é apagar o legado e começar do zero.",
+        "Strangler Fig é subir todos os serviços novos de uma vez."
       ],
       "a": 0,
-      "w": "Caminho maduro.",
+      "w": "Um pedaço por vez, com fachada na frente do que já existe. Não é big bang.",
       "t": "strangler"
     },
     {
-      "q": "Strangler — o que acontece de verdade?",
+      "q": "Você extrai um pedaço por vez ou vários?",
       "o": [
-        "Strangler Fig extrai com calma, não reescreve tudo numa sprint.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Strangler Fig é subir todos os serviços novos de uma vez.",
+        "Strangler Fig extrai com calma; não reescreve tudo numa sprint.",
+        "Strangler Fig é reescrever o sistema inteiro numa sprint.",
+        "Strangler Fig é apagar o legado e começar do zero."
       ],
-      "a": 0,
-      "w": "Caminho maduro.",
+      "a": 1,
+      "w": "Um pedaço por vez, com fachada na frente do que já existe. Não é big bang.",
       "t": "strangler"
     },
     {
-      "q": "Marque a leitura correta (strangler).",
+      "q": "Strangler Fig apaga o legado e começa do zero?",
       "o": [
-        "Strangler Fig extrai com calma, não reescreve tudo numa sprint.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Strangler Fig é subir todos os serviços novos de uma vez.",
+        "Strangler Fig extrai com calma; não reescreve tudo numa sprint.",
+        "Strangler Fig é reescrever o sistema inteiro numa sprint.",
+        "Strangler Fig é apagar o legado e começar do zero."
       ],
-      "a": 0,
-      "w": "Caminho maduro.",
+      "a": 1,
+      "w": "Um pedaço por vez, com fachada na frente do que já existe. Não é big bang.",
       "t": "strangler"
     },
     {
-      "q": "Corrija o mito sobre strangler.",
+      "q": "Qual a alternativa ao big bang na extração?",
       "o": [
-        "Strangler Fig extrai com calma, não reescreve tudo numa sprint.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Strangler Fig é reescrever o sistema inteiro numa sprint.",
+        "Strangler Fig é apagar o legado e começar do zero.",
+        "Strangler Fig é subir todos os serviços novos de uma vez.",
+        "Strangler Fig extrai com calma; não reescreve tudo numa sprint."
       ],
-      "a": 0,
-      "w": "Caminho maduro.",
+      "a": 3,
+      "w": "Um pedaço por vez, com fachada na frente do que já existe. Não é big bang.",
       "t": "strangler"
     },
     {
-      "q": "No caderno, a respeito de strangler: qual vale?",
+      "q": "Extrair com calma quer dizer o quê na prática?",
       "o": [
-        "Strangler Fig extrai com calma, não reescreve tudo numa sprint.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Strangler Fig é subir todos os serviços novos de uma vez.",
+        "Strangler Fig extrai com calma; não reescreve tudo numa sprint.",
+        "Strangler Fig é reescrever o sistema inteiro numa sprint.",
+        "Strangler Fig é apagar o legado e começar do zero."
       ],
-      "a": 0,
-      "w": "Caminho maduro.",
+      "a": 1,
+      "w": "Um pedaço por vez, com fachada na frente do que já existe. Não é big bang.",
       "t": "strangler"
     },
     {
-      "q": "Se perguntarem strangler na mesa, qual frase é a verdadeira?",
+      "q": "Strangler Fig sobe todos os serviços novos juntos?",
       "o": [
-        "Strangler Fig extrai com calma, não reescreve tudo numa sprint.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Strangler Fig é apagar o legado e começar do zero.",
+        "Strangler Fig é subir todos os serviços novos de uma vez.",
+        "Strangler Fig extrai com calma; não reescreve tudo numa sprint.",
+        "Strangler Fig é reescrever o sistema inteiro numa sprint."
       ],
-      "a": 0,
-      "w": "Caminho maduro.",
+      "a": 2,
+      "w": "Um pedaço por vez, com fachada na frente do que já existe. Não é big bang.",
       "t": "strangler"
     },
     {
-      "q": "Sobre bounded: qual afirmação está certa?",
+      "q": "O que guia o corte dos serviços?",
       "o": [
-        "Bounded context guia o corte, não o organograma invertido.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Bounded context guia o corte; o organograma invertido vira casamento disfarçado.",
+        "O organograma deve guiar o corte dos serviços.",
+        "Um serviço por squad é o critério certo de decomposição.",
+        "Bounded context é conceito acadêmico sem uso no corte."
       ],
       "a": 0,
-      "w": "DDD útil, não religião.",
+      "w": "A tesoura segue o contexto do domínio. Um serviço por squad porque alguém pediu não é corte.",
       "t": "bounded"
     },
     {
-      "q": "Qual frase sobre bounded está certa?",
+      "q": "Um serviço por squad porque o chefe pediu: isso é corte?",
       "o": [
-        "Bounded context guia o corte, não o organograma invertido.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Bounded context é conceito acadêmico sem uso no corte.",
+        "Bounded context guia o corte; o organograma invertido vira casamento disfarçado.",
+        "O organograma deve guiar o corte dos serviços.",
+        "Um serviço por squad é o critério certo de decomposição."
       ],
-      "a": 0,
-      "w": "DDD útil, não religião.",
+      "a": 1,
+      "w": "A tesoura segue o contexto do domínio. Um serviço por squad porque alguém pediu não é corte.",
       "t": "bounded"
     },
     {
-      "q": "Bounded — o que acontece de verdade?",
+      "q": "O organograma deve guiar a tesoura?",
       "o": [
-        "Bounded context guia o corte, não o organograma invertido.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "O organograma deve guiar o corte dos serviços.",
+        "Um serviço por squad é o critério certo de decomposição.",
+        "Bounded context é conceito acadêmico sem uso no corte.",
+        "Bounded context guia o corte; o organograma invertido vira casamento disfarçado."
       ],
-      "a": 0,
-      "w": "DDD útil, não religião.",
+      "a": 3,
+      "w": "A tesoura segue o contexto do domínio. Um serviço por squad porque alguém pediu não é corte.",
       "t": "bounded"
     },
     {
-      "q": "Marque a leitura correta (bounded).",
+      "q": "O que acontece quando o corte segue o organograma?",
       "o": [
-        "Bounded context guia o corte, não o organograma invertido.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Um serviço por squad é o critério certo de decomposição.",
+        "Bounded context é conceito acadêmico sem uso no corte.",
+        "Bounded context guia o corte; o organograma invertido vira casamento disfarçado.",
+        "O organograma deve guiar o corte dos serviços."
       ],
-      "a": 0,
-      "w": "DDD útil, não religião.",
+      "a": 2,
+      "w": "A tesoura segue o contexto do domínio. Um serviço por squad porque alguém pediu não é corte.",
       "t": "bounded"
     },
     {
-      "q": "Corrija o mito sobre bounded.",
+      "q": "Bounded context serve para decidir o corte?",
       "o": [
-        "Bounded context guia o corte, não o organograma invertido.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Bounded context é conceito acadêmico sem uso no corte.",
+        "Bounded context guia o corte; o organograma invertido vira casamento disfarçado.",
+        "O organograma deve guiar o corte dos serviços.",
+        "Um serviço por squad é o critério certo de decomposição."
       ],
-      "a": 0,
-      "w": "DDD útil, não religião.",
+      "a": 1,
+      "w": "A tesoura segue o contexto do domínio. Um serviço por squad porque alguém pediu não é corte.",
       "t": "bounded"
     },
     {
-      "q": "No caderno, a respeito de bounded: qual vale?",
+      "q": "Qual critério esta aula usa para separar serviços?",
       "o": [
-        "Bounded context guia o corte, não o organograma invertido.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O organograma deve guiar o corte dos serviços.",
+        "Um serviço por squad é o critério certo de decomposição.",
+        "Bounded context é conceito acadêmico sem uso no corte.",
+        "Bounded context guia o corte; o organograma invertido vira casamento disfarçado."
       ],
-      "a": 0,
-      "w": "DDD útil, não religião.",
+      "a": 3,
+      "w": "A tesoura segue o contexto do domínio. Um serviço por squad porque alguém pediu não é corte.",
       "t": "bounded"
     },
     {
-      "q": "Se perguntarem bounded na mesa, qual frase é a verdadeira?",
+      "q": "Corte pelo organograma vira o quê?",
       "o": [
-        "Bounded context guia o corte, não o organograma invertido.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Bounded context guia o corte; o organograma invertido vira casamento disfarçado.",
+        "O organograma deve guiar o corte dos serviços.",
+        "Um serviço por squad é o critério certo de decomposição.",
+        "Bounded context é conceito acadêmico sem uso no corte."
       ],
       "a": 0,
-      "w": "DDD útil, não religião.",
+      "w": "A tesoura segue o contexto do domínio. Um serviço por squad porque alguém pediu não é corte.",
       "t": "bounded"
     },
     {
-      "q": "Sobre DNS: qual afirmação está certa?",
+      "q": "Um endereço novo na frente do mesmo banco cria um serviço?",
       "o": [
-        "DNS na frente do mesmo banco não inventou um serviço.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O nome do endereço é o que define a fronteira do serviço.",
+        "Subir um deploy por pasta no mesmo banco conta como extração.",
+        "Um endereço novo na frente do mesmo banco não inventou um serviço.",
+        "Trocar o endereço na frente do mesmo banco já cria um serviço."
       ],
-      "a": 0,
-      "w": "Fronteira falsa.",
+      "a": 2,
+      "w": "Você criou fronteira falsa: o nome mudou, o banco continua compartilhado e os times seguem casados.",
       "t": "DNS"
     },
     {
-      "q": "Qual frase sobre DNS está certa?",
+      "q": "O que é fronteira falsa?",
       "o": [
-        "DNS na frente do mesmo banco não inventou um serviço.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Trocar o endereço na frente do mesmo banco já cria um serviço.",
+        "O nome do endereço é o que define a fronteira do serviço.",
+        "Subir um deploy por pasta no mesmo banco conta como extração.",
+        "Um endereço novo na frente do mesmo banco não inventou um serviço."
       ],
-      "a": 0,
-      "w": "Fronteira falsa.",
+      "a": 3,
+      "w": "Você criou fronteira falsa: o nome mudou, o banco continua compartilhado e os times seguem casados.",
       "t": "DNS"
     },
     {
-      "q": "DNS — o que acontece de verdade?",
+      "q": "Subir um deploy por pasta no mesmo banco é extração?",
       "o": [
-        "DNS na frente do mesmo banco não inventou um serviço.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O nome do endereço é o que define a fronteira do serviço.",
+        "Subir um deploy por pasta no mesmo banco conta como extração.",
+        "Um endereço novo na frente do mesmo banco não inventou um serviço.",
+        "Trocar o endereço na frente do mesmo banco já cria um serviço."
       ],
-      "a": 0,
-      "w": "Fronteira falsa.",
+      "a": 2,
+      "w": "Você criou fronteira falsa: o nome mudou, o banco continua compartilhado e os times seguem casados.",
       "t": "DNS"
     },
     {
-      "q": "Marque a leitura correta (DNS).",
+      "q": "O nome do endereço define a fronteira?",
       "o": [
-        "DNS na frente do mesmo banco não inventou um serviço.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Subir um deploy por pasta no mesmo banco conta como extração.",
+        "Um endereço novo na frente do mesmo banco não inventou um serviço.",
+        "Trocar o endereço na frente do mesmo banco já cria um serviço.",
+        "O nome do endereço é o que define a fronteira do serviço."
       ],
-      "a": 0,
-      "w": "Fronteira falsa.",
+      "a": 1,
+      "w": "Você criou fronteira falsa: o nome mudou, o banco continua compartilhado e os times seguem casados.",
       "t": "DNS"
     },
     {
-      "q": "Corrija o mito sobre DNS.",
+      "q": "Você trocou o endereço e manteve o banco. Os times se separaram?",
       "o": [
-        "DNS na frente do mesmo banco não inventou um serviço.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O nome do endereço é o que define a fronteira do serviço.",
+        "Subir um deploy por pasta no mesmo banco conta como extração.",
+        "Um endereço novo na frente do mesmo banco não inventou um serviço.",
+        "Trocar o endereço na frente do mesmo banco já cria um serviço."
       ],
-      "a": 0,
-      "w": "Fronteira falsa.",
+      "a": 2,
+      "w": "Você criou fronteira falsa: o nome mudou, o banco continua compartilhado e os times seguem casados.",
       "t": "DNS"
     },
     {
-      "q": "No caderno, a respeito de DNS: qual vale?",
+      "q": "O painel mostra vários serviços. Eles são serviços?",
       "o": [
-        "DNS na frente do mesmo banco não inventou um serviço.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Trocar o endereço na frente do mesmo banco já cria um serviço.",
+        "O nome do endereço é o que define a fronteira do serviço.",
+        "Subir um deploy por pasta no mesmo banco conta como extração.",
+        "Um endereço novo na frente do mesmo banco não inventou um serviço."
       ],
-      "a": 0,
-      "w": "Fronteira falsa.",
+      "a": 3,
+      "w": "Você criou fronteira falsa: o nome mudou, o banco continua compartilhado e os times seguem casados.",
       "t": "DNS"
     },
     {
-      "q": "Se perguntarem DNS na mesa, qual frase é a verdadeira?",
+      "q": "O que falta quando só o endereço mudou?",
       "o": [
-        "DNS na frente do mesmo banco não inventou um serviço.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Subir um deploy por pasta no mesmo banco conta como extração.",
+        "Um endereço novo na frente do mesmo banco não inventou um serviço.",
+        "Trocar o endereço na frente do mesmo banco já cria um serviço.",
+        "O nome do endereço é o que define a fronteira do serviço."
       ],
-      "a": 0,
-      "w": "Fronteira falsa.",
+      "a": 1,
+      "w": "Você criou fronteira falsa: o nome mudou, o banco continua compartilhado e os times seguem casados.",
       "t": "DNS"
     },
     {
-      "q": "Sobre debug: qual afirmação está certa?",
+      "q": "Como é investigar um erro no microsserviço, comparado ao monolito?",
       "o": [
-        "Debug de micro atravessa traces. Monolito é um processo.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O número de processos não muda a dificuldade da investigação.",
+        "Investigar um erro no microsserviço atravessa vários processos; monolito é um processo só.",
+        "Investigar erro no microsserviço é mais simples que no monolito.",
+        "A investigação no microsserviço acontece num processo só."
       ],
-      "a": 0,
-      "w": "Preço explícito.",
+      "a": 1,
+      "w": "No monolito você segue a pilha num processo. Separado, a investigação atravessa serviços.",
       "t": "debug"
     },
     {
-      "q": "Qual frase sobre debug está certa?",
+      "q": "No monolito, a investigação atravessa quantos processos?",
       "o": [
-        "Debug de micro atravessa traces. Monolito é um processo.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "A investigação no microsserviço acontece num processo só.",
+        "O número de processos não muda a dificuldade da investigação.",
+        "Investigar um erro no microsserviço atravessa vários processos; monolito é um processo só.",
+        "Investigar erro no microsserviço é mais simples que no monolito."
       ],
-      "a": 0,
-      "w": "Preço explícito.",
+      "a": 2,
+      "w": "No monolito você segue a pilha num processo. Separado, a investigação atravessa serviços.",
       "t": "debug"
     },
     {
-      "q": "Debug — o que acontece de verdade?",
+      "q": "Separar em serviços facilita a investigação de um erro?",
       "o": [
-        "Debug de micro atravessa traces. Monolito é um processo.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "Investigar um erro no microsserviço atravessa vários processos; monolito é um processo só.",
+        "Investigar erro no microsserviço é mais simples que no monolito.",
+        "A investigação no microsserviço acontece num processo só.",
+        "O número de processos não muda a dificuldade da investigação."
       ],
       "a": 0,
-      "w": "Preço explícito.",
+      "w": "No monolito você segue a pilha num processo. Separado, a investigação atravessa serviços.",
       "t": "debug"
     },
     {
-      "q": "Marque a leitura correta (debug).",
+      "q": "O que muda na investigação quando você separa em serviços?",
       "o": [
-        "Debug de micro atravessa traces. Monolito é um processo.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O número de processos não muda a dificuldade da investigação.",
+        "Investigar um erro no microsserviço atravessa vários processos; monolito é um processo só.",
+        "Investigar erro no microsserviço é mais simples que no monolito.",
+        "A investigação no microsserviço acontece num processo só."
       ],
-      "a": 0,
-      "w": "Preço explícito.",
+      "a": 1,
+      "w": "No monolito você segue a pilha num processo. Separado, a investigação atravessa serviços.",
       "t": "debug"
     },
     {
-      "q": "Corrija o mito sobre debug.",
+      "q": "A investigação no micro acontece num processo só?",
       "o": [
-        "Debug de micro atravessa traces. Monolito é um processo.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O número de processos não muda a dificuldade da investigação.",
+        "Investigar um erro no microsserviço atravessa vários processos; monolito é um processo só.",
+        "Investigar erro no microsserviço é mais simples que no monolito.",
+        "A investigação no microsserviço acontece num processo só."
       ],
-      "a": 0,
-      "w": "Preço explícito.",
+      "a": 1,
+      "w": "No monolito você segue a pilha num processo. Separado, a investigação atravessa serviços.",
       "t": "debug"
     },
     {
-      "q": "No caderno, a respeito de debug: qual vale?",
+      "q": "O número de processos muda a dificuldade da investigação?",
       "o": [
-        "Debug de micro atravessa traces. Monolito é um processo.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "A investigação no microsserviço acontece num processo só.",
+        "O número de processos não muda a dificuldade da investigação.",
+        "Investigar um erro no microsserviço atravessa vários processos; monolito é um processo só.",
+        "Investigar erro no microsserviço é mais simples que no monolito."
       ],
-      "a": 0,
-      "w": "Preço explícito.",
+      "a": 2,
+      "w": "No monolito você segue a pilha num processo. Separado, a investigação atravessa serviços.",
       "t": "debug"
     },
     {
-      "q": "Se perguntarem debug na mesa, qual frase é a verdadeira?",
+      "q": "Onde você segue a pilha num processo único?",
       "o": [
-        "Debug de micro atravessa traces. Monolito é um processo.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O número de processos não muda a dificuldade da investigação.",
+        "Investigar um erro no microsserviço atravessa vários processos; monolito é um processo só.",
+        "Investigar erro no microsserviço é mais simples que no monolito.",
+        "A investigação no microsserviço acontece num processo só."
       ],
-      "a": 0,
-      "w": "Preço explícito.",
+      "a": 1,
+      "w": "No monolito você segue a pilha num processo. Separado, a investigação atravessa serviços.",
       "t": "debug"
     },
     {
-      "q": "Sobre default: qual afirmação está certa?",
+      "q": "Qual o default honesto desta aula?",
       "o": [
-        "O default honesto é monolito modular.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Não existe default: o desenho depende só da moda do mercado.",
+        "O default honesto é monolito modular; inverta só com motivo.",
+        "O default honesto é microsserviço desde o primeiro dia.",
+        "Começar no monolito modular é sinal de time atrasado."
       ],
-      "a": 0,
-      "w": "Inverta só com motivo.",
+      "a": 1,
+      "w": "Não é atraso: é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.",
       "t": "default"
     },
     {
-      "q": "Qual frase sobre default está certa?",
+      "q": "Começar no monolito modular é atraso?",
       "o": [
-        "O default honesto é monolito modular.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Não existe default: o desenho depende só da moda do mercado.",
+        "O default honesto é monolito modular; inverta só com motivo.",
+        "O default honesto é microsserviço desde o primeiro dia.",
+        "Começar no monolito modular é sinal de time atrasado."
       ],
-      "a": 0,
-      "w": "Inverta só com motivo.",
+      "a": 1,
+      "w": "Não é atraso: é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.",
       "t": "default"
     },
     {
-      "q": "Default — o que acontece de verdade?",
+      "q": "Quando você inverte o default?",
       "o": [
-        "O default honesto é monolito modular.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Não existe default: o desenho depende só da moda do mercado.",
+        "O default honesto é monolito modular; inverta só com motivo.",
+        "O default honesto é microsserviço desde o primeiro dia.",
+        "Começar no monolito modular é sinal de time atrasado."
       ],
-      "a": 0,
-      "w": "Inverta só com motivo.",
+      "a": 1,
+      "w": "Não é atraso: é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.",
       "t": "default"
     },
     {
-      "q": "Marque a leitura correta (default).",
+      "q": "O default é microsserviço desde o dia um?",
       "o": [
-        "O default honesto é monolito modular.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "O default honesto é microsserviço desde o primeiro dia.",
+        "Começar no monolito modular é sinal de time atrasado.",
+        "Não existe default: o desenho depende só da moda do mercado.",
+        "O default honesto é monolito modular; inverta só com motivo."
       ],
-      "a": 0,
-      "w": "Inverta só com motivo.",
+      "a": 3,
+      "w": "Não é atraso: é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.",
       "t": "default"
     },
     {
-      "q": "Corrija o mito sobre default.",
+      "q": "O que precisa acontecer para sair do monolito modular?",
       "o": [
-        "O default honesto é monolito modular.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "Começar no monolito modular é sinal de time atrasado.",
+        "Não existe default: o desenho depende só da moda do mercado.",
+        "O default honesto é monolito modular; inverta só com motivo.",
+        "O default honesto é microsserviço desde o primeiro dia."
       ],
-      "a": 0,
-      "w": "Inverta só com motivo.",
+      "a": 2,
+      "w": "Não é atraso: é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.",
       "t": "default"
     },
     {
-      "q": "No caderno, a respeito de default: qual vale?",
+      "q": "Existe default ou o desenho segue a moda?",
       "o": [
-        "O default honesto é monolito modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O default honesto é microsserviço desde o primeiro dia.",
+        "Começar no monolito modular é sinal de time atrasado.",
+        "Não existe default: o desenho depende só da moda do mercado.",
+        "O default honesto é monolito modular; inverta só com motivo."
       ],
-      "a": 0,
-      "w": "Inverta só com motivo.",
+      "a": 3,
+      "w": "Não é atraso: é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.",
       "t": "default"
     },
     {
-      "q": "Se perguntarem default na mesa, qual frase é a verdadeira?",
+      "q": "Por que esta aula chama esse default de honesto?",
       "o": [
-        "O default honesto é monolito modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "Começar no monolito modular é sinal de time atrasado.",
+        "Não existe default: o desenho depende só da moda do mercado.",
+        "O default honesto é monolito modular; inverta só com motivo.",
+        "O default honesto é microsserviço desde o primeiro dia."
       ],
-      "a": 0,
-      "w": "Inverta só com motivo.",
+      "a": 2,
+      "w": "Não é atraso: é o desenho honesto enquanto o domínio não pediu banco e deploy próprios.",
       "t": "default"
     },
     {
-      "q": "Sobre geladeira: qual afirmação está certa?",
+      "q": "Banco compartilhado significa o quê para o schema?",
       "o": [
-        "Geladeira compartilhada = schema compartilhado = casamento.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "Schema compartilhado é detalhe de infraestrutura, não de acoplamento.",
+        "Banco compartilhado é schema compartilhado: os times casaram, mesmo com repos diferentes.",
+        "Banco compartilhado preserva a independência de schema dos times.",
+        "Repos diferentes garantem que os times estão separados."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 1,
+      "w": "A independência de schema desaparece. Repos diferentes não separam quem depende da mesma tabela.",
       "t": "geladeira"
     },
     {
-      "q": "Qual frase sobre geladeira está certa?",
+      "q": "Repos diferentes bastam para separar os times?",
       "o": [
-        "Geladeira compartilhada = schema compartilhado = casamento.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "Banco compartilhado preserva a independência de schema dos times.",
+        "Repos diferentes garantem que os times estão separados.",
+        "Schema compartilhado é detalhe de infraestrutura, não de acoplamento.",
+        "Banco compartilhado é schema compartilhado: os times casaram, mesmo com repos diferentes."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 3,
+      "w": "A independência de schema desaparece. Repos diferentes não separam quem depende da mesma tabela.",
       "t": "geladeira"
     },
     {
-      "q": "Geladeira — o que acontece de verdade?",
+      "q": "O que desaparece quando o banco é compartilhado?",
       "o": [
-        "Geladeira compartilhada = schema compartilhado = casamento.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "Repos diferentes garantem que os times estão separados.",
+        "Schema compartilhado é detalhe de infraestrutura, não de acoplamento.",
+        "Banco compartilhado é schema compartilhado: os times casaram, mesmo com repos diferentes.",
+        "Banco compartilhado preserva a independência de schema dos times."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "A independência de schema desaparece. Repos diferentes não separam quem depende da mesma tabela.",
       "t": "geladeira"
     },
     {
-      "q": "Marque a leitura correta (geladeira).",
+      "q": "Schema compartilhado é detalhe de infraestrutura?",
       "o": [
-        "Geladeira compartilhada = schema compartilhado = casamento.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "Schema compartilhado é detalhe de infraestrutura, não de acoplamento.",
+        "Banco compartilhado é schema compartilhado: os times casaram, mesmo com repos diferentes.",
+        "Banco compartilhado preserva a independência de schema dos times.",
+        "Repos diferentes garantem que os times estão separados."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 1,
+      "w": "A independência de schema desaparece. Repos diferentes não separam quem depende da mesma tabela.",
       "t": "geladeira"
     },
     {
-      "q": "Corrija o mito sobre geladeira.",
+      "q": "Dois times, dois repos, um banco. Eles são independentes?",
       "o": [
-        "Geladeira compartilhada = schema compartilhado = casamento.",
-        "Cache write-behind nunca perde escrita.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Monolito não pode ser modular."
+        "Schema compartilhado é detalhe de infraestrutura, não de acoplamento.",
+        "Banco compartilhado é schema compartilhado: os times casaram, mesmo com repos diferentes.",
+        "Banco compartilhado preserva a independência de schema dos times.",
+        "Repos diferentes garantem que os times estão separados."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 1,
+      "w": "A independência de schema desaparece. Repos diferentes não separam quem depende da mesma tabela.",
       "t": "geladeira"
     },
     {
-      "q": "No caderno, a respeito de geladeira: qual vale?",
+      "q": "Quem depende da mesma tabela está separado?",
       "o": [
-        "Geladeira compartilhada = schema compartilhado = casamento.",
-        "Sharding resolve leitura; replicação resolve escrita.",
-        "Saga é rollback distribuído mágico.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro."
+        "Schema compartilhado é detalhe de infraestrutura, não de acoplamento.",
+        "Banco compartilhado é schema compartilhado: os times casaram, mesmo com repos diferentes.",
+        "Banco compartilhado preserva a independência de schema dos times.",
+        "Repos diferentes garantem que os times estão separados."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 1,
+      "w": "A independência de schema desaparece. Repos diferentes não separam quem depende da mesma tabela.",
       "t": "geladeira"
     },
     {
-      "q": "Se perguntarem geladeira na mesa, qual frase é a verdadeira?",
+      "q": "Como o banco compartilhado casa os times?",
       "o": [
-        "Geladeira compartilhada = schema compartilhado = casamento.",
-        "Saga é rollback distribuído mágico.",
-        "Monolito não pode ser modular.",
-        "CAP vale o tempo todo, mesmo sem partição de rede."
+        "Repos diferentes garantem que os times estão separados.",
+        "Schema compartilhado é detalhe de infraestrutura, não de acoplamento.",
+        "Banco compartilhado é schema compartilhado: os times casaram, mesmo com repos diferentes.",
+        "Banco compartilhado preserva a independência de schema dos times."
       ],
-      "a": 0,
-      "w": "Analogia.",
+      "a": 2,
+      "w": "A independência de schema desaparece. Repos diferentes não separam quem depende da mesma tabela.",
       "t": "geladeira"
     },
     {
-      "q": "Sobre lead: qual afirmação está certa?",
+      "q": "Quando o lead recusa microsserviço?",
       "o": [
-        "Lead recusa micro cedo quando o custo de reverter explode.",
-        "Monolito não pode ser modular.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade."
+        "O custo de reverter não entra na decisão do lead.",
+        "O lead recusa microsserviço cedo quando o custo de reverter explode.",
+        "O lead aceita qualquer proposta de microsserviço para não travar o time.",
+        "Recusar microsserviço é medo, não decisão técnica."
       ],
-      "a": 0,
-      "w": "Decisão cara.",
+      "a": 1,
+      "w": "Reverter o corte cedo explode o calendário. Recusar com alternativa é trabalho de lead.",
       "t": "lead"
     },
     {
-      "q": "Qual frase sobre lead está certa?",
+      "q": "Recusar micro cedo é medo ou decisão?",
       "o": [
-        "Lead recusa micro cedo quando o custo de reverter explode.",
-        "p50 é o percentil que a mesa de arquiteto cobra primeiro.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "A média do Grafana é o SLO que o usuário sente."
+        "O lead aceita qualquer proposta de microsserviço para não travar o time.",
+        "Recusar microsserviço é medo, não decisão técnica.",
+        "O custo de reverter não entra na decisão do lead.",
+        "O lead recusa microsserviço cedo quando o custo de reverter explode."
       ],
-      "a": 0,
-      "w": "Decisão cara.",
+      "a": 3,
+      "w": "Reverter o corte cedo explode o calendário. Recusar com alternativa é trabalho de lead.",
       "t": "lead"
     },
     {
-      "q": "Lead — o que acontece de verdade?",
+      "q": "O que explode quando você reverte o corte cedo?",
       "o": [
-        "Lead recusa micro cedo quando o custo de reverter explode.",
-        "CAP vale o tempo todo, mesmo sem partição de rede.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "Retry infinito sem breaker é resiliência madura."
+        "O lead recusa microsserviço cedo quando o custo de reverter explode.",
+        "O lead aceita qualquer proposta de microsserviço para não travar o time.",
+        "Recusar microsserviço é medo, não decisão técnica.",
+        "O custo de reverter não entra na decisão do lead."
       ],
       "a": 0,
-      "w": "Decisão cara.",
+      "w": "Reverter o corte cedo explode o calendário. Recusar com alternativa é trabalho de lead.",
       "t": "lead"
     },
     {
-      "q": "Marque a leitura correta (lead).",
+      "q": "O custo de reverter entra na decisão do lead?",
       "o": [
-        "Lead recusa micro cedo quando o custo de reverter explode.",
-        "Microsserviço com banco compartilhado ainda é deploy independente de verdade.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Eventual consistency autoriza invariante quebrada para sempre."
+        "O lead recusa microsserviço cedo quando o custo de reverter explode.",
+        "O lead aceita qualquer proposta de microsserviço para não travar o time.",
+        "Recusar microsserviço é medo, não decisão técnica.",
+        "O custo de reverter não entra na decisão do lead."
       ],
       "a": 0,
-      "w": "Decisão cara.",
+      "w": "Reverter o corte cedo explode o calendário. Recusar com alternativa é trabalho de lead.",
       "t": "lead"
     },
     {
-      "q": "Corrija o mito sobre lead.",
+      "q": "O lead deve aceitar qualquer proposta para não travar o time?",
       "o": [
-        "Lead recusa micro cedo quando o custo de reverter explode.",
-        "A média do Grafana é o SLO que o usuário sente.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Cache write-behind nunca perde escrita."
+        "O custo de reverter não entra na decisão do lead.",
+        "O lead recusa microsserviço cedo quando o custo de reverter explode.",
+        "O lead aceita qualquer proposta de microsserviço para não travar o time.",
+        "Recusar microsserviço é medo, não decisão técnica."
       ],
-      "a": 0,
-      "w": "Decisão cara.",
+      "a": 1,
+      "w": "Reverter o corte cedo explode o calendário. Recusar com alternativa é trabalho de lead.",
       "t": "lead"
     },
     {
-      "q": "No caderno, a respeito de lead: qual vale?",
+      "q": "Qual o papel do lead diante de uma proposta de micro cedo?",
       "o": [
-        "Lead recusa micro cedo quando o custo de reverter explode.",
-        "Retry infinito sem breaker é resiliência madura.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Sharding resolve leitura; replicação resolve escrita."
+        "O lead aceita qualquer proposta de microsserviço para não travar o time.",
+        "Recusar microsserviço é medo, não decisão técnica.",
+        "O custo de reverter não entra na decisão do lead.",
+        "O lead recusa microsserviço cedo quando o custo de reverter explode."
       ],
-      "a": 0,
-      "w": "Decisão cara.",
+      "a": 3,
+      "w": "Reverter o corte cedo explode o calendário. Recusar com alternativa é trabalho de lead.",
       "t": "lead"
     },
     {
-      "q": "Se perguntarem lead na mesa, qual frase é a verdadeira?",
+      "q": "Reverter o corte custa o quê?",
       "o": [
-        "Lead recusa micro cedo quando o custo de reverter explode.",
-        "Eventual consistency autoriza invariante quebrada para sempre.",
-        "Cache write-behind nunca perde escrita.",
-        "Saga é rollback distribuído mágico."
+        "O custo de reverter não entra na decisão do lead.",
+        "O lead recusa microsserviço cedo quando o custo de reverter explode.",
+        "O lead aceita qualquer proposta de microsserviço para não travar o time.",
+        "Recusar microsserviço é medo, não decisão técnica."
       ],
-      "a": 0,
-      "w": "Decisão cara.",
+      "a": 1,
+      "w": "Reverter o corte cedo explode o calendário. Recusar com alternativa é trabalho de lead.",
       "t": "lead"
     }
   ]

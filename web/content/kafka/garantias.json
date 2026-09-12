@@ -1,0 +1,131 @@
+{
+  "beats": [
+    {
+      "id": "linha-do-tempo",
+      "kind": "cena",
+      "kicker": "Offset 40",
+      "title": "Lê. Cobra. Morre. o committed offset ainda está no 39.",
+      "body": "<p>Pedido 99, R$ 80. Sequência: Fetch → cartão (o mundo real já mudou) → processo some → restart relê 40.</p><p>Se você tivesse commitado <em>antes</em> de cobrar, o committed offset andava e a fatura nunca saía. Perda, não duplicata. As três promessas só dizem quando o committed offset avança em relação ao efeito.</p>"
+    },
+    {
+      "id": "tres-promessas",
+      "kind": "explicar",
+      "title": "At-most, at-least, exactly. O cartão só entra em uma delas se você cuidar.",
+      "html": "<p>O Kafka entrega a mensagem. Cobrar é o seu código. Committed offset e efeito divergem se o processo morrer no meio.</p><table><thead><tr><th>Promessa</th><th>Como nasce</th><th>No mundo real</th></tr></thead><tbody><tr><td>At-most-once</td><td>Avança o committed offset <em>antes</em> de processar</td><td>Caiu no meio: a mensagem se perde. Raramente aceitável em dinheiro.</td></tr><tr><td>At-least-once</td><td>Processa e <em>depois</em> avança o committed offset</td><td>Padrão prático. Pode duplicar. Por isso inbox.</td></tr><tr><td>Exactly-once</td><td>Produtor idempotente + transações Kafka</td><td>Vale <em>dentro</em> do Kafka (tópico a tópico). Banco e API de cartão estão fora da bolha.</td></tr></tbody></table><p>A frase da mesa: <strong>at-least-once + consumidor idempotente</strong>. Não “exactly-once porque tem Kafka”.</p>"
+    },
+    {
+      "id": "lab-yaml",
+      "kind": "explicar",
+      "title": "Dois cadeados da escrita. Inbox é tabela sua.",
+      "html": "<p>Com <code>enable.idempotence=true</code>, o producer ganha ID e numera os envelopes. Retry do <em>mesmo</em> producer não cria segunda linha. O lab já liga os cadeados da escrita e deixa o ack na sua mão:</p><pre class=\"code\">spring.kafka.producer.acks: all\nspring.kafka.producer.properties.enable.idempotence: true\nspring.kafka.listener.ack-mode: manual\nspring.kafka.consumer.enable-auto-commit: false</pre><pre class=\"code\">@KafkaListener(topics = \"${lab.topic}\", groupId = \"faturamento\")\npublic void faturamento(ConsumerRecord&lt;String, PedidoCriado&gt; rec, Acknowledgment ack) {\n    // efeito de negócio (cobrar) viria aqui, ANTES do ack\n    ack.acknowledge();\n}</pre><p><code>application.yml</code> + <code>PedidoConsumer</code>. Lab 7 (kill entre efeito e ack): aula Spring. O YAML <em>não</em> cria inbox.</p><p>Efeito repetível sem dano: <code>eventId</code> unique na mesma transação do insert de pagamento; upsert; só aplicar se a versão for maior; “estoque = 7” em vez de “estoque -= 1”.</p>"
+    },
+    {
+      "id": "commit-lag",
+      "kind": "explicar",
+      "title": "Auto-commit anda no relógio. Lag não mede fatura.",
+      "html": "<p>Automático (<code>enable.auto.commit=true</code>) commita por tempo, no fundo. Pode commitar mensagem ainda não processada — perda em queda. Manual: efeito, então commit. No Spring: <code>AckMode</code> <code>MANUAL</code>, <code>RECORD</code>, <code>BATCH</code>.</p><p>Commit por lote é mais rápido; morte no meio reprocessa o lote inteiro. Sem inbox, lote maior = explosão maior.</p><p>Lag = último offset escrito minus o committed offset do grupo. É a métrica número um do consumidor. Não diz se alguém cobrou duas vezes. Diz só que o grupo está atrasado N offsets.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "At-least-once entrega. Inbox impede o segundo efeito.",
+      "ganha": "Processar depois commitar: crash não perde o 99. Producer idempotente: retry não cria segunda linha do mesmo send. acks=all: o fato sobrevive ao líder. Inbox + Idempotency-Key: a segunda leitura não vira segunda fatura.",
+      "paga": "At-most-once perde dinheiro. Exactly-once do Kafka não cobre cartão. Auto-commit por relógio commita trabalho não feito. acks=all não move o committed offset do consumidor. Incrementar estoque -= 1 duas vezes é desastre; “estoque = 7” tolera replay.",
+      "quando": [
+        "Dinheiro, estoque, qualquer efeito que dói duas vezes: at-least-once + inbox na mesma transação",
+        "AckMode manual depois do efeito no listener de cobrança",
+        "Você mede lag como atraso, não como prova de duplicata"
+      ],
+      "quandoNao": [
+        "Commit antes de cobrar “para o lag ficar bonito”",
+        "Ligar enable.idempotence e achar que o cartão está seguro",
+        "Dizer exactly-once porque o tópico tem transação — o POST do cartão não assina"
+      ]
+    },
+    {
+      "id": "morreu-no-meio",
+      "kind": "escolha",
+      "kicker": "Cartão já cobrou",
+      "prompt": "O faturamento leu o PedidoCriado 99, a API do cartão debitou R$ 80, a JVM morreu antes do ack. O que sobra?",
+      "options": [
+        {
+          "id": "relê",
+          "label": "O log está certo. O restart relê o 99. Sem inbox, cobra de novo",
+          "verdict": "bom",
+          "why": "At-least-once: efeito primeiro, committed offset depois. A duplicata é de negócio, não de broker. eventId na mesma transação do pagamento — ou Idempotency-Key no emissor."
+        },
+        {
+          "id": "sumiu",
+          "label": "O Kafka apagou a linha porque o consumidor já tinha visto",
+          "verdict": "ruim",
+          "why": "A mensagem não some na leitura. O committed offset não andou. O 99 continua no offset 40."
+        },
+        {
+          "id": "eos",
+          "label": "Transação Kafka: o cartão entra na bolha. Não cobra duas vezes",
+          "verdict": "ruim",
+          "why": "Exactly-once do Kafka é tópico-a-tópico. A API HTTP do cartão está fora. acks=all também não participa dessa cobrança."
+        }
+      ]
+    },
+    {
+      "id": "dois-cadeados",
+      "kind": "escolha",
+      "prompt": "enable.idempotence=true no producer do checkout. O faturamento ainda precisa de inbox?",
+      "options": [
+        {
+          "id": "sim",
+          "label": "Sim. Um cadeado é o retry da escrita. O outro é o efeito no cartão",
+          "verdict": "bom",
+          "why": "O broker descarta o segundo envelope 17 do mesmo producer. Não impede o consumidor de processar o 99, morrer, processar de novo. Dois producers diferentes também não entram nesse cadeado."
+        },
+        {
+          "id": "nao",
+          "label": "Não. Idempotência do producer é a chave do cartão",
+          "verdict": "ruim",
+          "why": "O cartão precisa de Idempotency-Key na API do emissor (ou inbox local). Ligar o YAML da escrita e achar que a fatura está segura é o incidente clássico."
+        },
+        {
+          "id": "tx",
+          "label": "transactional.id no consumidor cobre o POST do cartão",
+          "verdict": "ruim",
+          "why": "Transação Kafka junta writes em tópicos e commit de offsets. HTTP não assina essa transação."
+        }
+      ]
+    },
+    {
+      "id": "acks-nao-e-cartao",
+      "kind": "escolha",
+      "prompt": "Na sexta: “acks=all + produtor idempotente, ninguém cobra duas vezes.” A frase segura?",
+      "options": [
+        {
+          "id": "eixos",
+          "label": "Não. Durabilidade da escrita ≠ unicidade do efeito",
+          "verdict": "bom",
+          "why": "acks=all espera o ISR no Produce. Idempotência do producer evita duplicata do retry. A segunda cobrança nasce de reler o offset ainda não commitado. São eixos diferentes."
+        },
+        {
+          "id": "fecha",
+          "label": "Sim. ISR confirmou, o cartão está coberto",
+          "verdict": "ruim",
+          "why": "O ISR não cobra. o committed offset do grupo não anda com o ACK do Produce. Morte depois do cartão, antes do ack do listener: o 99 volta."
+        },
+        {
+          "id": "lag",
+          "label": "Só se o lag for zero. Lag 1600 já é duplicata",
+          "verdict": "ruim",
+          "why": "Log no offset 10_000, committed offset em 8_400, lag = 1_600. Isso é atraso, não prova de cobrança dupla. Lag instantâneo pequeno é poll normal."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "At-least-once + consumidor idempotente. Exactly-once do Kafka não cobra o cartão.",
+        "Idempotência do producer ≠ inbox. acks=all ≠ unicidade do efeito. Lag ≠ duplicata.",
+        "Ack depois do efeito. Morte no meio relê. eventId na mesma transação do pagamento."
+      ]
+    }
+  ]
+}
