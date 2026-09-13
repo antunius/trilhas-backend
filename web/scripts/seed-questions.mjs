@@ -41,9 +41,7 @@ if (!url || !service) {
 const supabase = createClient(url, service, { auth: { persistSession: false } });
 
 const kafkaGates = [
-  "modelo-mental", "evento", "topico", "particao", "offset", "key", "broker",
-  "isr", "produtor", "consumidor", "rebalance", "retencao", "garantias",
-  "operacao", "schema", "outbox", "spring", "sintese", "tech-lead",
+  "fundamentos", "anatomia", "cluster", "dinamica", "garantias", "pratica", "sintese",
 ];
 const arqGates = [
   "mapa", "sistema", "latencia", "disponibilidade", "cap", "acid", "monolito",

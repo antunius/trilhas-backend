@@ -42,6 +42,81 @@ export function emptyProgress(): ProgressState {
   return { visited: [], quiz: {}, gates: {}, sessions: {}, simulador: {} };
 }
 
+/** Old 19-lesson paths → new 7-chapter paths. */
+export const KAFKA_LEGACY_PATH_MAP: Record<string, string> = {
+  "/kafka/modelo-mental": "/kafka/fundamentos",
+  "/kafka/evento": "/kafka/fundamentos",
+  "/kafka/topico": "/kafka/anatomia",
+  "/kafka/particao": "/kafka/anatomia",
+  "/kafka/offset": "/kafka/anatomia",
+  "/kafka/key": "/kafka/anatomia",
+  "/kafka/broker": "/kafka/cluster",
+  "/kafka/isr": "/kafka/cluster",
+  "/kafka/produtor": "/kafka/cluster",
+  "/kafka/consumidor": "/kafka/cluster",
+  "/kafka/rebalance": "/kafka/dinamica",
+  "/kafka/retencao": "/kafka/dinamica",
+  "/kafka/operacao": "/kafka/pratica",
+  "/kafka/schema": "/kafka/garantias",
+  "/kafka/outbox": "/kafka/garantias",
+  "/kafka/spring": "/kafka/pratica",
+  "/kafka/tech-lead": "/kafka/sintese",
+};
+
+/** Legacy slugs that together unlock a chapter if all were passed. */
+const KAFKA_CHAPTER_SOURCES: Record<string, string[]> = {
+  "/kafka/fundamentos": ["/kafka/modelo-mental", "/kafka/evento"],
+  "/kafka/anatomia": [
+    "/kafka/topico",
+    "/kafka/particao",
+    "/kafka/offset",
+    "/kafka/key",
+  ],
+  "/kafka/cluster": [
+    "/kafka/broker",
+    "/kafka/isr",
+    "/kafka/produtor",
+    "/kafka/consumidor",
+  ],
+  "/kafka/dinamica": ["/kafka/rebalance", "/kafka/retencao"],
+  "/kafka/garantias": ["/kafka/garantias", "/kafka/schema", "/kafka/outbox"],
+  "/kafka/pratica": ["/kafka/operacao", "/kafka/spring"],
+  "/kafka/sintese": ["/kafka/sintese", "/kafka/tech-lead"],
+};
+
+function migrateKafkaProgress(state: ProgressState): ProgressState {
+  const gates = { ...(state.gates || {}) };
+  let changed = false;
+
+  for (const [chapter, sources] of Object.entries(KAFKA_CHAPTER_SOURCES)) {
+    if (gates[chapter]?.passed) continue;
+    const allPassed = sources.every((p) => gates[p]?.passed);
+    if (allPassed) {
+      gates[chapter] = { passed: true, at: Date.now() };
+      changed = true;
+    }
+  }
+
+  const visited = state.visited.map((p) => KAFKA_LEGACY_PATH_MAP[p] ?? p);
+  const uniqueVisited = [...new Set(visited)];
+  if (uniqueVisited.length !== state.visited.length || changed) {
+    changed = true;
+  }
+
+  const lastPath = state.lastPath
+    ? (KAFKA_LEGACY_PATH_MAP[state.lastPath] ?? state.lastPath)
+    : state.lastPath;
+
+  if (!changed && lastPath === state.lastPath) return state;
+
+  return {
+    ...state,
+    gates,
+    visited: uniqueVisited,
+    lastPath,
+  };
+}
+
 export function isProgressHydrated() {
   return hydrated;
 }
@@ -54,7 +129,7 @@ function emit() {
 
 function rowToState(row: ProgressRow | null): ProgressState {
   if (!row) return emptyProgress();
-  return {
+  return migrateKafkaProgress({
     visited: Array.isArray(row.visited) ? row.visited : [],
     lastPath: row.last_path ?? undefined,
     quiz: row.quiz && typeof row.quiz === "object" ? row.quiz : {},
@@ -63,7 +138,7 @@ function rowToState(row: ProgressRow | null): ProgressState {
       row.sessions && typeof row.sessions === "object" ? row.sessions : {},
     simulador:
       row.simulador && typeof row.simulador === "object" ? row.simulador : {},
-  };
+  });
 }
 
 async function flush() {
@@ -234,7 +309,7 @@ export function getOverallStats(): OverallStats {
 
   const allNav = [...kafkaNav, ...arquiteturaNav];
   const firstPending =
-    firstPendingPath(allNav, passed) || "/kafka/modelo-mental";
+    firstPendingPath(allNav, passed) || "/kafka/fundamentos";
 
   const kafkaTrack = sidebarTracks.find((t) => t.id === "kafka");
   const arqTrack = sidebarTracks.find((t) => t.id === "arquitetura");
@@ -262,7 +337,7 @@ export function getOverallStats(): OverallStats {
       id: "kafka" as const,
       name: "Apache Kafka",
       description:
-        "Caderno infinito, partições, replicação, outbox pattern e simulador.",
+        "Sete capítulos densos: log distribuído, partições, garantias, outbox e simulador.",
       href: "/kafka",
       articleCount: kafkaNav.filter(
         (n) => !isTrackHome(n.href) && !isSimuladorPath(n.href),

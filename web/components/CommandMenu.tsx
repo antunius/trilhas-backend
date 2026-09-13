@@ -19,14 +19,13 @@ import {
   arquiteturaSimulador,
 } from "@/lib/catalog";
 import {
-  Zap,
-  Boxes,
   Gauge,
   Compass,
   BookOpen,
   ArrowRight,
   TrendingUp,
 } from "lucide-react";
+import { TrackLogo } from "@/components/TrackLogo";
 
 interface CommandMenuProps {
   open?: boolean;
@@ -127,7 +126,7 @@ export function CommandMenu({
             onSelect={() => runCommand(() => router.push("/kafka"))}
             className="flex items-center gap-2 cursor-pointer font-medium"
           >
-            <Zap className="h-4 w-4 text-amber-400" />
+            <TrackLogo track="kafka" className="h-4 w-4 text-amber-400" />
             <span>Visão Geral da Trilha Kafka</span>
           </CommandItem>
           {kafkaLessons.map((lesson) => (
@@ -157,7 +156,7 @@ export function CommandMenu({
             onSelect={() => runCommand(() => router.push("/arquitetura"))}
             className="flex items-center gap-2 cursor-pointer font-medium"
           >
-            <Boxes className="h-4 w-4 text-indigo-400" />
+            <TrackLogo track="arquitetura" className="h-4 w-4 text-indigo-400" />
             <span>Visão Geral da Trilha Arquitetura</span>
           </CommandItem>
           {arquiteturaLessons.map((lesson) => (

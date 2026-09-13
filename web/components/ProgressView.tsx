@@ -8,8 +8,6 @@ import {
   Award,
   RotateCcw,
   TrendingUp,
-  Zap,
-  Boxes,
   Sparkles,
   Compass,
 } from "lucide-react";
@@ -19,6 +17,7 @@ import {
   type OverallStats,
 } from "@/lib/progress";
 import { ProgressRadar } from "@/components/ProgressRadar";
+import { TrackLogo } from "@/components/TrackLogo";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -189,7 +188,10 @@ export function ProgressView() {
                       }`}
                       aria-hidden="true"
                     >
-                      {isKafka ? <Zap className="w-5 h-5" /> : <Boxes className="w-5 h-5" />}
+                      <TrackLogo
+                        track={isKafka ? "kafka" : "arquitetura"}
+                        className="w-5 h-5"
+                      />
                     </div>
                     <div>
                       <Link

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 360" role="img" aria-labelledby="t">
+  <title id="t">Cluster Kafka: brokers, líder e followers</title>
+  <rect width="920" height="360" fill="#fffdf8"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="460" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1c1915">Cluster · 3 brokers · RF = 3</text>
+    <text x="460" y="56" text-anchor="middle" font-size="13" fill="#5c564c">você fala com o líder da partição · followers copiam · ISR está em dia</text>
+
+    <rect x="60" y="90" width="240" height="220" rx="12" fill="#fff" stroke="#2f6b4f"/>
+    <text x="180" y="118" text-anchor="middle" font-size="11" letter-spacing="0.1em" fill="#2f6b4f">BROKER 1</text>
+    <rect x="90" y="140" width="180" height="70" rx="8" fill="#e8f0ea" stroke="#2f6b4f"/>
+    <text x="180" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#1c1915">P0 Líder</text>
+    <text x="180" y="192" text-anchor="middle" font-size="12" fill="#5c564c">Produce · Fetch</text>
+    <rect x="90" y="230" width="180" height="50" rx="8" fill="#fff" stroke="#d9d0c2"/>
+    <text x="180" y="260" text-anchor="middle" font-size="13" fill="#5c564c">P1 follower</text>
+
+    <rect x="340" y="90" width="240" height="220" rx="12" fill="#fff" stroke="#d9d0c2"/>
+    <text x="460" y="118" text-anchor="middle" font-size="11" letter-spacing="0.1em" fill="#c45c26">BROKER 2</text>
+    <rect x="370" y="140" width="180" height="50" rx="8" fill="#fff" stroke="#d9d0c2"/>
+    <text x="460" y="170" text-anchor="middle" font-size="13" fill="#5c564c">P0 follower</text>
+    <rect x="370" y="210" width="180" height="70" rx="8" fill="#e8f0ea" stroke="#2f6b4f"/>
+    <text x="460" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#1c1915">P1 Líder</text>
+    <text x="460" y="262" text-anchor="middle" font-size="12" fill="#5c564c">Produce · Fetch</text>
+
+    <rect x="620" y="90" width="240" height="220" rx="12" fill="#fff" stroke="#d9d0c2"/>
+    <text x="740" y="118" text-anchor="middle" font-size="11" letter-spacing="0.1em" fill="#c45c26">BROKER 3</text>
+    <rect x="650" y="140" width="180" height="50" rx="8" fill="#fff" stroke="#d9d0c2"/>
+    <text x="740" y="170" text-anchor="middle" font-size="13" fill="#5c564c">P0 follower</text>
+    <rect x="650" y="210" width="180" height="50" rx="8" fill="#fff" stroke="#d9d0c2"/>
+    <text x="740" y="240" text-anchor="middle" font-size="13" fill="#5c564c">P1 follower</text>
+    <text x="740" y="280" text-anchor="middle" font-size="12" fill="#2f6b4f">controller (KRaft)</text>
+
+    <text x="460" y="340" text-anchor="middle" font-size="13" fill="#5c564c">ISR = réplicas em dia com o líder · eleição só promove quem está no ISR</text>
+  </g>
+</svg>

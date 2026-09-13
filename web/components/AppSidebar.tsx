@@ -5,14 +5,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import {
   Search,
-  Zap,
-  Boxes,
   ChevronRight,
   CheckCircle2,
   Circle,
   Lock,
 } from "lucide-react";
 import { useSidebar } from "@/components/sidebar-context";
+import { TrackLogo } from "@/components/TrackLogo";
 import {
   isTrackHome,
   sidebarTracks,
@@ -196,11 +195,12 @@ function TrackBlock({
         onClick={onToggle}
       >
         <span className="flex items-center gap-2">
-          {isKafka ? (
-            <Zap className="w-4 h-4 text-amber-400 shrink-0" />
-          ) : (
-            <Boxes className="w-4 h-4 text-indigo-400 shrink-0" />
-          )}
+          <TrackLogo
+            track={isKafka ? "kafka" : "arquitetura"}
+            className={`w-4 h-4 shrink-0 ${
+              isKafka ? "text-amber-400" : "text-indigo-400"
+            }`}
+          />
           <span>{track.label}</span>
         </span>
         <ChevronRight

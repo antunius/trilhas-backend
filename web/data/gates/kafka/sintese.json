@@ -1259,6 +1259,1266 @@
       "a": 2,
       "w": "Operação na síntese.",
       "t": "rebalance"
+    },
+    {
+      "q": "No review de um tópico novo, o que é o contrato de verdade?",
+      "o": [
+        "O contrato é o tópico + schema + key. Não o microsserviço da moda.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 0,
+      "w": "Review recusa rename, auto-create e “a gente troca a key depois”. O serviço pode mudar; o log não mente.",
+      "t": "contrato"
+    },
+    {
+      "q": "Microsserviço da moda vs tópico+schema+key: o que o Lead protege?",
+      "o": [
+        "O contrato é o tópico + schema + key. Não o microsserviço da moda.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 0,
+      "w": "Review recusa rename, auto-create e “a gente troca a key depois”. O serviço pode mudar; o log não mente.",
+      "t": "contrato"
+    },
+    {
+      "q": "O serviço pode ser reescrito. O que não pode mudar sem incidente?",
+      "o": [
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "O contrato é o tópico + schema + key. Não o microsserviço da moda."
+      ],
+      "a": 3,
+      "w": "Review recusa rename, auto-create e “a gente troca a key depois”. O serviço pode mudar; o log não mente.",
+      "t": "contrato"
+    },
+    {
+      "q": "Por que rename de tópico e auto-create não passam no review?",
+      "o": [
+        "O contrato é o tópico + schema + key. Não o microsserviço da moda.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 0,
+      "w": "Review recusa rename, auto-create e “a gente troca a key depois”. O serviço pode mudar; o log não mente.",
+      "t": "contrato"
+    },
+    {
+      "q": "Contrato Kafka: três peças. Quais?",
+      "o": [
+        "O contrato é o tópico + schema + key. Não o microsserviço da moda.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 0,
+      "w": "Review recusa rename, auto-create e “a gente troca a key depois”. O serviço pode mudar; o log não mente.",
+      "t": "contrato"
+    },
+    {
+      "q": "O consumidor depende do deployment ou do log?",
+      "o": [
+        "O contrato é o tópico + schema + key. Não o microsserviço da moda.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 0,
+      "w": "Review recusa rename, auto-create e “a gente troca a key depois”. O serviço pode mudar; o log não mente.",
+      "t": "contrato"
+    },
+    {
+      "q": "Se o produtor sumir, o que ainda precisa fazer sentido sozinho?",
+      "o": [
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "O contrato é o tópico + schema + key. Não o microsserviço da moda.",
+        "O contrato é o nome do microsserviço no Kubernetes."
+      ],
+      "a": 2,
+      "w": "Review recusa rename, auto-create e “a gente troca a key depois”. O serviço pode mudar; o log não mente.",
+      "t": "contrato"
+    },
+    {
+      "q": "Lead usa Kafka para request/response na cara do usuário?",
+      "o": [
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Lead diz não a Kafka para request/response na cara do usuário.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho."
+      ],
+      "a": 1,
+      "w": "Ferramenta errada é incidente futuro.",
+      "t": "não"
+    },
+    {
+      "q": "Lead usa Kafka para request/response na cara do usuário — verdade ou mito?",
+      "o": [
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Lead diz não a Kafka para request/response na cara do usuário."
+      ],
+      "a": 3,
+      "w": "Ferramenta errada é incidente futuro.",
+      "t": "não"
+    },
+    {
+      "q": "Lead usa Kafka para request/response na cara do usuário — o que acontece de verdade?",
+      "o": [
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Lead diz não a Kafka para request/response na cara do usuário.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Cada PR inventa campo; dono do schema é opcional."
+      ],
+      "a": 1,
+      "w": "Ferramenta errada é incidente futuro.",
+      "t": "não"
+    },
+    {
+      "q": "Na prática: Lead usa Kafka para request/response na cara do usuário?",
+      "o": [
+        "Lead diz não a Kafka para request/response na cara do usuário.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka."
+      ],
+      "a": 0,
+      "w": "Ferramenta errada é incidente futuro.",
+      "t": "não"
+    },
+    {
+      "q": "Lead usa Kafka para request/response na cara do usuário — como funciona?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Lead diz não a Kafka para request/response na cara do usuário.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário."
+      ],
+      "a": 2,
+      "w": "Ferramenta errada é incidente futuro.",
+      "t": "não"
+    },
+    {
+      "q": "Se perguntarem: Lead usa Kafka para request/response na cara do usuário?",
+      "o": [
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "Lead diz não a Kafka para request/response na cara do usuário."
+      ],
+      "a": 3,
+      "w": "Ferramenta errada é incidente futuro.",
+      "t": "não"
+    },
+    {
+      "q": "Lead usa Kafka para request/response na cara do usuário — o que vale aqui?",
+      "o": [
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Lead diz não a Kafka para request/response na cara do usuário."
+      ],
+      "a": 3,
+      "w": "Ferramenta errada é incidente futuro.",
+      "t": "não"
+    },
+    {
+      "q": "Quem propõe tópico assume lag, DLT, retenção e on-call?",
+      "o": [
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "Quem propõe tópico assume lag, DLT, retenção e on-call."
+      ],
+      "a": 3,
+      "w": "Não é só a annotation.",
+      "t": "operar"
+    },
+    {
+      "q": "Quem propõe tópico assume lag, DLT, retenção e on-call — verdade ou mito?",
+      "o": [
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Quem propõe tópico assume lag, DLT, retenção e on-call.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe."
+      ],
+      "a": 1,
+      "w": "Não é só a annotation.",
+      "t": "operar"
+    },
+    {
+      "q": "Quem propõe tópico assume lag, DLT, retenção e on-call — o que acontece de verdade?",
+      "o": [
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Quem propõe tópico assume lag, DLT, retenção e on-call."
+      ],
+      "a": 3,
+      "w": "Não é só a annotation.",
+      "t": "operar"
+    },
+    {
+      "q": "Na prática: Quem propõe tópico assume lag, DLT, retenção e on-call?",
+      "o": [
+        "Quem propõe tópico assume lag, DLT, retenção e on-call.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 0,
+      "w": "Não é só a annotation.",
+      "t": "operar"
+    },
+    {
+      "q": "Quem propõe tópico assume lag, DLT, retenção e on-call — como funciona?",
+      "o": [
+        "Quem propõe tópico assume lag, DLT, retenção e on-call.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário."
+      ],
+      "a": 0,
+      "w": "Não é só a annotation.",
+      "t": "operar"
+    },
+    {
+      "q": "Se perguntarem: Quem propõe tópico assume lag, DLT, retenção e on-call?",
+      "o": [
+        "Aumentar partições depois não quebra a cola da key.",
+        "Quem propõe tópico assume lag, DLT, retenção e on-call.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário."
+      ],
+      "a": 1,
+      "w": "Não é só a annotation.",
+      "t": "operar"
+    },
+    {
+      "q": "Quem propõe tópico assume lag, DLT, retenção e on-call — o que vale aqui?",
+      "o": [
+        "O padrão maduro é “sobe e torce”.",
+        "Quem propõe tópico assume lag, DLT, retenção e on-call.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Aumentar partições depois não quebra a cola da key."
+      ],
+      "a": 1,
+      "w": "Não é só a annotation.",
+      "t": "operar"
+    },
+    {
+      "q": "Aumentar partições depois é barato para a cola da key?",
+      "o": [
+        "Aumentar partições depois não quebra a cola da key.",
+        "O padrão maduro é “sobe e torce”.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "Decidir partições cedo: aumentar depois quebra cola da key."
+      ],
+      "a": 3,
+      "w": "Custo de reverter.",
+      "t": "N cedo"
+    },
+    {
+      "q": "Aumentar partições depois é barato para a cola da key — verdade ou mito?",
+      "o": [
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "Decidir partições cedo: aumentar depois quebra cola da key.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos."
+      ],
+      "a": 1,
+      "w": "Custo de reverter.",
+      "t": "N cedo"
+    },
+    {
+      "q": "Aumentar partições depois é barato para a cola da key — o que acontece de verdade?",
+      "o": [
+        "Aumentar partições depois não quebra a cola da key.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Decidir partições cedo: aumentar depois quebra cola da key."
+      ],
+      "a": 3,
+      "w": "Custo de reverter.",
+      "t": "N cedo"
+    },
+    {
+      "q": "Na prática: Aumentar partições depois é barato para a cola da key?",
+      "o": [
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Decidir partições cedo: aumentar depois quebra cola da key.",
+        "Aumentar partições depois não quebra a cola da key."
+      ],
+      "a": 2,
+      "w": "Custo de reverter.",
+      "t": "N cedo"
+    },
+    {
+      "q": "Aumentar partições depois é barato para a cola da key — como funciona?",
+      "o": [
+        "Decidir partições cedo: aumentar depois quebra cola da key.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Lead aprova tópico por destinatário: fica mais claro."
+      ],
+      "a": 0,
+      "w": "Custo de reverter.",
+      "t": "N cedo"
+    },
+    {
+      "q": "Se perguntarem: Aumentar partições depois é barato para a cola da key?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Decidir partições cedo: aumentar depois quebra cola da key.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "Lead aprova tópico por destinatário: fica mais claro."
+      ],
+      "a": 1,
+      "w": "Custo de reverter.",
+      "t": "N cedo"
+    },
+    {
+      "q": "Aumentar partições depois é barato para a cola da key — o que vale aqui?",
+      "o": [
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Decidir partições cedo: aumentar depois quebra cola da key.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka."
+      ],
+      "a": 1,
+      "w": "Custo de reverter.",
+      "t": "N cedo"
+    },
+    {
+      "q": "O padrão de time é narrar o esperado antes de publicar ou consumir?",
+      "o": [
+        "Narrar o esperado antes de publicar/consumir — padrão de time.",
+        "O padrão maduro é “sobe e torce”.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais."
+      ],
+      "a": 0,
+      "w": "Não “sobe e torce”.",
+      "t": "lab narrativa"
+    },
+    {
+      "q": "O padrão de time é narrar o esperado antes de publicar ou consumir — verdade ou mito?",
+      "o": [
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Narrar o esperado antes de publicar/consumir — padrão de time.",
+        "O padrão maduro é “sobe e torce”."
+      ],
+      "a": 2,
+      "w": "Não “sobe e torce”.",
+      "t": "lab narrativa"
+    },
+    {
+      "q": "O padrão de time é narrar o esperado antes de publicar ou consumir — o que acontece de verdade?",
+      "o": [
+        "Narrar o esperado antes de publicar/consumir — padrão de time.",
+        "O padrão maduro é “sobe e torce”.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe."
+      ],
+      "a": 0,
+      "w": "Não “sobe e torce”.",
+      "t": "lab narrativa"
+    },
+    {
+      "q": "Na prática: O padrão de time é narrar o esperado antes de publicar ou consumir?",
+      "o": [
+        "O padrão maduro é “sobe e torce”.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Narrar o esperado antes de publicar/consumir — padrão de time."
+      ],
+      "a": 3,
+      "w": "Não “sobe e torce”.",
+      "t": "lab narrativa"
+    },
+    {
+      "q": "O padrão de time é narrar o esperado antes de publicar ou consumir — como funciona?",
+      "o": [
+        "O padrão maduro é “sobe e torce”.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Narrar o esperado antes de publicar/consumir — padrão de time."
+      ],
+      "a": 3,
+      "w": "Não “sobe e torce”.",
+      "t": "lab narrativa"
+    },
+    {
+      "q": "Se perguntarem: O padrão de time é narrar o esperado antes de publicar ou consumir?",
+      "o": [
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Narrar o esperado antes de publicar/consumir — padrão de time.",
+        "O padrão maduro é “sobe e torce”."
+      ],
+      "a": 2,
+      "w": "Não “sobe e torce”.",
+      "t": "lab narrativa"
+    },
+    {
+      "q": "O padrão de time é narrar o esperado antes de publicar ou consumir — o que vale aqui?",
+      "o": [
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Narrar o esperado antes de publicar/consumir — padrão de time.",
+        "O padrão maduro é “sobe e torce”."
+      ],
+      "a": 2,
+      "w": "Não “sobe e torce”.",
+      "t": "lab narrativa"
+    },
+    {
+      "q": "Save+send sem outbox passa no review de checkout?",
+      "o": [
+        "save+send sem outbox não passa no review de checkout.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Propor tópico é só a annotation; operação é de outro time."
+      ],
+      "a": 0,
+      "w": "Buraco conhecido.",
+      "t": "outbox default"
+    },
+    {
+      "q": "Save+send sem outbox passa no review de checkout — verdade ou mito?",
+      "o": [
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "save+send sem outbox não passa no review de checkout.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos."
+      ],
+      "a": 2,
+      "w": "Buraco conhecido.",
+      "t": "outbox default"
+    },
+    {
+      "q": "Save+send sem outbox passa no review de checkout — o que acontece de verdade?",
+      "o": [
+        "save+send sem outbox não passa no review de checkout.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "O padrão maduro é “sobe e torce”."
+      ],
+      "a": 0,
+      "w": "Buraco conhecido.",
+      "t": "outbox default"
+    },
+    {
+      "q": "Na prática: Save+send sem outbox passa no review de checkout?",
+      "o": [
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "O padrão maduro é “sobe e torce”.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "save+send sem outbox não passa no review de checkout."
+      ],
+      "a": 3,
+      "w": "Buraco conhecido.",
+      "t": "outbox default"
+    },
+    {
+      "q": "Save+send sem outbox passa no review de checkout — como funciona?",
+      "o": [
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "save+send sem outbox não passa no review de checkout."
+      ],
+      "a": 3,
+      "w": "Buraco conhecido.",
+      "t": "outbox default"
+    },
+    {
+      "q": "Se perguntarem: Save+send sem outbox passa no review de checkout?",
+      "o": [
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "save+send sem outbox não passa no review de checkout.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos."
+      ],
+      "a": 2,
+      "w": "Buraco conhecido.",
+      "t": "outbox default"
+    },
+    {
+      "q": "Save+send sem outbox passa no review de checkout — o que vale aqui?",
+      "o": [
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "save+send sem outbox não passa no review de checkout.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos."
+      ],
+      "a": 2,
+      "w": "Buraco conhecido.",
+      "t": "outbox default"
+    },
+    {
+      "q": "At-least-once sem inbox em cobrança é detalhe de YAML?",
+      "o": [
+        "At-least-once sem inbox em cobrança é bug de desenho.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka."
+      ],
+      "a": 0,
+      "w": "Não é detalhe de YAML.",
+      "t": "inbox"
+    },
+    {
+      "q": "At-least-once sem inbox em cobrança é detalhe de YAML — verdade ou mito?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "At-least-once sem inbox em cobrança é bug de desenho.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho."
+      ],
+      "a": 2,
+      "w": "Não é detalhe de YAML.",
+      "t": "inbox"
+    },
+    {
+      "q": "At-least-once sem inbox em cobrança é detalhe de YAML — o que acontece de verdade?",
+      "o": [
+        "At-least-once sem inbox em cobrança é bug de desenho.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais."
+      ],
+      "a": 0,
+      "w": "Não é detalhe de YAML.",
+      "t": "inbox"
+    },
+    {
+      "q": "Na prática: At-least-once sem inbox em cobrança é detalhe de YAML?",
+      "o": [
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "At-least-once sem inbox em cobrança é bug de desenho."
+      ],
+      "a": 3,
+      "w": "Não é detalhe de YAML.",
+      "t": "inbox"
+    },
+    {
+      "q": "At-least-once sem inbox em cobrança é detalhe de YAML — como funciona?",
+      "o": [
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "At-least-once sem inbox em cobrança é bug de desenho.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta."
+      ],
+      "a": 1,
+      "w": "Não é detalhe de YAML.",
+      "t": "inbox"
+    },
+    {
+      "q": "Se perguntarem: At-least-once sem inbox em cobrança é detalhe de YAML?",
+      "o": [
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "At-least-once sem inbox em cobrança é bug de desenho.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho."
+      ],
+      "a": 2,
+      "w": "Não é detalhe de YAML.",
+      "t": "inbox"
+    },
+    {
+      "q": "At-least-once sem inbox em cobrança é detalhe de YAML — o que vale aqui?",
+      "o": [
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "At-least-once sem inbox em cobrança é bug de desenho.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho."
+      ],
+      "a": 2,
+      "w": "Não é detalhe de YAML.",
+      "t": "inbox"
+    },
+    {
+      "q": "“Consumer up” no dashboard substitui lag por partição?",
+      "o": [
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Lag por partição no dashboard, não só “consumer up”.",
+        "“Consumer up” basta; lag por partição é enfeite."
+      ],
+      "a": 2,
+      "w": "Hot key aparece ali.",
+      "t": "observar"
+    },
+    {
+      "q": "“Consumer up” no dashboard substitui lag por partição — verdade ou mito?",
+      "o": [
+        "Lag por partição no dashboard, não só “consumer up”.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário."
+      ],
+      "a": 0,
+      "w": "Hot key aparece ali.",
+      "t": "observar"
+    },
+    {
+      "q": "“Consumer up” no dashboard substitui lag por partição — o que acontece de verdade?",
+      "o": [
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Lag por partição no dashboard, não só “consumer up”.",
+        "“Consumer up” basta; lag por partição é enfeite."
+      ],
+      "a": 2,
+      "w": "Hot key aparece ali.",
+      "t": "observar"
+    },
+    {
+      "q": "Na prática: “Consumer up” no dashboard substitui lag por partição?",
+      "o": [
+        "Aumentar partições depois não quebra a cola da key.",
+        "Lag por partição no dashboard, não só “consumer up”.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Propor tópico é só a annotation; operação é de outro time."
+      ],
+      "a": 1,
+      "w": "Hot key aparece ali.",
+      "t": "observar"
+    },
+    {
+      "q": "“Consumer up” no dashboard substitui lag por partição — como funciona?",
+      "o": [
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "O padrão maduro é “sobe e torce”.",
+        "Lag por partição no dashboard, não só “consumer up”."
+      ],
+      "a": 3,
+      "w": "Hot key aparece ali.",
+      "t": "observar"
+    },
+    {
+      "q": "Se perguntarem: “Consumer up” no dashboard substitui lag por partição?",
+      "o": [
+        "Lag por partição no dashboard, não só “consumer up”.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "O padrão maduro é “sobe e torce”.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos."
+      ],
+      "a": 0,
+      "w": "Hot key aparece ali.",
+      "t": "observar"
+    },
+    {
+      "q": "“Consumer up” no dashboard substitui lag por partição — o que vale aqui?",
+      "o": [
+        "Lag por partição no dashboard, não só “consumer up”.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho."
+      ],
+      "a": 0,
+      "w": "Hot key aparece ali.",
+      "t": "observar"
+    },
+    {
+      "q": "Cada PR pode inventar campo no schema do tópico?",
+      "o": [
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Dono do schema é o time do tópico, com compatibilidade explícita.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho."
+      ],
+      "a": 1,
+      "w": "Não cada PR inventa campo.",
+      "t": "schema dono"
+    },
+    {
+      "q": "Cada PR pode inventar campo no schema do tópico — verdade ou mito?",
+      "o": [
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Dono do schema é o time do tópico, com compatibilidade explícita."
+      ],
+      "a": 3,
+      "w": "Não cada PR inventa campo.",
+      "t": "schema dono"
+    },
+    {
+      "q": "Cada PR pode inventar campo no schema do tópico — o que acontece de verdade?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Dono do schema é o time do tópico, com compatibilidade explícita.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Lead aprova tópico por destinatário: fica mais claro."
+      ],
+      "a": 1,
+      "w": "Não cada PR inventa campo.",
+      "t": "schema dono"
+    },
+    {
+      "q": "Na prática: Cada PR pode inventar campo no schema do tópico?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Dono do schema é o time do tópico, com compatibilidade explícita.",
+        "Cada PR inventa campo; dono do schema é opcional."
+      ],
+      "a": 2,
+      "w": "Não cada PR inventa campo.",
+      "t": "schema dono"
+    },
+    {
+      "q": "Cada PR pode inventar campo no schema do tópico — como funciona?",
+      "o": [
+        "Dono do schema é o time do tópico, com compatibilidade explícita.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais."
+      ],
+      "a": 0,
+      "w": "Não cada PR inventa campo.",
+      "t": "schema dono"
+    },
+    {
+      "q": "Se perguntarem: Cada PR pode inventar campo no schema do tópico?",
+      "o": [
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Dono do schema é o time do tópico, com compatibilidade explícita."
+      ],
+      "a": 3,
+      "w": "Não cada PR inventa campo.",
+      "t": "schema dono"
+    },
+    {
+      "q": "Cada PR pode inventar campo no schema do tópico — o que vale aqui?",
+      "o": [
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "Dono do schema é o time do tópico, com compatibilidade explícita."
+      ],
+      "a": 3,
+      "w": "Não cada PR inventa campo.",
+      "t": "schema dono"
+    },
+    {
+      "q": "Tópico por destinatário (fila-do-joão) é o que o Lead quer?",
+      "o": [
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Tópico por destinatário é acoplamento. Tópico por fato.",
+        "Lead aprova tópico por destinatário: fica mais claro."
+      ],
+      "a": 2,
+      "w": "Lead recusa fila-do-joão.",
+      "t": "menos tópicos"
+    },
+    {
+      "q": "Tópico por destinatário (fila-do-joão) é o que o Lead quer — verdade ou mito?",
+      "o": [
+        "Tópico por destinatário é acoplamento. Tópico por fato.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer."
+      ],
+      "a": 0,
+      "w": "Lead recusa fila-do-joão.",
+      "t": "menos tópicos"
+    },
+    {
+      "q": "Tópico por destinatário (fila-do-joão) é o que o Lead quer — o que acontece de verdade?",
+      "o": [
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Tópico por destinatário é acoplamento. Tópico por fato.",
+        "Lead aprova tópico por destinatário: fica mais claro."
+      ],
+      "a": 2,
+      "w": "Lead recusa fila-do-joão.",
+      "t": "menos tópicos"
+    },
+    {
+      "q": "Na prática: Tópico por destinatário (fila-do-joão) é o que o Lead quer?",
+      "o": [
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Tópico por destinatário é acoplamento. Tópico por fato."
+      ],
+      "a": 3,
+      "w": "Lead recusa fila-do-joão.",
+      "t": "menos tópicos"
+    },
+    {
+      "q": "Tópico por destinatário (fila-do-joão) é o que o Lead quer — como funciona?",
+      "o": [
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Tópico por destinatário é acoplamento. Tópico por fato."
+      ],
+      "a": 3,
+      "w": "Lead recusa fila-do-joão.",
+      "t": "menos tópicos"
+    },
+    {
+      "q": "Se perguntarem: Tópico por destinatário (fila-do-joão) é o que o Lead quer?",
+      "o": [
+        "Tópico por destinatário é acoplamento. Tópico por fato.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Aumentar partições depois não quebra a cola da key."
+      ],
+      "a": 0,
+      "w": "Lead recusa fila-do-joão.",
+      "t": "menos tópicos"
+    },
+    {
+      "q": "Tópico por destinatário (fila-do-joão) é o que o Lead quer — o que vale aqui?",
+      "o": [
+        "Tópico por destinatário é acoplamento. Tópico por fato.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "O padrão maduro é “sobe e torce”."
+      ],
+      "a": 0,
+      "w": "Lead recusa fila-do-joão.",
+      "t": "menos tópicos"
+    },
+    {
+      "q": "Lead recita exactly-once na API de pagamento?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "O padrão maduro é “sobe e torce”.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "Cortar hype de exactly-once na API de pagamento."
+      ],
+      "a": 3,
+      "w": "Bolha Kafka ≠ cartão.",
+      "t": "EOS hype"
+    },
+    {
+      "q": "Lead recita exactly-once na API de pagamento — verdade ou mito?",
+      "o": [
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "Cortar hype de exactly-once na API de pagamento.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos."
+      ],
+      "a": 1,
+      "w": "Bolha Kafka ≠ cartão.",
+      "t": "EOS hype"
+    },
+    {
+      "q": "Lead recita exactly-once na API de pagamento — o que acontece de verdade?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Cortar hype de exactly-once na API de pagamento."
+      ],
+      "a": 3,
+      "w": "Bolha Kafka ≠ cartão.",
+      "t": "EOS hype"
+    },
+    {
+      "q": "Na prática: Lead recita exactly-once na API de pagamento?",
+      "o": [
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Cortar hype de exactly-once na API de pagamento.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka."
+      ],
+      "a": 2,
+      "w": "Bolha Kafka ≠ cartão.",
+      "t": "EOS hype"
+    },
+    {
+      "q": "Lead recita exactly-once na API de pagamento — como funciona?",
+      "o": [
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Cortar hype de exactly-once na API de pagamento.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka."
+      ],
+      "a": 2,
+      "w": "Bolha Kafka ≠ cartão.",
+      "t": "EOS hype"
+    },
+    {
+      "q": "Se perguntarem: Lead recita exactly-once na API de pagamento?",
+      "o": [
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Cortar hype de exactly-once na API de pagamento.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Lead aprova tópico por destinatário: fica mais claro."
+      ],
+      "a": 1,
+      "w": "Bolha Kafka ≠ cartão.",
+      "t": "EOS hype"
+    },
+    {
+      "q": "Lead recita exactly-once na API de pagamento — o que vale aqui?",
+      "o": [
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "Cortar hype de exactly-once na API de pagamento.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa."
+      ],
+      "a": 1,
+      "w": "Bolha Kafka ≠ cartão.",
+      "t": "EOS hype"
+    },
+    {
+      "q": "Time sem capacidade de operar cluster ganha Kafka “porque escala”?",
+      "o": [
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Time sem capacidade de operar cluster não ganha Kafka “porque escala”.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais."
+      ],
+      "a": 1,
+      "w": "Às vezes fila simples.",
+      "t": "capacidade"
+    },
+    {
+      "q": "Time sem capacidade de operar cluster ganha Kafka “porque escala” — verdade ou mito?",
+      "o": [
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "Time sem capacidade de operar cluster não ganha Kafka “porque escala”."
+      ],
+      "a": 3,
+      "w": "Às vezes fila simples.",
+      "t": "capacidade"
+    },
+    {
+      "q": "Time sem capacidade de operar cluster ganha Kafka “porque escala” — o que acontece de verdade?",
+      "o": [
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Time sem capacidade de operar cluster não ganha Kafka “porque escala”.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe."
+      ],
+      "a": 1,
+      "w": "Às vezes fila simples.",
+      "t": "capacidade"
+    },
+    {
+      "q": "Na prática: Time sem capacidade de operar cluster ganha Kafka “porque escala”?",
+      "o": [
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Time sem capacidade de operar cluster não ganha Kafka “porque escala”.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa."
+      ],
+      "a": 2,
+      "w": "Às vezes fila simples.",
+      "t": "capacidade"
+    },
+    {
+      "q": "Time sem capacidade de operar cluster ganha Kafka “porque escala” — como funciona?",
+      "o": [
+        "Time sem capacidade de operar cluster não ganha Kafka “porque escala”.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 0,
+      "w": "Às vezes fila simples.",
+      "t": "capacidade"
+    },
+    {
+      "q": "Se perguntarem: Time sem capacidade de operar cluster ganha Kafka “porque escala”?",
+      "o": [
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Time sem capacidade de operar cluster não ganha Kafka “porque escala”."
+      ],
+      "a": 3,
+      "w": "Às vezes fila simples.",
+      "t": "capacidade"
+    },
+    {
+      "q": "Time sem capacidade de operar cluster ganha Kafka “porque escala” — o que vale aqui?",
+      "o": [
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Time sem capacidade de operar cluster não ganha Kafka “porque escala”."
+      ],
+      "a": 3,
+      "w": "Às vezes fila simples.",
+      "t": "capacidade"
+    },
+    {
+      "q": "Consumer burro + app é o default, ou Streams?",
+      "o": [
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "Consumer burro + app é o default. Streams quando o trabalho é o log."
+      ],
+      "a": 3,
+      "w": "Não prestigiar ferramenta.",
+      "t": "Streams"
+    },
+    {
+      "q": "Consumer burro + app é o default, ou Streams — verdade ou mito?",
+      "o": [
+        "O padrão maduro é “sobe e torce”.",
+        "Consumer burro + app é o default. Streams quando o trabalho é o log.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "Aumentar partições depois não quebra a cola da key."
+      ],
+      "a": 1,
+      "w": "Não prestigiar ferramenta.",
+      "t": "Streams"
+    },
+    {
+      "q": "Consumer burro + app é o default, ou Streams — o que acontece de verdade?",
+      "o": [
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "O padrão maduro é “sobe e torce”.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "Consumer burro + app é o default. Streams quando o trabalho é o log."
+      ],
+      "a": 3,
+      "w": "Não prestigiar ferramenta.",
+      "t": "Streams"
+    },
+    {
+      "q": "Na prática: Consumer burro + app é o default, ou Streams?",
+      "o": [
+        "Consumer burro + app é o default. Streams quando o trabalho é o log.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho."
+      ],
+      "a": 0,
+      "w": "Não prestigiar ferramenta.",
+      "t": "Streams"
+    },
+    {
+      "q": "Consumer burro + app é o default, ou Streams — como funciona?",
+      "o": [
+        "Consumer burro + app é o default. Streams quando o trabalho é o log.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "“Consumer up” basta; lag por partição é enfeite."
+      ],
+      "a": 0,
+      "w": "Não prestigiar ferramenta.",
+      "t": "Streams"
+    },
+    {
+      "q": "Se perguntarem: Consumer burro + app é o default, ou Streams?",
+      "o": [
+        "Cada PR inventa campo; dono do schema é opcional.",
+        "Consumer burro + app é o default. Streams quando o trabalho é o log.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "“Consumer up” basta; lag por partição é enfeite."
+      ],
+      "a": 1,
+      "w": "Não prestigiar ferramenta.",
+      "t": "Streams"
+    },
+    {
+      "q": "Consumer burro + app é o default, ou Streams — o que vale aqui?",
+      "o": [
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Consumer burro + app é o default. Streams quando o trabalho é o log.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "Cada PR inventa campo; dono do schema é opcional."
+      ],
+      "a": 1,
+      "w": "Não prestigiar ferramenta.",
+      "t": "Streams"
+    },
+    {
+      "q": "RF=1 em produção é default ou decisão consciente de perda?",
+      "o": [
+        "RF=1 em produção é decisão consciente de perda, não default.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Lead aprova tópico por destinatário: fica mais claro.",
+        "Lead vende exactly-once na API de pagamento porque tem Kafka."
+      ],
+      "a": 0,
+      "w": "Cluster de um broker ≠ produção.",
+      "t": "RF"
+    },
+    {
+      "q": "RF=1 em produção é default ou decisão consciente de perda — verdade ou mito?",
+      "o": [
+        "Lead vende exactly-once na API de pagamento porque tem Kafka.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "RF=1 em produção é decisão consciente de perda, não default.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta."
+      ],
+      "a": 2,
+      "w": "Cluster de um broker ≠ produção.",
+      "t": "RF"
+    },
+    {
+      "q": "RF=1 em produção é default ou decisão consciente de perda — o que acontece de verdade?",
+      "o": [
+        "RF=1 em produção é decisão consciente de perda, não default.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Sem capacidade de operar, Kafka “porque escala” ainda é a escolha certa.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais."
+      ],
+      "a": 0,
+      "w": "Cluster de um broker ≠ produção.",
+      "t": "RF"
+    },
+    {
+      "q": "Na prática: RF=1 em produção é default ou decisão consciente de perda?",
+      "o": [
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Streams é o default; consumer + app é prestigiar ferramenta demais.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "RF=1 em produção é decisão consciente de perda, não default."
+      ],
+      "a": 3,
+      "w": "Cluster de um broker ≠ produção.",
+      "t": "RF"
+    },
+    {
+      "q": "RF=1 em produção é default ou decisão consciente de perda — como funciona?",
+      "o": [
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "RF=1 em produção é decisão consciente de perda, não default.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe."
+      ],
+      "a": 1,
+      "w": "Cluster de um broker ≠ produção.",
+      "t": "RF"
+    },
+    {
+      "q": "Se perguntarem: RF=1 em produção é default ou decisão consciente de perda?",
+      "o": [
+        "O contrato é o nome do microsserviço no Kubernetes.",
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "RF=1 em produção é decisão consciente de perda, não default.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta."
+      ],
+      "a": 2,
+      "w": "Cluster de um broker ≠ produção.",
+      "t": "RF"
+    },
+    {
+      "q": "RF=1 em produção é default ou decisão consciente de perda — o que vale aqui?",
+      "o": [
+        "Se o serviço for reescrito em outra linguagem, o tópico deixa de valer.",
+        "Schema e key são detalhes; o que importa é o repo certo.",
+        "RF=1 em produção é decisão consciente de perda, não default.",
+        "RF=1 em produção é o default; um broker sozinho prova que basta."
+      ],
+      "a": 2,
+      "w": "Cluster de um broker ≠ produção.",
+      "t": "RF"
+    },
+    {
+      "q": "Lead explica o log com o pedido 99 ou com slide de buzzword?",
+      "o": [
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Lead explica o log para o júnior com o pedido 99, não com slide de buzzword.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "Schema e key são detalhes; o que importa é o repo certo."
+      ],
+      "a": 1,
+      "w": "Modelo primeiro.",
+      "t": "ensinar"
+    },
+    {
+      "q": "Lead explica o log com o pedido 99 ou com slide de buzzword — verdade ou mito?",
+      "o": [
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "Lead aprova Kafka para “qual o frete agora?” na cara do usuário.",
+        "Propor tópico é só a annotation; operação é de outro time.",
+        "Lead explica o log para o júnior com o pedido 99, não com slide de buzzword."
+      ],
+      "a": 3,
+      "w": "Modelo primeiro.",
+      "t": "ensinar"
+    },
+    {
+      "q": "Lead explica o log com o pedido 99 ou com slide de buzzword — o que acontece de verdade?",
+      "o": [
+        "Aumentar partições depois não quebra a cola da key.",
+        "Lead explica o log para o júnior com o pedido 99, não com slide de buzzword.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "Propor tópico é só a annotation; operação é de outro time."
+      ],
+      "a": 1,
+      "w": "Modelo primeiro.",
+      "t": "ensinar"
+    },
+    {
+      "q": "Na prática: Lead explica o log com o pedido 99 ou com slide de buzzword?",
+      "o": [
+        "Lead explica o log para o júnior com o pedido 99, não com slide de buzzword.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "Aumentar partições depois não quebra a cola da key.",
+        "O padrão maduro é “sobe e torce”."
+      ],
+      "a": 0,
+      "w": "Modelo primeiro.",
+      "t": "ensinar"
+    },
+    {
+      "q": "Lead explica o log com o pedido 99 ou com slide de buzzword — como funciona?",
+      "o": [
+        "O padrão maduro é “sobe e torce”.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "Lead explica o log para o júnior com o pedido 99, não com slide de buzzword.",
+        "Lead começa pelo slide de buzzword; o 99 é detalhe."
+      ],
+      "a": 2,
+      "w": "Modelo primeiro.",
+      "t": "ensinar"
+    },
+    {
+      "q": "Se perguntarem: Lead explica o log com o pedido 99 ou com slide de buzzword?",
+      "o": [
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "save+send sem outbox passa no review: os dois commits nascem juntos.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "Lead explica o log para o júnior com o pedido 99, não com slide de buzzword."
+      ],
+      "a": 3,
+      "w": "Modelo primeiro.",
+      "t": "ensinar"
+    },
+    {
+      "q": "Lead explica o log com o pedido 99 ou com slide de buzzword — o que vale aqui?",
+      "o": [
+        "Lead começa pelo slide de buzzword; o 99 é detalhe.",
+        "At-least-once sem inbox em cobrança é detalhe de YAML, não de desenho.",
+        "“Consumer up” basta; lag por partição é enfeite.",
+        "Lead explica o log para o júnior com o pedido 99, não com slide de buzzword."
+      ],
+      "a": 3,
+      "w": "Modelo primeiro.",
+      "t": "ensinar"
     }
   ]
 }

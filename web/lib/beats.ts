@@ -62,13 +62,20 @@ export type RecapBeat = BeatBase & {
   bullets: string[];
 };
 
+export type SecaoBeat = BeatBase & {
+  kind: "secao";
+  title: string;
+  subtitle?: string;
+};
+
 export type Beat =
   | CenaBeat
   | EscolhaBeat
   | TradeoffBeat
   | ExplicarBeat
   | WidgetBeat
-  | RecapBeat;
+  | RecapBeat
+  | SecaoBeat;
 
 export type LessonDoc = {
   beats: Beat[];
@@ -81,6 +88,7 @@ const KINDS = new Set([
   "explicar",
   "widget",
   "recap",
+  "secao",
 ]);
 
 const WIDGETS = new Set<WidgetName>([
@@ -124,6 +132,9 @@ export function parseLessonDoc(raw: unknown, slug: string): LessonDoc {
     }
     if (b.kind === "recap" && !b.bullets?.length) {
       fail(slug, `${b.id} recap vazio`);
+    }
+    if (b.kind === "secao" && !b.title) {
+      fail(slug, `${b.id} secao sem title`);
     }
   }
   return { beats: beats as Beat[] };

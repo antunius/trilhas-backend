@@ -36,137 +36,53 @@ function lessonsFrom(
 
 const kafkaDefs: LessonDef[] = [
   {
-    slug: "modelo-mental",
-    nav: "Modelo mental",
-    title: "O caderno infinito",
+    slug: "fundamentos",
+    nav: "Fundamentos",
+    title: "Kafka: do problema ao modelo",
     description:
-      "Kafka não é fila. Fila vs log, o caderno compartilhado e por que a leitura não apaga a linha.",
+      "O que é fila, o que é log, a analogia do caderno, eventos e por que a leitura não apaga a linha.",
   },
   {
-    slug: "evento",
-    nav: "Evento",
-    title: "Evento",
+    slug: "anatomia",
+    nav: "Anatomia",
+    title: "Anatomia do log",
     description:
-      "Fato do passado, imutável. Key, value, offset e por que PedidoUpdated genérico não é contrato.",
+      "Tópico, partição, offset e key — como o log é organizado por dentro, do nome até a linha.",
   },
   {
-    slug: "topico",
-    nav: "Tópico",
-    title: "Tópico",
+    slug: "cluster",
+    nav: "Cluster",
+    title: "O cluster",
     description:
-      "Nome no cluster que aponta para logs. Contrato pelo fato (pedidos.criados), não pelo destinatário.",
+      "Broker, réplica, ISR, acks, zero-copy, produtor, consumidor e consumer group.",
   },
   {
-    slug: "particao",
-    nav: "Partição",
-    title: "Partição",
+    slug: "dinamica",
+    nav: "Dinâmica",
+    title: "Ciclo de vida",
     description:
-      "Log independente, ordem local e o teto de consumidores. Criar, descrever e o que acontece ao aumentar N.",
-  },
-  {
-    slug: "offset",
-    nav: "Offset",
-    title: "Offset",
-    description:
-      "Offset na partição. Committed offset do grupo em __consumer_offsets, não na mensagem.",
-  },
-  {
-    slug: "key",
-    nav: "Key",
-    title: "Key",
-    description:
-      "Quem escolhe a partição. Mesma key, mesma partição — até você aumentar o número de partições.",
-  },
-  {
-    slug: "broker",
-    nav: "Broker",
-    title: "Broker, cluster e controller",
-    description:
-      "Processo que guarda partições. Você fala com o líder, não com “o Kafka”. KRaft no lab.",
-  },
-  {
-    slug: "isr",
-    nav: "ISR",
-    title: "Líder, réplica e ISR",
-    description:
-      "Quem está em dia com a ata. acks=all espera o ISR; não cobra o cartão por você.",
-  },
-  {
-    slug: "produtor",
-    nav: "Produtor",
-    title: "Produtor",
-    description:
-      "Serializa, escolhe partição, espera ACK. “Mandei” no log da app não é ISR confirmado.",
-  },
-  {
-    slug: "consumidor",
-    nav: "Consumidor",
-    title: "Consumidor e consumer group",
-    description:
-      "O group.id. Mesmo grupo divide partições; outro grupo relê o tópico.",
-  },
-  {
-    slug: "rebalance",
-    nav: "Rebalance",
-    title: "Rebalance",
-    description:
-      "O grupo para, redistribui partições e só então volta. max.poll.interval e o loop de morte.",
-  },
-  {
-    slug: "retencao",
-    nav: "Retenção",
-    title: "Segmento, retenção e compaction",
-    description:
-      "O log não é eterno. Segmentos velhos vão embora — ou fica o último valor de cada key.",
+      "Rebalance, retenção, segmentos, compaction e event sourcing — o log não é eterno.",
   },
   {
     slug: "garantias",
     nav: "Garantias",
-    title: "Garantias de entrega",
+    title: "Garantias e padrões",
     description:
-      "At-least-once, idempotência e commit. acks=all não impede cobrança duplicada.",
+      "At-least-once, inbox, Schema Registry e outbox — entrega, contrato e dual write.",
   },
   {
-    slug: "operacao",
-    nav: "Operação",
-    title: "Operação",
+    slug: "pratica",
+    nav: "Na prática",
+    title: "Na prática",
     description:
-      "Lag, partição quente, DLT e o que de fato importa nas configs de produtor e consumidor.",
-  },
-  {
-    slug: "schema",
-    nav: "Schema Registry",
-    title: "Schema Registry",
-    description:
-      "Schema Registry. BACKWARD, campo opcional vs rename, e a evolução que o Registry recusa.",
-  },
-  {
-    slug: "outbox",
-    nav: "Outbox",
-    title: "Outbox e inbox",
-    description:
-      "Banco e broker não compartilham transação. Tabela outbox na mesma transação, poller depois.",
-  },
-  {
-    slug: "spring",
-    nav: "Spring Kafka",
-    title: "Spring Kafka e laboratório",
-    description:
-      "KafkaTemplate, listener, concurrency e nove laboratórios para ver o modelo no log.",
+      "Spring Kafka, nove laboratórios, lag, DLT e o runbook de plantão.",
   },
   {
     slug: "sintese",
     nav: "Síntese",
-    title: "Síntese",
+    title: "Síntese e liderança",
     description:
-      "Ensaio de entrevista: glossário cego, o fluxo do pedido 99 e o simulador de 50 questões.",
-  },
-  {
-    slug: "tech-lead",
-    nav: "Tech Lead",
-    title: "Virar a referência",
-    description:
-      "Contrato do tópico, operação e saber dizer não. O que muda no objetivo de Lead.",
+      "O fluxo do pedido 99, checklist do arquiteto e decisões de Tech Lead.",
   },
 ];
 
@@ -336,9 +252,9 @@ export const arquiteturaNav: NavItem[] = [
 export const kafkaHome: LessonMeta = {
   slug: "index",
   path: "/kafka",
-  title: "Apache Kafka, em páginas curtas",
+  title: "Apache Kafka, em capítulos densos",
   description:
-    "Trilha por tema rumo a Tech Lead backend: caderno infinito, garantias, outbox e simulador de entrevista.",
+    "Trilha em sete capítulos rumo a Tech Lead backend: log distribuído, garantias, outbox e simulador de entrevista.",
   eyebrow: "Trilha 4 · rumo a Tech Lead backend",
   ogType: "website",
 };
@@ -425,10 +341,10 @@ export const sidebarTracks: SidebarTrack[] = [
     label: "Kafka",
     nav: kafkaNav,
     groups: [
-      { label: "Começo", items: kafkaNav.slice(0, 2) },
-      { label: "Conceitos", items: kafkaNav.slice(2, 13) },
-      { label: "Prática", items: kafkaNav.slice(13, 18) },
-      { label: "Fechamento", items: kafkaNav.slice(18) },
+      { label: "Fundação", items: kafkaNav.slice(0, 2) },
+      { label: "Conceitos", items: kafkaNav.slice(2, 5) },
+      { label: "Prática", items: kafkaNav.slice(5, 7) },
+      { label: "Fechamento", items: kafkaNav.slice(7) },
     ],
   },
   {

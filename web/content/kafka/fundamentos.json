@@ -1,0 +1,218 @@
+{
+  "beats": [
+    {
+      "id": "s-problema",
+      "kind": "secao",
+      "title": "O problema",
+      "subtitle": "Dois sistemas, o mesmo fato, um não recebeu"
+    },
+    {
+      "id": "cena-pedido-99",
+      "kind": "cena",
+      "kicker": "Checkout · 19h",
+      "title": "O cliente viu pago. O faturamento não cobrou.",
+      "body": "<p>O pedido 99 existe no Postgres. O cliente viu &ldquo;pago&rdquo; na tela. O time de faturamento jura que nunca recebeu o recado.</p><p>O checkout fazia <code>salvar(); http.post(\"/faturar\")</code>. Analytics fazia outro POST. Às 19h o faturamento estava lento. O POST do cliente estourou. Alguém &ldquo;resolveu&rdquo; com uma fila. A fila entregou o recado uma vez — analytics chegou depois e a mensagem já tinha sumido.</p><p>Dois sistemas precisavam do <strong>mesmo fato</strong>. Só um recebeu.</p>"
+    },
+    {
+      "id": "s-fila",
+      "kind": "secao",
+      "title": "O que é uma fila de mensagens",
+      "subtitle": "Entrega e some"
+    },
+    {
+      "id": "fila-definicao",
+      "kind": "explicar",
+      "kicker": "Definição",
+      "title": "Fila de mensagens",
+      "html": "<p><strong>Fila de mensagens</strong> é um intermediário entre quem envia e quem processa. O produtor publica uma mensagem. O broker guarda até um consumidor pegar. Quando alguém lê, a mensagem <strong>some</strong> — a fila entregou, acabou.</p><p>Pense assim: imagine uma padaria na hora do almoço. Você pega uma senha. Quando sua vez chega, a senha vai pro lixo. A próxima pessoa pega outra senha. Uma senha, um atendimento.</p><p>RabbitMQ, Amazon SQS e ActiveMQ são filas clássicas. O padrão é o mesmo: entregar uma vez e apagar.</p><figure class=\"viz\"><img src=\"/diagrams/fila-vs-log.svg\" alt=\"Fila vs log: na fila a mensagem some após a leitura; no log permanece\" width=\"920\" height=\"420\"></figure>"
+    },
+    {
+      "id": "fila-fluxo",
+      "kind": "explicar",
+      "title": "Producer → broker → consumer",
+      "html": "<p>O fluxo básico: o <strong>producer</strong> publica no <strong>broker</strong>. O <strong>consumer</strong> consome. Depois da leitura, a mensagem desaparece da fila.</p><p>Isso funciona bem quando <strong>um worker</strong> basta: enviar e-mail, redimensionar imagem, processar um job. Um consumidor pega, executa, pronto.</p><p>O problema aparece quando <strong>dois times</strong> precisam do mesmo dado — mas isso vem na próxima seção.</p>"
+    },
+    {
+      "id": "s-limite-fila",
+      "kind": "secao",
+      "title": "O limite da fila",
+      "subtitle": "Quem chega primeiro leva"
+    },
+    {
+      "id": "fila-limite",
+      "kind": "explicar",
+      "title": "Dois times, uma mensagem",
+      "html": "<p>Volte ao pedido 99. Faturamento precisa cobrar o cartão. Analytics precisa contar a conversão. Os dois precisam saber que o pedido foi pago.</p><p>Numa fila clássica, a mensagem existe <strong>uma vez</strong>. Quem consome primeiro leva. O segundo time chega tarde — a fila está vazia. Não há como &ldquo;reler&rdquo; a semana passada: a mensagem já sumiu.</p><p>Pense assim: a senha da padaria. Só uma pessoa é chamada. Se o faturamento pegou a senha, analytics ficou na fila olhando o balcão vazio.</p>"
+    },
+    {
+      "id": "escolha-canal",
+      "kind": "escolha",
+      "kicker": "Pedido 99 · agora",
+      "prompt": "Como o checkout avisa faturamento E analytics do mesmo PedidoPago — sem um atrasar o clique do cliente, e sem apagar a linha do outro?",
+      "options": [
+        {
+          "id": "dois-http",
+          "label": "Dois POSTs síncronos: faturar e registrar no analytics",
+          "verdict": "ruim",
+          "why": "O clique do cliente espera os dois. Se analytics cair, o pagamento &ldquo;falha&rdquo;. Você acoplou a disponibilidade de três sistemas num POST."
+        },
+        {
+          "id": "fila",
+          "label": "Uma fila clássica. Quem chegar primeiro pega o recado.",
+          "verdict": "meio",
+          "why": "Resolve o &ldquo;depois&rdquo;. Não resolve dois times. Na fila clássica a mensagem some quando alguém lê. Analytics atrasado não relê a semana."
+        },
+        {
+          "id": "log",
+          "label": "Um log: os dois leem o mesmo fato, cada um com o próprio committed offset",
+          "verdict": "bom",
+          "why": "Isso é o Kafka. A leitura não apaga a mensagem. Faturamento no offset 80, analytics no 12 — os dois estão certos."
+        }
+      ]
+    },
+    {
+      "id": "s-log",
+      "kind": "secao",
+      "title": "O que é um log distribuído",
+      "subtitle": "Anexa e permanece"
+    },
+    {
+      "id": "log-caderno",
+      "kind": "explicar",
+      "kicker": "Definição",
+      "title": "Log distribuído",
+      "html": "<p><strong>Log distribuído</strong> é uma sequência <strong>append-only</strong> e <strong>imutável</strong> de registros. Novas mensagens entram no final. Ninguém edita o passado. A leitura <strong>não apaga</strong> a linha.</p><p>Imagine um caderno compartilhado — vamos usar essa analogia ao longo do curso. Cada página recebe uma linha numerada. Faturamento sublinha até a linha 80. Analytics sublinha até a 12. A linha 45 continua lá para quem quiser reler.</p><p>Esse <strong>committed offset</strong> — até onde cada leitor avançou — fica com o consumidor, não com o broker. A mensagem permanece no log.</p>"
+    },
+    {
+      "id": "s-kafka",
+      "kind": "secao",
+      "title": "Kafka é um log distribuído",
+      "subtitle": "Não é fila"
+    },
+    {
+      "id": "kafka-intro",
+      "kind": "explicar",
+      "title": "Apache Kafka",
+      "html": "<p><strong>Apache Kafka</strong> nasceu no LinkedIn em 2011 como um <strong>distributed commit log</strong>. Hoje é a implementação de referência do modelo log distribuído.</p><p>O fluxo: o <strong>producer</strong> publica num <strong>tópico</strong>. O broker grava numa <strong>partição</strong> com um <strong>offset</strong> sequencial. Cada <strong>consumer</strong> avança o próprio offset. A leitura não remove a linha.</p><p>Dois <code>group.id</code> no mesmo tópico leem independentemente. Faturamento e analytics no mesmo fato — sem brigar pela senha.</p><figure class=\"viz\"><img src=\"/diagrams/fila-vs-log.svg\" alt=\"Fila vs log: na fila a mensagem some após a leitura; no log permanece\" width=\"920\" height=\"420\"></figure>"
+    },
+    {
+      "id": "widget-caderno",
+      "kind": "widget",
+      "kicker": "O modelo",
+      "title": "O caderno interativo",
+      "widget": "caderno",
+      "body": "<p>Este widget é o modelo mental do Kafka. Cada linha é uma mensagem com offset. A key escolhe a partição. Dois leitores avançam marcas independentes. A mensagem continua depois de lida.</p>"
+    },
+    {
+      "id": "s-evento",
+      "kind": "secao",
+      "title": "Evento: fato do passado",
+      "subtitle": "Anunciar, não pedir"
+    },
+    {
+      "id": "evento-vs-comando",
+      "kind": "explicar",
+      "title": "Evento vs comando",
+      "html": "<p><strong>Evento</strong> é um fato que <em>já aconteceu</em>. O produtor anuncia; quem quiser reage. <strong>Comando</strong> pede o futuro e crava o destinatário.</p><ul class=\"tight\"><li><code>PedidoCriado</code> — fato. &ldquo;O pedido 99 existe, total 8000 centavos.&rdquo; Faturamento e analytics se inscrevem.</li><li><code>CobreEsteCartao</code> — comando. &ldquo;Faturamento, faça X.&rdquo; O checkout conhece o destinatário e acopla disponibilidade.</li></ul><p>No log, publique o passado. Comando no tópico devolve o HTTP disfarçado.</p>"
+    },
+    {
+      "id": "envelope",
+      "kind": "explicar",
+      "title": "O envelope Kafka",
+      "html": "<p>O broker guarda bytes. Quem interpreta o JSON é o consumidor — com schema, não com fé.</p><table><thead><tr><th>Campo</th><th>Papel</th></tr></thead><tbody><tr><td><code>key</code></td><td>Escolhe a partição. Mesma key → mesma partição → ordem daquela entidade.</td></tr><tr><td><code>value</code></td><td>O que aconteceu. JSON, Avro, Protobuf.</td></tr><tr><td><code>timestamp</code></td><td>Quando o fato foi registrado. Não escolhe partição.</td></tr><tr><td><code>headers</code></td><td>Tipo, correlação, tracing. Não é a key.</td></tr><tr><td><code>offset</code></td><td>Número da linha <em>naquela</em> partição. O líder carimba. Quem escreve não escolhe.</td></tr><tr><td><code>partition</code></td><td>Em qual partição a linha caiu.</td></tr></tbody></table><pre class=\"code\">public record PedidoCriado(\n    String eventId,\n    String pedidoId,\n    int totalCentavos,\n    String cupom) {}  // cupom opcional</pre><p><code>PedidoCriado.java</code>. O <code>eventId</code> estável é o que a inbox usa para não cobrar duas vezes.</p><figure class=\"viz\"><img src=\"/diagrams/envelope-kafka.svg\" alt=\"Envelope Kafka: key, value, offset, headers, partition\" width=\"920\" height=\"280\"></figure>"
+    },
+    {
+      "id": "fato-ou-ordem",
+      "kind": "escolha",
+      "kicker": "Pedido 99 · agora",
+      "prompt": "O checkout acabou de gravar o pedido 99. Como o resto da empresa fica sabendo — sem virar um HTTP disfarçado?",
+      "options": [
+        {
+          "id": "pedido-criado",
+          "label": "Publica PedidoCriado: o que já aconteceu, sem nomear o faturamento",
+          "verdict": "bom",
+          "why": "Fato do passado. Faturamento e analytics se inscrevem. O checkout não conhece ninguém."
+        },
+        {
+          "id": "cobre-cartao",
+          "label": "Publica CobreEsteCartao no tópico do faturamento",
+          "verdict": "ruim",
+          "why": "Isso é comando. Você pediu o futuro e cravou o destinatário no nome. Caiu o faturamento, o checkout ainda está acoplado."
+        },
+        {
+          "id": "updated",
+          "label": "Publica PedidoUpdated. Quem ler adivinha o que mudou",
+          "verdict": "ruim",
+          "why": "O consumidor vira detetive. Nomeie o fato: PedidoCriado, PedidoCancelado. Não um blob genérico."
+        }
+      ]
+    },
+    {
+      "id": "notificacao",
+      "kind": "escolha",
+      "prompt": "O value do PedidoCriado leva o quê — para o faturamento não ligar de volta no checkout?",
+      "options": [
+        {
+          "id": "so-id",
+          "label": "Só pedidoId. Quem ler faz GET /pedidos/99",
+          "verdict": "meio",
+          "why": "Notificação. Barato de publicar. No pico o checkout vira API dos consumidores. O fato não se basta."
+        },
+        {
+          "id": "estado",
+          "label": "Estado suficiente: pedidoId, totalCentavos, cupom, eventId",
+          "verdict": "bom",
+          "why": "State transfer. Faturamento cobra com o que está no envelope. Analytics também. Ninguém depende do checkout estar no ar."
+        },
+        {
+          "id": "entidade",
+          "label": "A linha inteira do Postgres, inclusive campos internos",
+          "verdict": "ruim",
+          "why": "Isso não é fato, é dump. O contrato engorda a cada coluna nova. Consumidor antigo quebra."
+        }
+      ]
+    },
+    {
+      "id": "s-quando",
+      "kind": "secao",
+      "title": "Quando usar Kafka",
+      "subtitle": "Log, fila ou HTTP"
+    },
+    {
+      "id": "widget-quando",
+      "kind": "widget",
+      "kicker": "Quatro cenas",
+      "title": "Quando é Kafka — e quando é teatro",
+      "widget": "quando-kafka"
+    },
+    {
+      "id": "tradeoff-canais",
+      "kind": "tradeoff",
+      "title": "Log vs fila vs HTTP",
+      "ganha": "Log: vários times no mesmo fato, replay do passado, produtor não espera consumidor, leitura não apaga a linha. Fila: simples, um worker, entrega garantida uma vez. HTTP: resposta na hora, request/response direto.",
+      "paga": "Log: ordem só dentro da partição, operação de broker, consistência eventual no leitor. Fila: mensagem some — segundo consumidor perde. HTTP: acopla disponibilidade, o clique espera todos os hops.",
+      "quando": [
+        "Mais de um consumidor precisa do mesmo fato → log (Kafka)",
+        "Um worker, uma mensagem, ninguém relê → fila clássica",
+        "O usuário espera resposta na cara → HTTP síncrono"
+      ],
+      "quandoNao": [
+        "Kafka no meio do GET de frete — isso continua HTTP",
+        "Fila clássica quando analytics e faturamento precisam do mesmo PedidoPago",
+        "Dois POSTs no clique do checkout — acoplamento de disponibilidade"
+      ]
+    },
+    {
+      "id": "recap-fundamentos",
+      "kind": "recap",
+      "title": "Fundamentos",
+      "bullets": [
+        "Fila entrega e some. Log anexa e permanece — a leitura não apaga a linha.",
+        "Kafka é log distribuído: producer, broker, partição, offset, consumer com committed offset próprio.",
+        "Evento é fato do passado (PedidoCriado). Comando pede o futuro (CobreEsteCartao).",
+        "O envelope carrega key, value, timestamp, headers, offset e partition. State transfer evita GET no produtor.",
+        "HTTP no clique. Log no fato consumado. Fila quando um worker basta."
+      ]
+    }
+  ]
+}

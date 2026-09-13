@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { Quiz } from "@/components/Quiz";
 import { Pager } from "@/components/Pager";
 import { VisitTracker } from "@/components/VisitTracker";
 import { JsonLd } from "@/components/JsonLd";
 import { GateWall } from "@/components/GateWall";
+import { TrackLogo } from "@/components/TrackLogo";
 import { kafkaNav, kafkaSimulador, neighbors } from "@/lib/catalog";
 import { articleJsonLd, pageMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
-import Link from "next/link";
 
 export const metadata: Metadata = pageMetadata({
   title: kafkaSimulador.title,
@@ -18,7 +20,7 @@ export const metadata: Metadata = pageMetadata({
 export default function KafkaQuizPage() {
   const { prev } = neighbors(kafkaNav, kafkaSimulador.path);
   return (
-    <div className="wrap">
+    <div className="wrap max-w-4xl mx-auto px-4 sm:px-6 py-8">
       <VisitTracker path={kafkaSimulador.path} />
       <JsonLd
         data={articleJsonLd({
@@ -27,42 +29,28 @@ export default function KafkaQuizPage() {
           url: `${SITE_URL}${kafkaSimulador.path}`,
         })}
       />
-      <Link href="/kafka" className="page-back">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <line x1="19" y1="12" x2="5" y2="12" />
-          <polyline points="12 19 5 12 12 5" />
-        </svg>
+      <Link
+        href="/kafka"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4" />
         Kafka
       </Link>
 
-      <div className="page-head">
-        <div className="page-icon" aria-hidden="true">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-          </svg>
+      <div className="page-head flex items-start gap-4 mb-8">
+        <div
+          className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border bg-amber-500/10 text-amber-400 border-amber-500/20"
+          aria-hidden="true"
+        >
+          <TrackLogo track="kafka" className="w-6 h-6" />
         </div>
         <div>
-          <h1>{kafkaSimulador.title}</h1>
-          <p className="page-sub">{kafkaSimulador.description}</p>
+          <h1 className="text-2xl sm:text-3xl font-bold font-heading tracking-tight text-foreground">
+            {kafkaSimulador.title}
+          </h1>
+          <p className="page-sub text-sm sm:text-base text-muted-foreground">
+            {kafkaSimulador.description}
+          </p>
         </div>
       </div>
 
@@ -72,7 +60,9 @@ export default function KafkaQuizPage() {
         </section>
         <Pager prev={prev} />
       </GateWall>
-      <footer>Trilha Kafka por tema, rumo a Tech Lead backend.</footer>
+      <footer className="mt-16 pt-8 border-t border-border/60 text-xs text-muted-foreground text-center">
+        Trilha Kafka por tema, rumo a Tech Lead backend.
+      </footer>
     </div>
   );
 }

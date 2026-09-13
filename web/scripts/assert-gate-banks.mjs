@@ -6,9 +6,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const data = path.resolve(here, "../data/gates");
 
 const kafka = [
-  "modelo-mental", "evento", "topico", "particao", "offset", "key", "broker",
-  "isr", "produtor", "consumidor", "rebalance", "retencao", "garantias",
-  "operacao", "schema", "outbox", "spring", "sintese", "tech-lead",
+  "fundamentos", "anatomia", "cluster", "dinamica", "garantias", "pratica", "sintese",
 ];
 const arq = [
   "mapa", "sistema", "latencia", "disponibilidade", "cap", "acid", "monolito",

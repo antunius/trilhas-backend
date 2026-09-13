@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
-  Zap,
-  Boxes,
   BookOpen,
   Award,
   CheckCircle2,
@@ -22,6 +20,7 @@ import {
   type OverallStats,
 } from "@/lib/progress";
 import { ProgressRadar } from "@/components/ProgressRadar";
+import { TrackLogo } from "@/components/TrackLogo";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -102,7 +101,7 @@ export function HomeDashboard() {
     : 36;
   const questionsAnswered = stats ? stats.questionsAnswered : 0;
   const avgMastery = stats ? stats.avgMastery : 0;
-  const startHref = stats?.firstPending || "/kafka/modelo-mental";
+  const startHref = stats?.firstPending || "/kafka/fundamentos";
 
   return (
     <div className="space-y-12 pb-16">
@@ -308,11 +307,10 @@ export function HomeDashboard() {
                         <div
                           className={`w-10 h-10 rounded-xl flex items-center justify-center border shrink-0 ${meta.iconBg} ${meta.iconColor}`}
                         >
-                          {isKafka ? (
-                            <Zap className="w-5 h-5" />
-                          ) : (
-                            <Boxes className="w-5 h-5" />
-                          )}
+                          <TrackLogo
+                            track={isKafka ? "kafka" : "arquitetura"}
+                            className="w-5 h-5"
+                          />
                         </div>
                         <div>
                           <Badge

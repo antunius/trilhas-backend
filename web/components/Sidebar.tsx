@@ -12,14 +12,12 @@ import {
   Layout,
   Server,
   Workflow,
-  Boxes,
-  Zap,
-  Sparkles,
   ChevronRight,
   ExternalLink,
   BookOpen,
 } from "lucide-react";
 import { Category } from "../types";
+import { ArchitectureLogo, KafkaLogo } from "@/components/TrackLogo";
 
 export type { Category };
 
@@ -28,8 +26,8 @@ export interface SidebarProps {
 }
 
 export const DEFAULT_CATEGORIES: Category[] = [
-  { id: "kafka", title: "Apache Kafka", icon: "Zap", href: "/kafka" },
-  { id: "arquitetura", title: "Arquitetura & Design", icon: "Boxes", href: "/arquitetura" },
+  { id: "kafka", title: "Apache Kafka", icon: "Kafka", href: "/kafka" },
+  { id: "arquitetura", title: "Arquitetura & Design", icon: "Architecture", href: "/arquitetura" },
   { id: "algoritmos", title: "Algoritmos & ED", icon: "Cpu" },
   { id: "java", title: "Java Core", icon: "Server" },
   { id: "spring", title: "Spring Ecosystem", icon: "Layers" },
@@ -39,6 +37,8 @@ export const DEFAULT_CATEGORIES: Category[] = [
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   Terminal: <Terminal className="w-5 h-5" />,
+  Kafka: <KafkaLogo className="w-5 h-5" />,
+  Architecture: <ArchitectureLogo className="w-5 h-5" />,
   Layers: <Layers className="w-5 h-5" />,
   Cpu: <Cpu className="w-5 h-5" />,
   Database: <Database className="w-5 h-5" />,
@@ -46,8 +46,6 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   Layout: <Layout className="w-5 h-5" />,
   Server: <Server className="w-5 h-5" />,
   Workflow: <Workflow className="w-5 h-5" />,
-  Boxes: <Boxes className="w-5 h-5" />,
-  Zap: <Zap className="w-5 h-5" />,
 };
 
 export const Sidebar: React.FC<SidebarProps> = ({ categories = DEFAULT_CATEGORIES }) => {
@@ -65,8 +63,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ categories = DEFAULT_CATEGORIE
       {/* Brand Header */}
       <div className="h-20 flex items-center px-6 border-b border-[#262626] overflow-hidden whitespace-nowrap">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white shrink-0 shadow-inner">
-            <Sparkles className="w-4 h-4 text-white" />
+          <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+            <Terminal className="w-5 h-5 text-primary" />
           </div>
           <div
             className={`transition-opacity duration-200 ${

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Lock, ArrowRight, BookOpen } from "lucide-react";
 import { Pager } from "@/components/Pager";
 import { LessonPlayer } from "@/components/LessonPlayer";
+import { ScrollPlayer } from "@/components/ScrollPlayer";
 import { LessonQuiz } from "@/components/LessonQuiz";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -97,9 +98,17 @@ export function LessonView({
     );
   }
 
+  const useScroll =
+    lesson.path.startsWith("/kafka/") &&
+    doc.beats.some((b) => b.kind === "secao");
+
   return (
     <>
-      <LessonPlayer path={lesson.path} doc={doc} onLastBeat={setAtEnd} />
+      {useScroll ? (
+        <ScrollPlayer path={lesson.path} doc={doc} onLastBeat={setAtEnd} />
+      ) : (
+        <LessonPlayer path={lesson.path} doc={doc} onLastBeat={setAtEnd} />
+      )}
       {atEnd ? <LessonQuiz path={lesson.path} onPassed={refresh} /> : null}
       <Pager prev={prev} next={next} nextLocked={nextLocked} />
     </>

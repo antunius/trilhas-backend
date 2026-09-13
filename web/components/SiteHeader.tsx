@@ -10,11 +10,10 @@ import {
   TrendingUp,
   LogOut,
   User as UserIcon,
-  Sparkles,
-  Zap,
-  Boxes,
+  Terminal,
 } from "lucide-react";
 import { useSidebar } from "@/components/sidebar-context";
+import { TrackLogo } from "@/components/TrackLogo";
 import { trackIdFromPath } from "@/lib/catalog";
 import { isDevBypass } from "@/lib/dev";
 import { createClient } from "@/lib/supabase/client";
@@ -94,7 +93,7 @@ export function SiteHeader() {
             className="flex items-center gap-2 group text-foreground hover:text-white transition-colors"
           >
             <div className="w-7 h-7 rounded-md bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-              <Sparkles className="w-4 h-4" />
+              <Terminal className="w-5 h-5 text-primary" />
             </div>
             <span className="font-semibold text-base tracking-tight font-heading">
               Trilhas
@@ -111,7 +110,7 @@ export function SiteHeader() {
                     : "hover:bg-secondary hover:text-foreground"
                 }`}
               >
-                <Zap className="w-3 h-3 text-amber-400" />
+                <TrackLogo track="kafka" className="w-3.5 h-3.5 text-amber-400" />
                 <span>Kafka</span>
               </Link>
               <Link
@@ -122,7 +121,7 @@ export function SiteHeader() {
                     : "hover:bg-secondary hover:text-foreground"
                 }`}
               >
-                <Boxes className="w-3 h-3 text-indigo-400" />
+                <TrackLogo track="arquitetura" className="w-3.5 h-3.5 text-indigo-400" />
                 <span>Arquitetura</span>
               </Link>
             </div>

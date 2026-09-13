@@ -1259,6 +1259,1266 @@
       "a": 2,
       "w": "Comece pelo sintoma.",
       "t": "plantão"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log?",
+      "o": [
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
+      ],
+      "a": 0,
+      "w": "O modelo continua o log.",
+      "t": "fiação"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log — verdade ou mito?",
+      "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
+      ],
+      "a": 2,
+      "w": "O modelo continua o log.",
+      "t": "fiação"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log — o que acontece de verdade?",
+      "o": [
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack."
+      ],
+      "a": 0,
+      "w": "O modelo continua o log.",
+      "t": "fiação"
+    },
+    {
+      "q": "Na prática: Spring Kafka muda o modelo do log?",
+      "o": [
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log.",
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack."
+      ],
+      "a": 3,
+      "w": "O modelo continua o log.",
+      "t": "fiação"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log — como funciona?",
+      "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Lote sem key não mostra partition= no log."
+      ],
+      "a": 1,
+      "w": "O modelo continua o log.",
+      "t": "fiação"
+    },
+    {
+      "q": "Se perguntarem: Spring Kafka muda o modelo do log?",
+      "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
+      ],
+      "a": 2,
+      "w": "O modelo continua o log.",
+      "t": "fiação"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log — o que vale aqui?",
+      "o": [
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key.",
+        "Spring não muda o Kafka. É fiação: template, listener, concurrency, ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
+      ],
+      "a": 2,
+      "w": "O modelo continua o log.",
+      "t": "fiação"
+    },
+    {
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece?",
+      "o": [
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha."
+      ],
+      "a": 0,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — verdade ou mito?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 2,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — o que acontece de verdade?",
+      "o": [
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale."
+      ],
+      "a": 0,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "Na prática: KafkaTemplate sem key: a ordem do 99 permanece?",
+      "o": [
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale."
+      ],
+      "a": 1,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — como funciona?",
+      "o": [
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "O Spring obriga Avro; JSON Schema não entra."
+      ],
+      "a": 1,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "Se perguntarem: KafkaTemplate sem key: a ordem do 99 permanece?",
+      "o": [
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 2,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "KafkaTemplate sem key: a ordem do 99 permanece — o que vale aqui?",
+      "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate.write: tópico, key, value.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 2,
+      "w": "Sem key some a ordem do 99.",
+      "t": "template"
+    },
+    {
+      "q": "Mudar o groupId do @KafkaListener faz o quê?",
+      "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "@KafkaListener com groupId define o consumer group."
+      ],
+      "a": 3,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Mudar o groupId do @KafkaListener faz o quê — verdade ou mito?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 1,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Mudar o groupId do @KafkaListener faz o quê — o que acontece de verdade?",
+      "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "@KafkaListener com groupId define o consumer group."
+      ],
+      "a": 3,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Na prática: Mudar o groupId do @KafkaListener faz o quê?",
+      "o": [
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
+      ],
+      "a": 2,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Mudar o groupId do @KafkaListener faz o quê — como funciona?",
+      "o": [
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
+      ],
+      "a": 0,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Se perguntarem: Mudar o groupId do @KafkaListener faz o quê?",
+      "o": [
+        "Com Kafka parado o pedido não grava no banco.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
+      ],
+      "a": 1,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Mudar o groupId do @KafkaListener faz o quê — o que vale aqui?",
+      "o": [
+        "Subir concurrency drena a partição da hot key.",
+        "@KafkaListener com groupId define o consumer group.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Com Kafka parado o pedido não grava no banco."
+      ],
+      "a": 1,
+      "w": "Mude o groupId e você lê de novo.",
+      "t": "listener"
+    },
+    {
+      "q": "Concurrency 6 em 3 partições: quantos ociosos?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "concurrency 6 em 3 partições: 3 ociosos.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 1,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
+    },
+    {
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — verdade ou mito?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "concurrency 6 em 3 partições: 3 ociosos."
+      ],
+      "a": 3,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
+    },
+    {
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — o que acontece de verdade?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "concurrency 6 em 3 partições: 3 ociosos.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
+      ],
+      "a": 1,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
+    },
+    {
+      "q": "Na prática: Concurrency 6 em 3 partições: quantos ociosos?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "concurrency 6 em 3 partições: 3 ociosos.",
+        "concurrency 6 em 3 partições: zero ociosos."
+      ],
+      "a": 2,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
+    },
+    {
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — como funciona?",
+      "o": [
+        "concurrency 6 em 3 partições: 3 ociosos.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 0,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
+    },
+    {
+      "q": "Se perguntarem: Concurrency 6 em 3 partições: quantos ociosos?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "concurrency 6 em 3 partições: 3 ociosos."
+      ],
+      "a": 3,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
+    },
+    {
+      "q": "Concurrency 6 em 3 partições: quantos ociosos — o que vale aqui?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "concurrency 6 em 3 partições: 3 ociosos."
+      ],
+      "a": 3,
+      "w": "min(concurrency, partitions).",
+      "t": "concurrency teto"
+    },
+    {
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito?",
+      "o": [
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem."
+      ],
+      "a": 3,
+      "w": "MANUAL chama ack depois do efeito.",
+      "t": "AckMode"
+    },
+    {
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — verdade ou mito?",
+      "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 1,
+      "w": "MANUAL chama ack depois do efeito.",
+      "t": "AckMode"
+    },
+    {
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — o que acontece de verdade?",
+      "o": [
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem."
+      ],
+      "a": 3,
+      "w": "MANUAL chama ack depois do efeito.",
+      "t": "AckMode"
+    },
+    {
+      "q": "Na prática: AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Lote sem key não mostra partition= no log.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack."
+      ],
+      "a": 2,
+      "w": "MANUAL chama ack depois do efeito.",
+      "t": "AckMode"
+    },
+    {
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — como funciona?",
+      "o": [
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack."
+      ],
+      "a": 2,
+      "w": "MANUAL chama ack depois do efeito.",
+      "t": "AckMode"
+    },
+    {
+      "q": "Se perguntarem: AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito?",
+      "o": [
+        "Com Kafka parado o pedido não grava no banco.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
+      ],
+      "a": 1,
+      "w": "MANUAL chama ack depois do efeito.",
+      "t": "AckMode"
+    },
+    {
+      "q": "AckMode MANUAL, BATCH ou RECORD: em qual você chama ack depois do efeito — o que vale aqui?",
+      "o": [
+        "Subir concurrency drena a partição da hot key.",
+        "MANUAL: você chama ack. BATCH commita o lote. RECORD cada mensagem.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Com Kafka parado o pedido não grava no banco."
+      ],
+      "a": 1,
+      "w": "MANUAL chama ack depois do efeito.",
+      "t": "AckMode"
+    },
+    {
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 1,
+      "w": "KafkaTemplate.send com e sem key.",
+      "t": "lab 1"
+    },
+    {
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — verdade ou mito?",
+      "o": [
+        "Lote sem key não mostra partition= no log.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Lote com e sem key; olhe partition= no log."
+      ],
+      "a": 3,
+      "w": "KafkaTemplate.send com e sem key.",
+      "t": "lab 1"
+    },
+    {
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — o que acontece de verdade?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
+      ],
+      "a": 1,
+      "w": "KafkaTemplate.send com e sem key.",
+      "t": "lab 1"
+    },
+    {
+      "q": "Na prática: Lote de pedidos com e sem key: o que você vê no log da partição?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log."
+      ],
+      "a": 2,
+      "w": "KafkaTemplate.send com e sem key.",
+      "t": "lab 1"
+    },
+    {
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — como funciona?",
+      "o": [
+        "Lote com e sem key; olhe partition= no log.",
+        "Lote sem key não mostra partition= no log.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 0,
+      "w": "KafkaTemplate.send com e sem key.",
+      "t": "lab 1"
+    },
+    {
+      "q": "Se perguntarem: Lote de pedidos com e sem key: o que você vê no log da partição?",
+      "o": [
+        "Lote sem key não mostra partition= no log.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Lote com e sem key; olhe partition= no log."
+      ],
+      "a": 3,
+      "w": "KafkaTemplate.send com e sem key.",
+      "t": "lab 1"
+    },
+    {
+      "q": "Lote de pedidos com e sem key: o que você vê no log da partição — o que vale aqui?",
+      "o": [
+        "Lote sem key não mostra partition= no log.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Lote com e sem key; olhe partition= no log."
+      ],
+      "a": 3,
+      "w": "KafkaTemplate.send com e sem key.",
+      "t": "lab 1"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens?",
+      "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes."
+      ],
+      "a": 3,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — verdade ou mito?",
+      "o": [
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 1,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — o que acontece de verdade?",
+      "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes."
+      ],
+      "a": 3,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Na prática: Dois consumer groups no mesmo tópico veem as mesmas mensagens?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu."
+      ],
+      "a": 2,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — como funciona?",
+      "o": [
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log."
+      ],
+      "a": 0,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Se perguntarem: Dois consumer groups no mesmo tópico veem as mesmas mensagens?",
+      "o": [
+        "Com Kafka parado o pedido não grava no banco.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Lote sem key não mostra partition= no log."
+      ],
+      "a": 1,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Dois consumer groups no mesmo tópico veem as mesmas mensagens — o que vale aqui?",
+      "o": [
+        "Subir concurrency drena a partição da hot key.",
+        "Dois grupos no mesmo app: mesmas 9 mensagens, committed offsets independentes.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco."
+      ],
+      "a": 1,
+      "w": "consumer-groups --describe.",
+      "t": "lab 3"
+    },
+    {
+      "q": "Com outbox e Kafka parado, o pedido vai para onde?",
+      "o": [
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Outbox com Kafka parado: pedido no banco, poller depois."
+      ],
+      "a": 3,
+      "w": "POST via outbox não espera o broker no commit.",
+      "t": "lab 8"
+    },
+    {
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — verdade ou mito?",
+      "o": [
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha."
+      ],
+      "a": 1,
+      "w": "POST via outbox não espera o broker no commit.",
+      "t": "lab 8"
+    },
+    {
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — o que acontece de verdade?",
+      "o": [
+        "Com Kafka parado o pedido não grava no banco.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Outbox com Kafka parado: pedido no banco, poller depois."
+      ],
+      "a": 3,
+      "w": "POST via outbox não espera o broker no commit.",
+      "t": "lab 8"
+    },
+    {
+      "q": "Na prática: Com outbox e Kafka parado, o pedido vai para onde?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco."
+      ],
+      "a": 2,
+      "w": "POST via outbox não espera o broker no commit.",
+      "t": "lab 8"
+    },
+    {
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — como funciona?",
+      "o": [
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 0,
+      "w": "POST via outbox não espera o broker no commit.",
+      "t": "lab 8"
+    },
+    {
+      "q": "Se perguntarem: Com outbox e Kafka parado, o pedido vai para onde?",
+      "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 1,
+      "w": "POST via outbox não espera o broker no commit.",
+      "t": "lab 8"
+    },
+    {
+      "q": "Com outbox e Kafka parado, o pedido vai para onde — o que vale aqui?",
+      "o": [
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Outbox com Kafka parado: pedido no banco, poller depois.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos."
+      ],
+      "a": 1,
+      "w": "POST via outbox não espera o broker no commit.",
+      "t": "lab 8"
+    },
+    {
+      "q": "Hot key concentrando volume: subir concurrency drena a partição?",
+      "o": [
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "KafkaTemplate sem key mantém a ordem do 99."
+      ],
+      "a": 0,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — verdade ou mito?",
+      "o": [
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 2,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — o que acontece de verdade?",
+      "o": [
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "concurrency 6 em 3 partições: zero ociosos."
+      ],
+      "a": 0,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "Na prática: Hot key concentrando volume: subir concurrency drena a partição?",
+      "o": [
+        "Subir concurrency drena a partição da hot key.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Hot key vip: uma partição atrasada."
+      ],
+      "a": 3,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — como funciona?",
+      "o": [
+        "Lote sem key não mostra partition= no log.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key.",
+        "AckMode é sempre BATCH; você não chama ack."
+      ],
+      "a": 1,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "Se perguntarem: Hot key concentrando volume: subir concurrency drena a partição?",
+      "o": [
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 2,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "Hot key concentrando volume: subir concurrency drena a partição — o que vale aqui?",
+      "o": [
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Hot key vip: uma partição atrasada.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 2,
+      "w": "Subir concurrency não drena.",
+      "t": "lab 9"
+    },
+    {
+      "q": "JSON quebrado deve derrubar o listener inteiro?",
+      "o": [
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado não deve derrubar o listener inteiro.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Com Kafka parado o pedido não grava no banco."
+      ],
+      "a": 1,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "JSON quebrado deve derrubar o listener inteiro — verdade ou mito?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Subir concurrency drena a partição da hot key.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "JSON quebrado não deve derrubar o listener inteiro."
+      ],
+      "a": 3,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "JSON quebrado deve derrubar o listener inteiro — o que acontece de verdade?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "JSON quebrado não deve derrubar o listener inteiro.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
+      ],
+      "a": 1,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "Na prática: JSON quebrado deve derrubar o listener inteiro?",
+      "o": [
+        "JSON quebrado não deve derrubar o listener inteiro.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra."
+      ],
+      "a": 0,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "JSON quebrado deve derrubar o listener inteiro — como funciona?",
+      "o": [
+        "JSON quebrado não deve derrubar o listener inteiro.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 0,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "Se perguntarem: JSON quebrado deve derrubar o listener inteiro?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "JSON quebrado não deve derrubar o listener inteiro."
+      ],
+      "a": 3,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "JSON quebrado deve derrubar o listener inteiro — o que vale aqui?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "JSON quebrado não deve derrubar o listener inteiro."
+      ],
+      "a": 3,
+      "w": "ErrorHandlingDeserializer.",
+      "t": "ErrorHandling"
+    },
+    {
+      "q": "Erro permanente depois das tentativas vai para onde?",
+      "o": [
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
+      ],
+      "a": 1,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Erro permanente depois das tentativas vai para onde — verdade ou mito?",
+      "o": [
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas."
+      ],
+      "a": 3,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Erro permanente depois das tentativas vai para onde — o que acontece de verdade?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
+      ],
+      "a": 1,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Na prática: Erro permanente depois das tentativas vai para onde?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
+      ],
+      "a": 2,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Erro permanente depois das tentativas vai para onde — como funciona?",
+      "o": [
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log."
+      ],
+      "a": 0,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Se perguntarem: Erro permanente depois das tentativas vai para onde?",
+      "o": [
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas."
+      ],
+      "a": 3,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Erro permanente depois das tentativas vai para onde — o que vale aqui?",
+      "o": [
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "RetryableTopic / DefaultErrorHandler + DLT depois das tentativas."
+      ],
+      "a": 3,
+      "w": "Erro permanente vai ao cemitério.",
+      "t": "DLT"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset)?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker."
+      ],
+      "a": 3,
+      "w": "Template e listener são fiação, não outro Kafka.",
+      "t": "um repo"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — verdade ou mito?",
+      "o": [
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 1,
+      "w": "Template e listener são fiação, não outro Kafka.",
+      "t": "um repo"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — o que acontece de verdade?",
+      "o": [
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker."
+      ],
+      "a": 3,
+      "w": "Template e listener são fiação, não outro Kafka.",
+      "t": "um repo"
+    },
+    {
+      "q": "Na prática: Spring Kafka muda o modelo do log (tópico, partição, offset)?",
+      "o": [
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "O Spring obriga Avro; JSON Schema não entra."
+      ],
+      "a": 0,
+      "w": "Template e listener são fiação, não outro Kafka.",
+      "t": "um repo"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — como funciona?",
+      "o": [
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 0,
+      "w": "Template e listener são fiação, não outro Kafka.",
+      "t": "um repo"
+    },
+    {
+      "q": "Se perguntarem: Spring Kafka muda o modelo do log (tópico, partição, offset)?",
+      "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 1,
+      "w": "Template e listener são fiação, não outro Kafka.",
+      "t": "um repo"
+    },
+    {
+      "q": "Spring Kafka muda o modelo do log (tópico, partição, offset) — o que vale aqui?",
+      "o": [
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "Spring Kafka não muda o modelo do log: tópico, partição, offset continuam do broker.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos."
+      ],
+      "a": 1,
+      "w": "Template e listener são fiação, não outro Kafka.",
+      "t": "um repo"
+    },
+    {
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro?",
+      "o": [
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
+      ],
+      "a": 1,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
+      "t": "serializer"
+    },
+    {
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — verdade ou mito?",
+      "o": [
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "JSON Schema + Registry basta; Avro não é obrigatório."
+      ],
+      "a": 3,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
+      "t": "serializer"
+    },
+    {
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — o que acontece de verdade?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
+      ],
+      "a": 1,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
+      "t": "serializer"
+    },
+    {
+      "q": "Na prática: JSON Schema + Registry basta, ou o Spring obriga Avro?",
+      "o": [
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack."
+      ],
+      "a": 0,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
+      "t": "serializer"
+    },
+    {
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — como funciona?",
+      "o": [
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log.",
+        "JSON Schema + Registry basta; Avro não é obrigatório.",
+        "O Spring obriga Avro; JSON Schema não entra."
+      ],
+      "a": 2,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
+      "t": "serializer"
+    },
+    {
+      "q": "Se perguntarem: JSON Schema + Registry basta, ou o Spring obriga Avro?",
+      "o": [
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "JSON Schema + Registry basta; Avro não é obrigatório."
+      ],
+      "a": 3,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
+      "t": "serializer"
+    },
+    {
+      "q": "JSON Schema + Registry basta, ou o Spring obriga Avro — o que vale aqui?",
+      "o": [
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "JSON Schema + Registry basta; Avro não é obrigatório."
+      ],
+      "a": 3,
+      "w": "pom Confluent com kafka-json-schema-serializer.",
+      "t": "serializer"
+    },
+    {
+      "q": "Processo morto antes do ack: a mensagem volta no restart?",
+      "o": [
+        "System.exit antes do ack: at-least-once no restart.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Subir concurrency drena a partição da hot key."
+      ],
+      "a": 0,
+      "w": "O grupo relê a mensagem não commitada.",
+      "t": "kill ack"
+    },
+    {
+      "q": "Processo morto antes do ack: a mensagem volta no restart — verdade ou mito?",
+      "o": [
+        "Subir concurrency drena a partição da hot key.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "System.exit antes do ack: at-least-once no restart.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 2,
+      "w": "O grupo relê a mensagem não commitada.",
+      "t": "kill ack"
+    },
+    {
+      "q": "Processo morto antes do ack: a mensagem volta no restart — o que acontece de verdade?",
+      "o": [
+        "System.exit antes do ack: at-least-once no restart.",
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "JSON quebrado deve derrubar o listener; ErrorHandlingDeserializer atrapalha.",
+        "Erro permanente fica na partição para sempre; DLT é mito."
+      ],
+      "a": 0,
+      "w": "O grupo relê a mensagem não commitada.",
+      "t": "kill ack"
+    },
+    {
+      "q": "Na prática: Processo morto antes do ack: a mensagem volta no restart?",
+      "o": [
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Erro permanente fica na partição para sempre; DLT é mito.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "System.exit antes do ack: at-least-once no restart."
+      ],
+      "a": 3,
+      "w": "O grupo relê a mensagem não commitada.",
+      "t": "kill ack"
+    },
+    {
+      "q": "Processo morto antes do ack: a mensagem volta no restart — como funciona?",
+      "o": [
+        "Morrer antes do ack some com a mensagem para sempre.",
+        "Spring Kafka inventa outro modelo; o log do broker não vale.",
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "System.exit antes do ack: at-least-once no restart."
+      ],
+      "a": 3,
+      "w": "O grupo relê a mensagem não commitada.",
+      "t": "kill ack"
+    },
+    {
+      "q": "Se perguntarem: Processo morto antes do ack: a mensagem volta no restart?",
+      "o": [
+        "O Spring obriga Avro; JSON Schema não entra.",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "System.exit antes do ack: at-least-once no restart.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 2,
+      "w": "O grupo relê a mensagem não commitada.",
+      "t": "kill ack"
+    },
+    {
+      "q": "Processo morto antes do ack: a mensagem volta no restart — o que vale aqui?",
+      "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation.",
+        "System.exit antes do ack: at-least-once no restart.",
+        "Morrer antes do ack some com a mensagem para sempre."
+      ],
+      "a": 2,
+      "w": "O grupo relê a mensagem não commitada.",
+      "t": "kill ack"
+    },
+    {
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring?",
+      "o": [
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Spring Kafka muda o modelo: vira fila clássica com annotation."
+      ],
+      "a": 1,
+      "w": "As tópicos citam os mesmos comandos.",
+      "t": "README"
+    },
+    {
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — verdade ou mito?",
+      "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "KafkaTemplate sem key mantém a ordem do 99.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers)."
+      ],
+      "a": 3,
+      "w": "As tópicos citam os mesmos comandos.",
+      "t": "README"
+    },
+    {
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — o que acontece de verdade?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Mudar o groupId não relê o log; o committed offset é do tópico."
+      ],
+      "a": 1,
+      "w": "As tópicos citam os mesmos comandos.",
+      "t": "README"
+    },
+    {
+      "q": "Na prática: Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring?",
+      "o": [
+        "concurrency 6 em 3 partições: zero ociosos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos."
+      ],
+      "a": 2,
+      "w": "As tópicos citam os mesmos comandos.",
+      "t": "README"
+    },
+    {
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — como funciona?",
+      "o": [
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers).",
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "AckMode é sempre BATCH; você não chama ack.",
+        "Lote sem key não mostra partition= no log."
+      ],
+      "a": 0,
+      "w": "As tópicos citam os mesmos comandos.",
+      "t": "README"
+    },
+    {
+      "q": "Se perguntarem: Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring?",
+      "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "Lote sem key não mostra partition= no log.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers)."
+      ],
+      "a": 3,
+      "w": "As tópicos citam os mesmos comandos.",
+      "t": "README"
+    },
+    {
+      "q": "Para operar um cluster você usa CLI (describe, consumer-groups) e config Spring — o que vale aqui?",
+      "o": [
+        "Não há CLI nem YAML: as tópicos inventam os comandos.",
+        "O segundo grupo não vê as mensagens que o primeiro já leu.",
+        "Com Kafka parado o pedido não grava no banco.",
+        "Operar o cluster usa CLI (describe, consumer-groups) e config Spring (acks, AckMode, bootstrap-servers)."
+      ],
+      "a": 3,
+      "w": "As tópicos citam os mesmos comandos.",
+      "t": "README"
     }
   ]
 }

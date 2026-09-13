@@ -137,7 +137,13 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 button { font-family: inherit; }
-a { color: var(--accent); }
+/* Unlayered `a {}` would beat Tailwind utilities and paint
+   Button-as-Child links (bg-primary) with accent text — same color. */
+@layer base {
+  a {
+    color: var(--accent);
+  }
+}
 .wrap {
   max-width: 56rem;
   margin: 0 auto;
@@ -255,12 +261,13 @@ a { color: var(--accent); }
 .article-content li {
   margin-bottom: 0.5rem;
 }
-.article-content a {
+/* Prose links only — skip UI controls (Button asChild uses inline-flex). */
+.article-content a:not(.inline-flex) {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.article-content a:hover {
+.article-content a:not(.inline-flex):hover {
   color: hsl(var(--primary) / 0.8);
 }
 .article-content blockquote {

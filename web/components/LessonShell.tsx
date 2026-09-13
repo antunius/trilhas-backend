@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowLeft, Zap, Boxes } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { VisitTracker } from "@/components/VisitTracker";
 import { JsonLd } from "@/components/JsonLd";
 import { LessonView } from "@/components/LessonView";
+import { TrackLogo } from "@/components/TrackLogo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { LessonDoc } from "@/lib/beats";
@@ -28,7 +29,7 @@ export function LessonShell({
   const isKafka = lesson.path.startsWith("/kafka");
 
   return (
-    <div className="wrap max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <div className="wrap max-w-6xl mx-auto px-4 sm:px-6 py-8">
       <VisitTracker path={lesson.path} />
       <JsonLd
         data={articleJsonLd({
@@ -63,7 +64,10 @@ export function LessonShell({
           }`}
           aria-hidden="true"
         >
-          {isKafka ? <Zap className="w-6 h-6" /> : <Boxes className="w-6 h-6" />}
+          <TrackLogo
+            track={isKafka ? "kafka" : "arquitetura"}
+            className="w-6 h-6"
+          />
         </div>
         <div className="space-y-1">
           <div className="flex items-center gap-2">

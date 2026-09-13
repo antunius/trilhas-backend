@@ -1,20 +1,20 @@
 {
   "topics": {
     "modelo": {
-      "name": "Modelo mental",
-      "href": "/kafka/modelo-mental"
+      "name": "Fundamentos",
+      "href": "/kafka/fundamentos"
     },
     "ordem": {
       "name": "Partição, key e ordem",
-      "href": "/kafka/particao"
+      "href": "/kafka/anatomia"
     },
     "consumo": {
       "name": "Offset e consumer group",
-      "href": "/kafka/offset"
+      "href": "/kafka/anatomia"
     },
     "durabilidade": {
       "name": "Réplica, ISR e acks",
-      "href": "/kafka/isr"
+      "href": "/kafka/cluster"
     },
     "entrega": {
       "name": "Garantias de entrega",
@@ -22,15 +22,15 @@
     },
     "operacao": {
       "name": "Rebalance, lag e DLT",
-      "href": "/kafka/operacao"
+      "href": "/kafka/pratica"
     },
     "integracao": {
       "name": "Outbox, inbox e schema",
-      "href": "/kafka/outbox"
+      "href": "/kafka/garantias"
     },
     "lideranca": {
       "name": "Julgamento de Tech Lead",
-      "href": "/kafka/tech-lead"
+      "href": "/kafka/sintese"
     }
   },
   "questions": [

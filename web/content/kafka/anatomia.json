@@ -1,0 +1,312 @@
+{
+  "beats": [
+    {
+      "id": "s-mapa",
+      "kind": "secao",
+      "title": "Componentes core",
+      "subtitle": "Broker, tópico, partição, offset, producer, consumer e consumer group — os papéis que se repetem na história do pedido 99."
+    },
+    {
+      "id": "mapa-papeis",
+      "kind": "explicar",
+      "title": "Quem faz o quê no cluster",
+      "html": "<p>Antes de entrar em cada peça, o mapa. Analogia do <strong>caderno de pedidos</strong>: o broker é o armário onde o caderno fica; o tópico é o rótulo na capa; a partição é cada coluna; o offset é o número da linha na coluna.</p><table class=\"compare\"><thead><tr><th>Peça</th><th>Papel arquitetural</th><th>Analogia</th></tr></thead><tbody><tr><td><strong>Broker</strong></td><td>Processo JVM que guarda partições, recebe Produce/Fetch e replica. Você fala com o <em>líder</em> da partição, não com “o Kafka” abstrato.</td><td>O armário onde o caderno mora.</td></tr><tr><td><strong>Tópico</strong></td><td>Nome lógico do fato no cluster. Aponta para N logs (partições). Não é fila na RAM.</td><td>O rótulo na capa: <code>pedidos.criados</code>.</td></tr><tr><td><strong>Partição</strong></td><td>Log append-only independente em disco. Unidade de paralelismo e de ordem local.</td><td>Cada coluna do caderno.</td></tr><tr><td><strong>Offset</strong></td><td>Inteiro 64-bit carimbado pelo líder na hora do append. Existe <em>só dentro</em> daquela partição.</td><td>Número da linha na coluna.</td></tr><tr><td><strong>Producer</strong></td><td>Quem publica bytes no tópico. Escolhe tópico e key; não escolhe offset.</td><td>Quem escreve no caderno.</td></tr><tr><td><strong>Consumer</strong></td><td>Quem lê do tópico via Fetch. A leitura não apaga a linha.</td><td>Quem lê o caderno com a própria régua.</td></tr><tr><td><strong>Consumer Group</strong></td><td>Consumidores com o mesmo <code>group.id</code>. Cada partição tem no máximo um membro ativo no grupo. Committed offset compartilhado em <code>__consumer_offsets</code>.</td><td>Time faturamento vs time analytics — mesma capa, marcas diferentes.</td></tr></tbody></table>"
+    },
+    {
+      "id": "s-topico",
+      "kind": "secao",
+      "title": "Tópico",
+      "subtitle": "O nome na capa do caderno — contrato do fato, não do destinatário."
+    },
+    {
+      "id": "nome-errado",
+      "kind": "cena",
+      "kicker": "Contrato",
+      "title": "Alguém criou fila-do-faturamento. Analytics ficou de fora.",
+      "body": "<p>O checkout publica PedidoCriado nessa “fila”. O faturamento lê. Analytics pede o mesmo fato. Resposta do time: “sobe outro tópico, outro send”.</p><p>Tópico não é a caixa do João. É o <strong>nome do fato</strong> no cluster. Os bytes ficam nos arquivos das partições. O nome é só o ponteiro.</p>"
+    },
+    {
+      "id": "capa-caderno",
+      "kind": "explicar",
+      "title": "Tópico = nome na capa do caderno",
+      "html": "<p><strong>Tópico</strong> é o rótulo lógico que agrupa os logs das partições. Um nome, N colunas append-only. Metadata (partições, réplica, retenção) fica no controller; mensagem fica no disco do líder e dos followers.</p><p>Nomeie pelo <strong>fato</strong> (<code>pedidos.criados</code>), não pelo destinatário (<code>fila-do-faturamento</code>). O produtor publica uma vez; quantos consumidores quiserem se inscrevem com <code>group.id</code> diferentes. Novo time não pede outro send — pede outro grupo.</p><p>Ninguém dá UPDATE na linha 40. Quem apaga é retenção ou compaction, em segmento velho.</p>"
+    },
+    {
+      "id": "criar-topico",
+      "kind": "explicar",
+      "title": "Criar na mão. Spring no boot. Auto-create desligado.",
+      "html": "<p>No lab, criar explicitamente:</p><pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-topics.sh \\\n  --bootstrap-server localhost:9092 \\\n  --create --if-not-exists \\\n  --topic pedidos.criados \\\n  --partitions 3 \\\n  --replication-factor 1</pre><p>O Spring faz o mesmo no boot com <code>TopicBuilder</code>:</p><pre class=\"code\">TopicBuilder.name(\"pedidos.criados\")\n    .partitions(3)\n    .replicas(1)\n    .build();</pre><p><code>TopicConfig.java</code> — <code>lab.partitions: 3</code> no YAML.</p><p><strong>Auto-create</strong> (<code>KAFKA_AUTO_CREATE_TOPICS_ENABLE</code>) inventa 1 partição, retenção default, ninguém revisou. No Compose do lab está <code>false</code> de propósito: o contrato tem que ser assinado antes do primeiro send.</p>"
+    },
+    {
+      "id": "como-chamar",
+      "kind": "escolha",
+      "prompt": "Como você batiza o tópico do PedidoCriado — sabendo que faturamento e analytics vão ler?",
+      "options": [
+        {
+          "id": "fato",
+          "label": "pedidos.criados — o fato. Quem quiser, se inscreve",
+          "verdict": "bom",
+          "why": "O contrato é o acontecimento. Novo time não pede um send novo. Pede um group.id novo."
+        },
+        {
+          "id": "destinatario",
+          "label": "fila-do-faturamento — o destinatário já no nome",
+          "verdict": "ruim",
+          "why": "Analytics não cabe. Você reacoplou produtor e consumidor no batismo. Tópico virou HTTP com nome de fila."
+        },
+        {
+          "id": "auto",
+          "label": "Nem crio. Publico. O cluster inventa o tópico",
+          "verdict": "ruim",
+          "why": "Auto-create esconde o contrato: 1 partição, retenção default, ninguém revisou. No Compose do lab está KAFKA_AUTO_CREATE_TOPICS_ENABLE=false de propósito."
+        }
+      ]
+    },
+    {
+      "id": "s-particao",
+      "kind": "secao",
+      "title": "Partição",
+      "subtitle": "Colunas independentes do caderno — paralelismo, ordem local, teto do consumer group."
+    },
+    {
+      "id": "teto-quatro",
+      "kind": "cena",
+      "kicker": "Faturamento · 4 pods",
+      "title": "A4 entrou no grupo. Não existe P3.",
+      "body": "<p>Três partições no <code>pedidos.criados</code>. Quatro consumidores no mesmo <code>group.id</code>. A1, A2 e A3 pegam P0, P1 e P2. A4 fica olhando o teto.</p><p>Subir o 4º pod não drena lag. Uma partição = no máximo um membro ativo naquele grupo. Analytics, com um consumidor só, percorre as três partições sozinho — outro committed offset, outro group.id.</p>"
+    },
+    {
+      "id": "tres-colunas",
+      "kind": "explicar",
+      "title": "Partição = colunas independentes",
+      "html": "<p>Cada partição é um log independente em disco: segmentos (<code>.log</code> + índices) no broker líder. Offset 0, 1, 2… só existe <em>dentro</em> daquela partição. O líder recebe o ProduceRequest; followers copiam.</p><figure class=\"viz\"><img src=\"/diagrams/grupos-consumidores.svg\" alt=\"Três partições; A1-A3 ativos; A4 ocioso; analytics sozinho\" width=\"920\" height=\"560\"></figure><p>Laranja = faturamento, um por partição, A4 parado. Verde = analytics, um só nas três. Os committed offsets não brigam: na mesma partição A pode estar no 80 e B no 12.</p>"
+    },
+    {
+      "id": "paralelismo-arquivos",
+      "kind": "explicar",
+      "title": "Unidade de paralelismo. Arquivos no líder.",
+      "html": "<p><strong>Paralelismo de leitura</strong> no mesmo grupo = número de partições. Três partições, três membros ativos no máximo. O 4º pod não recebe metade de P0 — não existe meia partição.</p><p><strong>Paralelismo de escrita</strong> também escala com partições: producers diferentes podem mandar para partições diferentes em paralelo.</p><p>Inspecionar no lab:</p><pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-topics.sh \\\n  --bootstrap-server localhost:9092 \\\n  --describe --topic pedidos.criados</pre><p><code>PartitionCount: 3</code> e três linhas Partition: 0, 1, 2 com o líder. Decida o N cedo: aumentar depois recalcula <code>hash(key) % N</code> e quebra a cola histórica da entidade.</p>"
+    },
+    {
+      "id": "quarto-pod",
+      "kind": "escolha",
+      "prompt": "Grupo faturamento, 3 partições. Você sobe o 4º pod. O que acontece?",
+      "options": [
+        {
+          "id": "ocioso",
+          "label": "Três trabalham. Um fica sem assignment",
+          "verdict": "bom",
+          "why": "Cada partição tem no máximo um dono no grupo. Sem P3, A4 é ocioso. Throughput do grupo não sobe."
+        },
+        {
+          "id": "fatia",
+          "label": "O Kafka fatia P0 ao meio e o 4º recebe metade",
+          "verdict": "ruim",
+          "why": "Não existe meia partição. A unidade de paralelismo é a partição inteira."
+        },
+        {
+          "id": "clona",
+          "label": "Os quatro leem as três partições em paralelo, 4× mais rápido",
+          "verdict": "ruim",
+          "why": "Isso duplicaria o Fetch no mesmo grupo. O protocolo não clona partição. Quem relê o log inteiro é outro group.id."
+        }
+      ]
+    },
+    {
+      "id": "s-offset",
+      "kind": "secao",
+      "title": "Offset",
+      "subtitle": "Número da linha na coluna — posição na partição vs marca do grupo."
+    },
+    {
+      "id": "linha-particao",
+      "kind": "explicar",
+      "title": "Offset = número da linha na partição",
+      "html": "<p>O líder carimba um inteiro 64-bit na hora do append. Não vem no ProduceRequest. <strong>Offset 4 da P0 ≠ offset 4 da P1</strong> — são mensagens diferentes.</p><p>A <strong>posição</strong> é o offset naquela partição. Key <code>99</code> → partição 1, offset 4. PagamentoAprovado da mesma key → offset 5 na mesma partição. Pedido 40 pode estar na P0 no offset 4: outra mensagem.</p><figure class=\"viz\"><img src=\"/diagrams/pedido-99.svg\" alt=\"PedidoCriado key 99 cai na partição 1 e vira offset 4 só daquela partição\" width=\"900\" height=\"200\"></figure><p>Publicar sem key “para espalhar carga” no fluxo do 99: Criado / Pago / Enviado podem cair em partições diferentes. O consumidor pode ver Pago antes de Criado.</p>"
+    },
+    {
+      "id": "committed-lag",
+      "kind": "explicar",
+      "title": "Committed offset. Lag = LOG-END − CURRENT.",
+      "html": "<p>O <strong>committed offset</strong> do grupo é outra coisa: o grupo grava em tópico interno (<code>__consumer_offsets</code>) — “partição P, já processei até X”. Crash → o grupo relê a partir desse X.</p><p><strong>Lag</strong> por partição: <code>LOG-END-OFFSET − CURRENT-OFFSET</code>. O listener do lab imprime o offset de cada mensagem.</p><p>Commit manual no Spring: <code>spring.kafka.listener.ack-mode: manual</code> e <code>ack.acknowledge()</code> depois do efeito. Auto-commit por relógio é o committed offset andando sozinho — perigoso se o cartão ainda não foi cobrado.</p><p>Grupo novo sem commit: <code>auto.offset.reset</code> decide — <code>earliest</code> (início ainda retido) ou <code>latest</code> (só o ao vivo).</p>"
+    },
+    {
+      "id": "dois-times",
+      "kind": "cena",
+      "kicker": "Mesmo tópico",
+      "title": "Faturamento no 80. Analytics no 12. Os dois estão certos.",
+      "body": "<p>PedidoCriado do pedido 99 está no offset 40 da partição 2. A mensagem não some quando alguém lê.</p><p>Faturamento já passou. Analytics ainda está na semana. Cada <code>group.id</code> tem o próprio committed offset. Kafka não “entrega e esquece”. Quem lembra é o seu grupo.</p>"
+    },
+    {
+      "id": "describe-groups",
+      "kind": "explicar",
+      "title": "Ver committed offset e lag no terminal",
+      "html": "<pre class=\"code\">docker compose exec kafka /opt/kafka/bin/kafka-consumer-groups.sh \\\n  --bootstrap-server localhost:9092 \\\n  --group faturamento --describe</pre><p>Saída típica: por partição, <code>CURRENT-OFFSET</code> vs <code>LOG-END-OFFSET</code> e coluna <code>LAG</code>. Repita com <code>--group analytics</code> — os números divergem e está correto.</p><p><code>PedidoConsumer</code> loga <code>offset=</code> a cada mensagem. Lag visível no dashboard ou no describe é sinal de atraso, não de inconsistência — duplicata sem inbox é inconsistência.</p>"
+    },
+    {
+      "id": "quando-gravar",
+      "kind": "escolha",
+      "prompt": "O listener do faturamento leu o PedidoCriado 99. Quando você commita o offset?",
+      "options": [
+        {
+          "id": "antes",
+          "label": "Commit no relógio, depois cobra o cartão",
+          "verdict": "ruim",
+          "why": "O committed offset avançou. O processo morre no meio da cobrança. Ninguém relê. Dinheiro perdido."
+        },
+        {
+          "id": "depois",
+          "label": "Cobra (com inbox) e só então ack.acknowledge()",
+          "verdict": "bom",
+          "why": "Crash relê. Inbox segura a duplicata. É o desenho do lab: ack-mode manual depois do efeito."
+        },
+        {
+          "id": "nunca",
+          "label": "Nunca commita. Sempre earliest, relê o tópico inteiro",
+          "verdict": "meio",
+          "why": "Útil uma vez, para replay. No consumidor de produção vira cobrar a semana de novo a cada restart."
+        }
+      ]
+    },
+    {
+      "id": "s-key",
+      "kind": "secao",
+      "title": "Key e ordem",
+      "subtitle": "Sobrenome da entidade — escolhe a coluna e preserva a sequência."
+    },
+    {
+      "id": "fora-de-ordem",
+      "kind": "cena",
+      "kicker": "Pedido 99",
+      "title": "Cancelou antes de criar. A key era um UUID novo.",
+      "body": "<p>PedidoCriado e PedidoCancelado do 99 caíram em partições diferentes. O faturamento leu o cancelamento primeiro. Tentou estornar o que ainda não cobrou.</p><p>Key não é o <code>eventId</code> da inbox. Key é o sobrenome da entidade: <code>pedidoId</code>. Mesma key, mesmo N de partições, mesma partição, ordem daquele pedido.</p>"
+    },
+    {
+      "id": "particionador",
+      "kind": "explicar",
+      "title": "Key = sobrenome da entidade. Ordem só dentro da partição.",
+      "html": "<p>Particionador padrão: <code>Utils.toPositive(murmur2(key)) % numPartitions</code>. Mesma key + mesmo N → mesma partição. <strong>Ordem é a sequência de append no líder daquela partição</strong> — não existe ordem global no tópico.</p><p>Três colunas = três relógios. Pedido 40 no offset 4 da P0 e pedido 99 no offset 4 da P1 são mensagens diferentes.</p><p>O segundo argumento do <code>send</code> é a key. No lab:</p><pre class=\"code\">kafka.send(\"pedidos.criados\", pedidoId, evento);\n// sem key (lab 1):\nkafka.send(\"pedidos.criados\", null, evento);</pre><p>HTTP equivalente:</p><pre class=\"code\">curl -X POST \"http://localhost:8080/pedidos?pedidoId=99&amp;comKey=true\"</pre><p><code>/diagrams/topico-particoes.svg</code> não existe no lab — imagine três colunas verticais: key <code>99</code> sempre cai na mesma coluna enquanto N não mudar; sem key, cada evento pode ir para coluna diferente.</p>"
+    },
+    {
+      "id": "sticky-hot",
+      "kind": "explicar",
+      "title": "Sem key: sticky. Hot partition. Alterar N quebra hash.",
+      "html": "<p><strong>Sem key</strong>, o sticky partitioner segura uma partição por um tempo para batch — não é rodízio justo por mensagem. Throughput sobe; ordem por pedido some.</p><p><strong>Hot partition</strong>: uma key dominante (cliente gigante, ou key global) concentra tudo numa coluna. Lag numa partição, as outras zeradas. Concurrency extra no grupo não drena — o gargalo é a coluna quente.</p><p><strong>Alterar N</strong> (<code>--alter --partitions 6</code>) recalcula <code>murmur2(key) % 6</code>. Mensagens velhas ficam onde estavam; novas do pedido 99 podem ir para outra partição. A ordem histórica da entidade quebra. Kafka não diminui partições depois.</p>"
+    },
+    {
+      "id": "qual-key",
+      "kind": "escolha",
+      "prompt": "O checkout publica os fatos do pedido 99. Qual key você põe no send?",
+      "options": [
+        {
+          "id": "pedido-id",
+          "label": "pedidoId. Sempre 99, em PedidoCriado e PedidoCancelado",
+          "verdict": "bom",
+          "why": "Ordem da entidade. Faturamento vê criar, depois cancelar. O murmur2 cai na mesma partição."
+        },
+        {
+          "id": "uuid",
+          "label": "UUID novo a cada evento — “fica bem distribuído”",
+          "verdict": "ruim",
+          "why": "Distribui. Destrói ordem. Timestamp na key faz a mesma besteira. A inbox até evita cobrança dupla; não conserta cancelar antes de criar."
+        },
+        {
+          "id": "sem-key",
+          "label": "null. O sticky partitioner espalha para batchar",
+          "verdict": "meio",
+          "why": "Throughput. Sem ordem por pedido. No lab 1 isso é de propósito: você olha partition= pulando. Não use no checkout de verdade."
+        }
+      ]
+    },
+    {
+      "id": "s-junto",
+      "kind": "secao",
+      "title": "Tudo junto",
+      "subtitle": "Do clique ao offset 4 — tópico, partição, key e committed offset num fluxo só."
+    },
+    {
+      "id": "fluxo-completo",
+      "kind": "explicar",
+      "title": "Pedido 99 do evento ao offset",
+      "html": "<p>Narrativa completa, peça por peça:</p><ol><li><strong>Producer</strong> (checkout) publica <code>PedidoCriado</code> no tópico <code>pedidos.criados</code> — a capa do caderno.</li><li><strong>Key</strong> <code>99</code> → <code>murmur2(99) % 3</code> → partição 1, a coluna certa.</li><li><strong>Broker</strong> líder da P1 appenda bytes, carimba <strong>offset 4</strong> — linha 4 <em>só</em> da coluna 1.</li><li><strong>Consumer group faturamento</strong> lê P1, processa, grava committed offset em <code>__consumer_offsets</code>.</li><li><strong>Consumer group analytics</strong> lê o mesmo log, committed offset diferente — faturamento no 80, analytics no 12.</li></ol><figure class=\"viz\"><img src=\"/diagrams/pedido-99.svg\" alt=\"Evento PedidoCriado key 99 → tópico pedidos → partição coluna 1 → offset linha 4\" width=\"900\" height=\"200\"></figure><p>Evento → capa → coluna → linha. Quatro conceitos, um fluxo.</p>"
+    },
+    {
+      "id": "preco",
+      "kind": "tradeoff",
+      "title": "Paralelismo é partição. Ordem é a mesma partição.",
+      "ganha": "3 partições: até 3 membros ativos no mesmo grupo. Outro group.id relê o log inteiro. Mesma key, mesmo N: ordem do pedido 99. Escala de escrita e de leitura (por grupo) acompanha o número de partições.",
+      "paga": "4 consumidores em 3 partições = 1 ocioso. Sem key, ordem do 99 some. Aumentar N redistribui keys e quebra a história da entidade. Kafka não diminui partições. Uma key vip esquenta uma partição — concurrency extra não drena.",
+      "quando": [
+        "Você combinou o N com o pico de membros do grupo",
+        "A entidade tem história: mesma key enquanto N não muda",
+        "Outro time precisa do mesmo fato — outro group.id, não outra fatia"
+      ],
+      "quandoNao": [
+        "Subir pod sem partição nova e esperar throughput",
+        "Publicar o fluxo do 99 sem key “para espalhar”",
+        "--alter para 6 no tópico de produção e achar que o 99 continua na mesma cadeira"
+      ]
+    },
+    {
+      "id": "subir-n",
+      "kind": "escolha",
+      "prompt": "Lag no faturamento. Alguém quer --alter --partitions 6. O que acontece com o pedido 99?",
+      "options": [
+        {
+          "id": "hash-novo",
+          "label": "hash(key) % 6. O 99 pode mudar de partição. A ordem histórica daquela entidade quebra",
+          "verdict": "bom",
+          "why": "N novo, módulo novo. Mensagens velhas ficam onde estavam. Os novos podem ir para outra partição. Não dá para diminuir depois."
+        },
+        {
+          "id": "cola",
+          "label": "A key 99 continua na mesma partição. O hash não usa N",
+          "verdict": "ruim",
+          "why": "O particionador é murmur2(key) % numPartitions. Mudou N, mudou a partição."
+        },
+        {
+          "id": "volta",
+          "label": "Sobe para 6, drena o lag, volta para 3",
+          "verdict": "ruim",
+          "why": "A API não oferece --partitions 2 depois de 3. Recriar tópico apaga o log."
+        }
+      ]
+    },
+    {
+      "id": "ordem-global",
+      "kind": "escolha",
+      "prompt": "PedidoCriado e PagamentoAprovado do 99. O Kafka garante que o faturamento vê criar antes de pagar?",
+      "options": [
+        {
+          "id": "se-key",
+          "label": "Só se a mesma key cair na mesma partição — e N não mudar",
+          "verdict": "bom",
+          "why": "Ordem é a sequência de append no líder daquela partição. Sem key, os dois eventos podem inverter. Offset 4 da P1 não é o 4 da P0."
+        },
+        {
+          "id": "topico",
+          "label": "Sim. Ordem global no tópico pedidos.criados",
+          "verdict": "ruim",
+          "why": "Não existe ordem global. Três partições = três relógios. Pedido 40 pode ter offset 4 em outra partição — outro evento."
+        },
+        {
+          "id": "timestamp",
+          "label": "O timestamp do evento ordena, mesmo em partições diferentes",
+          "verdict": "ruim",
+          "why": "Timestamp não escolhe partição e não é a ordem de leitura. Dois producers no mesmo pedido: a ordem é a de chegada no líder, não a do relógio."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "bullets": [
+        "Tópico = capa do caderno (nome do fato). Partição = coluna. Offset = linha na coluna.",
+        "Consumer group: teto = número de partições. Committed offset por group.id em __consumer_offsets.",
+        "Key escolhe a coluna (murmur2 % N). Ordem só dentro da partição. UUID na key destrói ordem.",
+        "Lag = LOG-END − CURRENT. Commit depois do efeito (inbox). Ler não apaga a linha.",
+        "Aumentar partições recalcula o hash. Decida N cedo; auto-create e nome por destinatário são armadilhas."
+      ]
+    }
+  ]
+}

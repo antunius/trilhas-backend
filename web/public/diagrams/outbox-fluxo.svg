@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" role="img" aria-labelledby="t">
+  <title id="t">Outbox pattern</title>
+  <rect width="920" height="340" fill="#fffdf8"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="460" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1c1915">Outbox · mesma transação SQL, publish depois</text>
+    <text x="460" y="56" text-anchor="middle" font-size="13" fill="#5c564c">Postgres e Kafka não compartilham 2PC · a tabela outbox é a ponte</text>
+
+    <rect x="40" y="90" width="160" height="70" rx="8" fill="#f3e4d6" stroke="#c45c26"/>
+    <text x="120" y="120" text-anchor="middle" font-size="12" fill="#1c1915">Checkout</text>
+    <text x="120" y="140" text-anchor="middle" font-size="11" fill="#5c564c">pedido 99</text>
+
+    <line x1="200" y1="125" x2="250" y2="125" stroke="#c45c26" stroke-width="2.5"/>
+
+    <rect x="250" y="80" width="220" height="120" rx="10" fill="#fff" stroke="#d9d0c2"/>
+    <text x="360" y="108" text-anchor="middle" font-size="11" letter-spacing="0.08em" fill="#c45c26">1 TX SQL</text>
+    <text x="360" y="132" text-anchor="middle" font-size="13" fill="#1c1915">INSERT pedidos</text>
+    <text x="360" y="154" text-anchor="middle" font-size="13" fill="#1c1915">INSERT outbox</text>
+    <text x="360" y="180" text-anchor="middle" font-size="11" fill="#2f6b4f">commit juntos</text>
+
+    <line x1="470" y1="140" x2="530" y2="140" stroke="#2f6b4f" stroke-width="2.5"/>
+
+    <rect x="530" y="100" width="140" height="80" rx="8" fill="#e8f0ea" stroke="#2f6b4f"/>
+    <text x="600" y="135" text-anchor="middle" font-size="12" fill="#1c1915">Poller / CDC</text>
+    <text x="600" y="155" text-anchor="middle" font-size="11" fill="#5c564c">Debezium</text>
+
+    <line x1="670" y1="140" x2="730" y2="140" stroke="#2f6b4f" stroke-width="2.5"/>
+
+    <rect x="730" y="100" width="150" height="80" rx="8" fill="#fff" stroke="#d9d0c2"/>
+    <text x="805" y="135" text-anchor="middle" font-size="12" fill="#1c1915">Kafka</text>
+    <text x="805" y="155" text-anchor="middle" font-size="11" fill="#5c564c">PedidoCriado</text>
+
+    <rect x="250" y="230" width="420" height="70" rx="10" fill="#fff" stroke="#d9d0c2"/>
+    <text x="460" y="260" text-anchor="middle" font-size="13" fill="#5c564c">Kafka down: o pedido existe na outbox.</text>
+    <text x="460" y="282" text-anchor="middle" font-size="13" fill="#5c564c">Quando o broker volta, o poller publica. Inbox no consumidor impede cobrança dupla.</text>
+  </g>
+</svg>

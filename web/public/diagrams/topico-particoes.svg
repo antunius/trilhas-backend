@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-labelledby="t">
+  <title id="t">Tópico com partições, offsets e key</title>
+  <rect width="920" height="300" fill="#fffdf8"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="460" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1c1915">pedidos.criados · 3 partições</text>
+    <text x="460" y="54" text-anchor="middle" font-size="13" fill="#5c564c">key 99 ’ murmur2 % 3 ’ mesma coluna · ordem local</text>
+
+    <rect x="50" y="80" width="260" height="180" rx="10" fill="#fff" stroke="#d9d0c2"/>
+    <text x="180" y="108" text-anchor="middle" font-size="11" letter-spacing="0.1em" fill="#c45c26">P0</text>
+    <text x="180" y="140" text-anchor="middle" font-size="13" fill="#5c564c">0 · key 40</text>
+    <text x="180" y="164" text-anchor="middle" font-size="13" fill="#5c564c">1 · key 12</text>
+    <text x="180" y="188" text-anchor="middle" font-size="13" fill="#5c564c">2 · key 7</text>
+
+    <rect x="330" y="80" width="260" height="180" rx="10" fill="#e8f0ea" stroke="#2f6b4f"/>
+    <text x="460" y="108" text-anchor="middle" font-size="11" letter-spacing="0.1em" fill="#2f6b4f">P1 · key 99</text>
+    <text x="460" y="140" text-anchor="middle" font-size="13" fill="#1c1915">0 · PedidoCriado</text>
+    <text x="460" y="164" text-anchor="middle" font-size="13" fill="#1c1915">1 · PagamentoAprovado</text>
+    <text x="460" y="188" text-anchor="middle" font-size="13" fill="#1c1915">2 · PedidoEnviado</text>
+    <text x="460" y="230" text-anchor="middle" font-size="12" fill="#2f6b4f">ordem do 99 segura</text>
+
+    <rect x="610" y="80" width="260" height="180" rx="10" fill="#fff" stroke="#d9d0c2"/>
+    <text x="740" y="108" text-anchor="middle" font-size="11" letter-spacing="0.1em" fill="#c45c26">P2</text>
+    <text x="740" y="140" text-anchor="middle" font-size="13" fill="#5c564c">0 · key 55</text>
+    <text x="740" y="164" text-anchor="middle" font-size="13" fill="#5c564c">1 · key 88</text>
+
+    <text x="460" y="290" text-anchor="middle" font-size="13" fill="#5c564c">Offset 1 da P1 ` offset 1 da P0 · não existe ordem global no tópico</text>
+  </g>
+</svg>

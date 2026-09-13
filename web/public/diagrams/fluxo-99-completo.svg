@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" role="img" aria-labelledby="t">
+  <title id="t">Fluxo completo do pedido 99</title>
+  <rect width="920" height="420" fill="#fffdf8"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="460" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1c1915">Pedido 99 · do clique à fatura</text>
+
+    <rect x="30" y="60" width="120" height="56" rx="8" fill="#f3e4d6" stroke="#c45c26"/>
+    <text x="90" y="85" text-anchor="middle" font-size="11" fill="#c45c26">1</text>
+    <text x="90" y="102" text-anchor="middle" font-size="12" fill="#1c1915">Outbox</text>
+
+    <line x1="150" y1="88" x2="180" y2="88" stroke="#c45c26" stroke-width="2"/>
+
+    <rect x="180" y="60" width="120" height="56" rx="8" fill="#fff" stroke="#d9d0c2"/>
+    <text x="240" y="85" text-anchor="middle" font-size="11" fill="#c45c26">2</text>
+    <text x="240" y="102" text-anchor="middle" font-size="12" fill="#1c1915">Publish</text>
+
+    <line x1="300" y1="88" x2="330" y2="88" stroke="#c45c26" stroke-width="2"/>
+
+    <rect x="330" y="60" width="140" height="56" rx="8" fill="#fff" stroke="#d9d0c2"/>
+    <text x="400" y="85" text-anchor="middle" font-size="11" fill="#c45c26">3</text>
+    <text x="400" y="102" text-anchor="middle" font-size="12" fill="#1c1915">key 99 ’ P</text>
+
+    <line x1="470" y1="88" x2="500" y2="88" stroke="#c45c26" stroke-width="2"/>
+
+    <rect x="500" y="60" width="160" height="56" rx="8" fill="#e8f0ea" stroke="#2f6b4f"/>
+    <text x="580" y="85" text-anchor="middle" font-size="11" fill="#2f6b4f">4</text>
+    <text x="580" y="102" text-anchor="middle" font-size="12" fill="#1c1915">2 group.id</text>
+
+    <line x1="660" y1="88" x2="690" y2="88" stroke="#c45c26" stroke-width="2"/>
+
+    <rect x="690" y="60" width="200" height="56" rx="8" fill="#f3e4d6" stroke="#c45c26"/>
+    <text x="790" y="85" text-anchor="middle" font-size="11" fill="#c45c26">5</text>
+    <text x="790" y="102" text-anchor="middle" font-size="12" fill="#1c1915">Inbox + cartão + ack</text>
+
+    <rect x="60" y="160" width="800" height="220" rx="12" fill="#fff" stroke="#d9d0c2"/>
+    <text x="90" y="195" font-size="13" fill="#5c564c">1. Checkout grava pedido + outbox na mesma TX. Kafka pode estar no chão.</text>
+    <text x="90" y="222" font-size="13" fill="#5c564c">2. Poller publica PedidoCriado com key 99 e eventId estável.</text>
+    <text x="90" y="249" font-size="13" fill="#5c564c">3. Cai numa partição. Mesma key = ordem do pedido.</text>
+    <text x="90" y="276" font-size="13" fill="#5c564c">4. Faturamento e analytics leem com committed offsets independentes.</text>
+    <text x="90" y="303" font-size="13" fill="#5c564c">5. Cobra com inbox; só então ack. Morte no meio = at-least-once + idempotência.</text>
+    <text x="90" y="340" font-size="13" fill="#5c564c">67. DLT para veneno permanente. acks=all no producer não substitui a inbox.</text>
+  </g>
+</svg>

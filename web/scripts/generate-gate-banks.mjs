@@ -6909,6 +6909,44 @@ function patchTagged(track, slug, tags) {
   console.log("patched tags", track, slug, [...tags].join(","));
 }
 
+function consolidateKafkaChapters() {
+  const map = {
+    fundamentos: ["modelo-mental", "evento"],
+    anatomia: ["topico", "particao", "offset", "key"],
+    cluster: ["broker", "isr", "produtor", "consumidor"],
+    dinamica: ["rebalance", "retencao"],
+    garantias: ["garantias", "schema", "outbox"],
+    pratica: ["operacao", "spring"],
+    sintese: ["sintese", "tech-lead"],
+  };
+  const dir = path.join(outRoot, "kafka");
+  const keep = new Set(Object.keys(map));
+  for (const [dest, sources] of Object.entries(map)) {
+    const questions = [];
+    const seen = new Set();
+    for (const src of sources) {
+      const file = path.join(dir, `${src}.json`);
+      if (!fs.existsSync(file)) continue;
+      const data = JSON.parse(fs.readFileSync(file, "utf8"));
+      for (const q of data.questions || []) {
+        const key = `${q.q}||${(q.o || []).join("|")}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        questions.push(q);
+      }
+    }
+    write("kafka", dest, questions);
+    console.log("consolidated kafka", dest, questions.length);
+  }
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+    const slug = file.replace(/\.json$/, "");
+    if (!keep.has(slug)) {
+      fs.unlinkSync(path.join(dir, file));
+      console.log("removed legacy gate", slug);
+    }
+  }
+}
+
 if (process.argv.includes("--patch-analogy")) {
   patchAnalogy();
   console.log("analogy families patched");
@@ -6919,5 +6957,6 @@ if (process.argv.includes("--patch-analogy")) {
 } else {
   emit("kafka", kafka);
   emit("arquitetura", arq);
+  consolidateKafkaChapters();
   console.log("gate banks written");
 }

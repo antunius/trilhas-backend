@@ -1,35 +1,75 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Zap, Boxes } from "lucide-react";
+import { useEffect, useState } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  Circle,
+  Lock,
+  Gauge,
+} from "lucide-react";
 import { VisitTracker } from "@/components/VisitTracker";
 import { JsonLd } from "@/components/JsonLd";
+import { TrackLogo } from "@/components/TrackLogo";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { courseJsonLd } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
+import {
+  isLessonUnlocked,
+  isProgressHydrated,
+  loadProgress,
+  passedPaths,
+} from "@/lib/progress";
+import type { LessonMeta, NavItem, SidebarTrack } from "@/lib/catalog";
+import { isTrackHome } from "@/lib/catalog";
 
-export function TrackHome({
-  path,
-  num: _num,
-  eyebrow: _eyebrow,
-  title,
-  lede,
-  cards,
-  footer,
-  courseName,
-}: {
+type TrackHomeProps = {
   path: string;
-  num: string;
   eyebrow: string;
   title: string;
   lede: string;
-  cards: { href: string; tag: string; title: string; blurb: string }[];
   footer: string;
   courseName: string;
-}) {
+  lessons: LessonMeta[];
+  simulador: LessonMeta;
+  nav: NavItem[];
+  groups: SidebarTrack["groups"];
+};
+
+export function TrackHome({
+  path,
+  eyebrow,
+  title,
+  lede,
+  footer,
+  courseName,
+  lessons,
+  simulador,
+  nav,
+  groups,
+}: TrackHomeProps) {
   const isKafka = path.startsWith("/kafka");
+  const [passed, setPassed] = useState<Set<string>>(new Set());
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    function sync() {
+      if (!isProgressHydrated()) return;
+      setPassed(passedPaths(loadProgress()));
+      setReady(true);
+    }
+    sync();
+    window.addEventListener("trilhas-progress", sync);
+    return () => window.removeEventListener("trilhas-progress", sync);
+  }, []);
+
+  const byPath = new Map(lessons.map((l) => [l.path, l]));
 
   return (
-    <div className="wrap max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
       <VisitTracker path={path} />
       <JsonLd
         data={courseJsonLd({
@@ -39,7 +79,6 @@ export function TrackHome({
         })}
       />
 
-      {/* Back button */}
       <div className="mb-6">
         <Button
           asChild
@@ -54,8 +93,7 @@ export function TrackHome({
         </Button>
       </div>
 
-      {/* Head */}
-      <div className="page-head flex items-start gap-4 mb-8">
+      <div className="flex items-start gap-4 mb-10">
         <div
           className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${
             isKafka
@@ -64,53 +102,135 @@ export function TrackHome({
           }`}
           aria-hidden="true"
         >
-          {isKafka ? <Zap className="w-6 h-6" /> : <Boxes className="w-6 h-6" />}
+          <TrackLogo
+            track={isKafka ? "kafka" : "arquitetura"}
+            className="w-6 h-6"
+          />
         </div>
-        <div className="space-y-1">
+        <div className="space-y-1.5 min-w-0">
           <Badge
             variant="outline"
             className="text-[11px] font-mono px-2 py-0 border-border/80 text-muted-foreground"
           >
-            {_eyebrow}
+            {eyebrow}
           </Badge>
           <h1 className="text-2xl sm:text-3xl font-bold font-heading tracking-tight text-foreground">
             {title}
           </h1>
-          <p className="page-sub text-sm sm:text-base text-muted-foreground">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             {lede}
           </p>
         </div>
       </div>
 
-      {/* Cards list */}
-      <div className="track-links grid grid-cols-1 gap-3.5">
-        {cards.map((c) => (
-          <Link
-            href={c.href}
-            key={c.href}
-            className="group p-5 rounded-xl border border-border/80 bg-card hover:border-primary/50 hover:bg-secondary/30 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm"
-          >
-            <div className="space-y-1.5 flex-1 min-w-0">
-              <div className="flex items-center gap-2">
-                <Badge
-                  variant="secondary"
-                  className="text-[11px] font-mono px-2 py-0 text-muted-foreground font-normal"
-                >
-                  {c.tag}
-                </Badge>
-                <span className="tl-title text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {c.title}
-                </span>
+      <div className="space-y-8">
+        {(() => {
+          let lessonNumber = 0;
+          return groups.map((group) => {
+          const items = group.items.filter((item) => !isTrackHome(item.href));
+          if (items.length === 0) return null;
+
+          return (
+            <section key={group.label} className="space-y-3">
+              <div className="flex items-center gap-2 px-1">
+                <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  {group.label}
+                </h2>
+                <div className="flex-1 h-px bg-border/60" />
               </div>
-              <p className="tl-blurb text-xs sm:text-sm text-muted-foreground line-clamp-2">
-                {c.blurb}
-              </p>
-            </div>
-            <div className="shrink-0 flex items-center text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all">
-              <ArrowRight className="w-4 h-4" />
-            </div>
-          </Link>
-        ))}
+
+              <ul className="space-y-2">
+                {items.map((item) => {
+                  lessonNumber += 1;
+                  const n = lessonNumber;
+                  const lesson = byPath.get(item.href);
+                  const isSim = item.href === simulador.path;
+                  const unlocked =
+                    !ready || isLessonUnlocked(nav, item.href, passed);
+                  const done = passed.has(item.href);
+                  const href = unlocked ? item.href : undefined;
+                  const description = isSim
+                    ? simulador.description
+                    : lesson?.description ?? "";
+                  const label = isSim ? simulador.title : lesson?.title ?? item.label;
+
+                  const row = (
+                    <div
+                      className={`flex items-start gap-3 p-4 rounded-xl border transition-all ${
+                        unlocked
+                          ? "border-border/80 bg-card hover:border-primary/40 hover:bg-secondary/30 shadow-sm"
+                          : "border-border/40 bg-secondary/10 opacity-60"
+                      }`}
+                    >
+                      <div className="mt-0.5 shrink-0">
+                        {done ? (
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                        ) : !unlocked ? (
+                          <Lock className="w-4 h-4 text-muted-foreground" />
+                        ) : isSim ? (
+                          <Gauge
+                            className={`w-4 h-4 ${
+                              isKafka ? "text-amber-400" : "text-indigo-400"
+                            }`}
+                          />
+                        ) : (
+                          <Circle className="w-4 h-4 text-muted-foreground/70" />
+                        )}
+                      </div>
+
+                      <div className="flex-1 min-w-0 space-y-1">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-mono text-[11px] text-muted-foreground">
+                            {String(n).padStart(2, "0")}
+                          </span>
+                          <span className="text-sm font-semibold text-foreground">
+                            {label}
+                          </span>
+                          {isSim ? (
+                            <Badge
+                              variant="secondary"
+                              className="text-[10px] font-mono px-1.5 py-0"
+                            >
+                              Mesa final
+                            </Badge>
+                          ) : null}
+                        </div>
+                        {description ? (
+                          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                            {description}
+                          </p>
+                        ) : null}
+                        {!unlocked ? (
+                          <p className="text-[11px] text-muted-foreground/80">
+                            Passe o simulador da aula anterior (4 de 5) para
+                            desbloquear.
+                          </p>
+                        ) : null}
+                      </div>
+
+                      {unlocked ? (
+                        <ArrowRight className="w-4 h-4 text-muted-foreground shrink-0 mt-1 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                      ) : null}
+                    </div>
+                  );
+
+                  return (
+                    <li key={item.href}>
+                      {href ? (
+                        <Link href={href} className="group block no-underline">
+                          {row}
+                        </Link>
+                      ) : (
+                        row
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          );
+          });
+        })()}
       </div>
 
       <footer className="mt-16 pt-8 border-t border-border/60 text-xs text-muted-foreground text-center">

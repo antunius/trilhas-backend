@@ -378,11 +378,18 @@ export function LessonPlayer({
         </Button>
 
         {last ? (
-          <Button asChild size="sm" className="gap-2 bg-primary hover:bg-primary/90">
-            <a href="#simulador-aula">
-              <span>Ir ao simulador</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+          <Button
+            type="button"
+            size="sm"
+            className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+            onClick={() => {
+              document
+                .getElementById("simulador-aula")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          >
+            <span>Ir ao simulador</span>
+            <ArrowRight className="w-4 h-4" />
           </Button>
         ) : (
           <Button
@@ -390,7 +397,7 @@ export function LessonPlayer({
             size="sm"
             disabled={!canAdvance}
             onClick={() => go(i + 1)}
-            className="gap-2 bg-primary hover:bg-primary/90"
+            className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             <span>Continuar</span>
             <ArrowRight className="w-4 h-4" />
