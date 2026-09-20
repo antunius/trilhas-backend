@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual fator, além de precisão pura, pode justificar a escolha de um modelo mais simples em vez de um mais complexo?",
+      "o": [
+        "Não existe nenhum fator relevante além de precisão",
+        "Interpretabilidade, custo computacional, e volume de dados disponível para treinamento",
+        "Modelos simples nunca devem ser considerados",
+        "A popularidade da técnica entre outras empresas"
+      ],
+      "a": 1,
+      "w": "Esses fatores práticos frequentemente pesam tanto quanto (ou mais que) a precisão pura na escolha real de um modelo para produção.",
+      "t": "fixacao"
+    }
+  ]
+}

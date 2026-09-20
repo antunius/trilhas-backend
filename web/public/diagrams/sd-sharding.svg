@@ -1,0 +1,46 @@
+<svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .router { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .shard { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-shard); }
+  </style>
+  <defs>
+    <marker id="ah-shard" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+
+  <text x="410" y="28" text-anchor="middle" class="title">Sharding por hash: a chave decide o shard</text>
+
+  <rect x="40" y="120" width="120" height="60" class="box"/>
+  <text x="100" y="155" text-anchor="middle" class="label" font-weight="600">Cliente</text>
+
+  <path d="M160,150 L250,150" class="arrow"/>
+  <text x="205" y="138" text-anchor="middle" class="small">userId=42</text>
+
+  <rect x="255" y="110" width="160" height="80" class="router"/>
+  <text x="335" y="142" text-anchor="middle" class="label" font-weight="600">Router</text>
+  <text x="335" y="162" text-anchor="middle" class="small">hash(key) % N</text>
+
+  <path d="M415,130 L500,80" class="arrow"/>
+  <path d="M415,150 L500,150" class="arrow"/>
+  <path d="M415,170 L500,220" class="arrow"/>
+
+  <rect x="505" y="50" width="140" height="55" class="shard"/>
+  <text x="575" y="75" text-anchor="middle" class="label" font-weight="600">Shard A</text>
+  <text x="575" y="93" text-anchor="middle" class="small">users 0–33%</text>
+
+  <rect x="505" y="125" width="140" height="55" class="shard"/>
+  <text x="575" y="150" text-anchor="middle" class="label" font-weight="600">Shard B</text>
+  <text x="575" y="168" text-anchor="middle" class="small">users 34–66%</text>
+
+  <rect x="505" y="200" width="140" height="55" class="shard"/>
+  <text x="575" y="225" text-anchor="middle" class="label" font-weight="600">Shard C</text>
+  <text x="575" y="243" text-anchor="middle" class="small">users 67–100%</text>
+
+  <text x="410" y="285" text-anchor="middle" class="small">Cada shard guarda só uma fatia — escrita e armazenamento escalam horizontalmente</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que caracteriza a \"doença do nós\" em uma resposta comportamental?",
+      "o": [
+        "Falar demais sobre o próprio papel individual, ignorando o time",
+        "Descrever tudo em termos de \"nós fizemos\", sem nunca isolar a contribuição individual do candidato",
+        "Usar a palavra \"nós\" uma única vez na resposta",
+        "Elogiar excessivamente os colegas de equipe"
+      ],
+      "a": 1,
+      "w": "A \"doença do nós\" torna impossível para o entrevistador avaliar a contribuição específica do candidato, já que tudo é atribuído ao grupo — mesmo em trabalho de equipe, é necessário nomear o próprio papel.",
+      "t": "fixacao"
+    }
+  ]
+}

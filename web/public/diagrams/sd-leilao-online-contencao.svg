@@ -1,0 +1,44 @@
+<svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.8; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-auc); }
+  </style>
+  <defs>
+    <marker id="ah-auc" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Dois lances quase simultâneos, serializados por fila/lock</text>
+
+  <rect x="40" y="55" width="180" height="55" class="a"/>
+  <text x="130" y="78" text-anchor="middle" class="small" font-weight="600">Lance A: R$100</text>
+  <text x="130" y="96" text-anchor="middle" class="small">chega em t=0.001s</text>
+
+  <rect x="40" y="125" width="180" height="55" class="a"/>
+  <text x="130" y="148" text-anchor="middle" class="small" font-weight="600">Lance B: R$120</text>
+  <text x="130" y="166" text-anchor="middle" class="small">chega em t=0.003s</text>
+
+  <path d="M220,82 L340,110" class="arrow"/>
+  <path d="M220,152 L340,120" class="arrow"/>
+
+  <rect x="345" y="80" width="180" height="60" class="box"/>
+  <text x="435" y="103" text-anchor="middle" class="small" font-weight="600">Fila serializada</text>
+  <text x="435" y="121" text-anchor="middle" class="small">por item de leilão</text>
+
+  <path d="M525,110 L610,110" class="arrow"/>
+
+  <rect x="615" y="80" width="205" height="60" class="ok"/>
+  <text x="717" y="103" text-anchor="middle" class="small" font-weight="600">Processa em ordem de chegada</text>
+  <text x="717" y="121" text-anchor="middle" class="small">só aceita se maior que o lance atual</text>
+
+  <rect x="345" y="165" width="475" height="55" class="warn"/>
+  <text x="582" y="188" text-anchor="middle" class="small" font-weight="600">Lance vencedor atual: R$120 (B)</text>
+  <text x="582" y="206" text-anchor="middle" class="small">consistência forte — não há "quase vencedor" temporário visível a outros usuários</text>
+
+  <text x="430" y="245" text-anchor="middle" class="small">Sem serialização por item, dois lances concorrentes poderiam ler o "lance atual" desatualizado e os dois passarem</text>
+</svg>

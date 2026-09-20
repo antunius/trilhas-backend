@@ -1,0 +1,81 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 8; }
+    .partition { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; rx: 4; }
+    .consumer { fill: #14241f; stroke: #34d399; stroke-width: 1.5; rx: 4; }
+    .label { font-size: 14px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .grouplabel { font-size: 13px; font-weight: 600; fill: #34d399; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+
+  <!-- Producer -->
+  <rect x="20" y="190" width="130" height="70" class="box"/>
+  <text x="85" y="220" text-anchor="middle" class="title">Producer</text>
+  <text x="85" y="240" text-anchor="middle" class="small">app do entregador</text>
+
+  <!-- Arrow producer -> topic -->
+  <path d="M150,225 L210,225" class="arrow"/>
+  <text x="180" y="215" text-anchor="middle" class="small">chave =</text>
+  <text x="180" y="245" text-anchor="middle" class="small">id_entregador</text>
+
+  <!-- Topic box -->
+  <rect x="215" y="60" width="260" height="330" class="box" fill="#141a22"/>
+  <text x="345" y="85" text-anchor="middle" class="title">Topic: atualizacoes-entrega</text>
+
+  <!-- Partitions -->
+  <rect x="235" y="105" width="220" height="55" class="partition"/>
+  <text x="345" y="128" text-anchor="middle" class="label">Partition 0</text>
+  <text x="345" y="145" text-anchor="middle" class="small">offset: 0,1,2,3...</text>
+
+  <rect x="235" y="170" width="220" height="55" class="partition"/>
+  <text x="345" y="193" text-anchor="middle" class="label">Partition 1</text>
+  <text x="345" y="210" text-anchor="middle" class="small">offset: 0,1,2,3...</text>
+
+  <rect x="235" y="235" width="220" height="55" class="partition"/>
+  <text x="345" y="258" text-anchor="middle" class="label">Partition 2</text>
+  <text x="345" y="275" text-anchor="middle" class="small">offset: 0,1,2,3...</text>
+
+  <rect x="235" y="300" width="220" height="55" class="partition"/>
+  <text x="345" y="323" text-anchor="middle" class="label">Partition 3</text>
+  <text x="345" y="340" text-anchor="middle" class="small">offset: 0,1,2,3...</text>
+
+  <!-- Arrows topic -> consumer group -->
+  <path d="M475,132 L560,180" class="arrow"/>
+  <path d="M475,197 L560,205" class="arrow"/>
+  <path d="M475,262 L560,230" class="arrow"/>
+  <path d="M475,327 L560,255" class="arrow"/>
+
+  <!-- Consumer Group box -->
+  <rect x="565" y="110" width="300" height="250" class="box" fill="#14241f" stroke="#34d399"/>
+  <text x="715" y="135" text-anchor="middle" class="grouplabel">Consumer Group: app-cliente</text>
+
+  <rect x="585" y="155" width="120" height="50" class="consumer"/>
+  <text x="645" y="175" text-anchor="middle" class="label">Consumer A</text>
+  <text x="645" y="192" text-anchor="middle" class="small">lê Partition 0</text>
+
+  <rect x="720" y="155" width="120" height="50" class="consumer"/>
+  <text x="780" y="175" text-anchor="middle" class="label">Consumer B</text>
+  <text x="780" y="192" text-anchor="middle" class="small">lê Partition 1</text>
+
+  <rect x="585" y="220" width="120" height="50" class="consumer"/>
+  <text x="645" y="240" text-anchor="middle" class="label">Consumer C</text>
+  <text x="645" y="257" text-anchor="middle" class="small">lê Partition 2 e 3</text>
+
+  <text x="715" y="300" text-anchor="middle" class="small">cada partição é lida por</text>
+  <text x="715" y="316" text-anchor="middle" class="small">exatamente 1 consumer do grupo</text>
+
+  <!-- Second consumer group, independent -->
+  <path d="M475,150 C 520,420 520,420 565,420" class="arrow" stroke-dasharray="4 3"/>
+  <rect x="565" y="395" width="300" height="55" class="box" fill="#2a2114" stroke="#a16207"/>
+  <text x="715" y="418" text-anchor="middle" class="grouplabel" fill="#a16207">Consumer Group: analytics</text>
+  <text x="715" y="436" text-anchor="middle" class="small">lê o MESMO tópico, offset independente</text>
+
+  <text x="450" y="30" text-anchor="middle" class="title">Um producer, um tópico com 4 partições, dois consumer groups independentes</text>
+</svg>

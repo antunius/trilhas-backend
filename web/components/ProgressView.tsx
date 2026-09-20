@@ -17,7 +17,6 @@ import {
   type OverallStats,
 } from "@/lib/progress";
 import { ProgressRadar } from "@/components/ProgressRadar";
-import { TrackLogo } from "@/components/TrackLogo";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -158,72 +157,46 @@ export function ProgressView() {
         )}
       </div>
 
-      {/* Breakdown per Track */}
+      {/* Breakdown per category */}
       <div className="space-y-4">
         <div>
           <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary uppercase tracking-wider mb-1">
             <Compass className="w-3.5 h-3.5" />
-            <span>Desempenho por Trilha</span>
+            <span>Desempenho por categoria</span>
           </div>
           <h2 className="text-lg sm:text-xl font-bold font-heading text-foreground">
-            Status de Conclusão das Lições
+            Status de leitura e Avaliação
           </h2>
         </div>
 
         <div className="grid gap-4">
-          {(stats?.tracks || []).map((t) => {
-            const isKafka = t.id === "kafka";
-            return (
-              <div
-                key={t.id}
-                className="p-5 rounded-xl border border-border/80 bg-card hover:border-primary/40 transition-all space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center border shrink-0 ${
-                        isKafka
-                          ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                          : "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
-                      }`}
-                      aria-hidden="true"
-                    >
-                      <TrackLogo
-                        track={isKafka ? "kafka" : "arquitetura"}
-                        className="w-5 h-5"
-                      />
-                    </div>
-                    <div>
-                      <Link
-                        href={t.href}
-                        className="text-base font-semibold text-foreground hover:text-primary transition-colors block"
-                      >
-                        {t.name}
-                      </Link>
-                      <span className="text-xs text-muted-foreground">
-                        {t.done} de {t.total} aulas concluídas · {t.articleCount} aulas estruturadas
-                      </span>
-                    </div>
-                  </div>
-
-                  <Badge variant="outline" className="font-mono text-xs px-2.5 py-0.5">
-                    {t.pct}%
-                  </Badge>
+          {(stats?.categories || []).map((c) => (
+            <div
+              key={c.slug}
+              className="p-5 rounded-xl border border-border/80 bg-card hover:border-primary/40 transition-all space-y-3"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <Link
+                    href={c.href}
+                    className="text-base font-semibold text-foreground hover:text-primary transition-colors block truncate"
+                  >
+                    {c.name}
+                  </Link>
+                  <span className="text-xs text-muted-foreground">
+                    {c.done} de {c.total} artigos lidos
+                  </span>
                 </div>
-
-                <Progress
-                  value={t.pct}
-                  className={`h-2 bg-secondary ${
-                    isKafka ? "[&>div]:bg-amber-400" : "[&>div]:bg-indigo-400"
-                  }`}
-                />
+                <Badge variant="outline" className="font-mono text-xs px-2.5 py-0.5 shrink-0">
+                  {c.pct}%
+                </Badge>
               </div>
-            );
-          })}
+              <Progress value={c.pct} className="h-2 bg-secondary [&>div]:bg-primary" />
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Return button */}
       <div className="text-center pt-4 pb-12">
         <Button asChild variant="outline" size="sm" className="gap-2">
           <Link href="/">
@@ -234,7 +207,7 @@ export function ProgressView() {
       </div>
 
       <footer className="pt-8 border-t border-border/60 text-xs text-muted-foreground text-center">
-        Next.js · Vercel · Trilhas Apache Kafka & Arquitetura de Software · Design System Obsidian Compiler
+        codetoscale · Next.js · Supabase
       </footer>
     </div>
   );

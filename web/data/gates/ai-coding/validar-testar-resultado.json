@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que revisitar os requisitos originais ao final da tarefa é uma boa prática?",
+      "o": [
+        "Porque a IA sempre esquece parte da tarefa original",
+        "Porque é fácil perder de vista um detalhe menor do pedido original no meio do processo de iteração",
+        "Porque entrevistadores exigem isso como formalidade, sem valor real",
+        "Não há benefício relevante nessa prática"
+      ],
+      "a": 1,
+      "w": "O processo de iteração pode desviar o foco de detalhes menores do pedido original — revisitar os requisitos garante que nada importante foi esquecido.",
+      "t": "fixacao"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<svg viewBox="0 0 780 320" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .doc { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; rx: 4; }
+    .term { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.5; rx: 4; }
+    .label { font-size: 13px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.4; fill: none; marker-end: url(#ah3); opacity: 0.7; }
+  </style>
+  <defs>
+    <marker id="ah3" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+
+  <text x="390" y="25" text-anchor="middle" class="title">Índice direto (por documento) vs. índice invertido (por termo)</text>
+
+  <!-- Documents -->
+  <rect x="20" y="55" width="220" height="46" class="doc"/>
+  <text x="35" y="83" class="label">Vaga 1: "engenheiro de dados remoto"</text>
+
+  <rect x="20" y="106" width="220" height="46" class="doc"/>
+  <text x="35" y="134" class="label">Vaga 2: "engenheiro de software remoto"</text>
+
+  <rect x="20" y="157" width="220" height="46" class="doc"/>
+  <text x="35" y="185" class="label">Vaga 3: "analista de dados presencial"</text>
+
+  <text x="130" y="220" text-anchor="middle" class="small">documentos originais</text>
+
+  <!-- Arrow to inverted index -->
+  <path d="M245,127 L 310,127" class="arrow" stroke-width="2"/>
+  <text x="278" y="115" text-anchor="middle" class="small">análise +</text>
+  <text x="278" y="145" text-anchor="middle" class="small">inversão</text>
+
+  <!-- Inverted index -->
+  <rect x="320" y="45" width="440" height="240" class="box" fill="#141a22"/>
+  <text x="540" y="65" text-anchor="middle" class="label" font-weight="600">Índice invertido</text>
+
+  <rect x="335" y="80" width="410" height="30" class="term"/>
+  <text x="345" y="101" class="small">"engenheiro" → [Vaga 1, Vaga 2]</text>
+
+  <rect x="335" y="115" width="410" height="30" class="term"/>
+  <text x="345" y="136" class="small">"dados" → [Vaga 1, Vaga 3]</text>
+
+  <rect x="335" y="150" width="410" height="30" class="term"/>
+  <text x="345" y="171" class="small">"remoto" → [Vaga 1, Vaga 2]</text>
+
+  <rect x="335" y="185" width="410" height="30" class="term"/>
+  <text x="345" y="206" class="small">"software" → [Vaga 2]</text>
+
+  <rect x="335" y="220" width="410" height="30" class="term"/>
+  <text x="345" y="241" class="small">"presencial" → [Vaga 3]</text>
+
+  <text x="540" y="265" text-anchor="middle" class="small">busca "engenheiro dados" → interseção de [1,2] e [1,3] = Vaga 1</text>
+
+  <text x="390" y="300" text-anchor="middle" class="small">Sem escanear texto: a resposta já está pré-computada nas listas acima.</text>
+</svg>

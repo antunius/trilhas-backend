@@ -1,0 +1,45 @@
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .cli { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .facade { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .sub { fill: #14241f; stroke: #34d399; stroke-width: 1.4; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-f); }
+  </style>
+  <defs>
+    <marker id="ah-f" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="390" y="24" text-anchor="middle" class="caption">Facade — uma porta simples para um subsistema complexo</text>
+
+  <rect x="30" y="60" width="160" height="55" class="cli"/>
+  <text x="110" y="92" text-anchor="middle" class="small" font-weight="600">Cliente</text>
+
+  <path d="M190,87 L260,87" class="arrow"/>
+  <text x="225" y="75" text-anchor="middle" class="small">finalizarCompra()</text>
+
+  <rect x="265" y="55" width="230" height="65" class="facade"/>
+  <text x="380" y="80" text-anchor="middle" class="title">CheckoutFacade</text>
+  <text x="280" y="100" class="member">+ finalizarCompra(pedido)</text>
+
+  <path d="M300,120 L200,170" class="arrow"/>
+  <path d="M380,120 L380,170" class="arrow"/>
+  <path d="M460,120 L620,170" class="arrow"/>
+
+  <rect x="120" y="175" width="170" height="55" class="sub"/>
+  <text x="205" y="198" text-anchor="middle" class="small" font-weight="600">EstoqueService</text>
+  <text x="205" y="214" text-anchor="middle" class="small">reservarItens()</text>
+
+  <rect x="300" y="175" width="170" height="55" class="sub"/>
+  <text x="385" y="198" text-anchor="middle" class="small" font-weight="600">PagamentoService</text>
+  <text x="385" y="214" text-anchor="middle" class="small">cobrar()</text>
+
+  <rect x="540" y="175" width="200" height="55" class="sub"/>
+  <text x="640" y="198" text-anchor="middle" class="small" font-weight="600">EnvioService</text>
+  <text x="640" y="214" text-anchor="middle" class="small">agendarEntrega()</text>
+
+  <text x="390" y="265" text-anchor="middle" class="small">O cliente chama 1 método; a Facade orquestra 3 subsistemas na ordem certa</text>
+</svg>

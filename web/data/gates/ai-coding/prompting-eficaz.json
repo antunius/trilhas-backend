@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que caracteriza um bom prompt de acompanhamento, quando o resultado inicial não está satisfatório?",
+      "o": [
+        "Repetir exatamente o mesmo prompt inicial",
+        "Apontar especificamente o que precisa mudar, em vez de um feedback vago como \"tente de novo\"",
+        "Nunca dar feedback, apenas aceitar o resultado como está",
+        "Reescrever a tarefa inteira do zero a cada iteração"
+      ],
+      "a": 1,
+      "w": "Feedback específico sobre o que precisa mudar torna muito mais provável que a próxima iteração da IA já resolva o problema identificado.",
+      "t": "fixacao"
+    }
+  ]
+}

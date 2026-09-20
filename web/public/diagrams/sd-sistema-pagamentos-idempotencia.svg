@@ -1,0 +1,41 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-pay); }
+  </style>
+  <defs>
+    <marker id="ah-pay" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Chave de idempotência bloqueia retry duplicado; saga compensa falha parcial</text>
+
+  <rect x="30" y="50" width="380" height="110" class="a"/>
+  <text x="220" y="75" text-anchor="middle" class="label">Retry de rede — mesma requisição</text>
+  <text x="220" y="98" text-anchor="middle" class="small">idempotency-key: abc-123</text>
+  <path d="M120,110 L120,140" class="arrow"/>
+  <path d="M320,110 L320,140" class="arrow"/>
+  <text x="120" y="132" text-anchor="middle" class="small">1ª tentativa</text>
+  <text x="320" y="132" text-anchor="middle" class="small">2ª tentativa (retry)</text>
+  <text x="220" y="148" text-anchor="middle" class="small" fill="#818cf8">só a 1ª executa; a 2ª retorna o mesmo resultado já processado</text>
+
+  <rect x="440" y="50" width="390" height="200" class="box"/>
+  <text x="635" y="75" text-anchor="middle" class="label">Saga: pagamento em etapas</text>
+  <rect x="465" y="90" width="100" height="45" class="b"/>
+  <text x="515" y="117" text-anchor="middle" class="small">Debita origem</text>
+  <path d="M565,112 L620,112" class="arrow"/>
+  <rect x="625" y="90" width="100" height="45" class="warn"/>
+  <text x="675" y="112" text-anchor="middle" class="small">Credita destino</text>
+  <text x="675" y="127" text-anchor="middle" class="small" fill="#fbbf24">falha aqui</text>
+  <path d="M675,135 L675,165" class="arrow" stroke-dasharray="4 3"/>
+  <rect x="600" y="170" width="150" height="45" class="b"/>
+  <text x="675" y="192" text-anchor="middle" class="small">Compensação:</text>
+  <text x="675" y="207" text-anchor="middle" class="small">estorna a origem</text>
+
+  <text x="430" y="270" text-anchor="middle" class="small">Sem chave de idempotência, o retry cobraria duas vezes; sem saga, uma falha no meio deixaria dinheiro "sumido"</text>
+</svg>

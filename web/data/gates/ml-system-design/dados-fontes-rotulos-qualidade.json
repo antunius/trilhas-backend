@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é uma limitação comum de dados de comportamento implícito do usuário (como cliques)?",
+      "o": [
+        "Eles nunca estão disponíveis em volume suficiente",
+        "Refletem apenas o que o usuário já viu e escolheu interagir, carregando um viés de exposição",
+        "São sempre mais confiáveis que qualquer outro tipo de dado",
+        "Não podem ser usados para treinar modelos de ML"
+      ],
+      "a": 1,
+      "w": "Dados implícitos são abundantes, mas limitados ao que já foi exposto ao usuário — um viés importante de reconhecer ao usá-los como fonte principal de treinamento.",
+      "t": "fixacao"
+    }
+  ]
+}

@@ -3,7 +3,13 @@ import { NextResponse, type NextRequest } from "next/server";
 import { isDevBypass } from "@/lib/dev";
 import { isLegacyHost, SITE_URL } from "@/lib/site";
 
-const PUBLIC = new Set(["/login", "/auth/callback", "/robots.txt", "/sitemap.xml"]);
+const PUBLIC = new Set([
+  "/login",
+  "/acesso-restrito",
+  "/auth/callback",
+  "/robots.txt",
+  "/sitemap.xml",
+]);
 
 function isPublic(pathname: string) {
   if (PUBLIC.has(pathname)) return true;

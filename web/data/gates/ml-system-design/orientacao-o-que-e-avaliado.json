@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o foco central de uma entrevista de ML System Design, diferente de System Design tradicional?",
+      "o": [
+        "Escala de infraestrutura e bancos de dados distribuídos",
+        "A ponte entre o objetivo de negócio e um sistema de ML funcional, incluindo dados, modelo e comportamento em produção",
+        "Provas matemáticas detalhadas de algoritmos de ML",
+        "Não há diferença real entre os dois tipos de entrevista"
+      ],
+      "a": 1,
+      "w": "ML System Design avalia especificamente a capacidade de conectar um problema de negócio a um sistema de ML funcional, sem o foco extremo em infraestrutura de System Design tradicional nem o rigor matemático de uma prova teórica.",
+      "t": "fixacao"
+    }
+  ]
+}

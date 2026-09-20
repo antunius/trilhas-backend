@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que uma entrevista de AI Coding busca avaliar, além do resultado final funcionar?",
+      "o": [
+        "Apenas se a IA conseguiu gerar código sem nenhum erro",
+        "Como o candidato dirige a IA de forma eficaz, revisa criticamente o resultado, e comunica decisões ao longo do processo",
+        "A velocidade de digitação do candidato",
+        "Se o candidato consegue evitar usar a IA completamente"
+      ],
+      "a": 1,
+      "w": "O processo de dirigir a IA com julgamento crítico é o que está sendo avaliado, não apenas o código final produzido.",
+      "t": "fixacao"
+    }
+  ]
+}

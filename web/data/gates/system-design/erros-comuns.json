@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é uma das formas mais eficazes de evitar o erro de gestão de tempo?",
+      "o": [
+        "Ignorar o tempo e confiar na intuição",
+        "Ter um orçamento aproximado de tempo por etapa e monitorar o próprio ritmo",
+        "Gastar o máximo de tempo possível na etapa de requisitos",
+        "Pular a etapa de deep dive para garantir tempo no desenho de alto nível"
+      ],
+      "a": 1,
+      "w": "Um orçamento de tempo aproximado, monitorado ao longo da entrevista, ajuda a garantir que todas as etapas — especialmente os deep dives — recebam atenção suficiente.",
+      "t": "fixacao"
+    }
+  ]
+}

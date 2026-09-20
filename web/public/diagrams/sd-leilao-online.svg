@@ -1,0 +1,31 @@
+<svg viewBox="0 0 820 250" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .accent { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 12.5px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 14.5px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#m-leilao-o); }
+  </style>
+  <defs>
+    <marker id="m-leilao-o" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+  <text x="410" y="26" text-anchor="middle" class="title">Leilão: lances com ordenação</text>
+  <rect x="94" y="100" width="140" height="64" class="box"/>
+  <text x="164" y="138" text-anchor="middle" class="label" font-weight="600">Bidder</text>
+  <rect x="258" y="100" width="140" height="64" class="accent"/>
+  <text x="328" y="138" text-anchor="middle" class="label" font-weight="600">API</text>
+  <rect x="422" y="100" width="140" height="64" class="accent"/>
+  <text x="492" y="138" text-anchor="middle" class="label" font-weight="600">Auction</text>
+  <rect x="586" y="100" width="140" height="64" class="ok"/>
+  <text x="656" y="138" text-anchor="middle" class="label" font-weight="600">Store</text>
+  <path d="M234,132 L258,132" class="arrow"/>
+  <path d="M398,132 L422,132" class="arrow"/>
+  <path d="M562,132 L586,132" class="arrow"/>
+  <text x="410" y="220" text-anchor="middle" class="small">Esboço de alto nível para orientar o exercício</text>
+
+</svg>

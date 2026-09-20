@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual modelo de banco de dados tende a ser mais adequado quando relacionamentos complexos e consistência forte são centrais ao problema?",
+      "o": [
+        "Chave-valor",
+        "Documento",
+        "Relacional",
+        "Nenhum dos três — sempre usar cache"
+      ],
+      "a": 2,
+      "w": "Bancos relacionais foram desenhados justamente para modelar relacionamentos complexos com garantias fortes de integridade e consistência.",
+      "t": "fixacao"
+    }
+  ]
+}

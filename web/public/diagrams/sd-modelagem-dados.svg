@@ -1,0 +1,37 @@
+<svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .accent { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 12.5px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 14.5px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#m-mod); }
+  </style>
+  <defs>
+    <marker id="m-mod" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+  <text x="410" y="26" text-anchor="middle" class="title">Modelagem: entidades, chaves e padrões de acesso</text>
+
+  <rect x="80" y="90" width="160" height="80" class="accent"/>
+  <text x="160" y="125" text-anchor="middle" class="label" font-weight="600">User</text>
+  <text x="160" y="145" text-anchor="middle" class="small">id, name</text>
+
+  <rect x="330" y="90" width="160" height="80" class="ok"/>
+  <text x="410" y="125" text-anchor="middle" class="label" font-weight="600">Post</text>
+  <text x="410" y="145" text-anchor="middle" class="small">id, userId, text</text>
+
+  <rect x="580" y="90" width="160" height="80" class="warn"/>
+  <text x="660" y="125" text-anchor="middle" class="label" font-weight="600">Follow</text>
+  <text x="660" y="145" text-anchor="middle" class="small">from → to</text>
+
+  <path d="M240,130 L330,130" class="arrow"/>
+  <text x="285" y="118" text-anchor="middle" class="small">1:N</text>
+  <path d="M490,130 L580,130" class="arrow"/>
+  <text x="535" y="118" text-anchor="middle" class="small">N:N</text>
+
+  <text x="410" y="230" text-anchor="middle" class="small">Comece pelas entidades e chaves de acesso — depois escolha o banco</text>
+</svg>

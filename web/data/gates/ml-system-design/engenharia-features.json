@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que a temporalidade de uma feature (se pode ser pré-computada ou precisa ser calculada em tempo real) é relevante para a entrevista?",
+      "o": [
+        "Porque não tem nenhuma relevância prática",
+        "Porque afeta a viabilidade de produção do sistema, não apenas o poder preditivo teórico da feature",
+        "Porque todas as features devem sempre ser calculadas em tempo real",
+        "Porque features pré-computadas nunca são úteis"
+      ],
+      "a": 1,
+      "w": "Discutir temporalidade demonstra pensamento sobre viabilidade prática em produção, complementando a discussão puramente teórica de poder preditivo.",
+      "t": "fixacao"
+    }
+  ]
+}

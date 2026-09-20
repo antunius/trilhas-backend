@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o principal objetivo de uma boa resposta para \"fale sobre você\" no início de uma entrevista?",
+      "o": [
+        "Narrar toda a trajetória profissional em detalhes, do primeiro emprego até hoje",
+        "Dar um contexto breve, destacar as realizações mais relevantes e direcionar a conversa para seus pontos fortes",
+        "Falar exclusivamente sobre formação acadêmica",
+        "Evitar mencionar qualquer realização para parecer humilde"
+      ],
+      "a": 1,
+      "w": "A resposta ideal é breve (30s-2min), destaca realizações concretas e direciona a conversa para o que você quer que o entrevistador explore a seguir — não é uma narração cronológica completa.",
+      "t": "fixacao"
+    }
+  ]
+}

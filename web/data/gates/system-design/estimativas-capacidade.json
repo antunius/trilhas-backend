@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o principal propósito de fazer estimativas de capacidade em uma entrevista?",
+      "o": [
+        "Demonstrar habilidade em matemática de precisão",
+        "Justificar decisões de arquitetura com base em ordem de grandeza de escala",
+        "Preencher o tempo da entrevista quando não há mais o que dizer",
+        "Substituir o levantamento de requisitos"
+      ],
+      "a": 1,
+      "w": "O valor está em usar números aproximados para embasar decisões (ex: precisa de cache? precisa de sharding?), não em precisão matemática.",
+      "t": "fixacao"
+    }
+  ]
+}

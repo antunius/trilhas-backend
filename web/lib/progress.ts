@@ -1,14 +1,10 @@
-import {
-  gatedPaths,
-  isSimuladorPath,
-  isTrackHome,
-  kafkaNav,
-  arquiteturaNav,
-  sidebarTracks,
-  type NavItem,
-} from "./catalog";
-import { isDevBypass } from "@/lib/dev";
 import { createClient } from "@/lib/supabase/client";
+import categoriesJson from "@/content/categories.json";
+import articlesIndex from "@/content/articles/index.json";
+import type { ArticleMeta, Category } from "@/types/content";
+
+const CATEGORIES = categoriesJson as Category[];
+const ARTICLES = articlesIndex as ArticleMeta[];
 
 export type GateRecord = { passed: true; at: number };
 
@@ -20,6 +16,7 @@ export type ProgressState = {
   quiz?: Record<string, number>;
   gates?: Record<string, GateRecord>;
   sessions?: Record<string, boolean[]>;
+  /** Kept for rows already stored in Supabase; no longer written by UI. */
   simulador?: Record<string, SimuladorState>;
 };
 
@@ -42,81 +39,6 @@ export function emptyProgress(): ProgressState {
   return { visited: [], quiz: {}, gates: {}, sessions: {}, simulador: {} };
 }
 
-/** Old 19-lesson paths → new 7-chapter paths. */
-export const KAFKA_LEGACY_PATH_MAP: Record<string, string> = {
-  "/kafka/modelo-mental": "/kafka/fundamentos",
-  "/kafka/evento": "/kafka/fundamentos",
-  "/kafka/topico": "/kafka/anatomia",
-  "/kafka/particao": "/kafka/anatomia",
-  "/kafka/offset": "/kafka/anatomia",
-  "/kafka/key": "/kafka/anatomia",
-  "/kafka/broker": "/kafka/cluster",
-  "/kafka/isr": "/kafka/cluster",
-  "/kafka/produtor": "/kafka/cluster",
-  "/kafka/consumidor": "/kafka/cluster",
-  "/kafka/rebalance": "/kafka/dinamica",
-  "/kafka/retencao": "/kafka/dinamica",
-  "/kafka/operacao": "/kafka/pratica",
-  "/kafka/schema": "/kafka/garantias",
-  "/kafka/outbox": "/kafka/garantias",
-  "/kafka/spring": "/kafka/pratica",
-  "/kafka/tech-lead": "/kafka/sintese",
-};
-
-/** Legacy slugs that together unlock a chapter if all were passed. */
-const KAFKA_CHAPTER_SOURCES: Record<string, string[]> = {
-  "/kafka/fundamentos": ["/kafka/modelo-mental", "/kafka/evento"],
-  "/kafka/anatomia": [
-    "/kafka/topico",
-    "/kafka/particao",
-    "/kafka/offset",
-    "/kafka/key",
-  ],
-  "/kafka/cluster": [
-    "/kafka/broker",
-    "/kafka/isr",
-    "/kafka/produtor",
-    "/kafka/consumidor",
-  ],
-  "/kafka/dinamica": ["/kafka/rebalance", "/kafka/retencao"],
-  "/kafka/garantias": ["/kafka/garantias", "/kafka/schema", "/kafka/outbox"],
-  "/kafka/pratica": ["/kafka/operacao", "/kafka/spring"],
-  "/kafka/sintese": ["/kafka/sintese", "/kafka/tech-lead"],
-};
-
-function migrateKafkaProgress(state: ProgressState): ProgressState {
-  const gates = { ...(state.gates || {}) };
-  let changed = false;
-
-  for (const [chapter, sources] of Object.entries(KAFKA_CHAPTER_SOURCES)) {
-    if (gates[chapter]?.passed) continue;
-    const allPassed = sources.every((p) => gates[p]?.passed);
-    if (allPassed) {
-      gates[chapter] = { passed: true, at: Date.now() };
-      changed = true;
-    }
-  }
-
-  const visited = state.visited.map((p) => KAFKA_LEGACY_PATH_MAP[p] ?? p);
-  const uniqueVisited = [...new Set(visited)];
-  if (uniqueVisited.length !== state.visited.length || changed) {
-    changed = true;
-  }
-
-  const lastPath = state.lastPath
-    ? (KAFKA_LEGACY_PATH_MAP[state.lastPath] ?? state.lastPath)
-    : state.lastPath;
-
-  if (!changed && lastPath === state.lastPath) return state;
-
-  return {
-    ...state,
-    gates,
-    visited: uniqueVisited,
-    lastPath,
-  };
-}
-
 export function isProgressHydrated() {
   return hydrated;
 }
@@ -129,7 +51,7 @@ function emit() {
 
 function rowToState(row: ProgressRow | null): ProgressState {
   if (!row) return emptyProgress();
-  return migrateKafkaProgress({
+  return {
     visited: Array.isArray(row.visited) ? row.visited : [],
     lastPath: row.last_path ?? undefined,
     quiz: row.quiz && typeof row.quiz === "object" ? row.quiz : {},
@@ -138,7 +60,7 @@ function rowToState(row: ProgressRow | null): ProgressState {
       row.sessions && typeof row.sessions === "object" ? row.sessions : {},
     simulador:
       row.simulador && typeof row.simulador === "object" ? row.simulador : {},
-  });
+  };
 }
 
 async function flush() {
@@ -178,7 +100,10 @@ export function saveProgress(state: ProgressState) {
   persistSoon();
 }
 
-export async function hydrateProgressFromServer(uid: string, row: ProgressRow | null) {
+export async function hydrateProgressFromServer(
+  uid: string,
+  row: ProgressRow | null,
+) {
   userId = uid;
   cache = rowToState(row);
   hydrated = true;
@@ -204,7 +129,11 @@ export async function flushProgress() {
   await flush();
 }
 
-export function markVisited(path: string) {
+export function markArticleRead(
+  path: string,
+  _categorySlug: string,
+  _articleSlug: string,
+) {
   if (!hydrated) return;
   const state = loadProgress();
   if (!state.visited.includes(path)) state.visited.push(path);
@@ -212,52 +141,22 @@ export function markVisited(path: string) {
   saveProgress(state);
 }
 
-export function passedPaths(state: ProgressState = loadProgress()): Set<string> {
-  return new Set(
-    Object.entries(state.gates || {})
-      .filter(([, g]) => g && g.passed)
-      .map(([p]) => p),
-  );
-}
-
-export function markGatePassed(path: string) {
+export function markCategoryQuiz(
+  categorySlug: string,
+  score: number,
+  total: number,
+) {
+  if (!hydrated) return;
   const state = loadProgress();
-  state.gates = { ...state.gates, [path]: { passed: true, at: Date.now() } };
+  const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+  state.quiz = { ...(state.quiz || {}), [`vm:${categorySlug}`]: pct };
   saveProgress(state);
 }
 
-export function isLessonUnlocked(
-  nav: NavItem[],
-  path: string,
-  passed: Set<string> = passedPaths(),
-): boolean {
-  if (isDevBypass()) return true;
-  if (path === "/" || isTrackHome(path)) return true;
-  const gated = gatedPaths(nav);
-  if (isSimuladorPath(path)) {
-    const last = gated[gated.length - 1];
-    return Boolean(last && passed.has(last));
-  }
-  const i = gated.indexOf(path);
-  if (i === -1) return true;
-  if (i === 0) return true;
-  return gated.slice(0, i).every((p) => passed.has(p));
-}
-
-export function firstPendingPath(
-  nav: NavItem[],
-  passed: Set<string> = passedPaths(),
-): string | undefined {
-  return gatedPaths(nav).find((p) => !passed.has(p));
-}
-
-export function trackProgress(_trackPrefix: string, paths: string[]) {
+export function categoryQuizPct(categorySlug: string): number {
   const state = loadProgress();
-  const passed = passedPaths(state);
-  const gated = paths.filter((p) => !isTrackHome(p) && !isSimuladorPath(p));
-  const total = gated.length || 1;
-  const done = gated.filter((p) => passed.has(p)).length;
-  return { done, total, pct: Math.round((done / total) * 100) };
+  const v = state.quiz?.[`vm:${categorySlug}`];
+  return typeof v === "number" ? v : 0;
 }
 
 export type OverallStats = {
@@ -267,9 +166,11 @@ export type OverallStats = {
   avgMastery: number;
   lastPath?: string;
   firstPending: string;
+  categoriesCount: number;
+  articlesCount: number;
   radarData: { category: string; score: number }[];
-  tracks: {
-    id: "kafka" | "arquitetura";
+  categories: {
+    slug: string;
     name: string;
     description: string;
     href: string;
@@ -280,95 +181,135 @@ export type OverallStats = {
   }[];
 };
 
+function articlePath(a: ArticleMeta) {
+  return `/category/${a.categorySlug}/${a.slug}`;
+}
+
+export function isArticleVisited(path: string): boolean {
+  const state = loadProgress();
+  return (state.visited || []).includes(path);
+}
+
+export type CategoryReadiness = {
+  slug: string;
+  name: string;
+  description: string;
+  href: string;
+  pct: number;
+  done: number;
+  total: number;
+  quizPct: number;
+  articles: {
+    slug: string;
+    title: string;
+    href: string;
+    done: boolean;
+  }[];
+};
+
+export function getCategoryReadiness(): CategoryReadiness[] {
+  const state = loadProgress();
+  const visited = new Set(state.visited || []);
+  return [...CATEGORIES]
+    .filter((c) => !c.stub)
+    .sort((a, b) => a.order - b.order)
+    .map((c) => {
+      const arts = ARTICLES.filter((a) => a.categorySlug === c.slug).sort(
+        (a, b) => a.order - b.order,
+      );
+      const m = categoryMastery(c.slug, visited);
+      return {
+        slug: c.slug,
+        name: c.name,
+        description: c.description,
+        href: `/category/${c.slug}`,
+        pct: m.pct,
+        done: m.done,
+        total: m.total,
+        quizPct: categoryQuizPct(c.slug),
+        articles: arts.map((a) => ({
+          slug: a.slug,
+          title: a.title,
+          href: articlePath(a),
+          done: visited.has(articlePath(a)),
+        })),
+      };
+    });
+}
+
+function categoryMastery(
+  categorySlug: string,
+  visited: Set<string>,
+): { done: number; total: number; pct: number } {
+  const arts = ARTICLES.filter((a) => a.categorySlug === categorySlug);
+  const total = Math.max(arts.length, 1);
+  const done = arts.filter((a) => visited.has(articlePath(a))).length;
+  const readPct = Math.round((done / total) * 100);
+  const quizPct = categoryQuizPct(categorySlug);
+  const pct =
+    quizPct > 0 ? Math.round(readPct * 0.7 + quizPct * 0.3) : readPct;
+  return { done, total: arts.length, pct };
+}
+
 export function getOverallStats(): OverallStats {
   const state = loadProgress();
-  const passed = passedPaths(state);
+  const visited = new Set(state.visited || []);
 
-  const kafkaPaths = kafkaNav.map((n) => n.href);
-  const arqPaths = arquiteturaNav.map((n) => n.href);
+  const categories = [...CATEGORIES]
+    .filter((c) => !c.stub)
+    .sort((a, b) => a.order - b.order)
+    .map((c) => {
+      const m = categoryMastery(c.slug, visited);
+      return {
+        slug: c.slug,
+        name: c.name,
+        description: c.description,
+        href: `/category/${c.slug}`,
+        articleCount: m.total,
+        done: m.done,
+        total: m.total,
+        pct: m.pct,
+      };
+    });
 
-  const kafka = trackProgress("/kafka", kafkaPaths);
-  const arq = trackProgress("/arquitetura", arqPaths);
+  const radarData = categories.map((c) => ({
+    category: c.name.split(" ")[0] || c.name,
+    score: c.pct,
+  }));
 
-  const quizCount = Object.keys(state.quiz || {}).length;
-  const simCount = Object.values(state.simulador || {}).reduce(
-    (acc, s) => acc + (s && s.a ? Object.keys(s.a).length : 0),
-    0,
+  const avgMastery =
+    categories.length === 0
+      ? 0
+      : Math.round(
+          categories.reduce((acc, c) => acc + c.pct, 0) / categories.length,
+        );
+
+  const vmKeys = Object.entries(state.quiz || {}).filter(([k]) =>
+    k.startsWith("vm:"),
   );
-  const gatesCount = Object.keys(state.gates || {}).length;
-  const questionsAnswered = Math.max(quizCount + simCount, gatesCount * 5);
-  const questionsMastered = gatesCount * 4 + Math.round(quizCount * 0.8);
-
-  const sessionsCompleted = Object.values(state.sessions || {}).reduce(
-    (acc, arr) =>
-      acc + (Array.isArray(arr) ? arr.filter(Boolean).length : 0),
-    0,
+  const questionsAnswered = vmKeys.length * 5;
+  const questionsMastered = Math.round(
+    vmKeys.reduce((acc, [, pct]) => acc + (pct / 100) * 5, 0),
   );
 
-  const avgMastery = Math.round((kafka.pct + arq.pct) / 2);
-
-  const allNav = [...kafkaNav, ...arquiteturaNav];
-  const firstPending =
-    firstPendingPath(allNav, passed) || "/kafka/fundamentos";
-
-  const kafkaTrack = sidebarTracks.find((t) => t.id === "kafka");
-  const arqTrack = sidebarTracks.find((t) => t.id === "arquitetura");
-
-  function groupPct(items: NavItem[]) {
-    const gated = items.filter(
-      (i) => !isTrackHome(i.href) && !isSimuladorPath(i.href),
-    );
-    if (gated.length === 0) return 0;
-    const done = gated.filter((i) => passed.has(i.href)).length;
-    return Math.round((done / gated.length) * 100);
-  }
-
-  const radarData = [
-    { category: "K: Base", score: groupPct(kafkaTrack?.groups[0]?.items ?? []) },
-    { category: "K: Core", score: groupPct(kafkaTrack?.groups[1]?.items ?? []) },
-    { category: "K: Lab", score: groupPct(kafkaTrack?.groups[2]?.items ?? []) },
-    { category: "A: Base", score: groupPct(arqTrack?.groups[0]?.items ?? []) },
-    { category: "A: Core", score: groupPct(arqTrack?.groups[1]?.items ?? []) },
-    { category: "A: Sys", score: groupPct(arqTrack?.groups[2]?.items ?? []) },
-  ];
-
-  const tracks = [
-    {
-      id: "kafka" as const,
-      name: "Apache Kafka",
-      description:
-        "Sete capítulos densos: log distribuído, partições, garantias, outbox e simulador.",
-      href: "/kafka",
-      articleCount: kafkaNav.filter(
-        (n) => !isTrackHome(n.href) && !isSimuladorPath(n.href),
-      ).length,
-      done: kafka.done,
-      total: kafka.total,
-      pct: kafka.pct,
-    },
-    {
-      id: "arquitetura" as const,
-      name: "Arquitetura de Software",
-      description:
-        "Fundamentos, escalabilidade, resiliência, system design e nível Staff.",
-      href: "/arquitetura",
-      articleCount: arquiteturaNav.filter(
-        (n) => !isTrackHome(n.href) && !isSimuladorPath(n.href),
-      ).length,
-      done: arq.done,
-      total: arq.total,
-      pct: arq.pct,
-    },
-  ];
+  const firstUnread =
+    ARTICLES.map(articlePath).find((p) => !visited.has(p)) ||
+    "/category/system-design/orientacao";
 
   return {
     questionsAnswered,
     questionsMastered,
-    sessionsCompleted,
+    sessionsCompleted: Object.values(state.sessions || {}).reduce(
+      (acc, arr) =>
+        acc + (Array.isArray(arr) ? arr.filter(Boolean).length : 0),
+      0,
+    ),
     avgMastery,
     lastPath: state.lastPath,
-    firstPending,
+    firstPending: firstUnread,
+    categoriesCount: categories.length,
+    articlesCount: ARTICLES.length,
     radarData,
-    tracks,
+    categories,
   };
 }

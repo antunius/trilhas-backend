@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que significa \"adaptar a ênfase\" de uma história para uma pergunta diferente?",
+      "o": [
+        "Inventar novos fatos que não aconteceram na experiência real",
+        "Destacar uma parte diferente e verdadeira da mesma experiência, conforme a competência perguntada",
+        "Contar uma história completamente diferente a cada pergunta",
+        "Repetir exatamente a mesma narrativa palavra por palavra, sempre"
+      ],
+      "a": 1,
+      "w": "A técnica consiste em realçar aspectos reais e diferentes da mesma experiência, não em alterar os fatos que de fato aconteceram.",
+      "t": "fixacao"
+    }
+  ]
+}

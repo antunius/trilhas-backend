@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que é \"desvio de dados\" (data drift) no contexto de um modelo em produção?",
+      "o": [
+        "Um erro de programação no código do modelo",
+        "A mudança gradual no comportamento do mundo real, que faz com que um modelo treinado em dados antigos perca precisão ao longo do tempo",
+        "Uma falha de infraestrutura no servidor de inferência",
+        "Um tipo de ataque malicioso contra o sistema"
+      ],
+      "a": 1,
+      "w": "Data drift descreve a mudança natural nos padrões dos dados do mundo real ao longo do tempo, que degrada gradualmente a precisão de um modelo treinado em um momento anterior.",
+      "t": "fixacao"
+    }
+  ]
+}

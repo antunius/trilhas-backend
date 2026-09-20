@@ -1,0 +1,29 @@
+<svg viewBox="0 0 820 290" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .accent { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 12.5px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 14.5px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#m-dd); }
+  </style>
+  <defs>
+    <marker id="m-dd" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+  <text x="410" y="26" text-anchor="middle" class="title">Deep dive: zoom no gargalo ou no risco do design</text>
+
+  <rect x="100" y="70" width="620" height="50" class="box"/>
+  <text x="410" y="100" text-anchor="middle" class="label">Visão de alto nível (já desenhada)</text>
+
+  <path d="M410,120 L410,155" class="arrow"/>
+
+  <rect x="250" y="160" width="320" height="70" class="warn"/>
+  <text x="410" y="190" text-anchor="middle" class="label" font-weight="600">Deep dive</text>
+  <text x="410" y="210" text-anchor="middle" class="small">escala · consistência · falha · latência</text>
+
+  <text x="410" y="270" text-anchor="middle" class="small">Escolha 1–2 pontos críticos — não aprofunde tudo</text>
+</svg>

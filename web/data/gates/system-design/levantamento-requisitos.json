@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "q": "Qual das opções é um exemplo de requisito não-funcional?",
+      "o": [
+        "O usuário pode criar um link curto",
+        "O sistema deve suportar 10 mil escritas por segundo com baixa latência",
+        "O usuário pode definir uma data de expiração para o link",
+        "O sistema permite redirecionamento para a URL original"
+      ],
+      "a": 1,
+      "w": "Requisitos não-funcionais descrevem qualidades do sistema (escala, latência, disponibilidade), não ações específicas que o usuário realiza.",
+      "t": "fixacao"
+    },
+    {
+      "q": "Qual é a melhor abordagem ao levantar requisitos em uma entrevista?",
+      "o": [
+        "Fazer o máximo de perguntas possível antes de desenhar qualquer coisa",
+        "Não perguntar nada e assumir um caso de uso genérico",
+        "Fazer poucas perguntas direcionadas e declarar suposições explícitas quando necessário",
+        "Perguntar apenas sobre requisitos funcionais, ignorando escala"
+      ],
+      "a": 2,
+      "w": "O objetivo é reduzir ambiguidade de forma eficiente, não esgotar todas as perguntas possíveis — declarar suposições também é uma forma válida de avançar.",
+      "t": "fixacao"
+    }
+  ]
+}

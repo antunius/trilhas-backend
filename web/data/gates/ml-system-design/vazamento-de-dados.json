@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é uma boa pergunta a se fazer para cada feature candidata, a fim de evitar vazamento de dados?",
+      "o": [
+        "Essa feature é fácil de calcular?",
+        "Essa informação estaria realmente disponível no momento exato em que a predição precisa ser feita?",
+        "Essa feature tem um nome intuitivo?",
+        "Essa feature é numérica ou categórica?"
+      ],
+      "a": 1,
+      "w": "Vazamento de dados acontece quando uma feature usada no treinamento não estaria realmente disponível no momento real da predição — essa é a pergunta central para identificá-lo.",
+      "t": "fixacao"
+    }
+  ]
+}

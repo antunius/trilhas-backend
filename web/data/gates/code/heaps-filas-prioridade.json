@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é a vantagem de usar um heap de tamanho k para encontrar os k maiores elementos de uma coleção grande, em vez de ordenar tudo?",
+      "o": [
+        "Reduz a complexidade para n log k, em vez de n log n de uma ordenação completa",
+        "Não há vantagem nenhuma nessa abordagem",
+        "Um heap sempre usa mais memória do que ordenar a coleção inteira",
+        "É impossível encontrar os k maiores elementos sem ordenar tudo"
+      ],
+      "a": 0,
+      "w": "Manter um heap de tamanho fixo k evita o custo de ordenar toda a coleção, sendo mais eficiente quando k é muito menor que o tamanho total dos dados.",
+      "t": "fixacao"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que começar com um modelo de referência (baseline) simples é uma boa prática em uma entrevista de ML System Design?",
+      "o": [
+        "Porque modelos simples são sempre superiores a modelos complexos",
+        "Porque cria uma referência clara para avaliar se a complexidade adicional de um modelo mais sofisticado realmente se justifica",
+        "Porque modelos complexos nunca funcionam na prática",
+        "Não há benefício real nessa prática"
+      ],
+      "a": 1,
+      "w": "Um baseline simples serve como ponto de comparação, permitindo justificar de forma concreta se a complexidade adicional de um modelo mais sofisticado realmente traz ganho suficiente para valer a pena.",
+      "t": "fixacao"
+    }
+  ]
+}

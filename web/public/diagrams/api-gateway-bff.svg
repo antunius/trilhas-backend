@@ -1,0 +1,56 @@
+<svg viewBox="0 0 780 320" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .bff { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .service { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; rx: 4; }
+    .label { font-size: 12.5px; fill: #e8eaed; }
+    .small { font-size: 10.5px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.5; fill: none; marker-end: url(#ah7); }
+  </style>
+  <defs>
+    <marker id="ah7" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+
+  <text x="390" y="24" text-anchor="middle" class="title">BFFs dedicados por tipo de cliente, compartilhando os mesmos microsserviços</text>
+
+  <rect x="20" y="60" width="110" height="50" class="box"/>
+  <text x="75" y="90" text-anchor="middle" class="label">App TV</text>
+
+  <rect x="20" y="200" width="110" height="50" class="box"/>
+  <text x="75" y="230" text-anchor="middle" class="label">App Mobile</text>
+
+  <path d="M130,85 L190,85" class="arrow"/>
+  <path d="M130,225 L190,225" class="arrow"/>
+
+  <rect x="195" y="55" width="150" height="60" class="bff"/>
+  <text x="270" y="80" text-anchor="middle" class="label" font-weight="600">BFF-TV</text>
+  <text x="270" y="98" text-anchor="middle" class="small">poucos itens, imagens HD</text>
+
+  <rect x="195" y="195" width="150" height="60" class="bff"/>
+  <text x="270" y="220" text-anchor="middle" class="label" font-weight="600">BFF-Mobile</text>
+  <text x="270" y="238" text-anchor="middle" class="small">lista longa, imagens leves</text>
+
+  <path d="M345,85 L 430,140" class="arrow"/>
+  <path d="M345,225 L 430,170" class="arrow"/>
+
+  <rect x="440" y="40" width="320" height="240" class="box" fill="#141a22"/>
+  <text x="600" y="60" text-anchor="middle" class="label" font-weight="600">Mesmos microsserviços internos</text>
+
+  <rect x="460" y="75" width="130" height="40" class="service"/>
+  <text x="525" y="99" text-anchor="middle" class="small">Catálogo</text>
+
+  <rect x="605" y="75" width="130" height="40" class="service"/>
+  <text x="670" y="99" text-anchor="middle" class="small">Perfil</text>
+
+  <rect x="460" y="130" width="130" height="40" class="service"/>
+  <text x="525" y="154" text-anchor="middle" class="small">Histórico</text>
+
+  <rect x="605" y="130" width="130" height="40" class="service"/>
+  <text x="670" y="154" text-anchor="middle" class="small">Recomendação</text>
+
+  <text x="600" y="250" text-anchor="middle" class="small">Cada BFF chama os serviços que precisa</text>
+  <text x="600" y="265" text-anchor="middle" class="small">e molda a resposta para seu cliente específico</text>
+</svg>

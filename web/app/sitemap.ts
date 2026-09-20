@@ -1,10 +1,20 @@
 import type { MetadataRoute } from "next";
-import { allPublicPaths } from "@/lib/catalog";
+import { getCategories, listArticles, articleHref, categoryHref } from "@/lib/articles";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return allPublicPaths.map((path) => ({
+  const paths = [
+    "/",
+    "/learn",
+    "/practice",
+    "/community",
+    "/progress",
+    ...getCategories().map((c) => categoryHref(c.slug)),
+    ...getCategories().map((c) => `${categoryHref(c.slug)}/quiz`),
+    ...listArticles().map((a) => articleHref(a)),
+  ];
+  return paths.map((path) => ({
     url: `${SITE_URL}${path === "/" ? "" : path}`,
     lastModified: now,
     changeFrequency: path === "/" ? "weekly" : "monthly",

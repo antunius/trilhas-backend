@@ -1,0 +1,52 @@
+<svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .c { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-yt); }
+  </style>
+  <defs>
+    <marker id="ah-yt" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Upload direto ao blob storage → fila de transcodificação → CDN</text>
+
+  <rect x="30" y="70" width="130" height="60" class="box"/>
+  <text x="95" y="105" text-anchor="middle" class="label">Cliente</text>
+
+  <path d="M160,90 L250,90" class="arrow"/>
+  <text x="205" y="78" text-anchor="middle" class="small">URL pré-assinada</text>
+  <path d="M160,110 L250,150" class="arrow" stroke-dasharray="4 3"/>
+  <text x="200" y="140" text-anchor="middle" class="small" fill="#9aa3b2">upload direto,</text>
+  <text x="200" y="155" text-anchor="middle" class="small" fill="#9aa3b2">pula o app server</text>
+
+  <rect x="255" y="65" width="150" height="45" class="a"/>
+  <text x="330" y="92" text-anchor="middle" class="small" font-weight="600">API (gera URL)</text>
+
+  <rect x="255" y="125" width="150" height="55" class="c"/>
+  <text x="330" y="150" text-anchor="middle" class="small" font-weight="600">Blob storage</text>
+  <text x="330" y="167" text-anchor="middle" class="small">vídeo bruto</text>
+
+  <path d="M405,152 L500,152" class="arrow"/>
+  <text x="452" y="140" text-anchor="middle" class="small">evento: novo arquivo</text>
+
+  <rect x="505" y="125" width="150" height="55" class="box"/>
+  <text x="580" y="150" text-anchor="middle" class="small" font-weight="600">Fila de jobs</text>
+  <text x="580" y="167" text-anchor="middle" class="small">transcodificação</text>
+
+  <path d="M655,152 L745,152" class="arrow"/>
+
+  <rect x="750" y="60" width="90" height="120" class="b"/>
+  <text x="795" y="85" text-anchor="middle" class="small" font-weight="600">Workers</text>
+  <text x="795" y="105" text-anchor="middle" class="small">240p</text>
+  <text x="795" y="122" text-anchor="middle" class="small">480p</text>
+  <text x="795" y="139" text-anchor="middle" class="small">1080p</text>
+  <text x="795" y="160" text-anchor="middle" class="small">→ CDN</text>
+
+  <text x="430" y="215" text-anchor="middle" class="small">Uploads são raros perto do volume de visualizações — CDN + cache carregam o peso da leitura</text>
+  <text x="430" y="233" text-anchor="middle" class="small">Cliente consulta status do processamento; não fica bloqueado esperando</text>
+</svg>

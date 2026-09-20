@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que acurácia é uma métrica enganosa em problemas com classes fortemente desbalanceadas?",
+      "o": [
+        "Porque acurácia nunca pode ser calculada nesses casos",
+        "Porque um modelo que sempre prevê a classe majoritária pode alcançar acurácia alta sem ser útil para identificar a classe rara de interesse",
+        "Porque acurácia é sempre a melhor métrica em qualquer cenário",
+        "Não há problema em usar acurácia nesse contexto"
+      ],
+      "a": 1,
+      "w": "Em um cenário desbalanceado, prever sempre a classe majoritária já garante acurácia alta, mascarando a real incapacidade do modelo de identificar a classe rara que geralmente é o foco do problema.",
+      "t": "fixacao"
+    }
+  ]
+}

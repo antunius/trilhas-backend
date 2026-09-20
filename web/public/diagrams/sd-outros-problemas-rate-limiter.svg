@@ -1,0 +1,36 @@
+<svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+  </style>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Token bucket vs. sliding window — contador compartilhado entre instâncias</text>
+
+  <rect x="40" y="55" width="360" height="150" class="a"/>
+  <text x="220" y="80" text-anchor="middle" class="label">Token bucket</text>
+  <circle cx="120" cy="120" r="18" fill="#818cf8" opacity="0.85"/>
+  <circle cx="160" cy="120" r="18" fill="#818cf8" opacity="0.85"/>
+  <circle cx="200" cy="120" r="18" fill="#818cf8" opacity="0.35"/>
+  <circle cx="240" cy="120" r="18" fill="#818cf8" opacity="0.35"/>
+  <text x="220" y="150" text-anchor="middle" class="small">balde reabastece a taxa fixa;</text>
+  <text x="220" y="166" text-anchor="middle" class="small">requisição só passa se houver token</text>
+  <text x="220" y="188" text-anchor="middle" class="small" fill="#818cf8">simples · permite rajadas curtas</text>
+
+  <rect x="430" y="55" width="390" height="150" class="b"/>
+  <text x="625" y="80" text-anchor="middle" class="label">Sliding window</text>
+  <rect x="460" y="105" width="40" height="30" fill="#34d399" opacity="0.3"/>
+  <rect x="505" y="105" width="40" height="30" fill="#34d399" opacity="0.5"/>
+  <rect x="550" y="105" width="40" height="30" fill="#34d399" opacity="0.7"/>
+  <rect x="595" y="105" width="40" height="30" fill="#34d399" opacity="0.9"/>
+  <text x="625" y="150" text-anchor="middle" class="small">conta requisições numa janela</text>
+  <text x="625" y="166" text-anchor="middle" class="small">de tempo deslizante recente</text>
+  <text x="625" y="188" text-anchor="middle" class="small" fill="#34d399">mais preciso · mais estado por chave</text>
+
+  <rect x="40" y="225" width="780" height="55" class="box"/>
+  <text x="430" y="248" text-anchor="middle" class="small" font-weight="600">Em múltiplas instâncias, a contagem precisa ser compartilhada</text>
+  <text x="430" y="266" text-anchor="middle" class="small">Redis (INCR + TTL) como contador central — ou cada instância erra o limite por contar sozinha</text>
+</svg>

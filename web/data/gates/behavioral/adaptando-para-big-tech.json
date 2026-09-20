@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o ajuste mais eficaz para reformular uma história de empresa pequena para o padrão de avaliação de uma Big Tech?",
+      "o": [
+        "Inventar números maiores do que os reais para impressionar",
+        "Explicitar raciocínio sistêmico, coordenação entre times e impacto quantificado, mesmo em escala menor",
+        "Evitar mencionar a empresa anterior, por ser considerada pequena demais",
+        "Focar apenas na tecnologia usada, sem falar do raciocínio por trás das decisões"
+      ],
+      "a": 1,
+      "w": "O que conta não é o tamanho literal da empresa anterior, mas a capacidade de demonstrar o tipo de raciocínio sistêmico, coordenação e mentalidade orientada a dados que Big Techs esperam ver, aplicado à experiência real que você teve.",
+      "t": "fixacao"
+    }
+  ]
+}

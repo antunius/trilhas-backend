@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual protocolo deve ser o padrão na maioria das entrevistas de system design, salvo razão específica em contrário?",
+      "o": [
+        "GraphQL",
+        "RPC / gRPC",
+        "REST",
+        "WebSockets"
+      ],
+      "a": 2,
+      "w": "REST costuma ser a escolha mais simples e amplamente aceita como padrão; GraphQL e RPC são justificados por necessidades específicas (múltiplos clientes com necessidades diferentes, ou comunicação interna de alta performance).",
+      "t": "fixacao"
+    }
+  ]
+}

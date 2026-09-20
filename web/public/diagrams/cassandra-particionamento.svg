@@ -1,0 +1,39 @@
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .node { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .row { fill: #1e2438; stroke: #818cf8; stroke-width: 1.2; rx: 3; }
+    .label { font-size: 12px; fill: #e8eaed; }
+    .small { font-size: 10.5px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+  </style>
+
+  <text x="390" y="24" text-anchor="middle" class="title">Partition Key agrupa fisicamente; Clustering Key ordena dentro do grupo</text>
+
+  <rect x="30" y="50" width="330" height="220" class="node" fill="#141a22"/>
+  <text x="195" y="72" text-anchor="middle" class="label" font-weight="600">Nó A — partição id_conversa=42</text>
+
+  <rect x="45" y="85" width="300" height="34" class="row"/>
+  <text x="55" y="107" class="small">timestamp 10:00 — ana: "oi"</text>
+
+  <rect x="45" y="123" width="300" height="34" class="row"/>
+  <text x="55" y="145" class="small">timestamp 10:01 — bruno: "tudo bem?"</text>
+
+  <rect x="45" y="161" width="300" height="34" class="row"/>
+  <text x="55" y="183" class="small">timestamp 10:02 — ana: "tudo!"</text>
+
+  <text x="195" y="215" text-anchor="middle" class="small">... ordenado por timestamp (clustering key) ...</text>
+  <text x="195" y="245" text-anchor="middle" class="small">"últimas 50 mensagens" = leitura sequencial,</text>
+  <text x="195" y="260" text-anchor="middle" class="small">sem espalhar por outros nós</text>
+
+  <rect x="420" y="50" width="330" height="220" class="node" fill="#141a22"/>
+  <text x="585" y="72" text-anchor="middle" class="label" font-weight="600">Nó B — partição id_conversa=99</text>
+
+  <rect x="435" y="85" width="300" height="34" class="row"/>
+  <text x="445" y="107" class="small">timestamp 09:50 — carla: "..."</text>
+
+  <rect x="435" y="123" width="300" height="34" class="row"/>
+  <text x="445" y="145" class="small">timestamp 09:52 — diego: "..."</text>
+
+  <text x="585" y="245" text-anchor="middle" class="small">conversa 99 nunca mistura</text>
+  <text x="585" y="260" text-anchor="middle" class="small">com dados da conversa 42</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que caracteriza uma boa resposta de deep dive?",
+      "o": [
+        "Apresentar uma única solução sem alternativas",
+        "Nomear o problema, comparar alternativas, e justificar a escolha com base nos requisitos",
+        "Cobrir o máximo de tecnologias possível, superficialmente",
+        "Evitar mudar de ideia mesmo diante de uma boa objeção"
+      ],
+      "a": 1,
+      "w": "Um bom deep dive mostra comparação de trade-offs e uma escolha justificada — não apenas uma solução isolada sem alternativas discutidas.",
+      "t": "fixacao"
+    }
+  ]
+}

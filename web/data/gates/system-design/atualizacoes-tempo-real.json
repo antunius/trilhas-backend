@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual tecnologia é mais apropriada quando o cliente só precisa receber atualizações do servidor, sem nunca enviar dados pela mesma via?",
+      "o": [
+        "WebSockets",
+        "Server-Sent Events (SSE)",
+        "Uma nova conexão HTTP a cada segundo",
+        "Não é possível fazer isso sem polling"
+      ],
+      "a": 1,
+      "w": "SSE foi desenhado justamente para comunicação unidirecional do servidor para o cliente, sendo mais simples que WebSockets quando não há necessidade do cliente enviar dados pela mesma via.",
+      "t": "fixacao"
+    }
+  ]
+}

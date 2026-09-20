@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que traduzir um objetivo de negócio em uma métrica de ML requer cuidado especial?",
+      "o": [
+        "Porque objetivos de negócio nunca podem ser traduzidos em métricas de ML",
+        "Porque uma métrica mal escolhida pode criar incentivos que prejudicam o objetivo de negócio real, mesmo sendo tecnicamente otimizada",
+        "Porque métricas de ML são sempre idênticas aos objetivos de negócio",
+        "Essa tradução não é relevante para a entrevista"
+      ],
+      "a": 1,
+      "w": "Uma métrica de ML é sempre uma aproximação do objetivo de negócio real, e escolhas mal pensadas podem otimizar a métrica às custas do objetivo que ela deveria representar.",
+      "t": "fixacao"
+    }
+  ]
+}

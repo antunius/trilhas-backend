@@ -1,7 +1,7 @@
-# Trilhas Backend
+# Code to Scale — Learning
 
-Site das trilhas Kafka e Arquitetura (Next.js).
+Plataforma de preparação para entrevistas de engenharia (system design, code, LLD, behavioral, AI coding, ML system design).
 
 **https://learning.codetoscale.dev**
 
-O app vive em `web/`. O GitHub Pages foi desligado; a versão canônica é o domínio customizado na Vercel.
+O app vive em `web/` (Next.js). Deploy canônico na Vercel.

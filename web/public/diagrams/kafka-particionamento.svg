@@ -1,0 +1,63 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .hash { fill: #2a2114; stroke: #fbbf24; stroke-width: 2; rx: 6; }
+    .partition { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; rx: 4; }
+    .label { font-size: 13px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.8; fill: none; marker-end: url(#arrowhead2); }
+    .key { font-size: 12px; fill: #7c2d12; font-weight: 600; }
+  </style>
+  <defs>
+    <marker id="arrowhead2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+
+  <text x="410" y="25" text-anchor="middle" class="title">Como a chave decide a partição (hash(chave) % num_particoes)</text>
+
+  <!-- Keys -->
+  <rect x="20" y="60" width="140" height="36" class="box"/>
+  <text x="90" y="83" text-anchor="middle" class="key">entregador_101</text>
+
+  <rect x="20" y="110" width="140" height="36" class="box"/>
+  <text x="90" y="133" text-anchor="middle" class="key">entregador_205</text>
+
+  <rect x="20" y="160" width="140" height="36" class="box"/>
+  <text x="90" y="183" text-anchor="middle" class="key">entregador_101</text>
+  <text x="90" y="196" text-anchor="middle" class="small">(evento seguinte)</text>
+
+  <rect x="20" y="215" width="140" height="36" class="box"/>
+  <text x="90" y="238" text-anchor="middle" class="key">entregador_340</text>
+
+  <!-- Hash function -->
+  <rect x="230" y="100" width="150" height="90" class="hash"/>
+  <text x="305" y="135" text-anchor="middle" class="label" font-weight="600">hash(chave)</text>
+  <text x="305" y="155" text-anchor="middle" class="small">% num_particoes</text>
+  <text x="305" y="175" text-anchor="middle" class="small">(4 partições)</text>
+
+  <path d="M160,78 L230,130" class="arrow"/>
+  <path d="M160,128 L230,145" class="arrow"/>
+  <path d="M160,178 L230,155" class="arrow"/>
+  <path d="M160,233 L230,168" class="arrow"/>
+
+  <!-- Partitions -->
+  <rect x="450" y="30" width="330" height="50" class="partition"/>
+  <text x="615" y="60" text-anchor="middle" class="label">Partition 0</text>
+
+  <rect x="450" y="90" width="330" height="50" class="partition"/>
+  <text x="615" y="120" text-anchor="middle" class="label">Partition 1  ←  entregador_101 (sempre aqui)</text>
+
+  <rect x="450" y="150" width="330" height="50" class="partition"/>
+  <text x="615" y="180" text-anchor="middle" class="label">Partition 2  ←  entregador_205</text>
+
+  <rect x="450" y="210" width="330" height="50" class="partition"/>
+  <text x="615" y="240" text-anchor="middle" class="label">Partition 3  ←  entregador_340</text>
+
+  <path d="M380,145 C 410,145 420,115 450,105" class="arrow"/>
+  <path d="M380,145 C 410,145 420,175 450,175" class="arrow"/>
+  <path d="M380,145 C 410,145 420,235 450,235" class="arrow"/>
+
+  <text x="410" y="290" text-anchor="middle" class="small">Mesma chave → sempre a mesma partição → ordem preservada por entregador</text>
+</svg>

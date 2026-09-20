@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual das cinco áreas de avaliação sobre uso de IA é considerada a mais nova e específica desse contexto, sem equivalente direto nas áreas de sinal tradicionais?",
+      "o": [
+        "Escopo do que foi entregue",
+        "Verificação e confiança no que a IA produz",
+        "Manter-se atualizado com novas ferramentas",
+        "Ajudar outras pessoas a usarem IA"
+      ],
+      "a": 1,
+      "w": "As outras quatro áreas são versões adaptadas de competências já avaliadas antes da IA existir; a forma como você verifica e confia no resultado produzido pela IA é uma competência mais nova e cada vez mais central.",
+      "t": "fixacao"
+    }
+  ]
+}

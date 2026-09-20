@@ -1,0 +1,41 @@
+<svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .ctx { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .iface { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .impl { fill: #14241f; stroke: #34d399; stroke-width: 1.5; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-st); }
+    .dashed { stroke: #8b95a5; stroke-width: 1.3; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-st); }
+  </style>
+  <defs>
+    <marker id="ah-st" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="380" y="24" text-anchor="middle" class="caption">Strategy — troca o algoritmo sem tocar no contexto</text>
+
+  <rect x="280" y="45" width="220" height="70" class="ctx"/>
+  <text x="390" y="67" text-anchor="middle" class="title">CalculadoraDeFrete</text>
+  <text x="295" y="86" class="member">- estrategia: FreteStrategy</text>
+  <text x="295" y="102" class="member">calcular(pedido) → estrategia.calcular(pedido)</text>
+
+  <path d="M390,115 L390,150" class="arrow"/>
+
+  <rect x="280" y="155" width="220" height="45" class="iface"/>
+  <text x="390" y="182" text-anchor="middle" class="small" font-weight="600">« interface » FreteStrategy</text>
+
+  <rect x="60" y="220" width="180" height="45" class="impl"/>
+  <text x="150" y="247" text-anchor="middle" class="small" font-weight="600">FreteFixo</text>
+
+  <rect x="300" y="220" width="180" height="45" class="impl"/>
+  <text x="390" y="247" text-anchor="middle" class="small" font-weight="600">FretePorPeso</text>
+
+  <rect x="540" y="220" width="180" height="45" class="impl"/>
+  <text x="630" y="247" text-anchor="middle" class="small" font-weight="600">FreteExpresso</text>
+
+  <path d="M300,200 L150,220" class="dashed"/>
+  <path d="M390,200 L390,220" class="dashed"/>
+  <path d="M480,200 L630,220" class="dashed"/>
+</svg>

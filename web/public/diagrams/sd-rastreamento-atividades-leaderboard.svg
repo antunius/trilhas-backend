@@ -1,0 +1,44 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-strv); }
+  </style>
+  <defs>
+    <marker id="ah-strv" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Conjunto ordenado por trecho, atualizado após o fim da atividade</text>
+
+  <rect x="30" y="55" width="180" height="60" class="box"/>
+  <text x="120" y="90" text-anchor="middle" class="label">Atividade termina</text>
+
+  <path d="M210,85 L300,85" class="arrow"/>
+  <text x="255" y="73" text-anchor="middle" class="small">async</text>
+
+  <rect x="305" y="55" width="200" height="60" class="a"/>
+  <text x="405" y="80" text-anchor="middle" class="label">Job de pós-processo</text>
+  <text x="405" y="98" text-anchor="middle" class="small">detecta trechos conhecidos</text>
+
+  <path d="M505,85 L600,85" class="arrow"/>
+
+  <rect x="605" y="45" width="220" height="150" class="b"/>
+  <text x="715" y="68" text-anchor="middle" class="label">Sorted set por trecho</text>
+  <rect x="625" y="80" width="180" height="24" fill="#34d399" opacity="0.9"/>
+  <text x="715" y="97" text-anchor="middle" class="small">1º · Ana · 4:32</text>
+  <rect x="625" y="108" width="180" height="24" fill="#34d399" opacity="0.6"/>
+  <text x="715" y="125" text-anchor="middle" class="small">2º · Bia · 4:41</text>
+  <rect x="625" y="136" width="180" height="24" fill="#34d399" opacity="0.4"/>
+  <text x="715" y="153" text-anchor="middle" class="small">3º · Caio · 4:55</text>
+  <text x="715" y="180" text-anchor="middle" class="small">ZADD/ZRANGE — sem reordenar tudo</text>
+
+  <rect x="30" y="140" width="530" height="55" class="box"/>
+  <text x="295" y="163" text-anchor="middle" class="small" font-weight="600">Coordenadas GPS brutas ficam à parte, em ordem cronológica</text>
+  <text x="295" y="180" text-anchor="middle" class="small">o leaderboard só guarda o resumo (melhor tempo no trecho), não a rota inteira</text>
+
+  <text x="430" y="235" text-anchor="middle" class="small">Cálculo pesado (detectar recorde) acontece fora do caminho crítico do usuário, depois da atividade salva</text>
+</svg>

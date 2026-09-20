@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "q": "Por que o comando `SET chave valor NX EX 5` é uma forma segura de implementar um lock, enquanto \"ler a chave, checar se está vazia, e então escrever\" não é?",
+      "o": [
+        "Porque `NX` é mais rápido de digitar",
+        "Porque `SET ... NX` é uma operação atômica única; ler-e-depois-escrever são duas operações separadas, com uma janela onde dois clientes podem passar pela checagem simultaneamente",
+        "Porque `EX 5` impede qualquer outro cliente de tentar o lock",
+        "Não há diferença de segurança entre as duas abordagens"
+      ],
+      "a": 1,
+      "w": "Qualquer sequência de \"ler depois escrever\" implementada como dois comandos separados abre uma janela de condição de corrida; um único comando atômico como `SET ... NX` elimina essa janela por completo.",
+      "t": "fixacao"
+    },
+    {
+      "q": "Por que um Sorted Set é mais adequado que uma List ou um Hash para implementar um leaderboard?",
+      "o": [
+        "Porque Sorted Sets usam menos memória que qualquer outra estrutura",
+        "Porque um Sorted Set mantém os membros automaticamente ordenados por pontuação, com inserção e consulta de ranking em tempo logarítmico, sem necessidade de reordenar manualmente",
+        "Porque Listas não podem armazenar números",
+        "Não há diferença prática entre as estruturas para esse caso de uso"
+      ],
+      "a": 1,
+      "w": "A propriedade central de um Sorted Set — manter-se ordenado automaticamente por pontuação, com operações eficientes — é exatamente o que um leaderboard precisa, evitando o custo de reordenar uma lista a cada atualização.",
+      "t": "fixacao"
+    }
+  ]
+}

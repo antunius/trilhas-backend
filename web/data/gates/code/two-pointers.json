@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual variação de dois ponteiros é mais indicada para encontrar um par de números que somam um valor-alvo em um array ordenado?",
+      "o": [
+        "Ponteiros na mesma direção, ambos começando no início",
+        "Ponteiros convergentes, um começando no início e outro no fim",
+        "Um único ponteiro percorrendo o array duas vezes",
+        "Nenhuma das opções — esse problema não se beneficia de dois ponteiros"
+      ],
+      "a": 1,
+      "w": "Ponteiros convergentes aproveitam a ordenação do array para eliminar candidatos de ambos os extremos simultaneamente, resolvendo o problema em tempo linear.",
+      "t": "fixacao"
+    }
+  ]
+}

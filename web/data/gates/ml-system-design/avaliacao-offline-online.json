@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que a avaliação offline, mesmo com boas métricas, não garante desempenho real em produção?",
+      "o": [
+        "Porque métricas offline nunca têm relação com o desempenho real",
+        "Porque o comportamento do usuário pode mudar em resposta ao próprio modelo, algo que dados históricos não capturam completamente",
+        "Porque avaliação offline é sempre mais confiável que avaliação online",
+        "Não existe diferença entre avaliação offline e online"
+      ],
+      "a": 1,
+      "w": "Dados históricos refletem o comportamento sob o sistema anterior, não necessariamente como os usuários reagirão ao novo modelo em produção — daí a necessidade complementar de avaliação online.",
+      "t": "fixacao"
+    }
+  ]
+}

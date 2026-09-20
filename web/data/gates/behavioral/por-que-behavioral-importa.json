@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que a entrevista comportamental tende a pesar mais em cargos mais seniores?",
+      "o": [
+        "Porque cargos seniores não exigem conhecimento técnico",
+        "Porque a aposta da empresa passa a ser mais sobre como a pessoa opera em times e toma decisões do que sobre conhecimento técnico puro",
+        "Porque entrevistas técnicas não existem para cargos seniores",
+        "Não há diferença de peso entre níveis"
+      ],
+      "a": 1,
+      "w": "Em cargos mais seniores, o comportamento em situações ambíguas e a capacidade de influenciar sem autoridade formal se tornam fatores mais decisivos do que puro conhecimento técnico.",
+      "t": "fixacao"
+    }
+  ]
+}

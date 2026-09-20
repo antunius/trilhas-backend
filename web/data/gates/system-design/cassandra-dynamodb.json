@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "q": "No nosso cenário de chat, por que o ID da conversa é uma escolha melhor de partition key do que o ID do remetente?",
+      "o": [
+        "Porque IDs de conversa são sempre números menores",
+        "Porque o padrão de leitura mais comum é buscar mensagens de uma conversa específica, e a partition key deve corresponder a esse padrão para manter a leitura eficiente",
+        "Porque o ID do remetente nunca pode ser usado como chave",
+        "Não há diferença real entre as duas escolhas"
+      ],
+      "a": 1,
+      "w": "A partition key deve refletir como os dados são mais consultados — como as leituras são feitas por conversa, agrupar fisicamente por conversa é o que torna essa consulta eficiente.",
+      "t": "fixacao"
+    },
+    {
+      "q": "Com fator de replicação 3, por que escrita com nível 2 e leitura com nível 2 garante consistência forte, mas escrita com nível 1 e leitura com nível 1 não garante?",
+      "o": [
+        "Porque 2 é sempre um número mais seguro que 1",
+        "Porque 2+2=4 é maior que o fator de replicação (3), garantindo sobreposição entre as réplicas escritas e lidas; 1+1=2 não ultrapassa 3, então essa sobreposição não é garantida",
+        "Porque o nível de leitura não afeta a consistência",
+        "Essa matemática não se aplica a esses bancos"
+      ],
+      "a": 1,
+      "w": "A soma dos níveis de escrita e leitura ultrapassando o fator de replicação é o que garante, matematicamente, que pelo menos uma réplica em comum foi tocada por ambas as operações.",
+      "t": "fixacao"
+    }
+  ]
+}

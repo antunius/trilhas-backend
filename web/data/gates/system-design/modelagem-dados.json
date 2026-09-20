@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual tipo de armazenamento tende a ser mais adequado quando o acesso principal é uma busca simples por identificador único, com alta performance exigida?",
+      "o": [
+        "Banco relacional totalmente normalizado",
+        "Banco chave-valor",
+        "Data warehouse analítico",
+        "Sistema de arquivos distribuído"
+      ],
+      "a": 1,
+      "w": "Bancos chave-valor são otimizados justamente para esse padrão de acesso: busca rápida por uma chave única, sem necessidade de relacionamentos complexos.",
+      "t": "fixacao"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .cell { fill: #1e2438; stroke: #3d4a5c; stroke-width: 1; }
+    .hit { fill: #1e2438; stroke: #818cf8; stroke-width: 2; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-geo); }
+  </style>
+  <defs>
+    <marker id="ah-geo" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Grade geohash filtra candidatos antes do ranqueamento por texto</text>
+
+  <text x="150" y="55" text-anchor="middle" class="small" font-weight="600">1. Recorta células vizinhas ao usuário</text>
+  <g>
+    <rect x="60" y="65" width="60" height="60" class="cell"/>
+    <rect x="120" y="65" width="60" height="60" class="hit"/>
+    <rect x="180" y="65" width="60" height="60" class="cell"/>
+    <rect x="60" y="125" width="60" height="60" class="hit"/>
+    <rect x="120" y="125" width="60" height="60" class="hit"/>
+    <rect x="180" y="125" width="60" height="60" class="hit"/>
+    <rect x="60" y="185" width="60" height="60" class="cell"/>
+    <rect x="120" y="185" width="60" height="60" class="hit"/>
+    <rect x="180" y="185" width="60" height="60" class="cell"/>
+    <circle cx="150" cy="155" r="8" fill="#fbbf24"/>
+  </g>
+  <text x="150" y="260" text-anchor="middle" class="small">usuário no centro — 5 células vizinhas viram candidatos</text>
+
+  <path d="M270,155 L370,155" class="arrow"/>
+  <text x="320" y="143" text-anchor="middle" class="small">~dezenas de locais</text>
+
+  <rect x="375" y="105" width="220" height="100" class="box"/>
+  <text x="485" y="130" text-anchor="middle" class="small" font-weight="600">Elasticsearch</text>
+  <text x="485" y="152" text-anchor="middle" class="small">filtra por categoria +</text>
+  <text x="485" y="168" text-anchor="middle" class="small">texto livre nos candidatos</text>
+  <text x="485" y="188" text-anchor="middle" class="small" fill="#818cf8">não busca a cidade inteira</text>
+
+  <path d="M595,155 L680,155" class="arrow"/>
+
+  <rect x="685" y="120" width="150" height="70" class="b"/>
+  <text x="760" y="145" text-anchor="middle" class="small" font-weight="600">Ranqueado</text>
+  <text x="760" y="163" text-anchor="middle" class="small">por avaliação/distância</text>
+
+  <text x="430" y="245" text-anchor="middle" class="small">Recortar por geohash primeiro evita rankear/pontuar estabelecimentos fora de alcance</text>
+</svg>

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "q": "Qual a diferença central entre um \"tópico\" e uma \"partição\" no Kafka?",
+      "o": [
+        "São a mesma coisa, apenas nomes diferentes",
+        "O tópico é o nome lógico do canal de eventos; a partição é uma das divisões físicas desse tópico, cada uma um log sequencial independente",
+        "Partição é usada apenas para leitura, tópico apenas para escrita",
+        "Um tópico só pode ter uma partição"
+      ],
+      "a": 1,
+      "w": "O tópico é a unidade lógica (o \"nome do canal\"); internamente, ele é dividido em partições, que são as unidades físicas de armazenamento e paralelismo.",
+      "t": "fixacao"
+    },
+    {
+      "q": "Se o app do cliente e o painel de suporte são dois consumer groups diferentes lendo o mesmo tópico, o que acontece se o app do cliente processar um evento?",
+      "o": [
+        "O painel de suporte também avança automaticamente seu offset para esse evento",
+        "Cada consumer group mantém seu próprio offset de forma independente — o progresso de um não afeta o outro",
+        "Isso não é possível, apenas um consumer group pode ler um tópico por vez",
+        "Os dois grupos precisam necessariamente ter o mesmo número de instâncias"
+      ],
+      "a": 1,
+      "w": "Consumer groups são independentes entre si — cada um mantém seu próprio progresso de leitura sobre o mesmo tópico, o que é justamente o que permite múltiplos consumidores lerem os mesmos eventos para propósitos diferentes.",
+      "t": "fixacao"
+    },
+    {
+      "q": "Por que \"at-least-once\" combinado com um consumer idempotente costuma ser preferível a \"exactly-once\" na maioria dos sistemas práticos?",
+      "o": [
+        "Porque exactly-once é impossível de implementar em Kafka",
+        "Porque exactly-once tem custo real de throughput e complexidade operacional, e idempotência no consumer frequentemente resolve o mesmo problema de forma mais simples",
+        "Porque at-least-once nunca duplica mensagens",
+        "Não há diferença prática entre as duas abordagens"
+      ],
+      "a": 1,
+      "w": "Exactly-once via transações tem custo real de performance; quando o efeito de uma duplicata pode ser neutralizado por idempotência no consumer, essa combinação é geralmente mais custo-efetiva.",
+      "t": "fixacao"
+    }
+  ]
+}

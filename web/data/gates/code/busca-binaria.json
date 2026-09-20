@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual condição é necessária para aplicar busca binária \"sobre a resposta\" (não sobre um array)?",
+      "o": [
+        "O array de entrada precisa estar ordenado",
+        "A condição testada precisa ser monotônica: se um valor funciona, todo valor maior (ou menor) também funciona",
+        "O problema precisa envolver apenas números inteiros",
+        "Não é possível aplicar busca binária fora de um array"
+      ],
+      "a": 1,
+      "w": "A monotonicidade da condição é o que permite eliminar metade do espaço de busca a cada passo, independente de estarmos buscando em um array ou em um espaço de valores possíveis.",
+      "t": "fixacao"
+    }
+  ]
+}

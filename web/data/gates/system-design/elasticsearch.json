@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "q": "Por que um índice invertido torna a busca por uma palavra muito mais rápida do que examinar o texto de cada documento?",
+      "o": [
+        "Porque ele armazena os documentos em ordem alfabética",
+        "Porque ele mapeia diretamente cada termo para a lista de documentos que o contêm, evitando examinar o conteúdo de documentos irrelevantes",
+        "Porque ele comprime o texto dos documentos",
+        "Não há diferença real de performance entre as duas abordagens"
+      ],
+      "a": 1,
+      "w": "O índice invertido elimina a necessidade de examinar documentos irrelevantes, indo diretamente à lista de documentos que contêm o termo buscado.",
+      "t": "fixacao"
+    },
+    {
+      "q": "O que significa dizer que o Elasticsearch é \"near-real-time\", e não \"real-time\"?",
+      "o": [
+        "Que buscas nunca retornam resultados corretos",
+        "Que existe um pequeno atraso (o intervalo de refresh) entre um documento ser escrito e ele se tornar buscável",
+        "Que o Elasticsearch não pode ser usado para dados que mudam com frequência",
+        "Que apenas buscas simples são suportadas"
+      ],
+      "a": 1,
+      "w": "Documentos novos passam por um buffer antes de se tornarem parte de um segmento buscável, criando um pequeno atraso entre escrita e disponibilidade para busca — daí \"near\" em vez de \"real\"-time.",
+      "t": "fixacao"
+    }
+  ]
+}

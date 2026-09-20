@@ -1,0 +1,45 @@
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .znode { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; rx: 6; }
+    .leader { fill: #d1fae5; stroke: #34d399; stroke-width: 2; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .watcharrow { stroke: #fbbf24; stroke-width: 1.6; fill: none; marker-end: url(#ah6); stroke-dasharray: 5 3; }
+  </style>
+  <defs>
+    <marker id="ah6" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#fbbf24"/>
+    </marker>
+  </defs>
+
+  <text x="390" y="25" text-anchor="middle" class="title">/eleicao/ — znodes efêmeros sequenciais, cada um observa só o anterior</text>
+
+  <rect x="30" y="80" width="140" height="60" class="leader"/>
+  <text x="100" y="105" text-anchor="middle" class="label" font-weight="600">n_0000000001</text>
+  <text x="100" y="123" text-anchor="middle" class="small">LÍDER (menor número)</text>
+
+  <rect x="210" y="80" width="140" height="60" class="znode"/>
+  <text x="280" y="105" text-anchor="middle" class="label">n_0000000002</text>
+  <text x="280" y="123" text-anchor="middle" class="small">worker B</text>
+
+  <rect x="390" y="80" width="140" height="60" class="znode"/>
+  <text x="460" y="105" text-anchor="middle" class="label">n_0000000003</text>
+  <text x="460" y="123" text-anchor="middle" class="small">worker C</text>
+
+  <rect x="570" y="80" width="140" height="60" class="znode"/>
+  <text x="640" y="105" text-anchor="middle" class="label">n_0000000004</text>
+  <text x="640" y="123" text-anchor="middle" class="small">worker D</text>
+
+  <path d="M210,110 L 170,110" class="watcharrow"/>
+  <path d="M390,110 L 350,110" class="watcharrow"/>
+  <path d="M570,110 L 530,110" class="watcharrow"/>
+
+  <text x="190" y="170" text-anchor="middle" class="small" fill="#fbbf24">watch</text>
+  <text x="370" y="170" text-anchor="middle" class="small" fill="#fbbf24">watch</text>
+  <text x="550" y="170" text-anchor="middle" class="small" fill="#fbbf24">watch</text>
+
+  <text x="390" y="220" text-anchor="middle" class="label">Se n_0000000001 cair (sessão expira) → apenas n_0000000002 é notificado</text>
+  <text x="390" y="240" text-anchor="middle" class="label">→ verifica que agora é o menor → vira a nova líder</text>
+  <text x="390" y="265" text-anchor="middle" class="small">(os demais workers não são acordados desnecessariamente — sem thundering herd)</text>
+</svg>

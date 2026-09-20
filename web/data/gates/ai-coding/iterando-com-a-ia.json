@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Quando faz mais sentido recomeçar do zero em vez de refinar incrementalmente?",
+      "o": [
+        "Sempre, a cada pequeno ajuste necessário",
+        "Quando a abordagem inicial está fundamentalmente equivocada, não apenas com detalhes pontuais incorretos",
+        "Nunca — refinamento incremental é sempre a melhor estratégia",
+        "Apenas quando o entrevistador pedir explicitamente"
+      ],
+      "a": 1,
+      "w": "Refinamento incremental é geralmente mais eficiente, mas quando a abordagem de base está errada, tentar consertá-la aos poucos pode ser mais lento do que reformular o prompt com mais contexto.",
+      "t": "fixacao"
+    }
+  ]
+}

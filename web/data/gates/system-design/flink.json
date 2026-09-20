@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "q": "Qual tipo de janela é mais apropriado para calcular \"cliques por minuto\", com intervalos consecutivos e sem sobreposição?",
+      "o": [
+        "Session window",
+        "Tumbling window",
+        "Sliding window",
+        "Nenhuma janela é necessária para esse cálculo"
+      ],
+      "a": 1,
+      "w": "Tumbling windows são intervalos fixos e não sobrepostos — exatamente o formato de \"cada minuto é contado uma única vez\", que é o que a métrica pede.",
+      "t": "fixacao"
+    },
+    {
+      "q": "Qual é o papel de um watermark em um sistema de processamento de stream?",
+      "o": [
+        "Marcar visualmente os dados no painel de métricas",
+        "Indicar até que ponto no tempo o sistema não espera mais receber eventos atrasados, permitindo fechar uma janela e emitir seu resultado",
+        "Criptografar os dados do stream",
+        "Substituir a necessidade de checkpoints"
+      ],
+      "a": 1,
+      "w": "O watermark é o mecanismo que decide quando uma janela pode ser considerada \"fechada\", equilibrando a espera por eventos atrasados com a necessidade de emitir resultados em tempo hábil.",
+      "t": "fixacao"
+    }
+  ]
+}

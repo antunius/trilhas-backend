@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que respostas costumam ser mais curtas e diretas em uma triagem com recrutador do que em outras etapas?",
+      "o": [
+        "Porque recrutadores não avaliam nada de fato, é só uma formalidade",
+        "Porque recrutadores avaliam qualificação básica e fit inicial, sem profundidade técnica, e o tempo da conversa costuma ser mais limitado",
+        "Porque recrutadores preferem candidatos que falam pouco em geral",
+        "Não há diferença real de duração entre os formatos"
+      ],
+      "a": 1,
+      "w": "A triagem com recrutador tem outro objetivo e outro tempo disponível — respostas mais curtas e diretas, ancoradas na vaga, funcionam melhor nesse contexto específico.",
+      "t": "fixacao"
+    }
+  ]
+}

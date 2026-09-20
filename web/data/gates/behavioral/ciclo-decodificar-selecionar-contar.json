@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o propósito da etapa de \"Decodificar\" no ciclo?",
+      "o": [
+        "Escolher a história mais engraçada do seu repertório",
+        "Identificar a competência real que o entrevistador está tentando avaliar por trás da pergunta literal",
+        "Memorizar a resposta perfeita com antecedência",
+        "Decidir quanto tempo a resposta deve durar"
+      ],
+      "a": 1,
+      "w": "Toda pergunta comportamental esconde uma competência específica sendo avaliada — decodificar é reconhecer essa competência antes de escolher qual história contar.",
+      "t": "fixacao"
+    }
+  ]
+}

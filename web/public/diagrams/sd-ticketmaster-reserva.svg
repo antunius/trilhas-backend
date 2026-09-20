@@ -1,0 +1,43 @@
+<svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 8; }
+    .avail { fill: #14241f; stroke: #34d399; stroke-width: 1.8; rx: 8; }
+    .held { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 8; }
+    .sold { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 8; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-tkt); }
+  </style>
+  <defs>
+    <marker id="ah-tkt" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Máquina de estados do assento</text>
+
+  <rect x="40" y="70" width="180" height="90" class="avail"/>
+  <text x="130" y="105" text-anchor="middle" class="label">Disponível</text>
+  <text x="130" y="128" text-anchor="middle" class="small">qualquer usuário</text>
+  <text x="130" y="144" text-anchor="middle" class="small">pode tentar reservar</text>
+
+  <path d="M220,115 L330,115" class="arrow"/>
+  <text x="275" y="103" text-anchor="middle" class="small">usuário seleciona</text>
+
+  <rect x="335" y="70" width="200" height="90" class="held"/>
+  <text x="435" y="100" text-anchor="middle" class="label">Reservado (hold)</text>
+  <text x="435" y="122" text-anchor="middle" class="small">TTL de alguns minutos</text>
+  <text x="435" y="138" text-anchor="middle" class="small">bloqueado para outros</text>
+
+  <path d="M535,100 L640,100" class="arrow"/>
+  <text x="588" y="88" text-anchor="middle" class="small">paga a tempo</text>
+
+  <rect x="645" y="70" width="170" height="60" class="sold"/>
+  <text x="730" y="105" text-anchor="middle" class="label">Vendido</text>
+
+  <path d="M435,160 L435,200 L220,200 L220,160" class="arrow" stroke-dasharray="5 3"/>
+  <text x="330" y="220" text-anchor="middle" class="small">TTL expira sem pagamento → volta a disponível</text>
+
+  <rect x="40" y="185" width="750" height="55" class="box"/>
+  <text x="415" y="208" text-anchor="middle" class="small" font-weight="600">A transição Disponível → Reservado precisa ser atômica</text>
+  <text x="415" y="226" text-anchor="middle" class="small">lock otimista (versão) ou transação no banco — dois cliques simultâneos, só um vence</text>
+</svg>

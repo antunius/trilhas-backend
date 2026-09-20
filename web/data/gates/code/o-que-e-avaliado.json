@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que um código correto, mas resolvido em silêncio, pode ser avaliado pior do que um código com um pequeno bug, mas bem comunicado?",
+      "o": [
+        "Porque entrevistadores preferem código com bugs",
+        "Porque o processo de raciocínio verbalizado é parte central do que está sendo avaliado, não apenas o resultado final",
+        "Porque silêncio é sempre proibido em entrevistas",
+        "Não há diferença nenhuma entre os dois casos"
+      ],
+      "a": 1,
+      "w": "A entrevista avalia o processo de resolução tanto quanto o resultado — comunicação clara do raciocínio é um critério central, não um extra.",
+      "t": "fixacao"
+    }
+  ]
+}

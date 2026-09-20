@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual parte da estrutura deve normalmente receber a maior fatia de tempo na resposta?",
+      "o": [
+        "Situação",
+        "Ação",
+        "Resultado",
+        "Todas devem ter exatamente o mesmo tempo"
+      ],
+      "a": 1,
+      "w": "A ação é o núcleo que demonstra sua contribuição individual e capacidade de execução — o elemento mais relevante para o entrevistador avaliar.",
+      "t": "fixacao"
+    }
+  ]
+}

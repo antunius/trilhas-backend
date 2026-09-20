@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que vale a pena gastar um ou dois minutos planejando antes do primeiro prompt?",
+      "o": [
+        "Porque a IA não funciona sem um plano detalhado",
+        "Porque um plano mínimo torna o primeiro prompt mais direcionado, reduzindo a necessidade de múltiplas correções",
+        "Porque entrevistadores exigem um documento de planejamento formal",
+        "Não há benefício real nesse passo"
+      ],
+      "a": 1,
+      "w": "Entender a tarefa e o contexto relevante antes de formular o prompt reduz a quantidade de iterações de correção necessárias depois.",
+      "t": "fixacao"
+    }
+  ]
+}

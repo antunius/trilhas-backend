@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Quais são as duas condições necessárias para aplicar programação dinâmica a um problema?",
+      "o": [
+        "O problema precisa ser resolvido apenas com recursão, sem nenhuma outra técnica",
+        "Subestrutura ótima e subproblemas sobrepostos",
+        "O problema precisa envolver apenas números inteiros",
+        "O problema precisa ter uma única solução possível"
+      ],
+      "a": 1,
+      "w": "Essas duas propriedades juntas são o que justifica guardar resultados de subproblemas já resolvidos, evitando recomputação redundante.",
+      "t": "fixacao"
+    }
+  ]
+}

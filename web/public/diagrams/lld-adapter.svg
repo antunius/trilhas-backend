@@ -1,0 +1,44 @@
+<svg viewBox="0 0 780 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .iface { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .adapter { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .legacy { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-a); }
+    .dashed { stroke: #8b95a5; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-a); }
+  </style>
+  <defs>
+    <marker id="ah-a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="390" y="24" text-anchor="middle" class="caption">Adapter — encaixa uma interface antiga na nova</text>
+
+  <rect x="20" y="60" width="180" height="70" class="iface"/>
+  <text x="110" y="83" text-anchor="middle" class="small" font-weight="600">Cliente</text>
+  <text x="110" y="102" text-anchor="middle" class="small">espera ProcessadorPagamento</text>
+
+  <path d="M200,95 L260,95" class="arrow"/>
+
+  <rect x="265" y="60" width="230" height="70" class="iface"/>
+  <text x="380" y="82" text-anchor="middle" class="title">« interface »</text>
+  <text x="380" y="100" text-anchor="middle" class="title">ProcessadorPagamento</text>
+  <text x="280" y="118" class="member">+ processar(valor): void</text>
+
+  <rect x="265" y="170" width="230" height="70" class="adapter"/>
+  <text x="380" y="192" text-anchor="middle" class="title">GatewayLegadoAdapter</text>
+  <text x="280" y="210" class="member">+ processar(valor): void</text>
+  <text x="280" y="226" class="member">  → chama gatewayLegado.cobrar(...)</text>
+
+  <path d="M380,170 L380,130" class="dashed"/>
+  <text x="410" y="152" class="small" fill="#fbbf24">implements</text>
+
+  <rect x="560" y="170" width="200" height="70" class="legacy"/>
+  <text x="660" y="192" text-anchor="middle" class="small" font-weight="600">GatewayPagamentoLegado</text>
+  <text x="575" y="210" class="member">cobrar(valorCentavos, moeda)</text>
+
+  <path d="M495,205 L560,205" class="arrow"/>
+  <text x="527" y="195" text-anchor="middle" class="small">adapta a chamada</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .iface { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .impl { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .creator { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-fm); }
+    .dashed { stroke: #8b95a5; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-fm-open); }
+  </style>
+  <defs>
+    <marker id="ah-fm" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+    <marker id="ah-fm-open" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L9,5 L0,10 Z" fill="none" stroke="#8b95a5"/></marker>
+  </defs>
+
+  <text x="380" y="24" text-anchor="middle" class="caption">Factory Method</text>
+
+  <rect x="270" y="45" width="220" height="70" class="creator"/>
+  <text x="380" y="65" text-anchor="middle" class="title">CriadorDeNotificacao</text>
+  <text x="285" y="86" class="member">+ criar(): Notificacao « abstract »</text>
+  <text x="285" y="101" class="member">+ enviar(msg): void</text>
+
+  <rect x="80" y="180" width="180" height="55" class="creator"/>
+  <text x="170" y="203" text-anchor="middle" class="small" font-weight="600">CriadorDeEmail</text>
+  <text x="170" y="220" text-anchor="middle" class="small">criar() → EmailNotificacao</text>
+
+  <rect x="500" y="180" width="180" height="55" class="creator"/>
+  <text x="590" y="203" text-anchor="middle" class="small" font-weight="600">CriadorDeSms</text>
+  <text x="590" y="220" text-anchor="middle" class="small">criar() → SmsNotificacao</text>
+
+  <path d="M300,115 L200,180" class="dashed"/>
+  <path d="M460,115 L560,180" class="dashed"/>
+
+  <rect x="30" y="270" width="180" height="50" class="iface"/>
+  <text x="120" y="300" text-anchor="middle" class="small" font-weight="600">EmailNotificacao</text>
+
+  <rect x="550" y="270" width="180" height="50" class="iface"/>
+  <text x="640" y="300" text-anchor="middle" class="small" font-weight="600">SmsNotificacao</text>
+
+  <path d="M170,235 L130,270" class="arrow"/>
+  <path d="M590,235 L630,270" class="arrow"/>
+
+  <rect x="290" y="270" width="180" height="50" class="iface"/>
+  <text x="380" y="292" text-anchor="middle" class="small" font-weight="600">« interface »</text>
+  <text x="380" y="308" text-anchor="middle" class="small">Notificacao</text>
+
+  <path d="M120,270 L340,300" class="dashed" stroke-dasharray="4 3"/>
+  <path d="M640,270 L420,300" class="dashed" stroke-dasharray="4 3"/>
+</svg>
