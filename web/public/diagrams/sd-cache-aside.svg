@@ -1,0 +1,45 @@
+<svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .cache { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .db { fill: #14241f; stroke: #34d399; stroke-width: 1.8; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-cache); }
+    .miss { stroke: #fbbf24; stroke-width: 1.8; fill: none; marker-end: url(#ah-cache-miss); stroke-dasharray: 5 3; }
+  </style>
+  <defs>
+    <marker id="ah-cache" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+    <marker id="ah-cache-miss" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#fbbf24"/>
+    </marker>
+  </defs>
+
+  <text x="410" y="28" text-anchor="middle" class="title">Cache-aside: hit no cache; miss busca no DB e preenche o cache</text>
+
+  <rect x="40" y="100" width="120" height="70" class="box"/>
+  <text x="100" y="140" text-anchor="middle" class="label" font-weight="600">App</text>
+
+  <path d="M160,125 L250,125" class="arrow"/>
+  <text x="205" y="115" text-anchor="middle" class="small">1. get(key)</text>
+
+  <rect x="255" y="100" width="140" height="70" class="cache"/>
+  <text x="325" y="132" text-anchor="middle" class="label" font-weight="600">Cache</text>
+  <text x="325" y="152" text-anchor="middle" class="small">memória rápida</text>
+
+  <path d="M395,135 L480,135" class="miss"/>
+  <text x="438" y="125" text-anchor="middle" class="small" fill="#fbbf24">2. miss</text>
+
+  <rect x="485" y="100" width="140" height="70" class="db"/>
+  <text x="555" y="132" text-anchor="middle" class="label" font-weight="600">Database</text>
+  <text x="555" y="152" text-anchor="middle" class="small">fonte da verdade</text>
+
+  <path d="M555,170 L555,210 L325,210 L325,170" class="arrow"/>
+  <text x="440" y="230" text-anchor="middle" class="small">3. grava no cache para o próximo hit</text>
+
+  <path d="M255,145 L160,145" class="arrow"/>
+  <text x="205" y="168" text-anchor="middle" class="small">4. responde</text>
+</svg>

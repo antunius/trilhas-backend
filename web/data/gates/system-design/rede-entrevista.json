@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Quando escolher um balanceador L4 em vez de L7?",
+      "o": [
+        "Quando se quer rotear por URL",
+        "Volume muito alto, protocolo que não é HTTP, ou quando o roteamento por conteúdo não é necessário",
+        "Quando se quer reescrever cabeçalhos",
+        "Nunca"
+      ],
+      "a": 1,
+      "w": "O L4 é mais rápido e funciona para qualquer protocolo, mas não lê o conteúdo.",
+      "t": "fixacao",
+      "h": "O que o L4 não enxerga?"
+    },
+    {
+      "q": "Um servidor trava no meio do tráfego. O que acontece?",
+      "o": [
+        "Nada",
+        "O health check falha, o balanceador o retira da rotação e as requisições em curso nele falham e devem ser repetidas",
+        "O DNS o corrige",
+        "O TTL aumenta"
+      ],
+      "a": 1,
+      "w": "O balanceador reage ao health check, mas o que já estava em andamento no servidor pode falhar.",
+      "t": "fixacao",
+      "h": "Quem detecta a falha?"
+    },
+    {
+      "q": "Como atender usuários na Europa e no Brasil com baixa latência?",
+      "o": [
+        "Um único servidor central",
+        "GeoDNS ou Anycast para a região mais próxima, com um balanceador por região",
+        "Mais threads",
+        "Um TTL de 1 hora"
+      ],
+      "a": 1,
+      "w": "O DNS escolhe a região e o balanceador escolhe o servidor dentro dela.",
+      "t": "fixacao",
+      "h": "Quem escolhe a região?"
+    },
+    {
+      "q": "Qual é um erro comum sobre balanceadores?",
+      "o": [
+        "Esquecer que o balanceador é um ponto único de falha e precisa de redundância",
+        "Falar de health check",
+        "Falar de L7",
+        "Falar de algoritmos"
+      ],
+      "a": 0,
+      "w": "Todo o tráfego passa por ele, então ele mesmo precisa ser replicado.",
+      "t": "fixacao",
+      "h": "Se ele cai, o que acontece?"
+    }
+  ]
+}

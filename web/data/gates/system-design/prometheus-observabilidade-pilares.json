@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "O alerta disparou: a taxa de erro de `/pedidos` subiu. Qual pilar mostra, entre vários serviços, em qual chamada o tempo foi gasto?",
+      "o": [
+        "Métricas",
+        "Logs",
+        "Traces",
+        "Health check"
+      ],
+      "a": 2,
+      "w": "Traces seguem uma requisição pelos serviços e mostram o tempo de cada trecho. Métricas detectam o problema; logs detalham o evento.",
+      "t": "fixacao",
+      "h": "Pense em qual sinal acompanha uma única requisição de ponta a ponta."
+    },
+    {
+      "q": "Por que métricas costumam ser a primeira camada de observabilidade em produção?",
+      "o": [
+        "Porque são agregadas e o custo não cresce com o volume de requisições",
+        "Porque guardam o texto completo de cada requisição",
+        "Porque substituem logs e traces",
+        "Porque só funcionam em Java"
+      ],
+      "a": 0,
+      "w": "Uma métrica agregada ocupa o mesmo espaço com 300 ou com 30 mil requisições. Logs e traces crescem com o tráfego, e nenhum pilar substitui os outros.",
+      "t": "fixacao",
+      "h": "Compare o que acontece com o armazenamento quando o tráfego dobra."
+    },
+    {
+      "q": "Qual a melhor descrição de observabilidade, em contraste com monitoramento?",
+      "o": [
+        "Ter muitos dashboards",
+        "Poder investigar perguntas imprevistas usando os dados emitidos pelo sistema",
+        "Verificar se o serviço responde ao health check",
+        "Guardar todos os logs por um ano"
+      ],
+      "a": 1,
+      "w": "Monitoramento cobre perguntas conhecidas de antemão. Observabilidade permite explorar perguntas novas sem alterar o código.",
+      "t": "fixacao",
+      "h": "Uma é sobre perguntas previstas; a outra, sobre perguntas novas."
+    },
+    {
+      "q": "A loja define o SLO de 99,9% de pedidos bem-sucedidos em 30 dias. O que é o orçamento de erro?",
+      "o": [
+        "Os 99,9% que devem funcionar",
+        "Os 0,1% de falhas que ainda são aceitáveis no período",
+        "O custo mensal do Prometheus",
+        "O número de alertas permitidos por semana"
+      ],
+      "a": 1,
+      "w": "O orçamento de erro é a diferença até 100%: 0,1%, cerca de 43 minutos em 30 dias. Ele guia a decisão entre lançar novidades e estabilizar.",
+      "t": "fixacao",
+      "h": "É o que sobra entre o SLO e 100%."
+    },
+    {
+      "q": "Qual item é um SLI (indicador), e não um SLO (objetivo)?",
+      "o": [
+        "\"99,9% dos pedidos devem ser bons\"",
+        "A fração de pedidos que respondem sem erro em menos de 500 ms",
+        "\"O p99 deve ficar abaixo de 800 ms\"",
+        "\"Teremos no máximo 43 minutos fora do ar\""
+      ],
+      "a": 1,
+      "w": "O SLI é a medida (uma fração observada). O SLO é a meta fixada para essa medida.",
+      "t": "fixacao",
+      "h": "O indicador é o número medido; o objetivo é a meta que ele deve atingir."
+    }
+  ]
+}

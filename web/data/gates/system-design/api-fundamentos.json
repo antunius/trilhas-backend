@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual verbo HTTP NÃO é idempotente por definição?",
+      "o": [
+        "GET",
+        "PUT",
+        "DELETE",
+        "POST"
+      ],
+      "a": 3,
+      "w": "Repetir POST normalmente cria outro recurso. GET, PUT e DELETE levam ao mesmo estado final se repetidos.",
+      "t": "fixacao",
+      "h": "Qual deles cria algo novo a cada chamada?"
+    },
+    {
+      "q": "O que é over-fetching?",
+      "o": [
+        "A API devolve mais dados do que a tela usa",
+        "A API devolve menos dados do que a tela precisa",
+        "O servidor fica sobrecarregado",
+        "O cliente repete a chamada"
+      ],
+      "a": 0,
+      "w": "Um app que mostra só nome e foto, mas recebe 40 campos, sofre de over-fetching.",
+      "t": "fixacao",
+      "h": "O prefixo \"over\" indica excesso."
+    },
+    {
+      "q": "Por que a idempotência importa em redes que falham?",
+      "o": [
+        "Porque o cliente pode repetir a chamada sem ter recebido a resposta, e a API precisa suportar isso",
+        "Porque acelera as respostas",
+        "Porque elimina o HTTPS",
+        "Porque dispensa verbos"
+      ],
+      "a": 0,
+      "w": "Se a resposta se perde, o cliente tenta de novo, e repetir uma operação não idempotente pode duplicar o efeito.",
+      "t": "fixacao",
+      "h": "O que o cliente faz quando não recebe resposta?"
+    },
+    {
+      "q": "Qual código de status indica que o recurso pedido não existe?",
+      "o": [
+        "200",
+        "201",
+        "404",
+        "500"
+      ],
+      "a": 2,
+      "w": "404 Not Found indica recurso ausente. 403 indica que o acesso é proibido.",
+      "t": "fixacao",
+      "h": "É o mais famoso dos códigos de erro."
+    }
+  ]
+}

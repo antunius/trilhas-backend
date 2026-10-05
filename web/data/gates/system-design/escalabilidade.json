@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Qual é uma limitação central da escalabilidade vertical?",
+      "o": [
+        "Não melhora a performance de forma alguma",
+        "Existe um teto físico de hardware, e a máquina única continua sendo um ponto de falha",
+        "É sempre mais cara que a escalabilidade horizontal",
+        "Não pode ser usada em nenhum sistema real"
+      ],
+      "a": 1,
+      "w": "Mesmo com hardware cada vez mais potente, existe um limite físico de capacidade em uma única máquina, além do risco de ponto único de falha.",
+      "t": "fixacao",
+      "h": "Uma máquina sempre pode ficar maior?"
+    }
+  ]
+}

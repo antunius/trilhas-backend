@@ -1,0 +1,34 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-doc); }
+  </style>
+  <defs>
+    <marker id="ah-doc" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Duas edições concorrentes na mesma região convergem via OT/CRDT</text>
+
+  <rect x="30" y="55" width="360" height="55" class="a"/>
+  <text x="210" y="78" text-anchor="middle" class="small" font-weight="600">Usuário A insere "ola" na posição 5</text>
+  <text x="210" y="96" text-anchor="middle" class="small">visto a partir da sua própria cópia local</text>
+
+  <rect x="470" y="55" width="360" height="55" class="b"/>
+  <text x="650" y="78" text-anchor="middle" class="small" font-weight="600">Usuário B apaga posições 3-6</text>
+  <text x="650" y="96" text-anchor="middle" class="small">ao mesmo tempo, mesma região do texto</text>
+
+  <path d="M210,110 L210,150" class="arrow"/>
+  <path d="M650,110 L650,150" class="arrow"/>
+
+  <rect x="180" y="155" width="500" height="70" class="box"/>
+  <text x="430" y="180" text-anchor="middle" class="small" font-weight="600">Servidor recebe as duas operações fora de ordem</text>
+  <text x="430" y="200" text-anchor="middle" class="small">OT: transforma a operação de A contra a de B (e vice-versa)</text>
+  <text x="430" y="216" text-anchor="middle" class="small">CRDT: cada caractere já carrega posição/ID que converge sozinho</text>
+
+  <text x="430" y="255" text-anchor="middle" class="small">Resultado final é o mesmo nos dois clientes, sem travar a digitação de ninguém</text>
+</svg>

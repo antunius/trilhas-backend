@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "O que é uma partição de rede?",
+      "o": [
+        "Uma máquina que queimou",
+        "A comunicação entre grupos de máquinas é interrompida, embora todas continuem funcionando",
+        "Uma divisão do disco",
+        "Um tipo de banco"
+      ],
+      "a": 1,
+      "w": "Cada lado não sabe se o outro caiu ou só ficou incomunicável.",
+      "t": "fixacao",
+      "h": "As máquinas estão vivas?"
+    },
+    {
+      "q": "No CAP, o que significa consistência?",
+      "o": [
+        "Os dados estão sempre em disco",
+        "Toda leitura recebe o dado mais recente escrito, ou um erro",
+        "Todas as máquinas são iguais",
+        "O sistema nunca cai"
+      ],
+      "a": 1,
+      "w": "É a ilusão de que existe uma única cópia dos dados.",
+      "t": "fixacao",
+      "h": "O que a leitura devolve?"
+    },
+    {
+      "q": "No CAP, o que significa disponibilidade?",
+      "o": [
+        "O sistema nunca para",
+        "Toda requisição a uma máquina saudável recebe uma resposta, não um erro, mesmo que não seja o dado mais recente",
+        "Há muitas réplicas",
+        "O sistema é rápido"
+      ],
+      "a": 1,
+      "w": "É diferente do \"99,9% de disponibilidade\" de um contrato.",
+      "t": "fixacao",
+      "h": "A resposta precisa ser a mais recente?"
+    },
+    {
+      "q": "O que é uma réplica?",
+      "o": [
+        "Uma cópia dos dados mantida em outra máquina",
+        "Um tipo de transação",
+        "Um índice",
+        "Um erro"
+      ],
+      "a": 0,
+      "w": "Para tolerar falhas e atender mais gente.",
+      "t": "fixacao",
+      "h": "Uma cópia."
+    }
+  ]
+}

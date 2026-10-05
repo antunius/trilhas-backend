@@ -1,0 +1,48 @@
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .invoker { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .iface { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .impl { fill: #14241f; stroke: #34d399; stroke-width: 1.5; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-cmd); }
+    .dashed { stroke: #8b95a5; stroke-width: 1.3; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-cmd); }
+  </style>
+  <defs>
+    <marker id="ah-cmd" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="390" y="22" text-anchor="middle" class="caption">Command — encapsula uma ação como objeto, com histórico</text>
+
+  <rect x="30" y="55" width="160" height="70" class="invoker"/>
+  <text x="110" y="78" text-anchor="middle" class="small" font-weight="600">ControleRemoto</text>
+  <text x="45" y="98" class="member">executar(cmd)</text>
+  <text x="45" y="112" class="member">desfazer() → histórico</text>
+
+  <path d="M190,90 L260,90" class="arrow"/>
+
+  <rect x="265" y="70" width="200" height="45" class="iface"/>
+  <text x="365" y="98" text-anchor="middle" class="small" font-weight="600">« interface » Comando</text>
+
+  <rect x="265" y="150" width="200" height="55" class="impl"/>
+  <text x="365" y="172" text-anchor="middle" class="small" font-weight="600">LigarLuzCommand</text>
+  <text x="365" y="190" text-anchor="middle" class="small">executar() / desfazer()</text>
+
+  <path d="M365,115 L365,150" class="dashed"/>
+
+  <rect x="520" y="150" width="220" height="70" class="invoker"/>
+  <text x="630" y="172" text-anchor="middle" class="small" font-weight="600">Luz (receiver)</text>
+  <text x="535" y="192" class="member">ligar() / desligar()</text>
+
+  <path d="M465,175 L520,175" class="arrow"/>
+  <text x="490" y="163" text-anchor="middle" class="small"></text>
+
+  <rect x="30" y="220" width="160" height="45" class="invoker"/>
+  <text x="110" y="248" text-anchor="middle" class="small" font-weight="600">Pilha de histórico</text>
+
+  <path d="M110,125 L110,220" class="arrow"/>
+
+  <text x="390" y="275" text-anchor="middle" class="small">Cada botão guarda um Comando; desfazer() chama comando.desfazer() da pilha</text>
+</svg>

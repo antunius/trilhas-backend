@@ -1,0 +1,36 @@
+<svg viewBox="0 0 820 270" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .accent { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 12.5px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 14.5px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#m-idx); }
+  </style>
+  <defs>
+    <marker id="m-idx" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+  <text x="410" y="26" text-anchor="middle" class="title">Índice: atalho para encontrar linhas sem varrer a tabela</text>
+
+  <rect x="60" y="80" width="200" height="120" class="box"/>
+  <text x="160" y="120" text-anchor="middle" class="label" font-weight="600">Tabela</text>
+  <text x="160" y="145" text-anchor="middle" class="small">scan O(n)</text>
+
+  <path d="M260,140 L340,140" class="arrow"/>
+
+  <rect x="340" y="80" width="200" height="120" class="accent"/>
+  <text x="440" y="120" text-anchor="middle" class="label" font-weight="600">Índice</text>
+  <text x="440" y="145" text-anchor="middle" class="small">lookup O(log n)</text>
+
+  <path d="M540,140 L620,140" class="arrow"/>
+
+  <rect x="620" y="80" width="140" height="120" class="ok"/>
+  <text x="690" y="130" text-anchor="middle" class="label" font-weight="600">Linha</text>
+  <text x="690" y="150" text-anchor="middle" class="small">rápido</text>
+
+  <text x="410" y="240" text-anchor="middle" class="small">Índice custa espaço e deixa writes mais caros</text>
+</svg>

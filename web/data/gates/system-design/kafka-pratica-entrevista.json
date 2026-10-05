@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Com compatibilidade BACKWARD no Schema Registry, qual mudança de schema é aceita?",
+      "o": [
+        "Adicionar um campo obrigatório sem default",
+        "Remover um campo existente",
+        "Adicionar um campo opcional com valor default",
+        "Trocar o tipo de um campo"
+      ],
+      "a": 2,
+      "w": "O campo novo precisa ter default para que o consumer com o schema novo consiga ler eventos antigos.",
+      "t": "fixacao",
+      "h": "O que o consumer novo faz ao ler um evento sem o campo?"
+    },
+    {
+      "q": "Com compatibilidade BACKWARD, qual é a ordem segura de atualização?",
+      "o": [
+        "Producers primeiro, depois consumers",
+        "Consumers primeiro, depois producers",
+        "Os dois ao mesmo tempo, sempre",
+        "Tanto faz"
+      ],
+      "a": 1,
+      "w": "BACKWARD significa que o schema novo lê dados antigos, então os consumers atualizados precisam existir antes de os producers passarem a escrever no formato novo.",
+      "t": "fixacao",
+      "h": "Quem precisa entender o formato novo e o antigo?"
+    },
+    {
+      "q": "Para que serve o modo KRaft?",
+      "o": [
+        "Para criptografar o tráfego",
+        "Para rodar o Kafka sem ZooKeeper, com os próprios brokers coordenados por consenso",
+        "Para criar réplicas",
+        "Para balancear consumers"
+      ],
+      "a": 1,
+      "w": "No KRaft os controladores fazem parte do Kafka e usam um protocolo de consenso interno.",
+      "t": "fixacao",
+      "h": "Qual dependência externa ele elimina?"
+    },
+    {
+      "q": "Qual métrica é central para detectar uma partição sobrecarregada em produção?",
+      "o": [
+        "Uso de CPU do producer",
+        "Consumer lag por partição",
+        "Número de tópicos",
+        "Tamanho da mensagem"
+      ],
+      "a": 1,
+      "w": "O lag por partição mostra quando uma partição específica está atrasada em relação às outras.",
+      "t": "fixacao",
+      "h": "O lag total esconderia o problema."
+    },
+    {
+      "q": "Como decidir o número de partições ao criar um tópico?",
+      "o": [
+        "Sempre 1",
+        "Throughput-alvo ÷ throughput por partição, com folga, porque aumentar depois pode quebrar a ordem por chave",
+        "Igual ao número de brokers",
+        "O maior número possível"
+      ],
+      "a": 1,
+      "w": "Dimensionar com margem desde o início evita mudar o número de partições com o sistema em uso.",
+      "t": "fixacao",
+      "h": "Pense no que acontece ao mudar N depois."
+    }
+  ]
+}

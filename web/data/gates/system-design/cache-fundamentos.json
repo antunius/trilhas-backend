@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "O que é um cache miss?",
+      "o": [
+        "O dado pedido não está no cache e é preciso buscá-lo no banco",
+        "O cache está cheio",
+        "O dado é inválido",
+        "O cache foi desligado"
+      ],
+      "a": 0,
+      "w": "O miss é mais lento que não ter cache, porque faz a consulta ao cache e depois ao banco.",
+      "t": "fixacao",
+      "h": "Qual caminho a requisição segue no miss?"
+    },
+    {
+      "q": "O que é o hit ratio?",
+      "o": [
+        "A velocidade do cache",
+        "A fração dos pedidos que encontram o dado no cache",
+        "O tamanho do cache",
+        "O número de servidores"
+      ],
+      "a": 1,
+      "w": "Se 95 de 100 pedidos acham o dado, o hit ratio é 95%.",
+      "t": "fixacao",
+      "h": "Hits sobre o total."
+    },
+    {
+      "q": "O que a política LRU de eviction remove quando o cache enche?",
+      "o": [
+        "O dado mais recente",
+        "O dado há mais tempo sem ser usado",
+        "Um dado aleatório",
+        "Todos os dados"
+      ],
+      "a": 1,
+      "w": "Produtos populares ficam, e produtos que ninguém olha saem.",
+      "t": "fixacao",
+      "h": "LRU = least recently used."
+    },
+    {
+      "q": "Um TTL de 60 segundos para o preço do produto significa que:",
+      "o": [
+        "O preço nunca muda",
+        "No pior caso, o cliente vê um preço com até 60 segundos de atraso",
+        "O cache é apagado a cada minuto",
+        "O preço é recalculado a cada visita"
+      ],
+      "a": 1,
+      "w": "É a forma mais simples de limitar o quanto o dado guardado pode ficar velho.",
+      "t": "fixacao",
+      "h": "Por quanto tempo a cópia pode ficar?"
+    }
+  ]
+}

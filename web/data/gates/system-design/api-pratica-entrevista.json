@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Para que serve @BatchMapping no Spring for GraphQL?",
+      "o": [
+        "Para criptografar a resposta",
+        "Para carregar os autores de vários posts numa só consulta, evitando o N+1",
+        "Para criar endpoints REST",
+        "Para autenticar"
+      ],
+      "a": 1,
+      "w": "Em vez de uma consulta por post, agrupa as buscas em lote.",
+      "t": "fixacao",
+      "h": "Que problema do GraphQL ele resolve?"
+    },
+    {
+      "q": "Por que limitar o tamanho da página no servidor (Math.min(limit, 100))?",
+      "o": [
+        "Para o cliente nunca pedir demais, protegendo o servidor",
+        "Para cobrar mais",
+        "Para ordenar os resultados",
+        "Para criar cursor"
+      ],
+      "a": 0,
+      "w": "Um cliente poderia pedir milhares de itens de uma vez.",
+      "t": "fixacao",
+      "h": "Quem controla o tamanho máximo?"
+    },
+    {
+      "q": "O que diferencia um Staff+ ao falar de API?",
+      "o": [
+        "Citar verbos HTTP",
+        "Discutir evolução compatível do contrato, limites de custo e como isolar clientes externos dos serviços internos",
+        "Evitar falar de versões",
+        "Usar só REST"
+      ],
+      "a": 1,
+      "w": "São preocupações de longo prazo e de operação.",
+      "t": "fixacao",
+      "h": "Quais problemas aparecem ao longo do tempo?"
+    },
+    {
+      "q": "Qual é um erro comum ao paginar?",
+      "o": [
+        "Usar cursor em feeds",
+        "Paginar por offset num feed que muda",
+        "Limitar o tamanho",
+        "Devolver o total"
+      ],
+      "a": 1,
+      "w": "Itens novos deslocam as páginas e causam repetidos ou pulados.",
+      "t": "fixacao",
+      "h": "O que acontece com o offset quando entra um item novo?"
+    }
+  ]
+}

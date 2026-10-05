@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual destas é uma alternativa a tentar ANTES de propor sharding?",
+      "o": [
+        "Mudar de banco imediatamente",
+        "Índices, cache, réplicas de leitura e escala vertical",
+        "Duplicar todos os dados em cada shard",
+        "Desligar a replicação"
+      ],
+      "a": 1,
+      "w": "Sharding é caro de operar e de reverter. Esgote as alternativas mais simples antes de partir para ele.",
+      "t": "fixacao",
+      "h": "Qual é a opção mais barata de operar?"
+    },
+    {
+      "q": "Por que \"todas as conversas do usuário 77\" é uma consulta cara quando se particiona por conversa?",
+      "o": [
+        "Porque as conversas dele estão em shards diferentes, exigindo perguntar a todos (scatter-gather)",
+        "Porque o usuário não existe",
+        "Porque o hash falha",
+        "Porque falta índice"
+      ],
+      "a": 0,
+      "w": "Uma solução é manter um índice secundário por usuário.",
+      "t": "fixacao",
+      "h": "Em quantos shards estão as conversas dele?"
+    },
+    {
+      "q": "O que acontece com uma transação que altera dois shards?",
+      "o": [
+        "Continua ACID simples",
+        "Perde a atomicidade simples, exigindo two-phase commit ou saga",
+        "É sempre mais rápida",
+        "Nada muda"
+      ],
+      "a": 1,
+      "w": "O desenho prefere manter no mesmo shard os dados que mudam juntos.",
+      "t": "fixacao",
+      "h": "Quem coordena as duas escritas?"
+    },
+    {
+      "q": "O que é um hot shard?",
+      "o": [
+        "Um shard novo",
+        "Um shard que concentra tráfego desproporcional, mesmo com distribuição média uniforme",
+        "Um shard em memória",
+        "Uma réplica"
+      ],
+      "a": 1,
+      "w": "É o mesmo problema da hot partition do Kafka.",
+      "t": "fixacao",
+      "h": "Uma chave domina o volume."
+    }
+  ]
+}

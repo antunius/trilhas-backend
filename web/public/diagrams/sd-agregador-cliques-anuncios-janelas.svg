@@ -1,0 +1,47 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-clk); }
+  </style>
+  <defs>
+    <marker id="ah-clk" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Janelas de agregação no stream + deduplicação de eventos</text>
+
+  <rect x="30" y="55" width="130" height="60" class="box"/>
+  <text x="95" y="90" text-anchor="middle" class="label">Cliques</text>
+
+  <path d="M160,85 L250,85" class="arrow"/>
+
+  <rect x="255" y="55" width="140" height="60" class="a"/>
+  <text x="325" y="80" text-anchor="middle" class="label">Fila (stream)</text>
+  <text x="325" y="98" text-anchor="middle" class="small">absorve o volume</text>
+
+  <path d="M395,85 L490,85" class="arrow"/>
+
+  <rect x="495" y="45" width="330" height="90" class="b"/>
+  <text x="660" y="65" text-anchor="middle" class="label">Janela tumbling — 1 minuto</text>
+  <rect x="520" y="80" width="70" height="35" fill="#34d399" opacity="0.85"/>
+  <text x="555" y="102" text-anchor="middle" class="small">10:00</text>
+  <rect x="600" y="80" width="70" height="35" fill="#34d399" opacity="0.6"/>
+  <text x="635" y="102" text-anchor="middle" class="small">10:01</text>
+  <rect x="680" y="80" width="70" height="35" fill="#34d399" opacity="0.4"/>
+  <text x="715" y="102" text-anchor="middle" class="small">10:02</text>
+  <text x="795" y="102" text-anchor="middle" class="small" fill="#34d399">soma por anúncio</text>
+
+  <path d="M660,135 L660,175" class="arrow"/>
+  <text x="710" y="160" text-anchor="middle" class="small">clique duplicado?</text>
+
+  <rect x="500" y="180" width="320" height="55" class="warn"/>
+  <text x="660" y="202" text-anchor="middle" class="small" font-weight="600">Dedup por ID de evento (janela recente)</text>
+  <text x="660" y="220" text-anchor="middle" class="small">mesmo clique reenviado não conta duas vezes</text>
+
+  <text x="430" y="260" text-anchor="middle" class="small">A janela fecha e emite o agregado; eventos atrasados entram na janela seguinte (ou são descartados, por decisão)</text>
+</svg>

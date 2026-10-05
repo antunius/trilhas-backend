@@ -1,0 +1,46 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-sch); }
+  </style>
+  <defs>
+    <marker id="ah-sch" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Fila ordenada por horário + lock de claim entre workers</text>
+
+  <rect x="30" y="55" width="500" height="90" class="a"/>
+  <text x="280" y="78" text-anchor="middle" class="label">Fila ordenada por próxima execução</text>
+  <rect x="60" y="90" width="80" height="35" fill="#818cf8" opacity="0.9"/>
+  <text x="100" y="112" text-anchor="middle" class="small">10:00:01</text>
+  <rect x="150" y="90" width="80" height="35" fill="#818cf8" opacity="0.6"/>
+  <text x="190" y="112" text-anchor="middle" class="small">10:00:04</text>
+  <rect x="240" y="90" width="80" height="35" fill="#818cf8" opacity="0.4"/>
+  <text x="280" y="112" text-anchor="middle" class="small">10:00:09</text>
+  <text x="400" y="112" text-anchor="middle" class="small">só varre a "cabeça" da fila — não a lista inteira</text>
+
+  <path d="M100,145 L100,180" class="arrow"/>
+  <path d="M100,145 L280,180" class="arrow"/>
+
+  <rect x="40" y="185" width="140" height="55" class="box"/>
+  <text x="110" y="208" text-anchor="middle" class="small" font-weight="600">Worker A</text>
+  <text x="110" y="225" text-anchor="middle" class="small">tenta claim da 10:00:01</text>
+
+  <rect x="220" y="185" width="140" height="55" class="box"/>
+  <text x="290" y="208" text-anchor="middle" class="small" font-weight="600">Worker B</text>
+  <text x="290" y="225" text-anchor="middle" class="small">tenta claim da 10:00:01</text>
+
+  <rect x="590" y="185" width="230" height="55" class="warn"/>
+  <text x="705" y="208" text-anchor="middle" class="small" font-weight="600">Lock com TTL na tarefa</text>
+  <text x="705" y="225" text-anchor="middle" class="small">só um worker ganha — o outro segue</text>
+
+  <path d="M360,212 L590,212" class="arrow"/>
+
+  <text x="430" y="265" text-anchor="middle" class="small">Se o worker cai depois do claim e antes de concluir, o TTL expira e outro assume</text>
+</svg>

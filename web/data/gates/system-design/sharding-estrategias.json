@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual é uma desvantagem comum do particionamento por hash, em comparação ao particionamento por intervalo?",
+      "o": [
+        "Distribuição desigual de dados entre shards",
+        "Consultas por intervalo de valores ficam mais difíceis de executar eficientemente",
+        "Impossibilidade de adicionar novos shards",
+        "Não há nenhuma desvantagem"
+      ],
+      "a": 1,
+      "w": "O hash distribui os dados de forma mais uniforme, mas destrói a ordenação natural da chave, tornando consultas por intervalo (ex: \"todos os registros entre X e Y\") mais custosas.",
+      "t": "fixacao",
+      "h": "Chaves vizinhas caem no mesmo shard com hash?"
+    },
+    {
+      "q": "Particionar por data (por exemplo, um shard por mês) tende a causar qual problema?",
+      "o": [
+        "Consultas por intervalo ficam impossíveis",
+        "Hot shard: as escritas novas caem todas no shard mais recente",
+        "Falta de espaço em todos os shards ao mesmo tempo",
+        "Impossibilidade de criar índices"
+      ],
+      "a": 1,
+      "w": "Todas as escritas novas têm a data atual e vão para o mesmo shard, que fica sobrecarregado enquanto os outros ficam parados.",
+      "t": "fixacao",
+      "h": "Para qual shard vai uma escrita feita agora?"
+    },
+    {
+      "q": "Por que `hash(chave) % N` é problemático quando N muda?",
+      "o": [
+        "Porque o hash fica lento",
+        "Porque quase toda chave muda de shard (daí o consistent hashing)",
+        "Porque o módulo é negativo",
+        "Porque os shards desaparecem"
+      ],
+      "a": 1,
+      "w": "A lição seguinte desta trilha mostra como evitar esse problema.",
+      "t": "fixacao",
+      "h": "O que muda quando o divisor muda?"
+    },
+    {
+      "q": "Qual o risco do particionamento por diretório?",
+      "o": [
+        "Distribuição desigual",
+        "O serviço de diretório vira um ponto único de falha, e precisa ser rápido e replicado",
+        "Falta de flexibilidade",
+        "Falta de ordenação"
+      ],
+      "a": 1,
+      "w": "Ele sabe exatamente onde cada chave está, mas precisa estar sempre disponível.",
+      "t": "fixacao",
+      "h": "O que todo acesso consulta primeiro?"
+    }
+  ]
+}

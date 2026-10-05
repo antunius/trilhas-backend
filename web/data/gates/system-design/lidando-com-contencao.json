@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Qual abordagem tende a ter melhor desempenho quando conflitos reais sobre um recurso são raros, mesmo com muitos usuários acessando-o?",
+      "o": [
+        "Bloqueio pessimista",
+        "Controle otimista de concorrência",
+        "Nenhuma forma de controle é necessária nesse caso",
+        "Sempre usar transações distribuídas complexas"
+      ],
+      "a": 1,
+      "w": "Controle otimista permite acesso concorrente sem bloquear, verificando conflito apenas no momento da escrita — vantajoso quando a maioria das operações não colide de fato.",
+      "t": "fixacao",
+      "h": "Se os conflitos são raros, vale bloquear tudo antes?"
+    }
+  ]
+}

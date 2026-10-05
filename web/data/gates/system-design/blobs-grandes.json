@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Qual é a prática recomendada para armazenar arquivos grandes, como vídeos ou imagens em alta resolução?",
+      "o": [
+        "Armazenar o arquivo diretamente como um campo binário no banco de dados relacional",
+        "Armazenar o arquivo em um serviço de armazenamento de objetos, guardando apenas metadados e referência no banco de dados",
+        "Dividir o arquivo em milhares de linhas em uma tabela relacional",
+        "Nunca permitir arquivos grandes no sistema"
+      ],
+      "a": 1,
+      "w": "Serviços de armazenamento de objetos são otimizados para guardar e servir arquivos grandes; o banco de dados tradicional deve conter apenas os metadados e uma referência a esse arquivo.",
+      "t": "fixacao",
+      "h": "O servidor da aplicação é um bom lugar para trafegar um arquivo de gigabytes?"
+    }
+  ]
+}

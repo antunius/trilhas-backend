@@ -1,0 +1,30 @@
+<svg viewBox="0 0 820 250" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .accent { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 12.5px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 14.5px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#m-esc); }
+  </style>
+  <defs>
+    <marker id="m-esc" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+  <text x="410" y="26" text-anchor="middle" class="title">Escalar: mais potência na caixa vs mais caixas</text>
+
+  <rect x="80" y="70" width="280" height="150" class="warn"/>
+  <text x="220" y="110" text-anchor="middle" class="label" font-weight="600">Vertical</text>
+  <text x="220" y="140" text-anchor="middle" class="small">máquina maior</text>
+  <text x="220" y="160" text-anchor="middle" class="small">simples · teto duro</text>
+  <text x="220" y="185" text-anchor="middle" class="small">↑ CPU/RAM/disco</text>
+
+  <rect x="460" y="70" width="280" height="150" class="ok"/>
+  <text x="600" y="110" text-anchor="middle" class="label" font-weight="600">Horizontal</text>
+  <text x="600" y="140" text-anchor="middle" class="small">mais máquinas</text>
+  <text x="600" y="160" text-anchor="middle" class="small">escala · complexidade</text>
+  <text x="600" y="185" text-anchor="middle" class="small">réplicas / shards</text>
+</svg>

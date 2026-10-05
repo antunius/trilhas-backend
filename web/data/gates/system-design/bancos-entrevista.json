@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que não guardar tudo no MongoDB?",
+      "o": [
+        "Porque MongoDB não guarda JSON",
+        "Pedidos e pagamentos precisam de transação entre vários registros e consultas variadas, que o relacional entrega melhor",
+        "Porque é caro",
+        "Porque não tem chave"
+      ],
+      "a": 1,
+      "w": "Cada modelo tem seu ponto forte.",
+      "t": "fixacao",
+      "h": "O que dinheiro exige?"
+    },
+    {
+      "q": "Como o catálogo no MongoDB e os pedidos no Postgres ficam consistentes?",
+      "o": [
+        "Nunca ficam",
+        "O pedido guarda o id e um instantâneo do preço, e as mudanças viajam por eventos, aceitando consistência eventual para o catálogo",
+        "Com um único banco",
+        "Por replicação automática"
+      ],
+      "a": 1,
+      "w": "É um desenho comum quando se combinam bancos.",
+      "t": "fixacao",
+      "h": "O pedido deve mudar quando o preço do catálogo muda?"
+    },
+    {
+      "q": "O que acontece se o Redis do carrinho cair?",
+      "o": [
+        "Nada",
+        "Se o carrinho vive só ali, os carrinhos se perdem, o que é aceitável para carrinhos temporários",
+        "O banco relacional o restaura",
+        "Os pedidos somem"
+      ],
+      "a": 1,
+      "w": "Pesa-se o custo de perder um carrinho contra o custo de persistir.",
+      "t": "fixacao",
+      "h": "Qual o impacto de perder um carrinho?"
+    },
+    {
+      "q": "Qual é um erro comum?",
+      "o": [
+        "Escolher pelo padrão de acesso",
+        "Escolher um único banco para tudo, ou vários sem necessidade",
+        "Combinar relacional e Redis",
+        "Usar transações"
+      ],
+      "a": 1,
+      "w": "Sistemas reais combinam, mas com critério.",
+      "t": "fixacao",
+      "h": "Os extremos são ambos ruins."
+    }
+  ]
+}

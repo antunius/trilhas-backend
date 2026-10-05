@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Aproximadamente quantas requisições por segundo equivalem a 10 milhões de requisições por dia?",
+      "o": [
+        "Cerca de 1",
+        "Cerca de 100",
+        "Cerca de 10.000",
+        "Cerca de 1 milhão"
+      ],
+      "a": 1,
+      "w": "Um dia tem cerca de 100.000 segundos (86.400 arredondado). 10.000.000 ÷ 100.000 ≈ 100 por segundo em média.",
+      "t": "fixacao",
+      "h": "Divida pelo número de segundos de um dia."
+    },
+    {
+      "q": "100 milhões de links por mês correspondem a quantas escritas por segundo (mês ≈ 2,5 milhões de s)?",
+      "o": [
+        "4",
+        "40",
+        "400",
+        "4.000"
+      ],
+      "a": 1,
+      "w": "100.000.000 ÷ 2.500.000 = 40.",
+      "t": "fixacao",
+      "h": "Divida pelo número de segundos do mês."
+    },
+    {
+      "q": "Com razão leitura:escrita de 100:1, quantas leituras por segundo na média?",
+      "o": [
+        "40",
+        "400",
+        "4.000",
+        "40.000"
+      ],
+      "a": 2,
+      "w": "40 escritas × 100 = 4.000 leituras por segundo.",
+      "t": "fixacao",
+      "h": "Multiplique as escritas pela razão."
+    },
+    {
+      "q": "Quantos TB ocupam 6 bilhões de registros de 500 bytes?",
+      "o": [
+        "3 TB",
+        "300 GB",
+        "30 TB",
+        "3 PB"
+      ],
+      "a": 0,
+      "w": "6 × 10⁹ × 500 B = 3 × 10¹² B = 3 TB.",
+      "t": "fixacao",
+      "h": "Multiplique registros por bytes."
+    }
+  ]
+}

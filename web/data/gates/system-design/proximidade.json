@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Por que uma busca por proximidade que calcula a distância exata para todos os pontos do sistema não escala bem?",
+      "o": [
+        "Porque distâncias geográficas não podem ser calculadas de forma eficiente",
+        "Porque o custo cresce proporcionalmente ao número total de pontos, mesmo quando a maioria está muito longe da busca",
+        "Porque bancos de dados não conseguem armazenar coordenadas geográficas",
+        "Não há problema de escala nesse tipo de busca"
+      ],
+      "a": 1,
+      "w": "Calcular a distância exata para cada ponto do sistema, incluindo os muito distantes, desperdiça trabalho — estruturas de indexação espacial restringem a busca a uma vizinhança relevante desde o início.",
+      "t": "fixacao",
+      "h": "Calcular a distância para todos os pontos escala bem?"
+    }
+  ]
+}

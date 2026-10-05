@@ -1,7 +1,13 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { GateQuestion } from "./gates";
-import type { QuizTopic } from "./questions";
+
+export type GateTrack =
+  | "system-design"
+  | "code"
+  | "behavioral"
+  | "ai-coding"
+  | "ml-system-design";
 
 function dataRoots() {
   const cwd = process.cwd();
@@ -16,10 +22,7 @@ function dataFile(...parts: string[]) {
   return null;
 }
 
-export function loadGateBank(
-  track: "kafka" | "arquitetura",
-  slug: string,
-): GateQuestion[] {
+export function loadGateBank(track: GateTrack, slug: string): GateQuestion[] {
   const file = dataFile("gates", track, `${slug}.json`);
   if (!file) return [];
   const data = JSON.parse(readFileSync(file, "utf8")) as {
@@ -28,14 +31,25 @@ export function loadGateBank(
   return data.questions ?? [];
 }
 
-export function loadSimuladorBank(track: "kafka" | "arquitetura"): {
-  topics: Record<string, QuizTopic>;
-  questions: GateQuestion[];
-} {
-  const file = dataFile(`${track}-quiz.json`);
-  if (!file) return { topics: {}, questions: [] };
-  return JSON.parse(readFileSync(file, "utf8")) as {
-    topics: Record<string, QuizTopic>;
-    questions: GateQuestion[];
-  };
+export function loadCourseBankManifest(categorySlug: string): string[] {
+  const file = dataFile("gates", "course-banks.json");
+  if (!file) return [];
+  const data = JSON.parse(readFileSync(file, "utf8")) as Record<
+    string,
+    string[]
+  >;
+  return data[categorySlug] ?? [];
+}
+
+/** Slugs das lições que têm banco de questões em data/gates/<track>/. */
+export function listBankSlugs(track: GateTrack): string[] {
+  for (const root of dataRoots()) {
+    const dir = join(root, "gates", track);
+    if (existsSync(dir)) {
+      return readdirSync(dir)
+        .filter((f) => f.endsWith(".json"))
+        .map((f) => f.replace(/\.json$/, ""));
+    }
+  }
+  return [];
 }

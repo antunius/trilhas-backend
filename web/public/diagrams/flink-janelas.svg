@@ -1,0 +1,40 @@
+<svg viewBox="0 0 780 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .axis { stroke: #8b95a5; stroke-width: 1.5; }
+    .tumbling { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; }
+    .sliding { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.5; opacity: 0.75; }
+    .label { font-size: 11.5px; fill: #e8eaed; }
+    .small { font-size: 10.5px; fill: #9aa3b2; }
+    .title { font-size: 14px; font-weight: 600; fill: #e8eaed; }
+  </style>
+
+  <text x="390" y="20" text-anchor="middle" class="title">Tumbling window (sem sobreposição) vs. Sliding window (com sobreposição)</text>
+
+  <!-- timeline -->
+  <line x1="60" y1="80" x2="740" y2="80" class="axis"/>
+  <text x="60" y="70" class="small">10:00</text>
+  <text x="230" y="70" class="small">10:01</text>
+  <text x="400" y="70" class="small">10:02</text>
+  <text x="570" y="70" class="small">10:03</text>
+  <text x="720" y="70" class="small">10:04</text>
+
+  <text x="20" y="55" class="label" font-weight="600">Tumbling</text>
+  <rect x="60" y="45" width="170" height="25" class="tumbling"/>
+  <rect x="230" y="45" width="170" height="25" class="tumbling"/>
+  <rect x="400" y="45" width="170" height="25" class="tumbling"/>
+  <rect x="570" y="45" width="170" height="25" class="tumbling"/>
+  <text x="390" y="95" text-anchor="middle" class="small">cada janela de 1 min, sem sobrepor — cada evento pertence a uma única janela</text>
+
+  <!-- sliding -->
+  <text x="20" y="140" class="label" font-weight="600">Sliding</text>
+  <rect x="60" y="130" width="340" height="22" class="sliding"/>
+  <text x="230" y="146" text-anchor="middle" class="small">janela de 5min #1</text>
+
+  <rect x="230" y="158" width="340" height="22" class="sliding"/>
+  <text x="400" y="174" text-anchor="middle" class="small">janela de 5min #2 (desliza 1min)</text>
+
+  <rect x="400" y="186" width="340" height="22" class="sliding"/>
+  <text x="570" y="202" text-anchor="middle" class="small">janela de 5min #3 (desliza 1min)</text>
+
+  <text x="390" y="235" text-anchor="middle" class="small">janelas de 5 min recalculadas a cada 1 min — se sobrepõem no tempo</text>
+</svg>

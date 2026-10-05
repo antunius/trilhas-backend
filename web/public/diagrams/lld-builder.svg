@@ -1,0 +1,43 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .prod { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-b); }
+  </style>
+  <defs>
+    <marker id="ah-b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="380" y="24" text-anchor="middle" class="caption">Builder — encadeamento fluente</text>
+
+  <rect x="30" y="55" width="250" height="180" class="box"/>
+  <text x="155" y="76" text-anchor="middle" class="title">PedidoBuilder</text>
+  <line x1="30" y1="86" x2="280" y2="86" stroke="#818cf8" stroke-width="1"/>
+  <text x="45" y="104" class="member">comCliente(nome)</text>
+  <text x="45" y="120" class="member">  → PedidoBuilder</text>
+  <text x="45" y="140" class="member">adicionarItem(item)</text>
+  <text x="45" y="156" class="member">  → PedidoBuilder</text>
+  <text x="45" y="176" class="member">comCupom(codigo)</text>
+  <text x="45" y="192" class="member">  → PedidoBuilder</text>
+  <text x="45" y="212" class="member">build() → Pedido</text>
+
+  <path d="M280,104 L280,120 L30,120 L30,104" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <text x="300" y="115" class="small" fill="#818cf8">retorna "this" — permite encadear</text>
+
+  <rect x="500" y="90" width="220" height="110" class="prod"/>
+  <text x="610" y="112" text-anchor="middle" class="title">Pedido</text>
+  <line x1="500" y1="122" x2="720" y2="122" stroke="#34d399" stroke-width="1"/>
+  <text x="515" y="140" class="member">- cliente: String</text>
+  <text x="515" y="156" class="member">- itens: List&lt;Item&gt;</text>
+  <text x="515" y="172" class="member">- cupom: String</text>
+  <text x="515" y="188" class="member">(imutável após build())</text>
+
+  <path d="M280,150 L500,150" class="arrow"/>
+  <text x="390" y="140" text-anchor="middle" class="small">build()</text>
+
+  <text x="380" y="270" text-anchor="middle" class="small">comCliente("Ana").adicionarItem(x).comCupom("PROMO10").build()</text>
+</svg>

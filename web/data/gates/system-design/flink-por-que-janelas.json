@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Qual tipo de janela é mais apropriado para calcular \"cliques por minuto\", com intervalos consecutivos e sem sobreposição?",
+      "o": [
+        "Sliding",
+        "Tumbling",
+        "Session",
+        "Nenhuma"
+      ],
+      "a": 1,
+      "w": "A tumbling window divide o tempo em intervalos fixos e consecutivos, e cada evento pertence a exatamente uma janela.",
+      "t": "fixacao",
+      "h": "Fixa e sem sobreposição."
+    },
+    {
+      "q": "Uma média móvel dos últimos 5 minutos, atualizada a cada minuto, usa qual janela?",
+      "o": [
+        "Tumbling",
+        "Sliding",
+        "Session",
+        "Global"
+      ],
+      "a": 1,
+      "w": "A sliding window tem duração fixa (5 min) e se recalcula a cada intervalo menor (1 min), com sobreposição.",
+      "t": "fixacao",
+      "h": "A janela desliza a cada minuto."
+    },
+    {
+      "q": "Quando fechar a janela de uma sessão de navegação?",
+      "o": [
+        "A cada minuto",
+        "Depois de um intervalo de inatividade, como 30 minutos sem cliques",
+        "Quando o dia termina",
+        "Nunca"
+      ],
+      "a": 1,
+      "w": "Na session window o tamanho não é fixo: depende do comportamento real dos eventos.",
+      "t": "fixacao",
+      "h": "O que define o fim de uma sessão?"
+    },
+    {
+      "q": "Por que um consumidor comum com contador em memória não basta para esse painel?",
+      "o": [
+        "Porque contadores não existem",
+        "Porque, se o processo cair, a contagem parcial some e não há mecanismo pronto para eventos atrasados",
+        "Porque consumidores não leem Kafka",
+        "Porque o painel é lento"
+      ],
+      "a": 1,
+      "w": "O Flink dá estado durável, recuperação e tratamento de eventos fora de ordem.",
+      "t": "fixacao",
+      "h": "O que acontece com a contagem quando o processo cai?"
+    },
+    {
+      "q": "Por que um batch a cada hora não atende ao painel em tempo real?",
+      "o": [
+        "Porque é mais caro",
+        "Porque o painel mostraria a campanha com até uma hora de atraso",
+        "Porque não lê dados",
+        "Porque exige Kafka"
+      ],
+      "a": 1,
+      "w": "Para o marketing ajustar uma campanha no ar, uma hora de atraso é tarde demais.",
+      "t": "fixacao",
+      "h": "Qual a latência de um batch horário?"
+    }
+  ]
+}

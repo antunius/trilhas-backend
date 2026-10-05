@@ -1,0 +1,43 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .buy { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .sell { fill: #2a1418; stroke: #f87171; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-trd); }
+  </style>
+  <defs>
+    <marker id="ah-trd" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Order book: ordens casadas em sequência estrita</text>
+
+  <rect x="30" y="55" width="220" height="150" class="buy"/>
+  <text x="140" y="78" text-anchor="middle" class="label">Compra (bids)</text>
+  <text x="140" y="100" text-anchor="middle" class="small">R$ 50,20 · 100 ações</text>
+  <text x="140" y="120" text-anchor="middle" class="small">R$ 50,15 · 300 ações</text>
+  <text x="140" y="140" text-anchor="middle" class="small">R$ 50,10 · 50 ações</text>
+
+  <rect x="610" y="55" width="220" height="150" class="sell"/>
+  <text x="720" y="78" text-anchor="middle" class="label">Venda (asks)</text>
+  <text x="720" y="100" text-anchor="middle" class="small">R$ 50,20 · 80 ações</text>
+  <text x="720" y="120" text-anchor="middle" class="small">R$ 50,25 · 200 ações</text>
+  <text x="720" y="140" text-anchor="middle" class="small">R$ 50,30 · 400 ações</text>
+
+  <path d="M250,90 L450,90" class="arrow"/>
+  <path d="M610,90 L450,90" class="arrow"/>
+
+  <rect x="330" y="65" width="200" height="55" class="warn"/>
+  <text x="430" y="88" text-anchor="middle" class="small" font-weight="600">Melhor bid = melhor ask</text>
+  <text x="430" y="106" text-anchor="middle" class="small">R$ 50,20 → casa 80 ações</text>
+
+  <rect x="280" y="150" width="300" height="65" class="box"/>
+  <text x="430" y="173" text-anchor="middle" class="small" font-weight="600">Ordens processadas em ordem estrita de chegada</text>
+  <text x="430" y="191" text-anchor="middle" class="small">preço e saldo validados antes de confirmar — sem "quase executado"</text>
+  <text x="430" y="206" text-anchor="middle" class="small">(fila única por ativo, não paralela)</text>
+
+  <text x="430" y="245" text-anchor="middle" class="small">Consistência forte: duas ordens não podem gastar o mesmo saldo simultaneamente</text>
+</svg>

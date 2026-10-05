@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Uma tabela de 50 milhões de linhas com índice em árvore B precisa de cerca de quantos níveis para localizar uma chave, com ~300 filhos por nó?",
+      "o": [
+        "1 nível",
+        "4 níveis",
+        "500 níveis",
+        "50 milhões de níveis"
+      ],
+      "a": 1,
+      "w": "300³ = 27 milhões ainda não cobre 50 milhões, e 300⁴ = 8,1 bilhões cobre. Por isso a árvore é muito rasa e a busca faz poucas leituras de página.",
+      "t": "fixacao",
+      "h": "Calcule potências de 300."
+    },
+    {
+      "q": "O que é um full scan?",
+      "o": [
+        "Ler a tabela inteira, linha a linha, para achar o que se procura",
+        "Uma busca por índice",
+        "Um backup",
+        "Uma transação"
+      ],
+      "a": 0,
+      "w": "Sem índice, 50 milhões de linhas precisam ser examinadas, uma a uma.",
+      "t": "fixacao",
+      "h": "É a leitura sem atalho."
+    },
+    {
+      "q": "Por que o ganho do índice cresce com o tamanho da tabela?",
+      "o": [
+        "Porque o full scan cresce linearmente e a árvore B quase não muda de altura",
+        "Porque o índice é copiado",
+        "Porque o banco comprime a tabela",
+        "Porque o índice usa mais memória"
+      ],
+      "a": 0,
+      "w": "Dobrar as linhas dobra o full scan, mas quase não muda os níveis da árvore.",
+      "t": "fixacao",
+      "h": "Compare como cada abordagem cresce."
+    },
+    {
+      "q": "Qual a analogia do índice de banco de dados?",
+      "o": [
+        "Um elevador",
+        "O índice remissivo de um livro",
+        "Uma lixeira",
+        "Um espelho"
+      ],
+      "a": 1,
+      "w": "Evita ler todas as páginas para achar um assunto.",
+      "t": "fixacao",
+      "h": "Você consulta o final do livro."
+    }
+  ]
+}

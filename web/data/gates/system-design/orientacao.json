@@ -1,0 +1,30 @@
+{
+  "questions": [
+    {
+      "q": "Qual das opções abaixo melhor descreve o principal objetivo de uma entrevista de system design?",
+      "o": [
+        "Verificar se o candidato conhece a arquitetura \"correta\" para o problema pedido",
+        "Avaliar como o candidato pensa, comunica e lida com ambiguidade diante de um problema em aberto",
+        "Testar a velocidade de digitação e desenho do candidato",
+        "Verificar se o candidato memorizou as arquiteturas de grandes empresas de tecnologia"
+      ],
+      "a": 1,
+      "w": "Não existe uma arquitetura \"correta\" única — o que é avaliado é o processo de raciocínio, a comunicação e o julgamento sobre trade-offs, muito mais do que o desenho final em si.",
+      "t": "fixacao",
+      "h": "Ele avalia mais o resultado final ou o raciocínio?"
+    },
+    {
+      "q": "Por que ter um framework (roteiro) de entrevista é útil, além de ajudar a lembrar etapas?",
+      "o": [
+        "Porque impressiona o entrevistador com jargão técnico",
+        "Porque libera espaço mental, permitindo focar no conteúdo técnico em vez de decidir \"o que fazer agora\"",
+        "Porque garante que você vai chegar exatamente na mesma arquitetura que o entrevistador tinha em mente",
+        "Porque reduz o tempo total da entrevista"
+      ],
+      "a": 1,
+      "w": "O framework existe para reduzir a carga cognitiva de decidir a próxima etapa sob pressão, não para \"acertar\" uma resposta específica esperada pelo entrevistador.",
+      "t": "fixacao",
+      "h": "Um roteiro ajuda a lembrar o quê, e a quê mais?"
+    }
+  ]
+}

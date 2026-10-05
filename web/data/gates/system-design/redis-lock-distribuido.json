@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Por que SET chave valor NX EX 5 é seguro para um lock, e GET seguido de SET não é?",
+      "o": [
+        "Porque NX e EX são mais rápidos",
+        "Porque NX cria a chave só se ela não existir, de forma atômica",
+        "Porque GET não funciona com locks",
+        "Porque EX desliga o Redis"
+      ],
+      "a": 1,
+      "w": "No GET + SET, dois clientes podem ler \"vazio\" e ambos gravar. O NX faz a checagem e a criação numa operação indivisível.",
+      "t": "fixacao",
+      "h": "Quantas operações separadas há em cada abordagem?"
+    },
+    {
+      "q": "Para que serve o EX 5 no comando do lock?",
+      "o": [
+        "Executar o comando cinco vezes",
+        "Expirar o lock em 5 segundos, evitando que fique preso se o processo travar",
+        "Limitar a cinco clientes",
+        "Criptografar a chave"
+      ],
+      "a": 1,
+      "w": "Se quem criou o lock cair, ele não o libera. A expiração garante que o lock não fique preso para sempre.",
+      "t": "fixacao",
+      "h": "O que acontece se o dono do lock morrer?"
+    },
+    {
+      "q": "Qual a limitação de um lock Redis de nó único?",
+      "o": [
+        "Ele não permite expiração",
+        "Em falhas do próprio Redis, duas partes podem, em teoria, crer que têm o lock",
+        "Ele só aceita um cliente por vez",
+        "Ele exige disco"
+      ],
+      "a": 1,
+      "w": "É uma ferramenta de eficiência, não uma garantia absoluta de correção distribuída. O Redlock usa várias instâncias independentes.",
+      "t": "fixacao",
+      "h": "O que acontece se o nó do Redis falhar?"
+    },
+    {
+      "q": "Por que guardar um valor único (como um UUID) no lock?",
+      "o": [
+        "Para o lock ocupar mais espaço",
+        "Para só apagar o lock se ele ainda for seu, sem soltar o lock de outro processo",
+        "Para acelerar o SET",
+        "Para evitar o TTL"
+      ],
+      "a": 1,
+      "w": "Se o seu processo ficou lento e o lock expirou e foi tomado por outro, apagar a chave sem checar o valor soltaria o lock alheio.",
+      "t": "fixacao",
+      "h": "De quem é o lock quando você tenta apagá-lo?"
+    },
+    {
+      "q": "Qual cenário do quiz o lock resolve?",
+      "o": [
+        "Contar duas vezes a mesma resposta reenviada por reconexão de rede",
+        "Ordenar o placar",
+        "Notificar a próxima pergunta",
+        "Persistir o histórico"
+      ],
+      "a": 0,
+      "w": "O lock por jogador e pergunta faz com que só um processamento de cada resposta aconteça.",
+      "t": "fixacao",
+      "h": "O que acontece quando o app reenvia a mesma resposta?"
+    }
+  ]
+}

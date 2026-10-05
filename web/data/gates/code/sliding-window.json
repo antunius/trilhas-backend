@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é a principal vantagem de atualizar a janela de forma incremental, em vez de recalculá-la do zero a cada posição?",
+      "o": [
+        "Reduz a complexidade de tempo, evitando trabalho redundante entre posições consecutivas da janela",
+        "Torna o código mais difícil de entender",
+        "Não há vantagem real, é apenas uma preferência estilística",
+        "Aumenta a complexidade de espaço necessária"
+      ],
+      "a": 0,
+      "w": "Atualizar incrementalmente (removendo o elemento que sai e adicionando o que entra) evita recalcular toda a janela a cada passo, o que é o que torna essa técnica eficiente.",
+      "t": "fixacao"
+    }
+  ]
+}

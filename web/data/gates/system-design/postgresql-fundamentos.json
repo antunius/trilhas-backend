@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Um serviço com 50 instâncias, 20 conexões cada, aponta para um PostgreSQL com max_connections = 100. Qual a solução usual?",
+      "o": [
+        "Aumentar max_connections para 10.000",
+        "Usar um pool de conexões compartilhado e pequeno",
+        "Remover os índices",
+        "Trocar o banco por um chave-valor"
+      ],
+      "a": 1,
+      "w": "Cada conexão é um processo de cerca de 5 a 10 MB. Um pool reaproveita poucas conexões entre muitas requisições.",
+      "t": "fixacao",
+      "h": "Quanto custa cada conexão ao servidor?"
+    },
+    {
+      "q": "Para que serve o WAL no PostgreSQL?",
+      "o": [
+        "Para armazenar índices",
+        "Para registrar as mudanças antes de aplicá-las, garantindo durabilidade e alimentando as réplicas",
+        "Para comprimir tabelas",
+        "Para balancear conexões"
+      ],
+      "a": 1,
+      "w": "Se o servidor cair, o WAL permite refazer o que faltava. As réplicas recebem o WAL para se manterem atualizadas.",
+      "t": "fixacao",
+      "h": "O log vem antes ou depois da mudança?"
+    },
+    {
+      "q": "O que o MVCC faz ao atualizar uma linha?",
+      "o": [
+        "Sobrescreve a linha no lugar",
+        "Cria uma nova versão e mantém a antiga até nenhuma transação precisar dela",
+        "Bloqueia todos os leitores",
+        "Apaga o índice"
+      ],
+      "a": 1,
+      "w": "Assim leitores e escritores não se bloqueiam. O custo é acumular versões velhas, que o VACUUM limpa.",
+      "t": "fixacao",
+      "h": "A linha antiga some na hora?"
+    },
+    {
+      "q": "Quem limpa as versões antigas de linhas geradas pelo MVCC?",
+      "o": [
+        "O WAL",
+        "O VACUUM",
+        "O pool de conexões",
+        "O índice"
+      ],
+      "a": 1,
+      "w": "Sem a limpeza, as versões mortas se acumulam e ocupam espaço.",
+      "t": "fixacao",
+      "h": "Tem nome de aspirador."
+    }
+  ]
+}

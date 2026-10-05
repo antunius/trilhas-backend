@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que evoluir o contrato do gateway exige cuidado especial?",
+      "o": [
+        "Porque ninguém o usa",
+        "Porque muitos clientes dependem dele, e uma quebra afeta todos",
+        "Porque é interno",
+        "Porque não tem versão"
+      ],
+      "a": 1,
+      "w": "Mudanças aditivas e versionamento evitam quebrar clientes existentes.",
+      "t": "fixacao",
+      "h": "Quantos clientes dependem dele?"
+    },
+    {
+      "q": "O que diferencia um Staff+ ao falar de gateway?",
+      "o": [
+        "Cita o nome do framework",
+        "Propõe BFFs quando os clientes têm necessidades genuinamente diferentes, evitando um gateway genérico que serve mal a todos",
+        "Evita falar de falhas",
+        "Coloca toda a lógica no gateway"
+      ],
+      "a": 1,
+      "w": "É uma decisão de arquitetura justificada pelas necessidades distintas dos clientes.",
+      "t": "fixacao",
+      "h": "Quando um gateway genérico deixa de servir?"
+    },
+    {
+      "q": "Qual é um erro comum sobre gateways?",
+      "o": [
+        "Mencionar redundância",
+        "Esquecer que ele é um ponto único de falha",
+        "Falar de autenticação",
+        "Falar de roteamento"
+      ],
+      "a": 1,
+      "w": "Todo tráfego externo passa por ele, então a redundância é obrigatória.",
+      "t": "fixacao",
+      "h": "Se ele cai, o que acontece?"
+    },
+    {
+      "q": "Para qual uso o gateway se encaixa bem?",
+      "o": [
+        "Armazenar dados dos usuários",
+        "Autenticação, rate limiting e agregação na borda de uma plataforma de microsserviços",
+        "Calcular recomendações",
+        "Processar vídeos"
+      ],
+      "a": 1,
+      "w": "São responsabilidades transversais da borda.",
+      "t": "fixacao",
+      "h": "Qual precisa ficar na entrada?"
+    }
+  ]
+}

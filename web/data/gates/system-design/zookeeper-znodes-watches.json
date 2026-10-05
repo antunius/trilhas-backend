@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "O que é um znode efêmero?",
+      "o": [
+        "Um znode que existe até ser removido manualmente",
+        "Um znode que desaparece automaticamente quando a sessão do cliente que o criou termina",
+        "Um znode que guarda dados grandes",
+        "Um znode somente leitura"
+      ],
+      "a": 1,
+      "w": "Por isso é a base da detecção de falhas: se o cliente cai, o znode some e os outros são avisados.",
+      "t": "fixacao",
+      "h": "O que acontece quando o cliente desconecta?"
+    },
+    {
+      "q": "Para que serve um znode sequencial?",
+      "o": [
+        "Para guardar arquivos",
+        "Para o ZooKeeper anexar um número crescente ao nome, garantindo uma ordem total mesmo entre criações concorrentes",
+        "Para criptografar",
+        "Para criar réplicas"
+      ],
+      "a": 1,
+      "w": "Os nomes saem como worker-0000000001, worker-0000000002 e assim por diante.",
+      "t": "fixacao",
+      "h": "O que o sufixo numérico garante?"
+    },
+    {
+      "q": "O que é um watch?",
+      "o": [
+        "Um relógio",
+        "Uma notificação assíncrona de que um znode mudou ou foi removido, sem polling",
+        "Um tipo de znode",
+        "Um log"
+      ],
+      "a": 1,
+      "w": "O cliente não precisa perguntar repetidamente se algo mudou.",
+      "t": "fixacao",
+      "h": "Ele substitui o polling."
+    },
+    {
+      "q": "Para que tamanho de dado o znode é pensado?",
+      "o": [
+        "Gigabytes",
+        "Poucos KB, não um armazenamento de propósito geral",
+        "Terabytes",
+        "Vídeos"
+      ],
+      "a": 1,
+      "w": "O ZooKeeper coordena, não armazena grandes volumes.",
+      "t": "fixacao",
+      "h": "Ele é um banco de dados de uso geral?"
+    }
+  ]
+}

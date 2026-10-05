@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Com TTL de DNS de 300 segundos, você troca o IP do servidor. O que esperar?",
+      "o": [
+        "Todos os usuários veem o novo IP imediatamente",
+        "Alguns usuários continuam no IP antigo por até 5 minutos",
+        "O DNS rejeita a mudança",
+        "Nenhum usuário consegue acessar por 1 hora"
+      ],
+      "a": 1,
+      "w": "As respostas ficam em cache pelo TTL. Quem consultou há pouco continua usando o IP antigo até o cache expirar.",
+      "t": "fixacao",
+      "h": "O TTL é por quanto tempo a resposta pode ser guardada."
+    },
+    {
+      "q": "O que o DNS faz?",
+      "o": [
+        "Distribui requisições entre servidores",
+        "Traduz um nome de domínio para um endereço IP",
+        "Criptografa o tráfego",
+        "Guarda as sessões"
+      ],
+      "a": 1,
+      "w": "Antes de qualquer conexão, o navegador pergunta ao DNS qual o IP do nome digitado.",
+      "t": "fixacao",
+      "h": "Ele é a lista telefônica da internet."
+    },
+    {
+      "q": "O que é o GeoDNS?",
+      "o": [
+        "Um DNS que devolve respostas diferentes conforme a localização de quem pergunta",
+        "Um DNS que só funciona nos EUA",
+        "Um tipo de proxy",
+        "Um cache de imagens"
+      ],
+      "a": 0,
+      "w": "Quem pergunta do Brasil recebe o IP do balanceador de São Paulo, e quem pergunta da Alemanha recebe o de Frankfurt.",
+      "t": "fixacao",
+      "h": "A resposta depende de onde você está."
+    },
+    {
+      "q": "Por que o usuário não conhece o endereço dos servidores de aplicação?",
+      "o": [
+        "Porque eles não têm IP",
+        "Porque ele só vê o balanceador, o que permite trocar os servidores sem ninguém perceber",
+        "Porque o DNS os esconde",
+        "Porque usam UDP"
+      ],
+      "a": 1,
+      "w": "O balanceador é a fachada, e os servidores atrás dele podem entrar e sair.",
+      "t": "fixacao",
+      "h": "O que fica entre o usuário e os servidores?"
+    }
+  ]
+}

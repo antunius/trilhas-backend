@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Qual é a abordagem recomendada para uma operação que leva vários minutos para ser concluída?",
+      "o": [
+        "Manter o cliente esperando de forma síncrona até a operação terminar",
+        "Responder imediatamente com uma confirmação, processar de forma assíncrona, e permitir consulta posterior de status",
+        "Rejeitar a operação por ser longa demais",
+        "Executar a operação de forma síncrona, mas em uma thread separada do servidor"
+      ],
+      "a": 1,
+      "w": "Esse é o padrão típico para tarefas de longa duração — desacoplar a confirmação do cliente do processamento real, que acontece de forma assíncrona.",
+      "t": "fixacao",
+      "h": "O cliente deve esperar a conexão aberta por minutos?"
+    }
+  ]
+}

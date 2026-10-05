@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "O app do cliente e o painel de suporte são dois consumer groups diferentes lendo o mesmo tópico. O que acontece se o app do cliente processar mais devagar?",
+      "o": [
+        "O painel de suporte também atrasa",
+        "Nada: cada grupo mantém o próprio offset",
+        "O Kafka pausa os dois grupos",
+        "Os dois grupos passam a dividir as partições"
+      ],
+      "a": 1,
+      "w": "Cada consumer group tem o seu próprio progresso de leitura, independente de qualquer outro.",
+      "t": "fixacao",
+      "h": "Cada grupo tem seu ponteiro."
+    },
+    {
+      "q": "Um tópico tem 8 partições e um consumer group tem 12 instâncias. O que acontece?",
+      "o": [
+        "As 12 trabalham, dividindo as partições",
+        "8 trabalham e 4 ficam ociosas",
+        "O Kafka cria mais 4 partições",
+        "O grupo para de funcionar"
+      ],
+      "a": 1,
+      "w": "Dentro de um grupo, cada partição é lida por um único consumer, então o paralelismo é limitado pelo número de partições.",
+      "t": "fixacao",
+      "h": "Quantas partições existem para dividir?"
+    },
+    {
+      "q": "O que é um offset?",
+      "o": [
+        "O nome do consumer group",
+        "A posição sequencial de um evento dentro de uma partição",
+        "O tamanho de uma mensagem",
+        "O número de réplicas"
+      ],
+      "a": 1,
+      "w": "O offset (0, 1, 2...) funciona como marcador de página: indica até onde o grupo já leu naquela partição.",
+      "t": "fixacao",
+      "h": "Pense em um marcador de página."
+    },
+    {
+      "q": "Dentro de um mesmo consumer group, quantos consumers leem a mesma partição ao mesmo tempo?",
+      "o": [
+        "Todos",
+        "Exatamente um",
+        "No máximo dois",
+        "Nenhum"
+      ],
+      "a": 1,
+      "w": "É essa regra que divide o trabalho entre as instâncias do grupo.",
+      "t": "fixacao",
+      "h": "Se dois lessem a mesma partição, o trabalho seria duplicado."
+    },
+    {
+      "q": "Um consumer cai e volta. De onde ele retoma a leitura?",
+      "o": [
+        "Do início da partição",
+        "Do último offset confirmado (commitado)",
+        "Do fim da partição",
+        "De um offset sorteado"
+      ],
+      "a": 1,
+      "w": "O progresso fica registrado no offset commitado, e é dele que a leitura continua.",
+      "t": "fixacao",
+      "h": "Pense no marcador de página."
+    }
+  ]
+}

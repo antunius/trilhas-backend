@@ -1,0 +1,37 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .base { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .impl { fill: #14241f; stroke: #34d399; stroke-width: 1.5; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-tm); }
+  </style>
+  <defs>
+    <marker id="ah-tm" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="360" y="22" text-anchor="middle" class="caption">Template Method — o esqueleto do algoritmo é fixo, os passos variam</text>
+
+  <rect x="180" y="45" width="360" height="150" class="base"/>
+  <text x="360" y="68" text-anchor="middle" class="title">RelatorioBase « abstract »</text>
+  <line x1="180" y1="78" x2="540" y2="78" stroke="#fbbf24" stroke-width="1"/>
+  <text x="195" y="96" class="member" font-weight="700">+ final gerar():  « template method »</text>
+  <text x="210" y="112" class="member">1. abrirDocumento()</text>
+  <text x="210" y="128" class="member">2. escreverCorpo()  « abstract »</text>
+  <text x="210" y="144" class="member">3. escreverRodape()</text>
+  <text x="195" y="164" class="member" fill="#818cf8"># escreverCorpo(): abstract « hook »</text>
+  <text x="195" y="180" class="member" fill="#818cf8"># escreverRodape(): tem default</text>
+
+  <rect x="60" y="230" width="240" height="55" class="impl"/>
+  <text x="180" y="252" text-anchor="middle" class="small" font-weight="600">RelatorioVendas</text>
+  <text x="180" y="270" text-anchor="middle" class="small">escreverCorpo() → tabela de vendas</text>
+
+  <rect x="420" y="230" width="240" height="55" class="impl"/>
+  <text x="540" y="252" text-anchor="middle" class="small" font-weight="600">RelatorioEstoque</text>
+  <text x="540" y="270" text-anchor="middle" class="small">escreverCorpo() → tabela de estoque</text>
+
+  <path d="M280,195 L180,230" class="arrow"/>
+  <path d="M440,195 L540,230" class="arrow"/>
+</svg>

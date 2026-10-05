@@ -1,0 +1,40 @@
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .subj { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .obs { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #34d399; stroke-width: 1.6; fill: none; marker-end: url(#ah-o); }
+  </style>
+  <defs>
+    <marker id="ah-o" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#34d399"/></marker>
+  </defs>
+
+  <text x="390" y="24" text-anchor="middle" class="caption">Observer — o sujeito notifica todos os inscritos</text>
+
+  <rect x="290" y="55" width="220" height="90" class="subj"/>
+  <text x="400" y="78" text-anchor="middle" class="title">EstoqueProduto</text>
+  <text x="305" y="98" class="member">- observadores: List&lt;Observer&gt;</text>
+  <text x="305" y="114" class="member">inscrever(o) / remover(o)</text>
+  <text x="305" y="130" class="member">notificarTodos() « quando muda »</text>
+
+  <path d="M330,145 L120,190" class="arrow"/>
+  <path d="M400,145 L400,190" class="arrow"/>
+  <path d="M470,145 L680,190" class="arrow"/>
+
+  <rect x="30" y="195" width="180" height="55" class="obs"/>
+  <text x="120" y="217" text-anchor="middle" class="small" font-weight="600">NotificadorEmail</text>
+  <text x="120" y="234" text-anchor="middle" class="small">atualizar(produto)</text>
+
+  <rect x="310" y="195" width="180" height="55" class="obs"/>
+  <text x="400" y="217" text-anchor="middle" class="small" font-weight="600">PainelAdmin</text>
+  <text x="400" y="234" text-anchor="middle" class="small">atualizar(produto)</text>
+
+  <rect x="590" y="195" width="180" height="55" class="obs"/>
+  <text x="680" y="217" text-anchor="middle" class="small" font-weight="600">SistemaDeAlerta</text>
+  <text x="680" y="234" text-anchor="middle" class="small">atualizar(produto)</text>
+
+  <text x="390" y="275" text-anchor="middle" class="small">EstoqueProduto não conhece as classes concretas — só a interface Observer</text>
+</svg>

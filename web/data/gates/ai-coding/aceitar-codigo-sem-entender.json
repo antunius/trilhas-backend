@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é um bom teste prático para saber se você deve aceitar um trecho de código gerado pela IA?",
+      "o": [
+        "Se o código não gerou nenhum erro de sintaxe",
+        "Se você conseguiria explicar as decisões centrais daquele código para outra pessoa",
+        "Se o código foi gerado rapidamente",
+        "Se a IA afirmou estar confiante na solução"
+      ],
+      "a": 1,
+      "w": "A capacidade de explicar as decisões centrais é o que garante que você realmente entende o que está integrando, não apenas confiando na aparência de correção.",
+      "t": "fixacao"
+    }
+  ]
+}

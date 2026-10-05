@@ -1,0 +1,43 @@
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .c { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+  </style>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Gerar código único com múltiplas instâncias em paralelo</text>
+
+  <rect x="30" y="55" width="250" height="120" class="a"/>
+  <text x="155" y="80" text-anchor="middle" class="label">Contador + base62</text>
+  <text x="155" y="102" text-anchor="middle" class="small">Contador distribuído (faixas</text>
+  <text x="155" y="118" text-anchor="middle" class="small">alocadas por instância) →</text>
+  <text x="155" y="134" text-anchor="middle" class="small">converte para base62</text>
+  <text x="155" y="156" text-anchor="middle" class="small" fill="#818cf8">sem colisão · precisa coordenar</text>
+
+  <rect x="305" y="55" width="250" height="120" class="b"/>
+  <text x="430" y="80" text-anchor="middle" class="label">Hash + checagem</text>
+  <text x="430" y="102" text-anchor="middle" class="small">hash(longUrl) truncado →</text>
+  <text x="430" y="118" text-anchor="middle" class="small">checa colisão no banco →</text>
+  <text x="430" y="134" text-anchor="middle" class="small">tenta de novo se colidir</text>
+  <text x="430" y="156" text-anchor="middle" class="small" fill="#34d399">sem coordenação · trata colisão</text>
+
+  <rect x="580" y="55" width="250" height="120" class="c"/>
+  <text x="705" y="80" text-anchor="middle" class="label">Pool pré-gerado</text>
+  <text x="705" y="102" text-anchor="middle" class="small">códigos aleatórios gerados</text>
+  <text x="705" y="118" text-anchor="middle" class="small">em lote e distribuídos</text>
+  <text x="705" y="134" text-anchor="middle" class="small">entre as instâncias</text>
+  <text x="705" y="156" text-anchor="middle" class="small" fill="#fbbf24">leitura instantânea · exige estoque</text>
+
+  <rect x="30" y="205" width="800" height="110" class="box"/>
+  <text x="450" y="230" text-anchor="middle" class="small" font-weight="600">Duas instâncias da API, ao mesmo tempo, não podem gerar o mesmo código</text>
+  <rect x="60" y="245" width="150" height="45" class="a"/>
+  <text x="135" y="272" text-anchor="middle" class="small">Instância 1</text>
+  <rect x="650" y="245" width="150" height="45" class="a"/>
+  <text x="725" y="272" text-anchor="middle" class="small">Instância 2</text>
+  <text x="450" y="272" text-anchor="middle" class="small">as três estratégias acima resolvem isso de formas diferentes</text>
+  <text x="450" y="300" text-anchor="middle" class="small" fill="#9aa3b2">nenhuma delas depende de "cada instância sortear e torcer para não bater"</text>
+</svg>

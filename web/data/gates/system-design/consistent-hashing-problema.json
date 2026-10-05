@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Com hash por módulo (hash % N), o cluster vai de 4 para 5 servidores. Aproximadamente que fração das chaves muda de servidor?",
+      "o": [
+        "Cerca de 20%",
+        "Cerca de 50%",
+        "Cerca de 80%",
+        "Nenhuma"
+      ],
+      "a": 2,
+      "w": "Em geral muda cerca de N/(N+1) das chaves: 4/5 = 80%. Quase tudo muda de lugar, causando uma avalanche de misses.",
+      "t": "fixacao",
+      "h": "Compare h % 4 e h % 5 para vários valores de h."
+    },
+    {
+      "q": "Para 100 servidores indo a 101, que fração das chaves muda com hash por módulo?",
+      "o": [
+        "Cerca de 1%",
+        "Cerca de 50%",
+        "Cerca de 99%",
+        "Nenhuma"
+      ],
+      "a": 2,
+      "w": "N/(N+1) = 100/101, quase tudo.",
+      "t": "fixacao",
+      "h": "Aplique a fórmula N/(N+1)."
+    },
+    {
+      "q": "Por que mover chaves de servidor é caro num cache?",
+      "o": [
+        "Porque o servidor novo não as tem, e cada uma vira um miss indo ao banco",
+        "Porque o hash é lento",
+        "Porque a rede cai",
+        "Porque o TTL some"
+      ],
+      "a": 0,
+      "w": "Cerca de 800 mil misses de uma vez podem derrubar o banco.",
+      "t": "fixacao",
+      "h": "Onde o servidor novo busca o dado que não tem?"
+    },
+    {
+      "q": "O que é uma função de hash?",
+      "o": [
+        "Uma função que transforma qualquer texto num número, de forma determinística e bem espalhada",
+        "Uma criptografia reversível",
+        "Um tipo de índice",
+        "Um balanceador"
+      ],
+      "a": 0,
+      "w": "A mesma entrada dá sempre o mesmo número, e entradas parecidas dão números muito diferentes.",
+      "t": "fixacao",
+      "h": "Ela é determinística?"
+    }
+  ]
+}

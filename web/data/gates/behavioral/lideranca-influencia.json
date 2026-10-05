@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que geralmente diferencia uma boa resposta de liderança de uma atuação puramente individual?",
+      "o": [
+        "O tamanho da equipe formal que a pessoa gerenciava",
+        "A demonstração de como outras pessoas foram convencidas ou mobilizadas em torno de um objetivo",
+        "O cargo oficial ocupado pelo candidato na época",
+        "O tempo total que o projeto levou"
+      ],
+      "a": 1,
+      "w": "Liderança nesse contexto é frequentemente sobre influência sem autoridade formal — mobilizar pessoas é o elemento central que a resposta precisa demonstrar.",
+      "t": "fixacao"
+    }
+  ]
+}

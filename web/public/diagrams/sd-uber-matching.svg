@@ -1,0 +1,52 @@
+<svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .cell { fill: #1e2438; stroke: #3d4a5c; stroke-width: 1; }
+    .lock { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-uber); }
+  </style>
+  <defs>
+    <marker id="ah-uber" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Grid geo-particionado + lock de atribuição evita double-match</text>
+
+  <text x="200" y="55" text-anchor="middle" class="small" font-weight="600">Motoristas indexados por célula geo-hash</text>
+  <g>
+    <rect x="60" y="65" width="60" height="60" class="cell"/>
+    <rect x="120" y="65" width="60" height="60" class="cell"/>
+    <rect x="180" y="65" width="60" height="60" class="cell"/>
+    <rect x="60" y="125" width="60" height="60" class="cell"/>
+    <rect x="120" y="125" width="60" height="60" class="cell"/>
+    <rect x="180" y="125" width="60" height="60" class="cell"/>
+    <circle cx="145" cy="150" r="7" fill="#34d399"/>
+    <circle cx="165" cy="100" r="7" fill="#34d399"/>
+    <circle cx="90" cy="160" r="7" fill="#34d399"/>
+    <circle cx="150" cy="95" r="9" fill="#fbbf24"/>
+    <text x="150" y="70" text-anchor="middle" class="small" fill="#fbbf24">passageiro</text>
+  </g>
+  <text x="150" y="205" text-anchor="middle" class="small">busca só nas células vizinhas — não em toda a cidade</text>
+
+  <path d="M260,120 L340,120" class="arrow"/>
+  <text x="300" y="108" text-anchor="middle" class="small">candidatos próximos</text>
+
+  <rect x="345" y="85" width="180" height="70" class="lock"/>
+  <text x="435" y="112" text-anchor="middle" class="label">Lock de atribuição</text>
+  <text x="435" y="132" text-anchor="middle" class="small">reserva o motorista por</text>
+  <text x="435" y="148" text-anchor="middle" class="small">alguns segundos (TTL)</text>
+
+  <path d="M525,110 L610,110" class="arrow"/>
+  <path d="M525,130 L610,160" class="arrow" stroke-dasharray="4 3"/>
+
+  <rect x="615" y="80" width="200" height="55" class="box"/>
+  <text x="715" y="112" text-anchor="middle" class="small" fill="#34d399">Passageiro A → confirma → motorista fica indisponível</text>
+
+  <rect x="615" y="150" width="200" height="55" class="box"/>
+  <text x="715" y="182" text-anchor="middle" class="small" fill="#9aa3b2">Passageiro B → lock já tomado → tenta o próximo candidato</text>
+
+  <text x="430" y="250" text-anchor="middle" class="small">Sem o lock, dois passageiros podem "ganhar" o mesmo motorista ao mesmo tempo</text>
+  <text x="430" y="270" text-anchor="middle" class="small">O lock expira sozinho se o passageiro não confirmar — motorista volta ao pool</text>
+</svg>

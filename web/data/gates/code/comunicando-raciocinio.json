@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que fazer ao travar em algum ponto do problema durante a entrevista?",
+      "o": [
+        "Ficar em silêncio até encontrar a solução sozinho",
+        "Verbalizar explicitamente que está travado e o que está considerando, mantendo o entrevistador informado do processo",
+        "Desistir do problema imediatamente",
+        "Pedir para pular para outro problema"
+      ],
+      "a": 1,
+      "w": "Verbalizar o momento de dificuldade mantém a visibilidade do seu raciocínio, o que é mais valioso para o entrevistador do que silêncio, mesmo quando você ainda não tem a solução.",
+      "t": "fixacao"
+    }
+  ]
+}

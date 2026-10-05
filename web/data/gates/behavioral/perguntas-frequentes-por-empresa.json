@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que diferencia a forma como a Amazon estrutura sua entrevista comportamental em relação ao Google?",
+      "o": [
+        "A Amazon não faz perguntas comportamentais",
+        "A Amazon mapeia perguntas explicitamente para uma lista nomeada de Leadership Principles, enquanto o Google avalia de forma mais aberta, sem uma lista fixa e nomeada",
+        "O Google usa exatamente os mesmos princípios da Amazon",
+        "Não há diferença relevante entre as duas"
+      ],
+      "a": 1,
+      "w": "A Amazon avalia explicitamente contra uma lista nomeada de 16 Leadership Principles, com o entrevistador anotando por princípio; o Google não tem uma lista fixa equivalente, avaliando de forma mais aberta em torno de \"Googleyness\" e resolução geral de problemas.",
+      "t": "fixacao"
+    }
+  ]
+}

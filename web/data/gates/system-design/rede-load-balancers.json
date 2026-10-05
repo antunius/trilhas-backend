@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual a principal diferença entre um load balancer de camada 4 e um de camada 7?",
+      "o": [
+        "Camada 4 é mais lento, camada 7 é mais rápido",
+        "Camada 4 opera no nível de conexão TCP/UDP; camada 7 entende o conteúdo do protocolo da aplicação",
+        "Camada 7 só funciona com UDP",
+        "Não há diferença prática entre eles"
+      ],
+      "a": 1,
+      "w": "Camada 4 distribui tráfego sem olhar o conteúdo da requisição (mais rápido, menos flexível); camada 7 entende o protocolo da aplicação, permitindo roteamento mais sofisticado.",
+      "t": "fixacao",
+      "h": "Uma das camadas só enxerga IP e porta."
+    },
+    {
+      "q": "Um load balancer precisa rotear /api/* para um grupo de servidores e /imagens/* para outro. Qual camada é necessária?",
+      "o": [
+        "Camada 4",
+        "Camada 7",
+        "Nenhuma, o DNS resolve",
+        "Camada 1"
+      ],
+      "a": 1,
+      "w": "Só a camada 7 entende o HTTP e consegue ler o caminho da URL. A camada 4 vê apenas IP e porta.",
+      "t": "fixacao",
+      "h": "Quem consegue ler a URL?"
+    },
+    {
+      "q": "Para que serve um health check no balanceador?",
+      "o": [
+        "Criptografar o tráfego",
+        "Retirar da rotação servidores que não respondem",
+        "Aumentar o TTL do DNS",
+        "Guardar sessões de usuários"
+      ],
+      "a": 1,
+      "w": "O balanceador pergunta periodicamente se cada servidor está bem. Se falhar, ele deixa de receber requisições até se recuperar.",
+      "t": "fixacao",
+      "h": "O que evita mandar usuários para um servidor morto?"
+    },
+    {
+      "q": "Por que sticky sessions atrapalham o balanceamento?",
+      "o": [
+        "Porque grudam o usuário num servidor, desigualando a carga e dificultando retirar servidores",
+        "Porque criptografam o tráfego",
+        "Porque exigem camada 4",
+        "Porque eliminam o health check"
+      ],
+      "a": 0,
+      "w": "O ideal é manter os servidores sem estado, com a sessão num armazenamento compartilhado como o Redis.",
+      "t": "fixacao",
+      "h": "O que acontece com a distribuição de carga?"
+    }
+  ]
+}

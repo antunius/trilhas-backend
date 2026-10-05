@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Na página de produto, o preço muda e a aplicação precisa manter o cache correto. Qual a ordem mais segura?",
+      "o": [
+        "Apagar do cache e depois gravar no banco",
+        "Gravar no banco e depois apagar do cache",
+        "Gravar só no cache",
+        "Esperar o TTL expirar sempre"
+      ],
+      "a": 1,
+      "w": "Se apagar antes de gravar, uma leitura no intervalo recarrega o preço antigo no cache e ele fica errado até o TTL. Gravando primeiro no banco, a próxima leitura já recarrega o valor novo.",
+      "t": "fixacao",
+      "h": "Pense no que uma leitura vê entre os dois passos."
+    },
+    {
+      "q": "O produto mais vendido expira do cache e mil pedidos simultâneos vão ao banco. Como se chama o problema e qual defesa o reduz?",
+      "o": [
+        "Eviction; aumentar a memória",
+        "Cache stampede; lock de recarga ou TTL com jitter",
+        "Write-back; gravar em lotes",
+        "Hit ratio baixo; remover o cache"
+      ],
+      "a": 1,
+      "w": "É o cache stampede (thundering herd). Um lock de recarga deixa só um pedido ir ao banco, e o jitter evita que as entradas expirem juntas.",
+      "t": "fixacao",
+      "h": "O nome vem de uma manada correndo ao mesmo tempo."
+    },
+    {
+      "q": "Por que apagar a entrada do cache é mais seguro que atualizá-la?",
+      "o": [
+        "Porque apagar é mais rápido",
+        "Porque apagar não pode deixar um valor errado para trás, enquanto atualizar abre uma condição de corrida",
+        "Porque o TTL some",
+        "Porque o banco exige"
+      ],
+      "a": 1,
+      "w": "Duas escritas simultâneas poderiam deixar o valor mais antigo no cache.",
+      "t": "fixacao",
+      "h": "O que pode sobrar no cache após uma atualização?"
+    },
+    {
+      "q": "Para que serve o jitter no TTL?",
+      "o": [
+        "Para as entradas não expirarem todas ao mesmo tempo",
+        "Para aumentar o TTL",
+        "Para criptografar",
+        "Para evitar o banco"
+      ],
+      "a": 0,
+      "w": "Em vez de 60 s para todos, usa-se 60 s mais um valor aleatório.",
+      "t": "fixacao",
+      "h": "O que acontece se tudo expira junto?"
+    }
+  ]
+}

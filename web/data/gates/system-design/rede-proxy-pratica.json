@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "O que significa terminar o TLS no proxy reverso?",
+      "o": [
+        "O proxy faz a criptografia HTTPS com o cliente e fala HTTP simples com os servidores internos",
+        "O proxy desliga a criptografia para todos",
+        "Os servidores cuidam dos certificados",
+        "O TLS passa a usar UDP"
+      ],
+      "a": 0,
+      "w": "Os servidores de aplicação não precisam cuidar de certificados.",
+      "t": "fixacao",
+      "h": "Quem faz o HTTPS com o cliente?"
+    },
+    {
+      "q": "Qual a diferença entre proxy direto (forward) e proxy reverso?",
+      "o": [
+        "O direto fica do lado do cliente; o reverso, do lado do servidor",
+        "São sinônimos",
+        "O reverso só funciona com UDP",
+        "O direto só serve para cache"
+      ],
+      "a": 0,
+      "w": "O forward proxy fala com a internet em nome do cliente. O reverso recebe as requisições em nome dos servidores.",
+      "t": "fixacao",
+      "h": "De que lado cada um fica?"
+    },
+    {
+      "q": "Para que serve o forward-headers-strategy no Spring Boot atrás de um proxy?",
+      "o": [
+        "Para o Spring enxergar o IP real do cliente e não o do balanceador",
+        "Para criptografar o tráfego",
+        "Para desligar o health check",
+        "Para criar réplicas"
+      ],
+      "a": 0,
+      "w": "O proxy repassa o IP original em cabeçalhos como X-Forwarded-For, que o Spring precisa ler.",
+      "t": "fixacao",
+      "h": "Qual IP chegaria sem isso?"
+    },
+    {
+      "q": "Em qual endpoint o balanceador consulta se a instância Spring está pronta?",
+      "o": [
+        "/actuator/health/readiness",
+        "/login",
+        "/metrics/cpu",
+        "/restart"
+      ],
+      "a": 0,
+      "w": "A instância só entra na rotação quando está pronta, e sai quando começa a encerrar.",
+      "t": "fixacao",
+      "h": "O Actuator expõe probes de liveness e readiness."
+    }
+  ]
+}

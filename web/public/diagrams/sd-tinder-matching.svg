@@ -1,0 +1,36 @@
+<svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-tin); }
+  </style>
+  <defs>
+    <marker id="ah-tin" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Deck sem repetição + match mútuo sem varrer histórico</text>
+
+  <rect x="40" y="55" width="360" height="105" class="a"/>
+  <text x="220" y="80" text-anchor="middle" class="label">Deck do usuário A</text>
+  <text x="220" y="102" text-anchor="middle" class="small">candidatos próximos, filtrando</text>
+  <text x="220" y="118" text-anchor="middle" class="small">quem A já decidiu (curtiu/rejeitou)</text>
+  <text x="220" y="138" text-anchor="middle" class="small" fill="#818cf8">bitset/set de "já vistos" por usuário</text>
+
+  <rect x="460" y="55" width="360" height="105" class="a"/>
+  <text x="640" y="80" text-anchor="middle" class="label">Registro de decisões</text>
+  <text x="640" y="102" text-anchor="middle" class="small">(usuário, alvo, curtir/rejeitar)</text>
+  <text x="640" y="118" text-anchor="middle" class="small">chave composta indexada nos dois sentidos</text>
+
+  <path d="M400,107 L460,107" class="arrow"/>
+
+  <rect x="180" y="190" width="440" height="90" class="b"/>
+  <text x="400" y="215" text-anchor="middle" class="label">B curte A → checa se A já curtiu B</text>
+  <text x="400" y="237" text-anchor="middle" class="small">lookup direto pela chave (A,B) — não varre o histórico inteiro</text>
+  <text x="400" y="257" text-anchor="middle" class="small" fill="#34d399">se sim → cria o match e notifica os dois em tempo real</text>
+
+  <text x="430" y="295" text-anchor="middle" class="small">O mesmo índice de "já decidido" garante que o deck nunca repete um perfil</text>
+</svg>

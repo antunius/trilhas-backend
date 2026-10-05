@@ -1,0 +1,48 @@
+<svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .iface { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .proxy { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .real { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-p); }
+    .dashed { stroke: #8b95a5; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-p); }
+  </style>
+  <defs>
+    <marker id="ah-p" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="380" y="24" text-anchor="middle" class="caption">Proxy — mesmo contrato, controla o acesso ao real</text>
+
+  <rect x="20" y="55" width="150" height="50" class="iface"/>
+  <text x="95" y="85" text-anchor="middle" class="small" font-weight="600">Cliente</text>
+
+  <path d="M170,80 L230,80" class="arrow"/>
+
+  <rect x="235" y="45" width="210" height="55" class="iface"/>
+  <text x="340" y="65" text-anchor="middle" class="title">« interface »</text>
+  <text x="340" y="83" text-anchor="middle" class="title">RepositorioDeDocumento</text>
+
+  <rect x="235" y="140" width="210" height="80" class="proxy"/>
+  <text x="340" y="162" text-anchor="middle" class="small" font-weight="600" fill="#fbbf24">RepositorioProxy</text>
+  <text x="250" y="180" class="member">carregar(id):</text>
+  <text x="250" y="196" class="member"> checa permissão →</text>
+  <text x="250" y="212" class="member"> checa cache → delega</text>
+
+  <path d="M340,140 L340,100" class="dashed"/>
+
+  <rect x="510" y="140" width="220" height="80" class="real"/>
+  <text x="620" y="162" text-anchor="middle" class="small" font-weight="600">RepositorioReal</text>
+  <text x="525" y="182" class="member">carregar(id):</text>
+  <text x="525" y="198" class="member">  lê do disco/rede</text>
+  <text x="525" y="214" class="member">  (caro)</text>
+
+  <path d="M340,100 L620,100 L620,140" class="dashed"/>
+
+  <path d="M445,180 L510,180" class="arrow"/>
+  <text x="475" y="168" text-anchor="middle" class="small">só delega se necessário</text>
+
+  <text x="380" y="255" text-anchor="middle" class="small">Cliente chama a mesma interface — nem sabe se falou com o proxy ou o real</text>
+</svg>

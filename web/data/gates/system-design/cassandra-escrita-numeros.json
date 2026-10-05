@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que a escrita no Cassandra é tão rápida e previsível?",
+      "o": [
+        "Porque guarda tudo em memória e nunca grava em disco",
+        "Porque só anexa ao commit log e à memtable, sem reescrever dados existentes",
+        "Porque não replica os dados",
+        "Porque usa joins"
+      ],
+      "a": 1,
+      "w": "O caminho de escrita é sequencial. Os dados são descarregados depois como SSTables imutáveis.",
+      "t": "fixacao",
+      "h": "O que o caminho de escrita nunca faz?"
+    },
+    {
+      "q": "O que é uma SSTable?",
+      "o": [
+        "Um arquivo imutável em disco, resultado do descarregamento da memtable",
+        "Uma tabela SQL",
+        "Um tipo de chave",
+        "Uma réplica"
+      ],
+      "a": 0,
+      "w": "Arquivos antigos são fundidos em segundo plano (compaction).",
+      "t": "fixacao",
+      "h": "A memtable é descarregada em quê?"
+    },
+    {
+      "q": "Qual o papel do commit log?",
+      "o": [
+        "Ordenar as linhas",
+        "Registrar a escrita de forma sequencial para sobreviver a quedas",
+        "Fazer o hash da chave",
+        "Criar índices"
+      ],
+      "a": 1,
+      "w": "Se o nó cair antes de descarregar a memtable, o commit log permite recuperar.",
+      "t": "fixacao",
+      "h": "É o equivalente do WAL."
+    },
+    {
+      "q": "Uma conversa de grupo tem 1 milhão de mensagens de 200 bytes. Qual o tamanho aproximado da partição?",
+      "o": [
+        "2 MB",
+        "200 MB",
+        "20 GB",
+        "2 TB"
+      ],
+      "a": 1,
+      "w": "1.000.000 × 200 bytes = 200 MB, já no limite do aceitável.",
+      "t": "fixacao",
+      "h": "Multiplique mensagens por bytes."
+    }
+  ]
+}

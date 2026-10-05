@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Quando JSONB é uma boa escolha dentro de uma tabela relacional?",
+      "o": [
+        "Para o id e o nome, que são filtrados o tempo todo",
+        "Para metadados variáveis e secundários, consultados como um bloco",
+        "Para substituir todas as colunas",
+        "Para chaves estrangeiras"
+      ],
+      "a": 1,
+      "w": "Horário de funcionamento e comodidades variam por estabelecimento e raramente são filtrados individualmente.",
+      "t": "fixacao",
+      "h": "O que muda de um restaurante para outro?"
+    },
+    {
+      "q": "Qual extensão resolve \"restaurantes num raio de 2 km\" sem outro banco?",
+      "o": [
+        "pg_trgm",
+        "PostGIS",
+        "pgcrypto",
+        "uuid-ossp"
+      ],
+      "a": 1,
+      "w": "O PostGIS adiciona tipos e índices geoespaciais (GiST) e a função ST_DWithin.",
+      "t": "fixacao",
+      "h": "O nome tem GIS, de sistema de informação geográfica."
+    },
+    {
+      "q": "Qual índice resolve uma busca textual básica sem Elasticsearch?",
+      "o": [
+        "GIN sobre o campo de busca de texto completo",
+        "B-tree sobre o id",
+        "Hash sobre o nome",
+        "Nenhum"
+      ],
+      "a": 0,
+      "w": "Um índice GIN sobre o texto completo atende volumes moderados sem tolerância a erros de digitação ou ranqueamento sofisticado.",
+      "t": "fixacao",
+      "h": "Qual índice lida com vários valores por linha?"
+    },
+    {
+      "q": "Qual é o critério para introduzir uma tecnologia especializada nova?",
+      "o": [
+        "Sempre que possível",
+        "Quando o requisito realmente ultrapassa o que uma extensão do PostgreSQL entrega",
+        "Quando o time quer aprender algo novo",
+        "Nunca"
+      ],
+      "a": 1,
+      "w": "Cada tecnologia nova tem custo de complexidade operacional.",
+      "t": "fixacao",
+      "h": "Qual é o custo escondido de um componente novo?"
+    }
+  ]
+}

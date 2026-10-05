@@ -1,0 +1,264 @@
+[
+  {
+    "id": "system-design",
+    "slug": "system-design",
+    "name": "System Design",
+    "description": "Framework de entrevista, conceitos centrais, tecnologias-chave, deep dives e exercícios práticos.",
+    "icon": "Network",
+    "order": 1,
+    "navGroup": "learn-primary",
+    "hasQuiz": true,
+    "sections": [
+      {
+        "id": "framework-entrega",
+        "name": "Framework de Entrega",
+        "order": 1
+      },
+      {
+        "id": "tecnologias-chave",
+        "name": "Tecnologias-Chave",
+        "order": 2
+      },
+      {
+        "id": "conceitos-centrais",
+        "name": "Conceitos Centrais",
+        "order": 3
+      },
+      {
+        "id": "deep-dives-tecnologias",
+        "name": "Deep Dives",
+        "order": 4
+      },
+      {
+        "id": "padroes-recorrentes",
+        "name": "Padrões Recorrentes",
+        "order": 5
+      },
+      {
+        "id": "exercicios-praticos",
+        "name": "Exercícios Práticos",
+        "order": 6
+      }
+    ]
+  },
+  {
+    "id": "code",
+    "slug": "code",
+    "name": "Code",
+    "description": "Fundamentos de entrevista de código, padrões essenciais de DSA e prática por padrão.",
+    "icon": "Code2",
+    "order": 2,
+    "navGroup": "learn-primary",
+    "hasQuiz": true,
+    "sections": [
+      {
+        "id": "fundamentals",
+        "name": "Fundamentos",
+        "order": 1
+      },
+      {
+        "id": "two-pointers",
+        "name": "Two Pointers",
+        "order": 2
+      },
+      {
+        "id": "dfs",
+        "name": "Depth First Search",
+        "order": 3
+      },
+      {
+        "id": "bfs",
+        "name": "Breadth First Search",
+        "order": 4
+      },
+      {
+        "id": "patterns",
+        "name": "Outros Padrões",
+        "order": 6
+      },
+      {
+        "id": "pattern-recognition",
+        "name": "Reconhecendo o padrão",
+        "order": 7
+      },
+      {
+        "id": "practice",
+        "name": "Prática",
+        "order": 8
+      }
+    ]
+  },
+  {
+    "id": "low-level-design",
+    "slug": "low-level-design",
+    "name": "Low Level Design",
+    "description": "Clean Code, SOLID e os padrões de projeto do GoF mais cobrados em entrevista — com exemplos em Java.",
+    "icon": "Boxes",
+    "order": 3,
+    "navGroup": "learn-primary",
+    "sections": [
+      {
+        "id": "fundamentos",
+        "name": "Fundamentos",
+        "order": 1
+      },
+      {
+        "id": "clean-code",
+        "name": "Clean Code",
+        "order": 2
+      },
+      {
+        "id": "solid",
+        "name": "SOLID",
+        "order": 3
+      },
+      {
+        "id": "padroes-criacionais",
+        "name": "Padrões Criacionais",
+        "order": 4
+      },
+      {
+        "id": "padroes-estruturais",
+        "name": "Padrões Estruturais",
+        "order": 5
+      },
+      {
+        "id": "padroes-comportamentais",
+        "name": "Padrões Comportamentais",
+        "order": 6
+      },
+      {
+        "id": "sintese",
+        "name": "Síntese",
+        "order": 7
+      }
+    ]
+  },
+  {
+    "id": "behavioral",
+    "slug": "behavioral",
+    "name": "Behavioral",
+    "description": "Framework SARL, catálogo de histórias e categorias clássicas de perguntas comportamentais.",
+    "icon": "MessageSquare",
+    "order": 4,
+    "navGroup": "learn-primary",
+    "hasQuiz": true,
+    "sections": [
+      {
+        "id": "fundamentals",
+        "name": "Fundamentos",
+        "order": 1
+      },
+      {
+        "id": "story-catalog",
+        "name": "Catálogo de histórias",
+        "order": 2
+      },
+      {
+        "id": "question-categories",
+        "name": "Categorias de perguntas",
+        "order": 3
+      },
+      {
+        "id": "practice",
+        "name": "Prática",
+        "order": 4
+      },
+      {
+        "id": "advanced-topics",
+        "name": "Tópicos avançados",
+        "order": 5
+      }
+    ]
+  },
+  {
+    "id": "ai-coding",
+    "slug": "ai-coding",
+    "name": "AI Coding",
+    "description": "Como conduzir entrevistas de coding com IA: prompting, fluxo de trabalho e armadilhas.",
+    "icon": "Sparkles",
+    "order": 5,
+    "navGroup": "learn-primary",
+    "badge": "New",
+    "hasQuiz": true,
+    "sections": [
+      {
+        "id": "fundamentals",
+        "name": "Fundamentos",
+        "order": 1
+      },
+      {
+        "id": "workflow",
+        "name": "Fluxo de trabalho",
+        "order": 2
+      },
+      {
+        "id": "pitfalls",
+        "name": "Armadilhas",
+        "order": 3
+      },
+      {
+        "id": "practice",
+        "name": "Prática",
+        "order": 4
+      }
+    ]
+  },
+  {
+    "id": "ml-system-design",
+    "slug": "ml-system-design",
+    "name": "ML System Design",
+    "description": "Framework de entrega para ML, conceitos centrais e estudos de caso guiados.",
+    "icon": "Brain",
+    "order": 6,
+    "navGroup": "learn-primary",
+    "hasQuiz": true,
+    "sections": [
+      {
+        "id": "framework",
+        "name": "Framework",
+        "order": 1
+      },
+      {
+        "id": "core-concepts",
+        "name": "Core Concepts",
+        "order": 2
+      },
+      {
+        "id": "question-breakdowns",
+        "name": "Question Breakdowns",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "salary-negotiation",
+    "slug": "salary-negotiation",
+    "name": "Negociação salarial",
+    "description": "Em breve.",
+    "icon": "Workflow",
+    "order": 7,
+    "navGroup": "learn-secondary",
+    "stub": true
+  },
+  {
+    "id": "interview-guides",
+    "slug": "interview-guides",
+    "name": "Guias de entrevista",
+    "description": "Em breve.",
+    "icon": "BookOpen",
+    "order": 8,
+    "navGroup": "learn-secondary",
+    "stub": true
+  },
+  {
+    "id": "blog",
+    "slug": "blog",
+    "name": "Blog",
+    "description": "Em breve.",
+    "icon": "Newspaper",
+    "order": 9,
+    "navGroup": "learn-secondary",
+    "stub": true
+  }
+]

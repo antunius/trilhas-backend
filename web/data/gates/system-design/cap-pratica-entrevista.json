@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual status HTTP indica que o serviço não pode responder com segurança agora?",
+      "o": [
+        "200",
+        "404",
+        "503",
+        "201"
+      ],
+      "a": 2,
+      "w": "503 Service Unavailable, com Retry-After, diz ao cliente que pode tentar de novo.",
+      "t": "fixacao",
+      "h": "O serviço está temporariamente indisponível."
+    },
+    {
+      "q": "Por que mostrar um erro claro é melhor que exibir um saldo possivelmente errado?",
+      "o": [
+        "Porque erros são bonitos",
+        "Porque um saldo errado pode levar a um saque indevido",
+        "Porque erros são mais rápidos",
+        "Porque o cliente prefere"
+      ],
+      "a": 1,
+      "w": "Em sistemas CP, recusar é preferível a mentir.",
+      "t": "fixacao",
+      "h": "O que o saldo errado pode causar?"
+    },
+    {
+      "q": "O que acontece com os dados de um sistema AP depois que a rede volta?",
+      "o": [
+        "As réplicas se reconciliam, por exemplo com última escrita vence ou merge de conflitos, o que pode perder atualizações se mal desenhado",
+        "Nada",
+        "Tudo é apagado",
+        "O sistema vira CP"
+      ],
+      "a": 0,
+      "w": "A reconciliação precisa ser pensada no desenho.",
+      "t": "fixacao",
+      "h": "Duas réplicas aceitaram escritas diferentes."
+    },
+    {
+      "q": "O que diferencia um sênior ao falar de CAP?",
+      "o": [
+        "Citar o triângulo",
+        "Explicar que a escolha é entre C e A durante uma partição, com o exemplo da réplica desatualizada",
+        "Evitar exemplos",
+        "Dizer que CA existe"
+      ],
+      "a": 1,
+      "w": "Entender a partição é o ponto central.",
+      "t": "fixacao",
+      "h": "Quando a escolha acontece?"
+    }
+  ]
+}

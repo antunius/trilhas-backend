@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que diferencia uma boa resposta de ambiguidade de uma resposta fraca?",
+      "o": [
+        "O tamanho do projeto descrito",
+        "A articulação clara de critérios usados para priorizar e decidir, mesmo sob incerteza",
+        "A quantidade de pessoas envolvidas na situação",
+        "O tempo total que a situação levou para se resolver"
+      ],
+      "a": 1,
+      "w": "O elemento central avaliado é a capacidade de estruturar um processo de decisão razoável mesmo sem informação completa, não apenas descrever que a situação era incerta.",
+      "t": "fixacao"
+    }
+  ]
+}

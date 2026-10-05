@@ -1,0 +1,36 @@
+<svg viewBox="0 0 820 250" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .accent { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 12.5px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 14.5px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#m-db); }
+  </style>
+  <defs>
+    <marker id="m-db" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+  <text x="410" y="26" text-anchor="middle" class="title">Tipo de banco segue o padrão de acesso</text>
+
+  <rect x="40" y="70" width="230" height="150" class="accent"/>
+  <text x="155" y="105" text-anchor="middle" class="label" font-weight="600">Relacional</text>
+  <text x="155" y="135" text-anchor="middle" class="small">joins, ACID</text>
+  <text x="155" y="155" text-anchor="middle" class="small">schema rígido</text>
+  <text x="155" y="175" text-anchor="middle" class="small">transações</text>
+
+  <rect x="295" y="70" width="230" height="150" class="ok"/>
+  <text x="410" y="105" text-anchor="middle" class="label" font-weight="600">Documento</text>
+  <text x="410" y="135" text-anchor="middle" class="small">JSON flexível</text>
+  <text x="410" y="155" text-anchor="middle" class="small">agregados</text>
+  <text x="410" y="175" text-anchor="middle" class="small">menos joins</text>
+
+  <rect x="550" y="70" width="230" height="150" class="warn"/>
+  <text x="665" y="105" text-anchor="middle" class="label" font-weight="600">Chave-valor</text>
+  <text x="665" y="135" text-anchor="middle" class="small">get/put rápido</text>
+  <text x="665" y="155" text-anchor="middle" class="small">cache, sessões</text>
+  <text x="665" y="175" text-anchor="middle" class="small">sem query rica</text>
+</svg>

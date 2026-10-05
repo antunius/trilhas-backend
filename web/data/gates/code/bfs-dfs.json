@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que BFS é a escolha natural para encontrar o caminho mais curto em um grafo não ponderado?",
+      "o": [
+        "Porque BFS é sempre mais rápido que DFS em qualquer situação",
+        "Porque a primeira vez que um nó é alcançado em BFS garante que foi pelo caminho mais curto possível",
+        "Porque BFS usa menos memória que DFS em todos os casos",
+        "Não há diferença relevante entre as duas abordagens para esse tipo de problema"
+      ],
+      "a": 1,
+      "w": "A exploração nível por nível de BFS garante essa propriedade em grafos não ponderados — algo que DFS não oferece por padrão.",
+      "t": "fixacao"
+    }
+  ]
+}

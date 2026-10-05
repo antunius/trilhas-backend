@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Por que um comando lento (como varrer uma estrutura com milhões de itens) é um problema no Redis?",
+      "o": [
+        "Porque ele apaga os dados",
+        "Porque a única thread fica ocupada e trava todos os outros comandos",
+        "Porque ele aumenta o uso de disco",
+        "Porque ele desliga a replicação"
+      ],
+      "a": 1,
+      "w": "O Redis executa um comando por vez numa única thread. Enquanto o comando lento roda, nenhum outro cliente é atendido.",
+      "t": "fixacao",
+      "h": "Quantas threads executam comandos?"
+    },
+    {
+      "q": "Qual estrutura do Redis guarda membros únicos ordenados por uma pontuação?",
+      "o": [
+        "String",
+        "List",
+        "Set",
+        "Sorted Set"
+      ],
+      "a": 3,
+      "w": "O sorted set associa uma pontuação a cada membro e se mantém ordenado por ela, ideal para rankings.",
+      "t": "fixacao",
+      "h": "O nome já diz que é ordenado."
+    },
+    {
+      "q": "Qual estrutura é a mais adequada para checar rapidamente se um jogador já respondeu a uma pergunta?",
+      "o": [
+        "Set",
+        "Stream",
+        "List",
+        "Sorted Set"
+      ],
+      "a": 0,
+      "w": "Um set guarda valores únicos e verifica pertencimento rapidamente, sem precisar de ordem nem de pontuação.",
+      "t": "fixacao",
+      "h": "Você só precisa saber se o item está lá ou não."
+    },
+    {
+      "q": "Por que o Redis responde tipicamente em menos de 1 ms?",
+      "o": [
+        "Porque grava tudo em disco SSD",
+        "Porque guarda os dados na memória RAM",
+        "Porque usa muitas threads",
+        "Porque comprime todas as respostas"
+      ],
+      "a": 1,
+      "w": "Ler da RAM é muito mais rápido que ir ao disco, que costuma levar de 5 a 20 ms em um banco relacional.",
+      "t": "fixacao",
+      "h": "Onde ficam os dados?"
+    },
+    {
+      "q": "Um hash do Redis é útil para quê?",
+      "o": [
+        "Representar uma entidade com vários campos sob uma só chave, sem serializar um JSON inteiro",
+        "Guardar apenas números",
+        "Substituir o sorted set",
+        "Criar filas com prioridade"
+      ],
+      "a": 0,
+      "w": "O hash é um dicionário sob uma chave, permitindo ler ou atualizar um campo sem reescrever o objeto todo.",
+      "t": "fixacao",
+      "h": "Pense num objeto com campos nome, nível etc."
+    }
+  ]
+}

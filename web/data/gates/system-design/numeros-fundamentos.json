@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual a diferença entre latência e vazão?",
+      "o": [
+        "São a mesma coisa",
+        "Latência é o tempo de uma operação; vazão é quantas operações cabem por unidade de tempo",
+        "Latência é a largura de banda",
+        "Vazão é o tempo de resposta"
+      ],
+      "a": 1,
+      "w": "Uma estrada pode ter vazão enorme e latência alta.",
+      "t": "fixacao",
+      "h": "Uma mede tempo, a outra quantidade."
+    },
+    {
+      "q": "Quantos nanossegundos tem um microssegundo?",
+      "o": [
+        "10",
+        "100",
+        "1.000",
+        "1.000.000"
+      ],
+      "a": 2,
+      "w": "1 µs = 1.000 ns.",
+      "t": "fixacao",
+      "h": "Cada degrau de unidade é um fator de mil."
+    },
+    {
+      "q": "Por que estimar por ordem de grandeza é suficiente em entrevista?",
+      "o": [
+        "Porque o entrevistador não confere",
+        "Porque o objetivo é perceber se o resultado é 1.000 ou 1.000.000, o que muda o desenho",
+        "Porque cálculo exato é proibido",
+        "Porque números não importam"
+      ],
+      "a": 1,
+      "w": "A decisão depende da escala, não da precisão.",
+      "t": "fixacao",
+      "h": "O que muda o desenho?"
+    },
+    {
+      "q": "Quantos GB tem 1 TB, aproximadamente?",
+      "o": [
+        "10",
+        "100",
+        "1.000",
+        "1.000.000"
+      ],
+      "a": 2,
+      "w": "1 TB = 10¹² bytes e 1 GB = 10⁹ bytes.",
+      "t": "fixacao",
+      "h": "Mais um fator de mil."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual operação do cliente transforma uma vaga em algo buscável?",
+      "o": [
+        "Indexar o documento",
+        "Reiniciar o nó",
+        "Apagar o shard",
+        "Mudar o analyzer"
+      ],
+      "a": 0,
+      "w": "Indexar grava o documento e o inclui no índice invertido, ficando buscável após o refresh.",
+      "t": "fixacao",
+      "h": "Que verbo descreve \"guardar no índice\"?"
+    },
+    {
+      "q": "Por que definir o mapping antes de indexar muito conteúdo?",
+      "o": [
+        "Para tipos e analyzers corretos desde o início, evitando reindexar tudo depois",
+        "Para reduzir o número de nós",
+        "Para desligar o refresh",
+        "Para evitar o uso de Docker"
+      ],
+      "a": 0,
+      "w": "Mudar o tipo de um campo existente exige reindexar os dados.",
+      "t": "fixacao",
+      "h": "O que custa mudar o tipo de um campo depois?"
+    },
+    {
+      "q": "Quantos nós são suficientes para desenvolvimento local?",
+      "o": [
+        "Pelo menos 3",
+        "Um nó",
+        "Exatamente 5",
+        "É preciso um cluster em nuvem"
+      ],
+      "a": 1,
+      "w": "Um único nó basta para testar. Réplicas só fazem sentido com mais de um nó.",
+      "t": "fixacao",
+      "h": "O Docker de desenvolvimento costuma subir quantos?"
+    },
+    {
+      "q": "O que a busca no cliente Java devolve ordenado?",
+      "o": [
+        "Os documentos por pontuação de relevância",
+        "Os documentos por data de criação, sempre",
+        "Os shards",
+        "Os analyzers"
+      ],
+      "a": 0,
+      "w": "Por padrão o Elasticsearch ordena pela pontuação de relevância.",
+      "t": "fixacao",
+      "h": "O que o BM25 produz?"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que usar Math.floorMod em vez de % ao calcular o shard?",
+      "o": [
+        "Porque % é lento",
+        "Porque hashCode() pode ser negativo, e % devolveria um índice negativo",
+        "Porque floorMod usa disco",
+        "Porque % não existe em Java"
+      ],
+      "a": 1,
+      "w": "floorMod devolve sempre um valor entre 0 e N-1.",
+      "t": "fixacao",
+      "h": "O que o hashCode pode ser?"
+    },
+    {
+      "q": "Por que limpar o contexto do shard no finally?",
+      "o": [
+        "Para liberar memória do banco",
+        "Para não vazar o shard de uma requisição para a próxima na mesma thread",
+        "Para fechar a conexão",
+        "Para criar réplicas"
+      ],
+      "a": 1,
+      "w": "O ThreadLocal sobrevive entre requisições se não for removido.",
+      "t": "fixacao",
+      "h": "Quem reaproveita a thread?"
+    },
+    {
+      "q": "Como adicionar shards sem parar o serviço?",
+      "o": [
+        "Parando tudo",
+        "Consistent hashing ou diretório com migração gradual, copiando dados em segundo plano e virando o roteamento no fim",
+        "Apagando os dados",
+        "Aumentando o TTL"
+      ],
+      "a": 1,
+      "w": "Rebalancear é delicado, por isso se planeja com folga.",
+      "t": "fixacao",
+      "h": "Os dados mudam de lugar com o serviço no ar."
+    },
+    {
+      "q": "Como lidar com um grupo gigante que sobrecarrega um shard?",
+      "o": [
+        "Ignorar",
+        "Dividir a chave em subchaves, como conversa_id mais uma faixa, ou isolar a conversa num shard dedicado",
+        "Aumentar o hash",
+        "Desligar réplicas"
+      ],
+      "a": 1,
+      "w": "É o problema de hot key.",
+      "t": "fixacao",
+      "h": "Como espalhar uma chave dominante?"
+    }
+  ]
+}

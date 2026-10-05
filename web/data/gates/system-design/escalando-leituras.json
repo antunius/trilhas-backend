@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Qual é a progressão mais defensável ao resolver um problema de escala de leitura em uma entrevista?",
+      "o": [
+        "Introduzir cache imediatamente, sem considerar outras opções",
+        "Otimizar o banco primeiro, depois réplicas de leitura, e só então cache",
+        "Fazer sharding do banco antes de qualquer outra otimização",
+        "Ignorar o problema, já que leitura nunca é o gargalo real"
+      ],
+      "a": 1,
+      "w": "Começar pelas soluções mais simples e baratas (otimização e réplicas) antes de introduzir a complexidade adicional do cache demonstra raciocínio incremental, não memorização de uma solução pronta.",
+      "t": "fixacao",
+      "h": "Qual etapa é mais barata de tentar primeiro?"
+    }
+  ]
+}

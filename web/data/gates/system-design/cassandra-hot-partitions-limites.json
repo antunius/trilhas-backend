@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Uma conversa de grupo cresce até 10 milhões de mensagens de 200 bytes numa só partição (~2 GB). Qual a mitigação usual?",
+      "o": [
+        "Aumentar o fator de replicação",
+        "Chave de partição composta, como (id_conversa, mes)",
+        "Trocar a clustering key por uma aleatória",
+        "Desligar a replicação"
+      ],
+      "a": 1,
+      "w": "A chave composta divide a conversa em uma partição por período, mantendo cada uma em tamanho gerenciável.",
+      "t": "fixacao",
+      "h": "Como quebrar uma partição grande em várias?"
+    },
+    {
+      "q": "Qual o custo de dividir a conversa por mês?",
+      "o": [
+        "Nenhum",
+        "Ler as últimas mensagens pode exigir consultar mais de um mês",
+        "As escritas ficam impossíveis",
+        "Perde-se a ordem dentro do mês"
+      ],
+      "a": 1,
+      "w": "O bucket resolve o tamanho, mas a leitura pode atravessar o limite do mês.",
+      "t": "fixacao",
+      "h": "O que acontece no primeiro dia do mês?"
+    },
+    {
+      "q": "Em qual situação o Cassandra NÃO é a escolha certa?",
+      "o": [
+        "Escrita massiva e padrão de acesso conhecido",
+        "Relacionamentos complexos e consultas ad-hoc variadas",
+        "Dados de série temporal",
+        "Telemetria"
+      ],
+      "a": 1,
+      "w": "O trade-off central é escala de escrita e latência previsível em troca de flexibilidade de consulta.",
+      "t": "fixacao",
+      "h": "O que ele sacrifica?"
+    },
+    {
+      "q": "O que há em comum entre a hot partition do Cassandra e a do Kafka?",
+      "o": [
+        "Nada",
+        "Uma chave dominante concentra o tráfego, e o paralelismo teórico não se traduz em capacidade real",
+        "Ambas vêm do disco",
+        "Ambas usam o mesmo hash"
+      ],
+      "a": 1,
+      "w": "É o mesmo problema em tecnologias diferentes.",
+      "t": "fixacao",
+      "h": "O que as duas partilham?"
+    }
+  ]
+}

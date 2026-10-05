@@ -1,0 +1,41 @@
+<svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .ok { fill: #14241f; stroke: #34d399; stroke-width: 1.8; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-ent); }
+  </style>
+  <defs>
+    <marker id="ah-ent" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Decremento de estoque sob contenção: último item, duas compras</text>
+
+  <rect x="40" y="55" width="200" height="60" class="box"/>
+  <text x="140" y="90" text-anchor="middle" class="label">Item: 1 em estoque</text>
+
+  <path d="M140,115 L140,150" class="arrow"/>
+  <path d="M140,115 L500,150" class="arrow"/>
+
+  <rect x="40" y="155" width="200" height="55" class="a"/>
+  <text x="140" y="178" text-anchor="middle" class="small" font-weight="600">Comprador A</text>
+  <text x="140" y="196" text-anchor="middle" class="small">decrementa se estoque &gt; 0</text>
+
+  <rect x="400" y="155" width="200" height="55" class="a"/>
+  <text x="500" y="178" text-anchor="middle" class="small" font-weight="600">Comprador B</text>
+  <text x="500" y="196" text-anchor="middle" class="small">decrementa se estoque &gt; 0</text>
+
+  <rect x="650" y="140" width="180" height="90" class="box"/>
+  <text x="740" y="163" text-anchor="middle" class="small" font-weight="600">Decremento atômico</text>
+  <text x="740" y="183" text-anchor="middle" class="small" fill="#34d399">A: sucesso (0 restante)</text>
+  <text x="740" y="203" text-anchor="middle" class="small" fill="#fbbf24">B: falha (sem estoque)</text>
+
+  <path d="M240,182 L650,182" class="arrow"/>
+  <path d="M600,182 L650,182" class="arrow"/>
+
+  <text x="430" y="245" text-anchor="middle" class="small">UPDATE ... WHERE estoque &gt; 0 (ou lock otimista) — nunca os dois "ganham" o último item</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .member { fill: #1e2438; stroke: #818cf8; stroke-width: 1.5; rx: 4; }
+    .label { font-size: 13px; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .score { font-size: 14px; font-weight: 700; fill: #fbbf24; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah); }
+  </style>
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="28" text-anchor="middle" class="title">ZADD placar_quiz_7 &lt;score&gt; &lt;membro&gt; — sempre ordenado por score</text>
+
+  <!-- Ranked list -->
+  <rect x="40" y="55" width="500" height="46" class="member"/>
+  <text x="60" y="83" class="label">#1</text>
+  <text x="100" y="83" class="label">jogador_15</text>
+  <text x="480" y="83" text-anchor="end" class="score">920</text>
+
+  <rect x="40" y="106" width="500" height="46" class="member"/>
+  <text x="60" y="134" class="label">#2</text>
+  <text x="100" y="134" class="label">jogador_42</text>
+  <text x="480" y="134" text-anchor="end" class="score">850</text>
+
+  <rect x="40" y="157" width="500" height="46" class="member"/>
+  <text x="60" y="185" class="label">#3</text>
+  <text x="100" y="185" class="label">jogador_09</text>
+  <text x="480" y="185" text-anchor="end" class="score">790</text>
+
+  <rect x="40" y="208" width="500" height="46" class="member" opacity="0.6"/>
+  <text x="60" y="236" class="label">...</text>
+  <text x="100" y="236" class="small">demais jogadores, ordenados automaticamente</text>
+
+  <!-- ZINCRBY arrow illustrating update -->
+  <rect x="580" y="106" width="150" height="46" class="box" fill="#2a2114" stroke="#fbbf24"/>
+  <text x="655" y="126" text-anchor="middle" class="small" font-weight="600">ZINCRBY +40</text>
+  <text x="655" y="142" text-anchor="middle" class="small">jogador_42 → 890</text>
+  <path d="M580,129 L 545,129" class="arrow"/>
+  <text x="655" y="165" text-anchor="middle" class="small">reordena automaticamente,</text>
+  <text x="655" y="180" text-anchor="middle" class="small">sem varrer a estrutura toda</text>
+
+  <text x="380" y="280" text-anchor="middle" class="small">ZREVRANGE placar_quiz_7 0 9 → devolve o top 10 direto, sem ordenar nada na hora da consulta</text>
+</svg>

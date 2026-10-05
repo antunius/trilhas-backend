@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual padrão é mais fortemente sugerido por um enunciado que pede \"a menor substring contínua que satisfaz uma condição\"?",
+      "o": [
+        "Backtracking",
+        "Sliding Window (janela de tamanho variável)",
+        "Busca Binária",
+        "Heap de tamanho fixo"
+      ],
+      "a": 1,
+      "w": "\"Substring contínua\" combinada com uma otimização (mínima) é a assinatura clássica de um problema de janela deslizante de tamanho variável.",
+      "t": "fixacao"
+    }
+  ]
+}

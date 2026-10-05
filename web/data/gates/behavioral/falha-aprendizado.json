@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que respostas como \"meu maior defeito é me importar demais com qualidade\" costumam ser mal recebidas?",
+      "o": [
+        "Porque qualidade nunca é importante no trabalho",
+        "Porque soam evasivas e sugerem falta de autoconsciência genuína sobre falhas reais",
+        "Porque são falhas graves demais para compartilhar",
+        "Porque entrevistadores nunca perguntam sobre qualidade"
+      ],
+      "a": 1,
+      "w": "Esse tipo de resposta é reconhecido como uma tentativa de disfarçar uma qualidade como defeito, o que sugere falta de autoconsciência genuína — exatamente o oposto do que a pergunta busca avaliar.",
+      "t": "fixacao"
+    }
+  ]
+}

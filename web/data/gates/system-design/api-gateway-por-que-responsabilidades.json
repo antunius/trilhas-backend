@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "No cenário de streaming, o app mobile precisa montar a tela inicial com dados de 3 serviços. Qual a vantagem de o gateway fazer a agregação?",
+      "o": [
+        "Elimina a necessidade de autenticação",
+        "O app faz uma só chamada pela rede móvel lenta, e o gateway chama os 3 serviços em paralelo pela rede interna rápida",
+        "Os três serviços se fundem em um só",
+        "O app deixa de depender de internet"
+      ],
+      "a": 1,
+      "w": "Uma ida e volta pela rede móvel custa ~100 ms e dentro do data center ~5 ms. Uma chamada ao gateway evita 3 idas e voltas externas.",
+      "t": "fixacao",
+      "h": "Compare o custo de uma chamada externa e de uma interna."
+    },
+    {
+      "q": "Quanto custa, aproximadamente, a tela com 3 chamadas externas em sequência?",
+      "o": [
+        "~5 ms",
+        "~100 ms",
+        "~300 ms",
+        "~3 s"
+      ],
+      "a": 2,
+      "w": "3 × 100 ms = 300 ms, contra ~105 ms via gateway.",
+      "t": "fixacao",
+      "h": "Multiplique a latência externa por 3."
+    },
+    {
+      "q": "Qual destas é uma responsabilidade típica do gateway?",
+      "o": [
+        "Gravar pedidos no banco",
+        "Rate limiting no ponto de entrada",
+        "Calcular recomendações",
+        "Armazenar vídeos"
+      ],
+      "a": 1,
+      "w": "Limitar a taxa na borda protege os serviços internos antes de a requisição chegar a eles.",
+      "t": "fixacao",
+      "h": "Qual precisa ficar na entrada?"
+    },
+    {
+      "q": "Roteamento no gateway significa:",
+      "o": [
+        "Escolher o serviço interno com base no caminho da URL",
+        "Escolher o banco de dados",
+        "Compactar a resposta",
+        "Mudar o idioma"
+      ],
+      "a": 0,
+      "w": "/catalogo/* vai para o catálogo, /perfil/* para o perfil.",
+      "t": "fixacao",
+      "h": "Qual critério ele usa?"
+    }
+  ]
+}

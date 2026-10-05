@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o principal trade-off ao adicionar um índice em uma coluna?",
+      "o": [
+        "Leituras ficam mais lentas, escritas ficam mais rápidas",
+        "Leituras ficam mais rápidas, escritas ficam mais lentas e o armazenamento aumenta",
+        "Não há nenhum custo associado a índices",
+        "Índices eliminam a necessidade de qualquer outro tipo de otimização"
+      ],
+      "a": 1,
+      "w": "Índices aceleram buscas, mas cada escrita precisa atualizar as estruturas de índice, tornando escritas mais lentas e aumentando o uso de armazenamento.",
+      "t": "fixacao",
+      "h": "O que um índice faz com a leitura e o que faz com a escrita?"
+    },
+    {
+      "q": "Existe um índice composto (cliente_id, criado_em). Qual consulta ele NÃO atende bem?",
+      "o": [
+        "WHERE cliente_id = 7",
+        "WHERE cliente_id = 7 ORDER BY criado_em",
+        "WHERE criado_em > '2025-01-01' sozinho",
+        "WHERE cliente_id = 7 AND criado_em > '2025-01-01'"
+      ],
+      "a": 2,
+      "w": "O índice está ordenado primeiro por cliente_id. Filtrar só por criado_em não aproveita essa ordem, como procurar só pelo nome numa lista telefônica ordenada por sobrenome.",
+      "t": "fixacao",
+      "h": "A ordem das colunas define como o índice está ordenado."
+    },
+    {
+      "q": "Por que um índice em uma coluna booleana 'ativo' (98% true) tende a não ajudar?",
+      "o": [
+        "Porque booleanos não podem ser indexados",
+        "Porque baixa seletividade faz o banco ler quase tudo de qualquer forma",
+        "Porque índices só funcionam em textos",
+        "Porque o índice ocupa pouco espaço"
+      ],
+      "a": 1,
+      "w": "Seletividade é quão bem um valor filtra a tabela. Com 98% dos valores iguais, o filtro quase não reduz as linhas, e o otimizador prefere o full scan.",
+      "t": "fixacao",
+      "h": "Quantas linhas sobram depois do filtro?"
+    },
+    {
+      "q": "Qual consulta NÃO usa um índice sobre email quando se escreve WHERE LOWER(email) = ...?",
+      "o": [
+        "Nenhuma, ela usa",
+        "Essa: a função sobre a coluna impede o uso do índice comum",
+        "Só consultas por id",
+        "Só consultas com JOIN"
+      ],
+      "a": 1,
+      "w": "O índice guarda email, e não LOWER(email). Pode-se criar um índice sobre a expressão.",
+      "t": "fixacao",
+      "h": "O que o índice guarda?"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que a pergunta \"conte sobre uma vez que você liderou algo\" costuma avaliar, além de liderança hierárquica formal?",
+      "o": [
+        "Apenas se você já teve um cargo de gestão",
+        "Capacidade de influenciar e mobilizar outras pessoas mesmo sem autoridade formal",
+        "Conhecimento técnico específico",
+        "Nada além do que está literalmente perguntado"
+      ],
+      "a": 1,
+      "w": "Muitas dessas perguntas buscam avaliar influência e mobilização de pessoas, uma competência relevante mesmo para quem nunca teve um cargo formal de liderança.",
+      "t": "fixacao"
+    }
+  ]
+}

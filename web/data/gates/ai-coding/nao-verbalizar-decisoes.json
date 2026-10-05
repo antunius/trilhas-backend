@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que verbalizar o raciocínio continua sendo importante mesmo em uma entrevista onde a IA escreve boa parte do código?",
+      "o": [
+        "Porque a IA exige comandos falados",
+        "Porque o processo de raciocínio e julgamento técnico do candidato é um dos critérios centrais de avaliação, e só é visível se comunicado",
+        "Porque entrevistas de AI Coding não avaliam comunicação",
+        "Não há necessidade real de comunicação nesse formato"
+      ],
+      "a": 1,
+      "w": "A avaliação recai fortemente sobre o processo de decisão do candidato, que só pode ser percebido pelo entrevistador se for verbalizado ao longo da interação com a IA.",
+      "t": "fixacao"
+    }
+  ]
+}

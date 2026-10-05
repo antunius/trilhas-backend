@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual é uma boa prática ao terminar de resolver um problema de código em entrevista?",
+      "o": [
+        "Não mencionar complexidade a menos que perguntado",
+        "Mencionar proativamente a complexidade de tempo e espaço da solução, comparando com alternativas consideradas",
+        "Assumir que a complexidade nunca importa se o código está correto",
+        "Apenas mencionar complexidade de tempo, nunca de espaço"
+      ],
+      "a": 1,
+      "w": "Mencionar proativamente a análise de complexidade, incluindo comparações com alternativas descartadas, demonstra domínio consciente das escolhas feitas.",
+      "t": "fixacao"
+    }
+  ]
+}

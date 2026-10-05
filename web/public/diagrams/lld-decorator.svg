@@ -1,0 +1,41 @@
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .iface { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .impl { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .dec { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-d); }
+  </style>
+  <defs>
+    <marker id="ah-d" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="390" y="22" text-anchor="middle" class="caption">Decorator — camadas envolvendo o mesmo contrato</text>
+
+  <rect x="30" y="45" width="200" height="40" class="iface"/>
+  <text x="130" y="70" text-anchor="middle" class="small" font-weight="600">« interface » Bebida — custo(): double</text>
+
+  <rect x="30" y="110" width="700" height="170" class="dec"/>
+  <text x="45" y="132" class="small" font-weight="600" fill="#fbbf24">ComLeite (decorator)</text>
+  <text x="60" y="150" class="member">- bebida: Bebida</text>
+  <text x="60" y="166" class="member">custo() → bebida.custo() + 2.0</text>
+
+  <rect x="60" y="180" width="620" height="80" class="dec" stroke="#fbbf24">
+  </rect>
+  <text x="75" y="200" class="small" font-weight="600" fill="#fbbf24">ComChocolate (decorator)</text>
+  <text x="90" y="218" class="member">- bebida: Bebida</text>
+  <text x="90" y="234" class="member">custo() → bebida.custo() + 3.0</text>
+
+  <rect x="90" y="250" width="270" height="40" class="impl"/>
+  <text x="225" y="275" text-anchor="middle" class="small" font-weight="600">CafeSimples — custo() → 5.0</text>
+
+  <path d="M130,85 L130,105" class="arrow"/>
+  <text x="200,42" class="small"></text>
+
+  <text x="600" y="200" text-anchor="middle" class="small" fill="#818cf8">todos implementam Bebida</text>
+
+  <text x="390" y="292" text-anchor="middle" class="small">new ComChocolate(new ComLeite(new CafeSimples())).custo() → 10.0</text>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Por que a diferença entre 99% e 99,99% de disponibilidade é tão significativa na prática?",
+      "o": [
+        "Porque a diferença numérica parece pequena mas representa uma redução drástica no tempo de indisponibilidade tolerado por ano",
+        "Porque 99% já é indisponibilidade total",
+        "Porque não há diferença prática relevante",
+        "Porque 99,99% é impossível de se atingir"
+      ],
+      "a": 0,
+      "w": "Cada \"nove\" adicional reduz o tempo de indisponibilidade tolerado por uma ordem de grandeza — a diferença entre alguns dias e poucos minutos por ano, o que muda completamente os requisitos de redundância necessários.",
+      "t": "fixacao",
+      "h": "Converta as porcentagens em minutos de queda por ano."
+    }
+  ]
+}

@@ -4,6 +4,8 @@ export type GateQuestion = {
   a: number;
   w: string;
   t?: string;
+  /** dica que ajuda sem entregar a resposta */
+  h?: string;
 };
 
 export function shuffleQuestions(

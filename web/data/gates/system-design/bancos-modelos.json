@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual modelo de banco de dados tende a ser mais adequado quando relacionamentos complexos e consistência forte são centrais ao problema?",
+      "o": [
+        "Chave-valor",
+        "Documento",
+        "Relacional",
+        "Nenhum dos três — sempre usar cache"
+      ],
+      "a": 2,
+      "w": "Bancos relacionais foram desenhados justamente para modelar relacionamentos complexos com garantias fortes de integridade e consistência.",
+      "t": "fixacao",
+      "h": "Qual modelo tem chaves estrangeiras e transações?"
+    },
+    {
+      "q": "Por que um catálogo de produtos com atributos muito diferentes entre si combina bem com banco de documento?",
+      "o": [
+        "Porque garante transações entre produtos",
+        "Porque cada produto é autocontido e pode ter atributos próprios, lido numa só consulta",
+        "Porque joins são mais rápidos",
+        "Porque elimina a necessidade de índices"
+      ],
+      "a": 1,
+      "w": "O documento guarda o produto inteiro, com os atributos que ele tem, num único registro. Evita joins e colunas vazias.",
+      "t": "fixacao",
+      "h": "Pense em uma camiseta (tamanho) e um celular (memória)."
+    },
+    {
+      "q": "O que o modelo chave-valor NÃO consegue fazer bem?",
+      "o": [
+        "Buscar pelo identificador",
+        "Consultar por conteúdo, como \"todos os carrinhos com o produto 1042\"",
+        "Expirar chaves",
+        "Guardar sessões"
+      ],
+      "a": 1,
+      "w": "O banco só sabe responder \"me dê o valor desta chave\".",
+      "t": "fixacao",
+      "h": "Qual consulta exigiria varrer tudo?"
+    },
+    {
+      "q": "Qual é um risco do banco de documento ao duplicar dados?",
+      "o": [
+        "Perda de índices",
+        "Atualizar todas as cópias quando algo muda, como o nome do vendedor",
+        "Falta de JSON",
+        "Falta de chaves"
+      ],
+      "a": 1,
+      "w": "A duplicação evita joins, mas cria o problema de manter as cópias iguais.",
+      "t": "fixacao",
+      "h": "O que muda quando o vendedor troca de nome?"
+    }
+  ]
+}

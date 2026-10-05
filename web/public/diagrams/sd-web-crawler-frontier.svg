@@ -1,0 +1,50 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .box { fill: #141a22; stroke: #3d4a5c; stroke-width: 2; rx: 6; }
+    .a { fill: #1e2438; stroke: #818cf8; stroke-width: 1.6; rx: 6; }
+    .b { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .warn { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.6; rx: 6; }
+    .label { font-size: 13px; fill: #e8eaed; font-weight: 600; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .title { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-crw); }
+  </style>
+  <defs>
+    <marker id="ah-crw" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" class="title">Frontier distribuída + filtro de Bloom para deduplicação</text>
+
+  <rect x="30" y="60" width="180" height="70" class="a"/>
+  <text x="120" y="90" text-anchor="middle" class="label">Frontier (fila de URLs)</text>
+  <text x="120" y="112" text-anchor="middle" class="small">particionada por domínio</text>
+
+  <path d="M210,95 L280,95" class="arrow"/>
+
+  <rect x="285" y="60" width="90" height="70" class="box"/>
+  <text x="330" y="90" text-anchor="middle" class="small" font-weight="600">Worker 1</text>
+  <text x="330" y="108" text-anchor="middle" class="small">baixa página</text>
+
+  <rect x="285" y="150" width="90" height="55" class="box"/>
+  <text x="330" y="175" text-anchor="middle" class="small" font-weight="600">Worker N</text>
+  <text x="330" y="190" text-anchor="middle" class="small">baixa página</text>
+
+  <path d="M210,110 L285,175" class="arrow"/>
+
+  <path d="M375,95 L470,95" class="arrow"/>
+  <text x="420" y="83" text-anchor="middle" class="small">extrai links</text>
+
+  <rect x="475" y="60" width="180" height="70" class="warn"/>
+  <text x="565" y="90" text-anchor="middle" class="label">Filtro de Bloom</text>
+  <text x="565" y="112" text-anchor="middle" class="small">"já visitado?" em O(1)</text>
+
+  <path d="M655,95 L210,95" class="arrow" stroke-dasharray="4 3"/>
+  <text x="430" y="145" text-anchor="middle" class="small">só volta à frontier se ainda não visitado</text>
+
+  <rect x="475" y="150" width="180" height="55" class="b"/>
+  <text x="565" y="172" text-anchor="middle" class="small" font-weight="600">Blob storage</text>
+  <text x="565" y="188" text-anchor="middle" class="small">conteúdo bruto da página</text>
+  <path d="M375,175 L475,175" class="arrow"/>
+
+  <text x="430" y="240" text-anchor="middle" class="small">Bloom filter erra só para um lado (falso positivo) — nunca revisita, raramente pula uma página nova</text>
+</svg>

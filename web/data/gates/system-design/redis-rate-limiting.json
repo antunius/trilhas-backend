@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Por que usar INCR em vez de GET seguido de SET para um contador?",
+      "o": [
+        "INCR ocupa menos memória",
+        "INCR é atômico e evita a condição de corrida entre ler e escrever",
+        "GET e SET não funcionam com números",
+        "INCR grava em disco"
+      ],
+      "a": 1,
+      "w": "Entre o GET e o SET, outra requisição pode ler o mesmo valor, e as duas escreveriam o mesmo número. O INCR faz tudo numa operação indivisível.",
+      "t": "fixacao",
+      "h": "O que pode acontecer entre a leitura e a escrita?"
+    },
+    {
+      "q": "Em que momento o TTL do contador deve ser definido para formar a janela?",
+      "o": [
+        "Quando o INCR retorna 1, a primeira requisição da janela",
+        "A cada requisição",
+        "Só quando o limite é excedido",
+        "Nunca"
+      ],
+      "a": 0,
+      "w": "A primeira requisição abre a janela e define a expiração. As seguintes só incrementam.",
+      "t": "fixacao",
+      "h": "Quando a janela começa?"
+    },
+    {
+      "q": "O limite é 5 respostas por 10 s e o INCR retorna 6. O que fazer?",
+      "o": [
+        "Aceitar e zerar o contador",
+        "Rejeitar a requisição",
+        "Remover o TTL",
+        "Duplicar a janela"
+      ],
+      "a": 1,
+      "w": "Acima do limite dentro da janela, a requisição é rejeitada até o contador expirar.",
+      "t": "fixacao",
+      "h": "6 é maior que 5?"
+    },
+    {
+      "q": "Qual é a limitação do contador com TTL em relação a uma janela deslizante?",
+      "o": [
+        "Ele é janela fixa: permite rajadas na virada de uma janela para outra",
+        "Ele não funciona com mais de um cliente",
+        "Ele precisa de disco",
+        "Ele não pode expirar"
+      ],
+      "a": 0,
+      "w": "Na janela fixa, um jogador pode usar o limite no fim de uma janela e de novo no começo da seguinte. A janela deslizante é mais precisa e mais cara.",
+      "t": "fixacao",
+      "h": "O que acontece na fronteira entre duas janelas?"
+    },
+    {
+      "q": "O processo cai entre o INCR e o EXPIRE da primeira requisição. Qual o risco?",
+      "o": [
+        "O contador some",
+        "A chave fica sem expiração e o jogador pode ficar bloqueado para sempre",
+        "O Redis reinicia",
+        "Nada acontece"
+      ],
+      "a": 1,
+      "w": "Sem TTL, o contador nunca zera. Por isso se junta INCR e EXPIRE num script Lua atômico.",
+      "t": "fixacao",
+      "h": "Quem define o fim da janela?"
+    }
+  ]
+}

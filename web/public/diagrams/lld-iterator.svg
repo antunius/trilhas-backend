@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif" style="background:transparent">
+  <style>
+    .coll { fill: #2a2114; stroke: #fbbf24; stroke-width: 1.8; rx: 6; }
+    .iface { fill: #1e2438; stroke: #818cf8; stroke-width: 1.8; rx: 6; }
+    .impl { fill: #14241f; stroke: #34d399; stroke-width: 1.6; rx: 6; }
+    .title { font-size: 13px; fill: #e8eaed; font-weight: 700; }
+    .member { font-size: 11px; fill: #9aa3b2; font-family: monospace; }
+    .caption { font-size: 15px; font-weight: 600; fill: #e8eaed; }
+    .small { font-size: 11px; fill: #9aa3b2; }
+    .arrow { stroke: #8b95a5; stroke-width: 1.6; fill: none; marker-end: url(#ah-it); }
+    .dashed { stroke: #8b95a5; stroke-width: 1.3; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-it); }
+  </style>
+  <defs>
+    <marker id="ah-it" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8b95a5"/></marker>
+  </defs>
+
+  <text x="360" y="22" text-anchor="middle" class="caption">Iterator — percorre sem expor a estrutura interna</text>
+
+  <rect x="30" y="50" width="200" height="80" class="coll"/>
+  <text x="130" y="72" text-anchor="middle" class="title">CatalogoDeLivros</text>
+  <text x="45" y="92" class="member">- livros: Livro[] (array fixo)</text>
+  <text x="45" y="108" class="member">+ criarIterator():</text>
+  <text x="60" y="122" class="member">  Iterator&lt;Livro&gt;</text>
+
+  <path d="M230,90 L300,90" class="arrow"/>
+
+  <rect x="305" y="65" width="200" height="50" class="iface"/>
+  <text x="405" y="86" text-anchor="middle" class="small" font-weight="600">« interface »</text>
+  <text x="405" y="103" text-anchor="middle" class="small">Iterator&lt;Livro&gt;</text>
+
+  <rect x="305" y="160" width="200" height="60" class="impl"/>
+  <text x="405" y="182" text-anchor="middle" class="small" font-weight="600">CatalogoIterator</text>
+  <text x="320" y="200" class="member">hasNext() / next()</text>
+  <text x="320" y="214" class="member">- indiceAtual: int</text>
+
+  <path d="M405,115 L405,160" class="dashed"/>
+
+  <rect x="550" y="65" width="150" height="50" class="coll"/>
+  <text x="625" y="86" text-anchor="middle" class="small" font-weight="600">Cliente</text>
+  <text x="625" y="103" text-anchor="middle" class="small">while(hasNext())</text>
+
+  <path d="M550,90 L505,90" class="arrow"/>
+
+  <text x="360" y="248" text-anchor="middle" class="small">Cliente percorre por hasNext()/next() sem saber se é array, lista ou árvore por trás</text>
+</svg>

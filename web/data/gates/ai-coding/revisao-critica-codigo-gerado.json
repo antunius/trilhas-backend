@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Por que testar o código gerado contra casos extremos é importante, mesmo quando ele \"parece\" correto?",
+      "o": [
+        "Porque IA nunca comete erros",
+        "Porque código gerado pode conter erros sutis de lógica ou casos extremos não tratados, que só aparecem sob teste real",
+        "Porque testes são obrigatórios em qualquer entrevista, independente do contexto",
+        "Não é necessário testar, apenas ler o código já é suficiente"
+      ],
+      "a": 1,
+      "w": "Aparência de correção não garante ausência de erros — testar casos extremos é a forma de verificar isso de fato, em vez de confiar apenas na leitura do código.",
+      "t": "fixacao"
+    }
+  ]
+}

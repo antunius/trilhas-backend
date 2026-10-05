@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual estratégia de cache prioriza velocidade de escrita, aceitando risco de perda de dados em caso de falha antes da sincronização com o banco?",
+      "o": [
+        "Cache-aside",
+        "Write-through",
+        "Write-back",
+        "Nenhuma das anteriores"
+      ],
+      "a": 2,
+      "w": "Write-back grava primeiro no cache e propaga ao banco de forma assíncrona depois, priorizando velocidade ao custo de um risco de perda de dados caso ocorra falha antes da propagação.",
+      "t": "fixacao",
+      "h": "Qual estratégia grava no cache e deixa o banco para depois?"
+    },
+    {
+      "q": "Com banco de 20 ms, cache de 1 ms e hit ratio de 90%, qual a latência média aproximada (o miss consulta o cache e depois o banco)?",
+      "o": [
+        "2 ms",
+        "3 ms",
+        "10 ms",
+        "18 ms"
+      ],
+      "a": 1,
+      "w": "0,9 × 1 ms + 0,1 × (1 + 20) ms = 0,9 + 2,1 = 3 ms. O miss paga as duas consultas, cache e banco.",
+      "t": "fixacao",
+      "h": "Some a parte dos hits e a dos misses, ponderando pelas frações."
+    },
+    {
+      "q": "Qual a principal desvantagem do write-through?",
+      "o": [
+        "Pode perder dados",
+        "Cada escrita fica mais lenta, e dados que ninguém lê ocupam espaço",
+        "Nunca atualiza o cache",
+        "Só funciona com TTL"
+      ],
+      "a": 1,
+      "w": "Escrever no cache e no banco na mesma operação mantém tudo igual, ao custo de latência.",
+      "t": "fixacao",
+      "h": "Quantos lugares a escrita atualiza?"
+    },
+    {
+      "q": "Por que o cache-aside continua funcionando se o cache cair?",
+      "o": [
+        "Porque a aplicação pode ir direto ao banco",
+        "Porque o banco vira o cache",
+        "Porque o TTL aumenta",
+        "Porque a eviction para"
+      ],
+      "a": 0,
+      "w": "A aplicação é quem decide buscar no banco no miss.",
+      "t": "fixacao",
+      "h": "Quem controla o caminho?"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "O que torna backtracking eficiente na prática, apesar de sua complexidade de pior caso exponencial?",
+      "o": [
+        "O uso de mais memória do que outras técnicas",
+        "A poda: interromper a exploração de um ramo assim que se sabe que ele não pode gerar uma solução válida",
+        "A ausência total de recursão",
+        "Não há nada que torne backtracking eficiente na prática"
+      ],
+      "a": 1,
+      "w": "A poda é o que evita explorar exaustivamente todo o espaço de possibilidades, descartando ramos inválidos o mais cedo possível.",
+      "t": "fixacao"
+    }
+  ]
+}

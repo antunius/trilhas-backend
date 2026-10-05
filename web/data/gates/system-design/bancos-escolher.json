@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "No marketplace, qual banco é mais adequado para o carrinho temporário, acessado sempre pelo id da sessão?",
+      "o": [
+        "Relacional, por causa dos joins",
+        "Documento, por causa do esquema flexível",
+        "Chave-valor, por ser acesso simples por identificador",
+        "Nenhum, carrinho não pode ser guardado"
+      ],
+      "a": 2,
+      "w": "O carrinho é lido e gravado por uma chave (a sessão), sem consulta por conteúdo. É o caso ideal do chave-valor, que também permite expirar carrinhos abandonados.",
+      "t": "fixacao",
+      "h": "Qual é a única forma de acesso ao carrinho?"
+    },
+    {
+      "q": "No marketplace, qual banco é mais adequado para pedidos e pagamentos?",
+      "o": [
+        "Chave-valor",
+        "Documento",
+        "Relacional, por causa de transações e consultas variadas",
+        "Qualquer um"
+      ],
+      "a": 2,
+      "w": "Dinheiro exige transação, e relatórios exigem consultas flexíveis.",
+      "t": "fixacao",
+      "h": "O que não pode ficar errado?"
+    },
+    {
+      "q": "Por que a escolha de modelo, para 85 pedidos por segundo, é mais sobre correção que sobre escala?",
+      "o": [
+        "Porque um banco relacional comum aguenta essa carga folgadamente",
+        "Porque o chave-valor é lento",
+        "Porque documento não escala",
+        "Porque não há índices"
+      ],
+      "a": 0,
+      "w": "5 mil pedidos por minuto cabem num único banco relacional.",
+      "t": "fixacao",
+      "h": "Esse volume é grande ou pequeno para um banco relacional?"
+    },
+    {
+      "q": "Qual é o cuidado ao combinar vários bancos?",
+      "o": [
+        "Nenhum",
+        "Cada banco extra é mais um componente para operar, monitorar e manter consistente",
+        "Todos precisam do mesmo modelo",
+        "Eles se sincronizam sozinhos"
+      ],
+      "a": 1,
+      "w": "Sistemas reais combinam bancos, mas sem exagero.",
+      "t": "fixacao",
+      "h": "O que custa um banco a mais?"
+    }
+  ]
+}

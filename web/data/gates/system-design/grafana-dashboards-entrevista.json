@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "O que o Grafana armazena nesta arquitetura?",
+      "o": [
+        "As métricas de longo prazo",
+        "Os dashboards e a configuração; as métricas ficam na fonte de dados (Prometheus)",
+        "Os logs da aplicação",
+        "Os alertas ativos do Alertmanager"
+      ],
+      "a": 1,
+      "w": "O Grafana consulta fontes de dados e desenha os resultados. As métricas continuam no Prometheus.",
+      "t": "fixacao",
+      "h": "O Grafana é a vitrine; o banco é outro."
+    },
+    {
+      "q": "Qual a vantagem de usar provisioning para dashboards e fontes de dados?",
+      "o": [
+        "O Grafana consome menos memória",
+        "Os dashboards viram código versionado e reproduzível em qualquer ambiente",
+        "As consultas ficam mais rápidas",
+        "Elimina a necessidade do Prometheus"
+      ],
+      "a": 1,
+      "w": "Com arquivos no Git, o ambiente novo já nasce com tudo configurado, e as mudanças passam por revisão.",
+      "t": "fixacao",
+      "h": "Pense em dashboards como código."
+    },
+    {
+      "q": "Como guardar métricas por 1 ano sem sobrecarregar um único Prometheus?",
+      "o": [
+        "Aumentar o scrape_interval para 1h",
+        "Usar remote_write para um armazenamento de longo prazo, como Thanos ou Mimir",
+        "Guardar tudo no Grafana",
+        "Adicionar labels com o ID do usuário"
+      ],
+      "a": 1,
+      "w": "`remote_write` envia as amostras para um armazenamento escalável de longo prazo, com consulta global.",
+      "t": "fixacao",
+      "h": "O Prometheus pode escrever uma cópia dos dados em outro sistema."
+    },
+    {
+      "q": "O servidor de Prometheus está sem memória, e as consultas, lentas. Qual a primeira suspeita?",
+      "o": [
+        "Muitos dashboards no Grafana",
+        "Alta cardinalidade: milhões de séries por labels com muitos valores",
+        "O scrape_interval está curto demais",
+        "O Alertmanager está desligado"
+      ],
+      "a": 1,
+      "w": "A memória do Prometheus cresce com o número de séries ativas. Labels com muitos valores são a causa mais comum.",
+      "t": "fixacao",
+      "h": "Memória no Prometheus cresce com o número de séries."
+    },
+    {
+      "q": "Como garantir alta disponibilidade da coleta sem perder alertas?",
+      "o": [
+        "Um único Prometheus com disco maior",
+        "Dois Prometheus idênticos coletando os mesmos alvos, com o Alertmanager deduplicando",
+        "Federation com um Prometheus por métrica",
+        "Trocar para push"
+      ],
+      "a": 1,
+      "w": "Dois servidores idênticos garantem que um possa cair; o Alertmanager remove as notificações duplicadas.",
+      "t": "fixacao",
+      "h": "Redundância na coleta, deduplicação no alerta."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "q": "Qual critério deve ter prioridade mais alta ao escolher entre múltiplas histórias candidatas para a mesma competência?",
+      "o": [
+        "A história mais recente, sempre",
+        "O maior escopo e impacto real da experiência",
+        "A história mais engraçada",
+        "A mais curta de contar"
+      ],
+      "a": 1,
+      "w": "Escopo e impacto real tendem a ser o critério mais forte; recência serve principalmente como critério de desempate entre histórias de escopo semelhante.",
+      "t": "fixacao"
+    }
+  ]
+}

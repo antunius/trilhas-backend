@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que cada worker observa apenas o znode imediatamente anterior ao seu, em vez de observar diretamente o znode da líder?",
+      "o": [
+        "Para economizar memória do cluster",
+        "Para evitar que, quando a líder cair, todos os workers sejam notificados ao mesmo tempo (thundering herd)",
+        "Porque o ZooKeeper só permite um watch por sessão",
+        "Porque a líder é sempre o znode de maior número"
+      ],
+      "a": 1,
+      "w": "Com watches em cadeia, a queda da líder acorda apenas um worker, que reavalia se agora é o menor.",
+      "t": "fixacao",
+      "h": "Quantos workers acordam quando o znode da líder some?"
+    },
+    {
+      "q": "Quem é o líder na eleição?",
+      "o": [
+        "O worker com o maior número sequencial",
+        "O worker com o menor número sequencial",
+        "O primeiro a se desconectar",
+        "Um worker sorteado"
+      ],
+      "a": 1,
+      "w": "Cada worker lista os znodes e verifica se o seu número é o menor.",
+      "t": "fixacao",
+      "h": "Qual número vence?"
+    },
+    {
+      "q": "O que acontece quando a líder cai?",
+      "o": [
+        "Nada",
+        "A sessão dela expira, o znode efêmero some, e o watch do worker seguinte dispara para ele reavaliar",
+        "O cluster para",
+        "Todos viram líder"
+      ],
+      "a": 1,
+      "w": "O ZooKeeper remove o znode efêmero, o que aciona a cadeia.",
+      "t": "fixacao",
+      "h": "Por que o znode some sozinho?"
+    },
+    {
+      "q": "Por que o znode da eleição é efêmero?",
+      "o": [
+        "Para ocupar menos espaço",
+        "Para sumir automaticamente se o worker cair, mesmo por falha, e não só por encerramento normal",
+        "Para ser persistente",
+        "Para guardar dados"
+      ],
+      "a": 1,
+      "w": "Assim a falha de um worker é detectada pela própria sessão.",
+      "t": "fixacao",
+      "h": "O que ocorre se o worker cai sem avisar?"
+    }
+  ]
+}

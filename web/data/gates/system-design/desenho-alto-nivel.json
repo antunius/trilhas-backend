@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "q": "Qual deve ser a característica principal do desenho de alto nível, antes dos deep dives?",
+      "o": [
+        "Já incluir todas as otimizações de escala possíveis",
+        "Ser uma versão simples e funcional que cobre o fluxo principal do sistema",
+        "Focar apenas na camada de banco de dados",
+        "Evitar mencionar qualquer componente de infraestrutura"
+      ],
+      "a": 1,
+      "w": "O desenho de alto nível deve ser simples e funcional; otimizações e tratamento de casos extremos ficam para a etapa de deep dive, quando há justificativa concreta para introduzi-las.",
+      "t": "fixacao",
+      "h": "No começo do desenho, mais detalhes ou mais clareza?"
+    }
+  ]
+}

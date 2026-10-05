@@ -12,20 +12,25 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
+import categoriesJson from "@/content/categories.json";
+import articlesIndex from "@/content/articles/index.json";
+import type { ArticleMeta, Category } from "@/types/content";
 import {
-  kafkaLessons,
-  arquiteturaLessons,
-  kafkaSimulador,
-  arquiteturaSimulador,
-} from "@/lib/catalog";
-import {
-  Gauge,
   Compass,
   BookOpen,
   ArrowRight,
   TrendingUp,
+  Zap,
+  Layers,
+  Users,
 } from "lucide-react";
-import { TrackLogo } from "@/components/TrackLogo";
+
+const CATEGORIES = categoriesJson as Category[];
+const LEARN = CATEGORIES.filter(
+  (c) => c.navGroup === "learn-primary" || c.navGroup === "learn-secondary",
+);
+const QUIZ = CATEGORIES.filter((c) => c.hasQuiz && !c.stub);
+const ARTICLES = articlesIndex as ArticleMeta[];
 
 interface CommandMenuProps {
   open?: boolean;
@@ -49,7 +54,7 @@ export function CommandMenu({
         setInternalOpen(nextOpen);
       }
     },
-    [isControlled, setControlledOpen]
+    [isControlled, setControlledOpen],
   );
 
   React.useEffect(() => {
@@ -59,7 +64,6 @@ export function CommandMenu({
         setOpen(!open);
       }
     };
-
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, [open, setOpen]);
@@ -69,110 +73,112 @@ export function CommandMenu({
       setOpen(false);
       command();
     },
-    [setOpen]
+    [setOpen],
   );
 
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
-      <CommandInput placeholder="Buscar lições, simuladores, conceitos..." />
+      <CommandInput placeholder="Buscar em Aprender, Praticar e artigos..." />
       <CommandList className="max-h-[360px]">
         <CommandEmpty>Nenhum resultado encontrado.</CommandEmpty>
 
-        <CommandGroup heading="Acesso Rápido">
+        <CommandGroup heading="Acesso rápido">
           <CommandItem
             onSelect={() => runCommand(() => router.push("/"))}
             className="flex items-center gap-2 cursor-pointer"
           >
             <Compass className="h-4 w-4 text-primary" />
-            <span>Início / Dashboard</span>
+            <span>Dashboard</span>
             <CommandShortcut className="text-xs">Home</CommandShortcut>
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/learn"))}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <BookOpen className="h-4 w-4 text-primary" />
+            <span>Aprender</span>
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/practice"))}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <Zap className="h-4 w-4 text-amber-400" />
+            <span>Praticar</span>
+          </CommandItem>
+          <CommandItem
+            onSelect={() => runCommand(() => router.push("/community"))}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <Users className="h-4 w-4 text-sky-400" />
+            <span>Comunidade</span>
           </CommandItem>
           <CommandItem
             onSelect={() => runCommand(() => router.push("/progress"))}
             className="flex items-center gap-2 cursor-pointer"
           >
             <TrendingUp className="h-4 w-4 text-emerald-400" />
-            <span>Meu Progresso & Estatísticas</span>
+            <span>Meu progresso</span>
           </CommandItem>
         </CommandGroup>
 
         <CommandSeparator />
 
-        <CommandGroup heading="Simuladores Interativos">
-          <CommandItem
-            onSelect={() => runCommand(() => router.push("/kafka/simulador"))}
-            className="flex items-center gap-2 cursor-pointer"
-          >
-            <Gauge className="h-4 w-4 text-amber-400" />
-            <span>{kafkaSimulador.title}</span>
-            <ArrowRight className="h-3 w-3 ml-auto opacity-40" />
-          </CommandItem>
-          <CommandItem
-            onSelect={() =>
-              runCommand(() => router.push("/arquitetura/simulador"))
-            }
-            className="flex items-center gap-2 cursor-pointer"
-          >
-            <Gauge className="h-4 w-4 text-sky-400" />
-            <span>{arquiteturaSimulador.title}</span>
-            <ArrowRight className="h-3 w-3 ml-auto opacity-40" />
-          </CommandItem>
-        </CommandGroup>
-
-        <CommandSeparator />
-
-        <CommandGroup heading="Trilha: Apache Kafka">
-          <CommandItem
-            onSelect={() => runCommand(() => router.push("/kafka"))}
-            className="flex items-center gap-2 cursor-pointer font-medium"
-          >
-            <TrackLogo track="kafka" className="h-4 w-4 text-amber-400" />
-            <span>Visão Geral da Trilha Kafka</span>
-          </CommandItem>
-          {kafkaLessons.map((lesson) => (
+        <CommandGroup heading="Aprender">
+          {LEARN.map((cat) => (
             <CommandItem
-              key={lesson.path}
-              value={`kafka ${lesson.title} ${lesson.description}`}
-              onSelect={() => runCommand(() => router.push(lesson.path))}
-              className="flex items-center gap-2 cursor-pointer py-2"
+              key={cat.slug}
+              value={`aprender ${cat.name} ${cat.description}`}
+              onSelect={() =>
+                runCommand(() => router.push(`/category/${cat.slug}`))
+              }
+              className="flex items-center gap-2 cursor-pointer"
             >
-              <BookOpen className="h-4 w-4 text-muted-foreground shrink-0" />
-              <div className="flex flex-col min-w-0">
-                <span className="truncate font-medium text-foreground">
-                  {lesson.title}
-                </span>
-                <span className="truncate text-xs text-muted-foreground">
-                  {lesson.description}
-                </span>
-              </div>
+              <Layers className="h-4 w-4 text-primary" />
+              <span>{cat.name}</span>
+              <ArrowRight className="h-3 w-3 ml-auto opacity-40" />
             </CommandItem>
           ))}
         </CommandGroup>
 
         <CommandSeparator />
 
-        <CommandGroup heading="Trilha: Arquitetura de Software">
-          <CommandItem
-            onSelect={() => runCommand(() => router.push("/arquitetura"))}
-            className="flex items-center gap-2 cursor-pointer font-medium"
-          >
-            <TrackLogo track="arquitetura" className="h-4 w-4 text-indigo-400" />
-            <span>Visão Geral da Trilha Arquitetura</span>
-          </CommandItem>
-          {arquiteturaLessons.map((lesson) => (
+        <CommandGroup heading="Praticar · Avaliação">
+          {QUIZ.map((cat) => (
             <CommandItem
-              key={lesson.path}
-              value={`arquitetura ${lesson.title} ${lesson.description}`}
-              onSelect={() => runCommand(() => router.push(lesson.path))}
+              key={`quiz-${cat.slug}`}
+              value={`praticar quiz avaliação ${cat.name}`}
+              onSelect={() =>
+                runCommand(() => router.push(`/category/${cat.slug}/quiz`))
+              }
+              className="flex items-center gap-2 cursor-pointer"
+            >
+              <Zap className="h-4 w-4 text-amber-400" />
+              <span>{cat.name}</span>
+            </CommandItem>
+          ))}
+        </CommandGroup>
+
+        <CommandSeparator />
+
+        <CommandGroup heading="Artigos">
+          {ARTICLES.map((a) => (
+            <CommandItem
+              key={`${a.categorySlug}/${a.slug}`}
+              value={`${a.title} ${a.summary} ${a.categorySlug}`}
+              onSelect={() =>
+                runCommand(() =>
+                  router.push(`/category/${a.categorySlug}/${a.slug}`),
+                )
+              }
               className="flex items-center gap-2 cursor-pointer py-2"
             >
               <BookOpen className="h-4 w-4 text-muted-foreground shrink-0" />
               <div className="flex flex-col min-w-0">
                 <span className="truncate font-medium text-foreground">
-                  {lesson.title}
+                  {a.title}
                 </span>
                 <span className="truncate text-xs text-muted-foreground">
-                  {lesson.description}
+                  {a.categorySlug}
                 </span>
               </div>
             </CommandItem>

@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Em qual cenário GraphQL tende a ser uma escolha mais justificada que REST?",
+      "o": [
+        "Quando existe apenas um tipo de cliente com necessidades simples e fixas",
+        "Quando há múltiplos tipos de cliente com necessidades de dados muito diferentes entre si",
+        "Quando a comunicação é apenas interna entre dois microsserviços",
+        "Quando performance bruta é o único critério relevante"
+      ],
+      "a": 1,
+      "w": "GraphQL resolve over-fetching e under-fetching justamente quando diferentes clientes precisam de combinações diferentes de dados — sua vantagem principal é essa flexibilidade.",
+      "t": "fixacao",
+      "h": "Pense em clientes diferentes pedindo dados diferentes."
+    },
+    {
+      "q": "O que é o problema N+1 em uma API GraphQL?",
+      "o": [
+        "Um campo aninhado dispara uma consulta por item da lista",
+        "O servidor aceita N+1 clientes",
+        "Uma consulta devolve N+1 campos",
+        "O cliente repete a consulta N+1 vezes"
+      ],
+      "a": 0,
+      "w": "Buscar 20 posts e, para cada um, o autor, pode gerar 21 consultas se não houver agrupamento em lote (batching).",
+      "t": "fixacao",
+      "h": "Conte as consultas para 20 posts e seus autores."
+    },
+    {
+      "q": "Por que não usar gRPC direto no navegador?",
+      "o": [
+        "Porque browsers não expõem o HTTP/2 completo exigido; usa-se gRPC-Web ou um gateway",
+        "Porque gRPC é lento",
+        "Porque não tem contrato",
+        "Porque só funciona com JSON"
+      ],
+      "a": 0,
+      "w": "Para o navegador e para parceiros externos, REST/JSON costuma ser mais prático.",
+      "t": "fixacao",
+      "h": "Quem consome gRPC com facilidade?"
+    },
+    {
+      "q": "Qual estilo combina com a comunicação entre o serviço de feed e o de recomendação?",
+      "o": [
+        "REST público",
+        "gRPC, por ser interno e sensível a desempenho",
+        "GraphQL para parceiros",
+        "FTP"
+      ],
+      "a": 1,
+      "w": "Entre serviços internos, a serialização binária e o contrato forte são vantagens.",
+      "t": "fixacao",
+      "h": "Qual fronteira é interna?"
+    }
+  ]
+}

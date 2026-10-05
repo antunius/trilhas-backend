@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Como evoluir o tipo de um campo de um índice em produção?",
+      "o": [
+        "Alterar o mapping no lugar",
+        "Criar um índice novo com o mapping correto, reindexar e trocar um alias",
+        "Apagar o cluster",
+        "Reiniciar os nós"
+      ],
+      "a": 1,
+      "w": "O mapping de campos existentes não muda no lugar. Reindexar para um índice novo e trocar o alias evita parada.",
+      "t": "fixacao",
+      "h": "Qual objeto permite trocar o índice sem o cliente notar?"
+    },
+    {
+      "q": "O que um alias de índice permite?",
+      "o": [
+        "Aumentar o refresh",
+        "Apontar o nome usado pela aplicação para outro índice sem mudar o código",
+        "Criar réplicas",
+        "Compactar segmentos"
+      ],
+      "a": 1,
+      "w": "A aplicação fala com o alias, e a troca do índice por trás é transparente.",
+      "t": "fixacao",
+      "h": "É um apelido para o índice."
+    },
+    {
+      "q": "O que acontece com os shards ao adicionar um nó ao cluster?",
+      "o": [
+        "Nada, eles ficam parados",
+        "O cluster realoca alguns shards para o novo nó, equilibrando o uso",
+        "Todos os shards são apagados",
+        "O número de shards dobra"
+      ],
+      "a": 1,
+      "w": "A alocação redistribui shards entre os nós para equilibrar carga e espaço.",
+      "t": "fixacao",
+      "h": "Para que serve o nó novo?"
+    },
+    {
+      "q": "Por que dimensionar o número de shards com folga desde a criação do índice?",
+      "o": [
+        "Porque o número de shards primários não muda depois sem reindexar",
+        "Porque shards ocupam pouco espaço",
+        "Porque réplicas dependem disso",
+        "Porque o refresh exige"
+      ],
+      "a": 0,
+      "w": "Mudar a quantidade de shards primários pede reindexação, então vale planejar o crescimento.",
+      "t": "fixacao",
+      "h": "O que custa mudar isso depois?"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "O que acontece com @Transactional se baixar o estoque lançar uma exceção?",
+      "o": [
+        "O pedido é gravado pela metade",
+        "Tudo é desfeito e nenhum pedido fica gravado",
+        "O estoque é duplicado",
+        "O banco reinicia"
+      ],
+      "a": 1,
+      "w": "É a atomicidade do ACID aplicada pelo Spring.",
+      "t": "fixacao",
+      "h": "O que é \"tudo ou nada\"?"
+    },
+    {
+      "q": "Qual a vantagem de buscar um produto no MongoDB com findById?",
+      "o": [
+        "Traz atributos e avaliações do produto numa só leitura",
+        "Evita índices",
+        "Elimina o JSON",
+        "Garante ACID entre produtos"
+      ],
+      "a": 0,
+      "w": "O documento guarda o produto inteiro, sem joins.",
+      "t": "fixacao",
+      "h": "Onde ficam as avaliações?"
+    },
+    {
+      "q": "Por que definir um expire na chave do carrinho no Redis?",
+      "o": [
+        "Para o carrinho abandonado sumir sozinho",
+        "Para criptografar",
+        "Para acelerar a leitura",
+        "Para criar réplicas"
+      ],
+      "a": 0,
+      "w": "Um carrinho antigo não precisa ocupar memória para sempre.",
+      "t": "fixacao",
+      "h": "O que acontece com carrinhos esquecidos?"
+    },
+    {
+      "q": "Por que os dados do pedido ficam no banco relacional e não no Redis?",
+      "o": [
+        "Redis não guarda números",
+        "Dinheiro exige durabilidade e transação, que o relacional garante",
+        "Redis é lento",
+        "O relacional é mais barato"
+      ],
+      "a": 1,
+      "w": "Perder um carrinho é aceitável; perder um pedido não.",
+      "t": "fixacao",
+      "h": "Qual dos dois dados é crítico?"
+    }
+  ]
+}

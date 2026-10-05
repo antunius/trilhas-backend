@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Num cluster com 2 TaskManagers de 2 slots cada, quantos slots de paralelismo existem?",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 1,
+      "w": "Cada slot executa uma fatia do paralelismo: 2 × 2 = 4.",
+      "t": "fixacao",
+      "h": "Multiplique TaskManagers por slots."
+    },
+    {
+      "q": "Qual a ordem lógica do job de cliques por minuto?",
+      "o": [
+        "Sink, janela, keyBy, fonte",
+        "Fonte, keyBy(campaignId), janela de 1 minuto, agregação, sink",
+        "Janela, fonte, sink",
+        "keyBy, sink, fonte"
+      ],
+      "a": 1,
+      "w": "Lê o stream, agrupa por campanha, aplica a janela tumbling e emite a contagem.",
+      "t": "fixacao",
+      "h": "Os dados entram, são agrupados, agregados e saem."
+    },
+    {
+      "q": "Por que o keyBy é condição para a contagem por janela estar correta?",
+      "o": [
+        "Porque cria réplicas",
+        "Porque cada subtarefa mantém o estado isolado por chave, e os eventos da mesma campanha precisam estar juntos",
+        "Porque ordena o stream",
+        "Porque define o watermark"
+      ],
+      "a": 1,
+      "w": "Sem os eventos de uma campanha na mesma subtarefa, a contagem ficaria dividida.",
+      "t": "fixacao",
+      "h": "Quem mantém a contagem da campanha?"
+    },
+    {
+      "q": "Qual componente coordena a execução e dispara checkpoints?",
+      "o": [
+        "TaskManager",
+        "JobManager",
+        "Slot",
+        "Sink"
+      ],
+      "a": 1,
+      "w": "O JobManager coordena; os TaskManagers executam.",
+      "t": "fixacao",
+      "h": "Quem distribui tarefas?"
+    }
+  ]
+}

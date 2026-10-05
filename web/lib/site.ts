@@ -5,9 +5,9 @@ export const SITE_URL =
 export const SITE_HOST = "learning.codetoscale.dev";
 export const LEGACY_HOSTS = ["trilhas-backend.vercel.app"] as const;
 
-export const SITE_NAME = "Trilhas Backend";
+export const SITE_NAME = "codetoscale";
 export const SITE_DESCRIPTION =
-  "Kafka e arquitetura de software em linguagem de leigo: uma página por tema, simulador com cadeado e mesa de entrevista.";
+  "Arquitetura de software em categorias: Clean Code, Design Patterns, Sistemas Distribuídos, Data Modeling, Concorrência e Apache Kafka.";
 
 export function isLocalHost(hostname: string) {
   const host = hostname.split(":")[0];

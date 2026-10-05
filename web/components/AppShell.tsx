@@ -2,15 +2,16 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
-import { AppSidebar } from "@/components/AppSidebar";
+import { AppNavSidebar } from "@/components/AppNavSidebar";
 import { CommandMenu } from "@/components/CommandMenu";
 import { ProgressProvider } from "@/components/ProgressProvider";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SidebarContext } from "@/components/sidebar-context";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
-  const isLogin = path === "/login";
+  const isLogin = path === "/login" || path === "/acesso-restrito";
   const [open, setOpen] = useState(false);
   const [commandOpen, setCommandOpen] = useState(false);
 
@@ -43,26 +44,27 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       setCommandOpen,
       toggleCommand,
     }),
-    [open, toggle, commandOpen, toggleCommand]
+    [open, toggle, commandOpen, toggleCommand],
   );
 
   return (
     <ProgressProvider>
       <SidebarContext.Provider value={value}>
-        <SiteHeader />
+        <ScrollToTop />
         <CommandMenu open={commandOpen} onOpenChange={setCommandOpen} />
-        <div className={`app-shell${isLogin ? " login-shell" : ""}`}>
-          {open && !isLogin ? (
-            <button
-              type="button"
-              className="sidebar-backdrop"
-              aria-label="Fechar índice"
-              onClick={() => setOpen(false)}
-            />
-          ) : null}
-          {isLogin ? null : <AppSidebar />}
-          <main className="app-main">{children}</main>
-        </div>
+        {isLogin ? (
+          <div className="app-shell login-shell">
+            <main className="app-main">{children}</main>
+          </div>
+        ) : (
+          <div className="app-shell hi-shell">
+            <AppNavSidebar />
+            <div className="app-content-col">
+              <SiteHeader />
+              <main className="app-main">{children}</main>
+            </div>
+          </div>
+        )}
       </SidebarContext.Provider>
     </ProgressProvider>
   );
