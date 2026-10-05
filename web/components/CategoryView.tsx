@@ -18,7 +18,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { ArticleMeta, Category } from "@/types/content";
-import { articleHref } from "@/lib/paths";
+import { CourseSections } from "@/components/CourseSections";
+import { PracticeStatsPanel } from "@/components/PracticeStatsPanel";
 
 const ICON_MAP: Record<string, LucideIcon> = {
   Code2,
@@ -46,10 +47,12 @@ export function CategoryView({
   category,
   articles,
   quizCount,
+  bankSlugs = [],
 }: {
   category: Category;
   articles: ArticleMeta[];
   quizCount: number;
+  bankSlugs?: string[];
 }) {
   const Icon = ICON_MAP[category.icon] || Layers;
   const sections = [...(category.sections || [])].sort(
@@ -68,16 +71,6 @@ export function CategoryView({
       </div>
     );
   }
-
-  const bySection = new Map<string, ArticleMeta[]>();
-  for (const a of articles) {
-    const key = a.section || "_";
-    const list = bySection.get(key) || [];
-    list.push(a);
-    bySection.set(key, list);
-  }
-
-  let step = 0;
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
@@ -116,58 +109,9 @@ export function CategoryView({
         </Link>
       ) : null}
 
-      <div className="space-y-8">
-        {sections.map((sec) => {
-          const items = bySection.get(sec.id) || [];
-          return (
-            <section key={sec.id} id={sec.id}>
-              <h2 className="text-sm font-semibold text-foreground mb-1">
-                {sec.name}
-              </h2>
-              {items.length === 0 ? (
-                <p className="text-sm text-muted-foreground mb-3">
-                  Em breve — seção reservada no formato do curso.
-                </p>
-              ) : (
-                <p className="text-xs text-muted-foreground mb-3">
-                  {items.length} artigo{items.length === 1 ? "" : "s"}
-                </p>
-              )}
-              {items.length > 0 ? (
-                <ol className="space-y-2">
-                  {items.map((a) => {
-                    step += 1;
-                    return (
-                      <li key={a.slug}>
-                        <Link
-                          href={articleHref(a)}
-                          className="flex items-center gap-3 sm:gap-4 rounded-xl border border-border bg-card px-4 py-4 hover:border-primary/40 transition-colors"
-                        >
-                          <span className="flex items-center justify-center w-8 h-8 rounded-full border border-border text-xs font-mono text-muted-foreground shrink-0">
-                            {step}
-                          </span>
-                          <div className="flex-1 min-w-0">
-                            <div className="font-medium text-foreground truncate">
-                              {a.title}
-                            </div>
-                            <p className="text-sm text-muted-foreground line-clamp-1 mt-0.5">
-                              {a.summary}
-                            </p>
-                          </div>
-                          <span className="hidden sm:inline-flex font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded border border-primary/30 text-primary shrink-0">
-                            {LEVEL_LABEL[a.level] || a.level}
-                          </span>
-                          <ChevronRight className="w-4 h-4 text-muted-foreground shrink-0" />
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ol>
-              ) : null}
-            </section>
-          );
-        })}
-      </div>
+      <PracticeStatsPanel categorySlug={category.slug} bankSlugs={bankSlugs} />
+
+      <CourseSections sections={sections} articles={articles} />
     </div>
   );
 }

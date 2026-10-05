@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Dois eventos do mesmo entregador precisam ser processados em ordem. Como garantir isso?",
+      "o": [
+        "Usar uma única partição para o tópico inteiro",
+        "Usar o ID do entregador como chave de particionamento",
+        "Aumentar o número de consumidores",
+        "Usar timestamps no valor"
+      ],
+      "a": 1,
+      "w": "A mesma chave sempre cai na mesma partição, e a ordem é garantida dentro de uma partição.",
+      "t": "fixacao",
+      "h": "Qual unidade tem ordem garantida no Kafka?"
+    },
+    {
+      "q": "Em que escopo o Kafka garante a ordem das mensagens?",
+      "o": [
+        "Entre todas as partições do tópico",
+        "Dentro de uma partição",
+        "Entre todos os tópicos",
+        "Apenas no producer"
+      ],
+      "a": 1,
+      "w": "A ordem existe dentro de cada partição, e nunca entre partições diferentes.",
+      "t": "fixacao",
+      "h": "A ordem é local, não global."
+    },
+    {
+      "q": "Quais são os componentes típicos de uma mensagem do Kafka?",
+      "o": [
+        "Apenas o valor",
+        "Chave, valor, timestamp e headers opcionais",
+        "Tópico, partição e consumidor",
+        "Offset e réplica"
+      ],
+      "a": 1,
+      "w": "A chave é um campo separado do valor e serve para decidir a partição.",
+      "t": "fixacao",
+      "h": "A chave não faz parte do valor."
+    },
+    {
+      "q": "Por que aumentar o número de partições em produção pode quebrar a ordem por chave?",
+      "o": [
+        "Porque o hash passa a apontar a mesma chave para outra partição",
+        "Porque os offsets são zerados",
+        "Porque o producer perde a conexão",
+        "Porque as réplicas são apagadas"
+      ],
+      "a": 0,
+      "w": "A partição é hash(chave) % N. Mudando N, a mesma chave pode ir para outra partição.",
+      "t": "fixacao",
+      "h": "O que muda na fórmula quando N cresce?"
+    },
+    {
+      "q": "Qual configuração faz o producer esperar a confirmação de todas as réplicas sincronizadas?",
+      "o": [
+        "acks=0",
+        "acks=1",
+        "acks=all",
+        "retries=0"
+      ],
+      "a": 2,
+      "w": "Com acks=all o producer só considera o envio concluído depois que todas as réplicas in-sync confirmam.",
+      "t": "fixacao",
+      "h": "O valor mais conservador de acks."
+    }
+  ]
+}

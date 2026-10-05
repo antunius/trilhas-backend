@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Controle otimista permite acesso concorrente sem bloquear, verificando conflito apenas no momento da escrita — vantajoso quando a maioria das operações não colide de fato.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Se os conflitos são raros, vale bloquear tudo antes?"
     }
   ]
 }

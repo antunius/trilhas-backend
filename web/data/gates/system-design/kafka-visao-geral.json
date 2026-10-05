@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Qual descrição representa melhor o Kafka?",
+      "o": [
+        "Um banco relacional distribuído",
+        "Um log distribuído de eventos, em que leitores independentes leem do seu próprio ponto",
+        "Um balanceador de carga entre servidores",
+        "Um cache em memória com expiração"
+      ],
+      "a": 1,
+      "w": "O Kafka funciona como um log: produtores anexam eventos ao fim e consumidores leem sem apagar o que foi lido.",
+      "t": "fixacao",
+      "h": "Pense em um caderno em que só se escreve na última linha."
+    },
+    {
+      "q": "Três serviços precisam ler o mesmo evento. Qual a vantagem do Kafka sobre uma fila em que a mensagem some depois de lida?",
+      "o": [
+        "Os serviços podem ler o mesmo evento de forma independente, sem duplicar a mensagem em várias filas",
+        "O evento é entregue mais rápido",
+        "Ele dispensa o uso de consumidores",
+        "Ele criptografa o evento"
+      ],
+      "a": 0,
+      "w": "Cada grupo de consumidores tem seu próprio progresso de leitura sobre o mesmo log. Numa fila tradicional seria preciso duplicar o evento ou aceitar que só um serviço o lê.",
+      "t": "fixacao",
+      "h": "O que acontece com a mensagem numa fila tradicional depois de lida?"
+    },
+    {
+      "q": "500 mil entregadores enviam uma posição a cada 5 segundos. Quantos eventos por segundo isso gera?",
+      "o": [
+        "10 mil",
+        "100 mil",
+        "500 mil",
+        "2,5 milhões"
+      ],
+      "a": 1,
+      "w": "500.000 ÷ 5 = 100.000 eventos por segundo.",
+      "t": "fixacao",
+      "h": "Divida a quantidade de entregadores pelo intervalo em segundos."
+    },
+    {
+      "q": "Por que uma vazão de 100 mil eventos por segundo justifica várias partições?",
+      "o": [
+        "Porque cada partição tem um teto de vazão, já que é processada sequencialmente",
+        "Porque o Kafka só aceita 1.000 eventos por partição",
+        "Porque partições são obrigatórias em qualquer tópico",
+        "Porque várias partições reduzem o tamanho dos eventos"
+      ],
+      "a": 0,
+      "w": "Uma partição é um log processado em sequência, então existe um teto por partição. Dividir o tópico distribui a carga.",
+      "t": "fixacao",
+      "h": "O que limita a vazão de uma única partição?"
+    },
+    {
+      "q": "O que acontece com um evento no Kafka depois que um consumidor o lê?",
+      "o": [
+        "É apagado imediatamente",
+        "Continua retido pelo período de retenção, e outros consumidores podem lê-lo",
+        "Volta para o produtor",
+        "Passa a ser entregue só ao mesmo consumidor"
+      ],
+      "a": 1,
+      "w": "O Kafka retém os eventos pelo tempo configurado, independentemente de terem sido consumidos.",
+      "t": "fixacao",
+      "h": "Pense na diferença entre um log e uma fila tradicional."
+    }
+  ]
+}

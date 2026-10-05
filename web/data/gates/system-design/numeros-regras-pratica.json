@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Um endpoint faz três chamadas independentes de 50 ms cada. Qual a latência total se forem feitas em paralelo?",
+      "o": [
+        "Cerca de 150 ms",
+        "Cerca de 50 ms",
+        "Cerca de 500 ms",
+        "Cerca de 3 ms"
+      ],
+      "a": 1,
+      "w": "Em paralelo, a latência total é a da mais lenta (50 ms). Em sequência seria a soma (150 ms).",
+      "t": "fixacao",
+      "h": "Em paralelo o tempo é a soma ou o maior?"
+    },
+    {
+      "q": "Por que olhar o p99 de latência e não só a média?",
+      "o": [
+        "Porque a média é sempre errada",
+        "Porque a média esconde a cauda: uma pequena fração de usuários com respostas muito lentas",
+        "Porque o p99 é sempre menor que a média",
+        "Porque a média não pode ser calculada"
+      ],
+      "a": 1,
+      "w": "Com p50 de 2 ms e p99 de 400 ms, 1 em cada 100 usuários espera 400 ms, e a média quase não mostra isso.",
+      "t": "fixacao",
+      "h": "O que acontece com os piores casos quando se tira a média?"
+    },
+    {
+      "q": "Quanto tempo de indisponibilidade por ano permite uma disponibilidade de 99,99%?",
+      "o": [
+        "~53 minutos",
+        "~8,8 horas",
+        "~3 dias",
+        "~1 segundo"
+      ],
+      "a": 0,
+      "w": "99,9% permite ~8,8 horas; 99,99% é dez vezes menos.",
+      "t": "fixacao",
+      "h": "Cada nove a mais divide por dez."
+    },
+    {
+      "q": "Qual é um erro comum em estimativas?",
+      "o": [
+        "Mostrar as contas",
+        "Estimar pela média e esquecer o pico",
+        "Usar ordem de grandeza",
+        "Perguntar as premissas"
+      ],
+      "a": 1,
+      "w": "Para dimensionar, use 2 a 5 vezes a média.",
+      "t": "fixacao",
+      "h": "O que a média esconde?"
+    }
+  ]
+}

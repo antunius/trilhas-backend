@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Quais dependências expõem as métricas do Spring Boot no formato do Prometheus?",
+      "o": [
+        "spring-boot-starter-web apenas",
+        "spring-boot-starter-actuator e micrometer-registry-prometheus",
+        "spring-kafka",
+        "spring-boot-devtools"
+      ],
+      "a": 1,
+      "w": "O Actuator fornece a infraestrutura e o registro `micrometer-registry-prometheus` formata as métricas para o endpoint `/actuator/prometheus`.",
+      "t": "fixacao",
+      "h": "Uma dá a infraestrutura de métricas; a outra, o formato do Prometheus."
+    },
+    {
+      "q": "As consultas de p99 com histogram_quantile retornam vazio para as requisições HTTP. O que provavelmente falta na configuração?",
+      "o": [
+        "management.metrics.distribution.percentiles-histogram.http.server.requests=true",
+        "Trocar o scrape_interval para 1s",
+        "Remover o label application",
+        "Usar Gauge no lugar de Timer"
+      ],
+      "a": 0,
+      "w": "Sem `percentiles-histogram`, o Micrometer não publica os buckets (`_bucket`), e `histogram_quantile` não tem dados para trabalhar.",
+      "t": "fixacao",
+      "h": "O p99 precisa de buckets. Quem os publica?"
+    },
+    {
+      "q": "Qual instrumento do Micrometer é adequado para o tamanho atual da fila de pagamentos?",
+      "o": [
+        "Counter",
+        "Gauge",
+        "Timer",
+        "DistributionSummary"
+      ],
+      "a": 1,
+      "w": "O tamanho da fila oscila. O Gauge lê o valor atual no momento de cada scrape.",
+      "t": "fixacao",
+      "h": "O valor sobe e desce."
+    },
+    {
+      "q": "Como o Prometheus passa a chamar um Counter registrado como `pedidos.criados`?",
+      "o": [
+        "pedidos.criados",
+        "pedidos_criados_total",
+        "PedidosCriados",
+        "pedidos-criados-count"
+      ],
+      "a": 1,
+      "w": "O Prometheus não aceita pontos nos nomes (viram `_`), e os counters ganham o sufixo `_total`.",
+      "t": "fixacao",
+      "h": "Pontos viram sublinhados e counters terminam com um sufixo especial."
+    },
+    {
+      "q": "Você subiu o docker-compose, mas nenhuma métrica aparece. Onde confirmar primeiro se o Prometheus consegue coletar o serviço de pedidos?",
+      "o": [
+        "No Grafana, em Explore",
+        "Na página /targets do Prometheus, verificando se o alvo está UP",
+        "No log do Alertmanager",
+        "No arquivo pom.xml"
+      ],
+      "a": 1,
+      "w": "A página `/targets` mostra cada alvo, o estado (UP ou DOWN) e o erro do último scrape. É o primeiro ponto de diagnóstico.",
+      "t": "fixacao",
+      "h": "O Prometheus tem uma página própria que lista os alvos e o resultado do scrape."
+    }
+  ]
+}

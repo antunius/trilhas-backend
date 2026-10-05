@@ -6,6 +6,7 @@ summary: Reconhecer os erros mais frequentes em cada etapa do framework
 level: intermediario
 order: 8
 section: framework-entrega
+group: "Desenhar e aprofundar"
 ---
 
 ## Objetivos de aprendizagem

@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Quantos hash slots o Redis Cluster usa?",
+      "o": [
+        "256",
+        "1.024",
+        "16.384",
+        "1 milhão"
+      ],
+      "a": 2,
+      "w": "Cada chave é mapeada para um dos 16.384 slots por hash, e cada slot pertence a um nó.",
+      "t": "fixacao",
+      "h": "É uma potência de 2 próxima de 16 mil."
+    },
+    {
+      "q": "Qual a limitação de comandos com várias chaves no Redis Cluster?",
+      "o": [
+        "Não funcionam nunca",
+        "Só funcionam sem restrição se todas as chaves estiverem no mesmo slot",
+        "Funcionam só com strings",
+        "Exigem Sentinel"
+      ],
+      "a": 1,
+      "w": "Chaves em slots diferentes ficam em nós diferentes, então operações multi-chave ficam limitadas.",
+      "t": "fixacao",
+      "h": "Onde ficam chaves de slots diferentes?"
+    },
+    {
+      "q": "Por que um Sentinel usa três processos e não dois?",
+      "o": [
+        "Para ocupar menos memória",
+        "Para permitir um quorum de maioria mesmo com uma falha de rede",
+        "Para dobrar a velocidade",
+        "Porque o Redis exige três réplicas"
+      ],
+      "a": 1,
+      "w": "Com três, dois concordando já formam maioria. Com dois, qualquer divergência trava a decisão.",
+      "t": "fixacao",
+      "h": "Quantos votos são necessários para formar maioria de 3?"
+    },
+    {
+      "q": "O que o quorum evita no Sentinel?",
+      "o": [
+        "Que o Redis grave em disco",
+        "Um failover desnecessário causado pela falha de rede de um único Sentinel",
+        "Que as réplicas leiam dados",
+        "Que o primário aceite escritas"
+      ],
+      "a": 1,
+      "w": "Vários Sentinels precisam concordar que o primário caiu antes de promover uma réplica.",
+      "t": "fixacao",
+      "h": "Um Sentinel isolado pode estar errado."
+    },
+    {
+      "q": "O que as réplicas de leitura NÃO resolvem?",
+      "o": [
+        "A carga de leitura",
+        "O limite de escrita, que continua no primário",
+        "O atraso de replicação",
+        "A cópia dos dados"
+      ],
+      "a": 1,
+      "w": "Elas dividem leitura, mas toda escrita ainda passa pelo primário. O Cluster divide escrita.",
+      "t": "fixacao",
+      "h": "Quem recebe as escritas?"
+    }
+  ]
+}

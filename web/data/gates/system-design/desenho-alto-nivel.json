@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "O desenho de alto nível deve ser simples e funcional; otimizações e tratamento de casos extremos ficam para a etapa de deep dive, quando há justificativa concreta para introduzi-las.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "No começo do desenho, mais detalhes ou mais clareza?"
     }
   ]
 }

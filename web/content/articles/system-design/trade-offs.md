@@ -5,8 +5,9 @@ title: "Trade-offs de Design: o Porquê por Trás de Cada Escolha"
 navTitle: Trade-offs de Design
 summary: Internalizar que toda decisão técnica envolve um custo
 level: intermediario
-order: 22
+order: 53
 section: conceitos-centrais
+group: "Fundamentos de sistemas distribuídos"
 ---
 
 ## Objetivos de aprendizagem

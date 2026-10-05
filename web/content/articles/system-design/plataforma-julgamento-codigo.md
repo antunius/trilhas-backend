@@ -5,8 +5,9 @@ title: "Exercício: Projetar uma Plataforma de Julgamento de Código (estilo Lee
 navTitle: Plataforma de Julgamento de Código
 summary: Projete uma plataforma onde usuários submetem código para resolver problemas de programação, e o sistema executa esse código contra casos de teste, retornando se a solução passou ou falhou.
 level: avancado
-order: 31
+order: 134
 section: exercicios-praticos
+group: "Infraestrutura e ferramentas"
 ---
 
 ## Objetivos de aprendizagem

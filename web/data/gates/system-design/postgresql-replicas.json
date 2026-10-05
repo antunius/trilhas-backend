@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Um usuário publica uma review e, ao recarregar, não a vê. Qual a causa provável e uma mitigação?",
+      "o": [
+        "O índice está corrompido; recriar o índice",
+        "A leitura caiu numa réplica ainda atrasada; rotear a leitura pós-escrita do próprio usuário ao primário",
+        "O banco está cheio; adicionar disco",
+        "O WAL está desligado; religar"
+      ],
+      "a": 1,
+      "w": "A replicação é assíncrona e pode atrasar centenas de milissegundos. Ler do primário logo após a escrita evita a inconsistência.",
+      "t": "fixacao",
+      "h": "Quem atendeu a leitura?"
+    },
+    {
+      "q": "Qual é o atraso típico de replicação assíncrona citado na lição?",
+      "o": [
+        "Nanossegundos",
+        "50 a 200 ms",
+        "10 minutos",
+        "1 dia"
+      ],
+      "a": 1,
+      "w": "Varia com a carga e a distância de rede, mas costuma ficar na casa de centenas de milissegundos.",
+      "t": "fixacao",
+      "h": "Menos de um segundo, mais de dez milissegundos."
+    },
+    {
+      "q": "O que as réplicas de leitura NÃO resolvem?",
+      "o": [
+        "A carga de leitura",
+        "O limite de escrita, que continua no primário",
+        "O atraso de replicação",
+        "A cópia dos dados"
+      ],
+      "a": 1,
+      "w": "Elas dividem leitura, mas toda escrita ainda passa pelo primário.",
+      "t": "fixacao",
+      "h": "Quem recebe as escritas?"
+    },
+    {
+      "q": "Por que dizer que a réplica está \"atrasada\" é mais honesto que \"consistente\"?",
+      "o": [
+        "Porque réplicas nunca replicam",
+        "Porque a replicação é assíncrona e a réplica pode ainda não ter a escrita mais recente",
+        "Porque réplicas apagam dados",
+        "Porque o primário é lento"
+      ],
+      "a": 1,
+      "w": "Consistência eventual: a réplica converge, mas não instantaneamente.",
+      "t": "fixacao",
+      "h": "Assíncrono significa que o primário espera ou não?"
+    }
+  ]
+}

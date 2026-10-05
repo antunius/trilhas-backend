@@ -5,8 +5,9 @@ title: "Exercício: Projetar um Sistema de Leilão Online"
 navTitle: Sistema de Leilão Online
 summary: Projete um sistema de leilão online, onde usuários fazem lances por um item dentro de um período de tempo definido, e o maior lance ao final do prazo vence.
 level: avancado
-order: 39
+order: 124
 section: exercicios-praticos
+group: "Transações e concorrência"
 ---
 
 ## Objetivos de aprendizagem

@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "O que significa dizer que o Elasticsearch é \"near-real-time\", e não \"real-time\"?",
+      "o": [
+        "Que ele nunca perde dados",
+        "Que um documento novo só fica buscável após o intervalo de refresh",
+        "Que ele só funciona de dia",
+        "Que ele usa disco magnético"
+      ],
+      "a": 1,
+      "w": "O documento vai para um buffer em memória e só entra num segmento buscável no próximo refresh, em geral cerca de 1 segundo.",
+      "t": "fixacao",
+      "h": "Quando o documento novo aparece na busca?"
+    },
+    {
+      "q": "Por que aumentar o refresh_interval durante uma importação grande?",
+      "o": [
+        "Para reduzir o número de segmentos criados e economizar recursos",
+        "Para apagar documentos antigos",
+        "Para duplicar os shards",
+        "Para ativar réplicas"
+      ],
+      "a": 0,
+      "w": "Cada refresh cria um segmento, e menos refreshes significam menos trabalho de fundo, em troca de visibilidade mais lenta.",
+      "t": "fixacao",
+      "h": "O que cada refresh cria?"
+    },
+    {
+      "q": "O que é um hot shard?",
+      "o": [
+        "Um shard em memória",
+        "Um shard que recebe tráfego ou dados desproporcionais em relação aos outros",
+        "Um shard recém-criado",
+        "Uma réplica ativa"
+      ],
+      "a": 1,
+      "w": "Se o roteamento concentra a carga num shard, o paralelismo teórico deixa de valer.",
+      "t": "fixacao",
+      "h": "É o mesmo padrão de hot partition do Kafka."
+    },
+    {
+      "q": "Como a vaga recém-publicada pode \"sumir\" da busca por um instante?",
+      "o": [
+        "O índice foi apagado",
+        "Ela ainda não passou por um refresh e não está num segmento buscável",
+        "As réplicas rejeitaram o documento",
+        "O analyzer a descartou"
+      ],
+      "a": 1,
+      "w": "É o efeito do near-real-time: o atraso entre escrever e conseguir buscar.",
+      "t": "fixacao",
+      "h": "A escrita foi aceita, mas já está visível?"
+    }
+  ]
+}

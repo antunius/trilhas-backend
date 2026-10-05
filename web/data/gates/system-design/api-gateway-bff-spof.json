@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual problema o padrão Backend for Frontend (BFF) resolve especificamente?",
+      "o": [
+        "Falta de autenticação",
+        "Um gateway genérico virar um meio-termo ruim para clientes com necessidades diferentes",
+        "Excesso de bancos",
+        "Lentidão do disco"
+      ],
+      "a": 1,
+      "w": "Um BFF por tipo de cliente molda a resposta para o que cada um precisa, sem misturar a lógica.",
+      "t": "fixacao",
+      "h": "TV e mobile querem o mesmo formato?"
+    },
+    {
+      "q": "Qual o custo de adotar BFFs?",
+      "o": [
+        "Nenhum",
+        "Manter mais de um componente de borda",
+        "Perder a autenticação",
+        "Perder o rate limit"
+      ],
+      "a": 1,
+      "w": "É o preço de não misturar as necessidades dos clientes.",
+      "t": "fixacao",
+      "h": "O que se multiplica?"
+    },
+    {
+      "q": "Como mitigar o gateway como ponto único de falha?",
+      "o": [
+        "Rodar uma única instância mais potente",
+        "Várias instâncias sem estado atrás de um load balancer",
+        "Desligar a autenticação",
+        "Chamar os serviços direto"
+      ],
+      "a": 1,
+      "w": "Instâncias redundantes e sem estado local permitem escalar e sobreviver à queda de uma.",
+      "t": "fixacao",
+      "h": "Como se elimina um ponto único de falha em geral?"
+    },
+    {
+      "q": "Por que colocar lógica de negócio pesada dentro do gateway é um erro?",
+      "o": [
+        "Porque o gateway não suporta código",
+        "Porque ele vira um monólito crítico e atrapalha escalar e implantar os demais serviços de forma independente",
+        "Porque deixa o gateway seguro",
+        "Porque deixa de rotear"
+      ],
+      "a": 1,
+      "w": "O gateway deve ficar fino: roteamento, autenticação, limite de taxa e agregação leve.",
+      "t": "fixacao",
+      "h": "O que acontece com o componente que todo mundo precisa atravessar?"
+    }
+  ]
+}

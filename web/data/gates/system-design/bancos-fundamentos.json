@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Uma transferência debita a conta A e credita a conta B. Qual propriedade ACID garante que, se o sistema cair entre os dois passos, nenhum dos dois fica aplicado?",
+      "o": [
+        "Durabilidade",
+        "Atomicidade",
+        "Isolamento",
+        "Consistência eventual"
+      ],
+      "a": 1,
+      "w": "Atomicidade é o 'tudo ou nada': a transação inteira acontece ou nada acontece. Durabilidade é sobreviver a quedas depois de confirmada.",
+      "t": "fixacao",
+      "h": "Pense em 'tudo ou nada'."
+    },
+    {
+      "q": "Para que serve uma chave estrangeira?",
+      "o": [
+        "Acelerar a leitura",
+        "Garantir que a linha aponte para uma linha que existe em outra tabela",
+        "Criptografar a coluna",
+        "Criar índices"
+      ],
+      "a": 1,
+      "w": "O banco recusa um pedido apontando para um cliente inexistente.",
+      "t": "fixacao",
+      "h": "É uma trava de segurança entre tabelas."
+    },
+    {
+      "q": "Qual propriedade ACID garante que uma transação confirmada sobreviva a uma queda de energia?",
+      "o": [
+        "Atomicidade",
+        "Consistência",
+        "Isolamento",
+        "Durabilidade"
+      ],
+      "a": 3,
+      "w": "Depois de confirmada, a transação não se perde, graças ao registro em disco.",
+      "t": "fixacao",
+      "h": "A letra D de ACID."
+    },
+    {
+      "q": "O que é um join?",
+      "o": [
+        "Uma consulta que junta linhas de tabelas diferentes",
+        "Um tipo de índice",
+        "Um tipo de transação",
+        "Um backup"
+      ],
+      "a": 0,
+      "w": "\"Mostre cada pedido com o nome do cliente\" é um join entre pedido e cliente.",
+      "t": "fixacao",
+      "h": "Ele junta tabelas."
+    }
+  ]
+}

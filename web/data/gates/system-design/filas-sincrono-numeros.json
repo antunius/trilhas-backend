@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual cenário é um bom candidato para processamento assíncrono via fila?",
+      "o": [
+        "Confirmar se um pagamento foi aprovado antes de finalizar a compra",
+        "Codificar um vídeo em múltiplas resoluções após o upload",
+        "Validar login de um usuário",
+        "Retornar o saldo atual de uma conta bancária"
+      ],
+      "a": 1,
+      "w": "Codificação de vídeo é uma tarefa pesada que não precisa bloquear a resposta ao usuário — um caso claro de processamento assíncrono via fila, diferente de operações que exigem confirmação imediata.",
+      "t": "fixacao",
+      "h": "Qual tarefa não precisa de resposta imediata ao usuário?"
+    },
+    {
+      "q": "Chegam 200 vídeos por minuto no pico, mas só 40 por minuto em média. Qual a principal vantagem da fila?",
+      "o": [
+        "Eliminar a necessidade de armazenar vídeos",
+        "Dimensionar os workers para a média, deixando o excedente do pico esperar na fila",
+        "Fazer cada vídeo ser codificado mais rápido",
+        "Garantir que o pico nunca aconteça"
+      ],
+      "a": 1,
+      "w": "A fila absorve o pico. Troca-se latência (o vídeo demora mais em pico) por custo (menos servidores).",
+      "t": "fixacao",
+      "h": "Para qual carga você dimensiona os workers?"
+    },
+    {
+      "q": "Qual é o custo do processamento assíncrono?",
+      "o": [
+        "Nenhum",
+        "O cliente não sabe imediatamente se deu certo, e o fluxo fica mais difícil de depurar",
+        "Mais memória",
+        "Menos segurança"
+      ],
+      "a": 1,
+      "w": "É preciso informar o resultado depois: notificação, polling ou WebSocket.",
+      "t": "fixacao",
+      "h": "Quando o usuário descobre o resultado?"
+    },
+    {
+      "q": "Qual é a segunda vantagem da fila, além de absorver picos?",
+      "o": [
+        "Resiliência: se os workers caem, os uploads continuam sendo aceitos",
+        "Mais CPU",
+        "Menos código",
+        "Menos rede"
+      ],
+      "a": 0,
+      "w": "A fila segura as mensagens até os workers voltarem.",
+      "t": "fixacao",
+      "h": "O que acontece se os consumidores caírem?"
+    }
+  ]
+}

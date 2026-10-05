@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Seu hit ratio é de 90%. O que muda no banco se ele for a 99%?",
+      "o": [
+        "Nada",
+        "A carga cai de 10% para 1% dos pedidos, dez vezes menos",
+        "A carga dobra",
+        "O banco para"
+      ],
+      "a": 1,
+      "w": "Muitas vezes isso decide se o banco aguenta o tráfego.",
+      "t": "fixacao",
+      "h": "Calcule 10% sobre 1%."
+    },
+    {
+      "q": "O que acontece se o Redis reiniciar no pico?",
+      "o": [
+        "Nada",
+        "Todos os pedidos viram miss ao mesmo tempo e o banco recebe o tráfego cheio",
+        "O banco desliga",
+        "O TTL aumenta"
+      ],
+      "a": 1,
+      "w": "Mitigações: réplicas do cache, aquecimento prévio e limite de taxa na frente do banco.",
+      "t": "fixacao",
+      "h": "De onde vêm as respostas sem cache?"
+    },
+    {
+      "q": "Qual erro comum ao propor cache?",
+      "o": [
+        "Estimar o hit ratio",
+        "Propor cache sem dizer como e quando a entrada será invalidada",
+        "Falar de TTL",
+        "Falar de camadas"
+      ],
+      "a": 1,
+      "w": "A invalidação é o problema difícil do cache.",
+      "t": "fixacao",
+      "h": "O que dá errado com um dado que muda?"
+    },
+    {
+      "q": "Como evitar servir um preço antigo depois de uma alteração?",
+      "o": [
+        "Esperar sempre o TTL",
+        "Invalidar na escrita, na ordem banco-depois-cache, com TTL curto como rede de segurança",
+        "Reiniciar o cache",
+        "Aumentar o hit ratio"
+      ],
+      "a": 1,
+      "w": "A combinação cobre o caminho feliz e as falhas.",
+      "t": "fixacao",
+      "h": "Qual a ordem entre banco e cache?"
+    }
+  ]
+}

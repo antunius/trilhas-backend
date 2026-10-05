@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual é a principal vantagem do consistent hashing em relação ao hashing simples por módulo?",
+      "o": [
+        "É mais rápido para calcular o hash",
+        "Ao adicionar ou remover um servidor, apenas uma fração pequena das chaves precisa ser redistribuída",
+        "Elimina completamente a necessidade de balancear carga",
+        "Garante consistência forte entre réplicas"
+      ],
+      "a": 1,
+      "w": "Diferente do módulo simples, que redistribui quase todas as chaves a cada mudança no número de servidores, consistent hashing limita o impacto a apenas uma parte do anel de hash.",
+      "t": "fixacao",
+      "h": "O que muda para a maioria das chaves quando um servidor entra no anel?"
+    },
+    {
+      "q": "Para que servem os nós virtuais no anel de consistent hashing?",
+      "o": [
+        "Para criptografar as chaves",
+        "Para equilibrar a divisão do anel e espalhar a carga quando um servidor sai",
+        "Para aumentar o tamanho do hash",
+        "Para eliminar a necessidade de réplicas"
+      ],
+      "a": 1,
+      "w": "Vários pontos por servidor deixam a divisão do anel quase igual, e quando um servidor cai, suas chaves se espalham entre vários vizinhos, não só um.",
+      "t": "fixacao",
+      "h": "Muitos pontos aleatórios dão uma média estável."
+    },
+    {
+      "q": "No anel, a que servidor pertence uma chave?",
+      "o": [
+        "Ao servidor com o menor hash",
+        "Ao primeiro servidor encontrado andando no sentido horário a partir da posição da chave",
+        "A um servidor sorteado a cada leitura",
+        "Ao último servidor adicionado"
+      ],
+      "a": 1,
+      "w": "A chave é posicionada no anel pelo seu hash e anda até o próximo servidor. Passando do fim, volta ao início do círculo.",
+      "t": "fixacao",
+      "h": "Imagine um relógio."
+    },
+    {
+      "q": "Ao passar de 4 para 5 servidores, que fração das chaves se move com consistent hashing, em média?",
+      "o": [
+        "Cerca de 80%",
+        "Cerca de 20%",
+        "Cerca de 50%",
+        "Nenhuma"
+      ],
+      "a": 1,
+      "w": "O servidor novo toma uma parte dos vizinhos: cerca de 1/5.",
+      "t": "fixacao",
+      "h": "Compare com os 80% do hash por módulo."
+    }
+  ]
+}

@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Esse é o padrão típico para tarefas de longa duração — desacoplar a confirmação do cliente do processamento real, que acontece de forma assíncrona.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "O cliente deve esperar a conexão aberta por minutos?"
     }
   ]
 }

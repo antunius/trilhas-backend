@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que uma chamada dentro da própria classe ignora o @Cacheable?",
+      "o": [
+        "Porque não passa pelo proxy do Spring",
+        "Porque o Redis está desligado",
+        "Porque o TTL é zero",
+        "Porque o método é estático"
+      ],
+      "a": 0,
+      "w": "As anotações funcionam por proxy, e this.metodo() não passa por ele.",
+      "t": "fixacao",
+      "h": "Quem intercepta a chamada?"
+    },
+    {
+      "q": "O @Cacheable protege contra cache stampede por padrão?",
+      "o": [
+        "Sim, sempre",
+        "Não, a menos que se use sync = true",
+        "Só com Redis",
+        "Só com TTL"
+      ],
+      "a": 1,
+      "w": "Sem sync, várias requisições simultâneas podem recarregar o mesmo valor.",
+      "t": "fixacao",
+      "h": "Um detalhe que o entrevistador pode perguntar."
+    },
+    {
+      "q": "Qual camada de cache é mais rápida, mas mais difícil de invalidar?",
+      "o": [
+        "Banco de dados",
+        "Navegador do cliente",
+        "Servidor de aplicação",
+        "Nenhuma"
+      ],
+      "a": 1,
+      "w": "Cache no cliente é difícil de forçar a atualização.",
+      "t": "fixacao",
+      "h": "Qual está mais perto do usuário?"
+    },
+    {
+      "q": "Qual desvantagem do cache local (na memória do processo) frente a um distribuído?",
+      "o": [
+        "É mais lento",
+        "Cada servidor tem uma cópia, e elas podem divergir",
+        "Não aceita TTL",
+        "Não aceita objetos"
+      ],
+      "a": 1,
+      "w": "O distribuído é consistente entre servidores, ao custo de uma viagem de rede.",
+      "t": "fixacao",
+      "h": "Quantas cópias existem?"
+    }
+  ]
+}

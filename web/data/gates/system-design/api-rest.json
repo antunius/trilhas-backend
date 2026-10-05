@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Para um feed que recebe posts novos o tempo todo, qual paginação é mais estável?",
+      "o": [
+        "Offset (?page=3)",
+        "Cursor (?after=id)",
+        "Sem paginação",
+        "Carregar tudo de uma vez"
+      ],
+      "a": 1,
+      "w": "Com offset, itens novos deslocam as páginas e causam repetidos ou pulados. O cursor pede 'o que vem depois deste item', que é estável e eficiente.",
+      "t": "fixacao",
+      "h": "O que acontece com o offset quando entra um item novo no topo?"
+    },
+    {
+      "q": "Qual URL segue melhor o desenho REST para listar os posts de um usuário?",
+      "o": [
+        "GET /listarPostsDoUsuario?id=7",
+        "GET /users/7/posts",
+        "POST /users/7/getPosts",
+        "GET /posts/doUsuario/7/lista"
+      ],
+      "a": 1,
+      "w": "Substantivos no plural, hierarquia de recursos e o verbo HTTP expressando a ação.",
+      "t": "fixacao",
+      "h": "Recurso filho aninhado ao pai."
+    },
+    {
+      "q": "Para que serve o cabeçalho Idempotency-Key num POST de pagamento?",
+      "o": [
+        "Criptografar o corpo",
+        "Se a mesma chave chegar de novo, devolver o resultado anterior sem repetir a ação",
+        "Aumentar a velocidade",
+        "Autenticar o usuário"
+      ],
+      "a": 1,
+      "w": "Impede cobrar duas vezes se o cliente reenviar a requisição.",
+      "t": "fixacao",
+      "h": "O que o servidor faz ao ver a mesma chave duas vezes?"
+    },
+    {
+      "q": "Qual é a limitação do REST em telas ricas?",
+      "o": [
+        "Não usa HTTP",
+        "Podem ser necessárias várias chamadas e vêm campos que a tela não usa",
+        "Não aceita JSON",
+        "Não tem verbos"
+      ],
+      "a": 1,
+      "w": "É o over-fetching e o under-fetching que motivam o GraphQL.",
+      "t": "fixacao",
+      "h": "O que motiva o GraphQL?"
+    }
+  ]
+}

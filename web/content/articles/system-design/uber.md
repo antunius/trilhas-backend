@@ -5,8 +5,9 @@ title: "Exercício: Projetar um Serviço de Transporte (estilo Uber)"
 navTitle: Serviço de Transporte
 summary: Projete um sistema de transporte sob demanda que conecta passageiros a motoristas próximos, calcula uma rota e um preço estimado, e acompanha a corrida em tempo real.
 level: avancado
-order: 27
+order: 120
 section: exercicios-praticos
+group: "Localização e entrega"
 ---
 
 ## Objetivos de aprendizagem

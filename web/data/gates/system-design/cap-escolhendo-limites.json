@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Com 3 réplicas, escritas esperam W = 2 e leituras consultam R = 2. Por que isso dá leituras fortemente consistentes?",
+      "o": [
+        "Porque 2 + 2 > 3, então toda leitura cruza com pelo menos uma réplica que viu a escrita",
+        "Porque 2 é sempre maioria",
+        "Porque as réplicas nunca falham",
+        "Porque o teorema CAP não se aplica"
+      ],
+      "a": 0,
+      "w": "W + R > N garante que o conjunto de leitura e o de escrita se sobrepõem em ao menos uma réplica, que tem o valor mais recente.",
+      "t": "fixacao",
+      "h": "Some W e R e compare com N."
+    },
+    {
+      "q": "Qual sistema tende a escolher disponibilidade (AP) em vez de consistência durante uma partição?",
+      "o": [
+        "Transferência bancária",
+        "Contador de curtidas de uma rede social",
+        "Reserva do último assento de um voo",
+        "Débito de saldo em conta"
+      ],
+      "a": 1,
+      "w": "Mostrar um contador de curtidas levemente desatualizado custa pouco. Nos outros casos, um dado velho causa dano real (gasto duplo, venda dupla).",
+      "t": "fixacao",
+      "h": "Qual deles tolera um valor velho por alguns segundos?"
+    },
+    {
+      "q": "O que o modelo PACELC acrescenta ao CAP?",
+      "o": [
+        "Mostra que, mesmo sem partição, há um trade-off entre latência e consistência",
+        "Elimina a partição",
+        "Troca C por A",
+        "Remove réplicas"
+      ],
+      "a": 0,
+      "w": "Se há partição, escolha A ou C; senão, escolha entre latência e consistência.",
+      "t": "fixacao",
+      "h": "O que o CAP não descreve?"
+    },
+    {
+      "q": "Qual é um erro comum sobre o CAP?",
+      "o": [
+        "Tratá-lo como uma escolha global e permanente do sistema",
+        "Escolher por operação",
+        "Citar PACELC",
+        "Citar W + R"
+      ],
+      "a": 0,
+      "w": "Partes diferentes do mesmo sistema podem escolher diferente.",
+      "t": "fixacao",
+      "h": "O saldo e as curtidas têm a mesma necessidade?"
+    }
+  ]
+}

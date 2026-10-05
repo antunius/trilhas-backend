@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowLeft, ChevronDown } from "lucide-react";
 import type { ArticleMeta, Category, CourseSection } from "@/types/content";
 import { articleHref } from "@/lib/paths";
-import { loadProgress } from "@/lib/progress";
+import { groupByUnit } from "@/lib/units";
+import { useVisited } from "@/lib/use-visited";
 import { cn } from "@/lib/utils";
 
 function sectionArticles(
@@ -55,10 +56,12 @@ export function CourseOutline({
     setOpen((prev) => ({ ...prev, [activeSectionId]: true }));
   }, [activeSectionId]);
 
-  const [visited, setVisited] = useState<Set<string>>(new Set());
-  useEffect(() => {
-    setVisited(new Set(loadProgress().visited || []));
-  }, [activeSlug]);
+  const visited = useVisited();
+
+  const [openUnits, setOpenUnits] = useState<Record<string, boolean>>({});
+  function toggleUnit(key: string, current: boolean) {
+    setOpenUnits((prev) => ({ ...prev, [key]: !current }));
+  }
 
   function toggle(id: string) {
     setOpen((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -110,6 +113,11 @@ export function CourseOutline({
                   )}
                 />
                 <span className="flex-1">{sec.name}</span>
+                {!empty ? (
+                  <span className="text-[10px] font-mono text-muted-foreground/80">
+                    {items.filter((a) => visited.has(articleHref(a))).length}/{items.length}
+                  </span>
+                ) : null}
                 {empty ? (
                   <span className="text-[10px] uppercase tracking-wide text-muted-foreground/70">
                     Soon
@@ -124,38 +132,65 @@ export function CourseOutline({
                       Em breve
                     </li>
                   ) : (
-                    items.map((a, i) => {
-                      const active = a.slug === activeSlug;
-                      const done = visited.has(articleHref(a));
-                      const newGroup = a.group && a.group !== items[i - 1]?.group;
+                    groupByUnit(items).map((unit, ui) => {
+                      const key = `${sec.id}:${ui}`;
+                      const hasActiveUnit = unit.items.some((a) => a.slug === activeSlug);
+                      const unitOpen = !unit.name || (openUnits[key] ?? hasActiveUnit);
+                      const read = unit.items.filter((a) => visited.has(articleHref(a))).length;
                       return (
-                        <li key={a.slug}>
-                          {newGroup ? (
-                            <p className="mt-4 mb-1 pl-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/80">
-                              {a.group}
-                            </p>
+                        <li key={key}>
+                          {unit.name ? (
+                            <button
+                              type="button"
+                              onClick={() => toggleUnit(key, unitOpen)}
+                              aria-expanded={unitOpen}
+                              className="mt-3 mb-1 flex w-full items-center gap-1.5 pl-2 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/80 hover:text-foreground"
+                            >
+                              <ChevronDown
+                                className={cn(
+                                  "w-3 h-3 shrink-0 transition-transform",
+                                  unitOpen ? "rotate-0" : "-rotate-90",
+                                )}
+                              />
+                              <span className="flex-1">{unit.name}</span>
+                              <span className="font-mono normal-case tracking-normal">
+                                {read}/{unit.items.length}
+                              </span>
+                            </button>
                           ) : null}
-                          <Link
-                            href={articleHref(a)}
-                            onClick={onNavigate}
-                            className={cn(
-                              "flex items-center gap-2 py-1.5 pl-2 -ml-px border-l-2 transition-colors leading-snug",
-                              active
-                                ? "border-primary text-primary font-medium"
-                                : "border-transparent text-muted-foreground hover:text-foreground",
-                            )}
-                          >
-                            <span
-                              aria-label={done ? "Concluído" : "Não lido"}
-                              className={cn(
-                                "h-2 w-2 shrink-0 rounded-full",
-                                done
-                                  ? "bg-green-500"
-                                  : "border border-muted-foreground/60",
-                              )}
-                            />
-                            <span>{a.navTitle || a.title}</span>
-                          </Link>
+                          {unitOpen ? (
+                            <ul className="space-y-0.5">
+                              {unit.items.map((a) => {
+                                const active = a.slug === activeSlug;
+                                const done = visited.has(articleHref(a));
+                                return (
+                                  <li key={a.slug}>
+                                    <Link
+                                      href={articleHref(a)}
+                                      onClick={onNavigate}
+                                      className={cn(
+                                        "flex items-center gap-2 py-1.5 pl-2 -ml-px border-l-2 transition-colors leading-snug",
+                                        active
+                                          ? "border-primary text-primary font-medium"
+                                          : "border-transparent text-muted-foreground hover:text-foreground",
+                                      )}
+                                    >
+                                      <span
+                                        aria-label={done ? "Concluído" : "Não lido"}
+                                        className={cn(
+                                          "h-2 w-2 shrink-0 rounded-full",
+                                          done
+                                            ? "bg-green-500"
+                                            : "border border-muted-foreground/60",
+                                        )}
+                                      />
+                                      <span>{a.navTitle || a.title}</span>
+                                    </Link>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          ) : null}
                         </li>
                       );
                     })

@@ -5,8 +5,9 @@ title: "Exercício: Projetar um Sistema de Pagamentos"
 navTitle: Sistema de Pagamentos
 summary: Projete um sistema que processa pagamentos entre usuários (ou entre um usuário e um comerciante), garantindo que cada transação seja processada exatamente uma vez, mesmo diante de falhas de rede.
 level: avancado
-order: 36
+order: 125
 section: exercicios-praticos
+group: "Transações e concorrência"
 ---
 
 ## Objetivos de aprendizagem

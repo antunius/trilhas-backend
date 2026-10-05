@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que, na prática, a escolha do teorema CAP costuma ser descrita como \"entre consistência e disponibilidade\"?",
+      "o": [
+        "Porque tolerância a partição nunca acontece em sistemas reais",
+        "Porque tolerância a partição é uma realidade inevitável em sistemas distribuídos, restando escolher entre C e A durante uma partição",
+        "Porque disponibilidade e tolerância a partição são a mesma coisa",
+        "Porque consistência é sempre a escolha correta"
+      ],
+      "a": 1,
+      "w": "Como partições de rede eventualmente ocorrem em qualquer sistema distribuído real, a decisão prática se resume a priorizar consistência ou disponibilidade durante esses eventos.",
+      "t": "fixacao",
+      "h": "Pense no que acontece com a tolerância a partição em sistemas reais."
+    },
+    {
+      "q": "Dois data centers perdem a comunicação. Um deles recebe uma leitura e responde com o dado local, que pode estar desatualizado. Que escolha o sistema fez?",
+      "o": [
+        "Consistência (CP)",
+        "Disponibilidade (AP)",
+        "Nenhuma, é impossível",
+        "Tolerância a partição foi abandonada"
+      ],
+      "a": 1,
+      "w": "Responder sempre, mesmo com dado possivelmente velho, é priorizar a disponibilidade (AP). Recusar a leitura seria priorizar a consistência (CP).",
+      "t": "fixacao",
+      "h": "Ele respondeu ou recusou?"
+    },
+    {
+      "q": "Um sistema CAP \"CA\" é possível em computação distribuída?",
+      "o": [
+        "Sim, é o mais comum",
+        "Não: sem tolerância a partição ele só existe em uma máquina só",
+        "Sim, com réplicas",
+        "Sim, com consenso"
+      ],
+      "a": 1,
+      "w": "Em sistemas distribuídos reais, partições eventualmente acontecem.",
+      "t": "fixacao",
+      "h": "Quem tolera partição?"
+    },
+    {
+      "q": "Em que situação o CAP obriga a escolher?",
+      "o": [
+        "O tempo todo",
+        "Durante uma partição de rede",
+        "Quando o disco enche",
+        "Quando há muitas leituras"
+      ],
+      "a": 1,
+      "w": "É a parte menos frequente do tempo, mas a que define o comportamento do sistema.",
+      "t": "fixacao",
+      "h": "Quando as máquinas não se falam."
+    }
+  ]
+}

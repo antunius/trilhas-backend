@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Quando uma etapa falha depois que etapas anteriores já produziram efeitos persistentes, a compensação desfaz esses efeitos, mantendo o sistema em um estado consistente.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "O que fazer quando um passo falha depois de os anteriores já terem sido feitos?"
     }
   ]
 }

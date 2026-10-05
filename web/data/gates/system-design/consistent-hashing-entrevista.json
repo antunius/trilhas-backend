@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Consistent hashing resolve hot keys?",
+      "o": [
+        "Sim, totalmente",
+        "Não: uma chave muito popular continua num servidor só",
+        "Sim, com nós virtuais",
+        "Só em clusters pares"
+      ],
+      "a": 1,
+      "w": "Os nós virtuais equilibram a distribuição das chaves, mas não o tráfego de uma chave específica.",
+      "t": "fixacao",
+      "h": "Quantos servidores guardam uma chave?"
+    },
+    {
+      "q": "Como replicar dados com consistent hashing?",
+      "o": [
+        "Guardando cada chave nos N servidores seguintes do anel",
+        "Duplicando o anel",
+        "Usando dois hashes",
+        "Não é possível"
+      ],
+      "a": 0,
+      "w": "É como Cassandra e Dynamo fazem.",
+      "t": "fixacao",
+      "h": "Quem são os \"vizinhos\"?"
+    },
+    {
+      "q": "Qual é um erro comum?",
+      "o": [
+        "Confundir consistent hashing com sharding por hash simples",
+        "Mencionar o anel",
+        "Mencionar vnodes",
+        "Calcular fração"
+      ],
+      "a": 0,
+      "w": "Hash por módulo é o problema, e consistent hashing é o que o resolve.",
+      "t": "fixacao",
+      "h": "Qual dos dois sofre ao crescer?"
+    },
+    {
+      "q": "O que acontece quando um servidor cai com vnodes?",
+      "o": [
+        "Todas as suas chaves vão para um só vizinho",
+        "Suas chaves se espalham entre vários servidores",
+        "Todas as chaves se movem",
+        "Nada"
+      ],
+      "a": 1,
+      "w": "Sem vnodes, um único vizinho herda tudo.",
+      "t": "fixacao",
+      "h": "Quantos pontos o servidor tinha no anel?"
+    }
+  ]
+}

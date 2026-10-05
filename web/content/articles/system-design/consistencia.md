@@ -5,8 +5,9 @@ title: "Consistência: Forte, Eventual e Variações"
 navTitle: Consistência
 summary: Diferenciar consistência forte de consistência eventual
 level: intermediario
-order: 21
+order: 52
 section: conceitos-centrais
+group: "Fundamentos de sistemas distribuídos"
 ---
 
 ## Objetivos de aprendizagem

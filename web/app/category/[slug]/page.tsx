@@ -7,6 +7,7 @@ import {
   listArticles,
 } from "@/lib/articles";
 import { quizCountForCategory } from "@/lib/category-quiz";
+import { listBankSlugs, type GateTrack } from "@/lib/load-gate-bank";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -37,6 +38,7 @@ export default async function CategoryPage({ params }: Props) {
       category={category}
       articles={articles}
       quizCount={quizCount}
+      bankSlugs={listBankSlugs(slug as GateTrack)}
     />
   );
 }

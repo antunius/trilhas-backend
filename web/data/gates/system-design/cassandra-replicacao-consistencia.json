@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Com fator de replicação 3, por que escrita com nível 2 e leitura com nível 2 garante consistência forte, mas nível 1 e nível 1 não?",
+      "o": [
+        "Porque 2 + 2 = 4 > 3 garante sobreposição com a escrita mais recente, e 1 + 1 = 2 não",
+        "Porque 2 é par",
+        "Porque nível 1 não existe",
+        "Porque o fator mudaria"
+      ],
+      "a": 0,
+      "w": "Se W + R > N, toda leitura consulta ao menos uma réplica que recebeu a escrita mais recente.",
+      "t": "fixacao",
+      "h": "Compare a soma com o fator de replicação."
+    },
+    {
+      "q": "Em quais operações é possível ajustar o nível de consistência?",
+      "o": [
+        "Só na criação do cluster",
+        "Por operação, de escrita e de leitura",
+        "Só na leitura",
+        "Nunca"
+      ],
+      "a": 1,
+      "w": "Ao contrário de uma escolha global, esses bancos permitem ajustar a cada consulta.",
+      "t": "fixacao",
+      "h": "É global ou por operação?"
+    },
+    {
+      "q": "Com fator 3, escrita em ONE e leitura em QUORUM (2). W + R é maior que N?",
+      "o": [
+        "Sim, 3 > 3",
+        "Não, 3 não é maior que 3",
+        "Sim, 4 > 3",
+        "Depende do disco"
+      ],
+      "a": 1,
+      "w": "1 + 2 = 3, que é igual a N, não maior. Não há garantia de sobreposição.",
+      "t": "fixacao",
+      "h": "Some 1 e 2 e compare com 3."
+    },
+    {
+      "q": "Por que um chat tolera nível de escrita baixo, mas um saldo bancário não?",
+      "o": [
+        "Chat usa outro banco",
+        "Uma inconsistência breve no histórico custa pouco, e no saldo custa dinheiro",
+        "Chat não precisa de réplicas",
+        "O saldo escreve mais rápido"
+      ],
+      "a": 1,
+      "w": "Ajuste o nível pelo custo de ler um dado desatualizado.",
+      "t": "fixacao",
+      "h": "O que custa um dado velho em cada caso?"
+    }
+  ]
+}

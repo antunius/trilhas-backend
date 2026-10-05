@@ -6,7 +6,9 @@ import {
   getCategory,
   listArticles,
   articleNeighbors,
+  articlePosition,
 } from "@/lib/articles";
+import { loadGateBank, type GateTrack } from "@/lib/load-gate-bank";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string; article: string }> };
@@ -37,6 +39,8 @@ export default async function ArticlePage({ params }: Props) {
   if (!category || !article) notFound();
   const { prev, next } = articleNeighbors(slug, articleSlug);
   const siblings = listArticles(slug);
+  const position = articlePosition(slug, articleSlug);
+  const questions = loadGateBank(slug as GateTrack, articleSlug);
   return (
     <ArticleView
       category={category}
@@ -44,6 +48,8 @@ export default async function ArticlePage({ params }: Props) {
       siblings={siblings}
       prev={prev}
       next={next}
+      position={position ?? undefined}
+      questions={questions}
     />
   );
 }

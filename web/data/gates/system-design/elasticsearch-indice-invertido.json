@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Num índice invertido, a busca por \"engenheiro dados\" consulta as listas de cada termo e faz o quê com elas?",
+      "o": [
+        "Concatena as listas",
+        "Calcula a interseção das listas de documentos",
+        "Escaneia o texto de todos os documentos",
+        "Descarta a lista menor"
+      ],
+      "a": 1,
+      "w": "Cada termo aponta para os documentos em que aparece. A interseção devolve os que contêm os dois, sem ler o texto completo.",
+      "t": "fixacao",
+      "h": "O que significa \"documentos que têm os dois termos\"?"
+    },
+    {
+      "q": "Qual a diferença estrutural entre um índice por linha e um índice invertido?",
+      "o": [
+        "O invertido mapeia cada termo à lista de documentos onde ele aparece",
+        "O invertido guarda o documento inteiro duas vezes",
+        "O invertido não usa disco",
+        "Não há diferença"
+      ],
+      "a": 0,
+      "w": "Em vez de guardar o texto por documento, ele guarda, por palavra, onde ela aparece.",
+      "t": "fixacao",
+      "h": "Qual direção do mapeamento muda?"
+    },
+    {
+      "q": "Por que um analyzer é necessário antes de indexar o texto?",
+      "o": [
+        "Para criptografar os documentos",
+        "Para tokenizar e normalizar (minúsculas, acentos, stemming), de modo que \"ENGENHEIRO\" encontre \"engenheiro\"",
+        "Para reduzir o número de shards",
+        "Para ordenar por data"
+      ],
+      "a": 1,
+      "w": "Sem o pipeline de análise, a comparação seria literal, caractere por caractere.",
+      "t": "fixacao",
+      "h": "Pense nas diferenças entre maiúsculas e minúsculas."
+    },
+    {
+      "q": "O que faz o stemming?",
+      "o": [
+        "Reduz palavras flexionadas à mesma raiz, como \"engenheiros\" e \"engenheiro\"",
+        "Apaga palavras comuns",
+        "Traduz o texto",
+        "Cria réplicas"
+      ],
+      "a": 0,
+      "w": "Com a raiz comum, a busca por uma forma encontra as outras.",
+      "t": "fixacao",
+      "h": "Duas formas da mesma palavra devem se encontrar."
+    },
+    {
+      "q": "Em que o Elasticsearch se apoia por baixo?",
+      "o": [
+        "No PostgreSQL",
+        "Na biblioteca Lucene",
+        "No Kafka",
+        "No Redis"
+      ],
+      "a": 1,
+      "w": "O índice invertido e boa parte do motor de busca vêm do Lucene.",
+      "t": "fixacao",
+      "h": "É uma biblioteca de busca em Java."
+    }
+  ]
+}

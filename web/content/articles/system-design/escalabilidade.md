@@ -5,8 +5,9 @@ title: "Escalabilidade: Vertical vs. Horizontal"
 navTitle: Escalabilidade
 summary: Diferenciar escalabilidade vertical e horizontal
 level: intermediario
-order: 19
+order: 50
 section: conceitos-centrais
+group: "Fundamentos de sistemas distribuídos"
 ---
 
 ## Objetivos de aprendizagem

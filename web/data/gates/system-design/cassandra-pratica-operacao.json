@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual a vantagem dos vnodes ao adicionar um nó ao cluster Cassandra?",
+      "o": [
+        "O novo nó fica sozinho",
+        "O trabalho de redistribuição se espalha por quase todos os nós, com impacto mais uniforme",
+        "Os dados são apagados",
+        "O fator de replicação aumenta"
+      ],
+      "a": 1,
+      "w": "Cada servidor tem várias centenas de pequenos intervalos, então cada um cede pequenos pedaços.",
+      "t": "fixacao",
+      "h": "Quantos nós participam da redistribuição?"
+    },
+    {
+      "q": "Em que momento o DynamoDB divide uma partição automaticamente?",
+      "o": [
+        "Nunca",
+        "Quando ela cresce além dos limites de tamanho (10 GB) ou de throughput",
+        "A cada hora",
+        "Quando o cliente pede"
+      ],
+      "a": 1,
+      "w": "É um partition split transparente para a aplicação.",
+      "t": "fixacao",
+      "h": "Há limites de tamanho e de throughput."
+    },
+    {
+      "q": "Como o Cassandra trata um ALTER TABLE que adiciona uma coluna?",
+      "o": [
+        "Exige parar o cluster",
+        "Só registra a coluna nova, que é null para as linhas antigas",
+        "Reescreve todos os dados",
+        "Apaga a tabela"
+      ],
+      "a": 1,
+      "w": "Não exige downtime nem migração dos dados existentes.",
+      "t": "fixacao",
+      "h": "Quais valores as linhas antigas têm?"
+    },
+    {
+      "q": "Por que usar PreparedStatement no cliente do Cassandra?",
+      "o": [
+        "Evita reparsing da query e parametriza com segurança, evitando injection",
+        "Aumenta o fator de replicação",
+        "Desliga o commit log",
+        "Permite joins"
+      ],
+      "a": 0,
+      "w": "É a forma correta de parametrizar consultas.",
+      "t": "fixacao",
+      "h": "O que se evita ao preparar a query uma vez?"
+    }
+  ]
+}

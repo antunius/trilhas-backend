@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "O valor está em usar números aproximados para embasar decisões (ex: precisa de cache? precisa de sharding?), não em precisão matemática.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "O número exato importa mais que a ordem de grandeza?"
     }
   ]
 }

@@ -5,8 +5,9 @@ title: "Exercício: Projetar um Web Crawler Distribuído"
 navTitle: Web Crawler Distribuído
 summary: Projete um sistema que navega pela web automaticamente, baixando e indexando páginas, seguindo links encontrados em cada página visitada.
 level: avancado
-order: 32
+order: 128
 section: exercicios-praticos
+group: "Dados em larga escala"
 ---
 
 ## Objetivos de aprendizagem

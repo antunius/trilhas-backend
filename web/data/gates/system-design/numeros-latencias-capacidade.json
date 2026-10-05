@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual é, em geral, a operação mais lenta entre as listadas nesta aula?",
+      "o": [
+        "Acesso à memória RAM",
+        "Acesso a um SSD",
+        "Chamada de rede dentro do mesmo data center",
+        "Chamada de rede entre regiões geográficas diferentes"
+      ],
+      "a": 3,
+      "w": "Chamadas de rede entre regiões geográficas distintas envolvem distância física real e múltiplos saltos de rede, tornando-as a operação mais lenta dentro dessa hierarquia.",
+      "t": "fixacao",
+      "h": "Compare memória, SSD, rede local e rede entre continentes."
+    },
+    {
+      "q": "Qual a ordem de grandeza da latência de ida e volta entre continentes?",
+      "o": [
+        "~100 ns",
+        "~0,5 ms",
+        "~100 a 150 ms",
+        "~10 s"
+      ],
+      "a": 2,
+      "w": "É a operação mais lenta da hierarquia.",
+      "t": "fixacao",
+      "h": "Dezenas a centenas de milissegundos."
+    },
+    {
+      "q": "Aproximadamente quantas operações por segundo sustenta uma instância de Redis?",
+      "o": [
+        "~100",
+        "~1.000",
+        "~100 mil",
+        "~100 milhões"
+      ],
+      "a": 2,
+      "w": "Por isso o cache absorve leituras que um banco não aguentaria.",
+      "t": "fixacao",
+      "h": "Memória e uma única thread."
+    },
+    {
+      "q": "Qual componente tem menor capacidade por instância?",
+      "o": [
+        "Cache em memória",
+        "Servidor de aplicação (~1.000/s)",
+        "Redis",
+        "SSD"
+      ],
+      "a": 1,
+      "w": "Por isso são necessárias dezenas de servidores de aplicação para o mesmo tráfego.",
+      "t": "fixacao",
+      "h": "Compare com 100 mil/s do Redis."
+    }
+  ]
+}

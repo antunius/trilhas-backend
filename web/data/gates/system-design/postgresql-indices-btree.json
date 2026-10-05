@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que um índice B-tree comum em nome_restaurante não acelera uma consulta que filtra por UPPER(nome_restaurante)?",
+      "o": [
+        "Porque o índice guarda os valores originais, não os transformados pela função",
+        "Porque UPPER não existe no PostgreSQL",
+        "Porque o índice só funciona com números",
+        "Porque o B-tree é pequeno demais"
+      ],
+      "a": 0,
+      "w": "O banco teria de aplicar UPPER a cada linha antes de comparar. A solução é um índice de expressão.",
+      "t": "fixacao",
+      "h": "O que o índice guarda?"
+    },
+    {
+      "q": "Quantos níveis tem, aproximadamente, um B-tree para 10 milhões de linhas?",
+      "o": [
+        "23",
+        "3 a 4",
+        "1.000",
+        "10 milhões"
+      ],
+      "a": 1,
+      "w": "Cada nó guarda centenas de chaves, então a árvore é larga e rasa: 3 a 4 leituras de página.",
+      "t": "fixacao",
+      "h": "Pense em nós com centenas de filhos."
+    },
+    {
+      "q": "Qual o custo permanente de cada índice adicional?",
+      "o": [
+        "Nenhum",
+        "INSERT, UPDATE e DELETE ficam mais lentos, e o índice ocupa espaço",
+        "As leituras ficam mais lentas",
+        "O WAL é desligado"
+      ],
+      "a": 1,
+      "w": "O índice também precisa ser atualizado a cada escrita.",
+      "t": "fixacao",
+      "h": "Quem mais precisa ser atualizado numa escrita?"
+    },
+    {
+      "q": "Como confirmar que uma consulta usa o índice?",
+      "o": [
+        "Olhando o tamanho do disco",
+        "Com EXPLAIN ANALYZE, procurando Index Scan em vez de Seq Scan",
+        "Reiniciando o banco",
+        "Contando as conexões"
+      ],
+      "a": 1,
+      "w": "O plano de execução mostra se houve varredura sequencial ou uso de índice.",
+      "t": "fixacao",
+      "h": "Qual comando mostra o plano?"
+    }
+  ]
+}

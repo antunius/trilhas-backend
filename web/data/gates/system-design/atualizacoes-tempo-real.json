@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "SSE foi desenhado justamente para comunicação unidirecional do servidor para o cliente, sendo mais simples que WebSockets quando não há necessidade do cliente enviar dados pela mesma via.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "O cliente só recebe; ele não precisa enviar nada de volta pelo mesmo canal."
     }
   ]
 }

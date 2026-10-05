@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Como confirmar que uma consulta usa o índice?",
+      "o": [
+        "Olhando o tamanho do disco",
+        "Com EXPLAIN ANALYZE, procurando Index Scan em vez de Seq Scan",
+        "Reiniciando o banco",
+        "Contando conexões"
+      ],
+      "a": 1,
+      "w": "O plano de execução mostra se houve varredura sequencial ou uso de índice.",
+      "t": "fixacao",
+      "h": "Qual comando mostra o plano?"
+    },
+    {
+      "q": "Por que índices em produção entram por migração versionada, e não só pela anotação do JPA?",
+      "o": [
+        "Para registrar e aplicar a mudança de forma controlada em todos os ambientes",
+        "Para o índice ficar maior",
+        "Para evitar o JPA",
+        "Para desligar o WAL"
+      ],
+      "a": 0,
+      "w": "Ferramentas como Flyway e Liquibase versionam o schema.",
+      "t": "fixacao",
+      "h": "Quem controla o histórico de mudanças do banco?"
+    },
+    {
+      "q": "Seu sistema grava 50 mil eventos por segundo. Você indexaria a tabela de eventos?",
+      "o": [
+        "Sim, todas as colunas",
+        "Só o que as consultas exigem, porque cada índice multiplica o custo da escrita",
+        "Nunca indexar",
+        "Indexar só booleanos"
+      ],
+      "a": 1,
+      "w": "Em sistemas dominados por escrita, cada índice a mais pesa.",
+      "t": "fixacao",
+      "h": "Quantas gravações faz um INSERT com 4 índices?"
+    },
+    {
+      "q": "A consulta continua lenta mesmo com índice. O que verificar primeiro?",
+      "o": [
+        "A cor do terminal",
+        "O plano de execução: seletividade, função aplicada à coluna, estatísticas desatualizadas ou tipo incompatível",
+        "O número de CPUs do desenvolvedor",
+        "O tamanho da fonte"
+      ],
+      "a": 1,
+      "w": "Existem várias causas para um índice não ser usado.",
+      "t": "fixacao",
+      "h": "O que o EXPLAIN revela?"
+    }
+  ]
+}

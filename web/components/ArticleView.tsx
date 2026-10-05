@@ -6,18 +6,24 @@ import { extractToc } from "@/lib/toc";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { MarkArticleRead } from "@/components/MarkArticleRead";
 import { ArticleToc } from "@/components/ArticleToc";
+import { LessonPractice } from "@/components/LessonPractice";
+import type { GateQuestion } from "@/lib/gates";
 
 export function ArticleView({
   category,
   article,
   prev,
   next,
+  position,
+  questions = [],
 }: {
   category: Category;
   article: ArticleDoc;
   siblings: ArticleMeta[];
   prev?: ArticleMeta;
   next?: ArticleMeta;
+  position?: { n: number; total: number };
+  questions?: GateQuestion[];
 }) {
   const toc = extractToc(article.body);
 
@@ -45,7 +51,13 @@ export function ArticleView({
                     ?.name || article.section
                 }`
               : ""}
+            {article.group ? ` · ${article.group}` : ""}
           </p>
+          {position ? (
+            <p className="text-xs font-mono text-muted-foreground mb-3">
+              Lição {position.n} de {position.total}
+            </p>
+          ) : null}
           <div className="inline-block rounded-xl border border-border/60 bg-background/90 backdrop-blur px-5 py-4 shadow-sm max-w-2xl">
             <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
               {article.title}
@@ -72,6 +84,12 @@ export function ArticleView({
             ) : null}
 
             <MarkdownRenderer content={article.body} headings={toc} />
+
+            <LessonPractice
+              key={article.slug}
+              path={`/category/${category.slug}/${article.slug}`}
+              questions={questions}
+            />
 
             <nav
               className="mt-14 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-2 gap-3"

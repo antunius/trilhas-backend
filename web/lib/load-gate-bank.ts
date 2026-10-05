@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { GateQuestion } from "./gates";
 
@@ -39,4 +39,17 @@ export function loadCourseBankManifest(categorySlug: string): string[] {
     string[]
   >;
   return data[categorySlug] ?? [];
+}
+
+/** Slugs das lições que têm banco de questões em data/gates/<track>/. */
+export function listBankSlugs(track: GateTrack): string[] {
+  for (const root of dataRoots()) {
+    const dir = join(root, "gates", track);
+    if (existsSync(dir)) {
+      return readdirSync(dir)
+        .filter((f) => f.endsWith(".json"))
+        .map((f) => f.replace(/\.json$/, ""));
+    }
+  }
+  return [];
 }

@@ -6,6 +6,7 @@ summary: Identificar as principais entidades do sistema e seus relacionamentos
 level: intermediario
 order: 5
 section: framework-entrega
+group: "Planejar"
 ---
 
 ## Objetivos de aprendizagem

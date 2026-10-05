@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Mesmo com hardware cada vez mais potente, existe um limite físico de capacidade em uma única máquina, além do risco de ponto único de falha.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Uma máquina sempre pode ficar maior?"
     }
   ]
 }

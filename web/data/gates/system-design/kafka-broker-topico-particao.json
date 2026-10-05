@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Qual a diferença central entre um \"tópico\" e uma \"partição\" no Kafka?",
+      "o": [
+        "São sinônimos",
+        "O tópico é o canal lógico, e a partição é cada log sequencial independente dentro dele",
+        "A partição contém vários tópicos",
+        "O tópico é físico, e a partição é lógica"
+      ],
+      "a": 1,
+      "w": "Um tópico se divide em partições, e cada partição é um log próprio, possivelmente em um broker diferente.",
+      "t": "fixacao",
+      "h": "Um deles contém o outro."
+    },
+    {
+      "q": "O que é um broker?",
+      "o": [
+        "Um serviço que produz eventos",
+        "Uma máquina (ou processo) do cluster que armazena parte dos dados e atende leituras e escritas",
+        "Um grupo de consumidores",
+        "Um tipo de mensagem"
+      ],
+      "a": 1,
+      "w": "Um cluster Kafka é formado por vários brokers, cada um guardando uma parte dos dados.",
+      "t": "fixacao",
+      "h": "Pense nele como um servidor do cluster."
+    },
+    {
+      "q": "Um tópico tem 8 partições. O que isso significa?",
+      "o": [
+        "Existem 8 logs sequenciais independentes, que podem estar em brokers diferentes",
+        "O tópico tem 8 consumidores",
+        "Cada evento é copiado 8 vezes",
+        "O tópico só aceita 8 eventos"
+      ],
+      "a": 0,
+      "w": "Cada partição é um log próprio. Dividir o tópico permite paralelismo e armazenar mais do que uma máquina comporta.",
+      "t": "fixacao",
+      "h": "Cada partição é um arquivo de log."
+    },
+    {
+      "q": "Para que servem as réplicas de uma partição?",
+      "o": [
+        "Para acelerar o producer",
+        "Para tolerância a falhas: se o broker da líder cair, outra réplica assume",
+        "Para ordenar os eventos entre partições",
+        "Para apagar eventos antigos"
+      ],
+      "a": 1,
+      "w": "As réplicas copiam a partição em outros brokers. A líder atende as requisições, e uma réplica assume se ela falhar.",
+      "t": "fixacao",
+      "h": "O que garante que a partição sobreviva à queda de um broker?"
+    },
+    {
+      "q": "Por que dividir um tópico em partições?",
+      "o": [
+        "Para criptografar os dados",
+        "Para permitir paralelismo e um tópico maior que uma única máquina",
+        "Para impedir que os eventos sejam relidos",
+        "Para garantir ordem global"
+      ],
+      "a": 1,
+      "w": "Partições diferentes são processadas por consumidores diferentes ao mesmo tempo e vivem em brokers diferentes.",
+      "t": "fixacao",
+      "h": "Há duas razões: velocidade e tamanho."
+    }
+  ]
+}

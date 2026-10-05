@@ -5,8 +5,9 @@ title: "Exercício: Projetar um Agregador de Cliques em Anúncios"
 navTitle: Agregador de Cliques em Anúncios
 summary: "Projete um sistema que recebe um volume altíssimo de eventos de clique em anúncios, e produz métricas agregadas (ex: cliques por anúncio, por minuto) quase em tempo real."
 level: avancado
-order: 37
+order: 129
 section: exercicios-praticos
+group: "Dados em larga escala"
 ---
 
 ## Objetivos de aprendizagem

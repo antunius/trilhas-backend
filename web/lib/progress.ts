@@ -2,11 +2,13 @@ import { createClient } from "@/lib/supabase/client";
 import categoriesJson from "@/content/categories.json";
 import articlesIndex from "@/content/articles/index.json";
 import type { ArticleMeta, Category } from "@/types/content";
+import { emptyPractice, type PracticeState } from "@/lib/practice";
 
 const CATEGORIES = categoriesJson as Category[];
 const ARTICLES = articlesIndex as ArticleMeta[];
 
-export type GateRecord = { passed: true; at: number };
+/** Prática de uma lição (campo `gates`, indexado pelo caminho da lição); `passed` vem de registros antigos. */
+export type GateRecord = { passed?: true; at: number } & Partial<PracticeState>;
 
 export type SimuladorState = { a: Record<string, number>; i: number };
 
@@ -151,6 +153,59 @@ export function markCategoryQuiz(
   const pct = total > 0 ? Math.round((score / total) * 100) : 0;
   state.quiz = { ...(state.quiz || {}), [`vm:${categorySlug}`]: pct };
   saveProgress(state);
+}
+
+export function getPractice(path: string): PracticeState {
+  const r = loadProgress().gates?.[path];
+  return { ...emptyPractice(), ...(r ?? {}) } as PracticeState;
+}
+
+export function savePractice(path: string, practice: PracticeState) {
+  if (!hydrated) return;
+  const state = loadProgress();
+  state.gates = { ...(state.gates || {}), [path]: { at: Date.now(), ...practice } };
+  saveProgress(state);
+}
+
+export type PracticeStats = {
+  lessonsDone: number;
+  lessonsTotal: number;
+  answered: number;
+  accuracyPct: number;
+  toReview: number;
+};
+
+/**
+ * Painel do curso. Uma lição com banco conta como concluída ao atingir a meta de acertos;
+ * sem banco, ao ser lida.
+ */
+export function getPracticeStats(
+  categorySlug: string,
+  bankSlugs: string[],
+): PracticeStats {
+  const state = loadProgress();
+  const banks = new Set(bankSlugs);
+  const lessons = ARTICLES.filter((a) => a.categorySlug === categorySlug);
+  let lessonsDone = 0;
+  let answered = 0;
+  let correct = 0;
+  let toReview = 0;
+  for (const a of lessons) {
+    const path = articlePath(a);
+    const p = state.gates?.[path];
+    answered += p?.answered ?? 0;
+    correct += p?.correct ?? 0;
+    toReview += p?.wrong?.length ?? 0;
+    const done = banks.has(a.slug) ? !!p?.done : state.visited.includes(path);
+    if (done) lessonsDone += 1;
+  }
+  return {
+    lessonsDone,
+    lessonsTotal: lessons.length,
+    answered,
+    accuracyPct: answered ? Math.round((correct / answered) * 100) : 0,
+    toReview,
+  };
 }
 
 export function categoryQuizPct(categorySlug: string): number {

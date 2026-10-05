@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Um consumidor confirma (ack) a mensagem DEPOIS de processá-la e cai antes do ack. O que acontece?",
+      "o": [
+        "A mensagem se perde",
+        "A mensagem é reentregue e pode ser processada duas vezes",
+        "A fila para de funcionar",
+        "A mensagem é processada exatamente uma vez"
+      ],
+      "a": 1,
+      "w": "É a semântica at-least-once: sem ack, a fila reentrega. Por isso o consumidor deve ser idempotente.",
+      "t": "fixacao",
+      "h": "O que a fila entende quando não recebe o ack?"
+    },
+    {
+      "q": "Qual o truque para tornar um consumidor idempotente?",
+      "o": [
+        "Processar mais rápido",
+        "Guardar o id da mensagem já processada e ignorar repetições",
+        "Desligar o ack",
+        "Usar menos workers"
+      ],
+      "a": 1,
+      "w": "Assim at-least-once não duplica o efeito.",
+      "t": "fixacao",
+      "h": "Como saber que a mensagem já foi tratada?"
+    },
+    {
+      "q": "Em que caso uma fila NÃO faz sentido?",
+      "o": [
+        "Codificar vídeos",
+        "Confirmar um pagamento que precisa de resposta imediata",
+        "Enviar e-mails",
+        "Gerar relatórios"
+      ],
+      "a": 1,
+      "w": "Se o fluxo exige a resposta já, torná-lo assíncrono atrapalha.",
+      "t": "fixacao",
+      "h": "O usuário espera pela confirmação?"
+    },
+    {
+      "q": "Qual a diferença entre uma fila tradicional e um log de eventos como o Kafka?",
+      "o": [
+        "A fila entrega cada mensagem a um consumidor e a apaga; o log retém e permite vários leitores independentes",
+        "São idênticos",
+        "O log não guarda nada",
+        "A fila guarda tudo para sempre"
+      ],
+      "a": 0,
+      "w": "Escolha pela natureza do dado: tarefa ou fato.",
+      "t": "fixacao",
+      "h": "O que acontece com a mensagem depois do ack?"
+    }
+  ]
+}

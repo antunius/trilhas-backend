@@ -7,6 +7,7 @@ summary: Saber quando estimativas de capacidade agregam valor à entrevista
 level: intermediario
 order: 3
 section: framework-entrega
+group: "Planejar"
 ---
 
 ## Objetivos de aprendizagem

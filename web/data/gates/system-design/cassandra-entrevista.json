@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o erro comum ao escolher a partition key?",
+      "o": [
+        "Escolher pelo padrão de consulta mais frequente",
+        "Particionar por remetente quando a consulta principal é por conversa",
+        "Usar clustering key",
+        "Definir TTL"
+      ],
+      "a": 1,
+      "w": "A chave deve corresponder ao acesso mais comum do sistema.",
+      "t": "fixacao",
+      "h": "Qual a consulta principal?"
+    },
+    {
+      "q": "Qual caso de uso combina com esses bancos?",
+      "o": [
+        "Joins entre muitas tabelas",
+        "Telemetria de IoT e séries temporais com altíssima escrita",
+        "Relatórios ad-hoc",
+        "Transações entre muitas linhas"
+      ],
+      "a": 1,
+      "w": "Altíssimo throughput de escrita e acesso previsível por chave são o ponto forte.",
+      "t": "fixacao",
+      "h": "Qual exige escrita massiva?"
+    },
+    {
+      "q": "O que significa tratar consistência como binária?",
+      "o": [
+        "Reconhecer que é ajustável por operação",
+        "Achar que só existe forte ou eventual, sem ajuste por operação",
+        "Usar W + R",
+        "Escolher o nível por consulta"
+      ],
+      "a": 1,
+      "w": "É um erro, porque nesses bancos o nível é ajustável por operação.",
+      "t": "fixacao",
+      "h": "Ela é global ou ajustável?"
+    },
+    {
+      "q": "Como detectar uma hot partition em produção?",
+      "o": [
+        "Olhando o logo",
+        "Monitorando o throughput e a latência por partition key",
+        "Reiniciando o cluster",
+        "Aumentando o TTL"
+      ],
+      "a": 1,
+      "w": "Uma partição isolada sobrecarregada aparece na distribuição de tráfego por chave.",
+      "t": "fixacao",
+      "h": "Em qual nível você enxerga a concentração?"
+    }
+  ]
+}

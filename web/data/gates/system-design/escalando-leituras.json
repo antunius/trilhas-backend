@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Começar pelas soluções mais simples e baratas (otimização e réplicas) antes de introduzir a complexidade adicional do cache demonstra raciocínio incremental, não memorização de uma solução pronta.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Qual etapa é mais barata de tentar primeiro?"
     }
   ]
 }

@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Por que não plotamos diretamente o valor de `http_server_requests_seconds_count`?",
+      "o": [
+        "Porque o Grafana não aceita counters",
+        "Porque um counter só cresce, e o útil é a velocidade de crescimento, calculada com rate",
+        "Porque o valor é sempre zero",
+        "Porque ele é um histogram"
+      ],
+      "a": 1,
+      "w": "O valor acumulado de um counter só sobe. `rate` mostra o crescimento por segundo e lida com os reinícios do contador.",
+      "t": "fixacao",
+      "h": "O que interessa saber é a velocidade, não o total acumulado."
+    },
+    {
+      "q": "Qual consulta calcula a taxa de erro de `/pedidos`?",
+      "o": [
+        "sum(rate(..._count{status=~\"5..\"}[5m])) / sum(rate(..._count[5m]))",
+        "sum(..._count{status=\"5xx\"})",
+        "histogram_quantile(0.99, ...)",
+        "deriv(..._count[5m])"
+      ],
+      "a": 0,
+      "w": "Taxa de erro é a razão entre a taxa de requisições com 5xx e a taxa total, ambas via `rate`.",
+      "t": "fixacao",
+      "h": "Erros divididos pelo total, os dois como taxa."
+    },
+    {
+      "q": "Uma consulta de p99 usa `histogram_quantile(0.99, rate(..._bucket[5m]))` e mostra um valor por instância. O que falta?",
+      "o": [
+        "sum by (le) em volta do rate",
+        "Trocar _bucket por _count",
+        "Usar increase",
+        "Remover a janela [5m]"
+      ],
+      "a": 0,
+      "w": "É preciso somar os buckets entre as instâncias mantendo o label `le`: `sum by (le) (rate(...))`.",
+      "t": "fixacao",
+      "h": "Os buckets de todas as instâncias precisam ser somados, preservando o limite de cada bucket."
+    },
+    {
+      "q": "Qual a janela mínima razoável para `rate` com `scrape_interval` de 15 segundos?",
+      "o": [
+        "15s",
+        "30s",
+        "1m",
+        "1s"
+      ],
+      "a": 2,
+      "w": "A regra prática é pelo menos 4 vezes o intervalo de scrape: 4 × 15 s = 1 minuto. Janelas menores arriscam ter poucas amostras.",
+      "t": "fixacao",
+      "h": "Quatro vezes o intervalo de coleta."
+    },
+    {
+      "q": "A fila de pagamentos cresce há 10 minutos sem parar. Em termos de RED/USE, o que isso indica?",
+      "o": [
+        "Erros no serviço de pedidos",
+        "Saturação do recurso (os consumidores não dão conta)",
+        "Queda no tráfego",
+        "Alta cardinalidade"
+      ],
+      "a": 1,
+      "w": "Uma fila que só cresce é saturação: chega mais trabalho do que é processado. É um sinal USE, aplicado a um recurso.",
+      "t": "fixacao",
+      "h": "Pense em uma fila que enche mais rápido do que esvazia."
+    }
+  ]
+}

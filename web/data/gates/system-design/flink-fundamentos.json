@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual a diferença entre tempo do evento e tempo de processamento?",
+      "o": [
+        "São sempre iguais",
+        "Tempo do evento é quando aconteceu; tempo de processamento é quando o Flink o recebeu",
+        "Tempo do evento é o horário do servidor",
+        "Tempo de processamento é o horário do usuário"
+      ],
+      "a": 1,
+      "w": "Atrasos de rede fazem os dois diferirem. Métricas corretas por janela usam o tempo do evento, daí os watermarks.",
+      "t": "fixacao",
+      "h": "Um clique pode chegar segundos depois de acontecer."
+    },
+    {
+      "q": "Para que serve o keyBy(campaignId) num job de contagem por campanha?",
+      "o": [
+        "Para ordenar os eventos por data",
+        "Para garantir que todos os eventos da mesma campanha cheguem à mesma tarefa, mantendo o estado coerente",
+        "Para criar uma janela",
+        "Para descartar duplicatas"
+      ],
+      "a": 1,
+      "w": "Sem keyBy, duas tarefas poderiam contar a mesma campanha cada uma por conta própria, e a soma sairia errada.",
+      "t": "fixacao",
+      "h": "Quem mantém a contagem de uma campanha?"
+    },
+    {
+      "q": "O que é o estado de um operador?",
+      "o": [
+        "A memória que ele guarda entre eventos, como a contagem parcial de uma janela",
+        "O estado de saúde do cluster",
+        "O tipo do evento",
+        "O nome do job"
+      ],
+      "a": 0,
+      "w": "Um operador com estado acumula (contar, somar); um sem estado olha cada evento isoladamente.",
+      "t": "fixacao",
+      "h": "O que a contagem precisa lembrar entre um clique e o seguinte?"
+    },
+    {
+      "q": "Qual a diferença entre JobManager e TaskManager?",
+      "o": [
+        "JobManager coordena e dispara checkpoints; TaskManagers executam as tarefas",
+        "São sinônimos",
+        "TaskManager coordena e JobManager executa",
+        "JobManager guarda os dados"
+      ],
+      "a": 0,
+      "w": "O JobManager distribui o trabalho e coordena. Os TaskManagers, com seus slots, executam as subtarefas.",
+      "t": "fixacao",
+      "h": "Quem manda e quem executa?"
+    }
+  ]
+}

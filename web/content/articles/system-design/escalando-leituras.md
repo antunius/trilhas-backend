@@ -5,8 +5,9 @@ title: "Padrão: Escalando Leituras"
 navTitle: Escalando Leituras
 summary: Reconhecer quando um problema é, no fundo, um problema de escala de leitura
 level: intermediario
-order: 51
+order: 109
 section: padroes-recorrentes
+group: "Escala e concorrência"
 ---
 
 ## Objetivos de aprendizagem

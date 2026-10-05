@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Quais fatores o BM25 considera, essencialmente?",
+      "o": [
+        "Apenas a data do documento",
+        "Frequência do termo, raridade do termo no conjunto e tamanho do documento",
+        "Somente o número de shards",
+        "O idioma do usuário"
+      ],
+      "a": 1,
+      "w": "Mais ocorrências, termo raro e documento curto aumentam a pontuação.",
+      "t": "fixacao",
+      "h": "São três fatores ligados ao termo e ao texto."
+    },
+    {
+      "q": "Por que uma vaga com \"engenheiro de dados\" no título aparece à frente de uma onde \"dados\" aparece uma vez em 500 palavras?",
+      "o": [
+        "Porque o título é sempre ordenado primeiro",
+        "Porque o termo é mais frequente e pesa mais num texto curto",
+        "Porque a segunda não corresponde à busca",
+        "Porque o Elasticsearch ordena por tamanho"
+      ],
+      "a": 1,
+      "w": "Ambas correspondem, mas a primeira tem o termo em maior proporção e em um texto curto.",
+      "t": "fixacao",
+      "h": "As duas \"correspondem\"; o que as separa?"
+    },
+    {
+      "q": "Um termo raro no conjunto de documentos, quando aparece, tende a:",
+      "o": [
+        "Valer menos",
+        "Valer mais, por ser mais informativo",
+        "Ser ignorado",
+        "Valer igual a um termo comum"
+      ],
+      "a": 1,
+      "w": "Um termo que quase nenhum documento tem distingue melhor os documentos que o têm.",
+      "t": "fixacao",
+      "h": "Compare \"de\" com \"kubernetes\"."
+    },
+    {
+      "q": "Como dar mais importância ao título do que à descrição numa busca?",
+      "o": [
+        "Reduzindo o número de shards",
+        "Ponderando os campos, por exemplo titulo^2",
+        "Trocando o analyzer",
+        "Usando mais réplicas"
+      ],
+      "a": 1,
+      "w": "O sufixo ^2 multiplica o peso do campo na pontuação.",
+      "t": "fixacao",
+      "h": "Existe um sufixo de peso por campo."
+    }
+  ]
+}

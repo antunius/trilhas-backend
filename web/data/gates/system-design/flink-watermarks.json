@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual é o papel de um watermark em um sistema de processamento de stream?",
+      "o": [
+        "Criptografar os eventos",
+        "Indicar até que ponto do tempo o sistema não espera mais eventos, permitindo fechar janelas",
+        "Contar eventos por segundo",
+        "Remover duplicatas"
+      ],
+      "a": 1,
+      "w": "Quando o watermark passa do fim de uma janela, ela é considerada fechada e seu resultado é emitido.",
+      "t": "fixacao",
+      "h": "Ele marca um ponto no tempo."
+    },
+    {
+      "q": "Com tolerância de 10 s, um clique de 10:00:58 chega às 10:01:05. O que acontece?",
+      "o": [
+        "É incluído na janela das 10:00",
+        "É sempre descartado",
+        "Gera um erro",
+        "Vai para a janela das 10:01"
+      ],
+      "a": 0,
+      "w": "O atraso de 7 s está dentro da margem de 10 s, então o clique ainda entra na janela do seu tempo de evento.",
+      "t": "fixacao",
+      "h": "7 é menor que 10?"
+    },
+    {
+      "q": "Por que não usar uma margem de tolerância enorme para o watermark?",
+      "o": [
+        "Porque o Flink não permite",
+        "Porque toda métrica ficaria atrasada por essa margem inteira",
+        "Porque perderia o estado",
+        "Porque criaria mais janelas"
+      ],
+      "a": 1,
+      "w": "É o trade-off: esperar mais dá resultados mais completos, mas mais tardios.",
+      "t": "fixacao",
+      "h": "O que uma margem grande custa?"
+    },
+    {
+      "q": "O que fazer com eventos atrasados demais para a margem?",
+      "o": [
+        "Nada pode ser feito",
+        "Descartar, reabrir a janela com allowedLateness ou desviar para uma saída lateral",
+        "Reiniciar o job",
+        "Apagar o checkpoint"
+      ],
+      "a": 1,
+      "w": "Depende de quão crítica é a exatidão para o caso de uso.",
+      "t": "fixacao",
+      "h": "Há mais de uma opção, não só descartar."
+    }
+  ]
+}

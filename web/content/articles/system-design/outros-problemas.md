@@ -5,8 +5,9 @@ title: Outros Problemas Clássicos (Rate Limiter, Busca, etc.)
 navTitle: Outros Problemas Clássicos
 summary: Praticar o framework em problemas variados, fora dos exercícios já detalhados
 level: avancado
-order: 26
+order: 135
 section: exercicios-praticos
+group: "Infraestrutura e ferramentas"
 ---
 
 ## Objetivos de aprendizagem

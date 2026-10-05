@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que um ensemble ZooKeeper com 5 servidores tolera a falha de até 2, mas um com 4 só tolera a falha de 1?",
+      "o": [
+        "Porque 4 é par e a maioria exige 3 de 4, sobrando só 1 falha",
+        "Porque 5 tem mais memória",
+        "Porque 4 não forma quorum",
+        "Porque o líder é sempre o quinto"
+      ],
+      "a": 0,
+      "w": "Com 5, a maioria é 3 e podem cair 2. Com 4, a maioria é 3 e pode cair só 1: o quarto servidor não ganha tolerância.",
+      "t": "fixacao",
+      "h": "Qual é a maioria de 4?"
+    },
+    {
+      "q": "Qual risco o quorum evita?",
+      "o": [
+        "Que o ZooKeeper use disco",
+        "Que uma minoria isolada aceite escritas conflitantes (split-brain)",
+        "Que haja watches demais",
+        "Que os znodes sejam grandes"
+      ],
+      "a": 1,
+      "w": "Duas minorias isoladas não conseguem formar maioria, então só um lado decide.",
+      "t": "fixacao",
+      "h": "Duas maiorias podem existir ao mesmo tempo?"
+    },
+    {
+      "q": "Por que ensembles costumam ter número ímpar de servidores?",
+      "o": [
+        "Por tradição",
+        "Pagam menos sem perder tolerância: um servidor par a mais não aumenta as falhas toleradas",
+        "Porque pares não funcionam",
+        "Porque é mais rápido"
+      ],
+      "a": 1,
+      "w": "O servidor extra de um ensemble par custa e não ajuda.",
+      "t": "fixacao",
+      "h": "Compare 4 e 5 servidores."
+    },
+    {
+      "q": "Qual NÃO é um bom uso do ZooKeeper?",
+      "o": [
+        "Eleição de líder",
+        "Armazenar grandes volumes de dados de aplicação",
+        "Coordenação de configuração",
+        "Locks distribuídos"
+      ],
+      "a": 1,
+      "w": "Ele coordena; não é um armazenamento de propósito geral.",
+      "t": "fixacao",
+      "h": "Para que ele foi pensado?"
+    }
+  ]
+}

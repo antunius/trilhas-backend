@@ -6,6 +6,7 @@ summary: Traduzir requisitos funcionais em endpoints concretos
 level: intermediario
 order: 4
 section: framework-entrega
+group: "Planejar"
 ---
 
 ## Objetivos de aprendizagem

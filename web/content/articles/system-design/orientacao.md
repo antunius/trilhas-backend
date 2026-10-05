@@ -7,6 +7,7 @@ summary: Entender o que um entrevistador de system design está avaliando de fat
 level: intermediario
 order: 1
 section: framework-entrega
+group: "Começando"
 ---
 
 ## Objetivos de aprendizagem

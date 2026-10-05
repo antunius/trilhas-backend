@@ -10,7 +10,8 @@
       ],
       "a": 0,
       "w": "Cada \"nove\" adicional reduz o tempo de indisponibilidade tolerado por uma ordem de grandeza — a diferença entre alguns dias e poucos minutos por ano, o que muda completamente os requisitos de redundância necessários.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Converta as porcentagens em minutos de queda por ano."
     }
   ]
 }

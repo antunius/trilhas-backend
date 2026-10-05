@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Para que serve a versão de um znode ao atualizar o dado?",
+      "o": [
+        "Para ordenar os znodes",
+        "Para só aceitar a atualização se a versão ainda for a esperada, evitando sobrescrever mudanças concorrentes",
+        "Para criar réplicas",
+        "Para criptografar"
+      ],
+      "a": 1,
+      "w": "É um compare-and-set: se alguém mudou antes, a atualização falha e o cliente relê.",
+      "t": "fixacao",
+      "h": "O que acontece se dois clientes atualizam ao mesmo tempo?"
+    },
+    {
+      "q": "Qual é um erro comum ao falar de ZooKeeper?",
+      "o": [
+        "Mencionar o quorum",
+        "Usá-lo como banco de dados geral",
+        "Falar de watches",
+        "Falar de eleição"
+      ],
+      "a": 1,
+      "w": "Ele coordena e guarda pouco dado; não é armazenamento de propósito geral.",
+      "t": "fixacao",
+      "h": "Para que ele não serve?"
+    },
+    {
+      "q": "Qual resposta indica nível sênior?",
+      "o": [
+        "Dizer que o ZooKeeper guarda dados",
+        "Explicar o quorum, o número ímpar e o thundering herd com exemplos",
+        "Evitar falar de falhas",
+        "Citar só o nome"
+      ],
+      "a": 1,
+      "w": "Entender como a coordenação falha e se recupera é o diferencial.",
+      "t": "fixacao",
+      "h": "Qual mostra entendimento do mecanismo?"
+    },
+    {
+      "q": "Qual dos usos reais é típico do ZooKeeper?",
+      "o": [
+        "Servir páginas web",
+        "Eleição de líder, locks distribuídos e coordenação de configuração",
+        "Armazenar imagens",
+        "Calcular recomendações"
+      ],
+      "a": 1,
+      "w": "São padrões de coordenação construídos sobre znodes e watches.",
+      "t": "fixacao",
+      "h": "O que ele coordena?"
+    }
+  ]
+}

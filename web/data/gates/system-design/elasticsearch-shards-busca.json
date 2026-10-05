@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Numa busca, o nó coordenador envia a consulta aos shards e depois combina os resultados. Como esse padrão se chama?",
+      "o": [
+        "Map-reduce de arquivos",
+        "Scatter-gather",
+        "Round robin",
+        "Leader election"
+      ],
+      "a": 1,
+      "w": "Scatter distribui a consulta para os shards, e gather junta os melhores resultados locais, ordena globalmente e devolve o topo.",
+      "t": "fixacao",
+      "h": "O nome vem de espalhar e depois reunir."
+    },
+    {
+      "q": "Para que servem as réplicas no Elasticsearch?",
+      "o": [
+        "Apenas para backup frio",
+        "Tolerância a falhas e throughput extra de leitura",
+        "Reduzir o tamanho do índice",
+        "Executar o analyzer"
+      ],
+      "a": 1,
+      "w": "Se o nó do shard primário cai, uma réplica assume, e as buscas podem ser atendidas por qualquer cópia.",
+      "t": "fixacao",
+      "h": "Duas funções: falha e leitura."
+    },
+    {
+      "q": "O que é, na prática, um shard?",
+      "o": [
+        "Um índice invertido menor e independente, parte do índice total",
+        "Um tipo de documento",
+        "Um analyzer",
+        "Uma réplica de rede"
+      ],
+      "a": 0,
+      "w": "Cada shard tem seu próprio índice invertido e pode estar em um nó diferente.",
+      "t": "fixacao",
+      "h": "O índice inteiro é dividido em quê?"
+    },
+    {
+      "q": "Por que a relevância de um documento pode variar um pouco conforme a distribuição entre shards?",
+      "o": [
+        "Porque cada shard calcula a pontuação sem conhecer a distribuição de termos nos outros",
+        "Porque as réplicas alteram o texto",
+        "Porque o coordenador sorteia os resultados",
+        "Porque o analyzer muda por shard"
+      ],
+      "a": 0,
+      "w": "A pontuação local usa estatísticas só do shard. Raramente importa na prática, mas mostra como o sistema funciona.",
+      "t": "fixacao",
+      "h": "Cada shard enxerga o índice todo?"
+    }
+  ]
+}

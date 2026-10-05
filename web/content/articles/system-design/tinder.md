@@ -5,8 +5,9 @@ title: "Exercício: Projetar um Aplicativo de Relacionamento (estilo Tinder)"
 navTitle: Aplicativo de Relacionamento
 summary: Projete um aplicativo que mostra perfis de outros usuários próximos geograficamente, permite curtir/rejeitar, e cria uma conexão (match) quando duas pessoas se curtem mutuamente.
 level: avancado
-order: 30
+order: 119
 section: exercicios-praticos
+group: "Mensagens e feeds"
 ---
 
 ## Objetivos de aprendizagem

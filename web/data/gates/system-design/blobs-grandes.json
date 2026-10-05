@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Serviços de armazenamento de objetos são otimizados para guardar e servir arquivos grandes; o banco de dados tradicional deve conter apenas os metadados e uma referência a esse arquivo.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "O servidor da aplicação é um bom lugar para trafegar um arquivo de gigabytes?"
     }
   ]
 }

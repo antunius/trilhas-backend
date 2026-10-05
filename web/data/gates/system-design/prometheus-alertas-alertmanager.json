@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Qual a função do campo `for: 5m` em uma regra de alerta?",
+      "o": [
+        "Define a janela do rate",
+        "Exige que a condição se mantenha por 5 minutos antes de disparar",
+        "Repete a notificação a cada 5 minutos",
+        "Define o scrape_interval"
+      ],
+      "a": 1,
+      "w": "Com `for`, a condição precisa permanecer verdadeira durante o tempo informado. Até lá, o alerta fica em pending, o que evita alarmes por picos curtos.",
+      "t": "fixacao",
+      "h": "Pense em quanto tempo o problema precisa persistir."
+    },
+    {
+      "q": "Quarenta instâncias do serviço de pedidos falham pelo mesmo motivo. Qual recurso do Alertmanager evita 40 notificações?",
+      "o": [
+        "Silêncio",
+        "Agrupamento (group_by)",
+        "Inibição",
+        "Federation"
+      ],
+      "a": 1,
+      "w": "O agrupamento junta alertas parecidos (por exemplo, pelo `alertname`) em uma única notificação.",
+      "t": "fixacao",
+      "h": "Reunir alertas semelhantes em uma mensagem só."
+    },
+    {
+      "q": "Qual destes é um bom alerta por sintoma para a loja?",
+      "o": [
+        "CPU do pod acima de 80%",
+        "Heap da JVM acima de 70%",
+        "Mais de 5% dos pedidos falhando por 5 minutos",
+        "Pool de conexões em 90%"
+      ],
+      "a": 2,
+      "w": "Taxa de erro reflete diretamente a experiência do usuário. CPU, heap e pool são causas possíveis, melhores como painéis de diagnóstico.",
+      "t": "fixacao",
+      "h": "Qual deles o cliente consegue sentir diretamente?"
+    },
+    {
+      "q": "Quem avalia as regras de alerta e quem faz o roteamento para o plantão?",
+      "o": [
+        "O Alertmanager avalia e o Prometheus roteia",
+        "O Prometheus avalia e o Alertmanager roteia",
+        "O Grafana faz os dois",
+        "O Micrometer avalia e o Prometheus roteia"
+      ],
+      "a": 1,
+      "w": "O Prometheus avalia as regras e envia os alertas ativos; o Alertmanager agrupa, roteia, silencia e inibe.",
+      "t": "fixacao",
+      "h": "Um avalia a condição, o outro cuida da entrega."
+    },
+    {
+      "q": "O plantão passou a ignorar notificações porque a maioria é ruído. Qual o nome do problema e a correção?",
+      "o": [
+        "Cardinalidade; remover labels",
+        "Fadiga de alerta; manter só alertas acionáveis e urgentes e mover o resto para painéis ou tickets",
+        "Burn rate; aumentar o SLO",
+        "Saturação; aumentar a fila"
+      ],
+      "a": 1,
+      "w": "É fadiga de alerta. Cada alerta que acorda alguém deve ser acionável e urgente; o restante vira painel ou ticket.",
+      "t": "fixacao",
+      "h": "O excesso de alertas treina as pessoas a ignorá-los."
+    }
+  ]
+}

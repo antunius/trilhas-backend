@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual a função do API Gateway?",
+      "o": [
+        "Guardar dados dos usuários",
+        "Ser o ponto de entrada único que repassa cada requisição ao serviço interno certo",
+        "Substituir os microsserviços",
+        "Criar tokens"
+      ],
+      "a": 1,
+      "w": "Os clientes falam só com ele, que cuida de autenticação, limite de taxa e roteamento.",
+      "t": "fixacao",
+      "h": "Pense na recepção de um prédio."
+    },
+    {
+      "q": "O que é um circuit breaker?",
+      "o": [
+        "Um tipo de token",
+        "Um disjuntor que para de chamar um serviço que falha muitas vezes, respondendo erro rápido",
+        "Um balanceador",
+        "Um cache"
+      ],
+      "a": 1,
+      "w": "Evita acumular chamadas penduradas em um serviço doente.",
+      "t": "fixacao",
+      "h": "O nome vem da eletricidade."
+    },
+    {
+      "q": "O que é validar um token no gateway?",
+      "o": [
+        "Consultar o banco a cada chamada",
+        "Conferir a assinatura e a validade do token, sem consultar um banco",
+        "Gerar um token novo",
+        "Criptografar a resposta"
+      ],
+      "a": 1,
+      "w": "Assim os serviços internos podem confiar que o que chegou já foi autenticado.",
+      "t": "fixacao",
+      "h": "Basta olhar o próprio token."
+    },
+    {
+      "q": "Por que os serviços internos ficam em uma rede privada?",
+      "o": [
+        "Para economizar custo",
+        "Para não ficarem expostos diretamente à internet, concentrando a segurança na borda",
+        "Para ficarem mais rápidos",
+        "Porque exigem Kafka"
+      ],
+      "a": 1,
+      "w": "Só o gateway é visível por fora.",
+      "t": "fixacao",
+      "h": "Quem é exposto à internet?"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "O que é uma hot partition?",
+      "o": [
+        "Uma partição com mais réplicas",
+        "Uma partição que recebe tráfego desproporcional por causa de uma chave dominante",
+        "Uma partição em memória",
+        "Uma partição recém-criada"
+      ],
+      "a": 1,
+      "w": "Se uma chave concentra o volume, a partição dela fica sobrecarregada e o paralelismo teórico deixa de valer.",
+      "t": "fixacao",
+      "h": "Todas as chaves têm o mesmo volume?"
+    },
+    {
+      "q": "O que dispara um rebalanceamento num consumer group?",
+      "o": [
+        "Um consumer entrar no grupo ou deixar de enviar heartbeats",
+        "O producer publicar um evento",
+        "O tópico ficar vazio",
+        "O commit de um offset"
+      ],
+      "a": 0,
+      "w": "Entrada ou saída de um consumer faz o Kafka redistribuir as partições, e o grupo costuma pausar por instantes.",
+      "t": "fixacao",
+      "h": "O que muda na composição do grupo?"
+    },
+    {
+      "q": "Qual a vantagem do CooperativeStickyAssignor?",
+      "o": [
+        "Aumenta o número de partições",
+        "Faz rebalanceamento incremental: só as partições que precisam mudar são revogadas",
+        "Elimina a necessidade de heartbeats",
+        "Garante exactly-once"
+      ],
+      "a": 1,
+      "w": "O rebalanceamento tradicional revoga tudo (stop-the-world). O cooperativo mexe só no necessário.",
+      "t": "fixacao",
+      "h": "Compare mover tudo com mover só o preciso."
+    },
+    {
+      "q": "Um evento falha de forma persistente. Qual estratégia evita travar a partição sem perder o evento?",
+      "o": [
+        "Retry imediato infinito",
+        "Retry com atraso e, esgotadas as tentativas, envio a uma dead-letter queue",
+        "Descartar o evento",
+        "Reiniciar o broker"
+      ],
+      "a": 1,
+      "w": "A fila de retry libera o consumer principal, e a DLQ guarda o evento problemático para inspeção.",
+      "t": "fixacao",
+      "h": "Insistir sem parar trava o fluxo."
+    },
+    {
+      "q": "Um serviço criado meses depois precisa dos eventos históricos. O que viabiliza isso?",
+      "o": [
+        "Replicação",
+        "A retenção: o Kafka mantém os eventos, e um novo grupo lê desde o início",
+        "Um novo tópico",
+        "O commit manual"
+      ],
+      "a": 1,
+      "w": "Os eventos ficam retidos independentemente de terem sido consumidos. Basta um novo groupId começando do earliest.",
+      "t": "fixacao",
+      "h": "Os eventos já lidos continuam lá?"
+    }
+  ]
+}

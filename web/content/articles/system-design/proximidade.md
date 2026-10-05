@@ -5,8 +5,9 @@ title: "Padrão: Proximidade (Busca Geoespacial)"
 navTitle: Proximidade
 summary: Reconhecer problemas que envolvem busca por proximidade geográfica
 level: intermediario
-order: 55
+order: 111
 section: padroes-recorrentes
+group: "Escala e concorrência"
 ---
 
 ## Objetivos de aprendizagem

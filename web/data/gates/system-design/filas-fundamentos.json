@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que uma dead-letter queue (DLQ) é útil?",
+      "o": [
+        "Aumenta a velocidade da fila",
+        "Guarda mensagens que falharam repetidamente, para inspeção, sem travar as demais",
+        "Remove a necessidade de consumidores",
+        "Garante entrega exatamente uma vez"
+      ],
+      "a": 1,
+      "w": "Uma mensagem 'venenosa' que sempre falha iria travar o processamento ou ser descartada em silêncio. A DLQ a isola para análise.",
+      "t": "fixacao",
+      "h": "Para onde vai a mensagem que nunca consegue ser processada?"
+    },
+    {
+      "q": "O que acontece se o worker cai sem enviar o ack?",
+      "o": [
+        "A mensagem se perde",
+        "A fila entende que a tarefa não foi concluída e a entrega a outro consumidor",
+        "A fila para",
+        "O produtor reenvia"
+      ],
+      "a": 1,
+      "w": "É a base da confiabilidade da fila.",
+      "t": "fixacao",
+      "h": "O que a fila conclui quando não há ack?"
+    },
+    {
+      "q": "Por que a mensagem leva uma referência ao arquivo, e não o arquivo de 500 MB?",
+      "o": [
+        "Porque filas guardam pequenos pacotes de dados e o arquivo fica no armazenamento",
+        "Porque o arquivo é secreto",
+        "Porque não há rede",
+        "Porque o ack exige"
+      ],
+      "a": 0,
+      "w": "Mensagens são unidades de trabalho leves.",
+      "t": "fixacao",
+      "h": "O que cabe numa fila?"
+    },
+    {
+      "q": "Para que serve o retry com espera crescente?",
+      "o": [
+        "Para tentar de novo sem sobrecarregar um serviço em dificuldade",
+        "Para apagar a mensagem",
+        "Para acelerar o consumidor",
+        "Para criar a DLQ"
+      ],
+      "a": 0,
+      "w": "Ele dá tempo a uma dependência instável de se recuperar.",
+      "t": "fixacao",
+      "h": "Insistir imediatamente ajuda?"
+    }
+  ]
+}

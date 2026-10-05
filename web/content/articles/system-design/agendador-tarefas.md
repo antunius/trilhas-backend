@@ -5,8 +5,9 @@ title: "Exercício: Projetar um Agendador de Tarefas (Job Scheduler)"
 navTitle: Agendador de Tarefas
 summary: "Projete um sistema que permite agendar tarefas para execução em um momento futuro específico, ou de forma recorrente (ex: \"todo dia às 3h da manhã\"), garantindo que cada tarefa seja executada exatamente uma vez."
 level: avancado
-order: 35
+order: 133
 section: exercicios-praticos
+group: "Infraestrutura e ferramentas"
 ---
 
 ## Objetivos de aprendizagem

@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Não existe uma arquitetura \"correta\" única — o que é avaliado é o processo de raciocínio, a comunicação e o julgamento sobre trade-offs, muito mais do que o desenho final em si.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Ele avalia mais o resultado final ou o raciocínio?"
     },
     {
       "q": "Por que ter um framework (roteiro) de entrevista é útil, além de ajudar a lembrar etapas?",
@@ -22,7 +23,8 @@
       ],
       "a": 1,
       "w": "O framework existe para reduzir a carga cognitiva de decidir a próxima etapa sob pressão, não para \"acertar\" uma resposta específica esperada pelo entrevistador.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Um roteiro ajuda a lembrar o quê, e a quê mais?"
     }
   ]
 }

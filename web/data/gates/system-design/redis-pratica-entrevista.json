@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Qual é a ordem de uma migração segura de formato de valor no Redis?",
+      "o": [
+        "Corte, dual-write, backfill, dual-read",
+        "Dual-write, backfill, dual-read com fallback e corte final",
+        "Backfill, corte, dual-write",
+        "Apagar tudo e recriar"
+      ],
+      "a": 1,
+      "w": "Escrever nos dois formatos, popular os antigos, ler com fallback e só então desligar o formato velho evita erros de formato inesperado.",
+      "t": "fixacao",
+      "h": "Quando se remove o formato antigo?"
+    },
+    {
+      "q": "Qual erro comum é mencionado ao implementar um lock?",
+      "o": [
+        "Usar NX",
+        "Usar GET seguido de SET em vez de SET NX atômico",
+        "Definir TTL",
+        "Usar uma chave com prefixo"
+      ],
+      "a": 1,
+      "w": "Duas operações separadas reintroduzem a condição de corrida.",
+      "t": "fixacao",
+      "h": "Quantas operações o lock correto usa?"
+    },
+    {
+      "q": "O que diferencia um candidato sênior em Redis?",
+      "o": [
+        "Saber que é um cache em memória",
+        "Escolher a estrutura de dados por caso de uso e reconhecer o limite do lock de nó único",
+        "Decorar todos os comandos",
+        "Evitar falar de persistência"
+      ],
+      "a": 1,
+      "w": "O nível sênior justifica a estrutura por caso de uso e conhece os limites das garantias.",
+      "t": "fixacao",
+      "h": "Qual resposta mostra critério, não só conhecimento?"
+    },
+    {
+      "q": "Como tratar uma chave com tráfego desproporcional num Redis Cluster?",
+      "o": [
+        "Ignorar",
+        "Reconhecer o problema de hot key e espalhar a carga, por exemplo dividindo a chave",
+        "Aumentar o TTL",
+        "Ligar o AOF"
+      ],
+      "a": 1,
+      "w": "É o mesmo problema da hot partition do Kafka: uma chave quente sobrecarrega um só nó.",
+      "t": "fixacao",
+      "h": "Qual problema já vimos no Kafka?"
+    },
+    {
+      "q": "O que acontece com os contadores do rate limiter se o Redis cair sem réplica?",
+      "o": [
+        "Nada",
+        "Os contadores em andamento se perdem, e o sistema precisa decidir se isso é aceitável",
+        "Eles vão para o banco",
+        "O Sentinel os restaura"
+      ],
+      "a": 1,
+      "w": "Sem réplica ou persistência, o estado em memória some, e é preciso decidir o impacto.",
+      "t": "fixacao",
+      "h": "Onde estão os contadores?"
+    }
+  ]
+}

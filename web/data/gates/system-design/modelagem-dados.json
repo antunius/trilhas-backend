@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Bancos chave-valor são otimizados justamente para esse padrão de acesso: busca rápida por uma chave única, sem necessidade de relacionamentos complexos.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Pense no padrão de acesso por chave simples e em altíssima escala."
     }
   ]
 }

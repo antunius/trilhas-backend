@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "A fila está crescendo e não para. O que fazer?",
+      "o": [
+        "Ignorar",
+        "Verificar se os consumidores estão lentos, escalar workers ou aplicar backpressure no produtor",
+        "Apagar a fila",
+        "Aumentar o ack"
+      ],
+      "a": 1,
+      "w": "O tamanho da fila é uma métrica de saúde do sistema.",
+      "t": "fixacao",
+      "h": "O que o crescimento indica?"
+    },
+    {
+      "q": "Como garantir a ordem das mensagens de um mesmo vídeo?",
+      "o": [
+        "Rotear por chave para a mesma partição ou consumidor, aceitando perder o paralelismo dentro dessa chave",
+        "Não é possível",
+        "Usar mais workers",
+        "Aumentar o retry"
+      ],
+      "a": 0,
+      "w": "Ordem e paralelismo se contrapõem.",
+      "t": "fixacao",
+      "h": "Quem processa as mensagens de um vídeo?"
+    },
+    {
+      "q": "Por que não usar só um endpoint HTTP síncrono para a codificação?",
+      "o": [
+        "O pico exigiria dimensionar para o máximo, e uma falha do worker perderia o pedido sem retry nem DLQ",
+        "HTTP não existe",
+        "Vídeos são pequenos",
+        "O ack é obrigatório"
+      ],
+      "a": 0,
+      "w": "A fila oferece absorção de picos, retry e isolamento de falhas.",
+      "t": "fixacao",
+      "h": "O que faz a fila que o endpoint não faz?"
+    },
+    {
+      "q": "O que diferencia um sênior ao falar de filas?",
+      "o": [
+        "Dizer \"vou colocar uma fila\"",
+        "Justificar pelo cálculo média vs. pico e exigir consumidor idempotente por causa do at-least-once",
+        "Evitar falar de falhas",
+        "Citar só o nome do produto"
+      ],
+      "a": 1,
+      "w": "Quantificar e raciocinar sobre falhas mostra profundidade.",
+      "t": "fixacao",
+      "h": "Qual resposta tem números e falhas?"
+    }
+  ]
+}

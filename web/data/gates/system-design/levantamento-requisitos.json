@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Requisitos não-funcionais descrevem qualidades do sistema (escala, latência, disponibilidade), não ações específicas que o usuário realiza.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Requisito não-funcional descreve uma qualidade, não uma funcionalidade."
     },
     {
       "q": "Qual é a melhor abordagem ao levantar requisitos em uma entrevista?",
@@ -22,7 +23,8 @@
       ],
       "a": 2,
       "w": "O objetivo é reduzir ambiguidade de forma eficiente, não esgotar todas as perguntas possíveis — declarar suposições também é uma forma válida de avançar.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Perguntar ajuda ou atrapalha antes de projetar?"
     }
   ]
 }

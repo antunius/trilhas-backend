@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Um erro comum ao usar o Elasticsearch é:",
+      "o": [
+        "Usá-lo para busca",
+        "Tratá-lo como fonte de verdade durável de dados transacionais",
+        "Usar réplicas",
+        "Definir o mapping"
+      ],
+      "a": 1,
+      "w": "Ele é ótimo para busca, mas a fonte de verdade costuma ficar num banco transacional, com o Elasticsearch como índice derivado.",
+      "t": "fixacao",
+      "h": "Onde fica a fonte de verdade?"
+    },
+    {
+      "q": "O que um candidato sênior menciona sem ser perguntado sobre Elasticsearch?",
+      "o": [
+        "O nome do fornecedor",
+        "Near-real-time, hot shards e a necessidade de sincronizar com a fonte de verdade",
+        "A cor do dashboard",
+        "O número de CPUs"
+      ],
+      "a": 1,
+      "w": "Essas limitações mostram que ele conhece o comportamento real do sistema.",
+      "t": "fixacao",
+      "h": "Quais as limitações práticas do sistema?"
+    },
+    {
+      "q": "Para qual necessidade o Elasticsearch é mais indicado?",
+      "o": [
+        "Transações bancárias",
+        "Busca textual com relevância e filtros",
+        "Armazenar sessões",
+        "Fila de mensagens"
+      ],
+      "a": 1,
+      "w": "O índice invertido e o BM25 o tornam forte em busca e ordenação por relevância.",
+      "t": "fixacao",
+      "h": "Qual é o ponto forte do índice invertido?"
+    },
+    {
+      "q": "Como manter o Elasticsearch sincronizado com o banco principal?",
+      "o": [
+        "Copiando tudo manualmente uma vez por ano",
+        "Publicando as mudanças do banco como eventos (por exemplo via CDC) para indexação",
+        "Gravando só no Elasticsearch",
+        "Desligando o refresh"
+      ],
+      "a": 1,
+      "w": "Um fluxo de eventos mantém o índice derivado atualizado a partir da fonte de verdade.",
+      "t": "fixacao",
+      "h": "O Kafka e o CDC já apareceram antes."
+    }
+  ]
+}

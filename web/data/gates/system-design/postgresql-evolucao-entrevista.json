@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual critério prático decide entre estender o PostgreSQL (como com PostGIS) e introduzir uma tecnologia especializada?",
+      "o": [
+        "Preferência pessoal",
+        "Introduzir só quando o requisito ultrapassa o que uma extensão bem escolhida entrega",
+        "Sempre introduzir",
+        "Nunca introduzir"
+      ],
+      "a": 1,
+      "w": "Uma tecnologia nova traz custo real de complexidade operacional.",
+      "t": "fixacao",
+      "h": "Qual é o custo de cada componente novo?"
+    },
+    {
+      "q": "O que diferencia um sênior ao falar de índices?",
+      "o": [
+        "Sabe que índices aceleram consultas",
+        "Explica por que uma função aplicada à coluna impede o índice comum e propõe índice de expressão",
+        "Evita falar de índices",
+        "Cria índice em todas as colunas"
+      ],
+      "a": 1,
+      "w": "Entender como o índice funciona permite diagnosticar casos em que ele não é usado.",
+      "t": "fixacao",
+      "h": "Qual resposta mostra entendimento do mecanismo?"
+    },
+    {
+      "q": "Qual é um erro comum ao usar JSONB?",
+      "o": [
+        "Guardar metadados variáveis",
+        "Usá-lo como substituto geral da modelagem relacional adequada",
+        "Indexá-lo",
+        "Usá-lo em dados secundários"
+      ],
+      "a": 1,
+      "w": "Dados centrais e filtrados o tempo todo devem ficar em colunas normais e indexadas.",
+      "t": "fixacao",
+      "h": "Para que ele é um complemento?"
+    },
+    {
+      "q": "Por que adicionar uma coluna é mais seguro que renomeá-la numa migração?",
+      "o": [
+        "Porque colunas novas são mais rápidas",
+        "Porque código antigo continua funcionando enquanto o novo é implantado",
+        "Porque renomear apaga o índice",
+        "Porque o WAL exige"
+      ],
+      "a": 1,
+      "w": "Mudanças aditivas são compatíveis com a versão anterior da aplicação.",
+      "t": "fixacao",
+      "h": "Quem ainda usa o nome antigo durante o deploy?"
+    }
+  ]
+}

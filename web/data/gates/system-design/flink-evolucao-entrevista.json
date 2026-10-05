@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Qual mudança no POJO do estado mantém o savepoint antigo legível?",
+      "o": [
+        "Renomear um campo",
+        "Remover um campo",
+        "Adicionar um campo",
+        "Trocar o tipo de um campo"
+      ],
+      "a": 2,
+      "w": "Campos novos usam o valor default ao ler estado antigo. Renomear ou remover quebra a compatibilidade binária.",
+      "t": "fixacao",
+      "h": "O que a leitura de estado antigo faz com um campo novo?"
+    },
+    {
+      "q": "Qual caso de uso combina bem com o Flink?",
+      "o": [
+        "Servir imagens estáticas",
+        "Detecção de fraude em tempo real sobre janelas curtas",
+        "Cache de leitura",
+        "Balanceamento de carga"
+      ],
+      "a": 1,
+      "w": "Padrões suspeitos em janelas curtas dependem de agregação contínua com estado.",
+      "t": "fixacao",
+      "h": "Qual precisa de estado ao longo do tempo?"
+    },
+    {
+      "q": "O que acontece com um clique que chega depois que sua janela já foi fechada?",
+      "o": [
+        "Sempre entra",
+        "Pode ser descartado ou gerar atualização tardia, conforme a configuração",
+        "O job para",
+        "Vai para o checkpoint"
+      ],
+      "a": 1,
+      "w": "Depende de quão crítica é a exatidão para o caso de uso.",
+      "t": "fixacao",
+      "h": "Há mais de uma política possível."
+    },
+    {
+      "q": "Qual é um erro comum sobre o Flink?",
+      "o": [
+        "Propor um motor de stream para um cenário simples sem agregação contínua",
+        "Falar de checkpoints",
+        "Usar janelas",
+        "Usar keyBy"
+      ],
+      "a": 0,
+      "w": "Se bastar processar cada evento isoladamente, um consumidor comum resolve.",
+      "t": "fixacao",
+      "h": "Nem todo problema pede estado ao longo do tempo."
+    }
+  ]
+}

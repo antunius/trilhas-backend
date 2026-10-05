@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Por que o sorted set é mais adequado que uma list ou um hash para um leaderboard?",
+      "o": [
+        "Porque ocupa menos memória",
+        "Porque mantém os membros ordenados por pontuação, sem reordenar tudo a cada consulta",
+        "Porque é o único que aceita números",
+        "Porque grava em disco"
+      ],
+      "a": 1,
+      "w": "Inserir, atualizar e consultar o ranking custa tempo logarítmico, sem varrer a estrutura.",
+      "t": "fixacao",
+      "h": "Qual estrutura já guarda a ordem?"
+    },
+    {
+      "q": "Qual comando soma pontos à pontuação existente de um jogador?",
+      "o": [
+        "ZADD",
+        "ZINCRBY",
+        "ZRANK",
+        "ZREM"
+      ],
+      "a": 1,
+      "w": "ZINCRBY incrementa a pontuação atual. O ZADD sobrescreve.",
+      "t": "fixacao",
+      "h": "O nome tem INCR de incrementar."
+    },
+    {
+      "q": "Qual comando devolve os 10 primeiros do ranking, do maior para o menor?",
+      "o": [
+        "ZRANK",
+        "ZREVRANGE placar 0 9 WITHSCORES",
+        "ZSCORE",
+        "ZCARD"
+      ],
+      "a": 1,
+      "w": "ZREVRANGE lista do maior para o menor pelo intervalo de posições, e WITHSCORES inclui as pontuações.",
+      "t": "fixacao",
+      "h": "O intervalo de 0 a 9 são 10 posições."
+    },
+    {
+      "q": "Para que serve um pipeline ao gravar a pontuação de vários jogadores?",
+      "o": [
+        "Garantir exactly-once",
+        "Evitar uma ida e volta de rede por comando, agrupando todos em uma",
+        "Persistir os dados em disco",
+        "Ordenar os jogadores"
+      ],
+      "a": 1,
+      "w": "Em vez de esperar a resposta de cada comando, o cliente envia vários juntos e lê as respostas depois.",
+      "t": "fixacao",
+      "h": "O gargalo é a rede ou o Redis?"
+    },
+    {
+      "q": "Como o placar com 50 mil jogadores continua barato de consultar?",
+      "o": [
+        "Ele é recalculado a cada pedido",
+        "O sorted set já mantém a ordenação internamente",
+        "Os dados ficam em cache no navegador",
+        "Só os 10 primeiros são guardados"
+      ],
+      "a": 1,
+      "w": "A ordenação é mantida a cada atualização, então consultar o topo não exige reordenar.",
+      "t": "fixacao",
+      "h": "Onde está o custo da ordenação?"
+    }
+  ]
+}

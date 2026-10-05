@@ -6,6 +6,7 @@ summary: Montar um diagrama de componentes que atenda aos requisitos já levanta
 level: intermediario
 order: 6
 section: framework-entrega
+group: "Desenhar e aprofundar"
 ---
 
 ## Objetivos de aprendizagem

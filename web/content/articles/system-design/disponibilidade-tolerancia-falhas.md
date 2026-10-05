@@ -4,8 +4,9 @@ categorySlug: system-design
 title: Disponibilidade e Tolerância a Falhas
 summary: Entender como disponibilidade costuma ser medida
 level: intermediario
-order: 20
+order: 51
 section: conceitos-centrais
+group: "Fundamentos de sistemas distribuídos"
 ---
 
 ## Objetivos de aprendizagem

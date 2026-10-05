@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "O que o cliente precisa tratar sempre ao usar o ZooKeeper?",
+      "o": [
+        "A cor do terminal",
+        "A expiração da sessão, que remove seus znodes efêmeros",
+        "O tamanho da fonte",
+        "A criptografia do disco"
+      ],
+      "a": 1,
+      "w": "Perder a sessão significa perder a liderança; o código precisa reagir.",
+      "t": "fixacao",
+      "h": "O que a perda da sessão remove?"
+    },
+    {
+      "q": "Quantos servidores um ensemble de produção costuma ter?",
+      "o": [
+        "1",
+        "Um número ímpar, como 3 ou 5",
+        "Exatamente 2",
+        "Qualquer número par"
+      ],
+      "a": 1,
+      "w": "O ímpar maximiza a tolerância por servidor.",
+      "t": "fixacao",
+      "h": "Pense no quorum."
+    },
+    {
+      "q": "Qual o papel do cliente na eleição?",
+      "o": [
+        "Escolher o líder sozinho",
+        "Criar o znode efêmero sequencial, listar os filhos e observar o znode anterior",
+        "Gravar os dados em disco",
+        "Desligar o cluster"
+      ],
+      "a": 1,
+      "w": "O próprio algoritmo roda nos clientes, usando as primitivas do ZooKeeper.",
+      "t": "fixacao",
+      "h": "O que cada worker faz?"
+    },
+    {
+      "q": "Para que serve a reconfiguração dinâmica?",
+      "o": [
+        "Mudar a linguagem",
+        "Alterar a composição do ensemble sem parar o serviço",
+        "Apagar znodes",
+        "Criar watches"
+      ],
+      "a": 1,
+      "w": "Permite adicionar ou remover servidores com o cluster em operação.",
+      "t": "fixacao",
+      "h": "Qual operação mexe nos membros?"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ summary: Diferenciar requisitos funcionais de não-funcionais
 level: intermediario
 order: 2
 section: framework-entrega
+group: "Começando"
 ---
 
 ## Objetivos de aprendizagem

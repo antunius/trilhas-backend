@@ -10,7 +10,8 @@
       ],
       "a": 1,
       "w": "Um pequeno atraso na atualização de um contador de curtidas raramente tem consequência prática, tornando a consistência eventual uma troca aceitável por maior disponibilidade e desempenho.",
-      "t": "fixacao"
+      "t": "fixacao",
+      "h": "Qual dado tolera um valor levemente velho sem causar dano?"
     }
   ]
 }

@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "No cenário de chat, por que o ID da conversa é uma escolha melhor de partition key do que o ID do remetente?",
+      "o": [
+        "Porque é menor",
+        "Porque a leitura mais comum é por conversa, e assim as mensagens de uma conversa ficam juntas",
+        "Porque o remetente muda",
+        "Porque o Cassandra exige"
+      ],
+      "a": 1,
+      "w": "A chave de partição deve refletir o padrão de leitura. Particionar por remetente espalharia a conversa.",
+      "t": "fixacao",
+      "h": "Qual é a leitura mais comum?"
+    },
+    {
+      "q": "Para que serve a clustering key?",
+      "o": [
+        "Escolher o nó",
+        "Ordenar fisicamente as linhas dentro de uma partição",
+        "Criar réplicas",
+        "Aplicar o TTL"
+      ],
+      "a": 1,
+      "w": "Com o timestamp como clustering key, \"as últimas 50 mensagens\" vira uma leitura sequencial barata.",
+      "t": "fixacao",
+      "h": "Ela atua dentro da partição."
+    },
+    {
+      "q": "Qual consulta o modelo partition key + clustering key NÃO atende bem?",
+      "o": [
+        "Últimas 50 mensagens de uma conversa",
+        "Todas as mensagens de um remetente em todas as conversas, sem a partition key",
+        "Mensagens de uma conversa entre duas datas",
+        "Uma mensagem por conversa e timestamp"
+      ],
+      "a": 1,
+      "w": "Sem a partition key a consulta teria de varrer o cluster. O modelo exige uma tabela adicional particionada por remetente.",
+      "t": "fixacao",
+      "h": "Qual consulta não informa a partition key?"
+    },
+    {
+      "q": "Qual a diferença fundamental em relação a um banco relacional?",
+      "o": [
+        "Aqui qualquer coluna pode ser filtrada sem custo",
+        "Você modela as tabelas pelas consultas, e filtrar por colunas arbitrárias é caro ou proibido",
+        "Aqui não há chave",
+        "Aqui só há uma tabela"
+      ],
+      "a": 1,
+      "w": "Troca-se flexibilidade de consulta por escala de escrita e latência previsível.",
+      "t": "fixacao",
+      "h": "O que se ganha e o que se perde?"
+    }
+  ]
+}

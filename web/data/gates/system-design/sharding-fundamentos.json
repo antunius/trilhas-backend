@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que adicionar réplicas de leitura não resolve o limite de escrita de um banco?",
+      "o": [
+        "Porque réplicas não guardam dados",
+        "Porque todas as escritas ainda passam pelo servidor principal",
+        "Porque réplicas só funcionam em SSD",
+        "Porque réplicas desligam o índice"
+      ],
+      "a": 1,
+      "w": "Réplicas dividem a leitura, mas cada uma guarda uma cópia completa e a escrita continua centralizada no principal. Sharding divide dados e escritas.",
+      "t": "fixacao",
+      "h": "Quem recebe as escritas?"
+    },
+    {
+      "q": "O que é a chave de particionamento?",
+      "o": [
+        "A senha do banco",
+        "A coluna cujo valor decide em qual shard a linha vai",
+        "O nome da tabela",
+        "O índice primário"
+      ],
+      "a": 1,
+      "w": "Ela define quais consultas ficam fáceis e quais ficam caras.",
+      "t": "fixacao",
+      "h": "Quem decide o shard?"
+    },
+    {
+      "q": "Qual a diferença entre escalar verticalmente e horizontalmente?",
+      "o": [
+        "Vertical: máquina maior; horizontal: mais máquinas dividindo o trabalho",
+        "São sinônimos",
+        "Vertical divide dados",
+        "Horizontal compra mais memória"
+      ],
+      "a": 0,
+      "w": "Sharding é a forma de escalar um banco horizontalmente.",
+      "t": "fixacao",
+      "h": "Uma máquina maior ou mais máquinas?"
+    },
+    {
+      "q": "Qual limite o sharding resolve e as réplicas não?",
+      "o": [
+        "A taxa de escrita e o armazenamento total em uma máquina",
+        "A leitura",
+        "O hit ratio",
+        "A latência de rede"
+      ],
+      "a": 0,
+      "w": "Cada shard recebe só uma parte das escritas e guarda só uma parte dos dados.",
+      "t": "fixacao",
+      "h": "O que as réplicas copiam inteiro?"
+    }
+  ]
+}

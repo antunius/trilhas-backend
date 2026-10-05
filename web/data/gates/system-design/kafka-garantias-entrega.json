@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "Por que \"at-least-once\" combinado com um consumer idempotente costuma ser preferível a \"exactly-once\" na maioria dos sistemas práticos?",
+      "o": [
+        "Porque at-least-once nunca duplica",
+        "Porque é mais simples e barato, e a idempotência neutraliza as duplicatas",
+        "Porque exactly-once não existe",
+        "Porque at-least-once dispensa commit"
+      ],
+      "a": 1,
+      "w": "Exactly-once exige transações, com custo de vazão e complexidade. At-least-once mais idempotência é suficientemente correto.",
+      "t": "fixacao",
+      "h": "Qual dos dois custa menos?"
+    },
+    {
+      "q": "Um consumer commita o offset ANTES de processar a mensagem e cai no meio. O que acontece?",
+      "o": [
+        "A mensagem é reprocessada",
+        "A mensagem se perde para sempre (at-most-once)",
+        "A mensagem é processada duas vezes",
+        "O Kafka reverte o commit"
+      ],
+      "a": 1,
+      "w": "O offset já avançou, então ao reiniciar o consumer não relê aquela mensagem.",
+      "t": "fixacao",
+      "h": "Qual posição o consumer retoma ao reiniciar?"
+    },
+    {
+      "q": "O consumer processa a mensagem e cai antes de commitar. O que acontece ao reiniciar?",
+      "o": [
+        "A mensagem é perdida",
+        "A mensagem é entregue de novo e pode ser processada duas vezes",
+        "A mensagem é descartada",
+        "O Kafka processa por ele"
+      ],
+      "a": 1,
+      "w": "É a semântica at-least-once: sem o commit, o offset não avançou e a mensagem é relida.",
+      "t": "fixacao",
+      "h": "O offset avançou ou não?"
+    },
+    {
+      "q": "O que significa um consumidor idempotente?",
+      "o": [
+        "Processa mensagens mais rápido",
+        "Processar a mesma mensagem duas vezes não causa efeito duplicado",
+        "Nunca falha",
+        "Lê só a última mensagem"
+      ],
+      "a": 1,
+      "w": "A idempotência torna seguras as duplicatas do at-least-once, por exemplo ignorando um id de evento já tratado.",
+      "t": "fixacao",
+      "h": "O que acontece se a mesma mensagem chegar duas vezes?"
+    },
+    {
+      "q": "Qual o principal custo do exactly-once?",
+      "o": [
+        "Perda de mensagens",
+        "Transações que reduzem a vazão e aumentam a complexidade operacional",
+        "Falta de ordem",
+        "Necessidade de mais tópicos"
+      ],
+      "a": 1,
+      "w": "Producer e commit de offset participam da mesma transação atômica, o que tem custo real.",
+      "t": "fixacao",
+      "h": "Garantias fortes costumam custar desempenho."
+    }
+  ]
+}

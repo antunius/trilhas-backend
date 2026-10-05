@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Com checkpoints a cada 30 s e 50 mil eventos por segundo, quanto se reprocessa no máximo após uma falha?",
+      "o": [
+        "Todo o histórico do stream",
+        "Cerca de 30 s de eventos, ou 1,5 milhão",
+        "Nenhum evento",
+        "Apenas o último evento"
+      ],
+      "a": 1,
+      "w": "A recuperação volta ao último checkpoint e relê os eventos posteriores: 30 s × 50.000 = 1,5 milhão.",
+      "t": "fixacao",
+      "h": "Multiplique o intervalo pela taxa de chegada."
+    },
+    {
+      "q": "O que são checkpoint barriers?",
+      "o": [
+        "Erros do job",
+        "Marcadores injetados no stream que fazem cada operador tirar um snapshot do próprio estado",
+        "Janelas fixas",
+        "Réplicas do Kafka"
+      ],
+      "a": 1,
+      "w": "Os barriers fluem com os dados; ao receber um em todas as entradas, o operador salva seu estado e o repassa.",
+      "t": "fixacao",
+      "h": "Eles viajam junto com os eventos."
+    },
+    {
+      "q": "O que são key groups?",
+      "o": [
+        "Grupos de consumidores do Kafka",
+        "Partições fixas do estado por chave, atribuídas a subtarefas, que permitem mudar o paralelismo",
+        "Tipos de janela",
+        "Réplicas de checkpoint"
+      ],
+      "a": 1,
+      "w": "Ao aumentar o paralelismo, o Flink reatribui key groups inteiros entre as subtarefas e restaura o estado correspondente.",
+      "t": "fixacao",
+      "h": "O estado por chave é dividido em quantas partes fixas?"
+    },
+    {
+      "q": "Para o exactly-once ponta a ponta, o que o KafkaSink faz?",
+      "o": [
+        "Ignora duplicatas",
+        "Usa transações do Kafka: os dados só ficam visíveis quando o checkpoint correspondente é confirmado",
+        "Grava só em disco",
+        "Desliga os checkpoints"
+      ],
+      "a": 1,
+      "w": "Combinado com checkpoints, isso evita contar cliques duas vezes ou perdê-los, mesmo com falhas.",
+      "t": "fixacao",
+      "h": "Quando os dados do sink se tornam visíveis?"
+    }
+  ]
+}

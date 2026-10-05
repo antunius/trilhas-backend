@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "O que acontece com uma mensagem Pub/Sub para um assinante que estava desconectado na hora da publicação?",
+      "o": [
+        "Ele a recebe quando voltar",
+        "Ele a perde, pois o Pub/Sub não persiste",
+        "Ela é reenviada em lote",
+        "Ela fica no AOF"
+      ],
+      "a": 1,
+      "w": "O Pub/Sub entrega só a quem está conectado no momento, sem guardar histórico.",
+      "t": "fixacao",
+      "h": "O Pub/Sub guarda mensagens?"
+    },
+    {
+      "q": "Para qual necessidade o Pub/Sub NÃO é a ferramenta certa?",
+      "o": [
+        "Avisar que a próxima pergunta está disponível",
+        "Guardar o histórico de respostas de cada jogador",
+        "Presença online",
+        "Atualização disponível"
+      ],
+      "a": 1,
+      "w": "Quando não se pode perder mensagens, use Streams ou Kafka, que retêm o histórico.",
+      "t": "fixacao",
+      "h": "Qual exemplo exige que nada se perca?"
+    },
+    {
+      "q": "Qual a diferença central entre RDB e AOF?",
+      "o": [
+        "RDB é um snapshot periódico; AOF registra cada escrita em um log",
+        "RDB é mais durável que AOF",
+        "AOF só funciona em cluster",
+        "Não há diferença"
+      ],
+      "a": 0,
+      "w": "O RDB perde as escritas desde o último snapshot. O AOF perde, no máximo, uma fração de segundo, ao custo de mais lentidão e de um arquivo que cresce.",
+      "t": "fixacao",
+      "h": "Qual deles grava cada comando?"
+    },
+    {
+      "q": "Por que o quiz pode aceitar persistência fraca no Redis?",
+      "o": [
+        "Porque o Redis nunca reinicia",
+        "Porque o placar pode ser recomputado a partir do log de respostas do banco principal",
+        "Porque o AOF é obrigatório",
+        "Porque o RDB é instantâneo"
+      ],
+      "a": 1,
+      "w": "Existe uma fonte de verdade durável em outro lugar, então perder alguns segundos de pontuação é recuperável.",
+      "t": "fixacao",
+      "h": "Onde estão as respostas de verdade?"
+    },
+    {
+      "q": "Qual desvantagem do AOF em relação ao RDB?",
+      "o": [
+        "Perde mais dados",
+        "É mais lento e o arquivo de log cresce continuamente",
+        "Não pode ser restaurado",
+        "Exige disco óptico"
+      ],
+      "a": 1,
+      "w": "Registrar cada escrita custa desempenho e espaço, em troca de maior durabilidade.",
+      "t": "fixacao",
+      "h": "O que ele paga em troca de perder menos dados?"
+    }
+  ]
+}

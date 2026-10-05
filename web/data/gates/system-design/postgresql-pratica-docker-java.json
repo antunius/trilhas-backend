@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que o docker-compose do PostgreSQL usa um volume?",
+      "o": [
+        "Para acelerar o banco",
+        "Para não perder os dados a cada restart do container",
+        "Para aumentar as conexões",
+        "Para criar réplicas"
+      ],
+      "a": 1,
+      "w": "Sem o volume, os dados vivem dentro do container e somem quando ele é recriado.",
+      "t": "fixacao",
+      "h": "O que acontece ao recriar o container?"
+    },
+    {
+      "q": "Por que consultas parametrizadas são a forma correta no cliente?",
+      "o": [
+        "Porque são mais bonitas",
+        "Porque evitam SQL injection e permitem reaproveitar o plano",
+        "Porque dispensam índices",
+        "Porque desligam o WAL"
+      ],
+      "a": 1,
+      "w": "Os valores são enviados separados do SQL, o que impede que sejam interpretados como código.",
+      "t": "fixacao",
+      "h": "O que um usuário malicioso poderia injetar?"
+    },
+    {
+      "q": "Como uma réplica de leitura se mantém atualizada em relação ao primário?",
+      "o": [
+        "Copiando o disco inteiro a cada hora",
+        "Recebendo continuamente os registros do WAL do primário (streaming replication) e aplicando-os",
+        "Consultando o primário a cada requisição",
+        "Executando as mesmas consultas dos clientes"
+      ],
+      "a": 1,
+      "w": "O primário envia o WAL em streaming a cada réplica, que o aplica. É por isso que o atraso costuma ficar na casa de centenas de milissegundos.",
+      "t": "fixacao",
+      "h": "A réplica recebe o mesmo log que garante a durabilidade do primário."
+    },
+    {
+      "q": "O primário caiu. O que o pg_ctl promote faz na réplica?",
+      "o": [
+        "Reinicia o primário",
+        "Interrompe a replicação e passa a réplica a aceitar escritas como novo primário",
+        "Apaga os dados antigos",
+        "Cria uma nova réplica"
+      ],
+      "a": 1,
+      "w": "Promover a réplica encerra o modo de recuperação e a torna o novo primário, após o que os clientes precisam apontar para ela.",
+      "t": "fixacao",
+      "h": "O nome do comando diz o que acontece com a réplica."
+    }
+  ]
+}

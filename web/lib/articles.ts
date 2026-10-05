@@ -80,11 +80,32 @@ export function findArticleByLegacyPath(legacyPath: string): ArticleMeta | null 
 
 export { articleHref, categoryHref } from "@/lib/paths";
 
+/** Lições do curso na ordem de estudo: por seção (módulo) e depois por `order`. */
+export function orderedArticles(categorySlug: string): ArticleMeta[] {
+  const sectionOrder = new Map(
+    (getCategory(categorySlug)?.sections ?? []).map((s) => [s.id, s.order]),
+  );
+  const rank = (a: ArticleMeta) =>
+    (a.section ? sectionOrder.get(a.section) : undefined) ?? Number.MAX_SAFE_INTEGER;
+  return [...listArticles(categorySlug)].sort(
+    (a, b) => rank(a) - rank(b) || a.order - b.order,
+  );
+}
+
+export function articlePosition(
+  categorySlug: string,
+  articleSlug: string,
+): { n: number; total: number } | null {
+  const list = orderedArticles(categorySlug);
+  const i = list.findIndex((a) => a.slug === articleSlug);
+  return i === -1 ? null : { n: i + 1, total: list.length };
+}
+
 export function articleNeighbors(
   categorySlug: string,
   articleSlug: string,
 ): { prev?: ArticleMeta; next?: ArticleMeta } {
-  const list = listArticles(categorySlug);
+  const list = orderedArticles(categorySlug);
   const i = list.findIndex((a) => a.slug === articleSlug);
   if (i === -1) return {};
   return {

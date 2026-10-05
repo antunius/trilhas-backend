@@ -7,6 +7,7 @@ summary: Escolher quais pontos do sistema merecem aprofundamento
 level: intermediario
 order: 7
 section: framework-entrega
+group: "Desenhar e aprofundar"
 ---
 
 ## Objetivos de aprendizagem

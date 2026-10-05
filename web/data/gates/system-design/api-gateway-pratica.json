@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Por que o artefato de um API Gateway é o Dockerfile da própria aplicação, e não uma imagem de terceiros?",
+      "o": [
+        "Porque é um serviço próprio construído sobre um framework como o Spring Cloud Gateway",
+        "Porque não pode rodar em container",
+        "Porque exige disco",
+        "Porque é um banco"
+      ],
+      "a": 0,
+      "w": "Diferente de um banco, o gateway é código seu que roteia para os seus serviços.",
+      "t": "fixacao",
+      "h": "Quem escreve as rotas?"
+    },
+    {
+      "q": "Por que o rate limiting distribuído usa o Redis?",
+      "o": [
+        "Para guardar vídeos",
+        "Para que todas as instâncias do gateway compartilhem o mesmo contador",
+        "Para criptografar tokens",
+        "Para balancear carga"
+      ],
+      "a": 1,
+      "w": "Se cada instância contasse sozinha, o limite efetivo seria multiplicado pelo número de instâncias.",
+      "t": "fixacao",
+      "h": "Quem precisa enxergar o mesmo contador?"
+    },
+    {
+      "q": "O que uma rota define no gateway?",
+      "o": [
+        "O esquema do banco",
+        "Para onde repassar a requisição conforme um predicado, como o caminho da URL",
+        "O formato do token",
+        "O número de réplicas"
+      ],
+      "a": 1,
+      "w": "Predicados casam a requisição, e filtros a transformam antes de repassar.",
+      "t": "fixacao",
+      "h": "Casa com o quê e envia para onde?"
+    },
+    {
+      "q": "O que é um filtro no gateway?",
+      "o": [
+        "Um erro",
+        "Um passo que altera a requisição ou a resposta, como autenticar, limitar ou reescrever",
+        "Um serviço interno",
+        "Um cache"
+      ],
+      "a": 1,
+      "w": "Os filtros implementam as responsabilidades transversais na borda.",
+      "t": "fixacao",
+      "h": "Pense em um passo no meio do caminho."
+    }
+  ]
+}

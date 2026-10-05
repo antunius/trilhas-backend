@@ -1,0 +1,56 @@
+{
+  "questions": [
+    {
+      "q": "Em Java, qual estrutura é natural para um anel de consistent hashing?",
+      "o": [
+        "HashMap",
+        "TreeMap, que mantém as chaves ordenadas e permite achar o próximo ponto",
+        "LinkedList",
+        "HashSet"
+      ],
+      "a": 1,
+      "w": "tailMap devolve os pontos maiores ou iguais ao hash da chave.",
+      "t": "fixacao",
+      "h": "Precisamos de ordem."
+    },
+    {
+      "q": "Qual caso especial a busca no anel precisa tratar?",
+      "o": [
+        "Hash negativo",
+        "Quando a chave está além do último servidor, ela volta ao primeiro",
+        "Quando o servidor tem nome longo",
+        "Quando N é par"
+      ],
+      "a": 1,
+      "w": "É o fechamento do círculo.",
+      "t": "fixacao",
+      "h": "O que vem depois do último ponto?"
+    },
+    {
+      "q": "Qual o resultado esperado do teste de rebalanceamento ao adicionar um 5º servidor a um anel de 4?",
+      "o": [
+        "Perto de 80.000 de 100.000 chaves mudam",
+        "Perto de 20.000 de 100.000 chaves mudam",
+        "Nenhuma muda",
+        "Todas mudam"
+      ],
+      "a": 1,
+      "w": "Cerca de 20%, e não os 80% do hash por módulo.",
+      "t": "fixacao",
+      "h": "1/5 de 100.000."
+    },
+    {
+      "q": "Qual sistema usa um anel com nós virtuais?",
+      "o": [
+        "Cassandra e DynamoDB",
+        "Apenas planilhas",
+        "Um servidor de e-mail simples",
+        "Um editor de texto"
+      ],
+      "a": 0,
+      "w": "Particionam os dados em um anel e usam vnodes.",
+      "t": "fixacao",
+      "h": "Pense em bancos distribuídos."
+    }
+  ]
+}
