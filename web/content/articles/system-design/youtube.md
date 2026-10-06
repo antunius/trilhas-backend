@@ -5,7 +5,7 @@ title: "Exercício: Projetar uma Plataforma de Vídeo (estilo YouTube)"
 navTitle: Plataforma de Vídeo
 summary: Projete uma plataforma de compartilhamento de vídeos, incluindo upload, processamento e reprodução em diferentes qualidades.
 level: avancado
-order: 127
+order: 129
 section: exercicios-praticos
 group: "Dados em larga escala"
 ---

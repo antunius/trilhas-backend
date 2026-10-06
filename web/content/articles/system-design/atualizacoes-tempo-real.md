@@ -5,7 +5,7 @@ title: "Padrão: Atualizações em Tempo Real"
 navTitle: Atualizações em Tempo Real
 summary: Conhecer as principais técnicas para entregar atualizações em tempo real a um cliente
 level: intermediario
-order: 112
+order: 114
 section: padroes-recorrentes
 group: "Tempo real e arquivos"
 ---

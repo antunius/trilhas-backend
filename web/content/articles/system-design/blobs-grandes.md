@@ -5,7 +5,7 @@ title: "Padrão: Blobs Grandes (Arquivos)"
 navTitle: Blobs Grandes
 summary: Reconhecer quando um sistema precisa lidar com arquivos grandes de forma diferente de dados estruturados comuns
 level: intermediario
-order: 113
+order: 115
 section: padroes-recorrentes
 group: "Tempo real e arquivos"
 ---

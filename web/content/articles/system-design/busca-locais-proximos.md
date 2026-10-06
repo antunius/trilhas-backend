@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Sistema de Busca de Locais Próximos (estilo Yel
 navTitle: Sistema de Busca de Locais Próximos
 summary: Projete um sistema que permite buscar estabelecimentos (restaurantes, lojas) próximos a uma localização, filtrando por categoria e ordenando por avaliação ou distância.
 level: avancado
-order: 121
+order: 123
 section: exercicios-praticos
 group: "Localização e entrega"
 ---

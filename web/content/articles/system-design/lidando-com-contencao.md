@@ -5,7 +5,7 @@ title: "Padrão: Lidando com Contenção"
 navTitle: Lidando com Contenção
 summary: Reconhecer problemas de contenção (concorrência sobre um recurso limitado)
 level: intermediario
-order: 110
+order: 112
 section: padroes-recorrentes
 group: "Escala e concorrência"
 ---

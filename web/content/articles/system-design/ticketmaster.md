@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Sistema de Venda de Ingressos (estilo Ticketmast
 navTitle: Sistema de Venda de Ingressos
 summary: Projete um sistema de venda de ingressos para eventos, onde múltiplos usuários competem por um número limitado de assentos, sem permitir venda duplicada do mesmo assento.
 level: avancado
-order: 123
+order: 125
 section: exercicios-praticos
 group: "Transações e concorrência"
 ---

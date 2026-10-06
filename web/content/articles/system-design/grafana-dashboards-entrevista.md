@@ -5,7 +5,7 @@ title: "Grafana, dashboards e escala na entrevista"
 navTitle: Grafana e entrevista
 summary: "Montar o dashboard RED da loja no Grafana, provisioná-lo por arquivo, e saber escalar o Prometheus e responder a perguntas de entrevista"
 level: intermediario
-order: 104
+order: 110
 section: deep-dives-tecnologias
 group: "Prometheus e Grafana"
 ---

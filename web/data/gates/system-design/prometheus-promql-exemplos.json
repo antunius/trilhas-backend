@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "A taxa de sucesso de `/pedidos` retornou `0.927`. Como interpretar?",
+      "o": [
+        "927 requisições por segundo",
+        "92,7% das requisições foram bem-sucedidas",
+        "0,927% de erro",
+        "927 ms de latência"
+      ],
+      "a": 1,
+      "w": "A razão 2xx/total é uma fração: 0,927 equivale a 92,7% de sucesso (e 7,3% de falha).",
+      "t": "fixacao",
+      "h": "A razão varia de 0 a 1."
+    },
+    {
+      "q": "O p99 de `/pedidos` deu 0,93 s. O que isso significa?",
+      "o": [
+        "A média é 0,93 s",
+        "Todas as requisições levam 0,93 s",
+        "99% das requisições terminam em até cerca de 0,93 s",
+        "0,93% das requisições falham"
+      ],
+      "a": 2,
+      "w": "O p99 é o valor abaixo do qual ficam 99% das observações. Aqui é uma estimativa interpolada dentro do bucket.",
+      "t": "fixacao",
+      "h": "p99 é o 99º percentil."
+    },
+    {
+      "q": "Por que `topk(3, sum by (uri) (rate(...)))` é melhor que `topk(3, rate(...))` para achar as rotas mais acessadas?",
+      "o": [
+        "O primeiro é mais rápido",
+        "O segundo ranqueia séries (rota+status+instância), não rotas",
+        "O segundo dá erro de sintaxe",
+        "O primeiro ignora o rate"
+      ],
+      "a": 1,
+      "w": "Sem agregar, cada série (combinação de rota, status e instância) disputa o ranking. Somar por uri faz cada rota contar uma vez.",
+      "t": "fixacao",
+      "h": "O que representa cada item do ranking antes de agregar?"
+    },
+    {
+      "q": "A consulta `deriv(pagamentos_fila_tamanho[10m]) > 0` devolve uma instância. O que isso indica?",
+      "o": [
+        "A instância está fora do ar",
+        "A fila dessa instância está crescendo nos últimos 10 minutos",
+        "A fila está vazia",
+        "O scrape falhou"
+      ],
+      "a": 1,
+      "w": "deriv mede a inclinação; o filtro > 0 deixa só as séries em crescimento: chega mais trabalho do que sai.",
+      "t": "fixacao",
+      "h": "Inclinação positiva significa valor subindo."
+    },
+    {
+      "q": "Para que serve a consulta `up == 0`?",
+      "o": [
+        "Listar instâncias que o Prometheus não consegue coletar",
+        "Listar instâncias sem tráfego",
+        "Contar requisições com erro",
+        "Medir a latência"
+      ],
+      "a": 0,
+      "w": "up vale 1 quando o scrape funciona e 0 quando falha. Filtrar por 0 mostra os alvos fora do ar ou inacessíveis.",
+      "t": "fixacao",
+      "h": "A métrica up é gerada pelo próprio Prometheus a cada scrape."
+    }
+  ]
+}

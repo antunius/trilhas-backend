@@ -1,0 +1,69 @@
+{
+  "questions": [
+    {
+      "q": "A consulta `http_server_requests_seconds_count{status=~\"5\"}` devolve vazio, embora existam respostas 500 e 503. Por quê?",
+      "o": [
+        "A regex é ancorada e só casa o valor inteiro \"5\"",
+        "O operador =~ não aceita números",
+        "É preciso usar rate primeiro",
+        "O label status não existe"
+      ],
+      "a": 0,
+      "w": "No Prometheus a regex casa o valor inteiro, como se tivesse ^ e $. Para casar 500 e 503 use \"5..\" ou \"500|503\".",
+      "t": "fixacao",
+      "h": "Pense se \"5\" é igual a \"500\"."
+    },
+    {
+      "q": "Qual filtro seleciona as séries que NÃO têm o label `job`?",
+      "o": [
+        "{job=null}",
+        "{job=\"\"}",
+        "{job!=\"\"}",
+        "{!job}"
+      ],
+      "a": 1,
+      "w": "Um label ausente é tratado como valor vazio, então `job=\"\"` casa as séries sem esse label.",
+      "t": "fixacao",
+      "h": "Label ausente e label vazio são tratados da mesma forma."
+    },
+    {
+      "q": "Uma métrica tem os labels application, instance e uri. Quais labels sobram em `sum without (instance) (...)`?",
+      "o": [
+        "Nenhum",
+        "Só instance",
+        "application e uri",
+        "Só uri"
+      ],
+      "a": 2,
+      "w": "`without` remove os labels listados e mantém todos os outros: sobram application e uri.",
+      "t": "fixacao",
+      "h": "without lista o que sai, não o que fica."
+    },
+    {
+      "q": "O que significa escrever dois filtros no mesmo seletor: `{uri=\"/pedidos\", status=~\"5..\"}`?",
+      "o": [
+        "Séries que satisfazem um dos filtros",
+        "Séries que satisfazem os dois filtros ao mesmo tempo",
+        "Só o último filtro vale",
+        "É um erro de sintaxe"
+      ],
+      "a": 1,
+      "w": "Os filtros de um seletor se combinam com E lógico: a série precisa passar em todos.",
+      "t": "fixacao",
+      "h": "A vírgula funciona como \"e\"."
+    },
+    {
+      "q": "Qual consulta dá um erro de sintaxe?",
+      "o": [
+        "{status=\"500\"}",
+        "{status=~\"5..\"}",
+        "{status=500}",
+        "{status!=\"500\"}"
+      ],
+      "a": 2,
+      "w": "O valor de um filtro precisa estar entre aspas. `status=500` (sem aspas) é erro de sintaxe, mesmo sendo um número.",
+      "t": "fixacao",
+      "h": "Um dos valores está sem aspas."
+    }
+  ]
+}

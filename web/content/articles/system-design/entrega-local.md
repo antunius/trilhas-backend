@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Serviço de Entrega Local (estilo Gopuff/iFood)"
 navTitle: Serviço de Entrega Local
 summary: Projete um serviço que conecta usuários a lojas ou restaurantes próximos, permite fazer um pedido, e acompanha a entrega até o endereço do usuário.
 level: avancado
-order: 122
+order: 124
 section: exercicios-praticos
 group: "Localização e entrega"
 ---

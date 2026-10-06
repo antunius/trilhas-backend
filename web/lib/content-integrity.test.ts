@@ -123,6 +123,31 @@ describe("conteúdo: blocos de visualizador", () => {
   });
 });
 
+describe("conteúdo: desafios de PromQL", () => {
+  const re = /```promqlplay\n([\s\S]*?)```/g;
+  it("toda solução executa e é aceita pelo verificador", async () => {
+    const { runQuery, compareResults } = await import("@/lib/promql");
+    let count = 0;
+    for (const a of articles) {
+      const raw = fs.readFileSync(path.join(root, "content/articles", a.file), "utf8");
+      for (const m of raw.matchAll(re)) {
+        const data = JSON.parse(m[1]) as { challenges: { task: string; solution: string; hint?: string }[] };
+        expect(data.challenges.length, a.file).toBeGreaterThan(0);
+        for (const c of data.challenges) {
+          count++;
+          const ref = runQuery(c.solution);
+          expect(ref.ok, `${a.file}: ${c.solution}`).toBe(true);
+          if (!ref.ok) continue;
+          expect(compareResults(ref.result, ref.result).ok).toBe(true);
+          expect(ref.result.kind === "vector" ? ref.result.series.length : 1, `${a.file}: resultado vazio`).toBeGreaterThan(0);
+          expect(c.hint, `${a.file}: falta dica`).toBeTruthy();
+        }
+      }
+    }
+    expect(count).toBeGreaterThanOrEqual(13);
+  });
+});
+
 describe("conteúdo: navegação anterior/próximo", () => {
   it("segue a ordem das seções, não só o order global", async () => {
     const { articleNeighbors } = await import("@/lib/articles");
@@ -142,7 +167,7 @@ describe("conteúdo: System Design em unidades por assunto", () => {
     for (const a of sd) expect(a.group?.trim(), a.slug).toBeTruthy();
   });
 
-  it("as lições de uma unidade são contíguas dentro do módulo e a unidade tem de 2 a 7", () => {
+  it("as lições de uma unidade são contíguas dentro do módulo e a unidade tem de 2 a 7 (Prometheus e Grafana, até 8)", () => {
     const sections = [...new Set(sd.map((a) => a.section))];
     for (const sec of sections) {
       const list = sd.filter((a) => a.section === sec).sort((x, y) => x.order - y.order);
@@ -158,7 +183,7 @@ describe("conteúdo: System Design em unidades por assunto", () => {
           run = 0;
         }
         run++;
-        expect(run, `${sec}/${current}`).toBeLessThanOrEqual(7);
+        expect(run, `${sec}/${current}`).toBeLessThanOrEqual(current === "Prometheus e Grafana" ? 8 : 7);
       }
       expect(run, `${sec}/${current}`).toBeGreaterThanOrEqual(2);
     }
@@ -184,6 +209,7 @@ describe("conteúdo: dicas das questões", () => {
 
 describe("conteúdo: lições quebradas por tópico", () => {
   // unidades já divididas em lições curtas, cada uma com seu próprio banco
+  const MAX_UNIT: Record<string, number> = { "Prometheus e Grafana": 8 };
   const SPLIT_UNITS = [
     "PostgreSQL", "Cassandra e DynamoDB", "Redis", "Elasticsearch", "Kafka", "Flink", "ZooKeeper", "API Gateway", "Prometheus e Grafana",
     "Rede", "Design de API", "Bancos de dados", "Indexação", "Cache", "Sharding", "Consistent hashing",
@@ -197,7 +223,7 @@ describe("conteúdo: lições quebradas por tópico", () => {
     for (const unit of SPLIT_UNITS) {
       const n = lessons.filter((a) => a.group === unit).length;
       expect(n, unit).toBeGreaterThanOrEqual(2);
-      expect(n, unit).toBeLessThanOrEqual(7);
+      expect(n, unit).toBeLessThanOrEqual(MAX_UNIT[unit] ?? 7);
     }
   });
 

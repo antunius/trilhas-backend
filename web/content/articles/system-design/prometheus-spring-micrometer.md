@@ -5,7 +5,7 @@ title: "Instrumentando o Spring Boot com Micrometer"
 navTitle: Spring Boot e Micrometer
 summary: "Expor métricas do serviço de pedidos com Actuator e Micrometer, criar métricas de negócio e subir Prometheus e Grafana com Docker"
 level: intermediario
-order: 103
+order: 105
 section: deep-dives-tecnologias
 group: "Prometheus e Grafana"
 ---

@@ -2798,28 +2798,16 @@
     "file": "system-design/api-gateway-evolucao-entrevista.md"
   },
   {
-    "slug": "prometheus-spring-micrometer",
+    "slug": "prometheus-observabilidade-pilares",
     "categorySlug": "system-design",
-    "title": "Instrumentando o Spring Boot com Micrometer",
-    "navTitle": "Spring Boot e Micrometer",
-    "summary": "Expor métricas do serviço de pedidos com Actuator e Micrometer, criar métricas de negócio e subir Prometheus e Grafana com Docker",
+    "title": "Observabilidade e os três pilares",
+    "navTitle": "Observabilidade e pilares",
+    "summary": "Entender a diferença entre monitorar e observar, o papel de métricas, logs e traces, e como SLI e SLO transformam números em metas",
     "level": "intermediario",
     "order": 103,
     "section": "deep-dives-tecnologias",
     "group": "Prometheus e Grafana",
-    "file": "system-design/prometheus-spring-micrometer.md"
-  },
-  {
-    "slug": "grafana-dashboards-entrevista",
-    "categorySlug": "system-design",
-    "title": "Grafana, dashboards e escala na entrevista",
-    "navTitle": "Grafana e entrevista",
-    "summary": "Montar o dashboard RED da loja no Grafana, provisioná-lo por arquivo, e saber escalar o Prometheus e responder a perguntas de entrevista",
-    "level": "intermediario",
-    "order": 104,
-    "section": "deep-dives-tecnologias",
-    "group": "Prometheus e Grafana",
-    "file": "system-design/grafana-dashboards-entrevista.md"
+    "file": "system-design/prometheus-observabilidade-pilares.md"
   },
   {
     "slug": "prometheus-modelo-metricas",
@@ -2828,22 +2816,22 @@
     "navTitle": "Modelo de métricas e pull",
     "summary": "Entender séries temporais, labels, os tipos de métrica, o modelo pull de coleta e por que a cardinalidade é o maior risco",
     "level": "intermediario",
-    "order": 105,
+    "order": 104,
     "section": "deep-dives-tecnologias",
     "group": "Prometheus e Grafana",
     "file": "system-design/prometheus-modelo-metricas.md"
   },
   {
-    "slug": "prometheus-observabilidade-pilares",
+    "slug": "prometheus-spring-micrometer",
     "categorySlug": "system-design",
-    "title": "Observabilidade e os três pilares",
-    "navTitle": "Observabilidade e pilares",
-    "summary": "Entender a diferença entre monitorar e observar, o papel de métricas, logs e traces, e como SLI e SLO transformam números em metas",
+    "title": "Instrumentando o Spring Boot com Micrometer",
+    "navTitle": "Spring Boot e Micrometer",
+    "summary": "Expor métricas do serviço de pedidos com Actuator e Micrometer, criar métricas de negócio e subir Prometheus e Grafana com Docker",
     "level": "intermediario",
-    "order": 106,
+    "order": 105,
     "section": "deep-dives-tecnologias",
     "group": "Prometheus e Grafana",
-    "file": "system-design/prometheus-observabilidade-pilares.md"
+    "file": "system-design/prometheus-spring-micrometer.md"
   },
   {
     "slug": "prometheus-promql",
@@ -2852,10 +2840,34 @@
     "navTitle": "PromQL e RED",
     "summary": "Consultar métricas com PromQL: rate sobre counters, agregações, taxa de erro e p99, aplicados ao serviço de pedidos",
     "level": "intermediario",
-    "order": 107,
+    "order": 106,
     "section": "deep-dives-tecnologias",
     "group": "Prometheus e Grafana",
     "file": "system-design/prometheus-promql.md"
+  },
+  {
+    "slug": "prometheus-promql-labels",
+    "categorySlug": "system-design",
+    "title": "PromQL: filtros de label",
+    "navTitle": "PromQL: filtros de label",
+    "summary": "Dominar os quatro operadores de label, a regex ancorada, os filtros combinados e a diferença entre by e without, resolvendo desafios no playground",
+    "level": "intermediario",
+    "order": 107,
+    "section": "deep-dives-tecnologias",
+    "group": "Prometheus e Grafana",
+    "file": "system-design/prometheus-promql-labels.md"
+  },
+  {
+    "slug": "prometheus-promql-exemplos",
+    "categorySlug": "system-design",
+    "title": "PromQL: consultas da loja na prática",
+    "navTitle": "PromQL: exemplos na prática",
+    "summary": "Montar as consultas do dia a dia da loja, como taxa de sucesso, erro por instância, top rotas, p99 e saturação, resolvendo cada uma no playground",
+    "level": "intermediario",
+    "order": 108,
+    "section": "deep-dives-tecnologias",
+    "group": "Prometheus e Grafana",
+    "file": "system-design/prometheus-promql-exemplos.md"
   },
   {
     "slug": "prometheus-alertas-alertmanager",
@@ -2864,10 +2876,22 @@
     "navTitle": "Alertas e Alertmanager",
     "summary": "Escrever regras de alerta com for, rotear com o Alertmanager, alertar por sintoma e evitar fadiga de alerta, com burn rate de SLO",
     "level": "intermediario",
-    "order": 108,
+    "order": 109,
     "section": "deep-dives-tecnologias",
     "group": "Prometheus e Grafana",
     "file": "system-design/prometheus-alertas-alertmanager.md"
+  },
+  {
+    "slug": "grafana-dashboards-entrevista",
+    "categorySlug": "system-design",
+    "title": "Grafana, dashboards e escala na entrevista",
+    "navTitle": "Grafana e entrevista",
+    "summary": "Montar o dashboard RED da loja no Grafana, provisioná-lo por arquivo, e saber escalar o Prometheus e responder a perguntas de entrevista",
+    "level": "intermediario",
+    "order": 110,
+    "section": "deep-dives-tecnologias",
+    "group": "Prometheus e Grafana",
+    "file": "system-design/grafana-dashboards-entrevista.md"
   },
   {
     "slug": "escalando-leituras",
@@ -2876,7 +2900,7 @@
     "navTitle": "Escalando Leituras",
     "summary": "Reconhecer quando um problema é, no fundo, um problema de escala de leitura",
     "level": "intermediario",
-    "order": 109,
+    "order": 111,
     "section": "padroes-recorrentes",
     "group": "Escala e concorrência",
     "file": "system-design/escalando-leituras.md"
@@ -2888,7 +2912,7 @@
     "navTitle": "Lidando com Contenção",
     "summary": "Reconhecer problemas de contenção (concorrência sobre um recurso limitado)",
     "level": "intermediario",
-    "order": 110,
+    "order": 112,
     "section": "padroes-recorrentes",
     "group": "Escala e concorrência",
     "file": "system-design/lidando-com-contencao.md"
@@ -2900,7 +2924,7 @@
     "navTitle": "Proximidade",
     "summary": "Reconhecer problemas que envolvem busca por proximidade geográfica",
     "level": "intermediario",
-    "order": 111,
+    "order": 113,
     "section": "padroes-recorrentes",
     "group": "Escala e concorrência",
     "file": "system-design/proximidade.md"
@@ -2912,7 +2936,7 @@
     "navTitle": "Atualizações em Tempo Real",
     "summary": "Conhecer as principais técnicas para entregar atualizações em tempo real a um cliente",
     "level": "intermediario",
-    "order": 112,
+    "order": 114,
     "section": "padroes-recorrentes",
     "group": "Tempo real e arquivos",
     "file": "system-design/atualizacoes-tempo-real.md"
@@ -2924,7 +2948,7 @@
     "navTitle": "Blobs Grandes",
     "summary": "Reconhecer quando um sistema precisa lidar com arquivos grandes de forma diferente de dados estruturados comuns",
     "level": "intermediario",
-    "order": 113,
+    "order": 115,
     "section": "padroes-recorrentes",
     "group": "Tempo real e arquivos",
     "file": "system-design/blobs-grandes.md"
@@ -2936,7 +2960,7 @@
     "navTitle": "Tarefas de Longa Duração",
     "summary": "Reconhecer quando uma operação não deve ser tratada de forma síncrona",
     "level": "intermediario",
-    "order": 114,
+    "order": 116,
     "section": "padroes-recorrentes",
     "group": "Fluxos longos",
     "file": "system-design/tarefas-longa-duracao.md"
@@ -2948,7 +2972,7 @@
     "navTitle": "Processos de Múltiplas Etapas",
     "summary": "Reconhecer quando um fluxo de negócio envolve múltiplas etapas coordenadas entre diferentes serviços",
     "level": "intermediario",
-    "order": 115,
+    "order": 117,
     "section": "padroes-recorrentes",
     "group": "Fluxos longos",
     "file": "system-design/processos-multi-etapas.md"
@@ -2960,7 +2984,7 @@
     "navTitle": "Feed de Notícias em Escala",
     "summary": "Aplicar o framework a um problema com relacionamentos sociais complexos (seguidores)",
     "level": "avancado",
-    "order": 116,
+    "order": 118,
     "section": "exercicios-praticos",
     "group": "Mensagens e feeds",
     "file": "system-design/feed-noticias.md"
@@ -2972,7 +2996,7 @@
     "navTitle": "Sistema de Mensagens em Tempo Real",
     "summary": "Aplicar o framework a um problema que exige comunicação em tempo real",
     "level": "avancado",
-    "order": 117,
+    "order": 119,
     "section": "exercicios-praticos",
     "group": "Mensagens e feeds",
     "file": "system-design/mensagens-tempo-real.md"
@@ -2984,7 +3008,7 @@
     "navTitle": "Editor de Documentos Colaborativo",
     "summary": "Projete um editor de texto onde múltiplos usuários podem editar o mesmo documento simultaneamente, vendo as mudanças uns dos outros em tempo real.",
     "level": "avancado",
-    "order": 118,
+    "order": 120,
     "section": "exercicios-praticos",
     "group": "Mensagens e feeds",
     "file": "system-design/editor-colaborativo.md"
@@ -2996,7 +3020,7 @@
     "navTitle": "Aplicativo de Relacionamento",
     "summary": "Projete um aplicativo que mostra perfis de outros usuários próximos geograficamente, permite curtir/rejeitar, e cria uma conexão (match) quando duas pessoas se curtem mutuamente.",
     "level": "avancado",
-    "order": 119,
+    "order": 121,
     "section": "exercicios-praticos",
     "group": "Mensagens e feeds",
     "file": "system-design/tinder.md"
@@ -3008,7 +3032,7 @@
     "navTitle": "Serviço de Transporte",
     "summary": "Projete um sistema de transporte sob demanda que conecta passageiros a motoristas próximos, calcula uma rota e um preço estimado, e acompanha a corrida em tempo real.",
     "level": "avancado",
-    "order": 120,
+    "order": 122,
     "section": "exercicios-praticos",
     "group": "Localização e entrega",
     "file": "system-design/uber.md"
@@ -3020,7 +3044,7 @@
     "navTitle": "Sistema de Busca de Locais Próximos",
     "summary": "Projete um sistema que permite buscar estabelecimentos (restaurantes, lojas) próximos a uma localização, filtrando por categoria e ordenando por avaliação ou distância.",
     "level": "avancado",
-    "order": 121,
+    "order": 123,
     "section": "exercicios-praticos",
     "group": "Localização e entrega",
     "file": "system-design/busca-locais-proximos.md"
@@ -3032,7 +3056,7 @@
     "navTitle": "Serviço de Entrega Local",
     "summary": "Projete um serviço que conecta usuários a lojas ou restaurantes próximos, permite fazer um pedido, e acompanha a entrega até o endereço do usuário.",
     "level": "avancado",
-    "order": 122,
+    "order": 124,
     "section": "exercicios-praticos",
     "group": "Localização e entrega",
     "file": "system-design/entrega-local.md"
@@ -3044,7 +3068,7 @@
     "navTitle": "Sistema de Venda de Ingressos",
     "summary": "Projete um sistema de venda de ingressos para eventos, onde múltiplos usuários competem por um número limitado de assentos, sem permitir venda duplicada do mesmo assento.",
     "level": "avancado",
-    "order": 123,
+    "order": 125,
     "section": "exercicios-praticos",
     "group": "Transações e concorrência",
     "file": "system-design/ticketmaster.md"
@@ -3056,7 +3080,7 @@
     "navTitle": "Sistema de Leilão Online",
     "summary": "Projete um sistema de leilão online, onde usuários fazem lances por um item dentro de um período de tempo definido, e o maior lance ao final do prazo vence.",
     "level": "avancado",
-    "order": 124,
+    "order": 126,
     "section": "exercicios-praticos",
     "group": "Transações e concorrência",
     "file": "system-design/leilao-online.md"
@@ -3068,7 +3092,7 @@
     "navTitle": "Sistema de Pagamentos",
     "summary": "Projete um sistema que processa pagamentos entre usuários (ou entre um usuário e um comerciante), garantindo que cada transação seja processada exatamente uma vez, mesmo diante de falhas de rede.",
     "level": "avancado",
-    "order": 125,
+    "order": 127,
     "section": "exercicios-praticos",
     "group": "Transações e concorrência",
     "file": "system-design/sistema-pagamentos.md"
@@ -3080,7 +3104,7 @@
     "navTitle": "Plataforma de Negociação de Ações",
     "summary": "Projete uma plataforma onde usuários podem comprar e vender ações, vendo preços em tempo real e executando ordens de compra/venda.",
     "level": "avancado",
-    "order": 126,
+    "order": 128,
     "section": "exercicios-praticos",
     "group": "Transações e concorrência",
     "file": "system-design/plataforma-negociacao-acoes.md"
@@ -3092,7 +3116,7 @@
     "navTitle": "Plataforma de Vídeo",
     "summary": "Projete uma plataforma de compartilhamento de vídeos, incluindo upload, processamento e reprodução em diferentes qualidades.",
     "level": "avancado",
-    "order": 127,
+    "order": 129,
     "section": "exercicios-praticos",
     "group": "Dados em larga escala",
     "file": "system-design/youtube.md"
@@ -3104,7 +3128,7 @@
     "navTitle": "Web Crawler Distribuído",
     "summary": "Projete um sistema que navega pela web automaticamente, baixando e indexando páginas, seguindo links encontrados em cada página visitada.",
     "level": "avancado",
-    "order": 128,
+    "order": 130,
     "section": "exercicios-praticos",
     "group": "Dados em larga escala",
     "file": "system-design/web-crawler.md"
@@ -3116,7 +3140,7 @@
     "navTitle": "Agregador de Cliques em Anúncios",
     "summary": "Projete um sistema que recebe um volume altíssimo de eventos de clique em anúncios, e produz métricas agregadas (ex: cliques por anúncio, por minuto) quase em tempo real.",
     "level": "avancado",
-    "order": 129,
+    "order": 131,
     "section": "exercicios-praticos",
     "group": "Dados em larga escala",
     "file": "system-design/agregador-cliques-anuncios.md"
@@ -3128,7 +3152,7 @@
     "navTitle": "Sistema de Rastreamento de Atividades",
     "summary": "Projete um sistema que registra atividades físicas de usuários (corrida, ciclismo), incluindo o trajeto percorrido (uma sequência de coordenadas GPS), distância, tempo e permite comparar desempenho com outros usuários em trechos específicos.",
     "level": "avancado",
-    "order": 130,
+    "order": 132,
     "section": "exercicios-praticos",
     "group": "Dados em larga escala",
     "file": "system-design/rastreamento-atividades.md"
@@ -3140,7 +3164,7 @@
     "navTitle": "Encurtador de URLs",
     "summary": "Aplicar o framework completo a um problema clássico e relativamente contido",
     "level": "avancado",
-    "order": 131,
+    "order": 133,
     "section": "exercicios-praticos",
     "group": "Infraestrutura e ferramentas",
     "file": "system-design/encurtador-url.md"
@@ -3152,7 +3176,7 @@
     "navTitle": "Sistema de Cache Distribuído",
     "summary": "Projete o próprio serviço de cache distribuído (não um sistema que apenas *usa* cache) — pense em como um Redis ou Memcached são construídos por dentro, capaz de escalar entre múltiplos nós.",
     "level": "avancado",
-    "order": 132,
+    "order": 134,
     "section": "exercicios-praticos",
     "group": "Infraestrutura e ferramentas",
     "file": "system-design/cache-distribuido.md"
@@ -3164,7 +3188,7 @@
     "navTitle": "Agendador de Tarefas",
     "summary": "Projete um sistema que permite agendar tarefas para execução em um momento futuro específico, ou de forma recorrente (ex: \"todo dia às 3h da manhã\"), garantindo que cada tarefa seja executada exatamente uma vez.",
     "level": "avancado",
-    "order": 133,
+    "order": 135,
     "section": "exercicios-praticos",
     "group": "Infraestrutura e ferramentas",
     "file": "system-design/agendador-tarefas.md"
@@ -3176,7 +3200,7 @@
     "navTitle": "Plataforma de Julgamento de Código",
     "summary": "Projete uma plataforma onde usuários submetem código para resolver problemas de programação, e o sistema executa esse código contra casos de teste, retornando se a solução passou ou falhou.",
     "level": "avancado",
-    "order": 134,
+    "order": 136,
     "section": "exercicios-praticos",
     "group": "Infraestrutura e ferramentas",
     "file": "system-design/plataforma-julgamento-codigo.md"
@@ -3188,7 +3212,7 @@
     "navTitle": "Outros Problemas Clássicos",
     "summary": "Praticar o framework em problemas variados, fora dos exercícios já detalhados",
     "level": "avancado",
-    "order": 135,
+    "order": 137,
     "section": "exercicios-praticos",
     "group": "Infraestrutura e ferramentas",
     "file": "system-design/outros-problemas.md"

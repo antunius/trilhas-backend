@@ -5,7 +5,7 @@ title: "PromQL e o método RED"
 navTitle: PromQL e RED
 summary: "Consultar métricas com PromQL: rate sobre counters, agregações, taxa de erro e p99, aplicados ao serviço de pedidos"
 level: intermediario
-order: 107
+order: 106
 section: deep-dives-tecnologias
 group: "Prometheus e Grafana"
 ---
@@ -28,7 +28,7 @@ A forma mais simples de consulta é o nome da métrica com filtros de label:
 http_server_requests_seconds_count{uri="/pedidos", status=~"5.."}
 ```
 
-`=` é igualdade, `!=` diferença e `=~` expressão regular (aqui, qualquer status 5xx). O resultado é um **vetor instantâneo**: o valor mais recente de cada série. Acrescentar `[5m]` cria um **vetor de intervalo** com os últimos 5 minutos de cada série, que é o que funções como `rate` consomem.
+`=` é igualdade, `!=` diferença e `=~` expressão regular (aqui, qualquer status 5xx). A próxima lição detalha os quatro operadores de label e tem desafios para praticar. O resultado é um **vetor instantâneo**: o valor mais recente de cada série. Acrescentar `[5m]` cria um **vetor de intervalo** com os últimos 5 minutos de cada série, que é o que funções como `rate` consomem.
 
 ## rate: transformar counter em velocidade
 
@@ -85,6 +85,10 @@ Para **recursos** (CPU, disco, pool de conexões, fila), o complemento do RED é
 # a fila de pagamentos cresce ao longo do tempo?
 deriv(pagamentos_fila_tamanho[10m]) > 0
 ```
+
+## Próximos passos
+
+A lição seguinte aprofunda os **filtros de label** (`=`, `!=`, `=~`, `!~`, `by` e `without`) e a depois traz as consultas da loja resolvidas em um playground.
 
 ## Lembre
 

@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Sistema de Mensagens em Tempo Real"
 navTitle: Sistema de Mensagens em Tempo Real
 summary: Aplicar o framework a um problema que exige comunicação em tempo real
 level: avancado
-order: 117
+order: 119
 section: exercicios-praticos
 group: "Mensagens e feeds"
 ---

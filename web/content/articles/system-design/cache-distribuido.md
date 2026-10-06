@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Sistema de Cache Distribuído"
 navTitle: Sistema de Cache Distribuído
 summary: Projete o próprio serviço de cache distribuído (não um sistema que apenas *usa* cache) — pense em como um Redis ou Memcached são construídos por dentro, capaz de escalar entre múltiplos nós.
 level: avancado
-order: 132
+order: 134
 section: exercicios-praticos
 group: "Infraestrutura e ferramentas"
 ---

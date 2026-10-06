@@ -5,7 +5,7 @@ title: "Observabilidade e os três pilares"
 navTitle: Observabilidade e pilares
 summary: "Entender a diferença entre monitorar e observar, o papel de métricas, logs e traces, e como SLI e SLO transformam números em metas"
 level: intermediario
-order: 106
+order: 103
 section: deep-dives-tecnologias
 group: "Prometheus e Grafana"
 ---

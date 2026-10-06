@@ -114,7 +114,9 @@
     "prometheus-spring-micrometer",
     "prometheus-promql",
     "prometheus-alertas-alertmanager",
-    "grafana-dashboards-entrevista"
+    "grafana-dashboards-entrevista",
+    "prometheus-promql-labels",
+    "prometheus-promql-exemplos"
   ],
   "code": [
     "o-que-e-avaliado",

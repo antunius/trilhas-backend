@@ -29,6 +29,10 @@ import {
   GridVisualizer,
   type GridVisualizerProps,
 } from "@/components/visualizers/GridVisualizer";
+import {
+  PromQLPlayground,
+  type PromQLPlaygroundProps,
+} from "@/components/PromQLPlayground";
 
 SyntaxHighlighter.registerLanguage("java", java);
 SyntaxHighlighter.registerLanguage("bash", bash);
@@ -193,6 +197,14 @@ export function MarkdownRenderer({
               try {
                 const config = JSON.parse(raw) as GridVisualizerProps;
                 return <GridVisualizer {...config} />;
+              } catch {
+                return <CodeBlock lang="json">{raw}</CodeBlock>;
+              }
+            }
+            if (match?.[1] === "promqlplay") {
+              try {
+                const config = JSON.parse(raw) as PromQLPlaygroundProps;
+                return <PromQLPlayground {...config} />;
               } catch {
                 return <CodeBlock lang="json">{raw}</CodeBlock>;
               }

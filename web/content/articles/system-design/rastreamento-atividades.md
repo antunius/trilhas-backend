@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Sistema de Rastreamento de Atividades (estilo St
 navTitle: Sistema de Rastreamento de Atividades
 summary: "Projete um sistema que registra atividades físicas de usuários (corrida, ciclismo), incluindo o trajeto percorrido (uma sequência de coordenadas GPS), distância, tempo e permite comparar desempenho com outros usuários em trechos específicos."
 level: avancado
-order: 130
+order: 132
 section: exercicios-praticos
 group: "Dados em larga escala"
 ---

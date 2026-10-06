@@ -5,7 +5,7 @@ title: "Exercício: Projetar uma Plataforma de Negociação de Ações (estilo R
 navTitle: Plataforma de Negociação de Ações
 summary: Projete uma plataforma onde usuários podem comprar e vender ações, vendo preços em tempo real e executando ordens de compra/venda.
 level: avancado
-order: 126
+order: 128
 section: exercicios-praticos
 group: "Transações e concorrência"
 ---

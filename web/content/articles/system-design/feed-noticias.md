@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Feed de Notícias em Escala"
 navTitle: Feed de Notícias em Escala
 summary: Aplicar o framework a um problema com relacionamentos sociais complexos (seguidores)
 level: avancado
-order: 116
+order: 118
 section: exercicios-praticos
 group: "Mensagens e feeds"
 ---

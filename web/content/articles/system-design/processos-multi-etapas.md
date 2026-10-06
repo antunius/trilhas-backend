@@ -5,7 +5,7 @@ title: "Padrão: Processos de Múltiplas Etapas"
 navTitle: Processos de Múltiplas Etapas
 summary: Reconhecer quando um fluxo de negócio envolve múltiplas etapas coordenadas entre diferentes serviços
 level: intermediario
-order: 115
+order: 117
 section: padroes-recorrentes
 group: "Fluxos longos"
 ---

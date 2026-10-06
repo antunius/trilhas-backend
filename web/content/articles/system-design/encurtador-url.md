@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Encurtador de URLs"
 navTitle: Encurtador de URLs
 summary: Aplicar o framework completo a um problema clássico e relativamente contido
 level: avancado
-order: 131
+order: 133
 section: exercicios-praticos
 group: "Infraestrutura e ferramentas"
 ---

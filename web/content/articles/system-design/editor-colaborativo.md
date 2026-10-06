@@ -5,7 +5,7 @@ title: "Exercício: Projetar um Editor de Documentos Colaborativo (estilo Google
 navTitle: Editor de Documentos Colaborativo
 summary: Projete um editor de texto onde múltiplos usuários podem editar o mesmo documento simultaneamente, vendo as mudanças uns dos outros em tempo real.
 level: avancado
-order: 118
+order: 120
 section: exercicios-praticos
 group: "Mensagens e feeds"
 ---

@@ -5,7 +5,7 @@ title: "Modelo de dados e coleta do Prometheus"
 navTitle: Modelo de métricas e pull
 summary: "Entender séries temporais, labels, os tipos de métrica, o modelo pull de coleta e por que a cardinalidade é o maior risco"
 level: intermediario
-order: 105
+order: 104
 section: deep-dives-tecnologias
 group: "Prometheus e Grafana"
 ---

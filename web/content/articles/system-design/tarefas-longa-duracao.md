@@ -5,7 +5,7 @@ title: "Padrão: Tarefas de Longa Duração"
 navTitle: Tarefas de Longa Duração
 summary: Reconhecer quando uma operação não deve ser tratada de forma síncrona
 level: intermediario
-order: 114
+order: 116
 section: padroes-recorrentes
 group: "Fluxos longos"
 ---

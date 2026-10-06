@@ -5,7 +5,7 @@ title: "Alertas com Prometheus e Alertmanager"
 navTitle: Alertas e Alertmanager
 summary: "Escrever regras de alerta com for, rotear com o Alertmanager, alertar por sintoma e evitar fadiga de alerta, com burn rate de SLO"
 level: intermediario
-order: 108
+order: 109
 section: deep-dives-tecnologias
 group: "Prometheus e Grafana"
 ---
